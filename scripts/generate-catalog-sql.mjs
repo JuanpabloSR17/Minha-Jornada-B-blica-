@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
 /** Prefixo de data da migração de cada versão do catálogo. */
-const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200' };
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200' };
 export const outPathFor = (version) => {
   const prefix = VERSION_PREFIX[version];
   if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);
@@ -32,11 +32,13 @@ export function buildCatalogSql(catalog) {
   lines.push('  category = excluded.category, name = excluded.name,');
   lines.push('  sort_order = excluded.sort_order, catalog_version = excluded.catalog_version, is_active = true;');
   lines.push('');
-  lines.push('insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version) values');
+  const v3 = catalog.version >= 3;
+  const arr = (a) => (a && a.length ? `array[${a.map(q).join(', ')}]::text[]` : 'null');
+  lines.push(`insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version${v3 ? ', body_compatibility, variant_label' : ''}) values`);
   lines.push(
     catalog.items
       .map((it) =>
-        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version})`,
+        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version}${v3 ? `, ${arr(it.bodyCompatibility)}, ${q(it.variantLabel)}` : ''})`,
       )
       .join(',\n'),
   );
@@ -44,8 +46,14 @@ export function buildCatalogSql(catalog) {
   lines.push('  name = excluded.name, category = excluded.category, slot = excluded.slot,');
   lines.push('  rarity = excluded.rarity, description = excluded.description, scripture_ref = excluded.scripture_ref,');
   lines.push('  asset_manifest_key = excluded.asset_manifest_key, is_starter = excluded.is_starter,');
-  lines.push('  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version;');
+  lines.push(`  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version${v3 ? ',\n  body_compatibility = excluded.body_compatibility, variant_label = excluded.variant_label' : ''};`);
   lines.push('');
+  const variants = catalog.items.filter((it) => it.variantOf);
+  if (v3 && variants.length) {
+    lines.push('-- Variantes evolutivas (cada variante é um item próprio; a base permanece).');
+    for (const it of variants) lines.push(`update public.cosmetic_items set variant_of = ${q(it.variantOf)} where id = ${q(it.id)};`);
+    lines.push('');
+  }
   lines.push('-- Regras de desbloqueio: itens iniciais são gratuitos e concedidos pelo servidor.');
   lines.push("insert into public.item_unlock_rules (item_id, rule_type, rule_payload, revision)");
   lines.push(`select i.id, 'starter', jsonb_build_object('catalogVersion', ${catalog.version}), 1`);
@@ -67,6 +75,17 @@ export function buildCatalogSql(catalog) {
     );
     lines.push('on conflict (item_id, rule_type, revision) do update set');
     lines.push('  rule_payload = excluded.rule_payload, requirements = excluded.requirements;');
+    lines.push('');
+  }
+  if (catalog.collections?.length) {
+    lines.push('-- Coleções e itens de coleção.');
+    lines.push('insert into public.item_collections (id, name, description, reward_item_id, sort_order) values');
+    lines.push(catalog.collections.map((c, i) => `  (${q(c.id)}, ${q(c.name)}, ${q(c.description)}, ${q(c.reward)}, ${i})`).join(',\n'));
+    lines.push('on conflict (id) do update set name = excluded.name, description = excluded.description,');
+    lines.push('  reward_item_id = excluded.reward_item_id, sort_order = excluded.sort_order;');
+    lines.push('insert into public.collection_items (collection_id, item_id, sort_order) values');
+    lines.push(catalog.collections.flatMap((c) => c.items.map((id, i) => `  (${q(c.id)}, ${q(id)}, ${i})`)).join(',\n'));
+    lines.push('on conflict (collection_id, item_id) do update set sort_order = excluded.sort_order;');
     lines.push('');
   }
   return lines.join('\n');

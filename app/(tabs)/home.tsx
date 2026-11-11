@@ -24,7 +24,7 @@ export default function Home() {
         <AppText variant="heading">{goal}</AppText>
         <View style={styles.row}>
           <Button compact variant="secondary" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} style={styles.flex} />
-          <Button compact title={strings.home.customize} onPress={() => router.push('/avatar/editor')} style={styles.flex} />
+          <Button compact title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />
         </View>
       </Card>
       <ComingSoon title={strings.home.missionsTitle} body={strings.home.missionsBody} />

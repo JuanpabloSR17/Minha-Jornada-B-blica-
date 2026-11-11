@@ -85,6 +85,9 @@ export type CosmeticItem = {
   premium: boolean;
   /** objetivo de desbloqueio exibido para itens bloqueados */
   unlockLabel?: string;
+  /** item base do qual esta aparência é uma evolução */
+  variantOf?: string;
+  variantLabel?: string;
 };
 
 export type AvatarLook = {

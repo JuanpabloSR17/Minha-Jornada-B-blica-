@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "appearance": {
     "body": [
       {
@@ -520,6 +520,226 @@
       "slot": "background",
       "category": "background",
       "description": "Fundo padrão de pergaminho com colinas."
+    },
+    {
+      "id": "sandals-desert",
+      "name": "Sandálias do Deserto",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "rare",
+      "scriptureRef": "Êxodo 3:5",
+      "description": "Inspiradas no chamado de Moisés diante da sarça, quando ouviu: “tira as sandálias dos pés” (Êxodo 3:5). Simbólicas, sem pretensão de autenticidade histórica.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Êxodo 3"
+      },
+      "starter": false
+    },
+    {
+      "id": "staff-moses",
+      "name": "Vara de Moisés",
+      "slot": "hands",
+      "category": "accessory",
+      "rarity": "rare",
+      "scriptureRef": "Êxodo 14:16",
+      "description": "Lembra a vara que Moisés estendeu sobre o mar (Êxodo 14:16). Item simbólico, sem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 14
+        },
+        "label": "Conclua a leitura de Êxodo 14"
+      },
+      "starter": false
+    },
+    {
+      "id": "sling-david",
+      "name": "Funda de Davi",
+      "slot": "hands",
+      "category": "accessory",
+      "rarity": "rare",
+      "scriptureRef": "1 Samuel 17:40",
+      "description": "Inspirada na funda e nas cinco pedras lisas com que Davi enfrentou Golias (1 Samuel 17:40, 49).",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1SA",
+          "chapter": 17
+        },
+        "label": "Conclua a leitura de 1 Samuel 17"
+      },
+      "starter": false
+    },
+    {
+      "id": "harp-psalmist",
+      "name": "Harpa do Salmista",
+      "slot": "hands",
+      "category": "accessory",
+      "rarity": "epic",
+      "scriptureRef": "1 Samuel 16:23",
+      "description": "Lembra Davi tocando harpa (1 Samuel 16:23) e os cânticos dos Salmos. Marco de leitura temática.",
+      "unlock": {
+        "type": "chapters_count",
+        "payload": {
+          "book": "PSA",
+          "count": 30
+        },
+        "label": "Leia 30 salmos diferentes"
+      },
+      "starter": false
+    },
+    {
+      "id": "cloak-elijah",
+      "name": "Manto de Elias",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "epic",
+      "scriptureRef": "1 Reis 19:19",
+      "description": "Inspirado no manto que Elias lançou sobre Eliseu ao chamá-lo (1 Reis 19:19).",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1KI",
+          "chapter": 19
+        },
+        "label": "Conclua a leitura de 1 Reis 19"
+      },
+      "starter": false
+    },
+    {
+      "id": "cloak-succession",
+      "name": "Manto da Sucessão",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "epic",
+      "scriptureRef": "2 Reis 2:13-14",
+      "variantOf": "cloak-elijah",
+      "variantLabel": "Após a passagem a Eliseu",
+      "description": "Evolução visual do Manto de Elias, lembrando quando Eliseu apanhou o manto e seguiu o chamado (2 Reis 2:13-14). A versão original continua no inventário.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "2KI",
+          "chapter": 2
+        },
+        "requires": [
+          {
+            "type": "item_owned",
+            "item": "cloak-elijah"
+          }
+        ],
+        "label": "Conclua 2 Reis 2 tendo o Manto de Elias"
+      },
+      "starter": false
+    },
+    {
+      "id": "cloak-elijah-prophets",
+      "name": "Manto de Elias — Edição dos Profetas",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "scriptureRef": "1 Reis 19:19; 2 Reis 2:13-14",
+      "variantOf": "cloak-elijah",
+      "variantLabel": "Edição especial de coleção",
+      "description": "Aparência especial do Manto de Elias, recompensa da Coleção dos Profetas. Puramente cosmética.",
+      "unlock": {
+        "type": "collection_completed",
+        "payload": {
+          "collection": "prophets"
+        },
+        "label": "Complete a Coleção dos Profetas"
+      },
+      "starter": false
+    },
+    {
+      "id": "scroll-isaiah",
+      "name": "Rolo de Isaías",
+      "slot": "hands",
+      "category": "accessory",
+      "rarity": "rare",
+      "scriptureRef": "Lucas 4:17",
+      "description": "Lembra o rolo do profeta Isaías lido na sinagoga de Nazaré (Lucas 4:17).",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ISA"
+        },
+        "label": "Conclua o livro de Isaías"
+      },
+      "starter": false
+    },
+    {
+      "id": "crown-wisdom",
+      "name": "Coroa da Sabedoria",
+      "slot": "head",
+      "category": "accessory",
+      "rarity": "epic",
+      "scriptureRef": "Provérbios 4:9",
+      "description": "Recompensa simbólica pela leitura de Provérbios: “ela te dará uma coroa de glória” (Provérbios 4:9). Não representa relíquia.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "PRO"
+        },
+        "label": "Conclua o livro de Provérbios"
+      },
+      "starter": false
+    },
+    {
+      "id": "frame-complete",
+      "name": "Moldura Jornada Completa",
+      "slot": "frame",
+      "category": "frame",
+      "rarity": "legendary",
+      "scriptureRef": "Salmos 119:105",
+      "description": "Celebra a leitura dos 1.189 capítulos da Bíblia (66 livros). “Lâmpada para os meus pés é a tua palavra” (Salmos 119:105).",
+      "unlock": {
+        "type": "chapters_count",
+        "payload": {
+          "count": 1189
+        },
+        "label": "Leia os 1.189 capítulos da Bíblia"
+      },
+      "starter": false
+    },
+    {
+      "id": "bg-sinai",
+      "name": "Fundo do Monte Sinai",
+      "slot": "background",
+      "category": "background",
+      "rarity": "epic",
+      "scriptureRef": "Êxodo 19:20",
+      "description": "Fundo ilustrado do monte Sinai (Êxodo 19:20). Recompensa da Coleção de Moisés.",
+      "unlock": {
+        "type": "collection_completed",
+        "payload": {
+          "collection": "moses"
+        },
+        "label": "Complete a Coleção de Moisés"
+      },
+      "starter": false
+    },
+    {
+      "id": "bg-bethlehem",
+      "name": "Fundo dos Campos de Belém",
+      "slot": "background",
+      "category": "background",
+      "rarity": "epic",
+      "scriptureRef": "1 Samuel 16:11",
+      "description": "Os campos onde Davi apascentava as ovelhas (1 Samuel 16:11). Recompensa da Coleção de Davi.",
+      "unlock": {
+        "type": "collection_completed",
+        "payload": {
+          "collection": "david"
+        },
+        "label": "Complete a Coleção de Davi"
+      },
+      "starter": false
     }
   ],
   "defaults": {
@@ -607,6 +827,39 @@
           "background": "bg-parchment"
         }
       }
+    }
+  ],
+  "collections": [
+    {
+      "id": "moses",
+      "name": "Coleção de Moisés",
+      "description": "Do chamado na sarça à travessia do mar.",
+      "items": [
+        "sandals-desert",
+        "staff-moses"
+      ],
+      "reward": "bg-sinai"
+    },
+    {
+      "id": "david",
+      "name": "Coleção de Davi",
+      "description": "O pastor, o guerreiro e o salmista.",
+      "items": [
+        "sling-david",
+        "harp-psalmist"
+      ],
+      "reward": "bg-bethlehem"
+    },
+    {
+      "id": "prophets",
+      "name": "Coleção dos Profetas",
+      "description": "Elias, Eliseu e Isaías.",
+      "items": [
+        "cloak-elijah",
+        "cloak-succession",
+        "scroll-isaiah"
+      ],
+      "reward": "cloak-elijah-prophets"
     }
   ]
 }

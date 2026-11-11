@@ -1,8 +1,9 @@
 # Jornada Bíblica
 
 App de leitura bíblica gamificada com personagens 2D ilustrados.
-Este repositório contém o **Marco 1 — Fundação funcional** do módulo de personagens
-(ver [`docs/PLANO.md`](docs/PLANO.md)).
+Este repositório contém os **Marcos 1 e 2** do módulo de personagens: fundação (contas, onboarding,
+criador) e personalização completa (guarda-roupa, inventário, visuais salvos, coleções e motor de
+recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).
 
 **Stack:** Expo SDK 58 · React Native 0.88 · TypeScript · Expo Router · Supabase (Auth + PostgreSQL com RLS) · `react-native-svg`.
 
@@ -19,6 +20,22 @@ Este repositório contém o **Marco 1 — Fundação funcional** do módulo de p
 - Editor do perfil com **Salvar/Descartar**, controle de versão entre aparelhos (conflito detectado, nada sobrescrito).
 - Modo **Experimentar** sem conta (salvo só no aparelho) que é aproveitado ao criar a conta.
 - Tema claro/escuro, layout mobile-first que se adapta a tablet/desktop, rótulos de acessibilidade.
+
+### Marco 2
+
+- **Guarda-roupa** com personagem em destaque, 10 categorias (Túnicas, Mantos, Calçados, Cabelos,
+  Cabeça e pescoço, Itens de mão, Cintura, Especiais, Fundos, Molduras), filtros e busca, itens
+  obtidos e bloqueados, prévia ao vivo, equipar/remover, Salvar/Descartar e raridade visual.
+- **Inventário persistente** no servidor e **detalhe do item** com referência bíblica, objetivo de
+  desbloqueio, situação, coleção e **aparências evoluídas** (Manto de Elias → Sucessão → Edição dos Profetas).
+- **Coleções** de Moisés, Davi e Profetas com progresso e recompensa conferidos no servidor.
+- **Visuais salvos**: 3 grátis / 10 Premium, criar, renomear, usar, editar e excluir; Premium vem
+  só de estado confiável no servidor; ao cancelar, nada é apagado (excedentes ficam só leitura).
+- **Motor de recompensas** por eventos de leitura, idempotente e validado contra os 66 livros
+  (detalhes em [`docs/RECOMPENSAS.md`](docs/RECOMPENSAS.md)). Sem leitura real ainda: só cenários de teste.
+- **Avatar em todo o app** em três tamanhos (pequeno, médio, grande): Início, Perfil, perfil
+  público (`/users/[username]`, com controle de privacidade) e aba Amigos.
+- **Pipeline de ilustrações**: validador + registro automático de PNG/WebP, moldes de alinhamento e prompts.
 
 Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
 aparecem **sinalizadas como "Em construção"** — nada nelas é contabilizado.
@@ -41,7 +58,8 @@ npm install
 1. Crie um projeto em supabase.com.
 2. Aplique as migrações de `supabase/migrations/` **em ordem**:
    - com a CLI: `supabase link --project-ref <ref>` e `supabase db push`; ou
-   - pelo SQL Editor, colando os arquivos em ordem de nome (`20261111…` e depois `20261112…`).
+   - pelo SQL Editor, colando os arquivos em ordem de nome (`20261111…`, `20261112…`, `20261113…`).
+   Nunca edite migrações já aplicadas; crie novas.
 3. Em **Authentication → URL Configuration**, adicione às *Redirect URLs*:
    - `jornadabiblica://auth/callback` (app nativo)
    - `http://localhost:8081/auth/callback` (web em desenvolvimento)
@@ -71,9 +89,10 @@ npm run web        # navegador
 | Comando | O que verifica |
 |---|---|
 | `npm run typecheck` | TypeScript estrito |
-| `npm test` | 38 testes de domínio: catálogo, conjunto de validação da arte, visuais sugeridos, aleatório, ordem de camadas, fallback de asset, store de edição, sincronia catálogo ↔ SQL |
-| `npm run test:db` | 70 verificações num Postgres 16 descartável: RLS, privilégios, RPCs, posse/slot, versão, idempotência, concorrência e item bíblico bloqueado |
-| `npm run test:e2e` | Fluxo completo no navegador (cadastro → identidade → 4 etapas → prévia bloqueada da Túnica de José → ritmo → reabrir → outro aparelho → editar/descartar/salvar → conflito → username duplicado) |
+| `npm test` | 60 testes: catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
+| `npm run test:db` | 155 verificações num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
+| `npm run test:e2e` | Fluxo completo no navegador dos Marcos 1 e 2 (cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
+| `npm run assets:check` | Arquivos de `assets/avatars/` válidos e registro em dia |
 
 `test:db` e `test:e2e` precisam do Postgres 16 instalado localmente (`/usr/lib/postgresql/16/bin`).
 `test:e2e` também precisa do Playwright com Chromium disponível
@@ -83,7 +102,18 @@ Como não há Docker neste ambiente, os testes usam `supabase/tests/00_supabase_
 (papéis `anon`/`authenticated`, `auth.uid()` e privilégios padrão do Supabase) e, no e2e,
 `e2e/fake-supabase.mjs`, que imita **apenas as rotas HTTP** de Auth/PostgREST usadas pelo app
 e executa as consultas e funções **reais** das migrações como papel `authenticated`.
-Ambos são somente para teste. Ainda não houve execução contra um projeto Supabase real.
+Ambos são somente para teste. **Ainda não houve execução contra um projeto Supabase real.**
+
+### Validar num projeto Supabase real (pendente)
+
+1. Aplique todas as migrações (acima) num projeto de teste.
+2. Crie dois usuários pelo app e conclua o onboarding com os dois.
+3. No SQL Editor (como `postgres`), simule leitura **só no projeto de teste**:
+   `select private.record_event('<id do usuário>', 'CHAPTER_COMPLETED', 'chapter:GEN.37', '{"book":"GEN","chapter":37}');`
+4. No app, confira a Túnica de José como obtida no guarda-roupa e equipe.
+5. Para testar Premium: `insert into public.user_entitlements (user_id, plan, status, current_period_end)
+   values ('<id>', 'premium', 'active', now() + interval '30 days');` e crie mais de 3 visuais.
+6. Confira com o segundo usuário que o perfil só aparece quando o primeiro o torna público.
 
 ## Estrutura
 
@@ -92,7 +122,12 @@ app/                       rotas (Expo Router)
   welcome, auth/, try      públicas (sem sessão)
   onboarding/              identity → avatar → pace
   (tabs)/                  home, journey, read, friends, profile
-  avatar/editor            editor com Salvar/Descartar
+  avatar/editor            aparência com Salvar/Descartar
+  avatar/wardrobe          guarda-roupa
+  avatar/item/[id]         detalhe do item
+  avatar/collections       coleções
+  avatar/loadouts          visuais salvos
+  users/[username]         perfil público
   settings/pace            alterar meta
 src/
   features/avatar/
@@ -101,8 +136,9 @@ src/
     art/                      manifest versionado, geometria, artes placeholder
     components/               AvatarRenderer, AvatarStage, AppearanceOptionPicker…
     screens/                  CharacterCreatorScreen (onboarding, experimentar, edição)
-    services/                 chamadas ao Supabase e rascunho local
-    state/                    store draft/saved (applyPreview, save, discard)
+    services/                 chamadas ao Supabase (avatar, guarda-roupa) e rascunho local
+    state/                    store draft/saved do criador (applyPreview, save, discard)
+    domain/wardrobe.ts        inventário, filtros, variantes e estado do guarda-roupa
   features/auth, profile, onboarding
   i18n/pt-BR.ts              todos os textos da interface
   theme/                     tokens claro/escuro
@@ -110,7 +146,10 @@ src/
 supabase/migrations/       SQL versionado
 supabase/tests/            testes de banco
 e2e/                       teste ponta a ponta
+assets/avatars/            ilustrações finais (vazio até a arte ser produzida)
+supabase/rollbacks/        reversões manuais
 scripts/generate-catalog-sql.mjs
+scripts/avatar-assets.mjs  validador/registro das ilustrações
 ```
 
 ## Segurança

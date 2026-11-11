@@ -13,7 +13,9 @@
     "test:db": "bash supabase/tests/run-local.sh",
     "export:web": "expo export -p web",
     "catalog:sql": "node scripts/generate-catalog-sql.mjs",
-    "test:e2e": "bash e2e/run.sh"
+    "test:e2e": "bash e2e/run.sh",
+    "assets": "node scripts/avatar-assets.mjs",
+    "assets:check": "node scripts/avatar-assets.mjs --check"
   },
   "dependencies": {
     "@expo-google-fonts/cinzel": "^0.4.2",

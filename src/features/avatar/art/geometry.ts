@@ -139,5 +139,7 @@ export const CROPS = {
   outfit: '232 400 560 1000',
   back: '172 400 680 1080',
   feet: '352 1300 320 180',
+  hand: '520 600 400 520',
+  head: '352 60 320 320',
 } as const;
 export type AvatarCrop = keyof typeof CROPS;

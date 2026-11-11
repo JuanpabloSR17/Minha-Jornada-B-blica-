@@ -24,6 +24,8 @@ type RawItem = {
   starter?: boolean;
   premium?: boolean;
   unlock?: { type: string; label?: string };
+  variantOf?: string;
+  variantLabel?: string;
 };
 
 export const CATALOG_VERSION: number = raw.version;
@@ -44,7 +46,13 @@ export const COSMETIC_ITEMS: CosmeticItem[] = (raw.items as RawItem[]).map((it) 
   starter: it.starter !== false,
   premium: it.premium === true,
   unlockLabel: it.unlock?.label,
+  variantOf: it.variantOf,
+  variantLabel: it.variantLabel,
 }));
+
+export type CollectionDef = { id: string; name: string; description: string; items: string[]; reward: string };
+export const COLLECTIONS = ((raw as { collections?: CollectionDef[] }).collections ?? []);
+export const collectionsOf = (itemId: string) => COLLECTIONS.filter((c) => c.items.includes(itemId) || c.reward === itemId);
 
 const ITEMS_BY_ID = new Map(COSMETIC_ITEMS.map((i) => [i.id, i]));
 

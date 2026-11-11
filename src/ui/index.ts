@@ -8,3 +8,4 @@ export { Ornament } from './Ornament';
 export { Screen } from './Screen';
 export { TextField } from './TextField';
 export { ComingSoon } from './ComingSoon';
+export { PromptDialog } from './PromptDialog';

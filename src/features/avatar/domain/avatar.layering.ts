@@ -1,4 +1,4 @@
-import { ART_MANIFEST, FALLBACK_ART, LAYER_ORDER, type ManifestEntry } from '../art/manifest';
+import { ART_MANIFEST, FALLBACK_ART, LAYER_ORDER, SLOT_FALLBACK_LAYERS, type ManifestEntry } from '../art/manifest';
 import { getItem } from './catalog';
 import type { AvatarAppearance, AvatarLayer, Equipment, EquipmentSlot, LayerSlot } from './avatar.types';
 
@@ -102,7 +102,7 @@ export function resolveLayers(
     // só esconde camadas se a peça realmente for desenhada (tem arte compatível)
     const entry = manifest[key];
     if (entry && (!entry.bodyCompatibility || entry.bodyCompatibility.includes(bodyId))) item?.hides?.forEach((h) => hidden.add(h));
-    push(key, manifest[key], slot === 'outfit' ? ['upper_outfit', 'sleeves'] : []);
+    push(key, manifest[key], SLOT_FALLBACK_LAYERS[slot] ?? []);
   }
 
   return layers

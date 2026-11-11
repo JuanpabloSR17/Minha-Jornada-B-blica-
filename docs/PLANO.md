@@ -53,15 +53,20 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [ ] **Aprovação visual do conjunto de validação**
 - [ ] Ilustração final pintada (ver `docs/ARTE.md` §6) e expansão do catálogo
 
-### Marco 2 — Guarda-roupa e inventário (próximo)
+### Marco 2 — Personalização completa ✅ (aguardando revisão)
 
-- Telas P03 (guarda-roupa por slot, filtros Todos/Obtidos/Equipados/raridade/livro/coleção, busca)
-  e P04 (detalhe do item: raridade, referência bíblica, condição de desbloqueio, status).
-- Guias Fundo e Moldura no editor.
-- RPCs `equip_item` / `unequip_slot` por loadout, `create_loadout`, `rename_loadout`,
-  `activate_loadout`, `delete_loadout` com limite de 3 (grátis) / 10 (premium) **validado no servidor**.
-- Itens não iniciais + função de servidor para conceder item de teste.
-- Regra previsível ao cancelar Premium (loadouts excedentes ficam somente leitura, sem perda).
+- [x] Guarda-roupa (P03) com 10 categorias, filtros, busca, prévia, equipar/remover, Salvar/Descartar
+- [x] Detalhe do item (P04) com referência, desbloqueio, situação, coleção e variantes
+- [x] Inventário persistente e itens bíblicos (catálogo v3) — todos gratuitos
+- [x] Equipamentos evolutivos como itens próprios (`variant_of`)
+- [x] Coleções (P05) Moisés, Davi e Profetas, com recompensa conferida no servidor
+- [x] Visuais salvos (P06): 3 grátis / 10 Premium, com regra sem perda de dados ao cancelar
+- [x] Motor de recompensas por eventos (idempotente, validado na Bíblia canônica)
+- [x] Avatar em três tamanhos; Início, Perfil, perfil público e aba Amigos
+- [x] Pipeline de ilustrações (validador, registro, política de variantes, moldes, prompts)
+- [ ] Ilustrações finais (dependem de ferramenta de imagem; nada foi gerado aqui)
+- [ ] Validação num projeto Supabase real
+- [ ] Integração de pagamento (webhook → `user_entitlements`)
 
 ### Marco 3 — Leitura e recompensas
 

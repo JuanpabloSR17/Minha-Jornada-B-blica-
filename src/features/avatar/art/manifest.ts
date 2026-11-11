@@ -1,4 +1,5 @@
 import type { LayerSlot } from '../domain/avatar.types';
+import { IMAGE_LAYERS } from './imageAssets.generated';
 
 /**
  * Manifest de arte do avatar — versionado e desacoplado do estado do usuário.
@@ -57,7 +58,8 @@ const cloak = (art: string, base: string, trim: string): ManifestEntry => ({
   params: { base, trim },
 });
 
-export const ART_MANIFEST: Record<string, ManifestEntry> = {
+/** Arte provisória (vetorial). Ilustrações finais sobrepõem estas entradas por camada. */
+export const VECTOR_MANIFEST: Record<string, ManifestEntry> = {
   // ---- Corpo -------------------------------------------------------------
   'body/body-a': BODY,
   'body/body-b': BODY,
@@ -103,13 +105,55 @@ export const ART_MANIFEST: Record<string, ManifestEntry> = {
   'background/bg-parchment': { layers: { background: 'bg.parchment' } },
 };
 
-/** Arte usada quando um item não tem asset publicado (ou é incompatível com o corpo). */
+export const imageArtKey = (source: string, layer: string) => `img:${source}#${layer}`;
+
+/** Manifest efetivo: vetor provisório + camadas com ilustração final (que têm prioridade). */
+export const ART_MANIFEST: Record<string, ManifestEntry> = (() => {
+  const out: Record<string, ManifestEntry> = { ...VECTOR_MANIFEST };
+  for (const [source, layers] of Object.entries(IMAGE_LAYERS)) {
+    const base = out[source] ?? { layers: {} };
+    const merged = { ...base.layers };
+    for (const layer of Object.keys(layers)) merged[layer as LayerSlot] = imageArtKey(source, layer);
+    out[source] = { ...base, layers: merged };
+  }
+  return out;
+})();
+
+/**
+ * Arte substituta genérica por camada, para peças ainda sem nenhuma arte
+ * (ex.: itens bíblicos aguardando ilustração). Mostrada como "arte em produção".
+ */
 export const FALLBACK_ART: Partial<Record<LayerSlot, string>> = {
   upper_outfit: 'fallback.tunic',
   sleeves: 'fallback.sleeves',
+  cloak_back: 'fallback.cloakBack',
+  cloak_front: 'fallback.cloakFront',
+  feet: 'fallback.feet',
+  background: 'bg.parchment',
 };
 
-/** A peça/opção tem arte nesta versão do manifest? */
+/** Camadas substitutas usadas por slot de equipamento sem arte. */
+export const SLOT_FALLBACK_LAYERS: Partial<Record<string, LayerSlot[]>> = {
+  outfit: ['upper_outfit', 'sleeves'],
+  back: ['cloak_back', 'cloak_front'],
+  feet: ['feet'],
+  background: ['background'],
+};
+
+/** A peça/opção tem arte própria (final ou provisória) nesta versão do manifest? */
 export function hasArt(sourceKey: string): boolean {
   return sourceKey in ART_MANIFEST;
+}
+
+export type ArtStatus = 'final' | 'provisional' | 'missing';
+
+/** Situação da arte de uma peça para um corpo (exibida na interface, nunca escondida). */
+export function artStatus(sourceKey: string, bodyId?: string): ArtStatus {
+  const img = IMAGE_LAYERS[sourceKey];
+  if (img) {
+    const parts = Object.values(img).flat();
+    const ok = parts.length > 0 && parts.every((pt) => pt && (pt.sources.all || (bodyId ? pt.sources[bodyId] : Object.keys(pt.sources).length)));
+    if (ok) return 'final';
+  }
+  return sourceKey in VECTOR_MANIFEST ? 'provisional' : 'missing';
 }

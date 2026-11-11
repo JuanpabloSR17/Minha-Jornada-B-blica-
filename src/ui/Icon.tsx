@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle';
+export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search';
 
 /** Ícones de traço simples desenhados para o app (sem biblioteca externa). */
 export function Icon({ name, size = 22, color }: { name: IconName; size?: number; color: string }) {
@@ -57,6 +57,12 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
     ),
     hair: <Path {...s} d="M5 14c-1-6 2.5-10 7-10s8 4 7 10M5 14c1 2 2 4 1 6M19 14c-1 2-2 4-1 6M8 8c2 2 6 2 8 0" />,
     outfit: <Path {...s} d="M9 3h6l4 3-2 4-2-1v12H9V9L7 10 5 6l4-3zM9 3c0 2 1.5 3 3 3s3-1 3-3" />,
+    search: (
+      <>
+        <Circle {...s} cx={10.5} cy={10.5} r={6} />
+        <Path {...s} d="M15 15l5 5" />
+      </>
+    ),
     sparkle: <Path {...s} d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />,
   };
   return (

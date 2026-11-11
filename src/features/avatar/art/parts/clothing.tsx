@@ -368,9 +368,13 @@ export const tunic: Record<string, VectorArt> = {
 
 /** Usado quando a peça não tem arte publicada para esta versão. */
 const plain = makeTunic({ hemY: 1120, sleeve: 'elbow', neck: 'round' }, () => null);
+
 export const fallback: Record<string, VectorArt> = {
-  tunic: (ctx) => plain.body({ ...ctx, params: { base: '#B9AE9C', trim: '#9A8F7E' } }),
-  sleeves: (ctx) => plain.sleeves({ ...ctx, params: { base: '#B9AE9C', trim: '#9A8F7E' } }),
+  tunic: (ctx) => plain.body({ ...ctx, params: GRAY }),
+  sleeves: (ctx) => plain.sleeves({ ...ctx, params: GRAY }),
+  cloakBack: (ctx) => cloak['wool.back']!({ ...ctx, params: { base: '#8F877A', trim: '#B3AB9C' } }),
+  cloakFront: (ctx) => cloak['wool.front']!({ ...ctx, params: { base: '#8F877A', trim: '#B3AB9C' } }),
+  feet: (ctx) => feet.sandals!({ ...ctx, params: { base: '#8C8273' } }),
 };
 
 // =============================================================== mantos
@@ -576,3 +580,5 @@ export const feet: Record<string, VectorArt> = {
     );
   },
 };
+
+const GRAY = { base: '#B9AE9C', trim: '#9A8F7E' };

@@ -79,6 +79,11 @@ function RootNavigator() {
         <Stack.Protected guard={onboarded}>
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="avatar/editor" />
+          <Stack.Screen name="avatar/wardrobe" />
+          <Stack.Screen name="avatar/item/[id]" />
+          <Stack.Screen name="avatar/collections" />
+          <Stack.Screen name="avatar/loadouts" />
+          <Stack.Screen name="users/[username]" />
           <Stack.Screen name="settings/pace" />
         </Stack.Protected>
         <Stack.Screen name="auth/callback" />

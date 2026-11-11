@@ -14,15 +14,24 @@ export type ArtContext = {
 
 export type VectorArt = (ctx: ArtContext) => ReactElement | null;
 
-/** Arte final em PNG/WebP transparente alinhada ao canvas 720×1080. */
-export type ImageArt = {
-  kind: 'image';
-  source: ImageSourcePropType | Partial<Record<string, ImageSourcePropType>>;
-  /** `source` é um mapa por ID de corpo */
-  perBody?: boolean;
+/** Uma imagem de uma camada: mapa por corpo ('body-a' | 'body-b' | 'body-c' | 'all'). */
+export type ImagePart = {
+  sources: Partial<Record<string, ImageSourcePropType>>;
   /** máscara colorizável: a imagem é tingida com a cor da pele ou do cabelo */
   tint?: 'skin' | 'hair';
 };
+
+/** Arte final em PNG/WebP transparente, alinhada ao canvas 1024×1536. */
+export type ImageArt = {
+  kind: 'image';
+  /** desenhadas em ordem: máscara → base → sombreamento */
+  parts: ImagePart[];
+  /** arte vetorial provisória da mesma camada, usada se faltar a versão do corpo */
+  fallback?: string;
+};
+
+/** Registro gerado por scripts/avatar-assets.mjs: origem → camada → partes. */
+export type ImageLayerMap = Record<string, Partial<Record<string, ImagePart[]>>>;
 
 export type ArtDefinition = VectorArt | ImageArt;
 

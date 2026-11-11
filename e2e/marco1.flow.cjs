@@ -146,7 +146,7 @@ async function newPhone(browser, scheme = 'light') {
   step('login em "outro aparelho" vai direto ao Início (sem onboarding) com o mesmo avatar');
 
   // ------------------------------------------------------------ editor: descartar e salvar
-  await page.getByRole('button', { name: 'Personalizar' }).click();
+  await page.getByRole('button', { name: 'Aparência' }).click();
   await page.getByText('Personalizar').first().waitFor();
   await page.getByRole('tab', { name: 'Cabelo' }).click();
   await pick(page, 'Estilo', 'Cacheado');
@@ -167,7 +167,7 @@ async function newPhone(browser, scheme = 'light') {
   step('Salvar persiste e incrementa a versão');
 
   // B abre o editor; A salva de novo; B (agora com versão antiga) tenta salvar → conflito.
-  await B.page.getByRole('button', { name: 'Personalizar' }).click();
+  await B.page.getByRole('button', { name: 'Aparência' }).click();
   await B.page.getByRole('tab', { name: 'Rosto' }).waitFor();
   await page.getByRole('tab', { name: 'Rosto' }).click();
   await pick(page, 'Expressão', 'Sereno');
@@ -182,6 +182,105 @@ async function newPhone(browser, scheme = 'light') {
   await shot(B.page, 'e2e-07-version-conflict');
   step('edição simultânea em dois aparelhos: conflito detectado, nada sobrescrito');
 
+  // ============================================================ MARCO 2
+  const anaId = (await db.query(`select id from profiles where username = 'ana_teste'`)).rows[0].id;
+  const activeEq = async () => (await db.query(
+    `select jsonb_object_agg(e.slot, e.item_id) eq from avatar_loadout_equipment e join avatar_loadouts l on l.id = e.loadout_id where l.user_id = $1 and l.is_active`, [anaId])).rows[0].eq;
+
+  // guarda-roupa: equipar manto e salvar
+  await page.goto(`${APP}/profile`);
+  await page.getByRole('button', { name: 'Guarda-roupa' }).click();
+  await page.getByText('Guarda-roupa').first().waitFor();
+  await page.getByRole('tab', { name: 'Mantos' }).click();
+  await page.getByRole('radio', { name: /^Manto do Deserto,/ }).click();
+  await page.getByRole('button', { name: 'Salvar' }).click();
+  await page.getByText('Visual salvo.').waitFor();
+  assert.equal((await activeEq()).back, 'cloak-desert');
+  await shot(page, 'm2-01-wardrobe');
+  step('guarda-roupa: equipar manto e salvar persiste no visual em uso');
+
+  // item bloqueado: prévia permitida, salvar desabilitado
+  await page.getByRole('tab', { name: 'Especiais' }).click();
+  await page.getByRole('radio', { name: /^Túnica de José,.*Bloqueado/ }).click();
+  await page.getByText(/Prévia: Túnica de José/).waitFor();
+  assert.ok(await page.getByRole('button', { name: 'Salvar' }).isDisabled());
+  await shot(page, 'm2-02-locked-preview');
+  step('guarda-roupa: item bloqueado só em prévia, sem salvar');
+
+  // cenário isolado de teste: o servidor concede recompensas por eventos de leitura
+  for (const [book, ch] of [['GEN', 37], ['1KI', 19], ['2KI', 2]]) {
+    await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', $2, $3)`, [anaId, `chapter:${book}.${ch}`, JSON.stringify({ book, chapter: ch })]);
+  }
+  await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:GEN.37', '{"book":"GEN","chapter":37}')`, [anaId]);
+  const rewards = (await db.query(`select item_id from reward_events where user_id = $1 order by item_id`, [anaId])).rows.map((r) => r.item_id);
+  assert.deepEqual(rewards, ['cloak-elijah', 'cloak-succession', 'tunic-joseph']);
+  step('motor de recompensas: 3 itens concedidos pelo servidor, evento repetido não duplica');
+
+  await page.goto(`${APP}/avatar/wardrobe?category=special`);
+  await page.getByRole('radio', { name: /^Túnica de José,.*Obtido/ }).click();
+  await page.getByRole('button', { name: 'Salvar' }).click();
+  await page.getByText('Visual salvo.').waitFor();
+  assert.equal((await activeEq()).outfit, 'tunic-joseph');
+  await shot(page, 'm2-03-joseph-equipped');
+  step('item conquistado aparece como obtido e é equipado');
+
+  // detalhe do item com variantes evolutivas
+  await page.goto(`${APP}/avatar/item/cloak-succession`);
+  await page.getByText('Aparências').waitFor();
+  await page.getByText('Manto de Elias — Edição dos Profetas').waitFor();
+  await page.getByText('2 Reis 2:13-14').first().waitFor();
+  await shot(page, 'm2-04-item-detail');
+  await page.getByRole('button', { name: 'Equipar no visual em uso' }).click();
+  await page.getByText('Visual salvo.').waitFor();
+  assert.equal((await activeEq()).back, 'cloak-succession');
+  step('detalhe do item: referência, variantes e equipar a aparência evoluída');
+
+  // coleções
+  await page.goto(`${APP}/avatar/collections`);
+  await page.getByText('Coleção dos Profetas', { exact: true }).waitFor();
+  await page.getByText('2 de 3 itens').waitFor();
+  await shot(page, 'm2-05-collections');
+  step('coleções: progresso calculado no servidor');
+
+  // visuais salvos: limite gratuito
+  await page.goto(`${APP}/avatar/loadouts`);
+  await page.getByText('Plano gratuito: 1 de 3 visuais').waitFor();
+  for (const name of ['Viagem', 'Festa']) {
+    await page.getByRole('button', { name: 'Novo visual' }).click();
+    await page.getByLabel('Nome do visual').fill(name);
+    await page.getByRole('button', { name: 'Salvar' }).click();
+    await page.getByText(name, { exact: true }).waitFor();
+  }
+  await page.getByText('Plano gratuito: 3 de 3 visuais').waitFor();
+  assert.ok(await page.getByRole('button', { name: 'Novo visual' }).isDisabled());
+  await page.getByRole('button', { name: 'Usar' }).first().click();
+  await page.waitForTimeout(600);
+  const activeName = (await db.query(`select name from avatar_loadouts where user_id = $1 and is_active`, [anaId])).rows[0].name;
+  assert.notEqual(activeName, 'Visual 1');
+  await shot(page, 'm2-06-loadouts');
+  for (const [w, h, name] of [[320, 568, 'small'], [1280, 800, 'desktop']]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.goto(`${APP}/avatar/wardrobe?category=back`);
+    await page.getByRole('tab', { name: 'Mantos' }).waitFor();
+    await page.waitForTimeout(500);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+    assert.equal(overflow, false, `rolagem horizontal em ${w}px`);
+    await shot(page, `m2-10-wardrobe-${name}`);
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  step('visuais salvos: cria até 3, botão bloqueia no limite, troca o visual em uso');
+
+  // perfil público: privado por padrão
+  await page.goto(`${APP}/profile`);
+  await page.getByRole('radio', { name: 'Perfil público' }).click();
+  await page.waitForTimeout(500);
+  assert.equal((await db.query(`select privacy_mode from profiles where id = $1`, [anaId])).rows[0].privacy_mode, 'public');
+  await shot(page, 'm2-07-profile');
+  await page.goto(`${APP}/friends`);
+  await page.getByText('Como os outros veem você').waitFor();
+  await shot(page, 'm2-08-friends');
+  step('perfil: atalhos do avatar, privacidade e cartões de avatar');
+
   // ------------------------------------------------------------ segundo usuário
   const C = await newPhone(browser, 'dark');
   await C.page.goto(APP);
@@ -194,9 +293,28 @@ async function newPhone(browser, scheme = 'light') {
   await shot(C.page, 'e2e-08-username-taken-dark');
   step('segundo usuário não consegue usar o mesmo username');
 
+  // segundo usuário vê o perfil público da Ana (só dados consentidos)
+  await C.page.getByLabel('Nome de exibição').fill('Bia');
+  await C.page.getByLabel('Nome de usuário').fill('bia_teste');
+  await C.page.getByText('Disponível').waitFor();
+  await C.page.getByRole('button', { name: 'Continuar' }).click();
+  await C.page.getByText('Criar personagem').waitFor();
+  for (let i = 0; i < 3; i++) await C.page.getByRole('button', { name: 'Continuar' }).click();
+  await C.page.getByRole('button', { name: 'Finalizar personagem' }).click();
+  await C.page.getByRole('button', { name: 'Começar a jornada' }).click();
+  await C.page.getByText('Paz, Bia!').waitFor();
+  await C.page.goto(`${APP}/users/ana_teste`);
+  await C.page.getByText('Ana Teste').waitFor();
+  assert.equal(await C.page.getByText('ana+', { exact: false }).count(), 0);
+  await shot(C.page, 'm2-09-public-profile-dark');
+  await db.query(`update profiles set privacy_mode = 'private' where username = 'ana_teste'`);
+  await C.page.reload();
+  await C.page.getByText('Este perfil é privado.').waitFor();
+  step('perfil público visível só quando a dona permite; privado esconde o avatar');
+
   await browser.close();
   await db.end();
-  console.log('✔ Fluxo do Marco 1 passou.');
+  console.log('✔ Fluxo dos Marcos 1 e 2 passou.');
 })().catch(async (e) => {
   console.error('✘ Falhou:', e);
   process.exit(1);

@@ -27,10 +27,12 @@ pigmento, bordas suaves e variação de tinta) **não é reproduzível por desen
 | Pipeline de camadas (canvas, âncoras, ordem, tingimento, PNG/WebP) | **Pronto e testado** |
 | Criador de personagem de RPG (palco grande, zoom de câmera, categorias, carrossel, transição) | **Pronto e testado** |
 | Conjunto de validação em vetor detalhado (3 corpos, 3 cabelos, 3 túnicas + Túnica de José, 2 mantos, 2 calçados, rostos) | **Protótipo de encaixe e direção**: serve para validar proporção, silhueta, encaixe e experiência |
-| Ilustração final pintada no nível da referência | **Pendente: precisa de ilustrador ou ferramenta gráfica** (lista na seção 6) |
+| Validador e registro automático de PNG/WebP, política de variantes, moldes de alinhamento, prompts | **Pronto e testado** (testado com um PNG real rasterizado: encaixe exato) |
+| Ilustração final pintada no nível da referência | **Pendente: precisa de ferramenta de geração de imagem + tratamento** (lista na seção 6). Este ambiente não tem gerador de imagens |
+| Itens bíblicos novos (Sandálias do Deserto, Funda de Davi, Manto de Elias etc.) | **Sem arte**: aparecem com substituto marcado "Arte em produção" até serem ilustrados |
 
-Quando os PNG/WebP finais chegarem, cada um substitui a arte vetorial da mesma chave
-(`art/registry.tsx`), **sem mudar** o renderizador, o criador, o banco ou as regras.
+Quando os PNG/WebP finais chegarem em `assets/avatars/`, `npm run assets` os registra e eles
+substituem a arte vetorial camada a camada, **sem mudar** o renderizador, o criador, o banco ou as regras.
 
 ## 2. Canvas de referência
 
@@ -112,20 +114,42 @@ Para não exportar cada peça em 6 tons de pele × 8 cores de cabelo:
 O `AvatarRenderer` aplica a cor do catálogo sobre a máscara (`tintColor`). Olhos, lábios e detalhes
 pintados ficam na camada de sombreamento ou numa camada própria sem tingimento.
 
-### Registro no código
+### Registro automático e validação
 
-```ts
-// src/features/avatar/art/registry.tsx
-'tunic.joseph.body': {
-  kind: 'image',
-  perBody: true,
-  source: {
-    'body-a': require('../../../../assets/avatars/outfit/tunic-joseph/body-a/upper_outfit.webp'),
-    'body-b': require('../../../../assets/avatars/outfit/tunic-joseph/body-b/upper_outfit.webp'),
-    'body-c': require('../../../../assets/avatars/outfit/tunic-joseph/body-c/upper_outfit.webp'),
-  },
-},
+Não se registra imagem à mão. Coloque os arquivos em `assets/avatars/` e rode:
+
+```bash
+npm run assets         # valida e gera src/features/avatar/art/imageAssets.generated.ts
+npm run assets:check   # (CI) falha se o registro estiver desatualizado ou houver arquivo inválido
 ```
+
+O validador recusa: tamanho diferente de 1024×1536 (ou 2048×3072 no `@2x`), ausência de canal alfa,
+caminho fora do padrão, camada desconhecida, corpo desconhecido, ID que não existe no catálogo e
+`.mask` fora de pele/cabelo. O `@2x` é escolhido automaticamente pelo empacotador em telas densas.
+
+### Política de variantes por corpo
+
+Para cada camada, o renderer usa, nesta ordem:
+
+1. a versão do corpo do jogador (`body-a/`, `body-b/` ou `body-c/`);
+2. a versão `all/`, quando a peça serve igualmente aos três corpos;
+3. a arte provisória (vetor) da mesma camada;
+4. um substituto genérico do slot (túnica, manto ou sandália cinza), marcado como "Arte em produção".
+
+O validador avisa quais corpos estão sem versão. Exceções permanentes (uma peça que nunca terá versão
+para um corpo) usam `body_compatibility` no banco; o servidor recusa equipar nesses casos
+(`item_incompatible_body`).
+
+### Moldes de alinhamento
+
+`docs/art-templates/molde-body-{a,b,c}.png` (1024×1536, fundo transparente): manequim de cada corpo
+com linhas de cabeça/queixo/chão, marcas de altura de cabeça e os pontos de ancoragem. Use-os como
+camada de referência no editor de imagem ou como controle de pose na ferramenta de geração.
+Regenerar: rota interna `/dev/avatar-lab?template=body-b` (captura 1024×1536 com fundo transparente).
+
+### Prompts
+
+Prompts, negativo e fluxo de recorte em camadas: [`docs/PROMPTS-ARTE.md`](PROMPTS-ARTE.md).
 
 ## 6. Assets finais necessários — conjunto de validação
 

@@ -3,7 +3,7 @@ import { Image, StyleSheet, View, type ImageSourcePropType, type StyleProp, type
 import Svg, { G } from 'react-native-svg';
 import { ART_REGISTRY } from '../art/registry';
 import { CANVAS, CROPS, geometryFor, type AvatarCrop } from '../art/geometry';
-import type { ArtContext, ImageArt } from '../art/types';
+import type { ArtContext, VectorArt } from '../art/types';
 import { getOption } from '../domain/catalog';
 import { resolveLayers, type ResolvedLayer } from '../domain/avatar.layering';
 import type { AvatarAppearance, Equipment } from '../domain/avatar.types';
@@ -19,16 +19,32 @@ export type AvatarRendererProps = {
   fillWidth?: number;
   /** desenha só as camadas destas origens (ex.: ícone de um item isolado) */
   onlySources?: string[];
+  /** desenha só estas camadas (ferramentas internas de exportação) */
+  onlyLayers?: string[];
   /** reservado para poses futuras; hoje só existe "idle" */
   pose?: 'idle';
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
 };
 
-function imageSource(def: ImageArt, bodyId: string): ImageSourcePropType | undefined {
-  if (!def.perBody) return def.source as ImageSourcePropType;
-  const map = def.source as Partial<Record<string, ImageSourcePropType>>;
-  return map[bodyId] ?? map['body-b'];
+type Resolved =
+  | { type: 'vector'; fn: VectorArt }
+  | { type: 'image'; parts: { source: ImageSourcePropType; tint?: 'skin' | 'hair' }[] };
+
+/**
+ * Resolve a arte de uma camada para um corpo. Política de variantes:
+ * versão do corpo → versão "all" → arte provisória (vetor) da mesma camada → nada.
+ */
+export function resolveArt(key: string, bodyId: string): Resolved | null {
+  const def = ART_REGISTRY[key];
+  if (!def) return null;
+  if (typeof def === 'function') return { type: 'vector', fn: def };
+  const parts = def.parts
+    .map((pt) => ({ source: pt.sources[bodyId] ?? pt.sources.all, tint: pt.tint }))
+    .filter((pt): pt is { source: ImageSourcePropType; tint: 'skin' | 'hair' | undefined } => !!pt.source);
+  if (parts.length) return { type: 'image', parts };
+  const fb = def.fallback ? ART_REGISTRY[def.fallback] : undefined;
+  return typeof fb === 'function' ? { type: 'vector', fn: fb } : null;
 }
 
 /**
@@ -44,6 +60,7 @@ function AvatarRendererBase({
   showBackground = true,
   fillWidth,
   onlySources,
+  onlyLayers,
   accessibilityLabel,
   style,
 }: AvatarRendererProps) {
@@ -51,8 +68,8 @@ function AvatarRendererBase({
   const uid = useMemo(() => `av${rawId.replace(/[^a-zA-Z0-9]/g, '')}`, [rawId]);
   const layers = useMemo(() => {
     const all = resolveLayers(appearance, equippedItems, { showBackground });
-    return onlySources ? all.filter((l) => onlySources.includes(l.source)) : all;
-  }, [appearance, equippedItems, showBackground, onlySources]);
+    return all.filter((l) => (!onlySources || onlySources.includes(l.source)) && (!onlyLayers || onlyLayers.includes(l.slot)));
+  }, [appearance, equippedItems, showBackground, onlySources, onlyLayers]);
 
   const ctxBase = useMemo(
     () => ({
@@ -78,41 +95,39 @@ function AvatarRendererBase({
   const viewBox = `${vx} ${vy} ${vw} ${vh}`;
   const canvasStyle = { left: -vx * scale, top: -vy * scale, width: CANVAS.width * scale, height: CANVAS.height * scale };
 
-  // agrupa camadas vetoriais consecutivas
+  // agrupa camadas vetoriais consecutivas num único <Svg>; imagens entram na posição exata da pilha
   const chunks: ReactElement[] = [];
-  let vectorRun: ResolvedLayer[] = [];
+  let vectorRun: { layer: ResolvedLayer; fn: VectorArt }[] = [];
   const flush = () => {
     if (!vectorRun.length) return;
     const run = vectorRun;
     vectorRun = [];
     chunks.push(
-      <Svg key={`v${run[0]!.id}`} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
-        {run.map((layer) => {
-          const def = ART_REGISTRY[layer.assetKey];
-          if (typeof def !== 'function') return null;
+      <Svg key={`v${run[0]!.layer.id}`} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
+        {run.map(({ layer, fn }) => {
           const ctx: ArtContext = { ...ctxBase, params: layer.params };
-          return <G key={layer.id}>{def(ctx)}</G>;
+          return <G key={layer.id}>{fn(ctx)}</G>;
         })}
       </Svg>,
     );
   };
   for (const layer of layers) {
-    const def = ART_REGISTRY[layer.assetKey];
-    if (!def) continue;
-    if (typeof def === 'function') {
-      vectorRun.push(layer);
+    const art = resolveArt(layer.assetKey, appearance.bodyId);
+    if (!art) continue;
+    if (art.type === 'vector') {
+      vectorRun.push({ layer, fn: art.fn });
       continue;
     }
     flush();
-    const source = imageSource(def, appearance.bodyId);
-    if (!source) continue;
-    chunks.push(
-      <Image
-        key={layer.id}
-        source={source}
-        resizeMode="stretch"
-        style={[styles.abs, canvasStyle, def.tint ? { tintColor: def.tint === 'skin' ? ctxBase.skin : ctxBase.hair } : null]}
-      />,
+    art.parts.forEach((pt, i) =>
+      chunks.push(
+        <Image
+          key={`${layer.id}#${i}`}
+          source={pt.source}
+          resizeMode="stretch"
+          style={[styles.abs, canvasStyle, pt.tint ? { tintColor: pt.tint === 'skin' ? ctxBase.skin : ctxBase.hair } : null]}
+        />,
+      ),
     );
   }
   flush();

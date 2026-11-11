@@ -48,4 +48,27 @@ if [ "$LOADOUTS" != "1" ] || [ "$APPS" != "1" ] || [ "$ITEMS" != "$STARTERS" ]; 
   echo "✘ concorrência: loadouts=$LOADOUTS aparências=$APPS itens=$ITEMS (esperado 1,1,$STARTERS)"; exit 1
 fi
 echo "  ok  salvamentos simultâneos geram 1 visual, 1 aparência e itens sem duplicar"
+echo "→ concorrência no motor de recompensas (mesmo capítulo em paralelo)"
+"${PSQL[@]}" -d jb_test -c "insert into auth.users (id) values ('a7777777-0000-0000-0000-000000000007');
+  insert into public.profiles (id, username, display_name) values ('a7777777-0000-0000-0000-000000000007', 'paralelo', 'Paralelo');" >/dev/null
+"${PSQL[@]}" -d jb_test -o /dev/null -f "$ROOT/supabase/tests/concurrency_rewards.sql" & P1=$!
+"${PSQL[@]}" -d jb_test -o /dev/null -f "$ROOT/supabase/tests/concurrency_rewards.sql" & P2=$!
+wait $P1; wait $P2
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from private.domain_events where user_id='a7777777-0000-0000-0000-000000000007') || ',' ||
+  (select count(*) from public.reward_events where user_id='a7777777-0000-0000-0000-000000000007') || ',' ||
+  (select count(*) from public.user_items where user_id='a7777777-0000-0000-0000-000000000007')")
+if [ "$R" != "1,1,1" ]; then echo "✘ concorrência de recompensas: eventos,recompensas,itens=$R (esperado 1,1,1)"; exit 1; fi
+echo "  ok  requisições simultâneas do mesmo capítulo geram 1 evento, 1 recompensa e 1 item"
+
+echo "→ reversão manual do Marco 2 e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback" postgres
+"${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback -f "$f"; done
+"${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback -At -c "select count(*) from pg_proc where proname in ('get_wardrobe','record_event') ")
+ITEMS=$("${PSQL[@]}" -d jb_rollback -At -c "select count(*) from public.cosmetic_items")
+if [ "$LEFT" != "0" ] || [ "$ITEMS" = "0" ]; then echo "✘ reversão: funções restantes=$LEFT itens=$ITEMS"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/migrations/20261113000100_marco2_wardrobe.sql"
+"${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/migrations/20261113000200_avatar_catalog_v3.sql"
+echo "  ok  reversão remove o Marco 2 sem apagar o catálogo, e a migração pode ser reaplicada"
 echo "✔ Todos os testes de banco passaram."
