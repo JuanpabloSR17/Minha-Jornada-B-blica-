@@ -88,6 +88,13 @@ export type ReadingProgress = {
  * itens já existentes, e IDs do rascunho, ficam em cosmetic_item_aliases / catalog.json#idAliases.
  * equip_item aceita qualquer um deles; a posse antiga é migrada por private.apply_item_aliases().
  */
+/**
+ * Meta diária v1 (servidor): o primeiro CHAPTER_COMPLETED inédito do dia (fuso do perfil) grava
+ * daily_goals + siclos_ledger ('DAILY_GOAL', 'goal:<dia>', 40) e até 3 opções de Comuns
+ * (regra mission_pool). O item é concedido só por claim_daily_goal_item(dia, item).
+ */
+export type DailyGoalReward = { day: string; siclos: number; options: string[]; chosenItem: string | null };
+
 export type ItemIdAlias = { aliasId: string; itemId: string; source: 'official' | 'draft' };
 
 /** Erros estáveis que o servidor pode devolver ao registrar eventos. */

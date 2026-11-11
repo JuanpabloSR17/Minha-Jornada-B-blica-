@@ -89,6 +89,13 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [ ] Leitor digital (texto licenciado), Siclos, meta diária com escolha de Comum, missões dos outros
   17 Raros e marcos dos 22 Santos — dependem de conteúdo/regra de produto (docs/MODO-MISSAO.md)
 
+### Meta diária v1 ✅ (aguardando revisão)
+
+- [x] Primeiro capítulo inédito do dia: 40 Siclos + escolha de 1 entre até 3 Comuns (servidor)
+- [x] Fuso do perfil (padrão America/Sao_Paulo), virada do dia testada, proteção contra troca de fuso
+- [x] Escolha pendente persistente, resgate idempotente, concorrência testada
+- [ ] Loja / uso de Siclos; recompensa ligada à meta pessoal de N capítulos
+
 ### Marco 3 — Leitura e recompensas
 
 - Catálogo canônico de livros/capítulos (66 livros, 1.189 capítulos) e adaptador de conteúdo licenciado.

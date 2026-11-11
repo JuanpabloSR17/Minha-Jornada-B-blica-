@@ -6,6 +6,7 @@ import { useFocusEffect } from 'expo-router';
 import { AppText, Button, Card, Notice, Ornament, Screen } from '@/ui';
 import { getMissionOverview, type MissionOverview } from '@/features/reading/mission/mission.service';
 import { useMissionSession } from '@/features/reading/mission/useMissionSession';
+import { PendingGoalBanner } from '@/features/reading/components/PendingGoalBanner';
 import { fmt, strings } from '@/i18n';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { goalLabel } from '@/features/profile/goalLabel';
@@ -41,7 +42,8 @@ export default function Home() {
       <Card>
         <AppText variant="heading">{strings.home.missionsTitle}</AppText>
         <AppText muted>{strings.home.missionsBody}</AppText>
-        {overview ? <AppText variant="label">{fmt(strings.home.progress, { chapters: overview.chaptersCompleted, total: overview.totalChapters, xp: overview.xpTotal })}</AppText> : null}
+        {overview ? <AppText variant="label">{fmt(strings.home.progress, { chapters: overview.chaptersCompleted, total: overview.totalChapters, xp: overview.xpTotal, siclos: overview.siclosBalance })}</AppText> : null}
+        <PendingGoalBanner showToday />
         <Button title={session ? strings.home.missionContinue : strings.home.missionStart} onPress={() => router.push(session ? '/reading/mission' : '/(tabs)/read')} />
       </Card>
     </Screen>

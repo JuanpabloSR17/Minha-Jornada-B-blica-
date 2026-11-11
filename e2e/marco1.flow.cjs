@@ -18,7 +18,7 @@ const pick = async (page, tab, option) => {
 };
 
 async function newPhone(browser, scheme = 'light') {
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: scheme });
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: scheme, timezoneId: 'America/Sao_Paulo' });
   const page = await ctx.newPage();
   page.on('pageerror', (e) => console.error('pageerror:', e));
   return { ctx, page };
@@ -381,6 +381,8 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByText('Missão concluída').waitFor();
   await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
   await page.getByText('Você concluiu Rute!').waitFor();
+  // Rute 1 (registrado antes, no mesmo dia) já cumpriu a meta de hoje
+  await page.getByText('A meta de hoje já foi cumprida', { exact: false }).waitFor();
   await page.getByText('Manto do Resgate').waitFor();
   const dup = (await db.query(`select (select count(*) from reading_sessions where user_id = $1 and book_code = 'RUT' and chapter = 4)::int s,
     (select count(*) from user_items where user_id = $1 and item_id = 'book_rut')::int i,
@@ -402,6 +404,7 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('button', { name: 'Finalizar missão' }).click();
   await page.getByRole('button', { name: 'Concluí a leitura' }).click();
   await page.getByText('Releitura registrada').waitFor();
+  await page.getByText('A meta de hoje já foi cumprida', { exact: false }).waitFor();
   await page.getByText('Nenhum item novo nesta missão.').waitFor();
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'book_rut'`, [anaId])).rows[0].count), 1);
   await shot(page, 'm4-05-mission-reread');
@@ -441,6 +444,47 @@ async function newPhone(browser, scheme = 'light') {
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'cloak-elijah'`, [biaId])).rows[0].count), 1);
   await shot(C.page, 'm4-06-mission-prophet-cloak-dark');
   step('jogador novo: missão especial de 1 Reis 19 desbloqueia o Manto do Profeta');
+
+  // ============================================================ META DIÁRIA
+  await C.page.getByText('Meta diária cumprida! +40 Siclos').waitFor();
+  await C.page.getByText('confirmado no dia (America/Sao_Paulo)', { exact: false }).waitFor();
+  await C.page.getByText('Saldo: 40 Siclos').first().waitFor();
+  assert.equal(await C.page.getByRole('radio').count(), 3, 'três Comuns oferecidos');
+  await shot(C.page, 'm5-01-goal-achieved-dark');
+  const goalRow = async () => (await db.query(`select options, chosen_item from daily_goals where user_id = $1`, [biaId])).rows;
+  assert.equal((await goalRow()).length, 1);
+  assert.equal(Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [biaId])).rows[0].s), 40);
+  step('meta diária: primeiro capítulo inédito do dia credita 40 Siclos e mostra 3 Comuns antes da confirmação');
+
+  // reabrir o app sem escolher: a escolha continua disponível (Início → aviso → tela de escolha)
+  await C.page.reload();
+  await C.page.goto(`${APP}/home`);
+  await C.page.getByText('Recompensa da meta diária esperando sua escolha').waitFor();
+  await C.page.getByText('Recompensa diária: cumprida hoje', { exact: false }).waitFor();
+  await shot(C.page, 'm5-02-goal-pending-home-dark');
+  await C.page.getByRole('button', { name: 'Escolher recompensa' }).click();
+  await C.page.getByText('Escolha um item Comum').first().waitFor();
+  const firstOption = C.page.getByRole('radio').first();
+  const chosenName = (await firstOption.getAttribute('aria-label')).split(',')[0];
+  await firstOption.click();
+  // queda de conexão depois de o servidor registrar a escolha
+  await C.page.route('**/rest/v1/rpc/claim_daily_goal_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  await C.page.getByRole('button', { name: `Receber ${chosenName}` }).click();
+  await C.page.getByRole('button', { name: 'Confirmar' }).click();
+  await C.page.getByText('Sem conexão com o servidor', { exact: false }).waitFor();
+  assert.ok((await goalRow())[0].chosen_item, 'servidor registrou a escolha');
+  await C.page.unroute('**/rest/v1/rpc/claim_daily_goal_item');
+  await C.page.getByRole('button', { name: `Receber ${chosenName}` }).click();
+  await C.page.getByRole('button', { name: 'Confirmar' }).click();
+  await C.page.getByText(`${chosenName} foi adicionado ao seu inventário.`).waitFor();
+  const goalNow = (await goalRow())[0];
+  const owned = Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = any($2::text[])`, [biaId, goalNow.options])).rows[0].count);
+  assert.equal(owned, 1, 'um único item da meta');
+  await shot(C.page, 'm5-03-goal-claimed-dark');
+  await C.page.goto(`${APP}/home`);
+  await C.page.getByText('Recompensa diária: cumprida hoje', { exact: false }).waitFor();
+  assert.equal(await C.page.getByText('Recompensa da meta diária esperando sua escolha').count(), 0);
+  step('escolha pendente volta ao reabrir o app; queda de conexão após o servidor registrar: nova confirmação sem novo item');
   await C.page.goto(`${APP}/users/ana_teste`);
   await C.page.getByText('Ana Teste').waitFor();
   assert.equal(await C.page.getByText('ana+', { exact: false }).count(), 0);
