@@ -1,0 +1,612 @@
+{
+  "version": 2,
+  "appearance": {
+    "body": [
+      {
+        "id": "body-a",
+        "name": "Modelo A",
+        "description": "Silhueta esguia"
+      },
+      {
+        "id": "body-b",
+        "name": "Modelo B",
+        "description": "Silhueta média"
+      },
+      {
+        "id": "body-c",
+        "name": "Modelo C",
+        "description": "Silhueta robusta"
+      }
+    ],
+    "skin_tone": [
+      {
+        "id": "skin-1",
+        "name": "Tom 1",
+        "color": "#F5D6BF"
+      },
+      {
+        "id": "skin-2",
+        "name": "Tom 2",
+        "color": "#E8BC95"
+      },
+      {
+        "id": "skin-3",
+        "name": "Tom 3",
+        "color": "#CF9A6C"
+      },
+      {
+        "id": "skin-4",
+        "name": "Tom 4",
+        "color": "#AC764B"
+      },
+      {
+        "id": "skin-5",
+        "name": "Tom 5",
+        "color": "#865233"
+      },
+      {
+        "id": "skin-6",
+        "name": "Tom 6",
+        "color": "#5A3721"
+      }
+    ],
+    "eyes": [
+      {
+        "id": "eyes-round",
+        "name": "Redondos"
+      },
+      {
+        "id": "eyes-almond",
+        "name": "Amendoados"
+      },
+      {
+        "id": "eyes-soft",
+        "name": "Serenos"
+      },
+      {
+        "id": "eyes-wide",
+        "name": "Atentos"
+      },
+      {
+        "id": "eyes-narrow",
+        "name": "Estreitos"
+      },
+      {
+        "id": "eyes-joy",
+        "name": "Sorridentes"
+      }
+    ],
+    "brows": [
+      {
+        "id": "brows-soft",
+        "name": "Suaves"
+      },
+      {
+        "id": "brows-straight",
+        "name": "Retas"
+      },
+      {
+        "id": "brows-arched",
+        "name": "Arqueadas"
+      },
+      {
+        "id": "brows-thick",
+        "name": "Grossas"
+      }
+    ],
+    "expression": [
+      {
+        "id": "expr-smile",
+        "name": "Sorriso"
+      },
+      {
+        "id": "expr-joy",
+        "name": "Alegria"
+      },
+      {
+        "id": "expr-calm",
+        "name": "Sereno"
+      },
+      {
+        "id": "expr-determined",
+        "name": "Determinado"
+      },
+      {
+        "id": "expr-wonder",
+        "name": "Admirado"
+      }
+    ],
+    "beard": [
+      {
+        "id": "beard-none",
+        "name": "Sem barba"
+      },
+      {
+        "id": "beard-stubble",
+        "name": "Por fazer"
+      },
+      {
+        "id": "beard-mustache",
+        "name": "Bigode"
+      },
+      {
+        "id": "beard-goatee",
+        "name": "Cavanhaque"
+      },
+      {
+        "id": "beard-short",
+        "name": "Curta"
+      },
+      {
+        "id": "beard-full",
+        "name": "Cheia"
+      },
+      {
+        "id": "beard-long",
+        "name": "Longa"
+      }
+    ],
+    "hair_style": [
+      {
+        "id": "hair-shaved",
+        "name": "Raspado"
+      },
+      {
+        "id": "hair-short",
+        "name": "Curto"
+      },
+      {
+        "id": "hair-side-part",
+        "name": "Repartido"
+      },
+      {
+        "id": "hair-curly",
+        "name": "Cacheado"
+      },
+      {
+        "id": "hair-afro",
+        "name": "Crespo volumoso"
+      },
+      {
+        "id": "hair-wavy",
+        "name": "Ondulado médio"
+      },
+      {
+        "id": "hair-long",
+        "name": "Longo liso"
+      },
+      {
+        "id": "hair-long-wavy",
+        "name": "Longo ondulado"
+      },
+      {
+        "id": "hair-braids",
+        "name": "Tranças"
+      },
+      {
+        "id": "hair-bun",
+        "name": "Coque"
+      },
+      {
+        "id": "hair-ponytail",
+        "name": "Rabo de cavalo"
+      },
+      {
+        "id": "hair-locs",
+        "name": "Dreadlocks"
+      }
+    ],
+    "hair_color": [
+      {
+        "id": "haircolor-black",
+        "name": "Preto",
+        "color": "#1E1916"
+      },
+      {
+        "id": "haircolor-darkbrown",
+        "name": "Castanho escuro",
+        "color": "#3A281D"
+      },
+      {
+        "id": "haircolor-brown",
+        "name": "Castanho",
+        "color": "#69442D"
+      },
+      {
+        "id": "haircolor-auburn",
+        "name": "Acaju",
+        "color": "#7E3A22"
+      },
+      {
+        "id": "haircolor-copper",
+        "name": "Cobre",
+        "color": "#B2582E"
+      },
+      {
+        "id": "haircolor-honey",
+        "name": "Loiro mel",
+        "color": "#C99A52"
+      },
+      {
+        "id": "haircolor-blond",
+        "name": "Loiro claro",
+        "color": "#E2C789"
+      },
+      {
+        "id": "haircolor-gray",
+        "name": "Grisalho",
+        "color": "#B3AFA8"
+      }
+    ]
+  },
+  "slots": [
+    "outfit",
+    "back",
+    "feet",
+    "waist",
+    "neck",
+    "head",
+    "hands",
+    "background",
+    "frame"
+  ],
+  "items": [
+    {
+      "id": "tunic-linen",
+      "name": "Túnica de Linho",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Túnica simples de linho cru, para começar a jornada."
+    },
+    {
+      "id": "tunic-olive",
+      "name": "Túnica Oliveira",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Tecido verde como as folhas de oliveira."
+    },
+    {
+      "id": "tunic-terracotta",
+      "name": "Túnica Terracota",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Cor de barro cozido, com barra bordada."
+    },
+    {
+      "id": "tunic-indigo",
+      "name": "Túnica Índigo",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Azul profundo tingido à mão, com listras verticais."
+    },
+    {
+      "id": "tunic-ochre",
+      "name": "Túnica Ocre",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Tom de areia ao entardecer."
+    },
+    {
+      "id": "tunic-sky",
+      "name": "Túnica Céu da Galileia",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Azul claro como o céu sobre o lago."
+    },
+    {
+      "id": "tunic-pomegranate",
+      "name": "Túnica Romã",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Vermelho-romã com gola trabalhada."
+    },
+    {
+      "id": "tunic-stone",
+      "name": "Túnica Pedra",
+      "slot": "outfit",
+      "category": "tunic",
+      "description": "Cinza discreto, resistente para viagens."
+    },
+    {
+      "id": "tunic-joseph",
+      "name": "Túnica de José",
+      "slot": "outfit",
+      "category": "tunic",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Gênesis 37:3",
+      "description": "Inspirada na túnica que Jacó deu a José (Gênesis 37:3). Recompensa simbólica, não uma relíquia histórica.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 37
+        },
+        "label": "Conclua a leitura de Gênesis 37"
+      }
+    },
+    {
+      "id": "cloak-wool",
+      "name": "Manto de Lã",
+      "slot": "back",
+      "category": "cloak",
+      "description": "Manto quente de lã de ovelha."
+    },
+    {
+      "id": "cloak-desert",
+      "name": "Manto do Deserto",
+      "slot": "back",
+      "category": "cloak",
+      "description": "Leve e claro, protege do sol."
+    },
+    {
+      "id": "cloak-shepherd",
+      "name": "Manto do Pastor",
+      "slot": "back",
+      "category": "cloak",
+      "description": "Listrado, como os mantos de quem cuida do rebanho."
+    },
+    {
+      "id": "cloak-night",
+      "name": "Manto Noturno",
+      "slot": "back",
+      "category": "cloak",
+      "description": "Azul-noite para as vigílias sob as estrelas."
+    },
+    {
+      "id": "cloak-crimson",
+      "name": "Manto Carmim",
+      "slot": "back",
+      "category": "cloak",
+      "description": "Tecido carmim de bordas douradas."
+    },
+    {
+      "id": "sandals-leather",
+      "name": "Sandálias de Couro",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Sandálias simples para longas caminhadas."
+    },
+    {
+      "id": "sandals-woven",
+      "name": "Sandálias Trançadas",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Tiras de palha trançada."
+    },
+    {
+      "id": "sandals-laced",
+      "name": "Sandálias de Tiras Altas",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Tiras amarradas até o tornozelo."
+    },
+    {
+      "id": "boots-travel",
+      "name": "Botas de Viagem",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Couro grosso para estradas de pedra."
+    },
+    {
+      "id": "shoes-cloth",
+      "name": "Sapatilhas de Pano",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Macias e silenciosas."
+    },
+    {
+      "id": "sandals-red",
+      "name": "Sandálias Rubras",
+      "slot": "feet",
+      "category": "footwear",
+      "description": "Couro tingido de vermelho."
+    },
+    {
+      "id": "belt-rope",
+      "name": "Cinto de Corda",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Corda trançada amarrada com um nó."
+    },
+    {
+      "id": "belt-leather",
+      "name": "Cinto de Couro",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Couro curtido com fivela de bronze."
+    },
+    {
+      "id": "sash-blue",
+      "name": "Faixa Azul",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Faixa de tecido azul com pontas soltas."
+    },
+    {
+      "id": "sash-scarlet",
+      "name": "Faixa Escarlate",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Faixa vermelha com pontas soltas."
+    },
+    {
+      "id": "belt-woven",
+      "name": "Cinto Tecido",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Faixa tecida com padrão geométrico."
+    },
+    {
+      "id": "belt-pouch",
+      "name": "Cinto com Bolsa",
+      "slot": "waist",
+      "category": "belt",
+      "description": "Cinto de couro com uma pequena bolsa."
+    },
+    {
+      "id": "headband-linen",
+      "name": "Faixa de Cabeça",
+      "slot": "head",
+      "category": "accessory",
+      "description": "Faixa de linho amarrada na testa."
+    },
+    {
+      "id": "headwrap-sand",
+      "name": "Turbante de Areia",
+      "slot": "head",
+      "category": "accessory",
+      "description": "Tecido enrolado que protege do sol.",
+      "hides": [
+        "front_hair"
+      ]
+    },
+    {
+      "id": "headscarf-ochre",
+      "name": "Lenço de Cabeça",
+      "slot": "head",
+      "category": "accessory",
+      "description": "Lenço leve que cobre cabeça e ombros.",
+      "hides": [
+        "front_hair",
+        "back_hair"
+      ]
+    },
+    {
+      "id": "necklace-cord",
+      "name": "Colar de Cordão",
+      "slot": "neck",
+      "category": "accessory",
+      "description": "Cordão com um pingente de folha de oliveira."
+    },
+    {
+      "id": "necklace-beads",
+      "name": "Colar de Contas",
+      "slot": "neck",
+      "category": "accessory",
+      "description": "Contas de barro pintadas à mão."
+    },
+    {
+      "id": "scarf-neck",
+      "name": "Lenço de Pescoço",
+      "slot": "neck",
+      "category": "accessory",
+      "description": "Tecido enrolado no pescoço."
+    },
+    {
+      "id": "staff-shepherd",
+      "name": "Cajado de Pastor",
+      "slot": "hands",
+      "category": "accessory",
+      "description": "Cajado de madeira com ponta curva."
+    },
+    {
+      "id": "scroll-simple",
+      "name": "Pergaminho",
+      "slot": "hands",
+      "category": "accessory",
+      "description": "Um rolo para anotar a jornada."
+    },
+    {
+      "id": "oil-lamp",
+      "name": "Lamparina",
+      "slot": "hands",
+      "category": "accessory",
+      "description": "Pequena lamparina de barro."
+    },
+    {
+      "id": "bg-parchment",
+      "name": "Pergaminho Antigo",
+      "slot": "background",
+      "category": "background",
+      "description": "Fundo padrão de pergaminho com colinas."
+    }
+  ],
+  "defaults": {
+    "appearance": {
+      "bodyId": "body-b",
+      "skinToneId": "skin-4",
+      "eyesId": "eyes-almond",
+      "browsId": "brows-soft",
+      "expressionId": "expr-smile",
+      "beardId": "beard-none",
+      "hairStyleId": "hair-short",
+      "hairColorId": "haircolor-darkbrown"
+    },
+    "equipment": {
+      "outfit": "tunic-linen",
+      "feet": "sandals-leather",
+      "background": "bg-parchment"
+    }
+  },
+  "requiredSlots": [
+    "outfit"
+  ],
+  "presets": [
+    {
+      "id": "preset-miriam",
+      "name": "Viajante do deserto",
+      "look": {
+        "appearance": {
+          "bodyId": "body-a",
+          "skinToneId": "skin-5",
+          "eyesId": "eyes-round",
+          "browsId": "brows-soft",
+          "expressionId": "expr-smile",
+          "beardId": "beard-none",
+          "hairStyleId": "hair-curly",
+          "hairColorId": "haircolor-black"
+        },
+        "equipment": {
+          "outfit": "tunic-linen",
+          "back": "cloak-desert",
+          "feet": "sandals-leather",
+          "background": "bg-parchment"
+        }
+      }
+    },
+    {
+      "id": "preset-natan",
+      "name": "Pastor das colinas",
+      "look": {
+        "appearance": {
+          "bodyId": "body-b",
+          "skinToneId": "skin-3",
+          "eyesId": "eyes-almond",
+          "browsId": "brows-thick",
+          "expressionId": "expr-calm",
+          "beardId": "beard-short",
+          "hairStyleId": "hair-short",
+          "hairColorId": "haircolor-darkbrown"
+        },
+        "equipment": {
+          "outfit": "tunic-indigo",
+          "back": "cloak-wool",
+          "feet": "boots-travel",
+          "background": "bg-parchment"
+        }
+      }
+    },
+    {
+      "id": "preset-lia",
+      "name": "Guardiã dos rolos",
+      "look": {
+        "appearance": {
+          "bodyId": "body-c",
+          "skinToneId": "skin-2",
+          "eyesId": "eyes-soft",
+          "browsId": "brows-straight",
+          "expressionId": "expr-joy",
+          "beardId": "beard-none",
+          "hairStyleId": "hair-long-wavy",
+          "hairColorId": "haircolor-auburn"
+        },
+        "equipment": {
+          "outfit": "tunic-terracotta",
+          "feet": "sandals-leather",
+          "background": "bg-parchment"
+        }
+      }
+    }
+  ]
+}

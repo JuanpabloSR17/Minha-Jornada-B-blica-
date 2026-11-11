@@ -9,6 +9,15 @@ export type ResolvedLayer = AvatarLayer & {
   source: string;
 };
 
+const APPEARANCE_FALLBACK: Record<string, string> = {
+  body: 'body/body-b',
+  eyes: 'eyes/eyes-almond',
+  brows: 'brows/brows-soft',
+  expression: 'expression/expr-smile',
+  beard: 'beard/beard-none',
+  hair: 'hair/hair-short',
+};
+
 const ITEM_SLOT_ORDER: EquipmentSlot[] = [
   'background', 'back', 'feet', 'outfit', 'waist', 'neck', 'head', 'hands', 'frame',
 ];
@@ -68,12 +77,19 @@ export function resolveLayers(
     }
   };
 
-  push(`body/${appearance.bodyId}`, manifest[`body/${appearance.bodyId}`] ?? manifest['body/body-b']);
-  push(`eyes/${appearance.eyesId}`, manifest[`eyes/${appearance.eyesId}`]);
-  push(`brows/${appearance.browsId}`, manifest[`brows/${appearance.browsId}`]);
-  push(`expression/${appearance.expressionId}`, manifest[`expression/${appearance.expressionId}`]);
-  push(`beard/${appearance.beardId}`, manifest[`beard/${appearance.beardId}`]);
-  push(`hair/${appearance.hairStyleId}`, manifest[`hair/${appearance.hairStyleId}`]);
+  // Opções sem arte nesta versão (ex.: salvas antes da troca de direção artística)
+  // usam a arte padrão da categoria, para o avatar nunca ficar incompleto.
+  const appearancePart = (prefix: string, id: string) => {
+    const key = `${prefix}/${id}`;
+    const entry = manifest[key] ?? manifest[APPEARANCE_FALLBACK[prefix] ?? ''];
+    push(key, entry);
+  };
+  appearancePart('body', appearance.bodyId);
+  appearancePart('eyes', appearance.eyesId);
+  appearancePart('brows', appearance.browsId);
+  appearancePart('expression', appearance.expressionId);
+  appearancePart('beard', appearance.beardId);
+  appearancePart('hair', appearance.hairStyleId);
 
   for (const slot of ITEM_SLOT_ORDER) {
     const itemId = equipment[slot];
@@ -82,8 +98,10 @@ export function resolveLayers(
     const item = getItem(itemId);
     // Nunca desenha um item fora do slot dele (camadas incompatíveis).
     if (item && item.slot !== slot) continue;
-    item?.hides?.forEach((h) => hidden.add(h));
     const key = `${slot}/${itemId}`;
+    // só esconde camadas se a peça realmente for desenhada (tem arte compatível)
+    const entry = manifest[key];
+    if (entry && (!entry.bodyCompatibility || entry.bodyCompatibility.includes(bodyId))) item?.hides?.forEach((h) => hidden.add(h));
     push(key, manifest[key], slot === 'outfit' ? ['upper_outfit', 'sleeves'] : []);
   }
 

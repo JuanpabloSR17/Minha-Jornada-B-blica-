@@ -26,7 +26,7 @@ for f in "$ROOT"/supabase/migrations/*.sql; do
   "${PSQL[@]}" -d jb_test -f "$f"
 done
 # Reaplicar a migração do catálogo precisa ser idempotente.
-"${PSQL[@]}" -d jb_test -f "$ROOT/supabase/migrations/20261111000200_avatar_catalog_v1.sql"
+for f in "$ROOT"/supabase/migrations/*_avatar_catalog_v*.sql; do "${PSQL[@]}" -d jb_test -f "$f"; done
 
 for t in "$ROOT"/supabase/tests/[1-9]*.sql; do
   echo "→ teste $(basename "$t")"

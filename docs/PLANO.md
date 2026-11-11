@@ -42,6 +42,17 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [x] Editor inicial com Salvar/Descartar e conflito de versão
 - [x] Testes: domínio (34), banco (65), ponta a ponta (fluxo completo)
 
+### Correção de direção artística (Opção B) — em validação
+
+- [x] Nova geometria: canvas 1024×1536, ~5,6 cabeças, 3 silhuetas distintas, âncoras fixas
+- [x] Renderizador misto (vetor + PNG/WebP com tingimento de pele/cabelo) e camada de mãos
+- [x] Conjunto de validação em vetor detalhado: 3 corpos, 3 olhos, 3 sobrancelhas, 3 expressões,
+      2 barbas, 3 cabelos, 3 túnicas, 2 mantos, 2 calçados, Túnica de José, fundo
+- [x] Novo criador de RPG (palco grande, zoom no rosto, carrossel, transição, prévia bloqueada)
+- [x] Catálogo v2 (Túnica de José + regra Gn 37) e visuais sugeridos
+- [ ] **Aprovação visual do conjunto de validação**
+- [ ] Ilustração final pintada (ver `docs/ARTE.md` §6) e expansão do catálogo
+
 ### Marco 2 — Guarda-roupa e inventário (próximo)
 
 - Telas P03 (guarda-roupa por slot, filtros Todos/Obtidos/Equipados/raridade/livro/coleção, busca)

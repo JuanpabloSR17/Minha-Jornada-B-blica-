@@ -6,8 +6,10 @@ import {
   EQUIPMENT_SLOTS,
   REQUIRED_SLOTS,
   getItem,
+  appearanceHasArt,
   getOption,
   isStarterFree,
+  itemHasArt,
   itemsForSlot,
 } from './catalog';
 import type { AppearanceKey, AvatarAppearance, AvatarLook, Equipment, EquipmentSlot } from './avatar.types';
@@ -106,22 +108,25 @@ export function looksEqual(a: AvatarLook, b: AvatarLook): boolean {
 type Rng = () => number;
 const pick = <T,>(list: readonly T[], rng: Rng): T => list[Math.floor(rng() * list.length) % list.length] as T;
 
-/** Sorteia um visual usando apenas opções e peças iniciais gratuitas e compatíveis. */
+/**
+ * Sorteia um visual usando apenas opções e peças iniciais gratuitas, compatíveis
+ * e que já têm arte publicada na versão atual do manifest.
+ */
 export function randomLook(rng: Rng = Math.random, keepBackground?: string): AvatarLook {
   const appearance = {} as AvatarAppearance;
   for (const key of Object.keys(APPEARANCE_KEY_CATEGORY) as AppearanceKey[]) {
-    appearance[key] = pick(APPEARANCE_OPTIONS[APPEARANCE_KEY_CATEGORY[key]], rng).id;
+    const cat = APPEARANCE_KEY_CATEGORY[key];
+    appearance[key] = pick(APPEARANCE_OPTIONS[cat].filter((o) => appearanceHasArt(cat, o.id)), rng).id;
   }
-  const free = (slot: EquipmentSlot) => itemsForSlot(slot, isStarterFree);
+  const free = (slot: EquipmentSlot) => itemsForSlot(slot, (i) => isStarterFree(i) && itemHasArt(i));
   const equipment: Equipment = {
     outfit: pick(free('outfit'), rng).id,
-    feet: pick(free('feet'), rng).id,
     background: keepBackground ?? DEFAULT_EQUIPMENT.background,
   };
-  if (rng() < 0.75) equipment.waist = pick(free('waist'), rng).id;
-  if (rng() < 0.45) equipment.back = pick(free('back'), rng).id;
-  if (rng() < 0.35) equipment.neck = pick(free('neck'), rng).id;
-  if (rng() < 0.3) equipment.head = pick(free('head'), rng).id;
-  if (rng() < 0.3) equipment.hands = pick(free('hands'), rng).id;
+  const optional: [EquipmentSlot, number][] = [['feet', 0.9], ['back', 0.5], ['waist', 0.6], ['neck', 0.35], ['head', 0.3], ['hands', 0.3]];
+  for (const [slot, chance] of optional) {
+    const list = free(slot);
+    if (list.length && rng() < chance) equipment[slot] = pick(list, rng).id;
+  }
   return { appearance, equipment: sanitizeEquipment(equipment) };
 }

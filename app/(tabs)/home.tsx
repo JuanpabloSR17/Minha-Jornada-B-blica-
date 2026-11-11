@@ -19,7 +19,7 @@ export default function Home() {
       <AppText variant="title">{fmt(strings.home.greeting, { name: profile?.display_name ?? '' })}</AppText>
       <Ornament />
       {error ? <Notice tone="error">{error}</Notice> : null}
-      {avatar ? <AvatarStage look={avatar} height={280} /> : null}
+      {avatar ? <AvatarStage look={avatar} height={380} /> : null}
       <Card>
         <AppText variant="heading">{goal}</AppText>
         <View style={styles.row}>

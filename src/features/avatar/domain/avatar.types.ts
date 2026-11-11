@@ -52,6 +52,7 @@ export type LayerSlot =
   | 'waist'
   | 'arms'
   | 'sleeves'
+  | 'hands'
   | 'neck'
   | 'beard'
   | 'mouth'
@@ -82,6 +83,8 @@ export type CosmeticItem = {
   hides?: LayerSlot[];
   starter: boolean;
   premium: boolean;
+  /** objetivo de desbloqueio exibido para itens bloqueados */
+  unlockLabel?: string;
 };
 
 export type AvatarLook = {

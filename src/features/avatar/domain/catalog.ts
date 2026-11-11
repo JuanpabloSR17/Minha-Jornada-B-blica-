@@ -1,4 +1,5 @@
-import raw from '../catalog/catalog.v1.json';
+import raw from '../catalog/catalog.json';
+import { hasArt } from '../art/manifest';
 import type {
   AppearanceCategory,
   AppearanceKey,
@@ -22,6 +23,7 @@ type RawItem = {
   hides?: string[];
   starter?: boolean;
   premium?: boolean;
+  unlock?: { type: string; label?: string };
 };
 
 export const CATALOG_VERSION: number = raw.version;
@@ -41,6 +43,7 @@ export const COSMETIC_ITEMS: CosmeticItem[] = (raw.items as RawItem[]).map((it) 
   hides: it.hides as LayerSlot[] | undefined,
   starter: it.starter !== false,
   premium: it.premium === true,
+  unlockLabel: it.unlock?.label,
 }));
 
 const ITEMS_BY_ID = new Map(COSMETIC_ITEMS.map((i) => [i.id, i]));
@@ -75,3 +78,23 @@ export function itemsForSlot(slot: EquipmentSlot, filter: (i: CosmeticItem) => b
 
 /** Itens gratuitos iniciais (disponíveis na criação do personagem). */
 export const isStarterFree = (i: CosmeticItem) => i.starter && !i.premium;
+
+const APPEARANCE_ART_PREFIX: Partial<Record<AppearanceCategory, string>> = {
+  body: 'body',
+  eyes: 'eyes',
+  brows: 'brows',
+  expression: 'expression',
+  beard: 'beard',
+  hair_style: 'hair',
+};
+
+/** A opção de aparência tem arte na versão atual (cores sempre têm). */
+export function appearanceHasArt(category: AppearanceCategory, id: string): boolean {
+  const prefix = APPEARANCE_ART_PREFIX[category];
+  return prefix ? hasArt(`${prefix}/${id}`) : true;
+}
+
+export const itemHasArt = (i: CosmeticItem) => hasArt(`${i.slot}/${i.id}`);
+
+export type LookPreset = { id: string; name: string; look: { appearance: AvatarAppearance; equipment: Equipment } };
+export const LOOK_PRESETS = (raw as { presets?: LookPreset[] }).presets ?? [];

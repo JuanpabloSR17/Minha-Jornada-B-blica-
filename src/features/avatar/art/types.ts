@@ -18,7 +18,10 @@ export type VectorArt = (ctx: ArtContext) => ReactElement | null;
 export type ImageArt = {
   kind: 'image';
   source: ImageSourcePropType | Partial<Record<string, ImageSourcePropType>>;
+  /** `source` é um mapa por ID de corpo */
   perBody?: boolean;
+  /** máscara colorizável: a imagem é tingida com a cor da pele ou do cabelo */
+  tint?: 'skin' | 'hair';
 };
 
 export type ArtDefinition = VectorArt | ImageArt;

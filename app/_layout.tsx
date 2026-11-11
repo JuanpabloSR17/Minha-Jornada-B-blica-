@@ -84,6 +84,7 @@ function RootNavigator() {
         <Stack.Screen name="auth/callback" />
         <Stack.Screen name="auth/update-password" />
         <Stack.Screen name="index" />
+        <Stack.Screen name="dev/avatar-lab" />
       </Stack>
     </>
   );

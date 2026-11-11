@@ -7,31 +7,34 @@ import { ART_REGISTRY } from '../art/registry';
 const prefix: Record<string, string> = { body: 'body', eyes: 'eyes', brows: 'brows', expression: 'expression', beard: 'beard', hair_style: 'hair' };
 
 describe('manifest de arte', () => {
-  it('toda opção de aparência desenhável tem entrada no manifest', () => {
-    for (const [cat, p] of Object.entries(prefix)) {
-      for (const o of APPEARANCE_OPTIONS[cat as keyof typeof APPEARANCE_OPTIONS]) {
-        expect(ART_MANIFEST[`${p}/${o.id}`]).toBeDefined();
-      }
-    }
-  });
-  it('todo item do catálogo tem entrada no manifest', () => {
-    for (const it of COSMETIC_ITEMS) expect(ART_MANIFEST[`${it.slot}/${it.id}`]).toBeDefined();
+  it('toda entrada do manifest corresponde a uma opção ou item do catálogo', () => {
+    const optionKeys = new Set(Object.entries(prefix).flatMap(([cat, p]) => APPEARANCE_OPTIONS[cat as keyof typeof APPEARANCE_OPTIONS].map((o) => `${p}/${o.id}`)));
+    const itemKeys = new Set(COSMETIC_ITEMS.map((it) => `${it.slot}/${it.id}`));
+    for (const key of Object.keys(ART_MANIFEST)) expect(optionKeys.has(key) || itemKeys.has(key)).toBe(true);
   });
   it('toda arte referenciada existe no registro', () => {
     for (const entry of Object.values(ART_MANIFEST)) {
       for (const key of Object.values(entry.layers)) expect(ART_REGISTRY[key!]).toBeDefined();
     }
   });
-  it('mantos têm camada traseira e dianteira', () => {
-    for (const it of COSMETIC_ITEMS.filter((i) => i.slot === 'back')) {
+  it('mantos ilustrados têm camada traseira e dianteira; cabelos têm traseira e frontal', () => {
+    for (const it of COSMETIC_ITEMS.filter((i) => i.slot === 'back' && ART_MANIFEST[`back/${i.id}`])) {
       expect(Object.keys(ART_MANIFEST[`back/${it.id}`]!.layers).sort()).toEqual(['cloak_back', 'cloak_front']);
     }
+    for (const [key, entry] of Object.entries(ART_MANIFEST).filter(([k]) => k.startsWith('hair/'))) {
+      expect(Object.keys(entry.layers).sort()).toEqual(['back_hair', 'front_hair']);
+      expect(key).toBeTruthy();
+    }
+  });
+  it('mãos ficam acima do manto dianteiro (aparecem para fora do manto)', () => {
+    expect(LAYER_ORDER.indexOf('hands')).toBeGreaterThan(LAYER_ORDER.indexOf('cloak_front'));
+    expect(LAYER_ORDER.indexOf('arms')).toBeLessThan(LAYER_ORDER.indexOf('sleeves'));
   });
 });
 
 describe('resolveLayers', () => {
   it('ordena pela ordem de desenho', () => {
-    const look = { ...defaultLook(), equipment: { ...defaultLook().equipment, back: 'cloak-wool', hands: 'staff-shepherd' } };
+    const look = { ...defaultLook(), equipment: { ...defaultLook().equipment, back: 'cloak-wool' } };
     const layers = resolveLayers(look.appearance, look.equipment);
     const z = layers.map((l) => l.zIndex);
     expect([...z].sort((a, b) => a - b)).toEqual(z);
@@ -40,25 +43,39 @@ describe('resolveLayers', () => {
     expect(slots.indexOf('cloak_back')).toBeLessThan(slots.indexOf('body'));
     expect(slots.indexOf('cloak_front')).toBeGreaterThan(slots.indexOf('upper_outfit'));
     expect(slots.indexOf('front_hair')).toBeGreaterThan(slots.indexOf('face'));
-    expect(slots.indexOf('hand_item')).toBeGreaterThan(slots.indexOf('arms'));
+    expect(slots.indexOf('hands')).toBeGreaterThan(slots.indexOf('cloak_front'));
   });
 
   it('cabelo traseiro e frontal vêm da mesma escolha', () => {
     const look = defaultLook();
-    look.appearance.hairStyleId = 'hair-long';
-    const layers = resolveLayers(look.appearance, look.equipment).filter((l) => l.source === 'hair/hair-long');
+    look.appearance.hairStyleId = 'hair-long-wavy';
+    const layers = resolveLayers(look.appearance, look.equipment).filter((l) => l.source === 'hair/hair-long-wavy');
     expect(layers.map((l) => l.slot).sort()).toEqual(['back_hair', 'front_hair']);
   });
 
-  it('turbante esconde a franja; lenço esconde franja e cabelo de trás', () => {
+  it('turbante esconde a franja; lenço esconde franja e cabelo de trás (quando ilustrados)', () => {
     const look = defaultLook();
-    look.appearance.hairStyleId = 'hair-long';
-    const wrap = resolveLayers(look.appearance, { ...look.equipment, head: 'headwrap-sand' }).map((l) => l.slot);
+    look.appearance.hairStyleId = 'hair-long-wavy';
+    const manifest = { ...ART_MANIFEST, 'head/headwrap-sand': { layers: { headwear: 'shadow' } }, 'head/headscarf-ochre': { layers: { headwear: 'shadow' } } };
+    const wrap = resolveLayers(look.appearance, { ...look.equipment, head: 'headwrap-sand' }, { manifest }).map((l) => l.slot);
     expect(wrap).not.toContain('front_hair');
     expect(wrap).toContain('back_hair');
-    const scarf = resolveLayers(look.appearance, { ...look.equipment, head: 'headscarf-ochre' }).map((l) => l.slot);
+    const scarf = resolveLayers(look.appearance, { ...look.equipment, head: 'headscarf-ochre' }, { manifest }).map((l) => l.slot);
     expect(scarf).not.toContain('front_hair');
     expect(scarf).not.toContain('back_hair');
+  });
+
+  it('acessório sem arte publicada não esconde o cabelo', () => {
+    const look = defaultLook();
+    const slots = resolveLayers(look.appearance, { ...look.equipment, head: 'headwrap-sand' }).map((l) => l.slot);
+    expect(slots).toContain('front_hair');
+  });
+
+  it('opção de aparência sem arte (avatar antigo) usa a arte padrão da categoria', () => {
+    const look = defaultLook();
+    look.appearance.hairStyleId = 'hair-locs';
+    const hair = resolveLayers(look.appearance, look.equipment).filter((l) => l.source === 'hair/hair-locs');
+    expect(hair.map((l) => l.assetKey).sort()).toEqual(['hair.short.back', 'hair.short.front']);
   });
 
   it('ignora item colocado em slot que não é o dele', () => {

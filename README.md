@@ -10,7 +10,11 @@ Este repositório contém o **Marco 1 — Fundação funcional** do módulo de p
 
 - Cadastro e login com e-mail/senha, recuperação de senha por link, sessão persistida.
 - Onboarding: **Identidade** (nome + username único, perfil privado) → **Criador de personagem em 4 etapas** (Corpo → Rosto → Cabelo → Visual) → **Ritmo de leitura** (1/2/3/5/personalizado/sem meta).
-- Avatar 2D renderizado **por camadas** num canvas lógico 720×1080, com prévia ao vivo e miniaturas de cada opção.
+- Avatar 2D em estilo **RPG ilustrado** (~5,6 cabeças), renderizado **por camadas** num canvas 1024×1536,
+  pronto para receber ilustrações finais em PNG/WebP.
+- Criador de personagem de RPG: personagem grande no centro, zoom de câmera no rosto, categorias com ícone,
+  carrossel de peças em cartões, transição suave ao trocar peças, visuais sugeridos e prévia de itens bloqueados.
+- Item bíblico de validação: **Túnica de José** (Gn 37:3), épica, com regra de desbloqueio por leitura.
 - Persistência no Supabase via funções de servidor que validam opções, posse de itens e slots; itens iniciais são concedidos pelo servidor.
 - Editor do perfil com **Salvar/Descartar**, controle de versão entre aparelhos (conflito detectado, nada sobrescrito).
 - Modo **Experimentar** sem conta (salvo só no aparelho) que é aproveitado ao criar a conta.
@@ -19,9 +23,10 @@ Este repositório contém o **Marco 1 — Fundação funcional** do módulo de p
 Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
 aparecem **sinalizadas como "Em construção"** — nada nelas é contabilizado.
 
-> A arte do personagem é **provisória**: placeholders vetoriais próprios e consistentes,
-> desenhados em código. As ilustrações finais entram registrando PNG/WebP no manifest,
-> sem mudar o renderizador (ver "Arte" abaixo).
+> **Arte:** o conjunto atual é um **protótipo vetorial** da nova direção (proporção, silhueta,
+> encaixe e experiência). O acabamento pintado da referência exige ilustração profissional:
+> a especificação completa e a lista de assets estão em [`docs/ARTE.md`](docs/ARTE.md).
+> Os PNG/WebP finais entram registrando a mesma chave no manifest, sem mudar o renderizador.
 
 ## Configuração
 
@@ -36,7 +41,7 @@ npm install
 1. Crie um projeto em supabase.com.
 2. Aplique as migrações de `supabase/migrations/` **em ordem**:
    - com a CLI: `supabase link --project-ref <ref>` e `supabase db push`; ou
-   - pelo SQL Editor, colando `20261111000100_marco1_core.sql` e depois `20261111000200_avatar_catalog_v1.sql`.
+   - pelo SQL Editor, colando os arquivos em ordem de nome (`20261111…` e depois `20261112…`).
 3. Em **Authentication → URL Configuration**, adicione às *Redirect URLs*:
    - `jornadabiblica://auth/callback` (app nativo)
    - `http://localhost:8081/auth/callback` (web em desenvolvimento)
@@ -66,9 +71,9 @@ npm run web        # navegador
 | Comando | O que verifica |
 |---|---|
 | `npm run typecheck` | TypeScript estrito |
-| `npm test` | 34 testes de domínio: catálogo, validação, aleatório, ordem de camadas, fallback de asset, store de edição, sincronia catálogo ↔ SQL |
-| `npm run test:db` | 65 verificações num Postgres 16 descartável: RLS, privilégios, RPCs, posse/slot, versão, idempotência e concorrência |
-| `npm run test:e2e` | Fluxo completo no navegador (cadastro → identidade → 4 etapas → ritmo → reabrir → outro aparelho → editar/descartar/salvar → conflito → username duplicado) |
+| `npm test` | 38 testes de domínio: catálogo, conjunto de validação da arte, visuais sugeridos, aleatório, ordem de camadas, fallback de asset, store de edição, sincronia catálogo ↔ SQL |
+| `npm run test:db` | 70 verificações num Postgres 16 descartável: RLS, privilégios, RPCs, posse/slot, versão, idempotência, concorrência e item bíblico bloqueado |
+| `npm run test:e2e` | Fluxo completo no navegador (cadastro → identidade → 4 etapas → prévia bloqueada da Túnica de José → ritmo → reabrir → outro aparelho → editar/descartar/salvar → conflito → username duplicado) |
 
 `test:db` e `test:e2e` precisam do Postgres 16 instalado localmente (`/usr/lib/postgresql/16/bin`).
 `test:e2e` também precisa do Playwright com Chromium disponível
@@ -91,7 +96,7 @@ app/                       rotas (Expo Router)
   settings/pace            alterar meta
 src/
   features/avatar/
-    catalog/catalog.v1.json   fonte única de IDs (gera a migração do catálogo)
+    catalog/catalog.json      fonte única de IDs, visuais sugeridos e regras de desbloqueio
     domain/                   tipos, regras, camadas (funções puras, testadas)
     art/                      manifest versionado, geometria, artes placeholder
     components/               AvatarRenderer, AvatarStage, AppearanceOptionPicker…
@@ -119,17 +124,19 @@ scripts/generate-catalog-sql.mjs
 
 ## Arte
 
-- `src/features/avatar/art/manifest.ts` declara, para cada aparência/item, em quais camadas desenha.
-- `LAYER_ORDER` define a ordem: fundo → sombra → manto traseiro → cabelo traseiro → corpo → rosto →
-  calçados → túnica → cinto → braços → mangas → manto dianteiro → pescoço → barba → boca →
-  cabelo frontal → cabeça → item na mão → moldura.
-- Para trocar uma peça pela ilustração final: exporte PNG/WebP transparente 720×1080 alinhado ao
-  canvas e registre a chave em `art/registry.tsx` como `{ kind: 'image', source: require(...) }`
-  (com `perBody: true` para versões por modelo de corpo).
-- Itens sem asset publicado ou incompatíveis com o corpo usam arte substituta, sem perder a posse.
+Especificação completa em [`docs/ARTE.md`](docs/ARTE.md): canvas 1024×1536, âncoras por corpo,
+ordem de camadas, nomes de arquivo, tingimento de pele/cabelo e lista de assets finais.
+
+- `art/manifest.ts` declara em quais camadas cada aparência/item desenha. Opções do catálogo sem
+  arte na versão atual ficam ocultas no criador (o banco continua aceitando e a posse é mantida).
+- `art/registry.tsx` liga cada chave a uma arte vetorial ou a um PNG/WebP (`kind: 'image'`).
+- Avatares salvos com opções ainda não ilustradas usam a arte padrão da categoria.
+- `/dev/avatar-lab`: ferramenta interna com grade de variações e guias de ancoragem
+  (só em desenvolvimento ou com `EXPO_PUBLIC_AVATAR_LAB=1`; não faz parte da experiência).
 
 ## Catálogo
 
-Edite `src/features/avatar/catalog/catalog.v1.json` e rode `npm run catalog:sql` para regenerar
-`supabase/migrations/20261111000200_avatar_catalog_v1.sql`. Um teste falha se os dois divergirem.
-Para um catálogo já publicado em produção, crie uma **nova** migração em vez de editar a antiga.
+Edite `src/features/avatar/catalog/catalog.json` e rode `npm run catalog:sql`. Cada `version` do
+catálogo gera uma migração **nova** (`…_avatar_catalog_vN.sql`; defina o prefixo em
+`scripts/generate-catalog-sql.mjs`). Migrações antigas nunca são editadas. Um teste falha se o JSON
+e a migração da versão atual divergirem.

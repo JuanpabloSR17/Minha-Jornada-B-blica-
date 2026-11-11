@@ -217,3 +217,18 @@ select tests.assert_raises(
 -- Item que sai do catálogo: posse é mantida
 update public.cosmetic_items set is_active = false where id = 'oil-lamp';
 select tests.assert((select count(*) from public.user_items where item_id = 'oil-lamp') = 1, 'posse mantida quando item é desativado');
+
+-- ===========================================================================
+-- Item bíblico (catálogo v2): Túnica de José
+-- ===========================================================================
+select tests.assert((select not is_starter and rarity = 'epic' and scripture_ref = 'Gênesis 37:3' from public.cosmetic_items where id = 'tunic-joseph'), 'Túnica de José cadastrada como épica, não inicial, com referência');
+select tests.assert((select rule_payload ->> 'book' = 'GEN' and (rule_payload ->> 'chapter')::int = 37 from public.item_unlock_rules where item_id = 'tunic-joseph' and rule_type = 'chapter_completed'), 'regra de desbloqueio: Gênesis 37');
+begin;
+select set_config('request.jwt.claim.sub', '11111111-1111-1111-1111-111111111111', true);
+set local role authenticated;
+select tests.assert((select count(*) from public.item_unlock_rules where item_id = 'tunic-joseph') = 1, 'usuário autenticado lê a regra (para mostrar o objetivo)');
+select tests.assert_raises(
+  $$select public.save_avatar((select v from tests.fixtures where k='appearance'), '{"outfit":"tunic-joseph"}', (public.get_my_avatar() ->> 'version')::int)$$,
+  'item_not_owned', 'Túnica de José não pode ser equipada sem desbloqueio');
+select tests.assert((select count(*) from public.user_items where item_id = 'tunic-joseph') = 0, 'item bíblico não é concedido como inicial');
+commit;

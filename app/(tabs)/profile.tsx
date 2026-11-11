@@ -21,7 +21,7 @@ export default function ProfileTab() {
   return (
     <Screen edges={['top', 'left', 'right']}>
       {error ? <Notice tone="error">{error}</Notice> : null}
-      {avatar ? <AvatarStage look={avatar} height={340} /> : null}
+      {avatar ? <AvatarStage look={avatar} height={460} /> : null}
       <View style={styles.identity}>
         <AppText variant="title" style={styles.center}>{profile.display_name}</AppText>
         <AppText muted style={styles.center}>@{profile.username}</AppText>

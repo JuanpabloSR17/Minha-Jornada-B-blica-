@@ -61,14 +61,25 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('tab', { name: 'Barba' }).click();
   assert.equal(await page.getByRole('radio', { name: 'Curta', exact: true }).getAttribute('aria-checked'), 'true');
   await page.getByRole('button', { name: 'Continuar' }).click();
-  await pick(page, 'Estilo', 'Tranças');
+  await pick(page, 'Estilo', 'Longo ondulado');
   await pick(page, 'Cor', 'Cobre');
   await page.getByRole('button', { name: 'Continuar' }).click();
   await pick(page, 'Túnica', 'Túnica Índigo');
-  await pick(page, 'Manto', 'Manto Carmim');
-  await pick(page, 'Cabeça', 'Faixa de Cabeça');
+  await pick(page, 'Manto', 'Manto de Lã');
+  await pick(page, 'Calçado', 'Botas de Viagem');
   await shot(page, 'e2e-02-creator-step4');
   step('quatro passos preenchidos; seleção preservada ao voltar');
+
+  // item bíblico bloqueado: pode ser experimentado, mas não salvo
+  await pick(page, 'Túnica', 'Túnica de José');
+  await page.getByText('Prévia: Túnica de José').waitFor();
+  await shot(page, 'e2e-02b-locked-preview');
+  await page.getByRole('button', { name: 'Finalizar personagem' }).click();
+  await page.getByText('Tire a prévia do item bloqueado para salvar.').waitFor();
+  assert.equal(await page.getByText('Qual é o seu ritmo?').count(), 0);
+  await page.getByRole('button', { name: 'Tirar prévia' }).click();
+  await pick(page, 'Túnica', 'Túnica Índigo');
+  step('item bíblico bloqueado: prévia permitida, salvamento bloqueado até tirar a prévia');
 
   await page.getByRole('button', { name: 'Finalizar personagem' }).click();
   await page.getByText('Qual é o seu ritmo?').waitFor();
@@ -95,11 +106,12 @@ async function newPhone(browser, scheme = 'light') {
   );
   assert.deepEqual(
     [row.body_id, row.skin_tone_id, row.expression_id, row.beard_id, row.hair_style_id, row.hair_color_id],
-    ['body-c', 'skin-5', 'expr-joy', 'beard-short', 'hair-braids', 'haircolor-copper'],
+    ['body-c', 'skin-5', 'expr-joy', 'beard-short', 'hair-long-wavy', 'haircolor-copper'],
   );
   assert.equal(row.eq.outfit, 'tunic-indigo');
-  assert.equal(row.eq.back, 'cloak-crimson');
-  assert.equal(row.eq.head, 'headband-linen');
+  assert.equal(row.eq.back, 'cloak-wool');
+  assert.equal(row.eq.feet, 'boots-travel');
+  assert.equal(row.eq.head, undefined);
   assert.equal(row.target_chapters_per_day, 6);
   assert.equal(row.privacy_mode, 'private');
   assert.equal(row.done, true);
@@ -137,19 +149,19 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('button', { name: 'Personalizar' }).click();
   await page.getByText('Personalizar').first().waitFor();
   await page.getByRole('tab', { name: 'Cabelo' }).click();
-  await pick(page, 'Estilo', 'Coque');
+  await pick(page, 'Estilo', 'Cacheado');
   await page.getByRole('button', { name: 'Descartar' }).click();
   await page.getByRole('button', { name: 'Descartar' }).last().click(); // confirma no diálogo
   const { rows: [v1] } = await db.query(`select a.version, a.hair_style_id from avatar_appearances a join profiles p on p.id = a.user_id where p.username = 'ana_teste'`);
-  assert.equal(v1.hair_style_id, 'hair-braids');
+  assert.equal(v1.hair_style_id, 'hair-long-wavy');
   assert.equal(v1.version, row.version);
   step('Descartar não persiste alterações');
 
-  await pick(page, 'Estilo', 'Coque');
+  await pick(page, 'Estilo', 'Cacheado');
   await page.getByRole('button', { name: 'Salvar' }).click();
   await page.getByText('Salvo na sua conta').first().waitFor();
   const { rows: [v2] } = await db.query(`select a.version, a.hair_style_id from avatar_appearances a join profiles p on p.id = a.user_id where p.username = 'ana_teste'`);
-  assert.equal(v2.hair_style_id, 'hair-bun');
+  assert.equal(v2.hair_style_id, 'hair-curly');
   assert.equal(v2.version, row.version + 1);
   await shot(page, 'e2e-06-editor-saved');
   step('Salvar persiste e incrementa a versão');
@@ -162,7 +174,7 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('button', { name: 'Salvar' }).click();
   await page.getByText('Salvo na sua conta').first().waitFor();
   await B.page.getByRole('tab', { name: 'Rosto' }).click();
-  await pick(B.page, 'Expressão', 'Admirado');
+  await pick(B.page, 'Expressão', 'Sorriso');
   await B.page.getByRole('button', { name: 'Salvar' }).click();
   await B.page.getByText('alterado em outro aparelho').waitFor();
   const { rows: [v3] } = await db.query(`select a.expression_id from avatar_appearances a join profiles p on p.id = a.user_id where p.username = 'ana_teste'`);

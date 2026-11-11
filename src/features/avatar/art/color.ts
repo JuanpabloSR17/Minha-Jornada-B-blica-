@@ -9,3 +9,17 @@ export function shade(hex: string, amount: number): string {
   });
   return `#${channels.map((c) => c.toString(16).padStart(2, '0')).join('')}`;
 }
+
+/** Mistura duas cores hex (t = 0 → a, t = 1 → b). */
+export function mix(a: string, b: string, t: number): string {
+  const pa = /^#?([0-9a-f]{6})$/i.exec(a)?.[1];
+  const pb = /^#?([0-9a-f]{6})$/i.exec(b)?.[1];
+  if (!pa || !pb) return a;
+  const na = parseInt(pa, 16);
+  const nb = parseInt(pb, 16);
+  const out = [16, 8, 0].map((s) => Math.round(((na >> s) & 255) * (1 - t) + ((nb >> s) & 255) * t));
+  return `#${out.map((c) => c.toString(16).padStart(2, '0')).join('')}`;
+}
+
+/** Cor de contorno: tom escuro e quente derivado da cor base (evita preto chapado). */
+export const lineOf = (c: string) => mix(shade(c, -0.6), '#2A1A10', 0.35);

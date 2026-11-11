@@ -7,17 +7,15 @@ import { AppText, Button, Icon, Notice, Ornament, Screen } from '@/ui';
 import { strings } from '@/i18n';
 import { isSupabaseConfigured } from '@/lib/supabase/client';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
-import { defaultLook } from '@/features/avatar/domain/avatar.rules';
+import { defaultLook, normalizeLook } from '@/features/avatar/domain/avatar.rules';
+import { LOOK_PRESETS } from '@/features/avatar/domain/catalog';
 import { draftStorage } from '@/features/avatar/services/draftStorage';
 import type { AvatarLook } from '@/features/avatar/domain/avatar.types';
 
 export default function Welcome() {
   const router = useRouter();
   const { colors } = useTheme();
-  const [look, setLook] = useState<AvatarLook>(() => ({
-    ...defaultLook(),
-    equipment: { ...defaultLook().equipment, back: 'cloak-desert', hands: 'staff-shepherd' },
-  }));
+  const [look, setLook] = useState<AvatarLook>(() => (LOOK_PRESETS[0] ? normalizeLook(LOOK_PRESETS[0].look) : defaultLook()));
   const [hasGuest, setHasGuest] = useState(false);
 
   useFocusEffect(
@@ -44,7 +42,7 @@ export default function Welcome() {
         <AppText variant="display" style={styles.center}>{strings.app.name}</AppText>
         <Ornament />
       </View>
-      <AvatarStage look={look} height={300} />
+      <AvatarStage look={look} height={360} />
       <AppText muted style={styles.center}>{strings.app.tagline}</AppText>
       <View style={styles.principles}>
         {strings.welcome.principles.map((p) => (

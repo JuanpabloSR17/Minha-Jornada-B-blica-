@@ -1,4 +1,5 @@
-// Gera a migração SQL do catálogo a partir de src/features/avatar/catalog/catalog.v1.json.
+// Gera a migração SQL do catálogo a partir de src/features/avatar/catalog/catalog.json.
+// Cada versão do catálogo gera um arquivo NOVO (migrações já aplicadas nunca são editadas).
 // Fonte única de verdade: o app e o banco usam os mesmos IDs.
 // Uso: node scripts/generate-catalog-sql.mjs [--check]
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -6,8 +7,14 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const catalogPath = join(root, 'src/features/avatar/catalog/catalog.v1.json');
-const outPath = join(root, 'supabase/migrations/20261111000200_avatar_catalog_v1.sql');
+const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
+/** Prefixo de data da migração de cada versão do catálogo. */
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200' };
+export const outPathFor = (version) => {
+  const prefix = VERSION_PREFIX[version];
+  if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);
+  return join(root, `supabase/migrations/${prefix}_avatar_catalog_v${version}.sql`);
+};
 
 export function buildCatalogSql(catalog) {
   const q = (v) => (v == null ? 'null' : `'${String(v).replace(/'/g, "''")}'`);
@@ -46,12 +53,29 @@ export function buildCatalogSql(catalog) {
   lines.push('where i.is_starter and not i.is_premium_cosmetic');
   lines.push("on conflict (item_id) where rule_type = 'starter' do nothing;");
   lines.push('');
+  const unlocks = catalog.items.filter((it) => it.unlock);
+  if (unlocks.length) {
+    lines.push('-- Regras de desbloqueio por leitura (avaliadas pelo servidor no Marco 3).');
+    lines.push('insert into public.item_unlock_rules (item_id, rule_type, rule_payload, requirements, revision) values');
+    lines.push(
+      unlocks
+        .map((it) => {
+          const payload = { ...(it.unlock.payload ?? {}), label: it.unlock.label ?? null };
+          return `  (${q(it.id)}, ${q(it.unlock.type)}, ${q(JSON.stringify(payload))}::jsonb, ${q(JSON.stringify(it.unlock.requires ?? []))}::jsonb, ${it.unlock.revision ?? 1})`;
+        })
+        .join(',\n'),
+    );
+    lines.push('on conflict (item_id, rule_type, revision) do update set');
+    lines.push('  rule_payload = excluded.rule_payload, requirements = excluded.requirements;');
+    lines.push('');
+  }
   return lines.join('\n');
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
   const sql = buildCatalogSql(catalog);
+  const outPath = outPathFor(catalog.version);
   if (process.argv.includes('--check')) {
     const current = readFileSync(outPath, 'utf8');
     if (current !== sql) {

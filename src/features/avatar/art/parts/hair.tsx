@@ -1,173 +1,200 @@
-import type { ReactElement } from 'react';
-import { Circle, G, Line, Path } from 'react-native-svg';
-import { shade } from '../color';
-import { CANVAS } from '../geometry';
+import { Circle, Defs, G, Path } from 'react-native-svg';
+import { lineOf, mix, shade } from '../color';
+import { f } from '../geometry';
+import { VerticalGradient, url } from '../paint';
 import type { ArtContext, VectorArt } from '../types';
 
-const CX = CANVAS.cx;
-const outline = (c: string) => shade(c, -0.42);
-const shine = (c: string) => shade(c, 0.28);
+const MIRROR = 'translate(1024 0) scale(-1 1)';
 
-const solid = (d: string, extra?: (c: string) => ReactElement | null) => (ctx: ArtContext) => (
-  <G>
-    <Path d={d} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} strokeLinejoin="round" />
-    {extra ? extra(ctx.hair) : null}
-  </G>
-);
-
-const topShine = (c: string) => (
-  <Path d="M300 214 Q340 196 384 200" stroke={shine(c)} strokeWidth={9} fill="none" strokeLinecap="round" opacity={0.7} />
-);
-
-// ---------- formas reutilizadas ----------
-const SHORT_FRONT = 'M234 350 C222 228 288 172 360 172 C432 172 498 228 486 350 C476 304 458 276 432 262 C408 288 352 292 318 270 C300 284 282 282 268 272 C252 292 240 318 234 350 Z';
-const SHORT_BACK = 'M240 330 C236 230 292 186 360 186 C428 186 484 230 480 330 L476 404 C470 424 250 424 244 404 Z';
-const SLICK_FRONT = 'M238 340 C230 232 292 182 360 182 C428 182 490 232 482 340 C470 290 430 248 360 246 C290 248 250 290 238 340 Z';
-const LONG_FRONT = 'M230 384 C218 226 288 168 360 168 C432 168 502 226 490 384 C482 320 462 270 420 246 C396 236 372 236 360 252 C348 236 324 236 300 246 C258 270 238 320 230 384 Z';
-
-function ring(cx: number, cy: number, rx: number, ry: number, fromDeg: number, toDeg: number, n: number) {
-  const pts: { x: number; y: number }[] = [];
-  for (let i = 0; i < n; i++) {
-    const a = ((fromDeg + ((toDeg - fromDeg) * i) / (n - 1)) * Math.PI) / 180;
-    pts.push({ x: cx + rx * Math.cos(a), y: cy + ry * Math.sin(a) });
-  }
-  return pts;
+function grad(ctx: ArtContext, key: string) {
+  const id = `${ctx.uid}-hair-${key}`;
+  return {
+    id,
+    def: <VerticalGradient id={id} top={shade(ctx.hair, 0.14)} bottom={shade(ctx.hair, -0.22)} />,
+  };
 }
 
-const curls = (pts: { x: number; y: number }[], r: number) => (c: string) => (
+/** Pseudo-aleatório determinístico: a mesma arte sempre sai igual. */
+function rand(seed: number) {
+  let s = seed;
+  return () => ((s = (s * 16807) % 2147483647) / 2147483647);
+}
+
+/** Brilho visível mesmo em cabelos muito escuros. */
+const shineOf = (c: string) => mix(shade(c, 0.28), '#C9A988', 0.28);
+
+const strands = (ctx: ArtContext, paths: string[], tone: 'dark' | 'light', width = 2) => (
   <G>
-    {pts.map((pt, i) => (
-      <Circle key={i} cx={pt.x} cy={pt.y} r={r} fill={c} stroke={outline(c)} strokeWidth={4} />
-    ))}
-    {pts.map((pt, i) => (
-      <Circle key={`f${i}`} cx={pt.x} cy={pt.y} r={r - 4} fill={c} />
+    {paths.map((d, i) => (
+      <Path
+        key={i}
+        d={d}
+        stroke={tone === 'dark' ? shade(ctx.hair, -0.38) : shineOf(ctx.hair)}
+        strokeWidth={width}
+        fill="none"
+        strokeLinecap="round"
+        opacity={tone === 'dark' ? 0.7 : 0.55}
+      />
     ))}
   </G>
 );
 
-const braid = (side: -1 | 1, c: string) => {
-  const segs = Array.from({ length: 9 }, (_, i) => ({ x: CX + side * (112 + i * 1.6), y: 396 + i * 28 }));
-  const seg = (s: { x: number; y: number }) => `M${s.x - 21} ${s.y} Q${s.x} ${s.y - 24} ${s.x + 21} ${s.y} Q${s.x} ${s.y + 24} ${s.x - 21} ${s.y} Z`;
-  const bx = CX + side * 126;
+// ------------------------------------------------------------- cacheado volumoso
+type Blob = { x: number; y: number; r: number };
+
+function cloud(cx: number, cy: number, rx: number, ry: number, from: number, to: number, n: number, r: number, seed: number): Blob[] {
+  const rnd = rand(seed);
+  return Array.from({ length: n }, (_, i) => {
+    const a = ((from + ((to - from) * i) / (n - 1)) * Math.PI) / 180;
+    return { x: cx + rx * Math.cos(a) + (rnd() - 0.5) * 10, y: cy + ry * Math.sin(a) + (rnd() - 0.5) * 10, r: r * (0.82 + rnd() * 0.36) };
+  });
+}
+
+/** Cachos: contorno só na borda da massa; interior com muitos cachos pequenos e brilho. */
+function curlMass(ctx: ArtContext, edge: Blob[], fillId: string, core?: string, inner: Blob[] = []) {
+  const line = lineOf(ctx.hair);
+  const rnd = rand(edge.length * 31 + inner.length);
+  const tones = [ctx.hair, shade(ctx.hair, 0.1), shade(ctx.hair, -0.12), mix(ctx.hair, '#6B4A36', 0.18)];
+  const all = [...edge, ...inner];
   return (
-    <G key={side}>
-      {segs.map((s, i) => <Path key={`o${i}`} d={seg(s)} fill={outline(c)} stroke={outline(c)} strokeWidth={8} />)}
-      {segs.map((s, i) => <Path key={`f${i}`} d={seg(s)} fill={c} />)}
-      {segs.map((s, i) => (
-        <Path key={`l${i}`} d={`M${s.x - 14} ${s.y + 4} Q${s.x} ${s.y - 8} ${s.x + 14} ${s.y + 4}`} stroke={outline(c)} strokeWidth={3} fill="none" opacity={0.6} />
-      ))}
-      <Line x1={bx} y1={640} x2={bx} y2={654} stroke="#B48C55" strokeWidth={14} strokeLinecap="round" />
-      <Path d={`M${bx - 14} 656 Q${bx} 694 ${bx + 14} 656 Z`} fill={c} stroke={outline(c)} strokeWidth={4} />
-    </G>
-  );
-};
-
-const strand = (x1: number, y1: number, x2: number, y2: number, c: string, w: number, key: string | number) => (
-  <G key={key}>
-    <Line x1={x1} y1={y1} x2={x2} y2={y2} stroke={outline(c)} strokeWidth={w + 8} strokeLinecap="round" />
-    <Line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth={w} strokeLinecap="round" />
-  </G>
-);
-
-export const hair: Record<string, VectorArt> = {
-  'shaved.front': ({ hair: c }) => (
-    <Path d="M246 320 C244 236 294 202 360 202 C426 202 476 236 474 320 C460 284 430 262 360 258 C290 262 260 284 246 320 Z" fill={c} opacity={0.55} />
-  ),
-
-  'short.back': solid(SHORT_BACK),
-  'short.front': solid(SHORT_FRONT, topShine),
-
-  'sidepart.front': solid(
-    'M234 352 C222 228 288 172 360 172 C432 172 498 228 486 352 C480 310 466 280 446 262 C400 262 330 250 292 290 C270 312 250 330 234 352 Z',
-    (c) => (
-      <G>
-        <Path d="M394 182 Q406 214 422 250" stroke={outline(c)} strokeWidth={5} fill="none" strokeLinecap="round" />
-        <Path d="M290 222 Q330 200 372 198" stroke={shine(c)} strokeWidth={9} fill="none" strokeLinecap="round" opacity={0.7} />
-      </G>
-    ),
-  ),
-
-  'curly.back': (ctx) => curls(ring(CX, 318, 138, 128, 150, 390, 14), 40)(ctx.hair),
-  'curly.front': (ctx) => (
     <G>
-      <Path d={SLICK_FRONT} fill={ctx.hair} />
-      {curls([...ring(CX, 300, 124, 112, 190, 350, 9), ...[292, 334, 376, 418].map((x, i) => ({ x, y: 262 + (i % 2) * 6 }))], 30)(ctx.hair)}
-    </G>
-  ),
-
-  'afro.back': (ctx) => (
-    <G>
-      {curls(ring(CX, 292, 168, 162, 0, 345, 24), 34)(ctx.hair)}
-      <Circle cx={CX} cy={292} r={168} fill={ctx.hair} />
-    </G>
-  ),
-  'afro.front': solid(
-    'M234 334 C226 246 288 206 360 206 C432 206 494 246 486 334 C478 306 466 290 446 280 C430 296 404 284 392 270 C374 290 346 290 328 270 C314 284 290 296 274 280 C254 290 242 308 234 334 Z',
-  ),
-
-  'wavy.back': solid(
-    'M226 300 C222 196 296 160 360 160 C424 160 498 196 494 300 C500 380 512 450 498 520 C486 540 470 520 462 540 C446 560 430 530 420 520 L300 520 C290 530 274 560 258 540 C250 520 234 540 222 520 C208 450 220 380 226 300 Z',
-  ),
-  'wavy.front': solid(
-    'M232 356 C220 226 288 170 360 170 C432 170 500 226 488 356 C478 318 466 292 448 276 C430 296 400 300 384 276 C362 300 330 300 316 276 C296 296 270 300 256 290 C244 310 236 332 232 356 Z',
-    topShine,
-  ),
-
-  'long.back': solid('M224 300 C220 196 296 160 360 160 C424 160 500 196 496 300 L512 664 C460 692 260 692 208 664 Z'),
-  'long.front': solid(LONG_FRONT, (c) => (
-    <Path d="M278 238 Q312 212 346 214" stroke={shine(c)} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.7} />
-  )),
-  'longwavy.back': solid(
-    'M224 300 C220 196 296 160 360 160 C424 160 500 196 496 300 C506 400 524 480 510 560 C530 600 506 640 516 680 C470 700 430 680 400 690 L320 690 C290 680 250 700 204 680 C214 640 190 600 210 560 C196 480 214 400 224 300 Z',
-  ),
-
-  'braids.front': (ctx) => (
-    <G>
-      <Path d={LONG_FRONT} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} strokeLinejoin="round" />
-      {braid(-1, ctx.hair)}
-      {braid(1, ctx.hair)}
-    </G>
-  ),
-
-  'slick.front': solid(SLICK_FRONT, (c) => (
-    <G>
-      <Path d="M300 222 Q330 206 360 204" stroke={shine(c)} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.7} />
-      <Path d="M392 206 Q430 214 452 244" stroke={outline(c)} strokeWidth={3} fill="none" strokeLinecap="round" opacity={0.6} />
-    </G>
-  )),
-  'bun.back': (ctx) => (
-    <G>
-      <Path d={SHORT_BACK} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} />
-      <Circle cx={CX} cy={170} r={60} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} />
-      <Path d={`M${CX - 40} 160 Q${CX} 140 ${CX + 40} 160`} stroke={shine(ctx.hair)} strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.7} />
-      <Path d={`M${CX - 46} 214 Q${CX} 232 ${CX + 46} 214`} stroke="#B48C55" strokeWidth={12} fill="none" strokeLinecap="round" />
-    </G>
-  ),
-  'ponytail.back': (ctx) => (
-    <G>
-      <Path d={SHORT_BACK} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} />
-      <Path d="M430 214 C526 226 548 380 506 528 C494 566 470 566 478 524 C500 404 476 300 418 258 Z" fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} strokeLinejoin="round" />
-      <Circle cx={440} cy={232} r={16} fill="#B48C55" stroke={shade('#B48C55', -0.4)} strokeWidth={4} />
-    </G>
-  ),
-
-  'locs.back': (ctx) => (
-    <G>
-      <Path d={SHORT_BACK} fill={ctx.hair} />
-      {Array.from({ length: 11 }, (_, i) => {
-        const x = 232 + i * 25.6;
-        const len = 610 - Math.abs(x - CX) * 0.5;
-        return strand(x, 250, x + (x - CX) * 0.08, len, ctx.hair, 22, i);
+      {edge.map((b, i) => <Circle key={`o${i}`} cx={f(b.x)} cy={f(b.y)} r={f(b.r + 2)} fill={line} />)}
+      {core ? <Path d={core} fill={line} stroke={line} strokeWidth={4} /> : null}
+      {core ? <Path d={core} fill={`url(#${fillId})`} /> : null}
+      {all.map((b, i) => <Circle key={`f${i}`} cx={f(b.x)} cy={f(b.y)} r={f(b.r)} fill={i % 4 === 0 ? `url(#${fillId})` : tones[i % 4]} />)}
+      {all.map((b, i) => {
+        const rr = b.r * 0.7;
+        const rot = Math.round(rnd() * 360);
+        // espiral do cacho: anel escuro aberto + brilho curto
+        return (
+          <G key={`c${i}`} transform={`rotate(${rot} ${f(b.x)} ${f(b.y)})`}>
+            <Path d={`M${f(b.x - rr)} ${f(b.y)} a${f(rr)} ${f(rr)} 0 1 1 ${f(rr * 1.4)} ${f(rr * 0.7)}`} stroke={shade(ctx.hair, -0.5)} strokeWidth={1.8} fill="none" strokeLinecap="round" opacity={0.75} />
+            <Path d={`M${f(b.x - rr * 0.5)} ${f(b.y - rr * 0.55)} q${f(rr * 0.5)} ${f(-rr * 0.35)} ${f(rr)} 0`} stroke={shineOf(ctx.hair)} strokeWidth={2.2} fill="none" strokeLinecap="round" opacity={0.8} />
+          </G>
+        );
       })}
     </G>
-  ),
-  'locs.front': (ctx) => (
-    <G>
-      <Path d={SLICK_FRONT} fill={ctx.hair} stroke={outline(ctx.hair)} strokeWidth={5} strokeLinejoin="round" />
-      {strand(258, 300, 248, 470, ctx.hair, 20, 'l1')}
-      {strand(282, 270, 276, 410, ctx.hair, 18, 'l2')}
-      {strand(462, 300, 472, 470, ctx.hair, 20, 'r1')}
-      {strand(438, 270, 444, 410, ctx.hair, 18, 'r2')}
-    </G>
-  ),
+  );
+}
+
+/** Cachos espalhados dentro de uma elipse (amostragem determinística). */
+function scatter(cx: number, cy: number, rx: number, ry: number, n: number, r: number, seed: number, minY = -1e9, maxY = 1e9): Blob[] {
+  const rnd = rand(seed);
+  const out: Blob[] = [];
+  let guard = 0;
+  while (out.length < n && guard++ < n * 20) {
+    const x = cx + (rnd() * 2 - 1) * rx;
+    const y = cy + (rnd() * 2 - 1) * ry;
+    if (((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 > 1 || y < minY || y > maxY) continue;
+    out.push({ x, y, r: r * (0.75 + rnd() * 0.5) });
+  }
+  return out;
+}
+
+const CURLY_BACK = [...cloud(512, 246, 140, 142, 0, 350, 40, 24, 7), ...cloud(512, 300, 122, 112, 20, 160, 12, 24, 11)];
+const CURLY_BACK_INNER = scatter(512, 250, 124, 126, 60, 17, 19);
+const CURLY_BACK_CORE = 'M384 246 C384 150 448 108 512 108 C576 108 640 150 640 246 C646 320 636 372 616 404 Q512 444 408 404 C388 372 378 320 384 246 Z';
+const CURLY_FRONT = [
+  ...cloud(512, 214, 98, 66, 186, 354, 16, 16, 3),
+  { x: 428, y: 244, r: 15 },
+  { x: 596, y: 244, r: 15 },
+];
+const CURLY_FRONT_INNER = scatter(512, 186, 84, 40, 22, 14, 23, -1e9, 214);
+
+// ------------------------------------------------------------- formas por estilo
+const SHORT_BACK = 'M418 270 C410 180 456 124 512 122 C568 124 614 180 606 270 L600 304 C592 262 584 238 572 230 L452 230 C440 238 432 262 424 304 Z';
+const SHORT_FRONT =
+  'M420 266 C412 184 452 128 512 126 C574 128 614 184 604 266 C598 240 592 220 580 206 C572 212 562 214 554 204 C546 216 532 216 522 206 C512 218 494 216 486 204 C476 214 462 214 454 206 C442 216 430 236 420 266 Z';
+const SHORT_TUFTS = [
+  'M440 196 C456 168 484 150 512 146',
+  'M470 160 C498 140 538 140 562 156',
+  'M548 150 C574 160 594 184 598 214',
+  'M486 202 C494 184 506 172 520 166',
+  'M530 204 C540 186 556 178 572 180',
+];
+const SHORT_SHINE = ['M468 172 C490 156 520 150 546 156', 'M560 176 C576 188 586 204 590 222'];
+
+const LONG_BACK =
+  'M416 262 C402 168 452 114 512 112 C572 114 622 168 608 262 C616 340 634 404 622 474 C642 526 618 586 636 648 C596 676 566 656 544 672 L480 672 C458 656 428 676 388 648 C406 586 382 526 402 474 C390 404 408 340 416 262 Z';
+const LONG_LOCK =
+  'M512 136 C468 136 428 166 420 228 C412 294 420 352 404 424 C396 466 410 506 396 552 C424 532 440 490 442 446 C448 384 446 322 456 272 C466 222 488 186 512 172 Z';
+const LONG_STRANDS = [
+  'M500 150 C470 170 446 220 440 300 C436 360 432 420 420 480',
+  'M488 172 C466 210 456 270 452 340',
+  'M412 300 C404 380 396 460 410 540',
+  'M612 300 C620 380 628 460 614 540',
+];
+
+export const hair: Record<string, VectorArt> = {
+  'curly.back': (ctx) => {
+    const g = grad(ctx, 'cb');
+    return (
+      <G>
+        <Defs>{g.def}</Defs>
+        {curlMass(ctx, CURLY_BACK, g.id, CURLY_BACK_CORE, CURLY_BACK_INNER)}
+      </G>
+    );
+  },
+  'curly.front': (ctx) => {
+    const g = grad(ctx, 'cf');
+    return (
+      <G>
+        <Defs>{g.def}</Defs>
+        {curlMass(ctx, CURLY_FRONT, g.id, undefined, CURLY_FRONT_INNER)}
+        {/* cachos soltos nas têmporas */}
+        <Path d="M428 252 C418 276 426 300 416 322 C412 334 420 344 428 338" stroke={lineOf(ctx.hair)} strokeWidth={7} fill="none" strokeLinecap="round" />
+        <Path d="M428 252 C418 276 426 300 416 322 C412 334 420 344 428 338" stroke={ctx.hair} strokeWidth={4} fill="none" strokeLinecap="round" />
+        <G transform={MIRROR}>
+          <Path d="M428 252 C420 280 430 300 420 318" stroke={lineOf(ctx.hair)} strokeWidth={7} fill="none" strokeLinecap="round" />
+          <Path d="M428 252 C420 280 430 300 420 318" stroke={ctx.hair} strokeWidth={4} fill="none" strokeLinecap="round" />
+        </G>
+      </G>
+    );
+  },
+
+  'short.back': (ctx) => <Path d={SHORT_BACK} fill={shade(ctx.hair, -0.12)} stroke={lineOf(ctx.hair)} strokeWidth={3} />,
+  'short.front': (ctx) => {
+    const g = grad(ctx, 'sf');
+    return (
+      <G>
+        <Defs>{g.def}</Defs>
+        <Path d={SHORT_FRONT} fill={url(g.id)} stroke={lineOf(ctx.hair)} strokeWidth={3} strokeLinejoin="round" />
+        {/* laterais mais curtas (degradê) */}
+        <Path d="M422 252 L424 300 C428 286 432 268 440 258 Z" fill={ctx.hair} opacity={0.55} />
+        <Path d="M602 252 L600 300 C596 286 592 268 584 258 Z" fill={ctx.hair} opacity={0.55} />
+        {strands(ctx, SHORT_TUFTS, 'dark', 2.2)}
+        {strands(ctx, SHORT_SHINE, 'light', 4)}
+      </G>
+    );
+  },
+
+  'longwavy.back': (ctx) => {
+    const g = grad(ctx, 'lb');
+    const waves = [440, 476, 512, 548, 584].map((x, i) => `M${x} 300 C${x + (i % 2 ? 10 : -10)} 400 ${x + (i % 2 ? -12 : 12)} 520 ${x + (i % 2 ? 6 : -6)} 650`);
+    return (
+      <G>
+        <Defs>{g.def}</Defs>
+        <Path d={LONG_BACK} fill={url(g.id)} stroke={lineOf(ctx.hair)} strokeWidth={3} strokeLinejoin="round" />
+        {strands(ctx, waves, 'dark', 2.2)}
+      </G>
+    );
+  },
+  'longwavy.front': (ctx) => {
+    const g = grad(ctx, 'lf');
+    const lock = (
+      <G>
+        <Path d={LONG_LOCK} fill={url(g.id)} stroke={lineOf(ctx.hair)} strokeWidth={3} strokeLinejoin="round" />
+        {strands(ctx, LONG_STRANDS.slice(0, 2), 'dark', 2)}
+        <Path d="M498 156 C478 172 462 200 454 236" stroke={shade(ctx.hair, 0.3)} strokeWidth={5} fill="none" strokeLinecap="round" opacity={0.55} />
+      </G>
+    );
+    return (
+      <G>
+        <Defs>{g.def}</Defs>
+        <G>{lock}</G>
+        <G transform={MIRROR}>{lock}</G>
+        <Path d="M512 140 L512 178" stroke={shade(ctx.hair, -0.4)} strokeWidth={2.4} strokeLinecap="round" />
+      </G>
+    );
+  },
 };
