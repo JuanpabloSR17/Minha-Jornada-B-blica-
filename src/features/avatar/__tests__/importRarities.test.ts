@@ -32,9 +32,9 @@ function portugueseFile(mutate?: (rows: Record<string, unknown>[]) => void) {
   return file;
 }
 
-function run(file: string) {
+function run(file: string, extra: string[] = []) {
   try {
-    return { ok: true, out: execFileSync(process.execPath, [join(root, 'scripts/import-rarities-catalog.mjs'), file], { encoding: 'utf8', stdio: 'pipe' }) };
+    return { ok: true, out: execFileSync(process.execPath, [join(root, 'scripts/import-rarities-catalog.mjs'), file, ...extra], { encoding: 'utf8', stdio: 'pipe' }) };
   } catch (e) {
     const err = e as { stdout: string; stderr: string };
     return { ok: false, out: `${err.stdout}${err.stderr}` };
@@ -62,4 +62,33 @@ describe('importador do catálogo oficial de raridades', () => {
     expect(r.out).toContain('campo "scriptureRef" ausente');
     expect(r.out).toMatch(/regra .* (ausente|revisão manual)/);
   });
+
+  it('reconcilia sem destruir: preserva IDs existentes, cria aliases e relata diferenças', () => {
+    const file = portugueseFile((rows) => {
+      // mesmo item com outro ID no oficial → mantém o ID existente e registra alias
+      const joseph = rows.find((x) => x.codigo === 'tunic-joseph')!;
+      joseph.codigo = 'epico-tunica-jose';
+      // raridade diferente: o oficial manda (raro → épico exige compensar a contagem)
+      const elijah = rows.find((x) => x.codigo === 'cloak-elijah')!;
+      elijah.referencia = '1 Reis 19:19-21';
+      // lendário renomeado com outro ID → corresponde pelo livro
+      const gen = rows.find((x) => x.codigo === 'legendary-gen')!;
+      gen.codigo = 'lendario-genesis';
+      gen.nome = 'Cetro do Princípio';
+      // um comum do rascunho substituído por um item novo do oficial
+      const coins = rows.find((x) => x.codigo === 'purse-coins')!;
+      coins.codigo = 'comum-odre-novo';
+      coins.nome = 'Odre Novo';
+    });
+    const report = join(mkdtempSync(join(tmpdir(), 'rep-')), 'relatorio.md');
+    const r = run(file, ['--report', report]);
+    expect(r.ok).toBe(true);
+    const md = require('fs').readFileSync(report, 'utf8') as string;
+    expect(md).toContain('| epico-tunica-jose | tunic-joseph | nome |');
+    expect(md).toContain('| lendario-genesis | legendary-gen | livro | name: "Cajado dos Patriarcas" → "Cetro do Princípio" |');
+    expect(md).toContain('scriptureRef: "1 Reis 19:19" → "1 Reis 19:19-21"');
+    expect(md).toContain('| comum-odre-novo | comum-odre-novo | novo |');
+    expect(md).toMatch(/mantidos como legado.*purse-coins/);
+  });
 });
+

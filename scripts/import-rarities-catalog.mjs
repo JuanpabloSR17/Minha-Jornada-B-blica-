@@ -93,29 +93,100 @@ export function convert(input) {
   return { items, counts, errors };
 }
 
-export function merge(catalog, imported) {
-  const keepOld = catalog.items.filter((i) => i.series !== 'rarities-v1');
-  const newIds = new Set(imported.map((i) => i.id));
-  // IDs antigos da série que o arquivo não trouxe são mantidos (podem estar em inventários)
-  const orphans = catalog.items.filter((i) => i.series === 'rarities-v1' && !newIds.has(i.id)).map((i) => ({ ...i, series: 'legacy' }));
-  return { ...catalog, items: [...keepOld, ...imported, ...orphans], draft: undefined };
+const FIELDS = ['name', 'rarity', 'slot', 'category', 'scriptureRef', 'book'];
+const ruleKey = (u) => (u ? `${u.type}:${JSON.stringify(u.payload ?? {})}` : '');
+
+/**
+ * Reconciliação NÃO destrutiva entre o catálogo oficial e o existente.
+ * Ordem de correspondência: mesmo ID → mesmo nome → (lendário) mesmo livro.
+ * Quando o ID oficial difere de um ID existente, o ID existente é mantido (pode ter
+ * histórico de posse) e o oficial vira um alias em `idAliases`.
+ */
+export function reconcile(catalog, imported) {
+  const existing = catalog.items;
+  const byId = new Map(existing.map((i) => [i.id, i]));
+  const byName = new Map(existing.map((i) => [norm(i.name), i]));
+  const byBook = new Map(existing.filter((i) => i.rarity === 'legendary' && i.book).map((i) => [i.book, i]));
+  const used = new Set();
+  const aliases = { ...(catalog.idAliases ?? {}) };
+  const rows = [];
+  const conflicts = [];
+  const merged = imported.map((off) => {
+    let match = byId.get(off.id);
+    let how = match ? 'id' : null;
+    if (!match && byName.has(norm(off.name))) [match, how] = [byName.get(norm(off.name)), 'nome'];
+    if (!match && off.rarity === 'legendary' && byBook.has(off.book)) [match, how] = [byBook.get(off.book), 'livro'];
+    if (match && used.has(match.id)) {
+      conflicts.push(`${off.id}: corresponde a ${match.id}, que já foi usado por outro item oficial`);
+      match = undefined;
+      how = null;
+    }
+    if (match && match.series === 'starter') conflicts.push(`${off.id}: corresponde à peça inicial ${match.id} (gratuita para todos) — revisar`);
+    if (match) used.add(match.id);
+    const id = match ? match.id : off.id;
+    if (match && off.id !== match.id) aliases[off.id] = match.id;
+    const diffs = match
+      ? [...FIELDS.filter((f) => (match[f] ?? '') !== (off[f] ?? '')).map((f) => `${f}: "${match[f] ?? ''}" → "${off[f] ?? ''}"`),
+         ...(ruleKey(match.unlock) !== ruleKey(off.unlock) ? [`regra: ${ruleKey(match.unlock)} → ${ruleKey(off.unlock)}`] : [])]
+      : [];
+    rows.push({ official: off.id, id, how: how ?? 'novo', diffs });
+    return { ...(match ?? {}), ...off, id, starter: match?.series === 'starter' ? match.starter : false, series: 'rarities-v1' };
+  });
+  // itens existentes da série que o oficial não trouxe: mantidos (podem estar em inventários)
+  const legacy = existing.filter((i) => i.series === 'rarities-v1' && !used.has(i.id)).map((i) => ({ ...i, series: 'legacy' }));
+  const keep = existing.filter((i) => i.series !== 'rarities-v1' && !used.has(i.id));
+  return {
+    catalog: { ...catalog, items: [...keep, ...merged, ...legacy], idAliases: aliases, draft: undefined },
+    rows,
+    legacy: legacy.map((i) => i.id),
+    conflicts,
+  };
+}
+
+/** Mantido por compatibilidade com testes antigos. */
+export const merge = (catalog, imported) => reconcile(catalog, imported).catalog;
+
+export function reportMarkdown({ rows, legacy, conflicts }, counts) {
+  const by = (h) => rows.filter((r) => r.how === h).length;
+  const lines = [
+    '# Reconciliação: catálogo oficial × catálogo existente',
+    '',
+    `- Itens oficiais: ${rows.length} (${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', ')})`,
+    `- Correspondência por ID: ${by('id')} · por nome: ${by('nome')} · por livro: ${by('livro')} · novos: ${by('novo')}`,
+    `- Itens existentes mantidos como legado (não estão no oficial): ${legacy.length}${legacy.length ? ` — ${legacy.join(', ')}` : ''}`,
+    `- Conflitos: ${conflicts.length}`,
+    ...conflicts.map((c) => `  - ${c}`),
+    '',
+    '| Oficial | ID final | Correspondência | Diferenças |',
+    '|---|---|---|---|',
+    ...rows.map((r) => `| ${r.official} | ${r.id} | ${r.how} | ${r.diffs.join('; ').replace(/\|/g, '/') || '—'} |`),
+    '',
+  ];
+  return lines.join('\n');
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const file = process.argv[2];
   if (!file) {
-    console.error('Uso: node scripts/import-rarities-catalog.mjs caminho/catalogo.json [--write]');
+    console.error('Uso: node scripts/import-rarities-catalog.mjs caminho/catalogo.json [--report relatorio.md] [--write]');
     process.exit(2);
   }
   const { items, counts, errors } = convert(JSON.parse(readFileSync(resolve(file), 'utf8')));
   console.log(`Itens lidos: ${items.length}`, counts);
   errors.forEach((e) => console.error(`erro: ${e}`));
   if (errors.length) process.exit(1);
+  const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
+  const result = reconcile(catalog, items);
+  const ri = process.argv.indexOf('--report');
+  if (ri > 0) {
+    writeFileSync(resolve(process.argv[ri + 1]), reportMarkdown(result, counts));
+    console.log(`Relatório: ${process.argv[ri + 1]}`);
+  }
+  result.conflicts.forEach((c) => console.warn(`conflito: ${c}`));
   if (process.argv.includes('--write')) {
-    const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
-    writeFileSync(catalogPath, JSON.stringify(merge(catalog, items), null, 2) + '\n');
-    console.log('catalog.json atualizado. Agora aumente "version", defina o prefixo em scripts/generate-catalog-sql.mjs e rode npm run catalog:sql.');
+    writeFileSync(catalogPath, JSON.stringify(result.catalog, null, 2) + '\n');
+    console.log('catalog.json atualizado (não destrutivo). Agora aumente "version", defina o prefixo em scripts/generate-catalog-sql.mjs e rode npm run catalog:sql.');
   } else {
-    console.log('Válido. Rode novamente com --write para gravar.');
+    console.log('Válido. Use --report para ver as diferenças e --write para gravar.');
   }
 }

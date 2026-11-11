@@ -71,7 +71,7 @@ Quatro itens comuns já apontam para missões futuras e aparecem como "Modo Miss
 ## 5. Trocar o rascunho pelo catálogo oficial
 
 ```bash
-node scripts/import-rarities-catalog.mjs caminho/catalogo_raridades_144_itens_v2.json          # valida
+node scripts/import-rarities-catalog.mjs caminho/catalogo_raridades_144_itens_v2.json --report relatorio.md   # valida e relata diferenças
 node scripts/import-rarities-catalog.mjs caminho/catalogo_raridades_144_itens_v2.json --write  # grava
 # depois: aumente "version" em catalog.json, adicione o prefixo em scripts/generate-catalog-sql.mjs
 npm run catalog:sql && npm test && npm run test:db
@@ -80,3 +80,14 @@ npm run catalog:sql && npm test && npm run test:db
 O importador aceita campos em português ou inglês, confere as quantidades por raridade, um lendário
 por livro, campos obrigatórios, regras e IDs duplicados, e **mantém** IDs antigos que o arquivo não
 trouxer (podem estar no inventário de alguém).
+
+### Reconciliação não destrutiva
+
+Cada item oficial é casado com o existente nesta ordem: **mesmo ID → mesmo nome → (lendário) mesmo livro**.
+
+- Casou com ID diferente: o **ID existente é mantido** e o ID oficial vira um alias em `idAliases`
+  (catalog.json), para que histórico de posse e visuais salvos não quebrem.
+- Item existente da série que o oficial não traz: fica como `legacy` (ativo, fora da contagem de 144).
+- Casamento com uma peça inicial gratuita ou ambíguo: listado como **conflito** para revisão.
+- O relatório (`--report`) traz, item a item, o tipo de correspondência e as diferenças de nome,
+  raridade, slot, categoria, referência, livro e regra.
