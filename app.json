@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Jornada Bíblica",
+    "slug": "jornada-biblica",
+    "scheme": "jornadabiblica",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#F3E8D2",
+    "ios": { "supportsTablet": true, "bundleIdentifier": "app.jornadabiblica" },
+    "android": { "package": "app.jornadabiblica", "edgeToEdgeEnabled": true },
+    "web": { "output": "single", "bundler": "metro" },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      ["expo-splash-screen", { "backgroundColor": "#F3E8D2", "dark": { "backgroundColor": "#17130F" } }]
+    ],
+    "experiments": { "typedRoutes": false }
+  }
+}
