@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Modal, StyleSheet, View } from 'react-native';
 import { useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
@@ -29,9 +29,13 @@ export function PromptDialog({
 }) {
   const { colors } = useTheme();
   const [value, setValue] = useState(initial);
-  useEffect(() => {
+  // Redefine o texto só no momento em que o diálogo abre, ainda no render (sem mostrar o texto
+  // anterior). Mudanças em `initial` com o diálogo aberto não apagam o que a pessoa digitou.
+  const [wasVisible, setWasVisible] = useState(visible);
+  if (visible !== wasVisible) {
+    setWasVisible(visible);
     if (visible) setValue(initial);
-  }, [visible, initial]);
+  }
   const ok = value.trim().length > 0;
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>

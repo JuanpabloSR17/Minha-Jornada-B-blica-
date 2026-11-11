@@ -51,6 +51,15 @@ recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).
 - Novos slots: peitoral, emblema, efeito e costas. Detalhe do item mostra a relação com o texto
   (literal ou associação interpretativa) e o significado.
 - Progresso bíblico calculado no servidor (`get_reading_progress`).
+
+### Modo Missão de leitura
+
+- Aba **Ler**: escolher livro e capítulo, Bíblia física (cronômetro) — a digital aguarda texto licenciado.
+- Pausar/retomar contando só o tempo ativo; sessão restaurada ao bloquear a tela ou reabrir o app.
+- Finalização confirmada pelo servidor (`complete_reading_mission`), idempotente: queda de conexão
+  deixa a missão pendente para nova tentativa sem duplicar. Tela de recompensa com XP (provisório),
+  progresso e itens concedidos. Lendário ao concluir o livro; missão especial de 1 Reis 19 dá o Manto
+  do Profeta. Detalhes e regras pendentes: [`docs/MODO-MISSAO.md`](docs/MODO-MISSAO.md).
 - Contrato para o futuro Modo Missão (missões, marcos, mundos) — sem cronômetro e sem leitura ainda.
 
 Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
@@ -105,9 +114,9 @@ npm run web        # navegador
 | Comando | O que verifica |
 |---|---|
 | `npm run typecheck` | TypeScript estrito |
-| `npm test` | 80 testes: catálogo oficial (144 itens, SHA-256, aliases, compatibilidade de visuais antigos e do AvatarRenderer), importador e reimportação idempotente, catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
-| `npm run test:db` | 244 verificações (inclui catálogo oficial, aliases e conflitos de ID, migração de posse e visuais do rascunho, backfill sem duplicar, progresso bíblico, lendários por livro, Santos fora da loja, relíquias não equipáveis, missões/marcos sem eventos fictícios, reversões) num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
-| `npm run test:e2e` | Fluxo completo no navegador (24 etapas; cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
+| `npm test` | 87 testes: sessão do Modo Missão (tempo ativo, pausa, reabrir, pendente, UUID), catálogo oficial (144 itens, SHA-256, aliases, compatibilidade de visuais antigos e do AvatarRenderer), importador e reimportação idempotente, catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
+| `npm run test:db` | 288 verificações (inclui Modo Missão: idempotência, releitura, Lendário no último capítulo, Manto do Profeta até a Coleção dos Profetas, finalizações simultâneas, catálogo oficial, aliases e conflitos de ID, migração de posse e visuais do rascunho, backfill sem duplicar, progresso bíblico, lendários por livro, Santos fora da loja, relíquias não equipáveis, missões/marcos sem eventos fictícios, reversões) num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
+| `npm run test:e2e` | Fluxo completo no navegador (31 etapas; inclui Modo Missão físico com pausa, reabrir, queda de conexão, Lendário, releitura e Manto do Profeta; cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
 | `npm run assets:check` | Arquivos de `assets/avatars/` válidos e registro em dia |
 
 `test:db` e `test:e2e` precisam do Postgres 16 instalado localmente (`/usr/lib/postgresql/16/bin`).

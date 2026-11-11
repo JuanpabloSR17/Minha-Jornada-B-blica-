@@ -50,9 +50,14 @@ export const RULE_EVENT: Record<string, RewardEvent['type'] | 'COLLECTION_COMPLE
 };
 
 /**
- * Pronto para conclusões reais de capítulo (próxima etapa):
- *  1. RPC autenticada (ex.: complete_chapter) valida a leitura no servidor e chama
- *     private.record_event(uid, 'CHAPTER_COMPLETED', 'chapter:GEN.37', { book: 'GEN', chapter: 37 }).
+ * Conclusão real de capítulo (Modo Missão): public.complete_reading_mission(sessionId, book,
+ * chapter, mode, startedAt, activeSeconds) — ver docs/MODO-MISSAO.md e
+ * src/features/reading/mission/mission.service.ts (MissionResult).
+ *  1. A RPC valida o capítulo e chama
+ *     private.record_event(uid, 'CHAPTER_COMPLETED', 'chapter:GEN.37', { book: 'GEN', chapter: 37 })
+ *     (releitura: origem 'mission:<sessão>', que não conta capítulo novo nem repete recompensas).
+ *     Missões/marcos curados com book_code/chapter em reward_triggers geram MISSION_COMPLETED /
+ *     MILESTONE_REACHED; XP vai para xp_ledger com chave única.
  *  2. O motor recalcula no servidor: capítulos distintos, conclusão do livro (todos os capítulos),
  *     lendário do livro, épicos de capítulo e coleções — de forma idempotente.
  *  3. O app lê o resultado por get_wardrobe (posse) e get_reading_progress (progresso).

@@ -1,7 +1,11 @@
 import { useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import { spacing } from '@/theme/tokens';
-import { AppText, Button, Card, ComingSoon, Notice, Ornament, Screen } from '@/ui';
+import { useCallback, useState } from 'react';
+import { useFocusEffect } from 'expo-router';
+import { AppText, Button, Card, Notice, Ornament, Screen } from '@/ui';
+import { getMissionOverview, type MissionOverview } from '@/features/reading/mission/mission.service';
+import { useMissionSession } from '@/features/reading/mission/useMissionSession';
 import { fmt, strings } from '@/i18n';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { goalLabel } from '@/features/profile/goalLabel';
@@ -13,6 +17,13 @@ export default function Home() {
   const { profile, readingPreferences } = useAuth();
   const { avatar, error } = useMyAvatar();
   const goal = goalLabel(readingPreferences);
+  const { session } = useMissionSession();
+  const [overview, setOverview] = useState<MissionOverview | null>(null);
+  useFocusEffect(
+    useCallback(() => {
+      getMissionOverview().then(setOverview, () => setOverview(null));
+    }, []),
+  );
 
   return (
     <Screen edges={['top', 'left', 'right']}>
@@ -27,7 +38,12 @@ export default function Home() {
           <Button compact title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />
         </View>
       </Card>
-      <ComingSoon title={strings.home.missionsTitle} body={strings.home.missionsBody} />
+      <Card>
+        <AppText variant="heading">{strings.home.missionsTitle}</AppText>
+        <AppText muted>{strings.home.missionsBody}</AppText>
+        {overview ? <AppText variant="label">{fmt(strings.home.progress, { chapters: overview.chaptersCompleted, total: overview.totalChapters, xp: overview.xpTotal })}</AppText> : null}
+        <Button title={session ? strings.home.missionContinue : strings.home.missionStart} onPress={() => router.push(session ? '/reading/mission' : '/(tabs)/read')} />
+      </Card>
     </Screen>
   );
 }

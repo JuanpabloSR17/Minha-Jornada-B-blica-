@@ -86,6 +86,8 @@ function RootNavigator() {
           <Stack.Screen name="avatar/sanctuary" />
           <Stack.Screen name="users/[username]" />
           <Stack.Screen name="settings/pace" />
+          <Stack.Screen name="reading/mission" />
+          <Stack.Screen name="reading/completed" />
         </Stack.Protected>
         <Stack.Screen name="auth/callback" />
         <Stack.Screen name="auth/update-password" />

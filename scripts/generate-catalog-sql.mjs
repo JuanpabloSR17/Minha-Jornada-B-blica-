@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
 /** Prefixo de data da migração de cada versão do catálogo. */
-const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200', 5: '20261115000200' };
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200', 5: '20261115000200', 6: '20261116000200' };
 export const outPathFor = (version) => {
   const prefix = VERSION_PREFIX[version];
   if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);
@@ -75,6 +75,14 @@ export function buildCatalogSql(catalog) {
     lines.push('on conflict (alias_id) do update set item_id = excluded.item_id, source = excluded.source;');
     lines.push('');
   }
+  if (catalog.missions?.length) {
+    lines.push('-- Missões curadas do Modo Missão (concluídas ao finalizar a missão de leitura do capítulo).');
+    lines.push('insert into public.reward_triggers (id, kind, name, description, book_code, chapter, is_active) values');
+    lines.push(catalog.missions.map((m) => `  (${q(m.id)}, ${q(m.kind)}, ${q(m.name)}, ${q(m.description)}, ${q(m.book)}, ${m.chapter}, true)`).join(',\n'));
+    lines.push('on conflict (id) do update set kind = excluded.kind, name = excluded.name, description = excluded.description,');
+    lines.push('  book_code = excluded.book_code, chapter = excluded.chapter, is_active = true;');
+    lines.push('');
+  }
   const variants = catalog.items.filter((it) => it.variantOf);
   if (v3 && variants.length) {
     lines.push('-- Variantes evolutivas (cada variante é um item próprio; a base permanece).');
@@ -127,7 +135,7 @@ export function buildCatalogSql(catalog) {
   if (v5) {
     lines.push('-- Posse e equipamento seguem os aliases; backfill idempotente de recompensas já merecidas.');
     lines.push('select private.apply_item_aliases();');
-    lines.push("select private.evaluate_rewards(p.id, 'backfill:catalog-v5') from public.profiles p");
+    lines.push(`select private.evaluate_rewards(p.id, 'backfill:catalog-v${catalog.version}') from public.profiles p`);
     lines.push('where exists (select 1 from private.domain_events d where d.user_id = p.id);');
     lines.push('');
   }

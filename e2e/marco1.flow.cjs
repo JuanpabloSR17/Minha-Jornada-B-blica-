@@ -251,6 +251,7 @@ async function newPhone(browser, scheme = 'light') {
   for (const name of ['Viagem', 'Festa']) {
     await page.getByRole('button', { name: 'Novo visual' }).click();
     await page.getByLabel('Nome do visual').fill(name);
+    assert.equal(await page.getByLabel('Nome do visual').inputValue(), name, `campo do nome antes de salvar "${name}"`);
     await page.getByRole('button', { name: 'Salvar' }).click();
     await page.getByText(name, { exact: true }).waitFor();
   }
@@ -298,7 +299,7 @@ async function newPhone(browser, scheme = 'light') {
   // cenário isolado de teste: marco curado cadastrado só aqui concede a relíquia pelo servidor
   await db.query(`insert into reward_triggers (id, kind, name) values ('holy_mana_do_deserto', 'milestone', 'Marco de teste')`);
   await db.query(`select private.record_event($1, 'MILESTONE_REACHED', 'milestone:holy_mana_do_deserto', '{"milestone":"holy_mana_do_deserto"}')`, [anaId]);
-  await db.query(`delete from reward_triggers`);
+  await db.query(`delete from reward_triggers where id = 'holy_mana_do_deserto'`);
   // ler a passagem não concede item santo
   await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:ACT.2', '{"book":"ACT","chapter":2}')`, [anaId]);
   assert.equal((await db.query(`select count(*)::int n from user_items ui join cosmetic_items i on i.id = ui.item_id where ui.user_id = $1 and i.rarity = 'holy'`, [anaId])).rows[0].n, 1);
@@ -319,6 +320,92 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByText('Sobre esta raridade', { exact: false }).waitFor();
   await shot(page, 'm3-04-legendary-detail');
   step('Santuário: relíquia de marco curado exibida e não equipável; leitura não concede santo; alias de ID antigo; lendário mostra o livro a concluir');
+
+  // ============================================================ MODO MISSÃO (leitura física)
+  // Rute 1–3 concluídos pelo mesmo RPC do app (como a própria Ana), para testar o Lendário no capítulo 4
+  for (const n of [1, 2, 3]) {
+    await db.query('begin');
+    await db.query(`select set_config('request.jwt.claim.sub', $1, true)`, [anaId]);
+    await db.query(`select public.complete_reading_mission(gen_random_uuid(), 'RUT', $1, 'physical', now() - interval '5 minutes', 120)`, [n]);
+    await db.query('commit');
+  }
+  const clockText = async () => (await page.getByRole('timer').innerText()).split('\n')[0].trim();
+  await page.goto(`${APP}/read`);
+  await page.getByText('Modo Missão', { exact: true }).first().waitFor();
+  await page.getByRole('radio', { name: /^Rute, 3 de 4/ }).click();
+  await page.getByRole('radio', { name: 'Capítulo 4', exact: true }).click();
+  await page.getByText('Leitor digital ainda não disponível', { exact: false }).waitFor();
+  await shot(page, 'm4-01-mission-choose');
+  await page.getByRole('button', { name: 'Iniciar missão: Rute 4' }).click();
+  await page.getByText('Abra sua Bíblia em Rute 4', { exact: false }).waitFor();
+  await page.waitForTimeout(2300);
+  assert.ok((await clockText()) >= '00:02', 'cronômetro conta');
+  await page.getByRole('button', { name: 'Pausar' }).click();
+  const pausedAt = await clockText();
+  await page.waitForTimeout(2200);
+  assert.equal(await clockText(), pausedAt, 'pausado não conta tempo');
+  await shot(page, 'm4-02-mission-paused');
+  step('missão física: escolhe livro/capítulo, cronômetro conta e para ao pausar');
+
+  // "reabrir o app": recarrega a página; a sessão volta igual, pausada, com o mesmo tempo
+  await page.reload();
+  await page.getByText('Pausado').first().waitFor();
+  assert.equal(await clockText(), pausedAt);
+  await page.getByRole('button', { name: 'Retomar' }).click();
+  await page.waitForTimeout(1500);
+  assert.ok((await clockText()) > pausedAt, 'retomado volta a contar');
+  step('reabrir o app restaura a missão pausada e permite retomar');
+
+  // falha de conexão 1: o pedido nem chega ao servidor
+  const rutCount = async () => Number((await db.query(`select count(*) from reading_sessions where user_id = $1 and book_code = 'RUT' and chapter = 4`, [anaId])).rows[0].count);
+  await page.route('**/rest/v1/rpc/complete_reading_mission', (r) => r.abort('internetdisconnected'));
+  await page.getByRole('button', { name: 'Finalizar missão' }).click();
+  await page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await page.getByText('Finalização pendente').first().waitFor();
+  assert.equal(await rutCount(), 0);
+  const frozen = await clockText();
+  await page.waitForTimeout(1200);
+  assert.equal(await clockText(), frozen, 'tempo congelado após confirmar');
+  // falha de conexão 2: o servidor registra, mas a resposta se perde
+  await page.unroute('**/rest/v1/rpc/complete_reading_mission');
+  await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  await page.getByRole('button', { name: 'Tentar novamente' }).click();
+  await page.getByText('Finalização pendente').first().waitFor();
+  await page.waitForTimeout(400);
+  assert.equal(await rutCount(), 1, 'servidor registrou a conclusão uma vez');
+  await shot(page, 'm4-03-mission-pending');
+  await page.unroute('**/rest/v1/rpc/complete_reading_mission');
+  await page.reload();
+  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByRole('button', { name: 'Tentar novamente' }).click();
+  await page.getByText('Missão concluída').waitFor();
+  await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
+  await page.getByText('Você concluiu Rute!').waitFor();
+  await page.getByText('Manto do Resgate').waitFor();
+  const dup = (await db.query(`select (select count(*) from reading_sessions where user_id = $1 and book_code = 'RUT' and chapter = 4)::int s,
+    (select count(*) from user_items where user_id = $1 and item_id = 'book_rut')::int i,
+    (select count(*) from xp_ledger where user_id = $1 and source_event_id = 'chapter:RUT.4')::int x`, [anaId])).rows[0];
+  assert.deepEqual(dup, { s: 1, i: 1, x: 1 });
+  await shot(page, 'm4-04-mission-completed-legendary');
+  step('queda de conexão (antes e depois do servidor): sessão pendente preservada, nova tentativa sem duplicar; Lendário de Rute uma vez');
+
+  await page.getByRole('button', { name: 'Equipar agora' }).click();
+  await page.getByText('Equipado no visual em uso.').waitFor();
+  assert.equal((await activeEq()).back, 'book_rut');
+  step('recompensa: Equipar agora coloca o Lendário no visual em uso');
+
+  // releitura
+  await page.goto(`${APP}/read`);
+  await page.getByRole('radio', { name: /^Rute, 4 de 4/ }).click();
+  await page.getByRole('radio', { name: 'Capítulo 4, concluído' }).click();
+  await page.getByRole('button', { name: 'Iniciar missão: Rute 4' }).click();
+  await page.getByRole('button', { name: 'Finalizar missão' }).click();
+  await page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await page.getByText('Releitura registrada').waitFor();
+  await page.getByText('Nenhum item novo nesta missão.').waitFor();
+  assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'book_rut'`, [anaId])).rows[0].count), 1);
+  await shot(page, 'm4-05-mission-reread');
+  step('releitura: informada, sem item novo e sem duplicar o Lendário');
 
   // ------------------------------------------------------------ segundo usuário
   const C = await newPhone(browser, 'dark');
@@ -342,6 +429,18 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Finalizar personagem' }).click();
   await C.page.getByRole('button', { name: 'Começar a jornada' }).click();
   await C.page.getByText('Paz, Bia!').waitFor();
+  // jogador novo: missão especial de 1 Reis 19 desbloqueia o Manto do Profeta
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByRole('button', { name: /Missão especial: o chamado de Eliseu/ }).click();
+  await C.page.getByRole('button', { name: 'Iniciar missão: 1 Reis 19' }).click();
+  await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
+  await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await C.page.getByText('Missão especial concluída: Missão especial: o chamado de Eliseu').waitFor();
+  await C.page.getByText('Manto do Profeta').waitFor();
+  const biaId = (await db.query(`select id from profiles where username = 'bia_teste'`)).rows[0].id;
+  assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'cloak-elijah'`, [biaId])).rows[0].count), 1);
+  await shot(C.page, 'm4-06-mission-prophet-cloak-dark');
+  step('jogador novo: missão especial de 1 Reis 19 desbloqueia o Manto do Profeta');
   await C.page.goto(`${APP}/users/ana_teste`);
   await C.page.getByText('Ana Teste').waitFor();
   assert.equal(await C.page.getByText('ana+', { exact: false }).count(), 0);

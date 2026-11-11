@@ -81,6 +81,14 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [ ] Ilustrações dos 144 itens
 - [ ] Modo Missão com cronômetro e leitura (próxima etapa, após aprovação)
 
+### Modo Missão de leitura ✅ (aguardando revisão)
+
+- [x] Escolher livro/capítulo, Bíblia física com cronômetro, pausar/retomar, restaurar ao reabrir
+- [x] `complete_reading_mission` idempotente; XP (provisório); Lendário por livro; releitura sem duplicar
+- [x] Missão curada do Manto do Profeta (1 Reis 19); progressão até a Coleção dos Profetas
+- [ ] Leitor digital (texto licenciado), Siclos, meta diária com escolha de Comum, missões dos outros
+  17 Raros e marcos dos 22 Santos — dependem de conteúdo/regra de produto (docs/MODO-MISSAO.md)
+
 ### Marco 3 — Leitura e recompensas
 
 - Catálogo canônico de livros/capítulos (66 livros, 1.189 capítulos) e adaptador de conteúdo licenciado.

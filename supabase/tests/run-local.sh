@@ -62,11 +62,26 @@ R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from private.domain_
 if [ "$R" != "1,1,1" ]; then echo "✘ concorrência de recompensas: eventos,recompensas,itens=$R (esperado 1,1,1)"; exit 1; fi
 echo "  ok  requisições simultâneas do mesmo capítulo geram 1 evento, 1 recompensa e 1 item"
 
+echo "→ concorrência no Modo Missão (mesma finalização em paralelo e duas sessões do mesmo capítulo)"
+"${PSQL[@]}" -d jb_test -c "insert into auth.users (id) values ('c3333333-0000-0000-0000-000000000003');
+  insert into public.profiles (id, username, display_name) values ('c3333333-0000-0000-0000-000000000003', 'missao_paralela', 'Paralela');" >/dev/null
+SID=11111111-aaaa-4aaa-8aaa-111111111111
+"${PSQL[@]}" -d jb_test -o /dev/null -v sid=$SID -f "$ROOT/supabase/tests/concurrency_missions.sql" & P1=$!
+"${PSQL[@]}" -d jb_test -o /dev/null -v sid=$SID -f "$ROOT/supabase/tests/concurrency_missions.sql" & P2=$!
+"${PSQL[@]}" -d jb_test -o /dev/null -v sid=22222222-bbbb-4bbb-8bbb-222222222222 -f "$ROOT/supabase/tests/concurrency_missions.sql" & P3=$!
+wait $P1; wait $P2; wait $P3
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.reading_sessions where user_id='c3333333-0000-0000-0000-000000000003') || ',' ||
+  (select count(*) from public.reading_sessions where user_id='c3333333-0000-0000-0000-000000000003' and not is_reread) || ',' ||
+  (select count(*) from public.xp_ledger where user_id='c3333333-0000-0000-0000-000000000003') || ',' ||
+  (select count(*) from public.user_items where user_id='c3333333-0000-0000-0000-000000000003' and item_id = 'tunic-joseph')")
+if [ "$R" != "2,1,1,1" ]; then echo "✘ concorrência do Modo Missão: sessões,inéditas,xp,itens=$R (esperado 2,1,1,1)"; exit 1; fi
+echo "  ok  finalizações simultâneas: 1 capítulo inédito, 1 XP e 1 item; a outra sessão vira releitura"
+
 echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*|20261115*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*|20261116*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -81,7 +96,7 @@ echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261115*) continue ;; esac
+  case "$(basename "$f")" in 20261115*|20261116*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback2 -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
@@ -95,7 +110,10 @@ echo "  ok  reversão das raridades mantém os 179 itens, e as migrações podem
 echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback3" postgres
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
-for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"; done
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  case "$(basename "$f")" in 20261116*) continue ;; esac
+  "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"
+done
 BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/rollbacks/20261115000100_official_catalog_support.down.sql"
 LEFT=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from pg_tables where tablename = 'cosmetic_item_aliases'")
@@ -106,4 +124,19 @@ if [ "$LEFT" != "0" ] || [ "$ITEMS" != "$BEFORE" ]; then echo "✘ reversão do 
 ALIASES=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_item_aliases")
 if [ "$ALIASES" = "0" ]; then echo "✘ reaplicação do catálogo oficial sem aliases"; exit 1; fi
 echo "  ok  reversão do catálogo oficial mantém os $BEFORE itens, e as migrações podem ser reaplicadas"
+
+echo "→ reversão manual do Modo Missão (banco completo) e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback4" postgres
+"${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$f"; done
+BEFORE=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
+"${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/rollbacks/20261116000100_reading_missions.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from pg_proc where proname in ('complete_reading_mission','get_mission_overview')")
+ITEMS=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
+if [ "$LEFT" != "0" ] || [ "$ITEMS" != "$BEFORE" ]; then echo "✘ reversão do Modo Missão: funções=$LEFT itens=$ITEMS (antes $BEFORE)"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$ROOT/supabase/migrations/20261116000100_reading_missions.sql"
+"${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$ROOT/supabase/migrations/20261116000200_avatar_catalog_v6.sql"
+M=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.reward_triggers where is_active and book_code = '1KI'")
+if [ "$M" != "1" ]; then echo "✘ reaplicação do Modo Missão sem a missão curada"; exit 1; fi
+echo "  ok  reversão do Modo Missão mantém os $BEFORE itens, e as migrações podem ser reaplicadas"
 echo "✔ Todos os testes de banco passaram."

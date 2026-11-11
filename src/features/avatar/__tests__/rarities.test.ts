@@ -103,10 +103,15 @@ describe('catálogo oficial: cinco raridades e 144 itens', () => {
     expect(commonAcq.has('mission') && commonAcq.has('starter')).toBe(true);
   });
 
-  it('comuns e raros oficiais aguardam o Modo Missão (nunca concedidos pela leitura)', () => {
+  it('comuns e raros oficiais vêm do Modo Missão (nunca de uma leitura comum)', () => {
+    const missions = (require('../catalog/catalog.json') as { missions?: { id: string; rewardItem: string }[] }).missions ?? [];
     for (const it of raw.items.filter((i) => i.officialId?.startsWith('common_') || i.officialId?.startsWith('rare_'))) {
-      if (it.unlock) expect(it.unlock.type).toBe('mission_pool');
+      if (!it.unlock) continue;
+      const curated = missions.find((m) => m.rewardItem === it.id);
+      if (curated) expect(it.unlock).toMatchObject({ type: 'mission_completed', payload: { mission: curated.id } });
+      else expect(it.unlock.type).toBe('mission_pool');
     }
+    expect(missions.map((m) => m.rewardItem)).toEqual(['cloak-elijah']);
   });
 
   it('filtro por raridade e novas categorias no inventário', () => {

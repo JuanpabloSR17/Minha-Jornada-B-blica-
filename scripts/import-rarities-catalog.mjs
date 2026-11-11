@@ -229,6 +229,11 @@ export function reconcile(catalog, imported, history = historyIds()) {
     // inicial vence: gratuita para todos, fora das recompensas de missão e da loja
     if (isStarterItem(match)) { out.starter = true; out.acquisition = 'starter'; out.shopEligible = false; delete out.shopPriceSuggested; delete out.unlock; }
     if (match?.variantOf) out.variantOf = match.variantOf;
+    // missão curada do Modo Missão vinculada a este item (catalog.missions)
+    const mission = (catalog.missions ?? []).find((m) => m.rewardItem === keepId || m.rewardItem === off.id);
+    if (mission && !out.starter) {
+      out.unlock = { type: 'mission_completed', payload: { mission: mission.id }, label: `Conclua a missão especial de ${bookName(mission.book)} ${mission.chapter} no Modo Missão` };
+    }
     return out;
   });
 
