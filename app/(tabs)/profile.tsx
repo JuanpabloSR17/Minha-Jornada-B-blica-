@@ -13,11 +13,12 @@ import { AvatarStage } from '@/features/avatar/components/AvatarStage';
 import { useMyAvatar } from '@/features/avatar/hooks/useMyAvatar';
 import { setPrivacyMode } from '@/features/avatar/services/wardrobe.service';
 
-const SHORTCUTS: { label: string; icon: IconName; href: '/avatar/wardrobe' | '/avatar/loadouts' | '/avatar/collections' | '/avatar/editor' }[] = [
+const SHORTCUTS: { label: string; icon: IconName; href: '/avatar/wardrobe' | '/avatar/loadouts' | '/avatar/collections' | '/avatar/editor' | '/avatar/sanctuary' }[] = [
   { label: 'Guarda-roupa', icon: 'outfit', href: '/avatar/wardrobe' },
   { label: 'Visuais salvos', icon: 'profile', href: '/avatar/loadouts' },
   { label: 'Coleções', icon: 'sparkle', href: '/avatar/collections' },
   { label: 'Aparência', icon: 'face', href: '/avatar/editor' },
+  { label: 'Santuário', icon: 'sparkle', href: '/avatar/sanctuary' },
 ];
 
 export default function ProfileTab() {

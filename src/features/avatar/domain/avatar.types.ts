@@ -36,7 +36,12 @@ export type EquipmentSlot =
 /** Um item por slot. Slots ausentes estão vazios. */
 export type Equipment = Partial<Record<EquipmentSlot, string>>;
 
-export type Rarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
+export type Rarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary' | 'holy';
+
+/** Slot de um item: equipável no avatar ou 'relic' (exibido no Santuário, não equipável). */
+export type ItemSlot = EquipmentSlot | 'relic';
+
+export type Acquisition = 'starter' | 'reading' | 'collection' | 'mission' | 'milestone' | 'event';
 
 /** Camadas de desenho (ordem visual), distintas dos slots de equipamento. */
 export type LayerSlot =
@@ -74,7 +79,7 @@ export type AppearanceOption = {
 export type CosmeticItem = {
   id: string;
   name: string;
-  slot: EquipmentSlot;
+  slot: ItemSlot;
   category: string;
   description: string;
   rarity: Rarity;
@@ -88,6 +93,11 @@ export type CosmeticItem = {
   /** item base do qual esta aparência é uma evolução */
   variantOf?: string;
   variantLabel?: string;
+  /** método de obtenção (independente da raridade e do slot) */
+  acquisition: Acquisition;
+  series: string;
+  /** livro associado (lendários) */
+  book?: string;
 };
 
 export type AvatarLook = {

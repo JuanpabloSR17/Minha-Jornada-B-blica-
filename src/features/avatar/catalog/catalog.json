@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "appearance": {
     "body": [
       {
@@ -256,56 +256,72 @@
       "name": "Túnica de Linho",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Túnica simples de linho cru, para começar a jornada."
+      "description": "Túnica simples de linho cru, para começar a jornada.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-olive",
       "name": "Túnica Oliveira",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Tecido verde como as folhas de oliveira."
+      "description": "Tecido verde como as folhas de oliveira.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-terracotta",
       "name": "Túnica Terracota",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Cor de barro cozido, com barra bordada."
+      "description": "Cor de barro cozido, com barra bordada.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-indigo",
       "name": "Túnica Índigo",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Azul profundo tingido à mão, com listras verticais."
+      "description": "Azul profundo tingido à mão, com listras verticais.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-ochre",
       "name": "Túnica Ocre",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Tom de areia ao entardecer."
+      "description": "Tom de areia ao entardecer.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-sky",
       "name": "Túnica Céu da Galileia",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Azul claro como o céu sobre o lago."
+      "description": "Azul claro como o céu sobre o lago.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-pomegranate",
       "name": "Túnica Romã",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Vermelho-romã com gola trabalhada."
+      "description": "Vermelho-romã com gola trabalhada.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-stone",
       "name": "Túnica Pedra",
       "slot": "outfit",
       "category": "tunic",
-      "description": "Cinza discreto, resistente para viagens."
+      "description": "Cinza discreto, resistente para viagens.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "tunic-joseph",
@@ -323,133 +339,171 @@
           "chapter": 37
         },
         "label": "Conclua a leitura de Gênesis 37"
-      }
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "cloak-wool",
       "name": "Manto de Lã",
       "slot": "back",
       "category": "cloak",
-      "description": "Manto quente de lã de ovelha."
+      "description": "Manto quente de lã de ovelha.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "cloak-desert",
       "name": "Manto do Deserto",
       "slot": "back",
       "category": "cloak",
-      "description": "Leve e claro, protege do sol."
+      "description": "Leve e claro, protege do sol.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "cloak-shepherd",
       "name": "Manto do Pastor",
       "slot": "back",
       "category": "cloak",
-      "description": "Listrado, como os mantos de quem cuida do rebanho."
+      "description": "Listrado, como os mantos de quem cuida do rebanho.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "cloak-night",
       "name": "Manto Noturno",
       "slot": "back",
       "category": "cloak",
-      "description": "Azul-noite para as vigílias sob as estrelas."
+      "description": "Azul-noite para as vigílias sob as estrelas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "cloak-crimson",
       "name": "Manto Carmim",
       "slot": "back",
       "category": "cloak",
-      "description": "Tecido carmim de bordas douradas."
+      "description": "Tecido carmim de bordas douradas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sandals-leather",
       "name": "Sandálias de Couro",
       "slot": "feet",
       "category": "footwear",
-      "description": "Sandálias simples para longas caminhadas."
+      "description": "Sandálias simples para longas caminhadas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sandals-woven",
       "name": "Sandálias Trançadas",
       "slot": "feet",
       "category": "footwear",
-      "description": "Tiras de palha trançada."
+      "description": "Tiras de palha trançada.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sandals-laced",
       "name": "Sandálias de Tiras Altas",
       "slot": "feet",
       "category": "footwear",
-      "description": "Tiras amarradas até o tornozelo."
+      "description": "Tiras amarradas até o tornozelo.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "boots-travel",
       "name": "Botas de Viagem",
       "slot": "feet",
       "category": "footwear",
-      "description": "Couro grosso para estradas de pedra."
+      "description": "Couro grosso para estradas de pedra.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "shoes-cloth",
       "name": "Sapatilhas de Pano",
       "slot": "feet",
       "category": "footwear",
-      "description": "Macias e silenciosas."
+      "description": "Macias e silenciosas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sandals-red",
       "name": "Sandálias Rubras",
       "slot": "feet",
       "category": "footwear",
-      "description": "Couro tingido de vermelho."
+      "description": "Couro tingido de vermelho.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "belt-rope",
       "name": "Cinto de Corda",
       "slot": "waist",
       "category": "belt",
-      "description": "Corda trançada amarrada com um nó."
+      "description": "Corda trançada amarrada com um nó.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "belt-leather",
       "name": "Cinto de Couro",
       "slot": "waist",
       "category": "belt",
-      "description": "Couro curtido com fivela de bronze."
+      "description": "Couro curtido com fivela de bronze.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sash-blue",
       "name": "Faixa Azul",
       "slot": "waist",
       "category": "belt",
-      "description": "Faixa de tecido azul com pontas soltas."
+      "description": "Faixa de tecido azul com pontas soltas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sash-scarlet",
       "name": "Faixa Escarlate",
       "slot": "waist",
       "category": "belt",
-      "description": "Faixa vermelha com pontas soltas."
+      "description": "Faixa vermelha com pontas soltas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "belt-woven",
       "name": "Cinto Tecido",
       "slot": "waist",
       "category": "belt",
-      "description": "Faixa tecida com padrão geométrico."
+      "description": "Faixa tecida com padrão geométrico.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "belt-pouch",
       "name": "Cinto com Bolsa",
       "slot": "waist",
       "category": "belt",
-      "description": "Cinto de couro com uma pequena bolsa."
+      "description": "Cinto de couro com uma pequena bolsa.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "headband-linen",
       "name": "Faixa de Cabeça",
       "slot": "head",
       "category": "accessory",
-      "description": "Faixa de linho amarrada na testa."
+      "description": "Faixa de linho amarrada na testa.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "headwrap-sand",
@@ -459,7 +513,9 @@
       "description": "Tecido enrolado que protege do sol.",
       "hides": [
         "front_hair"
-      ]
+      ],
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "headscarf-ochre",
@@ -470,56 +526,72 @@
       "hides": [
         "front_hair",
         "back_hair"
-      ]
+      ],
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "necklace-cord",
       "name": "Colar de Cordão",
       "slot": "neck",
       "category": "accessory",
-      "description": "Cordão com um pingente de folha de oliveira."
+      "description": "Cordão com um pingente de folha de oliveira.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "necklace-beads",
       "name": "Colar de Contas",
       "slot": "neck",
       "category": "accessory",
-      "description": "Contas de barro pintadas à mão."
+      "description": "Contas de barro pintadas à mão.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "scarf-neck",
       "name": "Lenço de Pescoço",
       "slot": "neck",
       "category": "accessory",
-      "description": "Tecido enrolado no pescoço."
+      "description": "Tecido enrolado no pescoço.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "staff-shepherd",
       "name": "Cajado de Pastor",
       "slot": "hands",
       "category": "accessory",
-      "description": "Cajado de madeira com ponta curva."
+      "description": "Cajado de madeira com ponta curva.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "scroll-simple",
       "name": "Pergaminho",
       "slot": "hands",
       "category": "accessory",
-      "description": "Um rolo para anotar a jornada."
+      "description": "Um rolo para anotar a jornada.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "oil-lamp",
       "name": "Lamparina",
       "slot": "hands",
       "category": "accessory",
-      "description": "Pequena lamparina de barro."
+      "description": "Pequena lamparina de barro.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "bg-parchment",
       "name": "Pergaminho Antigo",
       "slot": "background",
       "category": "background",
-      "description": "Fundo padrão de pergaminho com colinas."
+      "description": "Fundo padrão de pergaminho com colinas.",
+      "series": "starter",
+      "acquisition": "starter"
     },
     {
       "id": "sandals-desert",
@@ -537,13 +609,15 @@
         },
         "label": "Conclua a leitura de Êxodo 3"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "staff-moses",
       "name": "Vara de Moisés",
       "slot": "hands",
-      "category": "accessory",
+      "category": "tool",
       "rarity": "rare",
       "scriptureRef": "Êxodo 14:16",
       "description": "Lembra a vara que Moisés estendeu sobre o mar (Êxodo 14:16). Item simbólico, sem poderes.",
@@ -555,14 +629,16 @@
         },
         "label": "Conclua a leitura de Êxodo 14"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "sling-david",
       "name": "Funda de Davi",
       "slot": "hands",
-      "category": "accessory",
-      "rarity": "rare",
+      "category": "tool",
+      "rarity": "epic",
       "scriptureRef": "1 Samuel 17:40",
       "description": "Inspirada na funda e nas cinco pedras lisas com que Davi enfrentou Golias (1 Samuel 17:40, 49).",
       "unlock": {
@@ -573,13 +649,15 @@
         },
         "label": "Conclua a leitura de 1 Samuel 17"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "harp-psalmist",
       "name": "Harpa do Salmista",
       "slot": "hands",
-      "category": "accessory",
+      "category": "instrument",
       "rarity": "epic",
       "scriptureRef": "1 Samuel 16:23",
       "description": "Lembra Davi tocando harpa (1 Samuel 16:23) e os cânticos dos Salmos. Marco de leitura temática.",
@@ -591,14 +669,16 @@
         },
         "label": "Leia 30 salmos diferentes"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "cloak-elijah",
       "name": "Manto de Elias",
       "slot": "back",
       "category": "cloak",
-      "rarity": "epic",
+      "rarity": "rare",
       "scriptureRef": "1 Reis 19:19",
       "description": "Inspirado no manto que Elias lançou sobre Eliseu ao chamá-lo (1 Reis 19:19).",
       "unlock": {
@@ -609,14 +689,16 @@
         },
         "label": "Conclua a leitura de 1 Reis 19"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "cloak-succession",
       "name": "Manto da Sucessão",
       "slot": "back",
       "category": "cloak",
-      "rarity": "epic",
+      "rarity": "rare",
       "scriptureRef": "2 Reis 2:13-14",
       "variantOf": "cloak-elijah",
       "variantLabel": "Após a passagem a Eliseu",
@@ -635,14 +717,16 @@
         ],
         "label": "Conclua 2 Reis 2 tendo o Manto de Elias"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1"
     },
     {
       "id": "cloak-elijah-prophets",
       "name": "Manto de Elias — Edição dos Profetas",
       "slot": "back",
       "category": "cloak",
-      "rarity": "legendary",
+      "rarity": "epic",
       "scriptureRef": "1 Reis 19:19; 2 Reis 2:13-14",
       "variantOf": "cloak-elijah",
       "variantLabel": "Edição especial de coleção",
@@ -654,16 +738,18 @@
         },
         "label": "Complete a Coleção dos Profetas"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "collection",
+      "series": "rarities-v1"
     },
     {
       "id": "scroll-isaiah",
       "name": "Rolo de Isaías",
       "slot": "hands",
-      "category": "accessory",
-      "rarity": "rare",
-      "scriptureRef": "Lucas 4:17",
-      "description": "Lembra o rolo do profeta Isaías lido na sinagoga de Nazaré (Lucas 4:17).",
+      "category": "scroll",
+      "rarity": "legendary",
+      "scriptureRef": "Isaías 6:8; Lucas 4:17",
+      "description": "Lendário de Isaías: lembra o chamado do profeta (Isaías 6:8) e o rolo lido em Nazaré (Lucas 4:17).",
       "unlock": {
         "type": "book_completed",
         "payload": {
@@ -671,14 +757,17 @@
         },
         "label": "Conclua o livro de Isaías"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ISA"
     },
     {
       "id": "crown-wisdom",
       "name": "Coroa da Sabedoria",
       "slot": "head",
-      "category": "accessory",
-      "rarity": "epic",
+      "category": "headwear",
+      "rarity": "legendary",
       "scriptureRef": "Provérbios 4:9",
       "description": "Recompensa simbólica pela leitura de Provérbios: “ela te dará uma coroa de glória” (Provérbios 4:9). Não representa relíquia.",
       "unlock": {
@@ -688,14 +777,17 @@
         },
         "label": "Conclua o livro de Provérbios"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "PRO"
     },
     {
       "id": "frame-complete",
       "name": "Moldura Jornada Completa",
       "slot": "frame",
       "category": "frame",
-      "rarity": "legendary",
+      "rarity": "epic",
       "scriptureRef": "Salmos 119:105",
       "description": "Celebra a leitura dos 1.189 capítulos da Bíblia (66 livros). “Lâmpada para os meus pés é a tua palavra” (Salmos 119:105).",
       "unlock": {
@@ -705,14 +797,16 @@
         },
         "label": "Leia os 1.189 capítulos da Bíblia"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "milestone",
+      "series": "rarities-v1"
     },
     {
       "id": "bg-sinai",
       "name": "Fundo do Monte Sinai",
       "slot": "background",
       "category": "background",
-      "rarity": "epic",
+      "rarity": "rare",
       "scriptureRef": "Êxodo 19:20",
       "description": "Fundo ilustrado do monte Sinai (Êxodo 19:20). Recompensa da Coleção de Moisés.",
       "unlock": {
@@ -722,14 +816,16 @@
         },
         "label": "Complete a Coleção de Moisés"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "collection",
+      "series": "rarities-v1"
     },
     {
       "id": "bg-bethlehem",
       "name": "Fundo dos Campos de Belém",
       "slot": "background",
       "category": "background",
-      "rarity": "epic",
+      "rarity": "rare",
       "scriptureRef": "1 Samuel 16:11",
       "description": "Os campos onde Davi apascentava as ovelhas (1 Samuel 16:11). Recompensa da Coleção de Davi.",
       "unlock": {
@@ -739,7 +835,2625 @@
         },
         "label": "Complete a Coleção de Davi"
       },
-      "starter": false
+      "starter": false,
+      "acquisition": "collection",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "tunic-fisherman",
+      "name": "Túnica de Pescador",
+      "slot": "outfit",
+      "category": "tunic",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "João 21:7",
+      "description": "Túnica curta e prática, como a dos pescadores do mar da Galileia.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 21
+        },
+        "label": "Conclua a leitura de João 21"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "sandals-road",
+      "name": "Sandálias da Estrada",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Marcos 6:9",
+      "description": "Sandálias leves para quem segue viagem levando pouco.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MRK",
+          "chapter": 6
+        },
+        "label": "Conclua a leitura de Marcos 6"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "staff-traveler",
+      "name": "Cajado de Viajante",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Gênesis 28:10",
+      "description": "Cajado simples de madeira, companheiro de longas estradas.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 28
+        },
+        "label": "Conclua a leitura de Gênesis 28"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "bag-shepherd",
+      "name": "Bolsa de Pastor",
+      "slot": "waist",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "1 Samuel 17:40",
+      "description": "Bolsa de couro usada pelos pastores para levar o necessário.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1SA",
+          "chapter": 17
+        },
+        "label": "Conclua a leitura de 1 Samuel 17"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "belt-hemp",
+      "name": "Cinto de Cânhamo",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Mateus 3:4",
+      "description": "Cinto rústico de fibra trançada.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Mateus 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "rope-well",
+      "name": "Corda do Poço",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Jeremias 38:6",
+      "description": "Corda grossa de fibras, usada para descer e subir baldes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JER",
+          "chapter": 38
+        },
+        "label": "Conclua a leitura de Jeremias 38"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "jar-water",
+      "name": "Cântaro de Água",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "João 4:28",
+      "description": "Cântaro de barro para buscar água no poço.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 4
+        },
+        "label": "Conclua a leitura de João 4"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "lamp-clay",
+      "name": "Lâmpada de Barro",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Mateus 25:1",
+      "description": "Pequena lâmpada de azeite para as noites de espera.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 25
+        },
+        "label": "Conclua a leitura de Mateus 25"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "basket-wicker",
+      "name": "Cesto de Vime",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Mateus 14:20",
+      "description": "Cesto trançado para carregar pães e frutos.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 14
+        },
+        "label": "Conclua a leitura de Mateus 14"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "net-fishing",
+      "name": "Rede de Pesca",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Mateus 4:18",
+      "description": "Rede de fios de linho, remendada muitas vezes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 4
+        },
+        "label": "Conclua a leitura de Mateus 4"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "tunic-wool-simple",
+      "name": "Túnica de Lã Simples",
+      "slot": "outfit",
+      "category": "tunic",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Provérbios 31:13",
+      "description": "Túnica tecida em casa, com lã e linho.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "PRO",
+          "chapter": 31
+        },
+        "label": "Conclua a leitura de Provérbios 31"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "headcloth-farmer",
+      "name": "Lenço do Lavrador",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Rute 2:3",
+      "description": "Lenço que protege do sol durante a colheita.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "RUT",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Rute 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "sickle-harvest",
+      "name": "Foice de Colheita",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Joel 3:13",
+      "description": "Ferramenta de colheita dos campos de trigo.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JOL",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Joel 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "waterskin",
+      "name": "Odre de Viagem",
+      "slot": "waist",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Gênesis 21:14",
+      "description": "Odre de couro para levar água pelo deserto.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 21
+        },
+        "label": "Conclua a leitura de Gênesis 21"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "sandals-bethlehem",
+      "name": "Sandálias de Belém",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Rute 4:7",
+      "description": "Sandálias de couro curtido, como as trocadas nos acordos de Belém.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "RUT",
+          "chapter": 4
+        },
+        "label": "Conclua a leitura de Rute 4"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "cloak-pilgrim",
+      "name": "Capa do Peregrino",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Hebreus 11:13",
+      "description": "Capa de viagem de quem se sabe peregrino na terra.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "HEB",
+          "chapter": 11
+        },
+        "label": "Conclua a leitura de Hebreus 11"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "scarf-market",
+      "name": "Lenço do Mercado",
+      "slot": "neck",
+      "category": "accessory",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Atos 16:14",
+      "description": "Lenço tingido, lembrança das vendedoras de púrpura.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "ACT",
+          "chapter": 16
+        },
+        "label": "Conclua a leitura de Atos 16"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "purse-coins",
+      "name": "Bolsa de Moedas",
+      "slot": "waist",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Lucas 15:8",
+      "description": "Pequena bolsa de pano para moedas.",
+      "unlock": {
+        "type": "mission_completed",
+        "payload": {
+          "mission": "mission-lost-coin"
+        },
+        "label": "Conclua a missão “A moeda perdida” (Modo Missão, em breve)"
+      },
+      "acquisition": "mission",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "hammer-carpenter",
+      "name": "Martelo de Carpinteiro",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Mateus 13:55",
+      "description": "Ferramenta de oficina de madeira.",
+      "unlock": {
+        "type": "mission_completed",
+        "payload": {
+          "mission": "mission-workshop"
+        },
+        "label": "Conclua a missão “Oficina de Nazaré” (Modo Missão, em breve)"
+      },
+      "acquisition": "mission",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "jar-oil",
+      "name": "Pote de Azeite",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "2 Reis 4:2",
+      "description": "Pote de barro com azeite.",
+      "unlock": {
+        "type": "mission_completed",
+        "payload": {
+          "mission": "mission-widow-oil"
+        },
+        "label": "Conclua a missão “O azeite da viúva” (Modo Missão, em breve)"
+      },
+      "acquisition": "mission",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "headband-shepherd",
+      "name": "Faixa do Pastor",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Salmos 23:1",
+      "description": "Faixa de tecido usada pelos pastores nas colinas.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "PSA",
+          "chapter": 23
+        },
+        "label": "Conclua a leitura de Salmos 23"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "bg-nazareth",
+      "name": "Fundo da Aldeia de Nazaré",
+      "slot": "background",
+      "category": "background",
+      "rarity": "common",
+      "starter": false,
+      "scriptureRef": "Lucas 2:39",
+      "description": "Fundo ilustrado de uma aldeia da Galileia.",
+      "unlock": {
+        "type": "mission_completed",
+        "payload": {
+          "mission": "mission-nazareth"
+        },
+        "label": "Conclua a missão “Caminho de Nazaré” (Modo Missão, em breve)"
+      },
+      "acquisition": "mission",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "ephod-linen",
+      "name": "Éfode de Linho",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "1 Samuel 2:18",
+      "description": "Veste de linho usada no serviço do santuário.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1SA",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de 1 Samuel 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "turban-priest",
+      "name": "Mitra do Sacerdote",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Êxodo 28:39",
+      "description": "Turbante de linho fino das vestes sacerdotais.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 28
+        },
+        "label": "Conclua a leitura de Êxodo 28"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "sash-priest",
+      "name": "Cinto Sacerdotal",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Levítico 8:7",
+      "description": "Cinto bordado das vestes dos sacerdotes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "LEV",
+          "chapter": 8
+        },
+        "label": "Conclua a leitura de Levítico 8"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "breastplate-priest",
+      "name": "Peitoral Sacerdotal",
+      "slot": "neck",
+      "category": "ceremonial",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Êxodo 28:15",
+      "description": "Inspirado no peitoral bordado do sumo sacerdote. Simbólico.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 28
+        },
+        "label": "Conclua a leitura de Êxodo 28"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "scroll-jeremiah",
+      "name": "Rolo de Jeremias",
+      "slot": "hands",
+      "category": "scroll",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Jeremias 36:2",
+      "description": "Rolo em que Baruque escreveu as palavras do profeta.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JER",
+          "chapter": 36
+        },
+        "label": "Conclua a leitura de Jeremias 36"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "horn-oil",
+      "name": "Chifre de Azeite",
+      "slot": "hands",
+      "category": "ceremonial",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "1 Samuel 16:13",
+      "description": "Chifre usado para a unção, lembrando a unção de Davi.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1SA",
+          "chapter": 16
+        },
+        "label": "Conclua a leitura de 1 Samuel 16"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "sackcloth-nineveh",
+      "name": "Veste de Saco de Nínive",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Jonas 3:5",
+      "description": "Veste simples de arrependimento, como em Nínive.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JON",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Jonas 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "robe-camel-hair",
+      "name": "Veste de Pelos de Camelo",
+      "slot": "outfit",
+      "category": "tunic",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Mateus 3:4",
+      "description": "Veste rústica do profeta que anunciava no deserto.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Mateus 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "shofar-jericho",
+      "name": "Shofar de Jericó",
+      "slot": "hands",
+      "category": "instrument",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Josué 6:4",
+      "description": "Trombeta de chifre tocada pelos sacerdotes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JOS",
+          "chapter": 6
+        },
+        "label": "Conclua a leitura de Josué 6"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "cymbals-levites",
+      "name": "Címbalos dos Levitas",
+      "slot": "hands",
+      "category": "instrument",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "1 Crônicas 15:16",
+      "description": "Instrumentos dos cantores levitas.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1CH",
+          "chapter": 15
+        },
+        "label": "Conclua a leitura de 1 Crônicas 15"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "kit-scribe",
+      "name": "Estojo de Escriba",
+      "slot": "waist",
+      "category": "tool",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Ezequiel 9:2",
+      "description": "Estojo com pena e tinta preso à cintura.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EZK",
+          "chapter": 9
+        },
+        "label": "Conclua a leitura de Ezequiel 9"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "headband-deborah",
+      "name": "Faixa de Débora",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "rare",
+      "starter": false,
+      "scriptureRef": "Juízes 4:4",
+      "description": "Faixa da profetisa que julgava Israel.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JDG",
+          "chapter": 4
+        },
+        "label": "Conclua a leitura de Juízes 4"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "robes-esther",
+      "name": "Vestes Reais de Ester",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Ester 5:1",
+      "description": "Vestes reais com que Ester se apresentou ao rei.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EST",
+          "chapter": 5
+        },
+        "label": "Conclua a leitura de Ester 5"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "crown-esther",
+      "name": "Coroa de Ester",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Ester 2:17",
+      "description": "Coroa recebida por Ester. Item simbólico.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EST",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Ester 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "rod-aaron",
+      "name": "Vara Florida de Arão",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Números 17:8",
+      "description": "Lembra a vara que floresceu e deu amêndoas.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "NUM",
+          "chapter": 17
+        },
+        "label": "Conclua a leitura de Números 17"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "ring-joseph",
+      "name": "Anel de Sinete de José",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Gênesis 41:42",
+      "description": "Anel de sinete entregue a José no Egito, usado num cordão.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 41
+        },
+        "label": "Conclua a leitura de Gênesis 41"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "tunic-samuel",
+      "name": "Pequena Túnica de Samuel",
+      "slot": "outfit",
+      "category": "tunic",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "1 Samuel 2:19",
+      "description": "A túnica que Ana fazia para Samuel todos os anos.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1SA",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de 1 Samuel 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "cloak-boaz",
+      "name": "Capa de Boaz",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Rute 3:9",
+      "description": "Capa estendida em sinal de proteção e resgate.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "RUT",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Rute 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "trumpet-gideon",
+      "name": "Trombeta de Gideão",
+      "slot": "hands",
+      "category": "instrument",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Juízes 7:20",
+      "description": "Trombeta dos trezentos de Gideão.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JDG",
+          "chapter": 7
+        },
+        "label": "Conclua a leitura de Juízes 7"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "robe-daniel",
+      "name": "Manto Púrpura de Daniel",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Daniel 5:29",
+      "description": "Veste de púrpura dada a Daniel na Babilônia.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "DAN",
+          "chapter": 5
+        },
+        "label": "Conclua a leitura de Daniel 5"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "cloak-paul",
+      "name": "Capa de Paulo",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "2 Timóteo 4:13",
+      "description": "A capa que Paulo deixou em Trôade e pediu a Timóteo.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "2TI",
+          "chapter": 4
+        },
+        "label": "Conclua a leitura de 2 Timóteo 4"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "jar-rebekah",
+      "name": "Cântaro de Rebeca",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Gênesis 24:15",
+      "description": "O cântaro de Rebeca junto ao poço de Naor.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 24
+        },
+        "label": "Conclua a leitura de Gênesis 24"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "turban-nehemiah",
+      "name": "Turbante de Neemias",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "epic",
+      "starter": false,
+      "scriptureRef": "Neemias 2:1",
+      "description": "Turbante do copeiro do rei que reconstruiu os muros.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "NEH",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Neemias 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "legendary-gen",
+      "name": "Cajado dos Patriarcas",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Gênesis 32:10",
+      "description": "Lendário exclusivo de Gênesis, conquistado gratuitamente ao concluir todos os 50 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "GEN"
+        },
+        "label": "Conclua todos os capítulos de Gênesis"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "GEN"
+    },
+    {
+      "id": "legendary-exo",
+      "name": "Manto do Êxodo",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Êxodo 12:11",
+      "description": "Lendário exclusivo de Êxodo, conquistado gratuitamente ao concluir todos os 40 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "EXO"
+        },
+        "label": "Conclua todos os capítulos de Êxodo"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "EXO"
+    },
+    {
+      "id": "legendary-lev",
+      "name": "Vestes de Linho da Expiação",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Levítico 16:4",
+      "description": "Lendário exclusivo de Levítico, conquistado gratuitamente ao concluir todos os 27 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "LEV"
+        },
+        "label": "Conclua todos os capítulos de Levítico"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "LEV"
+    },
+    {
+      "id": "legendary-num",
+      "name": "Estandarte das Tribos",
+      "slot": "hands",
+      "category": "ceremonial",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Números 2:2",
+      "description": "Lendário exclusivo de Números, conquistado gratuitamente ao concluir todos os 36 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "NUM"
+        },
+        "label": "Conclua todos os capítulos de Números"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "NUM"
+    },
+    {
+      "id": "legendary-deu",
+      "name": "Filactério de Deuteronômio",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Deuteronômio 6:8",
+      "description": "Lendário exclusivo de Deuteronômio, conquistado gratuitamente ao concluir todos os 34 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "DEU"
+        },
+        "label": "Conclua todos os capítulos de Deuteronômio"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "DEU"
+    },
+    {
+      "id": "legendary-jos",
+      "name": "Sandálias da Terra Prometida",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Josué 1:3",
+      "description": "Lendário exclusivo de Josué, conquistado gratuitamente ao concluir todos os 24 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JOS"
+        },
+        "label": "Conclua todos os capítulos de Josué"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JOS"
+    },
+    {
+      "id": "legendary-jdg",
+      "name": "Manto dos Juízes",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Juízes 2:16",
+      "description": "Lendário exclusivo de Juízes, conquistado gratuitamente ao concluir todos os 21 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JDG"
+        },
+        "label": "Conclua todos os capítulos de Juízes"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JDG"
+    },
+    {
+      "id": "legendary-rut",
+      "name": "Feixe de Espigas de Rute",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Rute 2:17",
+      "description": "Lendário exclusivo de Rute, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "RUT"
+        },
+        "label": "Conclua todos os capítulos de Rute"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "RUT"
+    },
+    {
+      "id": "legendary-1sa",
+      "name": "Coroa do Pastor-Rei",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Samuel 16:13",
+      "description": "Lendário exclusivo de 1 Samuel, conquistado gratuitamente ao concluir todos os 31 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1SA"
+        },
+        "label": "Conclua todos os capítulos de 1 Samuel"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1SA"
+    },
+    {
+      "id": "legendary-2sa",
+      "name": "Éfode da Dança de Davi",
+      "slot": "outfit",
+      "category": "ceremonial",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Samuel 6:14",
+      "description": "Lendário exclusivo de 2 Samuel, conquistado gratuitamente ao concluir todos os 24 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2SA"
+        },
+        "label": "Conclua todos os capítulos de 2 Samuel"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2SA"
+    },
+    {
+      "id": "legendary-1ki",
+      "name": "Manto do Templo de Salomão",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Reis 6:14",
+      "description": "Lendário exclusivo de 1 Reis, conquistado gratuitamente ao concluir todos os 22 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1KI"
+        },
+        "label": "Conclua todos os capítulos de 1 Reis"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1KI"
+    },
+    {
+      "id": "legendary-2ki",
+      "name": "Cajado de Eliseu",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Reis 4:29",
+      "description": "Lendário exclusivo de 2 Reis, conquistado gratuitamente ao concluir todos os 25 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2KI"
+        },
+        "label": "Conclua todos os capítulos de 2 Reis"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2KI"
+    },
+    {
+      "id": "legendary-1ch",
+      "name": "Lira dos Cantores",
+      "slot": "hands",
+      "category": "instrument",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Crônicas 25:1",
+      "description": "Lendário exclusivo de 1 Crônicas, conquistado gratuitamente ao concluir todos os 29 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1CH"
+        },
+        "label": "Conclua todos os capítulos de 1 Crônicas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1CH"
+    },
+    {
+      "id": "legendary-2ch",
+      "name": "Rolo da Lei Reencontrado",
+      "slot": "hands",
+      "category": "scroll",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Crônicas 34:15",
+      "description": "Lendário exclusivo de 2 Crônicas, conquistado gratuitamente ao concluir todos os 36 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2CH"
+        },
+        "label": "Conclua todos os capítulos de 2 Crônicas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2CH"
+    },
+    {
+      "id": "legendary-ezr",
+      "name": "Pena do Escriba Esdras",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Esdras 7:6",
+      "description": "Lendário exclusivo de Esdras, conquistado gratuitamente ao concluir todos os 10 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "EZR"
+        },
+        "label": "Conclua todos os capítulos de Esdras"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "EZR"
+    },
+    {
+      "id": "legendary-neh",
+      "name": "Cinto do Construtor dos Muros",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Neemias 4:17",
+      "description": "Lendário exclusivo de Neemias, conquistado gratuitamente ao concluir todos os 13 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "NEH"
+        },
+        "label": "Conclua todos os capítulos de Neemias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "NEH"
+    },
+    {
+      "id": "legendary-est",
+      "name": "Cetro de Ouro",
+      "slot": "hands",
+      "category": "ceremonial",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Ester 5:2",
+      "description": "Lendário exclusivo de Ester, conquistado gratuitamente ao concluir todos os 10 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "EST"
+        },
+        "label": "Conclua todos os capítulos de Ester"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "EST"
+    },
+    {
+      "id": "legendary-job",
+      "name": "Manto da Restauração",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Jó 42:10",
+      "description": "Lendário exclusivo de Jó, conquistado gratuitamente ao concluir todos os 42 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JOB"
+        },
+        "label": "Conclua todos os capítulos de Jó"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JOB"
+    },
+    {
+      "id": "legendary-psa",
+      "name": "Saltério de Dez Cordas",
+      "slot": "hands",
+      "category": "instrument",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Salmos 33:2",
+      "description": "Lendário exclusivo de Salmos, conquistado gratuitamente ao concluir todos os 150 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "PSA"
+        },
+        "label": "Conclua todos os capítulos de Salmos"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "PSA"
+    },
+    {
+      "id": "legendary-ecc",
+      "name": "Ampulheta do Pregador",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Eclesiastes 3:1",
+      "description": "Lendário exclusivo de Eclesiastes, conquistado gratuitamente ao concluir todos os 12 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ECC"
+        },
+        "label": "Conclua todos os capítulos de Eclesiastes"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ECC"
+    },
+    {
+      "id": "legendary-sng",
+      "name": "Coroa de Flores do Cântico",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Cânticos 2:12",
+      "description": "Lendário exclusivo de Cânticos, conquistado gratuitamente ao concluir todos os 8 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "SNG"
+        },
+        "label": "Conclua todos os capítulos de Cânticos"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "SNG"
+    },
+    {
+      "id": "legendary-jer",
+      "name": "Cinto de Linho de Jeremias",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Jeremias 13:1",
+      "description": "Lendário exclusivo de Jeremias, conquistado gratuitamente ao concluir todos os 52 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JER"
+        },
+        "label": "Conclua todos os capítulos de Jeremias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JER"
+    },
+    {
+      "id": "legendary-lam",
+      "name": "Lenço das Misericórdias",
+      "slot": "neck",
+      "category": "accessory",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Lamentações 3:22-23",
+      "description": "Lendário exclusivo de Lamentações, conquistado gratuitamente ao concluir todos os 5 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "LAM"
+        },
+        "label": "Conclua todos os capítulos de Lamentações"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "LAM"
+    },
+    {
+      "id": "legendary-ezk",
+      "name": "Manto do Vigia",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Ezequiel 33:7",
+      "description": "Lendário exclusivo de Ezequiel, conquistado gratuitamente ao concluir todos os 48 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "EZK"
+        },
+        "label": "Conclua todos os capítulos de Ezequiel"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "EZK"
+    },
+    {
+      "id": "legendary-dan",
+      "name": "Turbante de Daniel",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Daniel 1:17",
+      "description": "Lendário exclusivo de Daniel, conquistado gratuitamente ao concluir todos os 12 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "DAN"
+        },
+        "label": "Conclua todos os capítulos de Daniel"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "DAN"
+    },
+    {
+      "id": "legendary-hos",
+      "name": "Colar da Aliança Renovada",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Oseias 2:19",
+      "description": "Lendário exclusivo de Oseias, conquistado gratuitamente ao concluir todos os 14 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "HOS"
+        },
+        "label": "Conclua todos os capítulos de Oseias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "HOS"
+    },
+    {
+      "id": "legendary-jol",
+      "name": "Manto da Chuva Temporã",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Joel 2:23",
+      "description": "Lendário exclusivo de Joel, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JOL"
+        },
+        "label": "Conclua todos os capítulos de Joel"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JOL"
+    },
+    {
+      "id": "legendary-amo",
+      "name": "Cajado do Boiadeiro de Tecoa",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Amós 7:14",
+      "description": "Lendário exclusivo de Amós, conquistado gratuitamente ao concluir todos os 9 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "AMO"
+        },
+        "label": "Conclua todos os capítulos de Amós"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "AMO"
+    },
+    {
+      "id": "legendary-oba",
+      "name": "Fundo das Montanhas de Edom",
+      "slot": "background",
+      "category": "background",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Obadias 1:21",
+      "description": "Lendário exclusivo de Obadias, conquistado gratuitamente ao concluir todos os 1 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "OBA"
+        },
+        "label": "Conclua todos os capítulos de Obadias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "OBA"
+    },
+    {
+      "id": "legendary-jon",
+      "name": "Manto do Pregador de Nínive",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Jonas 3:4",
+      "description": "Lendário exclusivo de Jonas, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JON"
+        },
+        "label": "Conclua todos os capítulos de Jonas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JON"
+    },
+    {
+      "id": "legendary-mic",
+      "name": "Relha de Arado da Paz",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Miqueias 4:3",
+      "description": "Lendário exclusivo de Miqueias, conquistado gratuitamente ao concluir todos os 7 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "MIC"
+        },
+        "label": "Conclua todos os capítulos de Miqueias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "MIC"
+    },
+    {
+      "id": "legendary-nam",
+      "name": "Sandálias do Mensageiro",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Naum 1:15",
+      "description": "Lendário exclusivo de Naum, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "NAM"
+        },
+        "label": "Conclua todos os capítulos de Naum"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "NAM"
+    },
+    {
+      "id": "legendary-hab",
+      "name": "Tábua da Visão",
+      "slot": "hands",
+      "category": "scroll",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Habacuque 2:2",
+      "description": "Lendário exclusivo de Habacuque, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "HAB"
+        },
+        "label": "Conclua todos os capítulos de Habacuque"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "HAB"
+    },
+    {
+      "id": "legendary-zep",
+      "name": "Faixa da Alegria de Sião",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Sofonias 3:17",
+      "description": "Lendário exclusivo de Sofonias, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ZEP"
+        },
+        "label": "Conclua todos os capítulos de Sofonias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ZEP"
+    },
+    {
+      "id": "legendary-hag",
+      "name": "Martelo dos Reconstrutores",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Ageu 1:14",
+      "description": "Lendário exclusivo de Ageu, conquistado gratuitamente ao concluir todos os 2 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "HAG"
+        },
+        "label": "Conclua todos os capítulos de Ageu"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "HAG"
+    },
+    {
+      "id": "legendary-zec",
+      "name": "Cordel de Medir",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Zacarias 2:1",
+      "description": "Lendário exclusivo de Zacarias, conquistado gratuitamente ao concluir todos os 14 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ZEC"
+        },
+        "label": "Conclua todos os capítulos de Zacarias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ZEC"
+    },
+    {
+      "id": "legendary-mal",
+      "name": "Manto do Refinador",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Malaquias 3:3",
+      "description": "Lendário exclusivo de Malaquias, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "MAL"
+        },
+        "label": "Conclua todos os capítulos de Malaquias"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "MAL"
+    },
+    {
+      "id": "legendary-mat",
+      "name": "Manto do Sermão do Monte",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Mateus 5:1",
+      "description": "Lendário exclusivo de Mateus, conquistado gratuitamente ao concluir todos os 28 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "MAT"
+        },
+        "label": "Conclua todos os capítulos de Mateus"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "MAT"
+    },
+    {
+      "id": "legendary-mrk",
+      "name": "Sandálias do Caminho",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Marcos 10:52",
+      "description": "Lendário exclusivo de Marcos, conquistado gratuitamente ao concluir todos os 16 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "MRK"
+        },
+        "label": "Conclua todos os capítulos de Marcos"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "MRK"
+    },
+    {
+      "id": "legendary-luk",
+      "name": "Bolsa do Bom Samaritano",
+      "slot": "waist",
+      "category": "container",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Lucas 10:34",
+      "description": "Lendário exclusivo de Lucas, conquistado gratuitamente ao concluir todos os 24 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "LUK"
+        },
+        "label": "Conclua todos os capítulos de Lucas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "LUK"
+    },
+    {
+      "id": "legendary-jhn",
+      "name": "Colar da Videira",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "João 15:5",
+      "description": "Lendário exclusivo de João, conquistado gratuitamente ao concluir todos os 21 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JHN"
+        },
+        "label": "Conclua todos os capítulos de João"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JHN"
+    },
+    {
+      "id": "legendary-act",
+      "name": "Sandálias do Missionário",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Atos 1:8",
+      "description": "Lendário exclusivo de Atos, conquistado gratuitamente ao concluir todos os 28 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ACT"
+        },
+        "label": "Conclua todos os capítulos de Atos"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ACT"
+    },
+    {
+      "id": "legendary-rom",
+      "name": "Faixa da Esperança",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Romanos 15:13",
+      "description": "Lendário exclusivo de Romanos, conquistado gratuitamente ao concluir todos os 16 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "ROM"
+        },
+        "label": "Conclua todos os capítulos de Romanos"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "ROM"
+    },
+    {
+      "id": "legendary-1co",
+      "name": "Coroa Incorruptível",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Coríntios 9:25",
+      "description": "Lendário exclusivo de 1 Coríntios, conquistado gratuitamente ao concluir todos os 16 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1CO"
+        },
+        "label": "Conclua todos os capítulos de 1 Coríntios"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1CO"
+    },
+    {
+      "id": "legendary-2co",
+      "name": "Vaso de Barro com Tesouro",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Coríntios 4:7",
+      "description": "Lendário exclusivo de 2 Coríntios, conquistado gratuitamente ao concluir todos os 13 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2CO"
+        },
+        "label": "Conclua todos os capítulos de 2 Coríntios"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2CO"
+    },
+    {
+      "id": "legendary-gal",
+      "name": "Manto da Liberdade",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Gálatas 5:1",
+      "description": "Lendário exclusivo de Gálatas, conquistado gratuitamente ao concluir todos os 6 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "GAL"
+        },
+        "label": "Conclua todos os capítulos de Gálatas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "GAL"
+    },
+    {
+      "id": "legendary-eph",
+      "name": "Cinto da Verdade",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Efésios 6:14",
+      "description": "Lendário exclusivo de Efésios, conquistado gratuitamente ao concluir todos os 6 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "EPH"
+        },
+        "label": "Conclua todos os capítulos de Efésios"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "EPH"
+    },
+    {
+      "id": "legendary-php",
+      "name": "Coroa da Alegria",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Filipenses 4:1",
+      "description": "Lendário exclusivo de Filipenses, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "PHP"
+        },
+        "label": "Conclua todos os capítulos de Filipenses"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "PHP"
+    },
+    {
+      "id": "legendary-col",
+      "name": "Manto do Amor",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Colossenses 3:14",
+      "description": "Lendário exclusivo de Colossenses, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "COL"
+        },
+        "label": "Conclua todos os capítulos de Colossenses"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "COL"
+    },
+    {
+      "id": "legendary-1th",
+      "name": "Elmo da Esperança",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Tessalonicenses 5:8",
+      "description": "Lendário exclusivo de 1 Tessalonicenses, conquistado gratuitamente ao concluir todos os 5 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1TH"
+        },
+        "label": "Conclua todos os capítulos de 1 Tessalonicenses"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1TH"
+    },
+    {
+      "id": "legendary-2th",
+      "name": "Sandálias da Perseverança",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Tessalonicenses 3:13",
+      "description": "Lendário exclusivo de 2 Tessalonicenses, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2TH"
+        },
+        "label": "Conclua todos os capítulos de 2 Tessalonicenses"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2TH"
+    },
+    {
+      "id": "legendary-1ti",
+      "name": "Faixa do Bom Combate",
+      "slot": "waist",
+      "category": "belt",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Timóteo 6:12",
+      "description": "Lendário exclusivo de 1 Timóteo, conquistado gratuitamente ao concluir todos os 6 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1TI"
+        },
+        "label": "Conclua todos os capítulos de 1 Timóteo"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1TI"
+    },
+    {
+      "id": "legendary-2ti",
+      "name": "Coroa da Justiça",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Timóteo 4:8",
+      "description": "Lendário exclusivo de 2 Timóteo, conquistado gratuitamente ao concluir todos os 4 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2TI"
+        },
+        "label": "Conclua todos os capítulos de 2 Timóteo"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2TI"
+    },
+    {
+      "id": "legendary-tit",
+      "name": "Lâmpada do Bom Exemplo",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Tito 2:7",
+      "description": "Lendário exclusivo de Tito, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "TIT"
+        },
+        "label": "Conclua todos os capítulos de Tito"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "TIT"
+    },
+    {
+      "id": "legendary-phm",
+      "name": "Cordão da Reconciliação",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Filemom 1:16",
+      "description": "Lendário exclusivo de Filemom, conquistado gratuitamente ao concluir todos os 1 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "PHM"
+        },
+        "label": "Conclua todos os capítulos de Filemom"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "PHM"
+    },
+    {
+      "id": "legendary-heb",
+      "name": "Âncora da Esperança",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Hebreus 6:19",
+      "description": "Lendário exclusivo de Hebreus, conquistado gratuitamente ao concluir todos os 13 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "HEB"
+        },
+        "label": "Conclua todos os capítulos de Hebreus"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "HEB"
+    },
+    {
+      "id": "legendary-jas",
+      "name": "Espelho da Palavra",
+      "slot": "hands",
+      "category": "tool",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Tiago 1:23",
+      "description": "Lendário exclusivo de Tiago, conquistado gratuitamente ao concluir todos os 5 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JAS"
+        },
+        "label": "Conclua todos os capítulos de Tiago"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JAS"
+    },
+    {
+      "id": "legendary-1pe",
+      "name": "Pedra Viva",
+      "slot": "neck",
+      "category": "jewelry",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 Pedro 2:5",
+      "description": "Lendário exclusivo de 1 Pedro, conquistado gratuitamente ao concluir todos os 5 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1PE"
+        },
+        "label": "Conclua todos os capítulos de 1 Pedro"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1PE"
+    },
+    {
+      "id": "legendary-2pe",
+      "name": "Lâmpada em Lugar Escuro",
+      "slot": "hands",
+      "category": "container",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 Pedro 1:19",
+      "description": "Lendário exclusivo de 2 Pedro, conquistado gratuitamente ao concluir todos os 3 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2PE"
+        },
+        "label": "Conclua todos os capítulos de 2 Pedro"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2PE"
+    },
+    {
+      "id": "legendary-1jn",
+      "name": "Manto da Luz",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "1 João 1:7",
+      "description": "Lendário exclusivo de 1 João, conquistado gratuitamente ao concluir todos os 5 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "1JN"
+        },
+        "label": "Conclua todos os capítulos de 1 João"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "1JN"
+    },
+    {
+      "id": "legendary-2jn",
+      "name": "Rolo da Verdade e do Amor",
+      "slot": "hands",
+      "category": "scroll",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "2 João 1:3",
+      "description": "Lendário exclusivo de 2 João, conquistado gratuitamente ao concluir todos os 1 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "2JN"
+        },
+        "label": "Conclua todos os capítulos de 2 João"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "2JN"
+    },
+    {
+      "id": "legendary-3jn",
+      "name": "Sandálias da Hospitalidade",
+      "slot": "feet",
+      "category": "footwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "3 João 1:8",
+      "description": "Lendário exclusivo de 3 João, conquistado gratuitamente ao concluir todos os 1 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "3JN"
+        },
+        "label": "Conclua todos os capítulos de 3 João"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "3JN"
+    },
+    {
+      "id": "legendary-jud",
+      "name": "Manto da Fé Guardada",
+      "slot": "back",
+      "category": "cloak",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Judas 1:20",
+      "description": "Lendário exclusivo de Judas, conquistado gratuitamente ao concluir todos os 1 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "JUD"
+        },
+        "label": "Conclua todos os capítulos de Judas"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "JUD"
+    },
+    {
+      "id": "legendary-rev",
+      "name": "Coroa da Vida",
+      "slot": "head",
+      "category": "headwear",
+      "rarity": "legendary",
+      "starter": false,
+      "scriptureRef": "Apocalipse 2:10",
+      "description": "Lendário exclusivo de Apocalipse, conquistado gratuitamente ao concluir todos os 22 capítulo(s) do livro. Simbólico e cosmético.",
+      "unlock": {
+        "type": "book_completed",
+        "payload": {
+          "book": "REV"
+        },
+        "label": "Conclua todos os capítulos de Apocalipse"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1",
+      "book": "REV"
+    },
+    {
+      "id": "relic-ark-covenant",
+      "name": "Arca da Aliança",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 25:10",
+      "description": "Lembra a arca feita no deserto segundo as instruções dadas a Moisés. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 25
+        },
+        "label": "Conclua a leitura de Êxodo 25"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-manna",
+      "name": "Maná do Deserto",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 16:15",
+      "description": "Lembra o pão do céu que sustentou o povo no deserto. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 16
+        },
+        "label": "Conclua a leitura de Êxodo 16"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-menorah",
+      "name": "Candelabro do Tabernáculo",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 25:31",
+      "description": "Lembra o candelabro de ouro puro do tabernáculo. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 25
+        },
+        "label": "Conclua a leitura de Êxodo 25"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-tablets",
+      "name": "Tábuas da Lei",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 31:18",
+      "description": "Lembra as tábuas do testemunho entregues no Sinai. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 31
+        },
+        "label": "Conclua a leitura de Êxodo 31"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-rainbow",
+      "name": "Arco da Aliança com Noé",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Gênesis 9:13",
+      "description": "Lembra o arco nas nuvens como sinal da aliança. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GEN",
+          "chapter": 9
+        },
+        "label": "Conclua a leitura de Gênesis 9"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-burning-bush",
+      "name": "Sarça Ardente",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 3:2",
+      "description": "Lembra a sarça que ardia sem se consumir. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 3
+        },
+        "label": "Conclua a leitura de Êxodo 3"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-pillar",
+      "name": "Coluna de Nuvem e de Fogo",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Êxodo 13:21",
+      "description": "Lembra a condução do povo de dia e de noite. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EXO",
+          "chapter": 13
+        },
+        "label": "Conclua a leitura de Êxodo 13"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-fleece",
+      "name": "Velo de Gideão",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Juízes 6:37",
+      "description": "Lembra o sinal pedido por Gideão. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JDG",
+          "chapter": 6
+        },
+        "label": "Conclua a leitura de Juízes 6"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-loaves-fish",
+      "name": "Pães e Peixes da Multiplicação",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "João 6:9",
+      "description": "Lembra os cinco pães e dois peixes que alimentaram a multidão. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 6
+        },
+        "label": "Conclua a leitura de João 6"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-cana-jars",
+      "name": "Talhas de Caná",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "João 2:6",
+      "description": "Lembra as talhas de água nas bodas de Caná. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de João 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-star-bethlehem",
+      "name": "Estrela de Belém",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Mateus 2:2",
+      "description": "Lembra a estrela que guiou os magos. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MAT",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Mateus 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-manger",
+      "name": "Manjedoura",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Lucas 2:7",
+      "description": "Lembra o nascimento humilde em Belém. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "LUK",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Lucas 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-basin-towel",
+      "name": "Bacia e Toalha do Lava-pés",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "João 13:5",
+      "description": "Lembra o serviço humilde no lava-pés. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 13
+        },
+        "label": "Conclua a leitura de João 13"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-bread-cup",
+      "name": "Pão e Cálice da Ceia",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Lucas 22:19-20",
+      "description": "Lembra a última ceia. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "LUK",
+          "chapter": 22
+        },
+        "label": "Conclua a leitura de Lucas 22"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-empty-tomb",
+      "name": "Pedra Removida do Sepulcro",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Marcos 16:4",
+      "description": "Lembra a manhã da ressurreição. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "MRK",
+          "chapter": 16
+        },
+        "label": "Conclua a leitura de Marcos 16"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-miraculous-catch",
+      "name": "Rede da Pesca Maravilhosa",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Lucas 5:6",
+      "description": "Lembra a rede que se encheu de peixes. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "LUK",
+          "chapter": 5
+        },
+        "label": "Conclua a leitura de Lucas 5"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-tongues-fire",
+      "name": "Línguas de Fogo de Pentecostes",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Atos 2:3",
+      "description": "Lembra o dia de Pentecostes. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "ACT",
+          "chapter": 2
+        },
+        "label": "Conclua a leitura de Atos 2"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-living-water",
+      "name": "Fonte de Água Viva",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "João 7:38-39",
+      "description": "Lembra a promessa de rios de água viva. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "JHN",
+          "chapter": 7
+        },
+        "label": "Conclua a leitura de João 7"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-fruit-spirit",
+      "name": "Cesto do Fruto do Espírito",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Gálatas 5:22-23",
+      "description": "Lembra o amor, a alegria, a paz e as demais virtudes do fruto do Espírito. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "GAL",
+          "chapter": 5
+        },
+        "label": "Conclua a leitura de Gálatas 5"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-seal",
+      "name": "Selo da Promessa",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Efésios 1:13",
+      "description": "Lembra o selo da promessa. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EPH",
+          "chapter": 1
+        },
+        "label": "Conclua a leitura de Efésios 1"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-dry-bones",
+      "name": "Sopro sobre os Ossos Secos",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "Ezequiel 37:9-10",
+      "description": "Lembra a visão do vale em que o sopro trouxe vida. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "EZK",
+          "chapter": 37
+        },
+        "label": "Conclua a leitura de Ezequiel 37"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
+    },
+    {
+      "id": "relic-gifts",
+      "name": "Lâmpadas dos Dons",
+      "slot": "relic",
+      "category": "relic",
+      "rarity": "holy",
+      "starter": false,
+      "scriptureRef": "1 Coríntios 12:4",
+      "description": "Lembra a diversidade de dons para o bem comum. Representação simbólica para o Santuário das Conquistas; não é equipável nem tem poderes.",
+      "unlock": {
+        "type": "chapter_completed",
+        "payload": {
+          "book": "1CO",
+          "chapter": 12
+        },
+        "label": "Conclua a leitura de 1 Coríntios 12"
+      },
+      "acquisition": "reading",
+      "series": "rarities-v1"
     }
   ],
   "defaults": {
@@ -860,6 +3574,164 @@
         "scroll-isaiah"
       ],
       "reward": "cloak-elijah-prophets"
+    },
+    {
+      "id": "works-father",
+      "name": "Obras do Pai",
+      "description": "Sinais e alianças de Deus na história do seu povo.",
+      "items": [
+        "relic-ark-covenant",
+        "relic-manna",
+        "relic-menorah",
+        "relic-tablets",
+        "relic-rainbow",
+        "relic-burning-bush",
+        "relic-pillar",
+        "relic-fleece"
+      ],
+      "reward": null
+    },
+    {
+      "id": "works-son",
+      "name": "Obras de Jesus Cristo",
+      "description": "Do nascimento em Belém à manhã da ressurreição.",
+      "items": [
+        "relic-loaves-fish",
+        "relic-cana-jars",
+        "relic-star-bethlehem",
+        "relic-manger",
+        "relic-basin-towel",
+        "relic-bread-cup",
+        "relic-empty-tomb",
+        "relic-miraculous-catch"
+      ],
+      "reward": null
+    },
+    {
+      "id": "works-spirit",
+      "name": "Obras do Espírito Santo",
+      "description": "Pentecostes, a água viva e os dons para a igreja.",
+      "items": [
+        "relic-tongues-fire",
+        "relic-living-water",
+        "relic-fruit-spirit",
+        "relic-seal",
+        "relic-dry-bones",
+        "relic-gifts"
+      ],
+      "reward": null
+    },
+    {
+      "id": "legendary-library",
+      "name": "Biblioteca Lendária",
+      "description": "Um lendário para cada um dos 66 livros da Bíblia.",
+      "items": [
+        "scroll-isaiah",
+        "crown-wisdom",
+        "legendary-gen",
+        "legendary-exo",
+        "legendary-lev",
+        "legendary-num",
+        "legendary-deu",
+        "legendary-jos",
+        "legendary-jdg",
+        "legendary-rut",
+        "legendary-1sa",
+        "legendary-2sa",
+        "legendary-1ki",
+        "legendary-2ki",
+        "legendary-1ch",
+        "legendary-2ch",
+        "legendary-ezr",
+        "legendary-neh",
+        "legendary-est",
+        "legendary-job",
+        "legendary-psa",
+        "legendary-ecc",
+        "legendary-sng",
+        "legendary-jer",
+        "legendary-lam",
+        "legendary-ezk",
+        "legendary-dan",
+        "legendary-hos",
+        "legendary-jol",
+        "legendary-amo",
+        "legendary-oba",
+        "legendary-jon",
+        "legendary-mic",
+        "legendary-nam",
+        "legendary-hab",
+        "legendary-zep",
+        "legendary-hag",
+        "legendary-zec",
+        "legendary-mal",
+        "legendary-mat",
+        "legendary-mrk",
+        "legendary-luk",
+        "legendary-jhn",
+        "legendary-act",
+        "legendary-rom",
+        "legendary-1co",
+        "legendary-2co",
+        "legendary-gal",
+        "legendary-eph",
+        "legendary-php",
+        "legendary-col",
+        "legendary-1th",
+        "legendary-2th",
+        "legendary-1ti",
+        "legendary-2ti",
+        "legendary-tit",
+        "legendary-phm",
+        "legendary-heb",
+        "legendary-jas",
+        "legendary-1pe",
+        "legendary-2pe",
+        "legendary-1jn",
+        "legendary-2jn",
+        "legendary-3jn",
+        "legendary-jud",
+        "legendary-rev"
+      ],
+      "reward": null
     }
-  ]
+  ],
+  "rarities": [
+    {
+      "id": "common",
+      "name": "Comum",
+      "order": 1,
+      "color": "#8C8273",
+      "description": "Equipamentos do dia a dia: túnicas, sandálias, cajados, bolsas, cintos, cordas e recipientes."
+    },
+    {
+      "id": "rare",
+      "name": "Raro",
+      "order": 2,
+      "color": "#2F6FA8",
+      "description": "Itens de sacerdotes, profetas e funções especiais, incluindo mantos e vestes cerimoniais."
+    },
+    {
+      "id": "epic",
+      "name": "Épico",
+      "order": 3,
+      "color": "#8A3FA0",
+      "description": "Itens ligados a personagens e acontecimentos marcantes da Bíblia."
+    },
+    {
+      "id": "legendary",
+      "name": "Lendário",
+      "order": 4,
+      "color": "#C9771A",
+      "description": "Um equipamento exclusivo para cada um dos 66 livros, conquistado gratuitamente ao concluir o livro."
+    },
+    {
+      "id": "holy",
+      "name": "Santo",
+      "order": 5,
+      "color": "#B8932F",
+      "description": "Artefatos sagrados e representações simbólicas das obras de Deus, exibidos no Santuário das Conquistas."
+    }
+  ],
+  "draft": "Catálogo de raridades RASCUNHO: escrito a partir das regras da especificação; substituir por catalogo_raridades_144_itens_v2.json com scripts/import-rarities-catalog.mjs."
 }

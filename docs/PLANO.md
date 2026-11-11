@@ -68,6 +68,18 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [ ] Validação num projeto Supabase real
 - [ ] Integração de pagamento (webhook → `user_entitlements`)
 
+### Sistema de itens e raridades ✅ (aguardando aprovação)
+
+- [x] Cinco raridades (tabela de referência) e série de 144 itens (22/18/16/66/22) — **rascunho**
+- [x] Raridade, slot e obtenção independentes; slot `relic` não equipável
+- [x] Um lendário por livro (todos os capítulos); BOOK_COMPLETED recusado sem os capítulos
+- [x] Santuário das Conquistas (obras do Pai, de Jesus Cristo e do Espírito Santo; Biblioteca Lendária)
+- [x] Contrato para Modo Missão: MISSION_COMPLETED, MILESTONE_REACHED, WORLD_COMPLETED + `reward_triggers`
+- [x] Importador do catálogo oficial
+- [ ] Importar `catalogo_raridades_144_itens_v2.json` (arquivo não acessível neste ambiente)
+- [ ] Ilustrações dos 144 itens
+- [ ] Modo Missão com cronômetro e leitura (próxima etapa, após aprovação)
+
 ### Marco 3 — Leitura e recompensas
 
 - Catálogo canônico de livros/capítulos (66 livros, 1.189 capítulos) e adaptador de conteúdo licenciado.

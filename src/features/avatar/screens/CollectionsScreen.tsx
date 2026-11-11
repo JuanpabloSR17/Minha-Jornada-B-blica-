@@ -21,7 +21,8 @@ export function CollectionsScreen() {
 
   const load = useCallback(async () => {
     try {
-      setData(await getCollections());
+      // a Biblioteca Lendária (66 itens) e as obras ficam no Santuário das Conquistas
+      setData((await getCollections()).filter((c) => c.id !== 'legendary-library'));
     } catch (e) {
       setError(errorMessage(e));
     }

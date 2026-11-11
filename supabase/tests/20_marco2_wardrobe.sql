@@ -185,14 +185,18 @@ select tests.ev('CHAPTER_COMPLETED', 'chapter:ISA.' || n, jsonb_build_object('bo
 select tests.assert(not tests.owns('scroll-isaiah'), '65 de 66 capítulos de Isaías não concluem o livro');
 select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:ISA.66', '{"book":"ISA","chapter":66}') -> 'granted' = '["scroll-isaiah", "cloak-elijah-prophets"]'::jsonb, 'Isaías completo concede o rolo e completa a Coleção dos Profetas');
 select tests.assert(exists (select 1 from private.domain_events where user_id = 'a6666666-0000-0000-0000-000000000006' and event_type = 'COLLECTION_COMPLETED' and source_event_id = 'collection:prophets'), 'conclusão de coleção registrada como evento');
-select tests.assert(tests.ev('BOOK_COMPLETED', 'book:PRO', '{"book":"PRO"}') -> 'granted' = '["crown-wisdom"]'::jsonb, 'BOOK_COMPLETED de Provérbios concede a Coroa da Sabedoria');
+select tests.assert_raises($$select tests.ev('BOOK_COMPLETED', 'book:PRO', '{"book":"PRO"}')$$, 'book_incomplete', 'BOOK_COMPLETED sem todos os capítulos é recusado');
+select tests.ev('CHAPTER_COMPLETED', 'chapter:PRO.' || n, jsonb_build_object('book', 'PRO', 'chapter', n)) from generate_series(1, 30) n;
+select tests.assert(not tests.owns('crown-wisdom'), '30 de 31 capítulos não concedem o lendário de Provérbios');
+select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:PRO.31', '{"book":"PRO","chapter":31}') -> 'granted' ? 'crown-wisdom', 'o 31º capítulo concede a Coroa da Sabedoria (lendário de Provérbios)');
+select tests.assert((tests.ev('BOOK_COMPLETED', 'book:PRO', '{"book":"PRO"}') -> 'granted') = '[]'::jsonb, 'BOOK_COMPLETED aceito depois dos capítulos, sem duplicar o lendário');
 select tests.assert(tests.ev('READING_STREAK_REACHED', 'streak:7', '{"days":7}') -> 'granted' = '[]'::jsonb, 'evento de sequência aceito (sem regra associada ainda)');
 
 -- o leitor vê e equipa o que conquistou
 begin;
 select set_config('request.jwt.claim.sub', 'a6666666-0000-0000-0000-000000000006', true);
 set local role authenticated;
-select tests.assert((select count(*) from public.reward_events) = 7, 'leitor vê as próprias recompensas');
+select tests.assert((select count(*) from public.reward_events) = (select count(*) from public.user_items ui where ui.source_event_id like 'reward:%'), 'leitor vê as próprias recompensas (uma por item conquistado)');
 select tests.assert((public.equip_item((public.get_wardrobe() ->> 'activeLoadoutId')::uuid, 'tunic-joseph') -> 'loadouts' -> 0 -> 'equipment' ->> 'outfit') = 'tunic-joseph', 'equipa a Túnica de José conquistada');
 select tests.assert((public.equip_item((public.get_wardrobe() ->> 'activeLoadoutId')::uuid, 'cloak-succession') -> 'loadouts' -> 0 -> 'equipment' ->> 'back') = 'cloak-succession', 'escolhe a aparência evoluída');
 select tests.assert((public.equip_item((public.get_wardrobe() ->> 'activeLoadoutId')::uuid, 'cloak-elijah') -> 'loadouts' -> 0 -> 'equipment' ->> 'back') = 'cloak-elijah', 'pode voltar à aparência original');

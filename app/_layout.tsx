@@ -83,6 +83,7 @@ function RootNavigator() {
           <Stack.Screen name="avatar/item/[id]" />
           <Stack.Screen name="avatar/collections" />
           <Stack.Screen name="avatar/loadouts" />
+          <Stack.Screen name="avatar/sanctuary" />
           <Stack.Screen name="users/[username]" />
           <Stack.Screen name="settings/pace" />
         </Stack.Protected>

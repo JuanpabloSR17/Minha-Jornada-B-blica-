@@ -24,6 +24,8 @@ Migração: `supabase/migrations/20261113000100_marco2_wardrobe.sql`
 | `WORLD_COMPLETED` | `{ "world": "patriarcas" }` | `world:patriarcas` |
 | `READING_STREAK_REACHED` | `{ "days": 7 }` | `streak:7:2026-11-20` |
 | `ACHIEVEMENT_UNLOCKED` | `{ "achievement": "primeiro-livro" }` | `achievement:primeiro-livro` |
+| `MISSION_COMPLETED` | `{ "mission": "mission-lost-coin" }` (cadastrada em `reward_triggers`) | `mission:mission-lost-coin` |
+| `MILESTONE_REACHED` | `{ "milestone": "..." }` (cadastrado em `reward_triggers`) | `milestone:...` |
 | `COLLECTION_COMPLETED` | `{ "collection": "prophets" }` | gerado pelo próprio motor |
 
 Entrada única: `private.record_event(user_id, tipo, source_event_id, payload)` → 
@@ -36,7 +38,9 @@ No Marco 3, a RPC autenticada `complete_chapter` validará a leitura e chamará 
 | `rule_type` | `rule_payload` | Cumprida quando |
 |---|---|---|
 | `chapter_completed` | `{ book, chapter }` | o capítulo foi concluído |
-| `book_completed` | `{ book }` | `BOOK_COMPLETED` **ou** todos os capítulos do livro concluídos |
+| `book_completed` | `{ book }` | **todos** os capítulos do livro concluídos (`BOOK_COMPLETED` sem eles é recusado) |
+| `mission_completed` | `{ mission }` | missão cadastrada e concluída |
+| `milestone_reached` | `{ milestone }` | marco cadastrado e alcançado |
 | `chapters_count` | `{ count, book? }` | nº de capítulos **distintos** (releitura não conta) |
 | `world_completed` | `{ world }` | mundo concluído |
 | `reading_streak` | `{ days }` | sequência ≥ dias |
@@ -47,7 +51,7 @@ No Marco 3, a RPC autenticada `complete_chapter` validará a leitura e chamará 
 **todas** as regras ainda não concedidas, em rodadas, então requisitos cumpridos depois também
 liberam recompensas pendentes (ex.: ler 2 Reis 2 antes de 1 Reis 19).
 
-## Itens bíblicos atuais (catálogo v3)
+## Itens bíblicos (catálogo v3; ver docs/RARIDADES.md para o catálogo v4 de 144 itens)
 
 | Item | Regra | Referência |
 |---|---|---|

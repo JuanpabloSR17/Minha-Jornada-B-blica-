@@ -8,7 +8,8 @@ export const RARITY_COLOR: Record<Rarity, string> = {
   uncommon: '#4E8A4A',
   rare: '#2F6FA8',
   epic: '#8A3FA0',
-  legendary: '#C98A1E',
+  legendary: '#C9771A',
+  holy: '#B8932F',
 };
 
 /** Raridade é só visual: nunca representa poder ou vantagem. */

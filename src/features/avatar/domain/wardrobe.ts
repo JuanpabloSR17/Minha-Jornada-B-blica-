@@ -27,7 +27,7 @@ export const INVENTORY_CATEGORIES: InventoryCategory[] = [
 
 export type ItemFilter = 'all' | 'owned' | 'equipped';
 
-const RARITY_ORDER: Record<Rarity, number> = { legendary: 0, epic: 1, rare: 2, uncommon: 3, common: 4 };
+const RARITY_ORDER: Record<Rarity, number> = { holy: 0, legendary: 1, epic: 2, rare: 3, uncommon: 4, common: 5 };
 
 /** Item especial: ligado a uma passagem bíblica ou conquistado (não inicial). */
 export const isSpecial = (i: CosmeticItem) => !i.starter || !!i.scriptureRef;
@@ -45,7 +45,7 @@ export function itemView(item: CosmeticItem, owned: ReadonlySet<string>, equipme
   return {
     item,
     owned: has,
-    equipped: equipment[item.slot] === item.id,
+    equipped: item.slot !== 'relic' && equipment[item.slot] === item.id,
     locked: !has,
     art: artStatus(`${item.slot}/${item.id}`, bodyId),
   };
@@ -54,13 +54,14 @@ export function itemView(item: CosmeticItem, owned: ReadonlySet<string>, equipme
 /** Lista filtrada e ordenada (obtidos primeiro, depois raridade e nome). Escala para centenas de itens. */
 export function listItems(
   categoryId: string,
-  opts: { owned: ReadonlySet<string>; equipment: Equipment; filter?: ItemFilter; search?: string; bodyId?: string },
+  opts: { owned: ReadonlySet<string>; equipment: Equipment; filter?: ItemFilter; rarity?: Rarity | 'all'; search?: string; bodyId?: string },
 ): ItemView[] {
   const cat = INVENTORY_CATEGORIES.find((c) => c.id === categoryId);
   if (!cat || cat.slot === 'hair') return [];
   const q = (opts.search ?? '').trim().toLocaleLowerCase('pt-BR');
   const matches = (i: CosmeticItem) => (cat.slot === 'special' ? isSpecial(i) : cat.slot === 'head' ? i.slot === 'head' || i.slot === 'neck' : i.slot === cat.slot);
-  return COSMETIC_ITEMS.filter((i) => matches(i) && !i.premium)
+  // relíquias (Santuário) não aparecem no guarda-roupa: não são equipáveis
+  return COSMETIC_ITEMS.filter((i) => i.slot !== 'relic' && matches(i) && !i.premium && (!opts.rarity || opts.rarity === 'all' || i.rarity === opts.rarity))
     .map((i) => itemView(i, opts.owned, opts.equipment, opts.bodyId))
     .filter((v) => (opts.filter === 'owned' ? v.owned : opts.filter === 'equipped' ? v.equipped : true))
     .filter((v) => !q || v.item.name.toLocaleLowerCase('pt-BR').includes(q) || (v.item.scriptureRef ?? '').toLocaleLowerCase('pt-BR').includes(q))

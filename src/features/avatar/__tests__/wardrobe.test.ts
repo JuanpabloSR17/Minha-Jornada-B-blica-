@@ -77,9 +77,9 @@ describe('evolução e coleções', () => {
     expect(variantFamily('cloak-elijah')).toHaveLength(3);
   });
   it('coleções de Moisés, Davi e Profetas têm itens e recompensa válidos', () => {
-    expect(COLLECTIONS.map((c) => c.id)).toEqual(['moses', 'david', 'prophets']);
+    expect(COLLECTIONS.map((c) => c.id).slice(0, 3)).toEqual(['moses', 'david', 'prophets']);
     for (const c of COLLECTIONS) {
-      expect(getItem(c.reward)).toBeDefined();
+      if (c.reward) expect(getItem(c.reward)).toBeDefined();
       c.items.forEach((id) => expect(getItem(id)).toBeDefined());
     }
   });
@@ -150,6 +150,7 @@ describe('assets ausentes', () => {
   });
   it('todo item do catálogo aparece em alguma categoria do inventário', () => {
     const shown = new Set(INVENTORY_CATEGORIES.flatMap((c) => listItems(c.id, { owned: new Set(), equipment: {} }).map((v) => v.item.id)));
-    for (const it of COSMETIC_ITEMS.filter((i) => !i.premium)) expect(shown.has(it.id)).toBe(true);
+    for (const it of COSMETIC_ITEMS.filter((i) => !i.premium && i.slot !== 'relic')) expect(shown.has(it.id)).toBe(true);
+    for (const it of COSMETIC_ITEMS.filter((i) => i.slot === 'relic')) expect(shown.has(it.id)).toBe(false);
   });
 });

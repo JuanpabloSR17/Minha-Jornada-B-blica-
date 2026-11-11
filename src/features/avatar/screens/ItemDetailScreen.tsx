@@ -10,7 +10,10 @@ import { StepHeader } from '../components/StepHeader';
 import { AvatarStage } from '../components/AvatarStage';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { collectionsOf, getItem } from '../domain/catalog';
+import { collectionsOf, getItem, getRarity } from '../domain/catalog';
+import bible from '../../reading/bible-books.json';
+
+const bookName = (code: string) => (bible as { code: string; name: string }[]).find((b) => b.code === code)?.name ?? code;
 import { INVENTORY_CATEGORIES, isSpecial, itemView, variantFamily } from '../domain/wardrobe';
 import { equipItem, getWardrobe, unequipSlot, type WardrobeState } from '../services/wardrobe.service';
 
@@ -48,8 +51,8 @@ export function ItemDetailScreen({ id }: { id: string }) {
   const status = view.equipped ? strings.wardrobe.equipped : view.locked ? strings.wardrobe.locked : strings.wardrobe.owned;
   const family = variantFamily(item.id);
   const cols = collectionsOf(item.id);
-  const category = INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
-  const previewLook = w && active ? { appearance: w.appearance, equipment: { ...active.equipment, [item.slot]: item.id } } : null;
+  const category = item.slot === 'relic' ? strings.sanctuary.title : INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
+  const previewLook = w && active ? { appearance: w.appearance, equipment: item.slot === 'relic' ? active.equipment : { ...active.equipment, [item.slot]: item.id } } : null;
 
   const act = async (fn: () => Promise<WardrobeState>) => {
     setBusy(true);
@@ -75,25 +78,39 @@ export function ItemDetailScreen({ id }: { id: string }) {
     <Screen>
       <StepHeader title={item.name} onBack={() => router.back()} />
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
-      <View style={styles.hero}>
-        {previewLook ? (
-          <View style={styles.flex}>
-            <AvatarStage look={previewLook} height={340} />
-          </View>
-        ) : null}
-        <View style={[styles.iconBox, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.stage }]}>
-          <ItemIcon item={item} size={120} appearance={w?.appearance} />
+      {item.slot === 'relic' ? (
+        <View style={[styles.relicHero, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.stage }]}>
+          <ItemIcon item={item} size={220} />
         </View>
-      </View>
+      ) : (
+        <View style={styles.hero}>
+          {previewLook ? (
+            <View style={styles.flex}>
+              <AvatarStage look={previewLook} height={340} />
+            </View>
+          ) : null}
+          <View style={[styles.iconBox, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.stage }]}>
+            <ItemIcon item={item} size={120} appearance={w?.appearance} />
+          </View>
+        </View>
+      )}
       {view.art !== 'final' ? <Notice tone="info">{view.art === 'missing' ? `${strings.wardrobe.artMissing}: a peça aparece com um visual substituto até a ilustração ficar pronta.` : `${strings.wardrobe.artProvisional}: protótipo vetorial até a ilustração final.`}</Notice> : null}
       <Card>
         {row(strings.item.category, category)}
         {row(strings.item.rarity, strings.rarity[item.rarity])}
+        {row(strings.item.acquisition, strings.item.acquisitionLabels[item.acquisition])}
+        {item.book ? row(strings.item.book, bookName(item.book)) : null}
         {item.scriptureRef ? row(strings.item.reference, item.scriptureRef) : null}
         {row(strings.item.unlock, item.unlockLabel ?? strings.item.starterUnlock)}
         {row(strings.item.status, status)}
         {cols.length ? row(strings.item.collection, cols.map((c) => c.name).join(', ')) : null}
         <AppText>{item.description}</AppText>
+        {item.slot === 'relic' ? <Notice tone="info">{strings.item.relicNote}</Notice> : null}
+        {getRarity(item.rarity) ? (
+          <View style={[styles.rarityBox, { borderLeftColor: RARITY_COLOR[item.rarity] }]}>
+            <AppText variant="caption" muted>{strings.item.rarityAbout}: {getRarity(item.rarity)!.description}</AppText>
+          </View>
+        ) : null}
         {isSpecial(item) ? <AppText variant="caption" muted>{strings.item.symbolicNote}</AppText> : null}
       </Card>
       {family.length > 1 ? (
@@ -121,7 +138,7 @@ export function ItemDetailScreen({ id }: { id: string }) {
           })}
         </Card>
       ) : null}
-      {active && !view.locked ? (
+      {active && !view.locked && item.slot !== 'relic' ? (
         view.equipped ? (
           item.slot !== 'outfit' ? <Button title={strings.item.removeActive} variant="secondary" loading={busy} disabled={active.locked} onPress={() => void act(() => unequipSlot(active.id, item.slot, active.version))} /> : null
         ) : (
@@ -139,5 +156,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', gap: spacing.md, alignItems: 'baseline' },
   rowLabel: { width: 120 },
   variant: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1.5, borderRadius: radius.md, padding: spacing.sm },
+  relicHero: { alignSelf: 'center', borderWidth: 2, borderRadius: 140, overflow: 'hidden', padding: spacing.md },
+  rarityBox: { borderLeftWidth: 4, paddingLeft: spacing.sm },
   variantIcon: { width: 56, height: 56, borderRadius: radius.sm, overflow: 'hidden' },
 });

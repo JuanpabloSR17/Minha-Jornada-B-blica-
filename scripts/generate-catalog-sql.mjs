@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
 /** Prefixo de data da migração de cada versão do catálogo. */
-const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200' };
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200' };
 export const outPathFor = (version) => {
   const prefix = VERSION_PREFIX[version];
   if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);
@@ -33,12 +33,21 @@ export function buildCatalogSql(catalog) {
   lines.push('  sort_order = excluded.sort_order, catalog_version = excluded.catalog_version, is_active = true;');
   lines.push('');
   const v3 = catalog.version >= 3;
+  const v4 = catalog.version >= 4;
+  if (v4 && catalog.rarities?.length) {
+    lines.push('-- Raridades (fonte: catalog.json).');
+    lines.push('insert into public.rarities (id, name, sort_order, color, description, is_active) values');
+    lines.push(catalog.rarities.map((r) => `  (${q(r.id)}, ${q(r.name)}, ${r.order + 1}, ${q(r.color)}, ${q(r.description)}, true)`).join(',\n'));
+    lines.push('on conflict (id) do update set name = excluded.name, sort_order = excluded.sort_order,');
+    lines.push('  color = excluded.color, description = excluded.description, is_active = true;');
+    lines.push('');
+  }
   const arr = (a) => (a && a.length ? `array[${a.map(q).join(', ')}]::text[]` : 'null');
-  lines.push(`insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version${v3 ? ', body_compatibility, variant_label' : ''}) values`);
+  lines.push(`insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version${v3 ? ', body_compatibility, variant_label' : ''}${v4 ? ', acquisition, series, book_code' : ''}) values`);
   lines.push(
     catalog.items
       .map((it) =>
-        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version}${v3 ? `, ${arr(it.bodyCompatibility)}, ${q(it.variantLabel)}` : ''})`,
+        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version}${v3 ? `, ${arr(it.bodyCompatibility)}, ${q(it.variantLabel)}` : ''}${v4 ? `, ${q(it.acquisition ?? 'reading')}, ${q(it.series ?? 'starter')}, ${q(it.book)}` : ''})`,
       )
       .join(',\n'),
   );
@@ -46,7 +55,7 @@ export function buildCatalogSql(catalog) {
   lines.push('  name = excluded.name, category = excluded.category, slot = excluded.slot,');
   lines.push('  rarity = excluded.rarity, description = excluded.description, scripture_ref = excluded.scripture_ref,');
   lines.push('  asset_manifest_key = excluded.asset_manifest_key, is_starter = excluded.is_starter,');
-  lines.push(`  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version${v3 ? ',\n  body_compatibility = excluded.body_compatibility, variant_label = excluded.variant_label' : ''};`);
+  lines.push(`  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version${v3 ? ',\n  body_compatibility = excluded.body_compatibility, variant_label = excluded.variant_label' : ''}${v4 ? ',\n  acquisition = excluded.acquisition, series = excluded.series, book_code = excluded.book_code' : ''};`);
   lines.push('');
   const variants = catalog.items.filter((it) => it.variantOf);
   if (v3 && variants.length) {

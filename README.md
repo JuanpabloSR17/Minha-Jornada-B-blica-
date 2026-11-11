@@ -37,6 +37,16 @@ recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).
   público (`/users/[username]`, com controle de privacidade) e aba Amigos.
 - **Pipeline de ilustrações**: validador + registro automático de PNG/WebP, moldes de alinhamento e prompts.
 
+### Itens e raridades
+
+- **Cinco raridades** (Comum, Raro, Épico, Lendário, Santo) e **144 itens** (22/18/16/66/22) — catálogo
+  **rascunho** até a importação do catálogo oficial ([`docs/RARIDADES.md`](docs/RARIDADES.md)).
+- Um **lendário por livro**, gratuito ao concluir todos os capítulos.
+- **Relíquias santas** não equipáveis, exibidas no **Santuário das Conquistas** com as coleções das
+  obras do Pai, de Jesus Cristo e do Espírito Santo e a Biblioteca Lendária.
+- Filtro por raridade no guarda-roupa; detalhe com raridade, obtenção e livro.
+- Contrato para o futuro Modo Missão (missões, marcos, mundos) — sem cronômetro e sem leitura ainda.
+
 Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
 aparecem **sinalizadas como "Em construção"** — nada nelas é contabilizado.
 
@@ -89,9 +99,9 @@ npm run web        # navegador
 | Comando | O que verifica |
 |---|---|
 | `npm run typecheck` | TypeScript estrito |
-| `npm test` | 60 testes: catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
-| `npm run test:db` | 155 verificações num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
-| `npm run test:e2e` | Fluxo completo no navegador dos Marcos 1 e 2 (cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
+| `npm test` | 72 testes: raridades e 144 itens, importador do catálogo oficial, catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
+| `npm run test:db` | 193 verificações (inclui raridades, lendários por livro, relíquias não equipáveis, missões/marcos sem eventos fictícios, reversões) num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
+| `npm run test:e2e` | Fluxo completo no navegador (24 etapas; cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
 | `npm run assets:check` | Arquivos de `assets/avatars/` válidos e registro em dia |
 
 `test:db` e `test:e2e` precisam do Postgres 16 instalado localmente (`/usr/lib/postgresql/16/bin`).

@@ -177,6 +177,19 @@ export const ptBR = {
     starterUnlock: 'Peça inicial gratuita',
     symbolicNote: 'Item cosmético e simbólico: não dá vantagens nem representa uma relíquia histórica.',
     notFound: 'Item não encontrado.',
+    acquisition: 'Como se obtém',
+    acquisitionLabels: { starter: 'Peça inicial gratuita', reading: 'Leitura bíblica', collection: 'Recompensa de coleção', mission: 'Missão (Modo Missão, em breve)', milestone: 'Marco especial', event: 'Evento' },
+    book: 'Livro',
+    relicNote: 'Relíquia do Santuário das Conquistas: fica em exibição e não é equipada no personagem.',
+    rarityAbout: 'Sobre esta raridade',
+  },
+  sanctuary: {
+    title: 'Santuário das Conquistas',
+    intro: 'Relíquias santas lembram as obras de Deus. Elas ficam em exibição aqui e não são equipadas no personagem.',
+    libraryTitle: 'Biblioteca Lendária',
+    libraryBody: 'Um lendário exclusivo para cada livro, conquistado gratuitamente ao concluir todos os capítulos.',
+    oldTestament: 'Antigo Testamento',
+    newTestament: 'Novo Testamento',
   },
   collections: {
     title: 'Coleções',
@@ -215,7 +228,7 @@ export const ptBR = {
     privacyHint: 'O perfil público mostra só nome, usuário e o visual em uso. Nunca e-mail ou histórico de leitura.',
     friendsSoon: 'Lista de amigos, rankings e desafios chegam no Marco 4.',
   },
-  rarity: { common: 'Comum', uncommon: 'Incomum', rare: 'Raro', epic: 'Épico', legendary: 'Lendário' },
+  rarity: { common: 'Comum', uncommon: 'Incomum', rare: 'Raro', epic: 'Épico', legendary: 'Lendário', holy: 'Santo' },
   tabs: { home: 'Início', journey: 'Jornada', read: 'Ler', friends: 'Amigos', profile: 'Perfil' },
   home: {
     greeting: 'Paz, {name}!',
@@ -268,5 +281,8 @@ export const ptBR = {
     invalid_name: 'Use um nome de 1 a 30 caracteres.',
     item_incompatible_body: 'Esta peça ainda não tem versão para o seu modelo de corpo.',
     invalid_privacy_mode: 'Opção de privacidade inválida.',
+    item_not_equippable: 'Este item é uma relíquia do Santuário e não pode ser equipado.',
+    unknown_trigger: 'Missão ou marco desconhecido.',
+    book_incomplete: 'O livro só conta como concluído com todos os capítulos lidos.',
   },
 } as const;

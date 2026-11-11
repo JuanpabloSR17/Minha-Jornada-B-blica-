@@ -60,15 +60,30 @@ R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from private.domain_
 if [ "$R" != "1,1,1" ]; then echo "✘ concorrência de recompensas: eventos,recompensas,itens=$R (esperado 1,1,1)"; exit 1; fi
 echo "  ok  requisições simultâneas do mesmo capítulo geram 1 evento, 1 recompensa e 1 item"
 
-echo "→ reversão manual do Marco 2 e reaplicação"
+echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
-for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback -f "$f"; done
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  case "$(basename "$f")" in 20261114*) continue ;; esac
+  "${PSQL[@]}" -d jb_rollback -f "$f"
+done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
 LEFT=$("${PSQL[@]}" -d jb_rollback -At -c "select count(*) from pg_proc where proname in ('get_wardrobe','record_event') ")
 ITEMS=$("${PSQL[@]}" -d jb_rollback -At -c "select count(*) from public.cosmetic_items")
 if [ "$LEFT" != "0" ] || [ "$ITEMS" = "0" ]; then echo "✘ reversão: funções restantes=$LEFT itens=$ITEMS"; exit 1; fi
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/migrations/20261113000100_marco2_wardrobe.sql"
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/migrations/20261113000200_avatar_catalog_v3.sql"
-echo "  ok  reversão remove o Marco 2 sem apagar o catálogo, e a migração pode ser reaplicada"
+echo "  ok  reversão do Marco 2 não apaga o catálogo, e a migração pode ser reaplicada"
+
+echo "→ reversão manual das raridades (banco completo) e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback2" postgres
+"${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback2 -f "$f"; done
+"${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback2 -At -c "select count(*) from pg_tables where tablename = 'reward_triggers'")
+ITEMS=$("${PSQL[@]}" -d jb_rollback2 -At -c "select count(*) from public.cosmetic_items")
+if [ "$LEFT" != "0" ] || [ "$ITEMS" != "179" ]; then echo "✘ reversão das raridades: gatilhos=$LEFT itens=$ITEMS"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/migrations/20261114000100_rarities_and_triggers.sql" 2>/dev/null
+"${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/migrations/20261114000200_avatar_catalog_v4.sql"
+echo "  ok  reversão das raridades mantém os 179 itens, e as migrações podem ser reaplicadas"
 echo "✔ Todos os testes de banco passaram."

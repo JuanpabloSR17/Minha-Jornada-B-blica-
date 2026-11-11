@@ -12,7 +12,9 @@ import { GroupTabs } from '../components/GroupTabs';
 import { ItemCard } from '../components/ItemCard';
 import { RarityBadge } from '../components/RarityBadge';
 import { OptionCarousel } from '../components/OptionCarousel';
-import { getItem } from '../domain/catalog';
+import { RARITIES, getItem } from '../domain/catalog';
+import { RARITY_COLOR } from '../components/RarityBadge';
+import type { Rarity } from '../domain/avatar.types';
 import {
   INVENTORY_CATEGORIES,
   appearanceChanged,
@@ -39,6 +41,7 @@ export function WardrobeScreen() {
   const [notice, setNotice] = useState<{ tone: 'error' | 'success' | 'info'; text: string } | null>(null);
   const [category, setCategory] = useState(params.category ?? 'outfit');
   const [filter, setFilter] = useState<ItemFilter>('all');
+  const [rarity, setRarity] = useState<Rarity | 'all'>('all');
   const [search, setSearch] = useState('');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [pendingLoadout, setPendingLoadout] = useState<string | null>(null);
@@ -73,8 +76,8 @@ export function WardrobeScreen() {
   const draft = s.draft;
 
   const items = useMemo(
-    () => (draft ? listItems(category, { owned, equipment: draft.equipment, filter, search, bodyId: draft.appearance.bodyId }) : []),
-    [category, owned, draft, filter, search],
+    () => (draft ? listItems(category, { owned, equipment: draft.equipment, filter, rarity, search, bodyId: draft.appearance.bodyId }) : []),
+    [category, owned, draft, filter, rarity, search],
   );
   const selected: ItemView | null = useMemo(() => {
     const it = getItem(selectedId);
@@ -85,11 +88,11 @@ export function WardrobeScreen() {
     setSelectedId(v.item.id);
     setNotice(null);
     // tocar equipa na prévia (inclusive itens bloqueados, só para experimentar)
-    if (!v.equipped) dispatch({ type: 'equip', slot: v.item.slot, itemId: v.item.id });
+    if (!v.equipped && v.item.slot !== 'relic') dispatch({ type: 'equip', slot: v.item.slot, itemId: v.item.id });
   };
 
   const removeSelected = () => {
-    if (selected) dispatch({ type: 'equip', slot: selected.item.slot, itemId: null });
+    if (selected && selected.item.slot !== 'relic') dispatch({ type: 'equip', slot: selected.item.slot, itemId: null });
   };
 
   const save = async () => {
@@ -203,6 +206,26 @@ export function WardrobeScreen() {
               <Icon name="search" size={16} color={colors.text} />
             </Pressable>
           </View>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.noGrow} contentContainerStyle={styles.rarityRow} accessibilityRole="radiogroup" accessibilityLabel="Raridade">
+            {(['all', ...RARITIES.map((r) => r.id)] as (Rarity | 'all')[]).map((r) => {
+              const on = rarity === r;
+              const color = r === 'all' ? colors.text : RARITY_COLOR[r];
+              return (
+                <Pressable
+                  key={r}
+                  accessibilityRole="radio"
+                  aria-checked={on}
+                  accessibilityState={{ checked: on }}
+                  accessibilityLabel={r === 'all' ? 'Todas as raridades' : strings.rarity[r]}
+                  onPress={() => setRarity(r)}
+                  style={[styles.rarityChip, { borderColor: on ? color : colors.border, backgroundColor: on ? colors.surfaceRaised : 'transparent' }]}
+                >
+                  {r !== 'all' ? <View style={[styles.rarityDot, { backgroundColor: color }]} /> : null}
+                  <AppText variant="caption" color={on ? colors.text : colors.textMuted}>{r === 'all' ? 'Todas' : strings.rarity[r]}</AppText>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
           {searchOpen ? (
             <TextInput
               accessibilityLabel={strings.wardrobe.search}
@@ -338,6 +361,9 @@ const styles = StyleSheet.create({
   panelWide: { maxWidth: 600 },
   filterRow: { flexDirection: 'row', gap: 6, alignItems: 'center' },
   chip: { minHeight: 36, paddingHorizontal: 10, borderRadius: radius.pill, borderWidth: 1.5, justifyContent: 'center' },
+  rarityRow: { gap: 6, alignItems: 'center' },
+  rarityChip: { flexDirection: 'row', alignItems: 'center', gap: 5, minHeight: 32, paddingHorizontal: 10, borderRadius: radius.pill, borderWidth: 1.5 },
+  rarityDot: { width: 9, height: 9, borderRadius: 5 },
   searchBtn: { marginLeft: 'auto', minWidth: 44, alignItems: 'center' },
   search: { minHeight: 38, borderWidth: 1.5, borderRadius: radius.pill, paddingHorizontal: spacing.md, fontSize: 14 },
   grid: { flex: 1 },

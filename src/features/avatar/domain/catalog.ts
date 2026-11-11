@@ -6,8 +6,10 @@ import type {
   AppearanceOption,
   AvatarAppearance,
   CosmeticItem,
+  Acquisition,
   Equipment,
   EquipmentSlot,
+  ItemSlot,
   LayerSlot,
   Rarity,
 } from './avatar.types';
@@ -26,6 +28,9 @@ type RawItem = {
   unlock?: { type: string; label?: string };
   variantOf?: string;
   variantLabel?: string;
+  acquisition?: string;
+  series?: string;
+  book?: string;
 };
 
 export const CATALOG_VERSION: number = raw.version;
@@ -37,7 +42,7 @@ export const EQUIPMENT_SLOTS = raw.slots as EquipmentSlot[];
 export const COSMETIC_ITEMS: CosmeticItem[] = (raw.items as RawItem[]).map((it) => ({
   id: it.id,
   name: it.name,
-  slot: it.slot as EquipmentSlot,
+  slot: it.slot as ItemSlot,
   category: it.category,
   description: it.description,
   rarity: (it.rarity ?? 'common') as Rarity,
@@ -48,7 +53,18 @@ export const COSMETIC_ITEMS: CosmeticItem[] = (raw.items as RawItem[]).map((it) 
   unlockLabel: it.unlock?.label,
   variantOf: it.variantOf,
   variantLabel: it.variantLabel,
+  acquisition: (it.acquisition ?? (it.starter === false ? 'reading' : 'starter')) as Acquisition,
+  series: it.series ?? 'starter',
+  book: it.book,
 }));
+
+export type RarityDef = { id: Rarity; name: string; order: number; color: string; description: string };
+export const RARITIES = ((raw as { rarities?: RarityDef[] }).rarities ?? []).slice().sort((a, b) => a.order - b.order);
+export const getRarity = (id: Rarity) => RARITIES.find((r) => r.id === id);
+
+/** Item pode ser equipado no avatar (relíquias do Santuário não). */
+export const isEquippable = (i: CosmeticItem): i is CosmeticItem & { slot: EquipmentSlot } => i.slot !== 'relic';
+export const RELICS = COSMETIC_ITEMS.filter((i) => i.slot === 'relic');
 
 export type CollectionDef = { id: string; name: string; description: string; items: string[]; reward: string };
 export const COLLECTIONS = ((raw as { collections?: CollectionDef[] }).collections ?? []);
@@ -80,7 +96,7 @@ export function getOption(category: AppearanceCategory, id: string): AppearanceO
   return APPEARANCE_OPTIONS[category].find((o) => o.id === id);
 }
 
-export function itemsForSlot(slot: EquipmentSlot, filter: (i: CosmeticItem) => boolean = () => true) {
+export function itemsForSlot(slot: ItemSlot, filter: (i: CosmeticItem) => boolean = () => true) {
   return COSMETIC_ITEMS.filter((i) => i.slot === slot && filter(i));
 }
 

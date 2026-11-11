@@ -281,6 +281,34 @@ async function newPhone(browser, scheme = 'light') {
   await shot(page, 'm2-08-friends');
   step('perfil: atalhos do avatar, privacidade e cartões de avatar');
 
+  // ============================================================ RARIDADES E SANTUÁRIO
+  await page.goto(`${APP}/avatar/wardrobe?category=back`);
+  await page.getByRole('radio', { name: 'Lendário', exact: true }).click();
+  await page.getByRole('radio', { name: /^Manto do Êxodo, Lendário, Bloqueado/ }).waitFor();
+  assert.equal(await page.getByRole('radio', { name: /^Manto de Lã,/ }).count(), 0);
+  await shot(page, 'm3-01-wardrobe-legendary-filter');
+  await page.getByRole('radio', { name: /^Manto do Êxodo,/ }).click();
+  await page.getByText(/Prévia: Manto do Êxodo/).waitFor();
+  assert.ok(await page.getByRole('button', { name: 'Salvar' }).isDisabled());
+  step('raridades: filtro por Lendário e prévia bloqueada com objetivo');
+
+  // cenário isolado de teste: relíquia concedida pelo servidor
+  await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:ACT.2', '{"book":"ACT","chapter":2}')`, [anaId]);
+  await page.goto(`${APP}/avatar/sanctuary`);
+  await page.getByText('Obras do Espírito Santo').waitFor();
+  await page.getByText('1 de 6 itens').waitFor();
+  await page.getByText('Biblioteca Lendária').waitFor();
+  await shot(page, 'm3-02-sanctuary');
+  await page.goto(`${APP}/avatar/item/relic-tongues-fire`);
+  await page.getByText(/Relíquia do Santuário das Conquistas/).waitFor();
+  assert.equal(await page.getByRole('button', { name: 'Equipar no visual em uso' }).count(), 0);
+  await shot(page, 'm3-03-relic-detail');
+  await page.goto(`${APP}/avatar/item/legendary-gen`);
+  await page.getByText('Conclua todos os capítulos de Gênesis').waitFor();
+  await page.getByText('Sobre esta raridade', { exact: false }).waitFor();
+  await shot(page, 'm3-04-legendary-detail');
+  step('Santuário: relíquia conquistada exibida e não equipável; lendário mostra o livro a concluir');
+
   // ------------------------------------------------------------ segundo usuário
   const C = await newPhone(browser, 'dark');
   await C.page.goto(APP);
