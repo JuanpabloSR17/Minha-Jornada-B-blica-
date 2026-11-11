@@ -27,6 +27,7 @@ async function newPhone(browser, scheme = 'light') {
 (async () => {
   await db.connect();
   const browser = await chromium.launch();
+  globalThis.__browser = browser;
   const email = `ana+${Date.now()}@teste.local`;
   const password = 'senha-forte-123';
 
@@ -200,23 +201,25 @@ async function newPhone(browser, scheme = 'light') {
   step('guarda-roupa: equipar manto e salvar persiste no visual em uso');
 
   // item bloqueado: prévia permitida, salvar desabilitado
-  await page.getByRole('tab', { name: 'Especiais' }).click();
+  await page.getByRole('tab', { name: 'Bíblicos' }).click();
   await page.getByRole('radio', { name: /^Túnica de José,.*Bloqueado/ }).click();
   await page.getByText(/Prévia: Túnica de José/).waitFor();
   assert.ok(await page.getByRole('button', { name: 'Salvar' }).isDisabled());
   await shot(page, 'm2-02-locked-preview');
   step('guarda-roupa: item bloqueado só em prévia, sem salvar');
 
-  // cenário isolado de teste: o servidor concede recompensas por eventos de leitura
-  for (const [book, ch] of [['GEN', 37], ['1KI', 19], ['2KI', 2]]) {
+  // cenário isolado de teste: posse legada do Manto do Profeta (conquistado antes do catálogo
+  // oficial, onde virou recompensa de missão) e recompensas concedidas por eventos de leitura
+  await db.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'cloak-elijah', 'legacy:e2e')`, [anaId]);
+  for (const [book, ch] of [['GEN', 37], ['1SA', 16], ['2KI', 2]]) {
     await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', $2, $3)`, [anaId, `chapter:${book}.${ch}`, JSON.stringify({ book, chapter: ch })]);
   }
   await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:GEN.37', '{"book":"GEN","chapter":37}')`, [anaId]);
   const rewards = (await db.query(`select item_id from reward_events where user_id = $1 order by item_id`, [anaId])).rows.map((r) => r.item_id);
-  assert.deepEqual(rewards, ['cloak-elijah', 'cloak-succession', 'tunic-joseph']);
+  assert.deepEqual(rewards, ['cloak-succession', 'harp-psalmist', 'tunic-joseph']);
   step('motor de recompensas: 3 itens concedidos pelo servidor, evento repetido não duplica');
 
-  await page.goto(`${APP}/avatar/wardrobe?category=special`);
+  await page.goto(`${APP}/avatar/wardrobe?category=biblical`);
   await page.getByRole('radio', { name: /^Túnica de José,.*Obtido/ }).click();
   await page.getByRole('button', { name: 'Salvar' }).click();
   await page.getByText('Visual salvo.').waitFor();
@@ -284,30 +287,38 @@ async function newPhone(browser, scheme = 'light') {
   // ============================================================ RARIDADES E SANTUÁRIO
   await page.goto(`${APP}/avatar/wardrobe?category=back`);
   await page.getByRole('radio', { name: 'Lendário', exact: true }).click();
-  await page.getByRole('radio', { name: /^Manto do Êxodo, Lendário, Bloqueado/ }).waitFor();
+  await page.getByRole('radio', { name: /^Manto da Promessa, Lendário, Bloqueado/ }).waitFor();
   assert.equal(await page.getByRole('radio', { name: /^Manto de Lã,/ }).count(), 0);
   await shot(page, 'm3-01-wardrobe-legendary-filter');
-  await page.getByRole('radio', { name: /^Manto do Êxodo,/ }).click();
-  await page.getByText(/Prévia: Manto do Êxodo/).waitFor();
+  await page.getByRole('radio', { name: /^Manto da Promessa,/ }).click();
+  await page.getByText(/Prévia: Manto da Promessa/).waitFor();
   assert.ok(await page.getByRole('button', { name: 'Salvar' }).isDisabled());
   step('raridades: filtro por Lendário e prévia bloqueada com objetivo');
 
-  // cenário isolado de teste: relíquia concedida pelo servidor
+  // cenário isolado de teste: marco curado cadastrado só aqui concede a relíquia pelo servidor
+  await db.query(`insert into reward_triggers (id, kind, name) values ('holy_mana_do_deserto', 'milestone', 'Marco de teste')`);
+  await db.query(`select private.record_event($1, 'MILESTONE_REACHED', 'milestone:holy_mana_do_deserto', '{"milestone":"holy_mana_do_deserto"}')`, [anaId]);
+  await db.query(`delete from reward_triggers`);
+  // ler a passagem não concede item santo
   await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:ACT.2', '{"book":"ACT","chapter":2}')`, [anaId]);
+  assert.equal((await db.query(`select count(*)::int n from user_items ui join cosmetic_items i on i.id = ui.item_id where ui.user_id = $1 and i.rarity = 'holy'`, [anaId])).rows[0].n, 1);
   await page.goto(`${APP}/avatar/sanctuary`);
-  await page.getByText('Obras do Espírito Santo').waitFor();
-  await page.getByText('1 de 6 itens').waitFor();
+  await page.getByText('Obras do Pai').waitFor();
+  await page.getByText('1 de 13 itens').waitFor();
+  await page.getByText('Obras do Deus Triúno').waitFor();
   await page.getByText('Biblioteca Lendária').waitFor();
   await shot(page, 'm3-02-sanctuary');
-  await page.goto(`${APP}/avatar/item/relic-tongues-fire`);
+  await page.goto(`${APP}/avatar/item/holy_mana_do_deserto`);
   await page.getByText(/Relíquia do Santuário das Conquistas/).waitFor();
   assert.equal(await page.getByRole('button', { name: 'Equipar no visual em uso' }).count(), 0);
   await shot(page, 'm3-03-relic-detail');
+  // rota com o ID antigo do rascunho resolve o alias para o lendário oficial
   await page.goto(`${APP}/avatar/item/legendary-gen`);
+  await page.getByText('Manto da Promessa').first().waitFor();
   await page.getByText('Conclua todos os capítulos de Gênesis').waitFor();
   await page.getByText('Sobre esta raridade', { exact: false }).waitFor();
   await shot(page, 'm3-04-legendary-detail');
-  step('Santuário: relíquia conquistada exibida e não equipável; lendário mostra o livro a concluir');
+  step('Santuário: relíquia de marco curado exibida e não equipável; leitura não concede santo; alias de ID antigo; lendário mostra o livro a concluir');
 
   // ------------------------------------------------------------ segundo usuário
   const C = await newPhone(browser, 'dark');
@@ -345,5 +356,8 @@ async function newPhone(browser, scheme = 'light') {
   console.log('✔ Fluxo dos Marcos 1 e 2 passou.');
 })().catch(async (e) => {
   console.error('✘ Falhou:', e);
+  try {
+    for (const ctx of globalThis.__browser?.contexts() ?? []) for (const p of ctx.pages()) await p.screenshot({ path: `${process.env.SHOTS_DIR ?? 'e2e/screenshots'}/zz-falha-${Date.now()}.png` });
+  } catch {}
   process.exit(1);
 });

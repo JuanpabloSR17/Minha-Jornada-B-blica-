@@ -70,13 +70,14 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 
 ### Sistema de itens e raridades ✅ (aguardando aprovação)
 
-- [x] Cinco raridades (tabela de referência) e série de 144 itens (22/18/16/66/22) — **rascunho**
+- [x] Cinco raridades (tabela de referência) e série de 144 itens (22/18/16/66/22) — rascunho substituído pelo catálogo oficial
 - [x] Raridade, slot e obtenção independentes; slot `relic` não equipável
 - [x] Um lendário por livro (todos os capítulos); BOOK_COMPLETED recusado sem os capítulos
 - [x] Santuário das Conquistas (obras do Pai, de Jesus Cristo e do Espírito Santo; Biblioteca Lendária)
 - [x] Contrato para Modo Missão: MISSION_COMPLETED, MILESTONE_REACHED, WORLD_COMPLETED + `reward_triggers`
 - [x] Importador do catálogo oficial
-- [ ] Importar `catalogo_raridades_144_itens_v2.json` (arquivo não acessível neste ambiente)
+- [x] Catálogo oficial integrado (v5): 144 itens, aliases de ID, migração de posse/visuais, backfill,
+  `get_reading_progress` — ver `docs/catalogo-oficial/RECONCILIACAO.md`
 - [ ] Ilustrações dos 144 itens
 - [ ] Modo Missão com cronômetro e leitura (próxima etapa, após aprovação)
 

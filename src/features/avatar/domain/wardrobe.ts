@@ -1,4 +1,4 @@
-import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, appearanceHasArt, getItem } from './catalog';
+import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, appearanceHasArt, getItem, resolveItemId } from './catalog';
 import { artStatus, type ArtStatus } from '../art/manifest';
 import { looksEqual, setEquipped } from './avatar.rules';
 import type { AvatarAppearance, AvatarLook, CosmeticItem, Equipment, EquipmentSlot, Rarity } from './avatar.types';
@@ -8,7 +8,7 @@ export type InventoryCategory = {
   id: string;
   label: string;
   /** slot de equipamento (ou 'hair' para estilos de cabelo da aparência) */
-  slot: EquipmentSlot | 'hair' | 'special';
+  slot: EquipmentSlot | 'hair' | 'biblical';
 };
 
 /** Categorias do inventário (spec Marco 2). */
@@ -20,7 +20,11 @@ export const INVENTORY_CATEGORIES: InventoryCategory[] = [
   { id: 'head', label: 'Cabeça e pescoço', slot: 'head' },
   { id: 'hands', label: 'Itens de mão', slot: 'hands' },
   { id: 'waist', label: 'Cintura', slot: 'waist' },
-  { id: 'special', label: 'Especiais', slot: 'special' },
+  { id: 'chest', label: 'Peitorais', slot: 'chest' },
+  { id: 'back_item', label: 'Costas', slot: 'back_item' },
+  { id: 'special', label: 'Emblemas', slot: 'special' },
+  { id: 'effect', label: 'Efeitos', slot: 'effect' },
+  { id: 'biblical', label: 'Bíblicos', slot: 'biblical' },
   { id: 'background', label: 'Fundos', slot: 'background' },
   { id: 'frame', label: 'Molduras', slot: 'frame' },
 ];
@@ -32,6 +36,12 @@ const RARITY_ORDER: Record<Rarity, number> = { holy: 0, legendary: 1, epic: 2, r
 /** Item especial: ligado a uma passagem bíblica ou conquistado (não inicial). */
 export const isSpecial = (i: CosmeticItem) => !i.starter || !!i.scriptureRef;
 
+/** Posse registrada com um ID antigo conta para o item canônico. */
+function ownedViaAlias(id: string, owned: ReadonlySet<string>): boolean {
+  for (const o of owned) if (o !== id && resolveItemId(o) === id) return true;
+  return false;
+}
+
 export type ItemView = {
   item: CosmeticItem;
   owned: boolean;
@@ -41,7 +51,7 @@ export type ItemView = {
 };
 
 export function itemView(item: CosmeticItem, owned: ReadonlySet<string>, equipment: Equipment, bodyId?: string): ItemView {
-  const has = owned.has(item.id) || (item.starter && !item.premium);
+  const has = owned.has(item.id) || (item.starter && !item.premium) || ownedViaAlias(item.id, owned);
   return {
     item,
     owned: has,
@@ -59,7 +69,7 @@ export function listItems(
   const cat = INVENTORY_CATEGORIES.find((c) => c.id === categoryId);
   if (!cat || cat.slot === 'hair') return [];
   const q = (opts.search ?? '').trim().toLocaleLowerCase('pt-BR');
-  const matches = (i: CosmeticItem) => (cat.slot === 'special' ? isSpecial(i) : cat.slot === 'head' ? i.slot === 'head' || i.slot === 'neck' : i.slot === cat.slot);
+  const matches = (i: CosmeticItem) => (cat.slot === 'biblical' ? isSpecial(i) : cat.slot === 'head' ? i.slot === 'head' || i.slot === 'neck' : i.slot === cat.slot);
   // relíquias (Santuário) não aparecem no guarda-roupa: não são equipáveis
   return COSMETIC_ITEMS.filter((i) => i.slot !== 'relic' && matches(i) && !i.premium && (!opts.rarity || opts.rarity === 'all' || i.rarity === opts.rarity))
     .map((i) => itemView(i, opts.owned, opts.equipment, opts.bodyId))
@@ -146,10 +156,10 @@ export function appearanceChanged(s: WardrobeDraftState): Partial<AvatarAppearan
 /** Itens equipados no rascunho que o usuário ainda não possui (prévia de bloqueados). */
 export function lockedInDraft(s: WardrobeDraftState): string[] {
   if (!s.draft || !s.saved) return [];
-  const owned = new Set(s.saved.owned.map((o) => o.itemId));
+  const owned = new Set(s.saved.owned.map((o) => resolveItemId(o.itemId)));
   return Object.values(s.draft.equipment).filter((id): id is string => {
     if (!id) return false;
     const it = getItem(id);
-    return !!it && !owned.has(id) && !(it.starter && !it.premium);
+    return !!it && !owned.has(it.id) && !(it.starter && !it.premium);
   });
 }

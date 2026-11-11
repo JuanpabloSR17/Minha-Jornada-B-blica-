@@ -45,7 +45,45 @@ export const RULE_EVENT: Record<string, RewardEvent['type'] | 'COLLECTION_COMPLE
   reading_streak: 'READING_STREAK_REACHED',
   achievement_unlocked: 'ACHIEVEMENT_UNLOCKED',
   collection_completed: 'COLLECTION_COMPLETED',
+  /** Comuns e raros do catálogo oficial: oferecidos como escolha pelo Modo Missão. Nunca concedidos automaticamente. */
+  mission_pool: null,
 };
+
+/**
+ * Pronto para conclusões reais de capítulo (próxima etapa):
+ *  1. RPC autenticada (ex.: complete_chapter) valida a leitura no servidor e chama
+ *     private.record_event(uid, 'CHAPTER_COMPLETED', 'chapter:GEN.37', { book: 'GEN', chapter: 37 }).
+ *  2. O motor recalcula no servidor: capítulos distintos, conclusão do livro (todos os capítulos),
+ *     lendário do livro, épicos de capítulo e coleções — de forma idempotente.
+ *  3. O app lê o resultado por get_wardrobe (posse) e get_reading_progress (progresso).
+ * Itens Santos (milestone_reached) só vêm de marcos curados cadastrados em reward_triggers,
+ * e comuns/raros (mission_pool) só pelo Modo Missão. Nenhum item real é concedido por evento fictício.
+ */
+export type ReadingProgress = {
+  chaptersCompleted: number;
+  totalChapters: number; // 1189
+  percent: number;
+  booksCompleted: number;
+  books: {
+    book: BookCode;
+    name: string;
+    completed: number;
+    total: number;
+    isComplete: boolean;
+    /** ID canônico do lendário do livro (catálogo oficial: book_xxx, ou ID histórico preservado) */
+    legendaryItemId: string | null;
+    legendaryOwned: boolean;
+  }[];
+  /** Recompensas de leitura ainda não conquistadas e quanto falta para cada uma. */
+  rewardsAvailable: { itemId: string; rule: 'chapter_completed' | 'book_completed' | 'chapters_count'; book: BookCode | null; chapter: number | null; remaining: number }[];
+};
+
+/**
+ * IDs de item: o banco e o app usam o ID canônico. IDs oficiais (snake_case) que coincidem com
+ * itens já existentes, e IDs do rascunho, ficam em cosmetic_item_aliases / catalog.json#idAliases.
+ * equip_item aceita qualquer um deles; a posse antiga é migrada por private.apply_item_aliases().
+ */
+export type ItemIdAlias = { aliasId: string; itemId: string; source: 'official' | 'draft' };
 
 /** Erros estáveis que o servidor pode devolver ao registrar eventos. */
 export type RewardError = 'invalid_event_type' | 'invalid_event_payload' | 'book_incomplete' | 'unknown_trigger' | 'collection_incomplete' | 'profile_required';

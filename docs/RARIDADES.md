@@ -1,93 +1,92 @@
 # Sistema de itens e raridades
 
-> **Catálogo rascunho.** Os arquivos `Jornada_Biblica_Raridades_144_Itens_Claude_Code.md` e
-> `catalogo_raridades_144_itens_v2.json` estão no computador do autor e não estavam acessíveis neste
-> ambiente. O catálogo atual (série `rarities-v1`) foi escrito a partir das regras da especificação
-> enviada na conversa e deve ser substituído pelo oficial com o importador (seção 5).
+> **Catálogo oficial integrado (v5).** Fonte: [`docs/catalogo-oficial/`](catalogo-oficial/) —
+> `catalogo_raridades_144_itens_v2.json` e `Jornada_Biblica_Raridades_144_Itens_Claude_Code.md`, com
+> `SHA256SUMS.txt` (conferido por teste). O rascunho anterior (série `rarities-v1`) foi substituído sem
+> apagar nada: veja [RECONCILIACAO.md](catalogo-oficial/RECONCILIACAO.md).
 
 ## 1. Raridades
 
-| Raridade | Quantidade | O que é | Cor |
+| Raridade | Quantidade | O que é | Como se obtém |
 |---|---:|---|---|
-| Comum | 22 | Equipamentos do dia a dia: túnicas, sandálias, cajados, bolsas, cintos, cordas e recipientes | cinza |
-| Raro | 18 | Itens de sacerdotes, profetas e funções especiais, mantos e vestes cerimoniais | azul |
-| Épico | 16 | Itens ligados a personagens e acontecimentos marcantes (Túnica de José, Vestes de Ester, Harpa…) | roxo |
-| Lendário | 66 | Um equipamento exclusivo por livro, ganho **gratuitamente** ao concluir todos os capítulos | laranja-ouro |
-| Santo | 22 | Artefatos sagrados e representações simbólicas das obras de Deus (Arca, Maná, Candelabro…) | ouro |
+| Comum | 22 | Equipamentos do dia a dia | Recompensa do Modo Missão (em breve); 2 já são peças iniciais gratuitas |
+| Raro | 18 | Sacerdotes, profetas, funções especiais | Missão especial (em breve) |
+| Épico | 16 | Personagens e acontecimentos marcantes | **Gratuito**: concluir o capítulo da passagem |
+| Lendário | 66 | Um por livro da Bíblia | **Gratuito**: concluir todos os capítulos do livro |
+| Santo | 22 | Artefatos sagrados e representações simbólicas das obras de Deus | Marco bíblico curado, validado pelo servidor |
 
-Total da série: **144 itens**. Somam-se as 35 peças iniciais gratuitas (série `starter`), que não fazem
-parte da contagem de raridades. Nenhum item da série é Premium.
-
-As raridades ficam na tabela `public.rarities` (referência obrigatória de `cosmetic_items.rarity`).
-Raridade é **só visual**: não dá poder, XP nem vantagem.
+Total oficial: **144 itens** (série `oficial-v2`). Somam-se 33 peças iniciais gratuitas (`starter`) e
+8 itens complementares com histórico (`complementar`), fora da contagem. Nenhum item é Premium nem
+negociável. Raridade é **só visual**: não dá poder, XP nem vantagem.
 
 ## 2. Campos de cada item
 
 | Campo | Coluna | Observação |
 |---|---|---|
-| Identificador | `id` | estável; IDs antigos nunca mudam |
-| Nome, descrição | `name`, `description` | |
+| Identificador | `id` | canônico e estável; IDs antigos viram **aliases** (`cosmetic_item_aliases`) |
+| Nome, descrição | `name`, `description` | descrição = significado + relação com o texto + referência |
 | Raridade | `rarity` | independente do slot e da obtenção |
-| Categoria | `category` | túnica, manto, calçado, cinto, instrumento, rolo, recipiente, cerimonial, relíquia… |
-| Slot | `slot` | `outfit`, `back`, `feet`, `waist`, `neck`, `head`, `hands`, `background`, `frame` ou **`relic`** |
-| Referência bíblica | `scripture_ref` | |
-| Regra de obtenção | `item_unlock_rules` | tipo + parâmetros + requisitos |
-| Método de obtenção | `acquisition` | `starter`, `reading`, `collection`, `mission`, `milestone`, `event` |
-| Propriedade | `user_items` | só o servidor escreve |
-| Asset visual | `asset_manifest_key` | `{slot}/{id}`; sem arte = emblema da raridade + "Arte em produção" |
-| Livro (lendários) | `book_code` | no máximo um lendário por livro (índice único) |
-| Série | `series` | `starter`, `rarities-v1`… (permite expansão) |
+| Slot | `slot` | `outfit`, `back` (manto), `feet`, `waist`, `neck`, `head`, `hands`, `background`, `frame`, `chest`, `special`, `effect`, `back_item` ou **`relic`** |
+| Referência bíblica | `scripture_ref` | livro e capítulo validados contra os 66 livros |
+| Relação com o texto | `representation` | `literal` (descrito no texto) ou `inspired`/`metaphorical`/`symbolic` (**associação interpretativa**, exibida como tal) |
+| Significado | `meaning` | do arquivo oficial |
+| Referente (Santos) | `referent`, `holy_subtype` | Pai, Filho, Espírito Santo ou Deus Triúno; artefato, obra ou símbolo |
+| Loja futura | `shop_eligible`, `shop_price_suggested` | **só metadado** (não há loja); Santos nunca (CHECK no banco) |
+| Regra de obtenção | `item_unlock_rules` | com `is_active`: trocar a regra não apaga o histórico |
+| Propriedade | `user_items` | só o servidor escreve; posse nunca é apagada |
+| Livro (lendários) | `book_code` | um lendário **ativo** por livro (índice único) |
 
-## 3. Relíquias santas e Santuário das Conquistas
+Mapeamento de slots do arquivo oficial: `cloak`→`back`, `back`→`back_item`, `hand`→`hands`,
+`sanctuary`→`relic`; os demais têm o mesmo nome.
 
-Itens Santos usam o slot `relic`: o jogador os **possui** (inventário) e eles aparecem no
-**Santuário das Conquistas** (`/avatar/sanctuary`), mas **não podem ser equipados**
-(`item_not_equippable` no servidor; o cliente também bloqueia).
+## 3. Itens Santos e Santuário das Conquistas
 
-As 22 relíquias formam três coleções: **Obras do Pai** (8), **Obras de Jesus Cristo** (8) e
-**Obras do Espírito Santo** (6). As pessoas divinas não são representadas como itens: as relíquias
-lembram sinais e acontecimentos (ex.: Línguas de Fogo de Pentecostes, Talhas de Caná), nunca as pessoas.
+- **Artefatos** (7, slot `relic`): só em exibição no Santuário — o servidor recusa equipá-los
+  (`item_not_equippable`) e o app também.
+- **Obras e sinais** (15): representações simbólicas usadas como fundo, moldura ou efeito, como o
+  arquivo oficial define. Nenhum representa uma pessoa divina; todos indicam o referente.
+- Nunca vendidos, sorteados ou comercializados (CHECK `cosmetic_items_holy_not_for_sale`).
+- Coleções: **Obras do Pai** (13), **Obras de Jesus Cristo** (5), **Obras do Espírito Santo** (3),
+  **Obras do Deus Triúno** (1). O Santuário também mostra a **Biblioteca Lendária** (66 livros).
 
-O Santuário também mostra a **Biblioteca Lendária**: os 66 livros, com o lendário de cada um.
+## 4. Regras de obtenção
 
-## 4. Regras de obtenção e Modo Missão
-
-Contrato completo: [`src/features/rewards/contract.ts`](../src/features/rewards/contract.ts) e
-[`docs/RECOMPENSAS.md`](RECOMPENSAS.md).
-
-| O que a leitura informará | Evento | Regra que avalia |
+| Origem oficial (`desbloqueio`) | Regra no banco | Quem concede |
 |---|---|---|
-| Capítulo concluído | `CHAPTER_COMPLETED` | `chapter_completed`, `chapters_count`, `book_completed` |
-| Livro concluído | `BOOK_COMPLETED` (recusado se faltar capítulo) | lendários: todos os capítulos registrados |
-| Mundo concluído | `WORLD_COMPLETED` | `world_completed` |
-| Missão concluída | `MISSION_COMPLETED` | `mission_completed` |
-| Marco especial | `MILESTONE_REACHED` | `milestone_reached` |
+| `capitulo_concluido` | `chapter_completed` | motor, ao registrar `CHAPTER_COMPLETED` |
+| `livro_concluido` | `book_completed` | motor, quando **todos** os capítulos do livro estão registrados |
+| `missao_ou_loja` / `missao_especial_ou_loja` | `mission_pool` (comum/raro) | **nunca automático** — escolha do Modo Missão |
+| `marco_biblico_especial` | `milestone_reached` (id = item) | só com o marco cadastrado em `reward_triggers` |
 
-Missões, mundos e marcos precisam estar cadastrados em `public.reward_triggers` (ativo) — hoje a
-tabela está **vazia** de propósito: eventos com IDs desconhecidos são recusados (`unknown_trigger`).
-Quatro itens comuns já apontam para missões futuras e aparecem como "Modo Missão, em breve".
-**Nenhum item real foi concedido por evento fictício**: concessões só existem nos bancos de teste.
+`reward_triggers` está **vazia** em produção: nenhum item real é concedido por evento fictício.
+Progresso bíblico calculado no servidor: `public.get_reading_progress()` (capítulos distintos,
+% da Bíblia, livros concluídos, lendário de cada livro, recompensas de leitura e quanto falta).
 
-## 5. Trocar o rascunho pelo catálogo oficial
+## 5. IDs, aliases e migração de dados
+
+- **IDs com histórico são preservados** (peças iniciais e itens das migrações v1–v3): o ID oficial
+  vira alias. Ex.: `chapter_gen_37`→`tunic-joseph`, `book_1sa`→`sling-david`,
+  `book_pro`→`crown-wisdom`, `common_sandalias_de_couro`→`sandals-leather`.
+- **IDs só do rascunho** (v4) dão lugar ao ID oficial; o ID do rascunho
+  vira alias (`legendary-gen`→`book_gen`) e o item antigo é **desativado, nunca apagado**.
+- `private.apply_item_aliases()` (roda na migração v5, idempotente): dá a posse do item canônico a quem
+  tinha o antigo, mantém a posse antiga, re-equipa no slot oficial e tira do visual itens desativados
+  (a túnica volta para a inicial) — nenhum visual fica inválido.
+- `equip_item` aceita ID canônico, oficial ou do rascunho. O app resolve aliases em `getItem`,
+  na posse (`itemView`) e no desenho (`resolveEquipmentIds`).
+- Backfill: a migração reavalia as recompensas de quem já tem eventos de leitura (idempotente).
+
+## 6. Reimportar / atualizar o catálogo oficial
 
 ```bash
-node scripts/import-rarities-catalog.mjs caminho/catalogo_raridades_144_itens_v2.json --report relatorio.md   # valida e relata diferenças
-node scripts/import-rarities-catalog.mjs caminho/catalogo_raridades_144_itens_v2.json --write  # grava
-# depois: aumente "version" em catalog.json, adicione o prefixo em scripts/generate-catalog-sql.mjs
+node scripts/import-rarities-catalog.mjs docs/catalogo-oficial/catalogo_raridades_144_itens_v2.json --report relatorio.md
+node scripts/import-rarities-catalog.mjs <arquivo> --write   # grava catalog.json (versão + 1)
+# adicione o prefixo da nova versão em scripts/generate-catalog-sql.mjs
 npm run catalog:sql && npm test && npm run test:db
 ```
 
-O importador aceita campos em português ou inglês, confere as quantidades por raridade, um lendário
-por livro, campos obrigatórios, regras e IDs duplicados, e **mantém** IDs antigos que o arquivo não
-trouxer (podem estar no inventário de alguém).
-
-### Reconciliação não destrutiva
-
-Cada item oficial é casado com o existente nesta ordem: **mesmo ID → mesmo nome → (lendário) mesmo livro**.
-
-- Casou com ID diferente: o **ID existente é mantido** e o ID oficial vira um alias em `idAliases`
-  (catalog.json), para que histórico de posse e visuais salvos não quebrem.
-- Item existente da série que o oficial não traz: fica como `legacy` (ativo, fora da contagem de 144).
-- Casamento com uma peça inicial gratuita ou ambíguo: listado como **conflito** para revisão.
-- O relatório (`--report`) traz, item a item, o tipo de correspondência e as diferenças de nome,
-  raridade, slot, categoria, referência, livro e regra.
+O importador valida quantidades, um lendário por livro, referências (livro/capítulo existentes),
+IDs duplicados, nada negociável e nenhum Santo na loja. A reconciliação casa cada item oficial nesta
+ordem: mesmo ID → alias conhecido → mesmo nome com histórico → mesma raridade+slot+passagem com
+histórico → rascunho (lendário pelo livro, demais pelo nome) → novo. Reimportar o mesmo arquivo não
+muda nada (testado).

@@ -11,6 +11,7 @@ import {
   isStarterFree,
   itemHasArt,
   itemsForSlot,
+  resolveEquipmentIds,
 } from './catalog';
 import type { AppearanceKey, AvatarAppearance, AvatarLook, Equipment, EquipmentSlot } from './avatar.types';
 
@@ -59,10 +60,11 @@ export function validateLook(look: AvatarLook, ownedItemIds?: ReadonlySet<string
 /** Remove slots vazios e itens que não pertencem ao slot. */
 export function sanitizeEquipment(equipment: Equipment): Equipment {
   const out: Equipment = {};
+  // IDs antigos (aliases) viram o ID canônico, no slot oficial do item
+  const resolved = resolveEquipmentIds(equipment);
   for (const slot of EQUIPMENT_SLOTS) {
-    const id = equipment[slot];
-    const item = getItem(id);
-    if (id && item && item.slot === slot) out[slot] = id;
+    const item = getItem(resolved[slot]);
+    if (item && item.slot === slot) out[slot] = item.id;
   }
   return out;
 }

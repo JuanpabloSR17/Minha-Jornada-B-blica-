@@ -167,23 +167,34 @@ select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:GEN.37#releitura', '{
 select tests.assert((select count(*) from public.reward_events where user_id = 'a6666666-0000-0000-0000-000000000006') = 1, 'uma única recompensa registrada');
 select tests.assert((select count(*) from public.user_items where user_id = 'a6666666-0000-0000-0000-000000000006' and item_id = 'tunic-joseph') = 1, 'item não duplicado no inventário');
 
--- evolução: 2 Reis 2 antes de ter o Manto de Elias não concede; depois concede os dois
+-- evolução: 2 Reis 2 antes de ter o Manto de Elias não concede; depois concede.
+-- No catálogo oficial o Manto do Profeta (cloak-elijah) é recompensa de missão especial:
+-- a leitura de 1 Reis 19 NÃO o concede (Modo Missão ainda não existe).
 select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:2KI.2', '{"book":"2KI","chapter":2}') -> 'granted' = '[]'::jsonb, 'Manto da Sucessão exige o Manto de Elias');
-select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:1KI.19', '{"book":"1KI","chapter":19}') -> 'granted' = '["cloak-elijah", "cloak-succession"]'::jsonb, '1 Reis 19 concede Elias e libera a Sucessão pendente');
+select tests.assert(not (tests.ev('CHAPTER_COMPLETED', 'chapter:1KI.19', '{"book":"1KI","chapter":19}') -> 'granted' ? 'cloak-elijah'), 'item de missão (mission_pool) não é concedido pela leitura');
+-- posse legada (conquistada antes do catálogo oficial) continua valendo e libera a evolução pendente
+insert into public.user_items (user_id, item_id, source_event_id) values ('a6666666-0000-0000-0000-000000000006', 'cloak-elijah', 'legacy:test');
+select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:1KI.18', '{"book":"1KI","chapter":18}') -> 'granted' ? 'cloak-succession', 'posse legada do Manto de Elias libera a Sucessão pendente');
 select tests.assert(tests.owns('cloak-elijah') and tests.owns('cloak-succession'), 'evolução mantém a versão original');
 select tests.assert((select variant_of from public.cosmetic_items where id = 'cloak-succession') = 'cloak-elijah', 'Sucessão é variante do Manto de Elias');
 
--- contagem de capítulos distintos: 29 salmos não bastam, o 30º concede a harpa
+-- contagem de capítulos distintos (regra de teste): 29 salmos não bastam, o 30º concede
+insert into public.cosmetic_items (id, name, category, slot, rarity, description, asset_manifest_key, is_starter, catalog_version, acquisition, series)
+values ('test-count-30', 'Item de teste', 'biblical', 'relic', 'rare', 'teste', 'relic/test-count-30', false, 5, 'reading', 'test');
+insert into public.item_unlock_rules (item_id, rule_type, rule_payload, revision) values ('test-count-30', 'chapters_count', '{"book":"PSA","count":30}', 1);
 select tests.ev('CHAPTER_COMPLETED', 'chapter:PSA.' || n, jsonb_build_object('book', 'PSA', 'chapter', n)) from generate_series(1, 29) n;
-select tests.assert(not tests.owns('harp-psalmist'), '29 salmos ainda não concedem a harpa');
+select tests.assert(not tests.owns('test-count-30'), '29 salmos distintos ainda não concedem');
 select tests.ev('CHAPTER_COMPLETED', 'chapter:PSA.1#de-novo', '{"book":"PSA","chapter":1}');
-select tests.assert(not tests.owns('harp-psalmist'), 'reler um salmo não conta como novo');
-select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:PSA.30', '{"book":"PSA","chapter":30}') -> 'granted' = '["harp-psalmist"]'::jsonb, 'o 30º salmo distinto concede a harpa');
+select tests.assert(not tests.owns('test-count-30'), 'reler um capítulo não conta como novo');
+select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:PSA.30', '{"book":"PSA","chapter":30}') -> 'granted' ? 'test-count-30', 'o 30º salmo distinto concede');
+update public.cosmetic_items set is_active = false where id = 'test-count-30';
+select tests.assert(not tests.owns('harp-psalmist'), 'Salmos não concedem mais a Harpa de Davi (oficial: 1 Samuel 16)');
+select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:1SA.16', '{"book":"1SA","chapter":16}') -> 'granted' ? 'harp-psalmist', '1 Samuel 16 concede a Harpa de Davi');
 
 -- livro completo derivado dos capítulos + coleção dos profetas
 select tests.ev('CHAPTER_COMPLETED', 'chapter:ISA.' || n, jsonb_build_object('book', 'ISA', 'chapter', n)) from generate_series(1, 65) n;
-select tests.assert(not tests.owns('scroll-isaiah'), '65 de 66 capítulos de Isaías não concluem o livro');
-select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:ISA.66', '{"book":"ISA","chapter":66}') -> 'granted' = '["scroll-isaiah", "cloak-elijah-prophets"]'::jsonb, 'Isaías completo concede o rolo e completa a Coleção dos Profetas');
+select tests.assert(not tests.owns('scroll-isaiah') and not tests.owns('book_isa'), '65 de 66 capítulos de Isaías não concluem o livro');
+select tests.assert(tests.ev('CHAPTER_COMPLETED', 'chapter:ISA.66', '{"book":"ISA","chapter":66}') -> 'granted' @> '["scroll-isaiah", "book_isa", "cloak-elijah-prophets"]'::jsonb, 'Isaías completo concede o lendário oficial, o rolo complementar e completa a Coleção dos Profetas');
 select tests.assert(exists (select 1 from private.domain_events where user_id = 'a6666666-0000-0000-0000-000000000006' and event_type = 'COLLECTION_COMPLETED' and source_event_id = 'collection:prophets'), 'conclusão de coleção registrada como evento');
 select tests.assert_raises($$select tests.ev('BOOK_COMPLETED', 'book:PRO', '{"book":"PRO"}')$$, 'book_incomplete', 'BOOK_COMPLETED sem todos os capítulos é recusado');
 select tests.ev('CHAPTER_COMPLETED', 'chapter:PRO.' || n, jsonb_build_object('book', 'PRO', 'chapter', n)) from generate_series(1, 30) n;

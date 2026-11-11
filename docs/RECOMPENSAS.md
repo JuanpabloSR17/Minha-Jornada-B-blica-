@@ -46,24 +46,27 @@ No Marco 3, a RPC autenticada `complete_chapter` validará a leitura e chamará 
 | `reading_streak` | `{ days }` | sequência ≥ dias |
 | `achievement_unlocked` | `{ achievement }` | conquista obtida |
 | `collection_completed` | `{ collection }` | possui todos os itens da coleção |
+| `mission_pool` | `{ pool }` | **nunca automático**: comuns/raros oferecidos pelo futuro Modo Missão |
+
+Regras têm `is_active`: ao trocar a regra de um item, a antiga fica inativa (histórico preservado).
 
 `requirements`: lista de `{ "type": "item_owned", "item": "..." }`. A cada evento o motor reavalia
 **todas** as regras ainda não concedidas, em rodadas, então requisitos cumpridos depois também
 liberam recompensas pendentes (ex.: ler 2 Reis 2 antes de 1 Reis 19).
 
-## Itens bíblicos (catálogo v3; ver docs/RARIDADES.md para o catálogo v4 de 144 itens)
+## Itens bíblicos do catálogo v3 (regras atuais após o catálogo oficial; ver docs/RARIDADES.md)
 
 | Item | Regra | Referência |
 |---|---|---|
 | Túnica de José | Gênesis 37 | Gênesis 37:3 |
 | Sandálias do Deserto | Êxodo 3 | Êxodo 3:5 |
 | Vara de Moisés | Êxodo 14 | Êxodo 14:16 |
-| Funda de Davi | 1 Samuel 17 | 1 Samuel 17:40 |
-| Harpa do Salmista | 30 salmos distintos | 1 Samuel 16:23 |
-| Manto de Elias | 1 Reis 19 | 1 Reis 19:19 |
+| Funda de Davi (lendário de 1 Samuel) | livro de 1 Samuel | 1 Samuel 17:40,49 |
+| Harpa de Davi | 1 Samuel 16 | 1 Samuel 16:23 |
+| Manto do Profeta | Modo Missão (missão especial, em breve) | 1 Reis 19:19 |
 | Manto da Sucessão (variante) | 2 Reis 2 + possuir Manto de Elias | 2 Reis 2:13-14 |
 | Manto de Elias — Edição dos Profetas (variante) | Coleção dos Profetas | 1 Reis 19:19; 2 Reis 2:13-14 |
-| Rolo de Isaías | livro de Isaías | Lucas 4:17 |
+| Rolo de Isaías (raro complementar) | livro de Isaías | Lucas 4:17 |
 | Coroa da Sabedoria | livro de Provérbios | Provérbios 4:9 |
 | Moldura Jornada Completa | 1.189 capítulos | Salmos 119:105 |
 | Fundo do Monte Sinai | Coleção de Moisés | Êxodo 19:20 |
@@ -95,7 +98,7 @@ service role no app e nunca aceite o plano vindo do cliente.
 ## RPCs para o app
 
 `get_wardrobe`, `save_wardrobe`, `equip_item`, `unequip_slot`, `create_loadout`, `rename_loadout`,
-`activate_loadout`, `delete_loadout`, `get_collections`, `get_public_avatar`, `set_privacy_mode`
+`activate_loadout`, `delete_loadout`, `get_collections`, `get_public_avatar`, `set_privacy_mode`, `get_reading_progress`
 (além de `save_avatar`, redefinida com versão do visual, bloqueio de excedentes e compatibilidade de corpo).
 
 ## Perfil público

@@ -20,6 +20,10 @@ const CROP_BY_SLOT: Record<ItemSlot, AvatarCrop> = {
   hands: 'hand',
   background: 'full',
   frame: 'full',
+  chest: 'outfit',
+  special: 'bust',
+  effect: 'full',
+  back_item: 'back',
 };
 
 /** Peça isolada, como ícone de inventário (renderizada do mesmo manifest do avatar). */

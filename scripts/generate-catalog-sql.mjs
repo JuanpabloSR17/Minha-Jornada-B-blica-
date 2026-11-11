@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
 /** Prefixo de data da migração de cada versão do catálogo. */
-const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200' };
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200', 5: '20261115000200' };
 export const outPathFor = (version) => {
   const prefix = VERSION_PREFIX[version];
   if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);
@@ -43,11 +43,21 @@ export function buildCatalogSql(catalog) {
     lines.push('');
   }
   const arr = (a) => (a && a.length ? `array[${a.map(q).join(', ')}]::text[]` : 'null');
-  lines.push(`insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version${v3 ? ', body_compatibility, variant_label' : ''}${v4 ? ', acquisition, series, book_code' : ''}) values`);
+  const v5 = catalog.version >= 5;
+  const jsonIds = catalog.items.map((it) => q(it.id)).join(', ');
+  if (v5) {
+    lines.push('-- Itens do rascunho que não estão no catálogo oficial: DESATIVADOS (nunca apagados; posse mantida).');
+    lines.push(`update public.cosmetic_items set is_active = false, series = 'legacy-draft' where series = 'rarities-v1' and id not in (${jsonIds});`);
+    lines.push('-- Libera o livro de itens que deixam de ser lendários (o lendário oficial do livro entra a seguir).');
+    const nonLegendary = catalog.items.filter((it) => it.rarity !== 'legendary').map((it) => q(it.id)).join(', ');
+    lines.push(`update public.cosmetic_items set book_code = null where book_code is not null and id in (${nonLegendary});`);
+    lines.push('');
+  }
+  lines.push(`insert into public.cosmetic_items (id, name, category, slot, rarity, description, scripture_ref, asset_manifest_key, is_starter, is_premium_cosmetic, catalog_version${v3 ? ', body_compatibility, variant_label' : ''}${v4 ? ', acquisition, series, book_code' : ''}${v5 ? ', representation, meaning, referent, holy_subtype, shop_eligible, shop_price_suggested, is_active' : ''}) values`);
   lines.push(
     catalog.items
       .map((it) =>
-        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version}${v3 ? `, ${arr(it.bodyCompatibility)}, ${q(it.variantLabel)}` : ''}${v4 ? `, ${q(it.acquisition ?? 'reading')}, ${q(it.series ?? 'starter')}, ${q(it.book)}` : ''})`,
+        `  (${q(it.id)}, ${q(it.name)}, ${q(it.category)}, ${q(it.slot)}, ${q(it.rarity ?? 'common')}, ${q(it.description)}, ${q(it.scriptureRef)}, ${q(`${it.slot}/${it.id}`)}, ${it.starter === false ? 'false' : 'true'}, ${it.premium ? 'true' : 'false'}, ${catalog.version}${v3 ? `, ${arr(it.bodyCompatibility)}, ${q(it.variantLabel)}` : ''}${v4 ? `, ${q(it.acquisition ?? 'reading')}, ${q(it.series ?? 'starter')}, ${q(it.book)}` : ''}${v5 ? `, ${q(it.representation ?? 'inspired')}, ${q(it.meaning)}, ${q(it.referent)}, ${q(it.holySubtype)}, ${it.shopEligible ? 'true' : 'false'}, ${it.shopPriceSuggested ?? 'null'}, true` : ''})`,
       )
       .join(',\n'),
   );
@@ -55,8 +65,16 @@ export function buildCatalogSql(catalog) {
   lines.push('  name = excluded.name, category = excluded.category, slot = excluded.slot,');
   lines.push('  rarity = excluded.rarity, description = excluded.description, scripture_ref = excluded.scripture_ref,');
   lines.push('  asset_manifest_key = excluded.asset_manifest_key, is_starter = excluded.is_starter,');
-  lines.push(`  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version${v3 ? ',\n  body_compatibility = excluded.body_compatibility, variant_label = excluded.variant_label' : ''}${v4 ? ',\n  acquisition = excluded.acquisition, series = excluded.series, book_code = excluded.book_code' : ''};`);
+  lines.push(`  is_premium_cosmetic = excluded.is_premium_cosmetic, catalog_version = excluded.catalog_version${v3 ? ',\n  body_compatibility = excluded.body_compatibility, variant_label = excluded.variant_label' : ''}${v4 ? ',\n  acquisition = excluded.acquisition, series = excluded.series, book_code = excluded.book_code' : ''}${v5 ? ',\n  representation = excluded.representation, meaning = excluded.meaning, referent = excluded.referent,\n  holy_subtype = excluded.holy_subtype, shop_eligible = excluded.shop_eligible, shop_price_suggested = excluded.shop_price_suggested, is_active = true' : ''};`);
   lines.push('');
+  if (v5 && catalog.idAliases && Object.keys(catalog.idAliases).length) {
+    lines.push('-- Aliases de compatibilidade (ID oficial ou do rascunho → ID canônico).');
+    lines.push('insert into public.cosmetic_item_aliases (alias_id, item_id, source) values');
+    // IDs oficiais usam snake_case; IDs do rascunho, kebab-case.
+    lines.push(Object.entries(catalog.idAliases).sort().map(([a, t]) => `  (${q(a)}, ${q(t)}, ${q(a.includes('_') ? 'official' : 'draft')})`).join(',\n'));
+    lines.push('on conflict (alias_id) do update set item_id = excluded.item_id, source = excluded.source;');
+    lines.push('');
+  }
   const variants = catalog.items.filter((it) => it.variantOf);
   if (v3 && variants.length) {
     lines.push('-- Variantes evolutivas (cada variante é um item próprio; a base permanece).');
@@ -72,6 +90,10 @@ export function buildCatalogSql(catalog) {
   lines.push('');
   const unlocks = catalog.items.filter((it) => it.unlock);
   if (unlocks.length) {
+    if (v5) {
+      lines.push('-- Regras anteriores dos itens do catálogo ficam inativas (histórico mantido); as atuais são reativadas abaixo.');
+      lines.push(`update public.item_unlock_rules set is_active = false where rule_type <> 'starter' and item_id in (${jsonIds});`);
+    }
     lines.push('-- Regras de desbloqueio por leitura (avaliadas pelo servidor no Marco 3).');
     lines.push('insert into public.item_unlock_rules (item_id, rule_type, rule_payload, requirements, revision) values');
     lines.push(
@@ -83,7 +105,7 @@ export function buildCatalogSql(catalog) {
         .join(',\n'),
     );
     lines.push('on conflict (item_id, rule_type, revision) do update set');
-    lines.push('  rule_payload = excluded.rule_payload, requirements = excluded.requirements;');
+    lines.push(`  rule_payload = excluded.rule_payload, requirements = excluded.requirements${v5 ? ', is_active = true' : ''};`);
     lines.push('');
   }
   if (catalog.collections?.length) {
@@ -95,6 +117,18 @@ export function buildCatalogSql(catalog) {
     lines.push('insert into public.collection_items (collection_id, item_id, sort_order) values');
     lines.push(catalog.collections.flatMap((c) => c.items.map((id, i) => `  (${q(c.id)}, ${q(id)}, ${i})`)).join(',\n'));
     lines.push('on conflict (collection_id, item_id) do update set sort_order = excluded.sort_order;');
+    if (v5) {
+      lines.push('-- Remove só os vínculos de coleção que não existem mais no catálogo (dados de catálogo, não do usuário).');
+      lines.push(`delete from public.collection_items ci where ci.collection_id in (${catalog.collections.map((c) => q(c.id)).join(', ')})`);
+      lines.push(`  and (ci.collection_id, ci.item_id) not in (${catalog.collections.flatMap((c) => c.items.map((id) => `(${q(c.id)}, ${q(id)})`)).join(', ')});`);
+    }
+    lines.push('');
+  }
+  if (v5) {
+    lines.push('-- Posse e equipamento seguem os aliases; backfill idempotente de recompensas já merecidas.');
+    lines.push('select private.apply_item_aliases();');
+    lines.push("select private.evaluate_rewards(p.id, 'backfill:catalog-v5') from public.profiles p");
+    lines.push('where exists (select 1 from private.domain_events d where d.user_id = p.id);');
     lines.push('');
   }
   return lines.join('\n');

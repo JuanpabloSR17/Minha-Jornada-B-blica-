@@ -12,7 +12,9 @@ describe('migração do catálogo', () => {
 
   it('slots do app batem com o CHECK do banco', () => {
     const catalog = JSON.parse(readFileSync(join(root, 'src/features/avatar/catalog/catalog.json'), 'utf8'));
-    const core = readFileSync(join(root, 'supabase/migrations/20261111000100_marco1_core.sql'), 'utf8');
-    for (const slot of catalog.slots) expect(core).toContain(`'${slot}'`);
+    // o CHECK de slots mais recente está na migração de suporte ao catálogo oficial
+    const check = readFileSync(join(root, 'supabase/migrations/20261115000100_official_catalog_support.sql'), 'utf8');
+    for (const slot of [...catalog.slots, 'relic']) expect(check).toContain(`'${slot}'`);
+    for (const it of catalog.items) expect([...catalog.slots, 'relic']).toContain(it.slot);
   });
 });

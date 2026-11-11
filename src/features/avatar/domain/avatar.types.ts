@@ -31,7 +31,12 @@ export type EquipmentSlot =
   | 'head'
   | 'hands'
   | 'background'
-  | 'frame';
+  | 'frame'
+  // slots do catálogo oficial
+  | 'chest'
+  | 'special'
+  | 'effect'
+  | 'back_item';
 
 /** Um item por slot. Slots ausentes estão vazios. */
 export type Equipment = Partial<Record<EquipmentSlot, string>>;
@@ -48,12 +53,14 @@ export type LayerSlot =
   | 'background'
   | 'shadow'
   | 'cloak_back'
+  | 'back_item'
   | 'back_hair'
   | 'body'
   | 'face'
   | 'lower_outfit'
   | 'feet'
   | 'upper_outfit'
+  | 'chest'
   | 'waist'
   | 'arms'
   | 'sleeves'
@@ -66,6 +73,7 @@ export type LayerSlot =
   | 'face_accessory'
   | 'cloak_front'
   | 'hand_item'
+  | 'emblem'
   | 'special_fx'
   | 'frame';
 
@@ -98,7 +106,17 @@ export type CosmeticItem = {
   series: string;
   /** livro associado (lendários) */
   book?: string;
+  /** literal = descrito no texto; demais = associação interpretativa (exibida como tal) */
+  representation: Representation;
+  /** significado editorial (catálogo oficial) */
+  meaning?: string;
+  /** itens santos: Pai, Filho, Espírito Santo ou Deus Triúno (nunca personificados) */
+  referent?: string;
+  /** itens santos: artefato, obra ou símbolo */
+  holySubtype?: string;
 };
+
+export type Representation = 'literal' | 'inspired' | 'metaphorical' | 'symbolic';
 
 export type AvatarLook = {
   appearance: AvatarAppearance;

@@ -101,11 +101,14 @@ export function ItemDetailScreen({ id }: { id: string }) {
         {row(strings.item.acquisition, strings.item.acquisitionLabels[item.acquisition])}
         {item.book ? row(strings.item.book, bookName(item.book)) : null}
         {item.scriptureRef ? row(strings.item.reference, item.scriptureRef) : null}
+        {item.scriptureRef ? row(strings.item.representation, strings.item.representationLabels[item.representation]) : null}
+        {item.meaning ? row(strings.item.meaning, item.meaning) : null}
+        {item.referent ? row(strings.item.referent, item.referent) : null}
         {row(strings.item.unlock, item.unlockLabel ?? strings.item.starterUnlock)}
         {row(strings.item.status, status)}
         {cols.length ? row(strings.item.collection, cols.map((c) => c.name).join(', ')) : null}
         <AppText>{item.description}</AppText>
-        {item.slot === 'relic' ? <Notice tone="info">{strings.item.relicNote}</Notice> : null}
+        {item.slot === 'relic' ? <Notice tone="info">{strings.item.relicNote}</Notice> : item.rarity === 'holy' ? <Notice tone="info">{strings.item.holyNote}</Notice> : null}
         {getRarity(item.rarity) ? (
           <View style={[styles.rarityBox, { borderLeftColor: RARITY_COLOR[item.rarity] }]}>
             <AppText variant="caption" muted>{strings.item.rarityAbout}: {getRarity(item.rarity)!.description}</AppText>

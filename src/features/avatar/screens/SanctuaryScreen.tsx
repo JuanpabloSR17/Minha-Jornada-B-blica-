@@ -9,16 +9,16 @@ import { errorMessage } from '@/lib/errors';
 import { StepHeader } from '../components/StepHeader';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { COLLECTIONS, COSMETIC_ITEMS, getItem, getRarity } from '../domain/catalog';
+import { COLLECTIONS, COSMETIC_ITEMS, getItem, getRarity, resolveItemId } from '../domain/catalog';
 import { getWardrobe } from '../services/wardrobe.service';
 import bible from '../../reading/bible-books.json';
 
-const WORKS = ['works-father', 'works-son', 'works-spirit'];
+const WORKS = ['works-father', 'works-son', 'works-spirit', 'works-triune'];
 type Book = { code: string; name: string; chapters: number; testament: 'AT' | 'NT' };
 
 /**
- * Santuário das Conquistas: relíquias santas (não equipáveis) agrupadas nas obras do Pai,
- * de Jesus Cristo e do Espírito Santo, e a Biblioteca Lendária (um lendário por livro).
+ * Santuário das Conquistas: itens santos agrupados nas obras do Pai, do Filho, do Espírito Santo
+ * e do Deus Triúno (relíquias só em exibição), e a Biblioteca Lendária (um lendário por livro).
  */
 export function SanctuaryScreen() {
   const { colors } = useTheme();
@@ -28,7 +28,7 @@ export function SanctuaryScreen() {
 
   const load = useCallback(async () => {
     try {
-      setOwned(new Set((await getWardrobe()).owned.map((o) => o.itemId)));
+      setOwned(new Set((await getWardrobe()).owned.map((o) => resolveItemId(o.itemId))));
     } catch (e) {
       setError(errorMessage(e));
     }

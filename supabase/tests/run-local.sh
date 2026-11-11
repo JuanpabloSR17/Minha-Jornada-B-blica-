@@ -25,8 +25,10 @@ for f in "$ROOT"/supabase/migrations/*.sql; do
   echo "→ migração $(basename "$f")"
   "${PSQL[@]}" -d jb_test -f "$f"
 done
-# Reaplicar a migração do catálogo precisa ser idempotente.
-for f in "$ROOT"/supabase/migrations/*_avatar_catalog_v*.sql; do "${PSQL[@]}" -d jb_test -f "$f"; done
+# Reaplicar a migração mais recente do catálogo precisa ser idempotente
+# (migrações antigas nunca são reaplicadas depois das novas em produção).
+LATEST_CATALOG="$(ls "$ROOT"/supabase/migrations/*_avatar_catalog_v*.sql | sort | tail -1)"
+"${PSQL[@]}" -d jb_test -o /dev/null -f "$LATEST_CATALOG"
 
 for t in "$ROOT"/supabase/tests/[1-9]*.sql; do
   echo "→ teste $(basename "$t")"
@@ -64,7 +66,7 @@ echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicaçã
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -78,7 +80,10 @@ echo "  ok  reversão do Marco 2 não apaga o catálogo, e a migração pode ser
 echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
-for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback2 -f "$f"; done
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  case "$(basename "$f")" in 20261115*) continue ;; esac
+  "${PSQL[@]}" -d jb_rollback2 -f "$f"
+done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
 LEFT=$("${PSQL[@]}" -d jb_rollback2 -At -c "select count(*) from pg_tables where tablename = 'reward_triggers'")
 ITEMS=$("${PSQL[@]}" -d jb_rollback2 -At -c "select count(*) from public.cosmetic_items")
@@ -86,4 +91,19 @@ if [ "$LEFT" != "0" ] || [ "$ITEMS" != "179" ]; then echo "✘ reversão das rar
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/migrations/20261114000100_rarities_and_triggers.sql" 2>/dev/null
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/migrations/20261114000200_avatar_catalog_v4.sql"
 echo "  ok  reversão das raridades mantém os 179 itens, e as migrações podem ser reaplicadas"
+
+echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback3" postgres
+"${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"; done
+BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
+"${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/rollbacks/20261115000100_official_catalog_support.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from pg_tables where tablename = 'cosmetic_item_aliases'")
+ITEMS=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
+if [ "$LEFT" != "0" ] || [ "$ITEMS" != "$BEFORE" ]; then echo "✘ reversão do catálogo oficial: aliases=$LEFT itens=$ITEMS (antes $BEFORE)"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$ROOT/supabase/migrations/20261115000100_official_catalog_support.sql" 2>/dev/null
+"${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$ROOT/supabase/migrations/20261115000200_avatar_catalog_v5.sql"
+ALIASES=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_item_aliases")
+if [ "$ALIASES" = "0" ]; then echo "✘ reaplicação do catálogo oficial sem aliases"; exit 1; fi
+echo "  ok  reversão do catálogo oficial mantém os $BEFORE itens, e as migrações podem ser reaplicadas"
 echo "✔ Todos os testes de banco passaram."

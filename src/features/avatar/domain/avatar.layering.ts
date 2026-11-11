@@ -1,5 +1,5 @@
 import { ART_MANIFEST, FALLBACK_ART, LAYER_ORDER, SLOT_FALLBACK_LAYERS, type ManifestEntry } from '../art/manifest';
-import { getItem } from './catalog';
+import { getItem, resolveEquipmentIds } from './catalog';
 import type { AvatarAppearance, AvatarLayer, Equipment, EquipmentSlot, LayerSlot } from './avatar.types';
 
 export type ResolvedLayer = AvatarLayer & {
@@ -19,7 +19,7 @@ const APPEARANCE_FALLBACK: Record<string, string> = {
 };
 
 const ITEM_SLOT_ORDER: EquipmentSlot[] = [
-  'background', 'back', 'feet', 'outfit', 'waist', 'neck', 'head', 'hands', 'frame',
+  'background', 'back_item', 'back', 'feet', 'outfit', 'chest', 'waist', 'neck', 'head', 'hands', 'special', 'effect', 'frame',
 ];
 
 export function zIndexOf(slot: LayerSlot): number {
@@ -33,10 +33,12 @@ export function zIndexOf(slot: LayerSlot): number {
  */
 export function resolveLayers(
   appearance: AvatarAppearance,
-  equipment: Equipment,
+  equipmentIn: Equipment,
   opts: { showBackground?: boolean; manifest?: Record<string, ManifestEntry> } = {},
 ): ResolvedLayer[] {
   const manifest = opts.manifest ?? ART_MANIFEST;
+  // visuais salvos com IDs antigos (rascunho/oficial) são desenhados pelo ID canônico
+  const equipment = resolveEquipmentIds(equipmentIn);
   const showBackground = opts.showBackground ?? true;
   const bodyId = appearance.bodyId;
   const layers: ResolvedLayer[] = [];

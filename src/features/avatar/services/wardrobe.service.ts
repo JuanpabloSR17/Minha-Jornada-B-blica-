@@ -2,6 +2,7 @@ import { requireSupabase } from '@/lib/supabase/client';
 import { throwIfError } from '@/lib/errors';
 import { normalizeLook, sanitizeEquipment } from '../domain/avatar.rules';
 import type { AvatarAppearance, Equipment } from '../domain/avatar.types';
+import type { ReadingProgress } from '@/features/rewards/contract';
 
 export type LoadoutInfo = {
   id: string;
@@ -98,3 +99,6 @@ export async function getPublicAvatar(username: string): Promise<PublicAvatar> {
 }
 
 export const setPrivacyMode = (mode: 'private' | 'friends' | 'public') => rpc('set_privacy_mode', { p_mode: mode });
+
+/** Progresso bíblico calculado no servidor (capítulos, livros, lendários e recompensas disponíveis). */
+export const getReadingProgress = async () => (await rpc('get_reading_progress')) as ReadingProgress;

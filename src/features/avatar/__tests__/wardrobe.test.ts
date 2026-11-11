@@ -29,8 +29,8 @@ const state: WardrobeState = {
 };
 
 describe('inventário', () => {
-  it('tem as dez categorias pedidas', () => {
-    expect(INVENTORY_CATEGORIES.map((c) => c.label)).toEqual(['Túnicas', 'Mantos', 'Calçados', 'Cabelos', 'Cabeça e pescoço', 'Itens de mão', 'Cintura', 'Especiais', 'Fundos', 'Molduras']);
+  it('tem as dez categorias pedidas e os slots do catálogo oficial', () => {
+    expect(INVENTORY_CATEGORIES.map((c) => c.label)).toEqual(['Túnicas', 'Mantos', 'Calçados', 'Cabelos', 'Cabeça e pescoço', 'Itens de mão', 'Cintura', 'Peitorais', 'Costas', 'Emblemas', 'Efeitos', 'Bíblicos', 'Fundos', 'Molduras']);
   });
 
   it('obtidos primeiro; bloqueados aparecem com objetivo; filtros funcionam', () => {
@@ -41,11 +41,11 @@ describe('inventário', () => {
     expect(backs.find((v) => v.item.id === 'cloak-elijah')!.locked).toBe(true);
     expect(listItems('back', { owned, equipment: base.equipment, filter: 'owned' }).every((v) => v.owned)).toBe(true);
     expect(listItems('outfit', { owned, equipment: base.equipment, filter: 'equipped' }).map((v) => v.item.id)).toEqual(['tunic-linen']);
-    expect(listItems('special', { owned, equipment: base.equipment }).find((v) => v.item.id === 'tunic-joseph')!.owned).toBe(true);
+    expect(listItems('biblical', { owned, equipment: base.equipment }).find((v) => v.item.id === 'tunic-joseph')!.owned).toBe(true);
   });
 
   it('busca por nome ou referência bíblica', () => {
-    const r = listItems('special', { owned: new Set(), equipment: {}, search: '1 reis' }).map((v) => v.item.id);
+    const r = listItems('biblical', { owned: new Set(), equipment: {}, search: '1 reis' }).map((v) => v.item.id);
     expect(r).toContain('cloak-elijah');
     expect(listItems('hands', { owned: new Set(), equipment: {}, search: 'funda' }).map((v) => v.item.id)).toEqual(['sling-david']);
   });
