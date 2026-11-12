@@ -33,7 +33,7 @@ NODE_PATH=$(npm root -g) bash e2e/supabase-real/run.sh
 |---|---|
 | Migrações | ✔ 14 antes do Mercado; depois Mercado, v7, sessões com marco e v8 (18 registradas); banco no catálogo v8 com 14 missões e 20 marcos |
 | Atualização, permissões, meta, compra, resposta perdida, saldo disputado, Êxodo 28 | ✔ iguais à execução v7 |
-| Marco de Êxodo 25 com a Mesa já obtida | ✔ escolhido na aba Ler; resposta perdida; vínculo mostrado ao reabrir; reenvio concede só Arca e Candelabro (1 sessão vinculada, 1 marco, 2 recompensas); Santuário 3 de 13 |
+| Marco de Êxodo 25 com a Mesa já obtida | ✔ aberto pela lista de marcos (filtro A cumprir); sessão pendente destacada na aba Ler com Verificar resultado; resposta perdida; vínculo mostrado ao reabrir; reenvio concede só Arca e Candelabro (1 sessão vinculada, 1 marco, 2 recompensas); Santuário: 1 de 20 marcos, 3 de 22 Santos, coleção 3 de 13 Santos obtidos |
 | Bateria SQL no Postgres do Supabase | ✔ 449 verificações (10–90) |
 
 ## Resultado — catálogo v7 (16 migrações)

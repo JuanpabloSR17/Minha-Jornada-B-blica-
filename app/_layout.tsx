@@ -89,6 +89,8 @@ function RootNavigator() {
           <Stack.Screen name="reading/mission" />
           <Stack.Screen name="reading/completed" />
           <Stack.Screen name="reading/goal" />
+          <Stack.Screen name="reading/milestones" />
+          <Stack.Screen name="reading/milestone/[id]" />
           <Stack.Screen name="market" />
         </Stack.Protected>
         <Stack.Screen name="auth/callback" />

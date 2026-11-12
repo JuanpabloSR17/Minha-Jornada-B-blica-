@@ -241,7 +241,7 @@ async function newPhone(browser, scheme = 'light') {
   // coleções
   await page.goto(`${APP}/avatar/collections`);
   await page.getByText('Coleção dos Profetas', { exact: true }).waitFor();
-  await page.getByText('2 de 3 itens').waitFor();
+  await page.getByText('2 de 3 itens obtidos').waitFor();
   await shot(page, 'm2-05-collections');
   step('coleções: progresso calculado no servidor');
 
@@ -304,7 +304,7 @@ async function newPhone(browser, scheme = 'light') {
   assert.equal((await db.query(`select count(*)::int n from user_items ui join cosmetic_items i on i.id = ui.item_id where ui.user_id = $1 and i.rarity = 'holy'`, [anaId])).rows[0].n, 1);
   await page.goto(`${APP}/avatar/sanctuary`);
   await page.getByText('Obras do Pai').waitFor();
-  await page.getByText('1 de 13 itens').waitFor();
+  await page.getByText('1 de 13 Santos obtidos').waitFor();
   await page.getByText('Obras do Deus Triúno').waitFor();
   await page.getByText('Biblioteca Lendária').waitFor();
   await shot(page, 'm3-02-sanctuary');
@@ -587,60 +587,99 @@ async function newPhone(browser, scheme = 'light') {
   step('nomes repetidos com a raridade (Rolo do Escriba Raro × Lendário) e associação metafórica das Sandálias do Peregrino');
   await C.page.goto(`${APP}/home`);
 
-  // ============================================================ MARCOS DOS SANTOS
+  // ============================================================ MARCOS DOS SANTOS (tela estreita)
+  await C.page.setViewportSize({ width: 320, height: 640 });
+  const noOverflow = async (label) => assert.equal(await C.page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `rolagem horizontal: ${label}`);
   const finishHere = async () => {
     await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
     await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
   };
-  // leitura comum de Êxodo 16 (capítulo com marco): recompensas habituais, sem o Maná
+  // aba Ler: resumo compacto (sem a lista completa) e leitura comum de Êxodo 16
   await C.page.goto(`${APP}/read`);
+  await C.page.getByText('Marcos cumpridos: 0 de 20').waitFor();
+  await C.page.getByText('Santos obtidos: 0 de 22').waitFor();
+  await C.page.getByRole('button', { name: 'Ver todos os marcos' }).waitFor();
+  assert.equal(await C.page.getByText('Marco: Luz da Criação', { exact: true }).count(), 0, 'a aba Ler não lista os 20 marcos');
+  await noOverflow('aba Ler');
+  await shot(C.page, 'm10-01-read-summary-320');
   await C.page.getByRole('radio', { name: /^Êxodo,/ }).click();
   await C.page.getByRole('radio', { name: 'Capítulo 16', exact: true }).click();
   await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 16' }).click();
   await finishHere();
-  await C.page.getByText('Missão concluída').waitFor();
   await C.page.getByText('Nenhum item novo nesta missão.').waitFor();
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'holy_mana_do_deserto'`, [biaId])).rows[0].count), 0);
-  step('leitura comum de Êxodo 16: progresso e XP, sem o Santo do marco');
+  step('tela estreita: aba Ler com resumo dos marcos; leitura comum de Êxodo 16 sem o Santo');
 
-  // marco escolhido explicitamente, com pausa e retomada depois de reabrir o app
+  // lista completa e filtros
   await C.page.goto(`${APP}/read`);
-  await C.page.getByText('Marcos dos Santos').waitFor();
-  await C.page.getByRole('radio', { name: /^Marco: Maná do Deserto, Êxodo 16/ }).click();
-  await C.page.getByTestId('marco-item-holy_mana_do_deserto').waitFor();
-  await C.page.getByText('Exposição no Santuário').first().waitFor();
-  await shot(C.page, 'm9-01-milestone-choose-dark');
+  await C.page.getByRole('button', { name: 'Ver todos os marcos' }).click();
+  await C.page.getByRole('radio', { name: 'Todos (20)' }).waitFor();
+  await C.page.getByRole('radio', { name: 'A cumprir (20)' }).click();
+  await C.page.getByRole('radio', { name: 'Concluídos (0)' }).click();
+  await C.page.getByText('Nenhum marco neste filtro.').waitFor();
+  await C.page.getByRole('radio', { name: 'Todos (20)' }).click();
+  await noOverflow('lista de marcos');
+  await shot(C.page, 'm10-02-milestones-list-320');
+  // abrir o marco do Maná: passagem e item; iniciar; pausar; reabrir o app; voltar pela aba Ler
+  await C.page.getByRole('link', { name: /^Marco: Maná do Deserto, Êxodo 16, A cumprir/ }).click();
+  await C.page.getByText('Passagem').waitFor();
+  assert.equal(await C.page.getByTestId('marco-item-state-holy_mana_do_deserto').innerText(), 'Será concedido ao cumprir o marco');
   await C.page.getByRole('button', { name: 'Iniciar marco: Êxodo 16' }).click();
   await C.page.getByTestId('session-milestone').waitFor();
   await C.page.getByRole('button', { name: 'Pausar' }).click();
   await C.page.reload();
-  await C.page.getByText('Pausado').first().waitFor();
-  assert.equal(await C.page.getByTestId('session-milestone').innerText(), 'Sessão vinculada · Marco: Maná do Deserto');
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByText('Sessão vinculada · Marco: Maná do Deserto').first().waitFor();
+  await shot(C.page, 'm10-03-read-active-session-320');
+  await C.page.getByRole('button', { name: 'Continuar leitura' }).click();
   await C.page.getByRole('button', { name: 'Retomar' }).click();
   await finishHere();
-  await C.page.getByText('Releitura registrada').waitFor();
   await C.page.getByText('Marco: Maná do Deserto — concluído').waitFor();
   await C.page.getByText('Maná do Deserto', { exact: true }).last().waitFor();
-  const mana = (await db.query(`select (select milestone_id from reading_sessions where user_id = $1 and milestone_id is not null) m,
-    (select count(*)::int from user_items where user_id = $1 and item_id = 'holy_mana_do_deserto') i`, [biaId])).rows[0];
-  assert.deepEqual(mana, { m: 'holy_mana_do_deserto', i: 1 });
-  await shot(C.page, 'm9-02-milestone-done-dark');
-  step('marco do Maná escolhido na aba Ler: vínculo preservado ao pausar e reabrir; releitura concede o Santo');
+  step('lista com filtros; marco aberto com passagem e item; após reabrir o app, a aba Ler destaca a sessão vinculada e leva de volta a ela');
 
-  // Êxodo 25: os três itens aparecem antes de iniciar e são concedidos juntos
-  await C.page.goto(`${APP}/read`);
-  await C.page.getByRole('radio', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25/ }).click();
-  for (const id of ['holy_arca_da_alianca_representacao', 'holy_mesa_dos_paes_da_presenca', 'holy_candelabro_do_tabernaculo']) await C.page.getByTestId(`marco-item-${id}`).waitFor();
+  // Êxodo 25 com posse parcial (Mesa já obtida) e finalização aguardando confirmação
+  await db.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'holy_mesa_dos_paes_da_presenca', 'test:obtido-antes')`, [biaId]);
+  await C.page.goto(`${APP}/reading/milestones`);
+  await C.page.getByRole('link', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25, A cumprir, Santos deste marco que você possui: 1 de 3/ }).click();
+  assert.equal(await C.page.getByTestId('marco-item-state-holy_mesa_dos_paes_da_presenca').innerText(), 'Você já possui');
+  assert.equal(await C.page.getByTestId('marco-item-state-holy_arca_da_alianca_representacao').innerText(), 'Será concedido ao cumprir o marco');
+  assert.equal(await C.page.getByTestId('marco-item-state-holy_candelabro_do_tabernaculo').innerText(), 'Será concedido ao cumprir o marco');
+  await noOverflow('detalhe do marco');
+  await shot(C.page, 'm10-04-milestone-exodus25-partial-320');
   await C.page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
+  await C.page.route('**/rest/v1/rpc/complete_reading_mission', (r) => r.abort('internetdisconnected'));
   await finishHere();
+  await C.page.getByText('Finalização pendente').first().waitFor();
+  await C.page.unroute('**/rest/v1/rpc/complete_reading_mission');
+  await C.page.reload();
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByText('Aguardando confirmação do servidor').waitFor();
+  await shot(C.page, 'm10-05-read-pending-320');
+  await C.page.getByRole('button', { name: 'Verificar resultado' }).click();
+  await C.page.getByRole('button', { name: 'Tentar novamente' }).click();
   await C.page.getByText('Marco: a mobília do Tabernáculo — concluído').waitFor();
-  for (const n of ['Arca da Aliança (Representação)', 'Mesa dos Pães da Presença', 'Candelabro do Tabernáculo']) await C.page.getByText(n, { exact: true }).last().waitFor();
-  await shot(C.page, 'm9-03-milestone-exodus25-dark');
-  await C.page.getByRole('button', { name: 'Ver no Santuário' }).click();
-  await C.page.getByText('Obras do Pai').waitFor();
-  await C.page.getByText('4 de 13 itens').waitFor();
-  await shot(C.page, 'm9-04-sanctuary-dark');
-  step('marco de Êxodo 25: três Santos mostrados antes de iniciar, concedidos juntos e exibidos no Santuário (4 de 13)');
+  for (const n of ['Arca da Aliança (Representação)', 'Candelabro do Tabernáculo']) await C.page.getByText(n, { exact: true }).last().waitFor();
+  assert.equal(await C.page.getByRole('button', { name: 'Equipar agora' }).count(), 0, 'relíquias não são equipáveis');
+  const ex25 = (await db.query(`select item_id, count(*)::int n from user_items where user_id = $1 and item_id like 'holy_%' group by item_id order by item_id`, [biaId])).rows;
+  assert.deepEqual(ex25.map((r) => [r.item_id, r.n]), [['holy_arca_da_alianca_representacao', 1], ['holy_candelabro_do_tabernaculo', 1], ['holy_mana_do_deserto', 1], ['holy_mesa_dos_paes_da_presenca', 1]]);
+  step('Êxodo 25 com a Mesa já obtida: tela indica o que ainda pode ser concedido; finalização pendente destacada na aba Ler; concede só Arca e Candelabro');
+
+  // marco concluído e contadores
+  await C.page.goto(`${APP}/reading/milestones`);
+  await C.page.getByRole('radio', { name: 'Concluídos (2)' }).click();
+  await C.page.getByRole('link', { name: /^Marco: Maná do Deserto, Êxodo 16, Cumprido/ }).click();
+  await C.page.getByText('Marco já cumprido', { exact: false }).waitFor();
+  assert.equal(await C.page.getByRole('button', { name: /^Iniciar marco/ }).count(), 0);
+  await C.page.goto(`${APP}/avatar/sanctuary`);
+  await C.page.getByText('Marcos cumpridos: 2 de 20').waitFor();
+  await C.page.getByText('Santos obtidos: 4 de 22').waitFor();
+  assert.equal(await C.page.getByTestId('collection-owned-works-father').innerText(), '4 de 13 Santos obtidos');
+  await C.page.getByTestId('library-owned').waitFor();
+  await noOverflow('Santuário');
+  await shot(C.page, 'm10-06-sanctuary-320');
+  step('marco concluído sem novo início; Santuário separa marcos cumpridos (2 de 20), Santos obtidos (4 de 22) e coleção (4 de 13 Santos obtidos)');
+  await C.page.setViewportSize({ width: 390, height: 844 });
   await C.page.goto(`${APP}/home`);
 
   // ============================================================ MERCADO DOS VIAJANTES

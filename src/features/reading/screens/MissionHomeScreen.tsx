@@ -6,34 +6,33 @@ import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
-import bible from '../bible-books.json';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
-import { activeMs, formatClock, startMission, type MissionMode } from '../mission/session';
+import { startMission, type MissionMode } from '../mission/session';
 import { useMissionSession } from '../mission/useMissionSession';
 import { DailyGoalCard } from '../components/DailyGoalCard';
-import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { displayName, getCatalogMission, getItem } from '@/features/avatar/domain/catalog';
+import { ActiveSessionCard } from '../components/ActiveSessionCard';
+import { useMilestones } from '../useMilestones';
+import { milestoneSummary } from '../milestones';
 
-type Book = { code: string; name: string; chapters: number; testament: 'AT' | 'NT' };
-const BOOKS = bible as Book[];
-export const bookName = (code: string) => BOOKS.find((b) => b.code === code)?.name ?? code;
-export const refLabel = (book: string, chapter: number) => `${bookName(book)} ${chapter}`;
+export { bookName, refLabel } from '../refs';
+import { BOOKS, refLabel } from '../refs';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
 export function MissionHomeScreen() {
   const { colors } = useTheme();
   const router = useRouter();
   const params = useLocalSearchParams<{ book?: string; chapter?: string }>();
-  const { userId, session, loaded, now, commit } = useMissionSession();
+  const { userId, session, loaded, commit } = useMissionSession();
   const [overview, setOverview] = useState<MissionOverview | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [book, setBook] = useState<string | null>(null);
   const [chapter, setChapter] = useState<number | null>(null);
   const [mode, setMode] = useState<MissionMode>('physical');
-  // marco dos Santos escolhido explicitamente (vale só para o capítulo dele)
-  const [milestone, setMilestone] = useState<string | null>(null);
-  const marco = getCatalogMission(milestone);
+  // marcos dos Santos: só o resumo aqui; a escolha do marco fica na tela do marco
+  const { rows: milestoneRowsData } = useMilestones();
+  const milestoneSum = milestoneRowsData ? milestoneSummary(milestoneRowsData) : null;
+  const nextMilestone = milestoneRowsData?.find((r) => !r.completed);
 
   useFocusEffect(
     useCallback(() => {
@@ -47,7 +46,6 @@ export function MissionHomeScreen() {
       setBook(params.book);
       const ch = Number(params.chapter);
       setChapter(Number.isInteger(ch) && ch >= 1 ? ch : null);
-      setMilestone(null);
     }
   }, [params.book, params.chapter]);
 
@@ -57,7 +55,7 @@ export function MissionHomeScreen() {
   const start = async () => {
     if (!userId || !book || !chapter || session) return;
     try {
-      await commit(startMission({ userId, book, chapter, mode, milestone }));
+      await commit(startMission({ userId, book, chapter, mode }));
       router.push('/reading/mission');
     } catch (e) {
       setError(errorMessage(e));
@@ -71,6 +69,7 @@ export function MissionHomeScreen() {
       <AppText variant="title">{strings.mission.title}</AppText>
       <AppText muted>{strings.mission.intro}</AppText>
       {error ? <Notice tone="error">{error}</Notice> : null}
+      <ActiveSessionCard />
 
       {overview ? (
         <Card>
@@ -83,38 +82,14 @@ export function MissionHomeScreen() {
 
       <DailyGoalCard session={session} hideStart />
 
-      {loaded && session ? (
-        <Card style={{ borderColor: session.status === 'pending' ? colors.danger : colors.primary }}>
-          <AppText variant="heading">{session.status === 'pending' ? strings.mission.pendingTitle : strings.mission.active}</AppText>
-          <AppText>{refLabel(session.book, session.chapter)} · {session.mode === 'physical' ? strings.mission.physical : strings.mission.digital}</AppText>
-          {session.status === 'pending' ? <AppText muted>{strings.mission.pendingBody}</AppText> : (
-            <AppText variant="label" accessibilityLabel={`${strings.mission.time}: ${formatClock(activeMs(session, now))}`}>
-              {formatClock(activeMs(session, now))} · {session.status === 'paused' ? strings.mission.paused : strings.mission.running}
-            </AppText>
-          )}
-          <Button title={strings.mission.resume} onPress={() => router.push('/reading/mission')} />
-        </Card>
-      ) : null}
 
-      {overview?.missions.some((m) => m.kind === 'milestone') ? (
-        <Card>
+      {milestoneSum ? (
+        <Card style={{ borderColor: RARITY_COLOR.holy }}>
           <AppText variant="heading">{strings.mission.milestones}</AppText>
-          <AppText variant="caption" muted>{strings.mission.milestonesIntro}</AppText>
-          {overview.missions.filter((m) => m.kind === 'milestone').map((m) => {
-            const sel = milestone === m.id;
-            return (
-              <Pressable key={m.id} accessibilityRole="radio" accessibilityState={{ checked: sel, disabled: m.completed }} disabled={m.completed}
-                accessibilityLabel={`${m.name}, ${refLabel(m.book, m.chapter)}${m.completed ? `, ${strings.mission.milestoneCompleted}` : ''}`}
-                onPress={() => { setBook(m.book); setChapter(m.chapter); setMilestone(m.id); }}
-                style={[styles.missionRow, sel && { backgroundColor: colors.surfaceRaised, borderRadius: radius.sm }]}>
-                <Icon name={m.completed ? 'check' : 'sparkle'} size={18} color={m.completed ? colors.success : RARITY_COLOR.holy} />
-                <View style={styles.flex}>
-                  <AppText variant="label">{m.name}</AppText>
-                  <AppText variant="caption" muted>{refLabel(m.book, m.chapter)}{m.completed ? ` · ${strings.mission.milestoneCompleted}` : ''}</AppText>
-                </View>
-              </Pressable>
-            );
-          })}
+          <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
+          <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
+          {nextMilestone ? <AppText variant="caption" muted>{fmt(strings.mission.milestonesNext, { name: nextMilestone.name, ref: refLabel(nextMilestone.book, nextMilestone.chapter) })}</AppText> : null}
+          <Button variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
         </Card>
       ) : null}
 
@@ -122,7 +97,7 @@ export function MissionHomeScreen() {
         <Card>
           <AppText variant="heading">{strings.mission.curated}</AppText>
           {overview.missions.filter((m) => m.kind === 'mission').map((m) => (
-            <Pressable key={m.id} accessibilityRole="button" onPress={() => { setBook(m.book); setChapter(m.chapter); setMilestone(null); }} style={styles.missionRow}>
+            <Pressable key={m.id} accessibilityRole="button" onPress={() => { setBook(m.book); setChapter(m.chapter); }} style={styles.missionRow}>
               <Icon name={m.completed ? 'check' : 'sparkle'} size={18} color={m.completed ? colors.success : colors.primary} />
               <View style={styles.flex}>
                 <AppText variant="label">{m.name}</AppText>
@@ -144,7 +119,7 @@ export function MissionHomeScreen() {
                 const sel = b.code === book;
                 return (
                   <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
-                    onPress={() => { setBook(b.code); setChapter(null); setMilestone(null); }} style={chip(sel)}>
+                    onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
                     <AppText variant="caption" style={styles.chipText}>{b.name}</AppText>
                     <AppText variant="caption" muted style={styles.chipText}>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
                   </Pressable>
@@ -165,7 +140,7 @@ export function MissionHomeScreen() {
               return (
                 <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: sel }}
                   accessibilityLabel={`${strings.mission.chooseChapter} ${n}${isDone ? `, ${strings.mission.chapterDone}` : ''}`}
-                  onPress={() => { setChapter(n); setMilestone(null); }}
+                  onPress={() => setChapter(n)}
                   style={[styles.num, { borderColor: sel ? colors.primary : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.primary : colors.surface }]}>
                   <AppText variant="label" color={sel ? colors.onPrimary : isDone ? colors.primary : colors.text}>{n}</AppText>
                   {isDone && !sel ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
@@ -195,33 +170,8 @@ export function MissionHomeScreen() {
           </Pressable>
           {session ? <Notice tone="info">{fmt(strings.mission.otherActive, { ref: refLabel(session.book, session.chapter) })}</Notice> : null}
           <AppText variant="caption" muted>{strings.mission.noTime}</AppText>
-          {marco ? (
-            <View style={[styles.marco, { borderColor: RARITY_COLOR.holy }]}>
-              <AppText variant="caption" muted>{strings.mission.milestoneSelected}</AppText>
-              <AppText variant="label">{marco.name}</AppText>
-              <AppText variant="caption" muted>{marco.description}</AppText>
-              <AppText variant="label">{strings.mission.milestoneReward}</AppText>
-              {marco.rewardItems.map((id) => {
-                const it = getItem(id);
-                if (!it) return null;
-                return (
-                  <View key={id} style={styles.preview} testID={`marco-item-${id}`}>
-                    <View style={[styles.previewIcon, { backgroundColor: colors.stage }]}><ItemIcon item={it} size={44} /></View>
-                    <View style={styles.flex}>
-                      <AppText variant="label">{displayName(it)}</AppText>
-                      <AppText variant="caption" color={RARITY_COLOR.holy}>
-                        {strings.rarity.holy} · {(strings.mission.usage as Record<string, string>)[it.slot] ?? it.slot}
-                      </AppText>
-                    </View>
-                  </View>
-                );
-              })}
-              <AppText variant="caption" muted>{strings.mission.milestoneOwnedNote}</AppText>
-              <Button compact variant="ghost" title={strings.mission.milestoneClear} onPress={() => setMilestone(null)} />
-            </View>
-          ) : null}
           <Button
-            title={marco ? fmt(strings.mission.milestoneStart, { ref: refLabel(selectedBook.code, chapter) }) : `${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
+            title={`${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
             onPress={() => void start()} disabled={!!session || !loaded} />
         </Card>
       ) : null}
@@ -238,8 +188,5 @@ const styles = StyleSheet.create({
   num: { width: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   dot: { position: 'absolute', bottom: 4, width: 5, height: 5, borderRadius: 3 },
   mode: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md },
-  marco: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs },
-  preview: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-  previewIcon: { width: 48, height: 48, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   missionRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.xs },
 });

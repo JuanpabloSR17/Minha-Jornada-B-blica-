@@ -3,7 +3,9 @@ import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Card, Icon, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
+import { useMilestones } from '@/features/reading/useMilestones';
+import { milestoneSummary } from '@/features/reading/milestones';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { StepHeader } from '../components/StepHeader';
@@ -37,6 +39,9 @@ export function SanctuaryScreen() {
     void load();
   }, [load]);
 
+  // progresso dos marcos (registro de conclusão) é diferente da posse mostrada nas coleções
+  const { rows: milestoneRowsData } = useMilestones();
+  const milestoneSum = milestoneRowsData ? milestoneSummary(milestoneRowsData) : null;
   const legendaryByBook = useMemo(() => new Map(COSMETIC_ITEMS.filter((i) => i.rarity === 'legendary' && i.book).map((i) => [i.book!, i])), []);
   const open = (id: string) => router.push({ pathname: '/avatar/item/[id]', params: { id } });
 
@@ -62,6 +67,14 @@ export function SanctuaryScreen() {
         </View>
       ) : null}
 
+      {milestoneSum ? (
+        <Card>
+          <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
+          <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
+          <Button compact variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
+        </Card>
+      ) : null}
+
       {COLLECTIONS.filter((c) => WORKS.includes(c.id)).map((c) => {
         const got = c.items.filter((id) => owned.has(id)).length;
         return (
@@ -71,7 +84,11 @@ export function SanctuaryScreen() {
                 <AppText variant="heading">{c.name}</AppText>
                 <AppText variant="caption" muted>{c.description}</AppText>
               </View>
-              <AppText variant="label" color={RARITY_COLOR.holy}>{fmt(strings.collections.progress, { owned: got, total: c.items.length })}</AppText>
+              {/* posse: itens DESTA coleção (catálogo vigente) que o jogador possui — não é o progresso dos marcos */}
+              <AppText variant="label" color={RARITY_COLOR.holy} testID={`collection-owned-${c.id}`}
+                accessibilityLabel={fmt(strings.sanctuary.collectionOwnedLabel, { owned: got, total: c.items.length })}>
+                {fmt(strings.sanctuary.collectionOwned, { owned: got, total: c.items.length })}
+              </AppText>
             </View>
             <View style={styles.relics}>
               {c.items.map((id) => {
@@ -104,7 +121,7 @@ export function SanctuaryScreen() {
             <AppText variant="heading">{strings.sanctuary.libraryTitle}</AppText>
             <AppText variant="caption" muted>{strings.sanctuary.libraryBody}</AppText>
           </View>
-          <AppText variant="label" color={RARITY_COLOR.legendary}>{legendaryOwned}/66</AppText>
+          <AppText variant="label" color={RARITY_COLOR.legendary} testID="library-owned">{fmt(strings.sanctuary.libraryOwned, { owned: legendaryOwned, total: legendaryByBook.size })}</AppText>
         </View>
         {(['AT', 'NT'] as const).map((t) => (
           <View key={t} style={styles.testament}>

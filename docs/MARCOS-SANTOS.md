@@ -12,9 +12,24 @@
 > oficial tem **9 Santos só em exibição** (os 7 artefatos + Água Transformada em Vinho e Pães da
 > Multiplicação) e **13 de personalização** (fundo, moldura ou efeito). Os usos do catálogo foram mantidos.
 
+## Navegação (celular)
+
+- **Aba Ler:** resumo compacto — *Marcos cumpridos: X de 20* (registro de conclusão no servidor) e
+  *Santos obtidos: Y de 22* (posse) — com **Ver todos os marcos**. A sessão em andamento ou aguardando
+  confirmação aparece em destaque no topo, com **Continuar leitura** ou **Verificar resultado**.
+- **Lista** (`/reading/milestones`): filtros **Todos**, **A cumprir** e **Concluídos**, pelo registro de
+  conclusão do marco (não pela posse dos itens). Cada linha mostra a passagem e quantos Santos do marco o
+  jogador já possui.
+- **Marco** (`/reading/milestone/<id>`): passagem, itens com *Você já possui* ou *Será concedido ao
+  cumprir o marco* e o botão **Iniciar marco**. Marco cumprido não pode ser iniciado de novo.
+- **Santuário:** o contador de cada coleção das obras mede **quantos Santos daquela coleção o jogador
+  possui** (itens da coleção no catálogo vigente × posse no servidor, com IDs antigos resolvidos):
+  *“4 de 13 Santos obtidos”*. A Biblioteca Lendária mostra *“x de 66 Lendários obtidos”* (total do
+  catálogo). O resumo dos marcos aparece separado.
+
 ## Como o marco é cumprido
 
-1. Na aba Ler, em **Marcos dos Santos**, o jogador escolhe o marco; a tela mostra os itens que ele concede.
+1. Na lista de marcos, o jogador abre o marco; a tela mostra a passagem e os itens que ele concede.
 2. A sessão leva o ID do marco (guardado no aparelho: sobrevive a pausar, fechar o app e reenviar).
 3. Ao finalizar, `complete_reading_mission(..., p_milestone)` confere que o marco existe, está ativo e é
    do mesmo capítulo (`invalid_milestone`), grava o vínculo em `reading_sessions.milestone_id` e registra
