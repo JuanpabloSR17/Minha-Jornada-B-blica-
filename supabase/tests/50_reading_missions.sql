@@ -27,22 +27,22 @@ $$;
 
 -- ---------------------------------------------------------------- capítulo inédito, repetição e releitura
 select tests.assert(
-  (select (r ->> 'alreadyCompleted')::boolean = false and (r ->> 'xpAwarded')::int = 10 and r -> 'granted' = '["tunic-joseph"]'::jsonb
+  (select (r ->> 'alreadyCompleted')::boolean = false and (r ->> 'xpAwarded')::int = 40 and r -> 'granted' = '["tunic-joseph"]'::jsonb
      and (r ->> 'chaptersCompleted')::int = 1 and (r -> 'book' ->> 'completed')::int = 1 and (r ->> 'duplicate')::boolean = false
    from tests.finish('gen37-a', 'GEN', 37) r),
-  'capítulo inédito: registra, concede a Túnica de José e 10 XP (provisório)');
+  'capítulo inédito: registra, concede a Túnica de José e 40 XP');
 select tests.assert(
-  (select (r ->> 'duplicate')::boolean and r -> 'granted' = '["tunic-joseph"]'::jsonb and (r ->> 'xpAwarded')::int = 10 from tests.finish('gen37-a', 'GEN', 37) r),
+  (select (r ->> 'duplicate')::boolean and r -> 'granted' = '["tunic-joseph"]'::jsonb and (r ->> 'xpAwarded')::int = 40 from tests.finish('gen37-a', 'GEN', 37) r),
   'nova tentativa da mesma sessão devolve o mesmo resultado, marcado como repetido');
 select tests.finish('gen37-a', 'GEN', 37);
-select tests.assert(tests.xp_m() = 10, 'toques repetidos não duplicam XP');
+select tests.assert(tests.xp_m() = 40, 'toques repetidos não duplicam XP');
 select tests.assert((select count(*) from public.user_items where user_id = 'b1111111-0000-0000-0000-000000000001' and item_id = 'tunic-joseph') = 1, 'toques repetidos não duplicam item');
 select tests.assert((select count(*) from public.reading_sessions where user_id = 'b1111111-0000-0000-0000-000000000001') = 1, 'uma sessão registrada');
 select tests.assert(
   (select (r ->> 'alreadyCompleted')::boolean and (r ->> 'xpAwarded')::int = 0 and r -> 'granted' = '[]'::jsonb and (r ->> 'chaptersCompleted')::int = 1
    from tests.finish('gen37-b', 'GEN', 37) r),
   'releitura: informada como tal, sem XP, sem item e sem contar capítulo novo');
-select tests.assert(tests.xp_m() = 10, 'releitura não soma XP');
+select tests.assert(tests.xp_m() = 40, 'releitura não soma XP');
 select tests.assert_raises($$select tests.finish('gen37-a', 'GEN', 38)$$, 'invalid_session', 'mesma sessão com outro capítulo é recusada');
 
 -- ---------------------------------------------------------------- tempo, validações e acesso

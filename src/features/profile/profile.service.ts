@@ -15,6 +15,10 @@ export type Profile = {
 export type ReadingPreferences = {
   plan_mode: 'daily_goal' | 'free';
   target_chapters_per_day: number | null;
+  /** mudança agendada: vale a partir da próxima data civil do fuso de leitura */
+  pending_plan_mode?: 'daily_goal' | 'free' | null;
+  pending_target?: number | null;
+  pending_effective_day?: string | null;
 };
 
 const PROFILE_COLUMNS = 'id, username, display_name, privacy_mode, avatar_onboarding_completed_at, onboarding_completed_at';
@@ -27,7 +31,7 @@ export async function fetchMyProfile(userId: string): Promise<Profile | null> {
 export async function fetchMyReadingPreferences(userId: string): Promise<ReadingPreferences | null> {
   const res = await requireSupabase()
     .from('reading_preferences')
-    .select('plan_mode, target_chapters_per_day')
+    .select('plan_mode, target_chapters_per_day, pending_plan_mode, pending_target, pending_effective_day')
     .eq('user_id', userId)
     .maybeSingle();
   return throwIfError(res) as ReadingPreferences | null;

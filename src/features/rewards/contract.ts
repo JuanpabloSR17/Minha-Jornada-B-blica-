@@ -89,9 +89,10 @@ export type ReadingProgress = {
  * equip_item aceita qualquer um deles; a posse antiga é migrada por private.apply_item_aliases().
  */
 /**
- * Meta diária v1 (servidor): o primeiro CHAPTER_COMPLETED inédito do dia (fuso do perfil) grava
- * daily_goals + siclos_ledger ('DAILY_GOAL', 'goal:<dia>', 40) e até 3 opções de Comuns
- * (regra mission_pool). O item é concedido só por claim_daily_goal_item(dia, item).
+ * Meta diária v2 (servidor): quando os CHAPTER_COMPLETED inéditos do dia (fuso de leitura do perfil)
+ * atingem a meta do dia (snapshot em daily_targets), grava daily_goals + siclos_ledger
+ * ('DAILY_GOAL', 'goal:<dia>', 40) + xp_ledger ('DAILY_GOAL_BONUS', 'goal:<dia>', 20) e até 3 opções
+ * de Comuns (regra mission_pool). O item é concedido só por claim_daily_goal_item(dia, item).
  */
 export type DailyGoalReward = { day: string; siclos: number; options: string[]; chosenItem: string | null };
 

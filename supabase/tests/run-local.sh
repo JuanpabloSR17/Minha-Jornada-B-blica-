@@ -79,7 +79,8 @@ echo "  ok  finalizações simultâneas: 1 capítulo inédito, 1 XP e 1 item; a 
 
 echo "→ concorrência na meta diária (dois capítulos inéditos ao mesmo tempo; dois resgates ao mesmo tempo)"
 "${PSQL[@]}" -d jb_test -c "insert into auth.users (id) values ('e5555555-0000-0000-0000-000000000005');
-  insert into public.profiles (id, username, display_name) values ('e5555555-0000-0000-0000-000000000005', 'meta_paralela', 'Paralela');" >/dev/null
+  insert into public.profiles (id, username, display_name) values ('e5555555-0000-0000-0000-000000000005', 'meta_paralela', 'Paralela');
+  insert into public.reading_preferences (user_id, plan_mode, target_chapters_per_day) values ('e5555555-0000-0000-0000-000000000005', 'daily_goal', 2);" >/dev/null
 "${PSQL[@]}" -d jb_test -o /dev/null -v sid=aaaaaaaa-0000-4000-8000-000000000001 -v ch=1 -f "$ROOT/supabase/tests/concurrency_goal.sql" & P1=$!
 "${PSQL[@]}" -d jb_test -o /dev/null -v sid=aaaaaaaa-0000-4000-8000-000000000002 -v ch=2 -f "$ROOT/supabase/tests/concurrency_goal.sql" & P2=$!
 "${PSQL[@]}" -d jb_test -o /dev/null -v sid=aaaaaaaa-0000-4000-8000-000000000003 -v ch=3 -f "$ROOT/supabase/tests/concurrency_goal.sql" & P3=$!
@@ -87,7 +88,9 @@ wait $P1; wait $P2; wait $P3
 R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.daily_goals where user_id='e5555555-0000-0000-0000-000000000005') || ',' ||
   (select coalesce(sum(amount),0) from public.siclos_ledger where user_id='e5555555-0000-0000-0000-000000000005') || ',' ||
   (select count(*) from public.reading_sessions where user_id='e5555555-0000-0000-0000-000000000005' and (result -> 'dailyGoal' ->> 'achievedNow')::boolean)")
-if [ "$R" != "1,40,1" ]; then echo "✘ concorrência da meta: metas,siclos,sessões que cumpriram=$R (esperado 1,40,1)"; exit 1; fi
+if [ "$R" != "1,40,1" ]; then echo "✘ concorrência da meta (meta 2, 3 capítulos simultâneos): metas,siclos,sessões que cumpriram=$R (esperado 1,40,1)"; exit 1; fi
+B=$("${PSQL[@]}" -d jb_test -At -c "select count(*) from public.xp_ledger where user_id='e5555555-0000-0000-0000-000000000005' and event_type = 'DAILY_GOAL_BONUS'")
+if [ "$B" != "1" ]; then echo "✘ concorrência da meta: bônus de XP=$B (esperado 1)"; exit 1; fi
 OPTS=$("${PSQL[@]}" -d jb_test -At -c "select options[1] || ' ' || options[2] from public.daily_goals where user_id='e5555555-0000-0000-0000-000000000005'")
 read -r O1 O2 <<< "$OPTS"
 "${PSQL[@]}" -d jb_test -o /dev/null -v item=$O1 -f "$ROOT/supabase/tests/concurrency_claim.sql" 2>/dev/null & P1=$!
@@ -98,13 +101,13 @@ R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.user_ite
     where ui.user_id='e5555555-0000-0000-0000-000000000005') || ',' ||
   (select count(*) from public.daily_goals where user_id='e5555555-0000-0000-0000-000000000005' and chosen_item is not null)")
 if [ "$R" != "1,1" ]; then echo "✘ concorrência do resgate: itens,escolhas=$R (esperado 1,1)"; exit 1; fi
-echo "  ok  finalizações simultâneas cumprem a meta uma vez (40 Siclos); resgates simultâneos concedem um único item"
+echo "  ok  3 finalizações simultâneas com meta 2: uma recompensa (40 Siclos, 1 bônus); resgates simultâneos concedem um único item"
 
 echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -119,7 +122,7 @@ echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261115*|20261116*|20261117*) continue ;; esac
+  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback2 -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
@@ -134,7 +137,7 @@ echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação
 "${PSQL[@]}" -c "create database jb_rollback3" postgres
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261116*|20261117*) continue ;; esac
+  case "$(basename "$f")" in 20261116*|20261117*|20261118*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
@@ -152,7 +155,7 @@ echo "→ reversão manual do Modo Missão (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback4" postgres
 "${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261117*) continue ;; esac
+  case "$(basename "$f")" in 20261117*|20261118*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
@@ -169,7 +172,10 @@ echo "  ok  reversão do Modo Missão mantém os $BEFORE itens, e as migrações
 echo "→ reversão manual da meta diária (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback5" postgres
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
-for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$f"; done
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  case "$(basename "$f")" in 20261118*) continue ;; esac
+  "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$f"
+done
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/rollbacks/20261117000100_daily_goal.down.sql"
 "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$ROOT/supabase/migrations/20261116000100_reading_missions.sql" 2>/dev/null || true
 LEFT=$("${PSQL[@]}" -d jb_rollback5 -At -c "select count(*) from pg_tables where tablename in ('daily_goals','siclos_ledger')")
@@ -178,4 +184,19 @@ if [ "$LEFT" != "0" ]; then echo "✘ reversão da meta diária: tabelas restant
 G=$("${PSQL[@]}" -d jb_rollback5 -At -c "select count(*) from public.economy_rules where key = 'siclos_daily_goal' and value = 40")
 if [ "$G" != "1" ]; then echo "✘ reaplicação da meta diária"; exit 1; fi
 echo "  ok  reversão da meta diária remove só as tabelas da meta, e a migração pode ser reaplicada"
+
+echo "→ reversão manual da meta diária v2 (banco completo) e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback6" postgres
+"${PSQL[@]}" -d jb_rollback6 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$f"; done
+"${PSQL[@]}" -d jb_rollback6 -c "insert into auth.users (id) values ('f6666666-0000-0000-0000-000000000006');
+  insert into public.profiles (id, username, display_name) values ('f6666666-0000-0000-0000-000000000006', 'reverte_6', 'Reverte');
+  insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values ('f6666666-0000-0000-0000-000000000006', 'DAILY_GOAL', 'goal:2026-11-20', 40);" >/dev/null
+"${PSQL[@]}" -d jb_rollback6 -f "$ROOT/supabase/rollbacks/20261118000100_daily_goal_targets.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback6 -At -c "select (select count(*) from pg_tables where tablename = 'daily_targets') || ',' || (select count(*) from public.siclos_ledger)")
+if [ "$LEFT" != "0,1" ]; then echo "✘ reversão da meta v2: daily_targets,siclos=$LEFT (esperado 0,1)"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$ROOT/supabase/migrations/20261118000100_daily_goal_targets.sql"
+X=$("${PSQL[@]}" -d jb_rollback6 -At -c "select value from public.economy_rules where key = 'xp_new_chapter'")
+if [ "$X" != "40" ]; then echo "✘ reaplicação da meta v2"; exit 1; fi
+echo "  ok  reversão da meta v2 preserva Siclos, e as migrações podem ser reaplicadas"
 echo "✔ Todos os testes de banco passaram."

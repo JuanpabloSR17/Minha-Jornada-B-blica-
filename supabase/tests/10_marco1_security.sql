@@ -179,7 +179,9 @@ select tests.assert_raises($$select public.set_reading_preferences('daily_goal',
 select tests.assert_raises($$select public.set_reading_preferences('turbo', 3)$$, 'invalid_goal', 'modo desconhecido rejeitado');
 select tests.assert((public.set_reading_preferences('daily_goal', 3)).target_chapters_per_day = 3, 'meta de 3 capítulos salva');
 select tests.assert((select onboarding_completed_at is not null from public.profiles), 'onboarding concluído');
-select tests.assert((public.set_reading_preferences('free', 9)).target_chapters_per_day is null, 'sem meta ignora número');
+-- meta v2: depois da primeira definição, a troca fica pendente até a próxima data civil
+select tests.assert((select r.pending_plan_mode = 'free' and r.pending_target is null and r.target_chapters_per_day = 3
+  from public.set_reading_preferences('free', 9) r), 'sem meta ignora número (troca agendada para amanhã)');
 commit;
 
 -- ===========================================================================

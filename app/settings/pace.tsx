@@ -1,7 +1,8 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Button, Notice, Screen } from '@/ui';
-import { strings } from '@/i18n';
+import { fmt, strings } from '@/i18n';
+import { dayLabel } from '@/features/reading/components/dayLabel';
 import { errorMessage } from '@/lib/errors';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
@@ -19,9 +20,13 @@ export default function PaceSettings() {
     setBusy(true);
     setMsg(null);
     try {
-      await setReadingPreferences(value);
+      const saved = await setReadingPreferences(value);
       await refreshProfile();
-      setMsg({ tone: 'success', text: strings.onboarding.paceSaved });
+      // depois da primeira definição, a mudança vale só a partir da próxima data civil
+      setMsg({
+        tone: 'success',
+        text: saved.pending_effective_day ? fmt(strings.onboarding.paceScheduled, { day: dayLabel(saved.pending_effective_day) }) : strings.onboarding.paceSaved,
+      });
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
     } finally {

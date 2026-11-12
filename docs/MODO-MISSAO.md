@@ -43,48 +43,69 @@
 
 `public.get_mission_overview()` devolve progresso, XP total, capítulos concluídos por livro e as missões curadas.
 
-## Meta diária (v1)
+## Meta diária (v2 — meta pessoal)
 
-- **Regra:** o primeiro capítulo **inédito** confirmado no dia cumpre a meta: **+40 Siclos**
-  (`economy_rules.siclos_daily_goal`) e a escolha gratuita de **1 entre até 3 Comuns**
-  (`daily_goal_choices`). Releituras não contam. Os capítulos inéditos seguintes continuam
-  registrando progresso, XP e recompensas de leitura.
-- **Elegíveis:** Comuns ativos com regra ativa `mission_pool` (pool `common`) no catálogo — os 22
-  Comuns oficiais com `missao_ou_loja`, exceto as peças iniciais — que o jogador ainda não possui,
-  não Premium. Ordem pseudoaleatória estável por jogador e dia. Sem elegíveis: a meta é cumprida e
-  os Siclos são creditados normalmente, sem escolha.
-- **Consistência:** meta (`daily_goals`, chave usuário+dia), crédito (`siclos_ledger`, chave
-  `goal:<dia>`) e opções são gravados na mesma transação da finalização, sob a trava do jogador.
-  Reenvio da finalização devolve o resultado registrado com o estado atual da escolha.
-- **Escolha:** `claim_daily_goal_item(dia, item)` valida que o item está entre as opções gravadas e
-  que a meta ainda não tem escolha; repetir a mesma escolha devolve o resultado sem conceder de
-  novo; outra escolha é recusada (`goal_choice_already_made`). No máximo um item por meta.
-- **Escolha pendente:** fica no servidor (`get_daily_goal_status`), então aparece na tela de
-  recompensa, no Início e na aba Ler depois de fechar/reabrir o app ou em outro aparelho
-  (`/reading/goal`).
-- A meta pessoal de capítulos por dia (configurada no onboarding) continua aparecendo no Início,
-  mas **não muda a recompensa da v1**: a recompensa diária vem do primeiro capítulo inédito.
+### Regra
 
-### Dia e fuso horário (decisão adotada)
+- A recompensa diária sai quando os **capítulos inéditos do dia** atingem a **meta do dia**:
+  meta 1 → 1 capítulo, 2 → 2, 3 → 3, 5 → 5, personalizada → N (1 a 50).
+- **Ritmo livre:** o jogador escolhe a **missão do dia** (≥ 1 capítulo) **antes do primeiro capítulo
+  inédito do dia** (`set_daily_mission_target`). Sem escolha, o dia não tem recompensa diária (os
+  capítulos contam no progresso e no XP). A missão do dia não pode ser trocada depois de escolhida.
+- **Recompensa (uma por dia):** 40 Siclos + 20 XP de bônus + escolha de 1 entre até 3 Comuns elegíveis.
+- **XP de leitura:** 40 por capítulo inédito; releitura 0. Capítulos além da meta continuam dando XP e
+  progresso, sem nova recompensa diária. Lendários, épicos e missões especiais seguem as próprias regras.
+- Valores em `economy_rules` (`xp_new_chapter` 40, `xp_reread` 0, `xp_daily_goal_bonus` 20,
+  `siclos_daily_goal` 40, `daily_goal_choices` 3).
 
-O projeto não tinha definição de dia/fuso. Decisão:
+### Snapshot da meta e mudança de meta
 
-- **Dia = data civil no fuso IANA do perfil** (`profiles.time_zone`), padrão **`America/Sao_Paulo`**.
-- O app informa o fuso do aparelho ao abrir (`sync_time_zone`). A primeira definição é aceita; depois,
-  no máximo **uma troca a cada 24 h** (antes disso o fuso atual continua valendo).
-- Uma meta só pode ser registrada num dia **posterior** ao da última meta: trocar de fuso não
-  permite "voltar" a um dia ainda sem meta. Ganhar um dia a mais viajando para leste é possível
-  (fuso adiantado), limitado pela regra de 24 h.
-- Testado: 23:59:30 e 00:00:30 em São Paulo caem em dias diferentes; meia-noite UTC não vira o dia;
-  o mesmo instante é dia 20 em Manaus e 21 em São Paulo; troca de fuso sem Siclos extras.
+- Cada dia tem um snapshot da meta ativa (`daily_targets`: modo, meta, origem, fuso), criado na
+  primeira vez que o dia é usado (primeira missão ou abertura do Início) e nunca mais alterado pela
+  preferência.
+- Mudar a meta (`set_reading_preferences`) grava uma **mudança pendente** que vale a partir da
+  **próxima data civil** do fuso de leitura. Voltar à meta em vigor cancela a pendência. A única
+  exceção é a primeira definição (onboarding), que vale na hora.
+- Baixar a meta durante o dia não recompensa o dia (o snapshot manda); subir não tira nada.
+
+### Elegibilidade, consistência e escolha
+
+- **Elegíveis:** Comuns ativos com regra ativa `mission_pool` (pool `common`), exceto peças
+  iniciais e Premium, que o jogador ainda não possui. Sem elegíveis: Siclos e XP creditados, sem escolha.
+- Meta (`daily_goals`, chave usuário+dia), Siclos (`siclos_ledger`, `goal:<dia>`), bônus de XP
+  (`xp_ledger`, `DAILY_GOAL_BONUS`/`goal:<dia>`) e opções são gravados na mesma transação da
+  finalização, sob a trava do jogador. Reenvio devolve o resultado registrado com o estado atual.
+- `claim_daily_goal_item(dia, item)`: só itens apresentados, no máximo um por meta, repetir a mesma
+  escolha não concede de novo. A escolha pendente fica no servidor e aparece no Início, na aba Ler,
+  na tela de recompensa (com animação de meta cumprida) e em `/reading/goal`, em qualquer aparelho.
+
+### Recompensas da regra anterior (v1)
+
+- Metas concedidas pela v1 (primeiro capítulo inédito do dia) **ficam como estão**
+  (`daily_goals.rule_version = 1`, snapshot de auditoria `legacy_v1`): Siclos, item e escolha pendente
+  mantidos; **nada é removido nem concedido de novo**.
+- Um dia que já tem meta (v1 ou v2) não recebe outra recompensa diária — inclusive o dia da troca de regra.
+- XP já registrado a 10 por capítulo não é recalculado; os 40 XP valem para capítulos novos. Metas v1
+  não recebem o bônus de 20 XP retroativamente.
+
+### Dia e fuso horário
+
+- **Dia = data civil no fuso de leitura do perfil** (`profiles.time_zone`), padrão **`America/Sao_Paulo`**.
+- **O aparelho sugere, o usuário decide:** o fuso do aparelho só é adotado sozinho se o usuário nunca
+  definiu um (`time_zone_source = 'default'`). Depois disso, um fuso diferente no aparelho aparece
+  como sugestão no Início ("Usar …"), e só muda com a confirmação (`set_time_zone`).
+- Trocas de fuso: no máximo uma a cada 24 h. Uma recompensa só pode cair num dia **posterior** ao da
+  última recompensa: trocar de fuso não "volta" a um dia sem meta nem gera recompensas retroativas.
+- Testado: virada à meia-noite em São Paulo e em Tóquio (os mesmos instantes caem em dias diferentes
+  conforme o fuso), meia-noite UTC não vira o dia.
 
 ## Regras de produto pendentes
 
 | Assunto | Situação |
 |---|---|
-| XP | **Não havia regra.** `xp_new_chapter = 10` e `xp_reread = 0` são provisórios, em `economy_rules` (muda sem código). |
+| XP | Definido: 40 por capítulo inédito, 0 por releitura, +20 ao cumprir a meta diária (`economy_rules`). |
 | Siclos | Só a meta diária credita (40). **Não há onde gastar**: não existe loja. |
-| Meta pessoal de N capítulos/dia | Exibida, mas sem recompensa própria na v1. |
+| Uso dos Siclos | Próximo módulo: Mercado dos Viajantes. |
 | 17 Raros "missão especial ou loja" | Só o Manto do Profeta tem missão curada. Os outros 17 precisam da definição das missões. |
 | 22 Santos | Regra vigente: só por marco curado validado pelo servidor. **Nenhum marco está cadastrado** — falta o conteúdo das missões curadas. O mecanismo já funciona (testado com marco de teste). |
 | Leitor digital | Falta texto bíblico licenciado. |

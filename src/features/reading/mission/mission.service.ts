@@ -26,6 +26,10 @@ export type MissionResult = {
   /** meta diária v1 (calculada no servidor, no fuso do perfil) */
   dailyGoal?: {
     day: string;
+    planMode?: 'daily_goal' | 'free';
+    target?: number | null;
+    remaining?: number | null;
+    xpBonus?: number;
     achievedNow: boolean;
     achievedToday: boolean;
     siclosAwarded: number;
@@ -40,6 +44,9 @@ export type DailyGoalState = {
   day: string;
   timeZone: string;
   siclosAwarded: number;
+  xpBonus?: number;
+  target?: number | null;
+  ruleVersion?: number;
   options: string[];
   /** opções que o jogador ainda não possui */
   available: string[];
@@ -52,9 +59,22 @@ export type DailyGoalState = {
 export type DailyGoalStatus = {
   today: string;
   timeZone: string;
+  timeZoneSource: 'default' | 'device' | 'user';
+  planMode: 'daily_goal' | 'free';
+  /** meta do dia (snapshot); null no ritmo livre sem missão escolhida */
+  target: number | null;
+  targetSource: 'preference' | 'free_choice' | 'legacy_v1';
+  needsFreeChoice: boolean;
+  canChooseFreeTarget: boolean;
+  newChaptersToday: number;
+  remaining: number | null;
   achievedToday: boolean;
+  goalRuleVersion: number | null;
+  reward: { siclos: number; xpBonus: number; commonChoices: number; xpPerChapter: number };
+  pendingChange: { planMode: 'daily_goal' | 'free'; target: number | null; effectiveDay: string } | null;
   siclosBalance: number;
   siclosPerGoal: number;
+  xpTotal: number;
   pending: DailyGoalState[];
 };
 
@@ -93,14 +113,28 @@ export const getDailyGoalStatus = async () => (await rpc('get_daily_goal_status'
 export const claimDailyGoalItem = async (day: string, itemId: string) =>
   (await rpc('claim_daily_goal_item', { p_day: day, p_item: itemId })) as ClaimResult;
 
-/** Informa o fuso do aparelho; o servidor decide se aceita (no máximo uma troca a cada 24 h). */
-export async function syncTimeZone(): Promise<string | null> {
-  let tz: string | undefined;
+export type TimeZoneSync = { timeZone: string; source: string; suggestion: string | null };
+
+export const deviceTimeZone = (): string | null => {
   try {
-    tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return Intl.DateTimeFormat().resolvedOptions().timeZone ?? null;
   } catch {
-    tz = undefined;
+    return null;
   }
+};
+
+/**
+ * Informa o fuso do aparelho. O servidor só o adota se o usuário nunca definiu um fuso;
+ * caso contrário devolve uma sugestão, sem trocar nada.
+ */
+export async function syncTimeZone(): Promise<TimeZoneSync | null> {
+  const tz = deviceTimeZone();
   if (!tz) return null;
-  return (await rpc('sync_time_zone', { p_time_zone: tz })) as string;
+  return (await rpc('sync_time_zone', { p_time_zone: tz })) as TimeZoneSync;
 }
+
+/** Escolha explícita do fuso de leitura (no máximo uma troca a cada 24 h). */
+export const setTimeZone = async (tz: string) => (await rpc('set_time_zone', { p_time_zone: tz })) as DailyGoalStatus;
+
+/** Ritmo livre: escolher a missão do dia (>= 1 capítulo) antes do primeiro capítulo inédito. */
+export const setDailyMissionTarget = async (target: number) => (await rpc('set_daily_mission_target', { p_target: target })) as DailyGoalStatus;

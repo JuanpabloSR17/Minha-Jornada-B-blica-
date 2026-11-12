@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { Tabs } from 'expo-router';
-import { syncTimeZone } from '@/features/reading/mission/mission.service';
 import { useTheme } from '@/theme/ThemeProvider';
 import { Icon, type IconName } from '@/ui';
 import { strings } from '@/i18n';
@@ -15,10 +13,6 @@ const TABS: { name: string; title: string; icon: IconName }[] = [
 
 export default function TabsLayout() {
   const { colors } = useTheme();
-  // o dia da meta diária usa o fuso do perfil; o app informa o fuso do aparelho
-  useEffect(() => {
-    syncTimeZone().catch(() => undefined);
-  }, []);
   return (
     <Tabs
       screenOptions={{

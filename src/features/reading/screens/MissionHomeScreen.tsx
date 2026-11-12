@@ -10,7 +10,7 @@ import bible from '../bible-books.json';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
 import { activeMs, formatClock, startMission, type MissionMode } from '../mission/session';
 import { useMissionSession } from '../mission/useMissionSession';
-import { PendingGoalBanner } from '../components/PendingGoalBanner';
+import { DailyGoalCard } from '../components/DailyGoalCard';
 
 type Book = { code: string; name: string; chapters: number; testament: 'AT' | 'NT' };
 const BOOKS = bible as Book[];
@@ -74,7 +74,7 @@ export function MissionHomeScreen() {
         </Card>
       ) : null}
 
-      <PendingGoalBanner showToday />
+      <DailyGoalCard session={session} hideStart />
 
       {loaded && session ? (
         <Card style={{ borderColor: session.status === 'pending' ? colors.danger : colors.primary }}>

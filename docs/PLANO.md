@@ -94,7 +94,9 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [x] Primeiro capítulo inédito do dia: 40 Siclos + escolha de 1 entre até 3 Comuns (servidor)
 - [x] Fuso do perfil (padrão America/Sao_Paulo), virada do dia testada, proteção contra troca de fuso
 - [x] Escolha pendente persistente, resgate idempotente, concorrência testada
-- [ ] Loja / uso de Siclos; recompensa ligada à meta pessoal de N capítulos
+- [x] v2: recompensa ao completar a meta pessoal (snapshot por dia, mudança vale amanhã, ritmo livre
+  com missão do dia, 40 XP por capítulo + 20 de bônus, fuso do aparelho só como sugestão)
+- [ ] Mercado dos Viajantes (uso dos Siclos) — próximo módulo
 
 ### Marco 3 — Leitura e recompensas
 

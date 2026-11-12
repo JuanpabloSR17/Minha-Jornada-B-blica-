@@ -60,9 +60,11 @@ recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).
   deixa a missão pendente para nova tentativa sem duplicar. Tela de recompensa com XP (provisório),
   progresso e itens concedidos. Lendário ao concluir o livro; missão especial de 1 Reis 19 dá o Manto
   do Profeta. Detalhes e regras pendentes: [`docs/MODO-MISSAO.md`](docs/MODO-MISSAO.md).
-- **Meta diária v1**: o primeiro capítulo inédito do dia (fuso do perfil, padrão America/Sao_Paulo)
-  dá 40 Siclos e a escolha gratuita de 1 entre até 3 Comuns; a escolha pendente fica no servidor e
-  volta ao reabrir o app.
+- **Meta diária**: a recompensa sai ao completar a **meta pessoal** do dia (1, 2, 3, 5 ou N capítulos
+  inéditos; no ritmo livre, a missão escolhida antes de começar): 40 Siclos + 20 XP de bônus + escolha
+  de 1 entre até 3 Comuns. Cada capítulo inédito dá 40 XP. A meta de cada dia é fixada (snapshot);
+  mudanças valem no dia seguinte. Fuso de leitura do perfil (padrão America/Sao_Paulo; o aparelho só
+  sugere). O Início mostra meta, capítulos de hoje, barra, recompensa prevista e quanto falta.
 - Contrato para o futuro Modo Missão (missões, marcos, mundos) — sem cronômetro e sem leitura ainda.
 
 Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
@@ -117,9 +119,9 @@ npm run web        # navegador
 | Comando | O que verifica |
 |---|---|
 | `npm run typecheck` | TypeScript estrito |
-| `npm test` | 87 testes: sessão do Modo Missão (tempo ativo, pausa, reabrir, pendente, UUID), catálogo oficial (144 itens, SHA-256, aliases, compatibilidade de visuais antigos e do AvatarRenderer), importador e reimportação idempotente, catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
-| `npm run test:db` | 329 verificações (inclui meta diária: primeiro inédito, segundo inédito, releitura, virada do dia e fuso, todos os Comuns obtidos, resgate duplo, finalizações e resgates simultâneos; Modo Missão: idempotência, releitura, Lendário no último capítulo, Manto do Profeta até a Coleção dos Profetas, finalizações simultâneas, catálogo oficial, aliases e conflitos de ID, migração de posse e visuais do rascunho, backfill sem duplicar, progresso bíblico, lendários por livro, Santos fora da loja, relíquias não equipáveis, missões/marcos sem eventos fictícios, reversões) num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
-| `npm run test:e2e` | Fluxo completo no navegador (32 etapas; inclui meta diária com escolha pendente após reabrir e queda de conexão no resgate; Modo Missão físico com pausa, reabrir, queda de conexão, Lendário, releitura e Manto do Profeta; cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
+| `npm test` | 88 testes: sessão do Modo Missão (tempo ativo, pausa, reabrir, pendente, UUID), catálogo oficial (144 itens, SHA-256, aliases, compatibilidade de visuais antigos e do AvatarRenderer), importador e reimportação idempotente, catálogo, conjunto de validação da arte, aleatório, camadas, assets ausentes, pipeline de imagens (PNG sintéticos), inventário, filtros, variantes, coleções, estado do guarda-roupa, sincronia catálogo ↔ SQL |
+| `npm run test:db` | 366 verificações (inclui meta diária v2: metas 1, 2, 3, 5 e 7, ritmo livre, mudança de meta durante o dia, capítulos além da meta, releitura, virada do dia em São Paulo e Tóquio, fuso sugerido × escolhido, regra v1 preservada, todos os Comuns obtidos, resgate duplo; Modo Missão: idempotência, releitura, Lendário no último capítulo, Manto do Profeta até a Coleção dos Profetas, finalizações simultâneas, catálogo oficial, aliases e conflitos de ID, migração de posse e visuais do rascunho, backfill sem duplicar, progresso bíblico, lendários por livro, Santos fora da loja, relíquias não equipáveis, missões/marcos sem eventos fictícios, reversões) num Postgres 16 descartável: RLS, privilégios, posse/slot, versões e conflitos, limites gratuito/Premium/expirado, motor de recompensas, evolução, coleções, perfil público, concorrência e reversão da migração |
+| `npm run test:e2e` | Fluxo completo no navegador (36 etapas; inclui Início com a meta pessoal, mudança de meta agendada, meta 6 cumprida com animação, escolha pendente após reabrir e em outro aparelho, queda de conexão no resgate; Modo Missão físico com pausa, reabrir, queda de conexão, Lendário, releitura e Manto do Profeta; cadastro → criador → reabrir/outro aparelho → conflito → guarda-roupa → item bloqueado → recompensas → variantes → coleções → limite de visuais → perfil público entre dois usuários), com capturas em 320, 390 e 1280 px |
 | `npm run assets:check` | Arquivos de `assets/avatars/` válidos e registro em dia |
 
 `test:db` e `test:e2e` precisam do Postgres 16 instalado localmente (`/usr/lib/postgresql/16/bin`).

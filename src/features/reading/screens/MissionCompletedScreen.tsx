@@ -17,6 +17,7 @@ import { missionStorage } from '../mission/storage';
 import type { MissionResult } from '../mission/mission.service';
 import { formatClock, nextChapter } from '../mission/session';
 import { GoalChoice } from '../components/GoalChoice';
+import { GoalCelebration } from '../components/GoalCelebration';
 import { bookName, refLabel } from './MissionHomeScreen';
 
 /** Recompensa pós-leitura (B02): confirmação do servidor, progresso e itens concedidos de fato. */
@@ -93,34 +94,40 @@ export function MissionCompletedScreen() {
         <AppText variant="caption" muted>{strings.mission.xpNote}</AppText>
       </Card>
 
-      {result.dailyGoal ? (
-        <Card style={{ borderColor: result.dailyGoal.achievedNow ? colors.primary : colors.border }}>
-          <AppText variant="heading">{strings.mission.goalTitle}</AppText>
-          {result.dailyGoal.achievedNow ? (
-            <Notice tone="success">{fmt(strings.mission.goalAchieved, { siclos: result.dailyGoal.siclosAwarded })}</Notice>
-          ) : result.alreadyCompleted && !result.dailyGoal.achievedToday ? (
-            <AppText muted>{strings.mission.goalRereadNote}</AppText>
-          ) : result.dailyGoal.achievedToday ? (
-            <AppText muted>{fmt(strings.mission.goalAlready, { n: result.dailyGoal.newChaptersToday })}</AppText>
-          ) : (
-            <AppText muted>{strings.mission.goalRereadNote}</AppText>
-          )}
-          <AppText variant="label">{fmt(strings.mission.goalBalance, { balance: result.dailyGoal.siclosBalance })}</AppText>
-          {result.dailyGoal.achievedNow && result.dailyGoal.goal ? (
-            result.dailyGoal.goal.options.length === 0 ? (
-              <AppText muted>{strings.mission.goalAllOwned}</AppText>
-            ) : result.dailyGoal.goal.chosenItem ? (
-              <Notice tone="success">{fmt(strings.mission.goalChosen, { item: getItem(result.dailyGoal.goal.chosenItem)?.name ?? result.dailyGoal.goal.chosenItem })}</Notice>
+      {result.dailyGoal ? (() => {
+        const dg = result.dailyGoal;
+        const goal = dg.goal;
+        return (
+          <Card style={{ borderColor: dg.achievedNow ? colors.primary : colors.border }}>
+            <AppText variant="heading">{strings.mission.goalTitle}</AppText>
+            {dg.achievedNow ? (
+              <GoalCelebration title={strings.mission.goalCelebrate}
+                subtitle={fmt(strings.mission.goalAchieved, { siclos: dg.siclosAwarded, xp: dg.xpBonus ?? 0 })} />
+            ) : dg.achievedToday ? (
+              <AppText muted>{fmt(strings.mission.goalAlready, { n: dg.newChaptersToday })}</AppText>
+            ) : dg.target == null ? (
+              <AppText muted>{strings.mission.goalNoTarget}</AppText>
             ) : (
-              <GoalChoice goal={result.dailyGoal.goal} onChange={(g) => {
-                const next = { ...result, dailyGoal: { ...result.dailyGoal!, goal: g } };
-                if (userId) void missionStorage.saveResult(userId, next);
-              }} />
-            )
-          ) : null}
-          <AppText variant="caption" muted>{fmt(strings.mission.goalRule, { tz: result.dailyGoal.goal?.timeZone ?? 'fuso do perfil' })}</AppText>
-        </Card>
-      ) : null}
+              <AppText muted>{fmt(strings.mission.goalProgress, { done: dg.newChaptersToday, target: dg.target, remaining: dg.remaining ?? 0 })}</AppText>
+            )}
+            {result.alreadyCompleted ? <AppText variant="caption" muted>{strings.mission.goalRereadNote}</AppText> : null}
+            <AppText variant="label">{fmt(strings.mission.goalBalance, { balance: dg.siclosBalance })}</AppText>
+            {dg.achievedNow && goal ? (
+              goal.options.length === 0 ? (
+                <AppText muted>{strings.mission.goalAllOwned}</AppText>
+              ) : goal.chosenItem ? (
+                <Notice tone="success">{fmt(strings.mission.goalChosen, { item: getItem(goal.chosenItem)?.name ?? goal.chosenItem })}</Notice>
+              ) : (
+                <GoalChoice goal={goal} onChange={(g) => {
+                  const next = { ...result, dailyGoal: { ...dg, goal: g } };
+                  if (userId) void missionStorage.saveResult(userId, next);
+                }} />
+              )
+            ) : null}
+            <AppText variant="caption" muted>{fmt(strings.mission.goalRule, { tz: goal?.timeZone ?? '—' })}</AppText>
+          </Card>
+        );
+      })() : null}
 
       {result.missions.map((m) => (
         <Notice key={m.id} tone="success">{fmt(strings.mission.missionDone, { name: m.name })}</Notice>
