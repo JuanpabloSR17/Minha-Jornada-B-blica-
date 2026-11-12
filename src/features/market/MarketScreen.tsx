@@ -30,8 +30,9 @@ export function MarketScreen() {
   const [market, setMarket] = useState<MarketState | null>(null);
   const [pending, setPending] = useState<PendingPurchase | null>(null);
   const [confirm, setConfirm] = useState<MarketItem | null>(null);
-  // conteúdo do diálogo continua visível durante a animação de fechar
-  const [shown, setShown] = useState<MarketItem | null>(null);
+  // conteúdo do diálogo (item e saldo do momento em que foi aberto) continua igual durante a
+  // animação de fechar, mesmo que o saldo mude com a resposta do servidor
+  const [shown, setShown] = useState<{ item: MarketItem; balance: number } | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<Msg | null>(null);
 
@@ -89,7 +90,7 @@ export function MarketScreen() {
         setMsg({ tone: 'info', text: fmt(m.alreadyOwned, { item: name(it.itemId) }) });
         return;
       }
-      setShown(now ?? it);
+      setShown({ item: now ?? it, balance: fresh.siclosBalance });
       setConfirm(now ?? it);
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
@@ -116,7 +117,7 @@ export function MarketScreen() {
   }
 
   const balance = market.siclosBalance;
-  const confirmItem = shown ? getItem(shown.itemId) : null;
+  const confirmItem = shown ? getItem(shown.item.itemId) : null;
 
   return (
     <Screen>
@@ -173,10 +174,10 @@ export function MarketScreen() {
       <ConfirmDialog
         visible={!!confirm}
         title={m.confirmTitle}
-        body={shown && confirmItem && shown.price != null
-          ? fmt(m.confirmBody, { item: confirmItem.name, rarity: strings.rarity[confirmItem.rarity], price: shown.price, balance, after: balance - shown.price })
+        body={shown && confirmItem && shown.item.price != null
+          ? fmt(m.confirmBody, { item: confirmItem.name, rarity: strings.rarity[confirmItem.rarity], price: shown.item.price, balance: shown.balance, after: shown.balance - shown.item.price })
           : ''}
-        confirmLabel={fmt(m.confirm, { price: shown?.price ?? 0 })}
+        confirmLabel={fmt(m.confirm, { price: shown?.item.price ?? 0 })}
         onConfirm={() => void buy()}
         onCancel={() => setConfirm(null)}
       />

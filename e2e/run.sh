@@ -23,6 +23,10 @@ PSQL=(psql -X -q -v ON_ERROR_STOP=1 -h "$WORK" -p "$PGPORT" -U postgres)
 "${PSQL[@]}" -d jb_test -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_test -f "$f"; done
 
+# a porta 54321 também é a do Supabase local (npx supabase start): os dois não podem rodar juntos
+if (exec 3<>/dev/tcp/127.0.0.1/54321) 2>/dev/null; then
+  echo "✘ a porta 54321 já está em uso (Supabase local ligado?). Rode: npx supabase stop"; exit 1
+fi
 node "$ROOT/e2e/fake-supabase.mjs" & PIDS+=($!)
 
 echo "→ build web apontando para o fake-supabase"

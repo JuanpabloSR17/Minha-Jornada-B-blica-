@@ -137,16 +137,15 @@ Como não há Docker neste ambiente, os testes usam `supabase/tests/00_supabase_
 e executa as consultas e funções **reais** das migrações como papel `authenticated`.
 Ambos são somente para teste. **Ainda não houve execução contra um projeto Supabase real.**
 
-### Validar num projeto Supabase real (pendente)
+### Validar num Supabase real
 
-1. Aplique todas as migrações (acima) num projeto de teste.
-2. Crie dois usuários pelo app e conclua o onboarding com os dois.
-3. No SQL Editor (como `postgres`), simule leitura **só no projeto de teste**:
-   `select private.record_event('<id do usuário>', 'CHAPTER_COMPLETED', 'chapter:GEN.37', '{"book":"GEN","chapter":37}');`
-4. No app, confira a Túnica de José como obtida no guarda-roupa e equipe.
-5. Para testar Premium: `insert into public.user_entitlements (user_id, plan, status, current_period_end)
-   values ('<id>', 'premium', 'active', now() + interval '30 days');` e crie mais de 3 visuais.
-6. Confira com o segundo usuário que o perfil só aparece quando o primeiro o torna público.
+`bash e2e/supabase-real/run.sh` sobe o **Supabase local oficial** (CLI + Docker: Postgres 17 do Supabase,
+Auth, PostgREST e Kong), aplica as migrações a partir da versão anterior ao Mercado com dados reais,
+valida permissões, roda o percurso leitura → meta diária → compra → inventário no navegador e a bateria
+SQL. Resultado, divergências corrigidas e o que falta para um projeto **hospedado** de testes:
+[`docs/VALIDACAO-SUPABASE.md`](docs/VALIDACAO-SUPABASE.md). Um projeto hospedado ainda não foi validado.
+Para Premium manual: `insert into public.user_entitlements (user_id, plan, status, current_period_end)
+values ('<id>', 'premium', 'active', now() + interval '30 days');` (só em projeto de teste).
 
 ## Estrutura
 

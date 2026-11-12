@@ -11,3 +11,4 @@ android/
 .DS_Store
 supabase/.temp/
 e2e/screenshots/
+e2e/supabase-real/.state.json

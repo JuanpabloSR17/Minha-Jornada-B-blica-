@@ -218,7 +218,8 @@ select tests.assert_raises(
 
 -- Item que sai do catálogo: posse é mantida
 update public.cosmetic_items set is_active = false where id = 'oil-lamp';
-select tests.assert((select count(*) from public.user_items where item_id = 'oil-lamp') = 1, 'posse mantida quando item é desativado');
+-- conta só a posse da conta deste teste (o banco pode ter outros jogadores, como num Supabase de testes)
+select tests.assert((select count(*) from public.user_items where item_id = 'oil-lamp' and user_id = '11111111-1111-1111-1111-111111111111') = 1, 'posse mantida quando item é desativado');
 
 -- ===========================================================================
 -- Item bíblico (catálogo v2): Túnica de José
