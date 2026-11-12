@@ -133,3 +133,26 @@ select tests.assert(
 commit;
 
 update public.economy_rules set value = 60 where key = 'max_missions_per_10min';
+
+-- ---------------------------------------------------------------- missão cadastrada depois da leitura
+-- Quem leu a passagem antes de a missão existir cumpre a missão relendo no Modo Missão:
+-- recebe o item, mas não o XP da primeira leitura (releitura = 0 XP) nem conta capítulo novo.
+insert into auth.users (id, email) values ('b3333333-0000-0000-0000-000000000003', 'missao_antiga@teste.local');
+do $$ begin
+  perform set_config('request.jwt.claim.sub', 'b3333333-0000-0000-0000-000000000003', true);
+  perform public.claim_profile('missao_antiga', 'Missão Antiga');
+end $$;
+update public.reward_triggers set is_active = false where id = 'missao_manto_do_profeta';
+select tests.assert(
+  (select (r ->> 'xpAwarded')::int = 40 and r -> 'missions' = '[]'::jsonb and not (r -> 'granted' ? 'cloak-elijah')
+   from tests.finish('antes-da-missao', '1KI', 19, 300, 'physical', 'b3333333-0000-0000-0000-000000000003') r),
+  'leitura de 1 Reis 19 antes de a missão existir: 40 XP, sem manto');
+update public.reward_triggers set is_active = true where id = 'missao_manto_do_profeta';
+select tests.assert(
+  (select (r ->> 'alreadyCompleted')::boolean and (r ->> 'xpAwarded')::int = 0 and r -> 'granted' ? 'cloak-elijah'
+     and r -> 'missions' -> 0 ->> 'id' = 'missao_manto_do_profeta'
+     and (r ->> 'chaptersCompleted')::int = 1
+   from tests.finish('depois-da-missao', '1KI', 19, 300, 'physical', 'b3333333-0000-0000-0000-000000000003') r),
+  'relendo no Modo Missão cumpre a missão e recebe o manto, sem repetir o XP nem contar capítulo novo');
+select tests.assert((select coalesce(sum(amount), 0) from public.xp_ledger where user_id = 'b3333333-0000-0000-0000-000000000003') = 40,
+  'XP total continua 40 (só a primeira leitura)');
