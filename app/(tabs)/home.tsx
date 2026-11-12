@@ -37,6 +37,7 @@ export default function Home() {
             {fmt(strings.home.progress, { chapters: overview.chaptersCompleted, total: overview.totalChapters, xp: overview.xpTotal, siclos: overview.siclosBalance })}
           </AppText>
         ) : null}
+        <Button title={strings.market.open} onPress={() => router.push('/market')} />
         <View style={styles.row}>
           <Button compact variant="secondary" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} style={styles.flex} />
           <Button compact title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />

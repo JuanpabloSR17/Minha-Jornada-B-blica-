@@ -96,7 +96,7 @@ sugerida: **Expo + TypeScript + Expo Router + Supabase**.
 - [x] Escolha pendente persistente, resgate idempotente, concorrência testada
 - [x] v2: recompensa ao completar a meta pessoal (snapshot por dia, mudança vale amanhã, ritmo livre
   com missão do dia, 40 XP por capítulo + 20 de bônus, fuso do aparelho só como sugestão)
-- [ ] Mercado dos Viajantes (uso dos Siclos) — próximo módulo
+- [x] Mercado dos Viajantes v1 (docs/MERCADO.md)
 
 ### Marco 3 — Leitura e recompensas
 

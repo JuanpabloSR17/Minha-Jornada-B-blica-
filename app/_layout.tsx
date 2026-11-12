@@ -89,6 +89,7 @@ function RootNavigator() {
           <Stack.Screen name="reading/mission" />
           <Stack.Screen name="reading/completed" />
           <Stack.Screen name="reading/goal" />
+          <Stack.Screen name="market" />
         </Stack.Protected>
         <Stack.Screen name="auth/callback" />
         <Stack.Screen name="auth/update-password" />

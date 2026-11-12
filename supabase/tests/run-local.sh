@@ -103,11 +103,54 @@ R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.user_ite
 if [ "$R" != "1,1" ]; then echo "✘ concorrência do resgate: itens,escolhas=$R (esperado 1,1)"; exit 1; fi
 echo "  ok  3 finalizações simultâneas com meta 2: uma recompensa (40 Siclos, 1 bônus); resgates simultâneos concedem um único item"
 
+echo "→ concorrência no Mercado (dois aparelhos: mesmo saldo, mesma compra, mesmo item, compra × escolha gratuita)"
+MK="insert into auth.users (id) values (:'u'); insert into public.profiles (id, username, display_name) values (:'u', :'n', 'Mercado');
+  insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values (:'u', 'TEST_GRANT', 'fixture', :'s');"
+MKT=(-o /dev/null -f "$ROOT/supabase/tests/concurrency_market.sql")
+# 1. dois itens diferentes disputando o mesmo saldo (150; preços 80 e 120)
+U1=c1000000-0000-0000-0000-0000000000c1
+"${PSQL[@]}" -d jb_test -v u=$U1 -v n=mercado_saldo -v s=150 <<< "$MK" >/dev/null
+"${PSQL[@]}" -d jb_test -v uid=$U1 -v pid=c1000000-0000-4000-8000-000000000001 -v item=common_tunica_de_linho_cru "${MKT[@]}" 2>/dev/null & P1=$!
+"${PSQL[@]}" -d jb_test -v uid=$U1 -v pid=c1000000-0000-4000-8000-000000000002 -v item=common_vara_de_pastor "${MKT[@]}" 2>/dev/null & P2=$!
+wait $P1; wait $P2
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.market_purchases where user_id='$U1') || ',' ||
+  (select sum(amount) from public.siclos_ledger where user_id='$U1') || ',' ||
+  (select count(*) from public.user_items where user_id='$U1' and item_id in ('common_tunica_de_linho_cru','common_vara_de_pastor'))")
+case "$R" in "1,70,1"|"1,30,1") ;; *) echo "✘ Mercado: compras,saldo,itens=$R (esperado 1 compra e saldo 70 ou 30)"; exit 1 ;; esac
+# 2. mesma compra reenviada por dois aparelhos + 3. mesmo item com IDs de compra diferentes
+U2=c2000000-0000-0000-0000-0000000000c2
+"${PSQL[@]}" -d jb_test -v u=$U2 -v n=mercado_reenvio -v s=500 <<< "$MK" >/dev/null
+"${PSQL[@]}" -d jb_test -v uid=$U2 -v pid=c2000000-0000-4000-8000-000000000001 -v item=common_cesto_de_junco "${MKT[@]}" 2>/dev/null & P1=$!
+"${PSQL[@]}" -d jb_test -v uid=$U2 -v pid=c2000000-0000-4000-8000-000000000001 -v item=common_cesto_de_junco "${MKT[@]}" 2>/dev/null & P2=$!
+"${PSQL[@]}" -d jb_test -v uid=$U2 -v pid=c2000000-0000-4000-8000-000000000002 -v item=common_cesto_de_junco "${MKT[@]}" 2>/dev/null & P3=$!
+wait $P1; wait $P2; wait $P3
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.market_purchases where user_id='$U2') || ',' ||
+  (select sum(amount) from public.siclos_ledger where user_id='$U2') || ',' ||
+  (select count(*) from public.user_items where user_id='$U2' and item_id = 'common_cesto_de_junco')")
+if [ "$R" != "1,320,1" ]; then echo "✘ Mercado (reenvio/dois aparelhos): compras,saldo,itens=$R (esperado 1,320,1)"; exit 1; fi
+# 4. compra × escolha gratuita do mesmo item ao mesmo tempo
+U3=c3000000-0000-0000-0000-0000000000c3
+"${PSQL[@]}" -d jb_test -v u=$U3 -v n=mercado_escolha -v s=500 <<< "$MK" >/dev/null
+"${PSQL[@]}" -d jb_test -c "insert into public.reading_preferences (user_id, plan_mode, target_chapters_per_day) values ('$U3', 'daily_goal', 1);
+  set role authenticated; select set_config('request.jwt.claim.sub', '$U3', false);
+  select public.complete_reading_mission('c3000000-0000-4000-8000-000000000009', 'MAT', 5, 'physical', now() - interval '5 minutes', 60);" >/dev/null
+OPT=$("${PSQL[@]}" -d jb_test -At -c "select options[1] from public.daily_goals where user_id='$U3'")
+"${PSQL[@]}" -d jb_test -v uid=$U3 -v pid=c3000000-0000-4000-8000-000000000001 -v item=$OPT "${MKT[@]}" 2>/dev/null & P1=$!
+"${PSQL[@]}" -d jb_test -v uid=$U3 -v pid=claim -v item=$OPT "${MKT[@]}" 2>/dev/null & P2=$!
+wait $P1; wait $P2
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.user_items where user_id='$U3' and item_id='$OPT') || ',' ||
+  ((select count(*) from public.market_purchases where user_id='$U3') + (select count(*) from public.daily_goals where user_id='$U3' and chosen_item is not null)) || ',' ||
+  (select sum(amount) from public.siclos_ledger where user_id='$U3') || ',' ||
+  (select price from public.market_purchases where user_id='$U3' union all select 0 limit 1)")
+IFS=, read -r OWN WINNERS BAL PRICE <<< "$R"
+if [ "$OWN" != "1" ] || [ "$WINNERS" != "1" ] || [ "$BAL" != "$((540 - PRICE))" ]; then echo "✘ Mercado × escolha gratuita: posse,vencedores,saldo,preço=$R"; exit 1; fi
+echo "  ok  Mercado: saldo disputado gera 1 compra, reenvio em 2 aparelhos 1 débito, compra × escolha gratuita 1 item"
+
 echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*|20261119*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -122,7 +165,7 @@ echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*) continue ;; esac
+  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*|20261119*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback2 -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
@@ -137,7 +180,7 @@ echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação
 "${PSQL[@]}" -c "create database jb_rollback3" postgres
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261116*|20261117*|20261118*) continue ;; esac
+  case "$(basename "$f")" in 20261116*|20261117*|20261118*|20261119*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
@@ -155,7 +198,7 @@ echo "→ reversão manual do Modo Missão (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback4" postgres
 "${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261117*|20261118*) continue ;; esac
+  case "$(basename "$f")" in 20261117*|20261118*|20261119*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
@@ -173,7 +216,7 @@ echo "→ reversão manual da meta diária (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback5" postgres
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261118*) continue ;; esac
+  case "$(basename "$f")" in 20261118*|20261119*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/rollbacks/20261117000100_daily_goal.down.sql"
@@ -188,7 +231,10 @@ echo "  ok  reversão da meta diária remove só as tabelas da meta, e a migraç
 echo "→ reversão manual da meta diária v2 (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback6" postgres
 "${PSQL[@]}" -d jb_rollback6 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
-for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$f"; done
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  case "$(basename "$f")" in 20261119*) continue ;; esac
+  "${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$f"
+done
 "${PSQL[@]}" -d jb_rollback6 -c "insert into auth.users (id) values ('f6666666-0000-0000-0000-000000000006');
   insert into public.profiles (id, username, display_name) values ('f6666666-0000-0000-0000-000000000006', 'reverte_6', 'Reverte');
   insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values ('f6666666-0000-0000-0000-000000000006', 'DAILY_GOAL', 'goal:2026-11-20', 40);" >/dev/null
@@ -199,4 +245,21 @@ if [ "$LEFT" != "0,1" ]; then echo "✘ reversão da meta v2: daily_targets,sicl
 X=$("${PSQL[@]}" -d jb_rollback6 -At -c "select value from public.economy_rules where key = 'xp_new_chapter'")
 if [ "$X" != "40" ]; then echo "✘ reaplicação da meta v2"; exit 1; fi
 echo "  ok  reversão da meta v2 preserva Siclos, e as migrações podem ser reaplicadas"
+
+echo "→ reversão manual do Mercado dos Viajantes (banco completo) e reaplicação"
+"${PSQL[@]}" -c "create database jb_rollback7" postgres
+"${PSQL[@]}" -d jb_rollback7 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
+for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback7 -o /dev/null -f "$f"; done
+"${PSQL[@]}" -d jb_rollback7 -c "insert into auth.users (id) values ('f7777777-0000-0000-0000-000000000007');
+  insert into public.profiles (id, username, display_name) values ('f7777777-0000-0000-0000-000000000007', 'reverte_7', 'Reverte');
+  insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values ('f7777777-0000-0000-0000-000000000007', 'TEST_GRANT', 'x', 100);
+  set role authenticated; select set_config('request.jwt.claim.sub', 'f7777777-0000-0000-0000-000000000007', false);
+  select public.purchase_market_item('77777777-0000-4000-8000-000000000001', 'common_tunica_de_linho_cru');" >/dev/null
+"${PSQL[@]}" -d jb_rollback7 -f "$ROOT/supabase/rollbacks/20261119000100_travelers_market.down.sql"
+LEFT=$("${PSQL[@]}" -d jb_rollback7 -At -c "select (select count(*) from pg_tables where tablename = 'market_purchases') || ',' ||
+  (select count(*) from public.user_items where user_id = 'f7777777-0000-0000-0000-000000000007' and item_id = 'common_tunica_de_linho_cru') || ',' ||
+  (select sum(amount) from public.siclos_ledger where user_id = 'f7777777-0000-0000-0000-000000000007')")
+if [ "$LEFT" != "0,1,20" ]; then echo "✘ reversão do Mercado: tabela,item,saldo=$LEFT (esperado 0,1,20)"; exit 1; fi
+"${PSQL[@]}" -d jb_rollback7 -o /dev/null -f "$ROOT/supabase/migrations/20261119000100_travelers_market.sql"
+echo "  ok  reversão do Mercado mantém itens comprados e saldo, e a migração pode ser reaplicada"
 echo "✔ Todos os testes de banco passaram."
