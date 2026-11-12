@@ -3,7 +3,7 @@
 # rodando localmente pela CLI oficial (Postgres do Supabase, Auth/GoTrue, PostgREST e Kong em Docker).
 # Fases:
 #   1. ambiente limpo com as migrações ANTERIORES ao Mercado + dados reais (contas, metas, escolha)
-#   2. aplica a migração do Mercado sobre esses dados e confere saldos, itens e metas
+#   2. aplica o Mercado e as migrações seguintes (ex.: catálogo v7), na ordem, sobre esses dados
 #   3. permissões: operações autorizadas, escrita direta bloqueada, isolamento entre contas
 #   4. navegador: meta do dia, escolha gratuita, compra, inventário, resposta perdida e saldo disputado
 #   5. bateria SQL do repositório (10–70) num banco recém-recriado com todas as migrações
@@ -13,20 +13,25 @@ ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 HERE="$ROOT/e2e/supabase-real"
 WORK="$(mktemp -d)"
 MARKET=20261119000100_travelers_market.sql
+# o Mercado e tudo o que vem depois dele ficam para a fase 2 (aplicados na ordem do repositório)
+LATER=()
+for f in "$ROOT"/supabase/migrations/*.sql; do
+  b=$(basename "$f"); [[ "$b" > "$MARKET" || "$b" == "$MARKET" ]] && LATER+=("$b")
+done
 export SHOTS_DIR="${SHOTS_DIR:-$ROOT/e2e/screenshots}"
 mkdir -p "$SHOTS_DIR"
 SB=(npx --yes supabase@3.1.0)
 SERVER=""
 restore() {
-  [ -f "$WORK/$MARKET" ] && mv "$WORK/$MARKET" "$ROOT/supabase/migrations/" || true
+  for b in "${LATER[@]}"; do [ -f "$WORK/$b" ] && mv "$WORK/$b" "$ROOT/supabase/migrations/"; done
   [ -n "$SERVER" ] && kill "$SERVER" 2>/dev/null || true
 }
 trap restore EXIT
 cd "$ROOT"
 
-echo "→ 1. Supabase local limpo, sem a migração do Mercado"
+echo "→ 1. Supabase local limpo, sem o Mercado e as migrações seguintes: ${LATER[*]}"
 "${SB[@]}" stop --no-backup >/dev/null 2>&1 || true
-mv "supabase/migrations/$MARKET" "$WORK/"
+for b in "${LATER[@]}"; do mv "supabase/migrations/$b" "$WORK/"; done
 "${SB[@]}" start >/dev/null
 "${SB[@]}" status -o json 2>/dev/null > "$WORK/status.json"
 export SUPABASE_URL="$(node -e "console.log(require('$WORK/status.json').API_URL)")"
@@ -35,8 +40,8 @@ export DB_URL="$(node -e "console.log(require('$WORK/status.json').DB_URL)")"
 export STATE_FILE="$WORK/state.json"
 node "$HERE/seed-pre-market.cjs"
 
-echo "→ 2. migração do Mercado sobre os dados existentes"
-mv "$WORK/$MARKET" "supabase/migrations/"
+echo "→ 2. Mercado e migrações seguintes sobre os dados existentes"
+for b in "${LATER[@]}"; do mv "$WORK/$b" "supabase/migrations/"; done
 "${SB[@]}" migration up >/dev/null
 node "$HERE/verify-upgrade.cjs"
 

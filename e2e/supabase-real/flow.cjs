@@ -152,6 +152,42 @@ async function login(page, email) {
     await shot(page, 'real-06-race-a');
     await shot(B.page, 'real-06-race-b');
     ok(`saldo disputado em dois aparelhos (${b3}: ${z.name} ${z.price} × ${w.name} ${w.price}): um aparelho comprou ${winner.name}, o outro recebeu "saldo insuficiente"; saldo final ${b3 - winner.price}`);
+
+    // ------------------------------------------------ missão de Êxodo 28 (catálogo v7) com o Peitoral já obtido
+    // posse anterior do Peitoral (ambiente de testes: o item ainda não tem outra rota de obtenção)
+    await conn.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'rare_peitoral_das_doze_pedras', 'test:obtido-antes')`, [uid]);
+    const RARES = ['rare_estola_sacerdotal', 'rare_peitoral_das_doze_pedras', 'rare_turbante_do_sacerdote'];
+    const rareRows = async () => (await conn.query(`select item_id, count(*)::int n from user_items where user_id = $1 and item_id = any($2) group by item_id order by item_id`, [uid, RARES])).rows;
+    const xpBefore = Number((await conn.query(`select coalesce(sum(amount),0) x from xp_ledger where user_id = $1`, [uid])).rows[0].x);
+    await page.goto(`${APP}/read`);
+    await page.getByRole('button', { name: /Missão especial: as vestes do sumo sacerdote/ }).click();
+    await page.getByRole('button', { name: 'Iniciar missão: Êxodo 28' }).click();
+    await page.waitForTimeout(1200);
+    // a resposta da finalização se perde depois de o servidor registrar
+    await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+    await page.getByRole('button', { name: 'Finalizar missão' }).click();
+    await page.getByRole('button', { name: 'Concluí a leitura' }).click();
+    await page.getByText('Finalização pendente').first().waitFor();
+    await page.unroute('**/rest/v1/rpc/complete_reading_mission');
+    assert.deepEqual(await rareRows(), RARES.map((item_id) => ({ item_id, n: 1 })), 'servidor concedeu Estola e Turbante uma vez; Peitoral continua único');
+    await page.reload();
+    await page.getByText('Finalização pendente').first().waitFor();
+    await page.getByRole('button', { name: 'Tentar novamente' }).click();
+    await page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
+    await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
+    await page.getByText('Estola Sacerdotal', { exact: true }).waitFor();
+    await page.getByText('Turbante do Sacerdote', { exact: true }).waitFor();
+    assert.equal(await page.getByText('Peitoral das Doze Pedras', { exact: true }).count(), 0, 'Peitoral não aparece como concedido');
+    assert.equal(await page.getByRole('button', { name: 'Equipar agora' }).count(), 2);
+    await shot(page, 'real-07-exodus28');
+    const ex = (await conn.query(`select (select count(*)::int from reading_sessions where user_id = $1 and book_code = 'EXO' and chapter = 28) s,
+      (select count(*)::int from reward_events re join user_items ui on ui.user_id = re.user_id and ui.item_id = re.item_id
+         where re.user_id = $1 and re.item_id = any($2)) r,
+      (select count(*)::int from private.domain_events where user_id = $1 and event_type = 'MISSION_COMPLETED' and source_event_id = 'mission:missao_vestes_do_sumo_sacerdote') m,
+      (select coalesce(sum(amount),0)::int from xp_ledger where user_id = $1) xp`, [uid, RARES])).rows[0];
+    assert.deepEqual(ex, { s: 1, r: 2, m: 1, xp: xpBefore + 40 }, 'uma sessão, duas recompensas (Estola e Turbante), uma missão, 40 XP');
+    assert.deepEqual(await rareRows(), RARES.map((item_id) => ({ item_id, n: 1 })), 'reenvio não duplicou nada');
+    ok('Êxodo 28 com o Peitoral já obtido: tela e banco mostram só Estola e Turbante; resposta perdida e reenvio sem duplicar (1 sessão, 1 missão, 2 recompensas, 40 XP)');
   } finally {
     await browser.close();
     await conn.end();

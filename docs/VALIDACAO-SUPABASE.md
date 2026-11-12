@@ -21,13 +21,24 @@ NODE_PATH=$(npm root -g) bash e2e/supabase-real/run.sh
 
 | Fase | O que faz | Arquivo |
 |---|---|---|
-| 1 | Recria o ambiente **só com as migrações anteriores ao Mercado** (14), cria duas contas comuns pela API de Auth (cadastro, identidade, personagem e meta 1 pelo app) e registra metas de dias anteriores pelo caminho do servidor com **datas controladas** (`private.complete_reading_mission_at`, 09:00 de São Paulo de cada dia); Ana resgata uma escolha gratuita | `seed-pre-market.cjs` |
-| 2 | Aplica `20261119000100_travelers_market.sql` sobre esses dados (`supabase migration up`) e confere saldos, itens e metas; a vitrine mostra o item já resgatado como obtido | `verify-upgrade.cjs` |
+| 1 | Recria o ambiente **só com as migrações anteriores ao Mercado** (o Mercado e as seguintes, como o catálogo v7, ficam para a fase 2), cria duas contas comuns pela API de Auth (cadastro, identidade, personagem e meta 1 pelo app) e registra metas de dias anteriores pelo caminho do servidor com **datas controladas** (`private.complete_reading_mission_at`, 09:00 de São Paulo de cada dia); Ana resgata uma escolha gratuita | `seed-pre-market.cjs` |
+| 2 | Aplica o Mercado e as migrações seguintes, na ordem (`supabase migration up`), confere que todas as migrações do repositório estão registradas, que o banco está no mesmo catálogo do app (v7, 14 missões) e que saldos, itens e metas foram preservados | `verify-upgrade.cjs` |
 | 3 | Conta comum: operações autorizadas; escrita direta bloqueada (saldo, posse, compras, metas, XP, preços, regras); isolamento entre contas; visitante sem login | `permissions.cjs` |
-| 4 | App web apontando para este Supabase: meta do dia pela tela, escolha gratuita, compra, saldo, guarda-roupa, resposta perdida e duas compras disputando o saldo em dois aparelhos (interface + banco) | `flow.cjs` |
+| 4 | App web apontando para este Supabase: meta do dia pela tela, escolha gratuita, compra, saldo, guarda-roupa, resposta perdida, duas compras disputando o saldo em dois aparelhos e a missão de Êxodo 28 com o Peitoral já obtido (resposta perdida e reenvio) — interface + banco | `flow.cjs` |
 | 5 | Bateria SQL do repositório (`supabase/tests/10`–`70`) num banco recriado com todas as 15 migrações | `run.sh` |
 
-## Resultado (última execução completa)
+## Resultado — catálogo v7 (última execução completa, 16 migrações)
+
+| Cenário | Resultado |
+|---|---|
+| Migrações | ✔ 14 antes do Mercado; depois Mercado e catálogo v7 sobre os dados (16 registradas, iguais às do repositório); banco no catálogo v7 com 14 missões |
+| Atualização com saldo e itens | ✔ Ana 240 / 6 metas / 36 itens e Bia 120 preservados; vitrine com 25 itens |
+| Permissões e isolamento | ✔ iguais à execução anterior (13 escritas diretas bloqueadas, nenhuma leitura entre contas, visitante sem acesso) |
+| Meta, compra, inventário, resposta perdida, saldo disputado | ✔ iguais à execução anterior |
+| Êxodo 28 com o Peitoral já obtido | ✔ tela mostra só Estola e Turbante; banco: 1 sessão, 1 missão, 2 recompensas, 40 XP; resposta perdida + reenvio sem duplicar |
+| Bateria SQL no Postgres do Supabase | ✔ 422 verificações (10–80) |
+
+## Resultado da execução anterior (catálogo v6, commit f6cca4d)
 
 | Cenário | Resultado |
 |---|---|

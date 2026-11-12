@@ -7,6 +7,9 @@ const { signIn, rpc, db, loadState, ok } = require('./lib.cjs');
   const conn = db();
   await conn.connect();
   const migrated = (await conn.query(`select version from supabase_migrations.schema_migrations order by version`)).rows.map((r) => r.version);
+  const local = require('node:fs').readdirSync(require('node:path').join(__dirname, '../../supabase/migrations'))
+    .filter((f) => f.endsWith('.sql')).map((f) => f.split('_')[0]).sort();
+  assert.deepEqual(migrated, local, 'todas as migrações do repositório registradas, na ordem');
   assert.ok(migrated.includes('20261119000100'), 'migração do Mercado registrada');
   for (const who of ['ana', 'bia']) {
     const now = (await conn.query(
@@ -15,8 +18,14 @@ const { signIn, rpc, db, loadState, ok } = require('./lib.cjs');
               (select count(*)::int from daily_goals where user_id = $1) goals`, [s[who].uid])).rows[0];
     assert.deepEqual(now, s.before[who], `${who}: saldo, itens e metas preservados`);
   }
+  const v = (await conn.query(`select max(catalog_version)::int v from cosmetic_items`)).rows[0].v;
+  const missions = (await conn.query(`select count(*)::int n from reward_triggers where kind = 'mission' and is_active and book_code is not null`)).rows[0].n;
+  const catalog = require('../../src/features/avatar/catalog/catalog.json');
+  assert.equal(v, catalog.version, 'banco no mesmo catálogo do app');
+  assert.equal(missions, catalog.missions.length, 'missões do catálogo cadastradas');
   await conn.end();
-  ok(`atualização: ${migrated.length} migrações registradas; saldos (Ana ${s.before.ana.siclos}, Bia ${s.before.bia.siclos}), itens e metas preservados`);
+  ok(`catálogo v${v} com ${missions} missões especiais ativas`);
+  ok(`atualização: ${migrated.length} migrações registradas (até ${migrated.at(-1)}); saldos (Ana ${s.before.ana.siclos}, Bia ${s.before.bia.siclos}), itens e metas preservados`);
 
   const { c } = await signIn(s.ana.email);
   const m = await rpc(c, 'get_market', {});
