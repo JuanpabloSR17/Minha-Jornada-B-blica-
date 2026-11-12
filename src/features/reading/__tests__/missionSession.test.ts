@@ -58,3 +58,17 @@ describe('sessão de missão', () => {
     expect(nextChapter(bible, 'REV', 22)).toBeNull();
   });
 });
+
+describe('sessão vinculada a um marco dos Santos', () => {
+  it('o marco fica na sessão ao pausar, reabrir o app e após falha na finalização', () => {
+    let s = startMission({ userId: 'u1', book: 'EXO', chapter: 25, mode: 'physical', milestone: 'marco_mobilia_do_tabernaculo' }, T0, 'sess-m');
+    s = pauseMission(s, T0 + 10_000);
+    s = JSON.parse(JSON.stringify(s)); // reabrir o app
+    s = resumeMission(s, T0 + 20_000);
+    s = markPending(freezeForFinish(s, T0 + 30_000), 'sem conexão');
+    s = restoreMission(JSON.parse(JSON.stringify(s)));
+    expect(s.milestone).toBe('marco_mobilia_do_tabernaculo');
+    expect(s.id).toBe('sess-m');
+    expect(startMission({ userId: 'u1', book: 'EXO', chapter: 16, mode: 'physical' }, T0, 'x').milestone).toBeNull();
+  });
+});

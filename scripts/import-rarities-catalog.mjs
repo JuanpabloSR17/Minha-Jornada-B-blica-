@@ -244,9 +244,18 @@ export function reconcile(catalog, imported, history = historyIds()) {
       out.description = out.description.replace(REP_PREFIX[out.representation], REP_PREFIX[override.representation]);
       out.representation = override.representation;
     }
+    if (override?.meaning && override.meaning !== out.meaning) {
+      out.description = out.meaning && out.description.startsWith(`${out.meaning}. `)
+        ? `${override.meaning}. ${out.description.slice(out.meaning.length + 2)}`
+        : `${override.meaning}. ${out.description}`;
+      out.meaning = override.meaning;
+    }
     // missão curada do Modo Missão (catalog.missions); uma missão pode conceder vários itens
     const mission = (catalog.missions ?? []).find((m) => missionItems(m).includes(keepId) || missionItems(m).includes(off.id));
-    if (mission && !out.starter) {
+    if (mission && !out.starter && mission.kind === 'milestone') {
+      // marco dos Santos: só a sessão vinculada ao marco, escolhida na aba Ler
+      out.unlock = { type: 'milestone_reached', payload: { milestone: mission.id, reference: out.scriptureRef }, label: `Marco especial: escolha “${mission.name}” na aba Ler e leia ${bookName(mission.book)} ${mission.chapter}` };
+    } else if (mission && !out.starter) {
       out.unlock = { type: 'mission_completed', payload: { mission: mission.id }, label: `Conclua a missão especial de ${bookName(mission.book)} ${mission.chapter} no Modo Missão` };
     }
     return out;

@@ -17,6 +17,8 @@ export type MissionResult = {
   /** itens efetivamente concedidos por esta missão */
   granted: string[];
   missions: { id: string; kind: 'mission' | 'milestone'; name: string }[];
+  /** marco vinculado a esta sessão (null = leitura comum) */
+  milestone?: string | null;
   bookJustCompleted: boolean;
   chaptersCompleted: number;
   totalChapters: number;
@@ -102,6 +104,8 @@ export async function completeMission(s: MissionSession): Promise<MissionResult>
     p_mode: s.mode,
     p_started_at: s.startedAt,
     p_active_seconds: activeSeconds(s),
+    // o mesmo marco vai em todo reenvio: o servidor recusa trocar o marco de uma sessão
+    p_milestone: s.milestone ?? null,
   })) as MissionResult;
 }
 

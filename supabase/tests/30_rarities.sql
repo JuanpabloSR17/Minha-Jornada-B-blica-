@@ -124,17 +124,16 @@ commit;
 
 -- ---------------------------------------------------------------- contrato das missões e marcos
 select tests.assert_raises($$select tests.ev8('MISSION_COMPLETED', 'mission:mission-lost-coin', '{"mission":"mission-lost-coin"}')$$, 'unknown_trigger', 'missão não cadastrada é recusada (sem eventos fictícios)');
-select tests.assert_raises($$select tests.ev8('MILESTONE_REACHED', 'milestone:holy_mana_do_deserto', '{"milestone":"holy_mana_do_deserto"}')$$, 'unknown_trigger', 'marco santo não cadastrado é recusado');
+select tests.assert_raises($$select tests.ev8('MILESTONE_REACHED', 'milestone:marco_inexistente', '{"milestone":"marco_inexistente"}')$$, 'unknown_trigger', 'marco não cadastrado é recusado');
 select tests.assert_raises($$select tests.ev8('WORLD_COMPLETED', 'world:x', '{"world":"x"}')$$, 'unknown_trigger', 'mundo não cadastrado é recusado');
 select tests.assert(
   (select count(*) from public.reward_triggers where kind = 'mission' and is_active and book_code is not null) = 14
-  and not exists (select 1 from public.reward_triggers where kind = 'milestone'),
-  'missões especiais dos Raros cadastradas (14, incluindo o Manto do Profeta); nenhum marco santo');
+  and (select count(*) from public.reward_triggers where kind = 'milestone' and is_active and book_code is not null) = 20,
+  '14 missões dos Raros e 20 marcos dos Santos cadastrados');
 
--- cenário isolado: um marco curado cadastrado só neste banco de teste
-insert into public.reward_triggers (id, kind, name) values ('holy_selo_da_promessa', 'milestone', 'Marco de teste');
+-- o evento de marco (registrado pelo servidor) concede o Santo; ativação controla a recusa
 select tests.assert(tests.ev8('MILESTONE_REACHED', 'milestone:holy_selo_da_promessa', '{"milestone":"holy_selo_da_promessa"}') -> 'granted' = '["holy_selo_da_promessa"]'::jsonb, 'marco curado concede o item santo correspondente');
 select tests.assert((tests.ev8('MILESTONE_REACHED', 'milestone:holy_selo_da_promessa', '{"milestone":"holy_selo_da_promessa"}') ->> 'duplicate')::boolean, 'marco repetido não duplica');
 update public.reward_triggers set is_active = false where id = 'holy_selo_da_promessa';
 select tests.assert_raises($$select tests.ev8('MILESTONE_REACHED', 'milestone:holy_selo_da_promessa#2', '{"milestone":"holy_selo_da_promessa"}')$$, 'unknown_trigger', 'marco desativado é recusado');
-delete from public.reward_triggers where id = 'holy_selo_da_promessa';
+update public.reward_triggers set is_active = true where id = 'holy_selo_da_promessa';

@@ -24,6 +24,8 @@ export type MissionSession = {
   runningSince: number | null;
   status: MissionStatus;
   lastError?: string | null;
+  /** marco dos Santos escolhido antes de iniciar (o servidor confere o vínculo com o capítulo) */
+  milestone?: string | null;
 };
 
 export function uuidv4(random: (n: number) => Uint8Array = defaultRandom): string {
@@ -42,8 +44,12 @@ function defaultRandom(n: number): Uint8Array {
   return out;
 }
 
-export function startMission(input: { userId: string; book: string; chapter: number; mode: MissionMode }, now = Date.now(), id = uuidv4()): MissionSession {
-  return { id, ...input, startedAt: new Date(now).toISOString(), accumulatedMs: 0, runningSince: now, status: 'running', lastError: null };
+export function startMission(
+  input: { userId: string; book: string; chapter: number; mode: MissionMode; milestone?: string | null },
+  now = Date.now(),
+  id = uuidv4(),
+): MissionSession {
+  return { id, ...input, milestone: input.milestone ?? null, startedAt: new Date(now).toISOString(), accumulatedMs: 0, runningSince: now, status: 'running', lastError: null };
 }
 
 /** Tempo ativo em ms (relógio do aparelho voltando no tempo nunca reduz o total). */

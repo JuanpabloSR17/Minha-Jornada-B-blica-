@@ -112,12 +112,10 @@ select tests.assert(tests.owns_m('cloak-elijah') and tests.owns_m('cloak-success
 -- ---------------------------------------------------------------- itens Santos
 select tests.assert(
   not exists (select 1 from public.user_items ui join public.cosmetic_items i on i.id = ui.item_id where ui.user_id = 'b1111111-0000-0000-0000-000000000001' and i.rarity = 'holy'),
-  'missões de leitura não concedem itens Santos sem marco curado');
-insert into public.reward_triggers (id, kind, name, book_code, chapter) values ('holy_mana_do_deserto', 'milestone', 'Marco de teste', 'EXO', 16);
+  'missões de leitura não concedem itens Santos sem escolher o marco');
 select tests.assert(
-  (select r -> 'granted' = '["holy_mana_do_deserto"]'::jsonb and r -> 'missions' -> 0 ->> 'kind' = 'milestone' from tests.finish('exo16', 'EXO', 16) r),
-  'marco curado vinculado a capítulo concede o item Santo pelo servidor');
-delete from public.reward_triggers where id = 'holy_mana_do_deserto';
+  (select r -> 'granted' = '[]'::jsonb and r -> 'missions' = '[]'::jsonb from tests.finish('exo16', 'EXO', 16) r),
+  'leitura comum de Êxodo 16 (capítulo com marco) não concede o Santo');
 
 -- ---------------------------------------------------------------- resumo
 begin;

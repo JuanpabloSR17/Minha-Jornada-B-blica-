@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "appearance": {
     "body": [
       {
@@ -2078,7 +2078,7 @@
       "id": "book_2ki",
       "officialId": "book_2ki",
       "name": "Pergaminho Redescoberto",
-      "description": "Descrito em 2 Reis 22:8. Item cosmético e simbólico.",
+      "description": "Lendário de 2 Reis: recompensa por concluir o livro, inspirada na Palavra redescoberta. Descrito em 2 Reis 22:8. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "scroll",
       "slot": "hands",
@@ -2095,7 +2095,8 @@
         },
         "label": "Conclua todos os capítulos de 2 Reis"
       },
-      "series": "oficial-v2"
+      "series": "oficial-v2",
+      "meaning": "Lendário de 2 Reis: recompensa por concluir o livro, inspirada na Palavra redescoberta"
     },
     {
       "id": "book_1ch",
@@ -3371,7 +3372,7 @@
           "milestone": "holy_luz_da_criacao",
           "reference": "Gênesis 1:3"
         },
-        "label": "Marco bíblico especial: Gênesis 1:3 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Luz da Criação” na aba Ler e leia Gênesis 1"
       },
       "series": "oficial-v2"
     },
@@ -3397,7 +3398,7 @@
           "milestone": "holy_coluna_de_nuvem_e_fogo",
           "reference": "Êxodo 13:21-22"
         },
-        "label": "Marco bíblico especial: Êxodo 13:21-22 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Coluna de Nuvem e Fogo” na aba Ler e leia Êxodo 13"
       },
       "series": "oficial-v2"
     },
@@ -3423,7 +3424,7 @@
           "milestone": "holy_travessia_do_mar",
           "reference": "Êxodo 14:21-22"
         },
-        "label": "Marco bíblico especial: Êxodo 14:21-22 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Travessia do Mar” na aba Ler e leia Êxodo 14"
       },
       "series": "oficial-v2"
     },
@@ -3449,7 +3450,7 @@
           "milestone": "holy_mana_do_deserto",
           "reference": "Êxodo 16:14-15"
         },
-        "label": "Marco bíblico especial: Êxodo 16:14-15 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Maná do Deserto” na aba Ler e leia Êxodo 16"
       },
       "series": "oficial-v2"
     },
@@ -3475,7 +3476,7 @@
           "milestone": "holy_tabuas_da_alianca",
           "reference": "Êxodo 31:18"
         },
-        "label": "Marco bíblico especial: Êxodo 31:18 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Tábuas da Aliança” na aba Ler e leia Êxodo 31"
       },
       "series": "oficial-v2"
     },
@@ -3498,10 +3499,10 @@
       "unlock": {
         "type": "milestone_reached",
         "payload": {
-          "milestone": "holy_arca_da_alianca_representacao",
+          "milestone": "marco_mobilia_do_tabernaculo",
           "reference": "Êxodo 25:10-22"
         },
-        "label": "Marco bíblico especial: Êxodo 25:10-22 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: a mobília do Tabernáculo” na aba Ler e leia Êxodo 25"
       },
       "series": "oficial-v2"
     },
@@ -3524,10 +3525,10 @@
       "unlock": {
         "type": "milestone_reached",
         "payload": {
-          "milestone": "holy_candelabro_do_tabernaculo",
+          "milestone": "marco_mobilia_do_tabernaculo",
           "reference": "Êxodo 25:31-40"
         },
-        "label": "Marco bíblico especial: Êxodo 25:31-40 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: a mobília do Tabernáculo” na aba Ler e leia Êxodo 25"
       },
       "series": "oficial-v2"
     },
@@ -3550,10 +3551,10 @@
       "unlock": {
         "type": "milestone_reached",
         "payload": {
-          "milestone": "holy_mesa_dos_paes_da_presenca",
+          "milestone": "marco_mobilia_do_tabernaculo",
           "reference": "Êxodo 25:23-30"
         },
-        "label": "Marco bíblico especial: Êxodo 25:23-30 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: a mobília do Tabernáculo” na aba Ler e leia Êxodo 25"
       },
       "series": "oficial-v2"
     },
@@ -3579,7 +3580,7 @@
           "milestone": "holy_altar_do_incenso",
           "reference": "Êxodo 30:1-10"
         },
-        "label": "Marco bíblico especial: Êxodo 30:1-10 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Altar do Incenso” na aba Ler e leia Êxodo 30"
       },
       "series": "oficial-v2"
     },
@@ -3605,7 +3606,7 @@
           "milestone": "holy_fogo_no_carmelo",
           "reference": "1 Reis 18:36-39"
         },
-        "label": "Marco bíblico especial: 1 Reis 18:36-39 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Fogo no Carmelo” na aba Ler e leia 1 Reis 18"
       },
       "series": "oficial-v2"
     },
@@ -3631,7 +3632,7 @@
           "milestone": "holy_fogo_da_dedicacao_do_templo",
           "reference": "2 Crônicas 7:1-3"
         },
-        "label": "Marco bíblico especial: 2 Crônicas 7:1-3 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Fogo da Dedicação do Templo” na aba Ler e leia 2 Crônicas 7"
       },
       "series": "oficial-v2"
     },
@@ -3639,13 +3640,13 @@
       "id": "holy_rolo_da_lei_encontrado",
       "officialId": "holy_rolo_da_lei_encontrado",
       "name": "Rolo da Lei Encontrado",
-      "description": "A descoberta do Livro da Lei no templo. Representação simbólica, inspirada em 2 Reis 22:8-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Relíquia do Santuário que lembra o achado do Livro da Lei no templo, sob o rei Josias. Representação simbólica, inspirada em 2 Reis 22:8-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
       "scriptureRef": "2 Reis 22:8-11",
       "representation": "symbolic",
-      "meaning": "A descoberta do Livro da Lei no templo",
+      "meaning": "Relíquia do Santuário que lembra o achado do Livro da Lei no templo, sob o rei Josias",
       "referent": "Pai",
       "holySubtype": "artefato",
       "acquisition": "milestone",
@@ -3657,7 +3658,7 @@
           "milestone": "holy_rolo_da_lei_encontrado",
           "reference": "2 Reis 22:8-11"
         },
-        "label": "Marco bíblico especial: 2 Reis 22:8-11 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Rolo da Lei Encontrado” na aba Ler e leia 2 Reis 22"
       },
       "series": "oficial-v2"
     },
@@ -3683,7 +3684,7 @@
           "milestone": "holy_livramento_na_fornalha",
           "reference": "Daniel 3:24-27"
         },
-        "label": "Marco bíblico especial: Daniel 3:24-27 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Livramento na Fornalha” na aba Ler e leia Daniel 3"
       },
       "series": "oficial-v2"
     },
@@ -3709,7 +3710,7 @@
           "milestone": "holy_sinal_do_cordeiro_de_deus",
           "reference": "João 1:29"
         },
-        "label": "Marco bíblico especial: João 1:29 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Sinal do Cordeiro de Deus” na aba Ler e leia João 1"
       },
       "series": "oficial-v2"
     },
@@ -3735,7 +3736,7 @@
           "milestone": "holy_agua_transformada_em_vinho",
           "reference": "João 2:6-11"
         },
-        "label": "Marco bíblico especial: João 2:6-11 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Água Transformada em Vinho” na aba Ler e leia João 2"
       },
       "series": "oficial-v2"
     },
@@ -3761,7 +3762,7 @@
           "milestone": "holy_paes_da_multiplicacao",
           "reference": "João 6:11-13"
         },
-        "label": "Marco bíblico especial: João 6:11-13 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Pães da Multiplicação” na aba Ler e leia João 6"
       },
       "series": "oficial-v2"
     },
@@ -3787,7 +3788,7 @@
           "milestone": "holy_tumulo_vazio",
           "reference": "Lucas 24:2-6"
         },
-        "label": "Marco bíblico especial: Lucas 24:2-6 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Túmulo Vazio” na aba Ler e leia Lucas 24"
       },
       "series": "oficial-v2"
     },
@@ -3813,7 +3814,7 @@
           "milestone": "holy_cenario_do_monte_da_transfiguracao",
           "reference": "Mateus 17:1-5"
         },
-        "label": "Marco bíblico especial: Mateus 17:1-5 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Cenário do Monte da Transfiguração” na aba Ler e leia Mateus 17"
       },
       "series": "oficial-v2"
     },
@@ -3839,7 +3840,7 @@
           "milestone": "holy_sinal_da_pomba",
           "reference": "Mateus 3:16"
         },
-        "label": "Marco bíblico especial: Mateus 3:16 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Sinal da Pomba” na aba Ler e leia Mateus 3"
       },
       "series": "oficial-v2"
     },
@@ -3865,7 +3866,7 @@
           "milestone": "holy_chamas_de_pentecostes",
           "reference": "Atos 2:1-4"
         },
-        "label": "Marco bíblico especial: Atos 2:1-4 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Chamas de Pentecostes” na aba Ler e leia Atos 2"
       },
       "series": "oficial-v2"
     },
@@ -3891,7 +3892,7 @@
           "milestone": "holy_selo_da_promessa",
           "reference": "Efésios 1:13"
         },
-        "label": "Marco bíblico especial: Efésios 1:13 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Selo da Promessa” na aba Ler e leia Efésios 1"
       },
       "series": "oficial-v2"
     },
@@ -3917,7 +3918,7 @@
           "milestone": "holy_cenario_da_nova_criacao",
           "reference": "Apocalipse 21:1-5"
         },
-        "label": "Marco bíblico especial: Apocalipse 21:1-5 (missão curada, validada pelo servidor)"
+        "label": "Marco especial: escolha “Marco: Cenário da Nova Criação” na aba Ler e leia Apocalipse 21"
       },
       "series": "oficial-v2"
     },
@@ -4605,12 +4606,242 @@
       "rewardItems": [
         "rare_cinto_da_verdade"
       ]
+    },
+    {
+      "id": "holy_luz_da_criacao",
+      "kind": "milestone",
+      "name": "Marco: Luz da Criação",
+      "description": "Leia Gênesis 1 neste marco: “Haja luz” (Gênesis 1:3). Efeito de luz inspirado na criação.",
+      "book": "GEN",
+      "chapter": 1,
+      "rewardItems": [
+        "holy_luz_da_criacao"
+      ]
+    },
+    {
+      "id": "holy_coluna_de_nuvem_e_fogo",
+      "kind": "milestone",
+      "name": "Marco: Coluna de Nuvem e Fogo",
+      "description": "Leia Êxodo 13 neste marco: Deus guiava o povo de dia numa coluna de nuvem e de noite numa coluna de fogo (Êxodo 13:21-22). Cenário inspirado na passagem.",
+      "book": "EXO",
+      "chapter": 13,
+      "rewardItems": [
+        "holy_coluna_de_nuvem_e_fogo"
+      ]
+    },
+    {
+      "id": "holy_travessia_do_mar",
+      "kind": "milestone",
+      "name": "Marco: Travessia do Mar",
+      "description": "Leia Êxodo 14 neste marco: as águas se dividem e Israel atravessa em terra seca (Êxodo 14:21-22). Cenário inspirado na passagem.",
+      "book": "EXO",
+      "chapter": 14,
+      "rewardItems": [
+        "holy_travessia_do_mar"
+      ]
+    },
+    {
+      "id": "holy_mana_do_deserto",
+      "kind": "milestone",
+      "name": "Marco: Maná do Deserto",
+      "description": "Leia Êxodo 16 neste marco: o pão que Deus deu no deserto (Êxodo 16:14-15). Relíquia de exposição no Santuário.",
+      "book": "EXO",
+      "chapter": 16,
+      "rewardItems": [
+        "holy_mana_do_deserto"
+      ]
+    },
+    {
+      "id": "holy_tabuas_da_alianca",
+      "kind": "milestone",
+      "name": "Marco: Tábuas da Aliança",
+      "description": "Leia Êxodo 31 neste marco: as tábuas do testemunho entregues a Moisés (Êxodo 31:18). Relíquia de exposição no Santuário.",
+      "book": "EXO",
+      "chapter": 31,
+      "rewardItems": [
+        "holy_tabuas_da_alianca"
+      ]
+    },
+    {
+      "id": "marco_mobilia_do_tabernaculo",
+      "kind": "milestone",
+      "name": "Marco: a mobília do Tabernáculo",
+      "description": "Leia Êxodo 25 neste marco: as instruções para a arca, a mesa dos pães e o candelabro (Êxodo 25:10-40). Três relíquias de exposição no Santuário.",
+      "book": "EXO",
+      "chapter": 25,
+      "rewardItems": [
+        "holy_arca_da_alianca_representacao",
+        "holy_mesa_dos_paes_da_presenca",
+        "holy_candelabro_do_tabernaculo"
+      ]
+    },
+    {
+      "id": "holy_altar_do_incenso",
+      "kind": "milestone",
+      "name": "Marco: Altar do Incenso",
+      "description": "Leia Êxodo 30 neste marco: o altar de ouro do incenso (Êxodo 30:1-10). Relíquia de exposição no Santuário.",
+      "book": "EXO",
+      "chapter": 30,
+      "rewardItems": [
+        "holy_altar_do_incenso"
+      ]
+    },
+    {
+      "id": "holy_fogo_no_carmelo",
+      "kind": "milestone",
+      "name": "Marco: Fogo no Carmelo",
+      "description": "Leia 1 Reis 18 neste marco: o fogo que desce em resposta à oração de Elias (1 Reis 18:36-39). Cenário inspirado na passagem.",
+      "book": "1KI",
+      "chapter": 18,
+      "rewardItems": [
+        "holy_fogo_no_carmelo"
+      ]
+    },
+    {
+      "id": "holy_fogo_da_dedicacao_do_templo",
+      "kind": "milestone",
+      "name": "Marco: Fogo da Dedicação do Templo",
+      "description": "Leia 2 Crônicas 7 neste marco: o fogo desce do céu na dedicação do templo (2 Crônicas 7:1-3). Cenário inspirado na passagem.",
+      "book": "2CH",
+      "chapter": 7,
+      "rewardItems": [
+        "holy_fogo_da_dedicacao_do_templo"
+      ]
+    },
+    {
+      "id": "holy_rolo_da_lei_encontrado",
+      "kind": "milestone",
+      "name": "Marco: Rolo da Lei Encontrado",
+      "description": "Leia 2 Reis 22 neste marco: o Livro da Lei é encontrado no templo (2 Reis 22:8-11). Relíquia de exposição no Santuário.",
+      "book": "2KI",
+      "chapter": 22,
+      "rewardItems": [
+        "holy_rolo_da_lei_encontrado"
+      ]
+    },
+    {
+      "id": "holy_livramento_na_fornalha",
+      "kind": "milestone",
+      "name": "Marco: Livramento na Fornalha",
+      "description": "Leia Daniel 3 neste marco: os três jovens saem da fornalha ilesos (Daniel 3:24-27). Cenário inspirado na passagem.",
+      "book": "DAN",
+      "chapter": 3,
+      "rewardItems": [
+        "holy_livramento_na_fornalha"
+      ]
+    },
+    {
+      "id": "holy_sinal_do_cordeiro_de_deus",
+      "kind": "milestone",
+      "name": "Marco: Sinal do Cordeiro de Deus",
+      "description": "Leia João 1 neste marco: “Eis o Cordeiro de Deus” (João 1:29). Moldura com um sinal inspirado no testemunho de João; não representa uma pessoa.",
+      "book": "JHN",
+      "chapter": 1,
+      "rewardItems": [
+        "holy_sinal_do_cordeiro_de_deus"
+      ]
+    },
+    {
+      "id": "holy_agua_transformada_em_vinho",
+      "kind": "milestone",
+      "name": "Marco: Água Transformada em Vinho",
+      "description": "Leia João 2 neste marco: o primeiro sinal de Jesus em Caná (João 2:6-11), representado pelas talhas de pedra no Santuário.",
+      "book": "JHN",
+      "chapter": 2,
+      "rewardItems": [
+        "holy_agua_transformada_em_vinho"
+      ]
+    },
+    {
+      "id": "holy_paes_da_multiplicacao",
+      "kind": "milestone",
+      "name": "Marco: Pães da Multiplicação",
+      "description": "Leia João 6 neste marco: os pães que alimentaram a multidão (João 6:11-13). Relíquia de exposição no Santuário.",
+      "book": "JHN",
+      "chapter": 6,
+      "rewardItems": [
+        "holy_paes_da_multiplicacao"
+      ]
+    },
+    {
+      "id": "holy_tumulo_vazio",
+      "kind": "milestone",
+      "name": "Marco: Túmulo Vazio",
+      "description": "Leia Lucas 24 neste marco: “Não está aqui, mas ressuscitou” (Lucas 24:2-6). Cenário inspirado na passagem.",
+      "book": "LUK",
+      "chapter": 24,
+      "rewardItems": [
+        "holy_tumulo_vazio"
+      ]
+    },
+    {
+      "id": "holy_cenario_do_monte_da_transfiguracao",
+      "kind": "milestone",
+      "name": "Marco: Cenário do Monte da Transfiguração",
+      "description": "Leia Mateus 17 neste marco. Cenário do monte e da nuvem luminosa inspirado em Mateus 17:1-5; não representa pessoas divinas.",
+      "book": "MAT",
+      "chapter": 17,
+      "rewardItems": [
+        "holy_cenario_do_monte_da_transfiguracao"
+      ]
+    },
+    {
+      "id": "holy_sinal_da_pomba",
+      "kind": "milestone",
+      "name": "Marco: Sinal da Pomba",
+      "description": "Leia Mateus 3 neste marco. Moldura com um sinal inspirado no Espírito que desce “como pomba” (Mateus 3:16); é um sinal, não a representação de uma pessoa.",
+      "book": "MAT",
+      "chapter": 3,
+      "rewardItems": [
+        "holy_sinal_da_pomba"
+      ]
+    },
+    {
+      "id": "holy_chamas_de_pentecostes",
+      "kind": "milestone",
+      "name": "Marco: Chamas de Pentecostes",
+      "description": "Leia Atos 2 neste marco: as línguas como de fogo em Pentecostes (Atos 2:1-4). Efeito inspirado na passagem.",
+      "book": "ACT",
+      "chapter": 2,
+      "rewardItems": [
+        "holy_chamas_de_pentecostes"
+      ]
+    },
+    {
+      "id": "holy_selo_da_promessa",
+      "kind": "milestone",
+      "name": "Marco: Selo da Promessa",
+      "description": "Leia Efésios 1 neste marco: “selados com o Espírito Santo da promessa” (Efésios 1:13). Moldura com um sinal inspirado na passagem.",
+      "book": "EPH",
+      "chapter": 1,
+      "rewardItems": [
+        "holy_selo_da_promessa"
+      ]
+    },
+    {
+      "id": "holy_cenario_da_nova_criacao",
+      "kind": "milestone",
+      "name": "Marco: Cenário da Nova Criação",
+      "description": "Leia Apocalipse 21 neste marco. Cenário inspirado na promessa de “novo céu e nova terra” (Apocalipse 21:1-5).",
+      "book": "REV",
+      "chapter": 21,
+      "rewardItems": [
+        "holy_cenario_da_nova_criacao"
+      ]
     }
   ],
   "editorialOverrides": {
     "rare_sandalias_do_peregrino": {
       "representation": "metaphorical",
       "note": "Is 52:7 é uma metáfora (decisão editorial D-09)"
+    },
+    "holy_rolo_da_lei_encontrado": {
+      "meaning": "Relíquia do Santuário que lembra o achado do Livro da Lei no templo, sob o rei Josias",
+      "note": "2 Reis 22: diferencia o Santo do Lendário do livro"
+    },
+    "book_2ki": {
+      "meaning": "Lendário de 2 Reis: recompensa por concluir o livro, inspirada na Palavra redescoberta",
+      "note": "2 Reis 22: diferencia o Lendário do Santo"
     }
   },
   "pendingEditorialReview": [

@@ -19,12 +19,16 @@ const { signIn, rpc, db, loadState, ok } = require('./lib.cjs');
     assert.deepEqual(now, s.before[who], `${who}: saldo, itens e metas preservados`);
   }
   const v = (await conn.query(`select max(catalog_version)::int v from cosmetic_items`)).rows[0].v;
-  const missions = (await conn.query(`select count(*)::int n from reward_triggers where kind = 'mission' and is_active and book_code is not null`)).rows[0].n;
+  const kinds = (await conn.query(`select kind, count(*)::int n from reward_triggers where is_active and book_code is not null group by kind`)).rows;
+  const count = (k) => kinds.find((x) => x.kind === k)?.n ?? 0;
+  const missions = count('mission');
+  const milestones = count('milestone');
   const catalog = require('../../src/features/avatar/catalog/catalog.json');
   assert.equal(v, catalog.version, 'banco no mesmo catálogo do app');
-  assert.equal(missions, catalog.missions.length, 'missões do catálogo cadastradas');
+  assert.equal(missions, catalog.missions.filter((m) => m.kind === 'mission').length, 'missões dos Raros cadastradas');
+  assert.equal(milestones, catalog.missions.filter((m) => m.kind === 'milestone').length, 'marcos dos Santos cadastrados');
   await conn.end();
-  ok(`catálogo v${v} com ${missions} missões especiais ativas`);
+  ok(`catálogo v${v} com ${missions} missões dos Raros e ${milestones} marcos dos Santos ativos`);
   ok(`atualização: ${migrated.length} migrações registradas (até ${migrated.at(-1)}); saldos (Ana ${s.before.ana.siclos}, Bia ${s.before.bia.siclos}), itens e metas preservados`);
 
   const { c } = await signIn(s.ana.email);

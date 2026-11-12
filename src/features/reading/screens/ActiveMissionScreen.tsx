@@ -9,6 +9,8 @@ import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { activeMs, formatClock, pauseMission, resumeMission } from '../mission/session';
 import { useMissionSession } from '../mission/useMissionSession';
 import { refLabel } from './MissionHomeScreen';
+import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
+import { getCatalogMission } from '@/features/avatar/domain/catalog';
 
 /** Missão em andamento: capítulo, cronômetro (só tempo ativo), pausar/retomar e finalizar. */
 export function ActiveMissionScreen() {
@@ -58,6 +60,11 @@ export function ActiveMissionScreen() {
     <Screen>
       <StepHeader title={ref} onBack={() => router.replace('/(tabs)/read')} />
       <AppText variant="caption" muted>{session.mode === 'physical' ? strings.mission.physical : strings.mission.digital}</AppText>
+      {session.milestone ? (
+        <AppText variant="label" color={RARITY_COLOR.holy} testID="session-milestone">
+          {fmt(strings.mission.milestoneBanner, { name: getCatalogMission(session.milestone)?.name ?? session.milestone })}
+        </AppText>
+      ) : null}
       {session.mode === 'physical' ? (
         <Card>
           <AppText variant="heading">{strings.mission.readNow}</AppText>

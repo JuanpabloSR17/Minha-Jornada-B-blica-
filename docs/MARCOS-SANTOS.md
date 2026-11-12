@@ -1,4 +1,29 @@
-# Marcos dos 22 Santos — proposta para revisão editorial
+# Marcos dos 22 Santos
+
+> **Situação (catálogo v8):** **20 marcos cadastrados para os 22 Santos** (Êxodo 25 tem um marco com
+> Arca, Mesa dos Pães e Candelabro; Maná do Deserto usa Êxodo 16). Decisões aplicadas: S-01 com
+> **escolha explícita do marco** na aba Ler; S-02 opção A; S-03 e S-06 aceitos (recompensas
+> combinadas e Lendário quando o capítulo completa o livro); S-04 disponíveis desde o início; S-05
+> Êxodo 16; S-07 textos de sinal/cenário inspirados nas passagens; S-08 coleções sem prêmio adicional;
+> S-09 todos liberados. Em 2 Reis 22, o Santo e o Lendário têm significados diferentes na tela
+> (`catalog.json#editorialOverrides`), com IDs e referências preservados.
+>
+> **Correção:** os documentos anteriores diziam “7 relíquias e 15 itens de personalização”. O catálogo
+> oficial tem **9 Santos só em exibição** (os 7 artefatos + Água Transformada em Vinho e Pães da
+> Multiplicação) e **13 de personalização** (fundo, moldura ou efeito). Os usos do catálogo foram mantidos.
+
+## Como o marco é cumprido
+
+1. Na aba Ler, em **Marcos dos Santos**, o jogador escolhe o marco; a tela mostra os itens que ele concede.
+2. A sessão leva o ID do marco (guardado no aparelho: sobrevive a pausar, fechar o app e reenviar).
+3. Ao finalizar, `complete_reading_mission(..., p_milestone)` confere que o marco existe, está ativo e é
+   do mesmo capítulo (`invalid_milestone`), grava o vínculo em `reading_sessions.milestone_id` e registra
+   `MILESTONE_REACHED` uma vez por jogador; a regra `milestone_reached` concede os Santos que faltam.
+   Reenviar a sessão com outro marco ou sem ele é recusado (`invalid_session`).
+4. Uma leitura comum do mesmo capítulo segue só as recompensas habituais. Se o capítulo já foi lido,
+   o marco é cumprido por releitura, sem XP de leitura, capítulo novo ou avanço na meta diária.
+
+# Proposta original para revisão editorial
 
 Base: catálogo vigente v7 (`src/features/avatar/catalog/catalog.json`), commit `f330461`. **Nada foi cadastrado**: os marcos dependem das decisões no fim do documento.
 
@@ -11,7 +36,7 @@ Base: catálogo vigente v7 (`src/features/avatar/catalog/catalog.json`), commit 
 ## Regras preservadas
 
 - Aquisição `milestone` (marco bíblico especial validado pelo servidor); nunca vendidos, sorteados nem negociáveis (o banco recusa colocar um Santo à venda).
-- Exibição: os 7 artefatos são relíquias só em exibição no Santuário (não equipáveis); as 15 obras e símbolos podem ser usados como fundo, moldura ou efeito. Nenhum representa uma pessoa divina; todos indicam o referente.
+- Exibição (corrigido): 9 Santos só em exibição no Santuário (7 artefatos + Água Transformada em Vinho e Pães da Multiplicação); 13 podem ser usados como fundo, moldura ou efeito. Nenhum representa uma pessoa divina; todos indicam o referente.
 - As regras já existentes no catálogo (`milestone_reached` com o ID do item) não mudam: cadastrar um marco é só incluir a linha do marco com o capítulo.
 
 ## Comprovação no servidor (igual para todos)

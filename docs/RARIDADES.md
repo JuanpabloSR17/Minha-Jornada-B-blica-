@@ -13,7 +13,7 @@
 | Raro | 18 | Sacerdotes, profetas, funções especiais | Missão especial (16 itens, 14 missões — `docs/MISSOES-RAROS.md`); 2 pendentes de revisão editorial; 5 também no Mercado |
 | Épico | 16 | Personagens e acontecimentos marcantes | **Gratuito**: concluir o capítulo da passagem |
 | Lendário | 66 | Um por livro da Bíblia | **Gratuito**: concluir todos os capítulos do livro |
-| Santo | 22 | Artefatos sagrados e representações simbólicas das obras de Deus | Marco bíblico curado, validado pelo servidor |
+| Santo | 22 | Artefatos sagrados e representações simbólicas das obras de Deus | Marco escolhido na aba Ler e cumprido na leitura vinculada (20 marcos), validado pelo servidor |
 
 Total oficial: **144 itens** (série `oficial-v2`). Somam-se 33 peças iniciais gratuitas (`starter`) e
 8 itens complementares com histórico (`complementar`), fora da contagem. Nenhum item é Premium nem
@@ -41,10 +41,12 @@ Mapeamento de slots do arquivo oficial: `cloak`→`back`, `back`→`back_item`, 
 
 ## 3. Itens Santos e Santuário das Conquistas
 
-- **Artefatos** (7, slot `relic`): só em exibição no Santuário — o servidor recusa equipá-los
-  (`item_not_equippable`) e o app também.
-- **Obras e sinais** (15): representações simbólicas usadas como fundo, moldura ou efeito, como o
-  arquivo oficial define. Nenhum representa uma pessoa divina; todos indicam o referente.
+- **Só em exibição** (9, slot `relic`): os 7 artefatos e duas obras (Água Transformada em Vinho e
+  Pães da Multiplicação). O servidor recusa equipá-los (`item_not_equippable`) e o app também.
+- **Personalização** (13): obras e sinais usados como fundo, moldura ou efeito, como o arquivo
+  oficial define. Nenhum representa uma pessoa divina; todos indicam o referente.
+- **Obtenção:** 20 marcos (catálogo v8, `docs/MARCOS-SANTOS.md`). O jogador escolhe o marco na aba
+  Ler; só a sessão vinculada a ele concede o(s) Santo(s).
 - Nunca vendidos, sorteados ou comercializados (CHECK `cosmetic_items_holy_not_for_sale`).
 - Coleções: **Obras do Pai** (13), **Obras de Jesus Cristo** (5), **Obras do Espírito Santo** (3),
   **Obras do Deus Triúno** (1). O Santuário também mostra a **Biblioteca Lendária** (66 livros).

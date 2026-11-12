@@ -188,6 +188,39 @@ async function login(page, email) {
     assert.deepEqual(ex, { s: 1, r: 2, m: 1, xp: xpBefore + 40 }, 'uma sessão, duas recompensas (Estola e Turbante), uma missão, 40 XP');
     assert.deepEqual(await rareRows(), RARES.map((item_id) => ({ item_id, n: 1 })), 'reenvio não duplicou nada');
     ok('Êxodo 28 com o Peitoral já obtido: tela e banco mostram só Estola e Turbante; resposta perdida e reenvio sem duplicar (1 sessão, 1 missão, 2 recompensas, 40 XP)');
+
+    // ------------------------------------------------ marco de Êxodo 25 (catálogo v8): escolha explícita, posse parcial e reenvio
+    await conn.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'holy_mesa_dos_paes_da_presenca', 'test:obtido-antes')`, [uid]);
+    const SANTOS = ['holy_arca_da_alianca_representacao', 'holy_candelabro_do_tabernaculo', 'holy_mesa_dos_paes_da_presenca'];
+    await page.goto(`${APP}/read`);
+    await page.getByRole('radio', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25/ }).click();
+    for (const id of SANTOS) await page.getByTestId(`marco-item-${id}`).waitFor();
+    await page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
+    await page.getByTestId('session-milestone').waitFor();
+    await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+    await page.getByRole('button', { name: 'Finalizar missão' }).click();
+    await page.getByRole('button', { name: 'Concluí a leitura' }).click();
+    await page.getByText('Finalização pendente').first().waitFor();
+    await page.unroute('**/rest/v1/rpc/complete_reading_mission');
+    await page.reload();
+    await page.getByText('Finalização pendente').first().waitFor();
+    assert.equal(await page.getByTestId('session-milestone').innerText(), 'Sessão vinculada · Marco: a mobília do Tabernáculo', 'vínculo preservado ao reabrir');
+    await page.getByRole('button', { name: 'Tentar novamente' }).click();
+    await page.getByText('Marco: a mobília do Tabernáculo — concluído').waitFor();
+    await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
+    for (const n of ['Arca da Aliança (Representação)', 'Candelabro do Tabernáculo']) await page.getByText(n, { exact: true }).last().waitFor();
+    await shot(page, 'real-08-milestone-exodus25');
+    const mk = (await conn.query(`select
+      (select count(*)::int from reading_sessions where user_id = $1 and milestone_id = 'marco_mobilia_do_tabernaculo') s,
+      (select count(*)::int from private.domain_events where user_id = $1 and event_type = 'MILESTONE_REACHED' and source_event_id = 'milestone:marco_mobilia_do_tabernaculo') m,
+      (select count(*)::int from reward_events where user_id = $1 and item_id = any($2)) r,
+      (select count(*)::int from user_items where user_id = $1 and item_id = any($2)) i`, [uid, SANTOS])).rows[0];
+    assert.deepEqual(mk, { s: 1, m: 1, r: 2, i: 3 }, 'uma sessão vinculada, um marco, duas recompensas (Arca e Candelabro), três Santos');
+    await page.getByRole('button', { name: 'Ver no Santuário' }).click();
+    await page.getByText('Obras do Pai').waitFor();
+    await page.getByText('3 de 13 itens').waitFor();
+    await shot(page, 'real-09-sanctuary');
+    ok('marco de Êxodo 25 escolhido na aba Ler, com a Mesa já obtida: resposta perdida, vínculo preservado ao reabrir e reenvio — só Arca e Candelabro, 1 marco; Santuário 3 de 13');
   } finally {
     await browser.close();
     await conn.end();

@@ -104,8 +104,8 @@ describe('catálogo oficial: cinco raridades e 144 itens', () => {
   });
 
   it('comuns e raros oficiais vêm do Modo Missão (nunca de uma leitura comum)', () => {
-    const cat = require('../catalog/catalog.json') as { missions?: { id: string; rewardItems: string[] }[]; pendingEditorialReview?: string[] };
-    const missions = cat.missions ?? [];
+    const cat = require('../catalog/catalog.json') as { missions?: { id: string; kind: string; rewardItems: string[] }[]; pendingEditorialReview?: string[] };
+    const missions = (cat.missions ?? []).filter((m) => m.kind === 'mission');
     for (const it of raw.items.filter((i) => i.officialId?.startsWith('common_') || i.officialId?.startsWith('rare_'))) {
       if (!it.unlock) continue;
       const curated = missions.find((m) => m.rewardItems.includes(it.id));
@@ -171,5 +171,24 @@ describe('nomes oficiais repetidos', () => {
     expect(displayName(getItem('rare_rolo_do_escriba'))).toBe('Rolo do Escriba (Raro)');
     expect(displayName(getItem('book_ezr'))).toBe('Rolo do Escriba (Lendário)');
     expect(displayName(getItem('rare_anel_de_selo'))).toBe('Anel de Selo');
+  });
+});
+
+describe('marcos dos Santos (catálogo v8)', () => {
+  const cat = require('../catalog/catalog.json') as {
+    missions: { id: string; kind: string; book: string; chapter: number; rewardItems: string[] }[];
+    items: { id: string; rarity?: string; unlock?: { type: string; payload: { milestone?: string } } }[];
+  };
+  const marcos = cat.missions.filter((m) => m.kind === 'milestone');
+  it('20 marcos cobrem os 22 Santos, cada um ligado ao seu marco', () => {
+    expect(marcos).toHaveLength(20);
+    const holy = cat.items.filter((i) => i.rarity === 'holy');
+    expect(holy).toHaveLength(22);
+    for (const h of holy) {
+      const m = marcos.find((x) => x.rewardItems.includes(h.id))!;
+      expect(m).toBeDefined();
+      expect(h.unlock).toMatchObject({ type: 'milestone_reached', payload: { milestone: m.id } });
+    }
+    expect(marcos.find((m) => m.book === 'EXO' && m.chapter === 25)!.rewardItems).toHaveLength(3);
   });
 });

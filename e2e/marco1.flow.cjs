@@ -297,9 +297,8 @@ async function newPhone(browser, scheme = 'light') {
   step('raridades: filtro por Lendário e prévia bloqueada com objetivo');
 
   // cenário isolado de teste: marco curado cadastrado só aqui concede a relíquia pelo servidor
-  await db.query(`insert into reward_triggers (id, kind, name) values ('holy_mana_do_deserto', 'milestone', 'Marco de teste')`);
+  // evento de marco registrado pelo servidor (o marco do Maná existe no catálogo v8)
   await db.query(`select private.record_event($1, 'MILESTONE_REACHED', 'milestone:holy_mana_do_deserto', '{"milestone":"holy_mana_do_deserto"}')`, [anaId]);
-  await db.query(`delete from reward_triggers where id = 'holy_mana_do_deserto'`);
   // ler a passagem não concede item santo
   await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:ACT.2', '{"book":"ACT","chapter":2}')`, [anaId]);
   assert.equal((await db.query(`select count(*)::int n from user_items ui join cosmetic_items i on i.id = ui.item_id where ui.user_id = $1 and i.rarity = 'holy'`, [anaId])).rows[0].n, 1);
@@ -588,11 +587,70 @@ async function newPhone(browser, scheme = 'light') {
   step('nomes repetidos com a raridade (Rolo do Escriba Raro × Lendário) e associação metafórica das Sandálias do Peregrino');
   await C.page.goto(`${APP}/home`);
 
+  // ============================================================ MARCOS DOS SANTOS
+  const finishHere = async () => {
+    await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
+    await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  };
+  // leitura comum de Êxodo 16 (capítulo com marco): recompensas habituais, sem o Maná
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByRole('radio', { name: /^Êxodo,/ }).click();
+  await C.page.getByRole('radio', { name: 'Capítulo 16', exact: true }).click();
+  await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 16' }).click();
+  await finishHere();
+  await C.page.getByText('Missão concluída').waitFor();
+  await C.page.getByText('Nenhum item novo nesta missão.').waitFor();
+  assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'holy_mana_do_deserto'`, [biaId])).rows[0].count), 0);
+  step('leitura comum de Êxodo 16: progresso e XP, sem o Santo do marco');
+
+  // marco escolhido explicitamente, com pausa e retomada depois de reabrir o app
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByText('Marcos dos Santos').waitFor();
+  await C.page.getByRole('radio', { name: /^Marco: Maná do Deserto, Êxodo 16/ }).click();
+  await C.page.getByTestId('marco-item-holy_mana_do_deserto').waitFor();
+  await C.page.getByText('Exposição no Santuário').first().waitFor();
+  await shot(C.page, 'm9-01-milestone-choose-dark');
+  await C.page.getByRole('button', { name: 'Iniciar marco: Êxodo 16' }).click();
+  await C.page.getByTestId('session-milestone').waitFor();
+  await C.page.getByRole('button', { name: 'Pausar' }).click();
+  await C.page.reload();
+  await C.page.getByText('Pausado').first().waitFor();
+  assert.equal(await C.page.getByTestId('session-milestone').innerText(), 'Sessão vinculada · Marco: Maná do Deserto');
+  await C.page.getByRole('button', { name: 'Retomar' }).click();
+  await finishHere();
+  await C.page.getByText('Releitura registrada').waitFor();
+  await C.page.getByText('Marco: Maná do Deserto — concluído').waitFor();
+  await C.page.getByText('Maná do Deserto', { exact: true }).last().waitFor();
+  const mana = (await db.query(`select (select milestone_id from reading_sessions where user_id = $1 and milestone_id is not null) m,
+    (select count(*)::int from user_items where user_id = $1 and item_id = 'holy_mana_do_deserto') i`, [biaId])).rows[0];
+  assert.deepEqual(mana, { m: 'holy_mana_do_deserto', i: 1 });
+  await shot(C.page, 'm9-02-milestone-done-dark');
+  step('marco do Maná escolhido na aba Ler: vínculo preservado ao pausar e reabrir; releitura concede o Santo');
+
+  // Êxodo 25: os três itens aparecem antes de iniciar e são concedidos juntos
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByRole('radio', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25/ }).click();
+  for (const id of ['holy_arca_da_alianca_representacao', 'holy_mesa_dos_paes_da_presenca', 'holy_candelabro_do_tabernaculo']) await C.page.getByTestId(`marco-item-${id}`).waitFor();
+  await C.page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
+  await finishHere();
+  await C.page.getByText('Marco: a mobília do Tabernáculo — concluído').waitFor();
+  for (const n of ['Arca da Aliança (Representação)', 'Mesa dos Pães da Presença', 'Candelabro do Tabernáculo']) await C.page.getByText(n, { exact: true }).last().waitFor();
+  await shot(C.page, 'm9-03-milestone-exodus25-dark');
+  await C.page.getByRole('button', { name: 'Ver no Santuário' }).click();
+  await C.page.getByText('Obras do Pai').waitFor();
+  await C.page.getByText('4 de 13 itens').waitFor();
+  await shot(C.page, 'm9-04-sanctuary-dark');
+  step('marco de Êxodo 25: três Santos mostrados antes de iniciar, concedidos juntos e exibidos no Santuário (4 de 13)');
+  await C.page.goto(`${APP}/home`);
+
   // ============================================================ MERCADO DOS VIAJANTES
   const biaBalance = async () => Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [biaId])).rows[0].s);
   await C.page.getByRole('button', { name: 'Mercado dos Viajantes' }).click();
   await C.page.getByText('Saldo: 40 Siclos').first().waitFor();
-  await C.page.getByTestId('market-common_tunica_de_linho_cru').getByText('Faltam 40 Siclos').waitFor();
+  // um item de 80 que a conta ainda não tem (a escolha gratuita varia com o ID da conta)
+  const cheap = (await db.query(`select i.id from cosmetic_items i where i.shop_eligible and i.is_active and i.shop_price_suggested = 80
+    and not private.owns_canonical($1, i.id) order by i.id limit 1`, [biaId])).rows[0].id;
+  await C.page.getByTestId(`market-${cheap}`).getByText('Faltam 40 Siclos').waitFor();
   await shot(C.page, 'm7-01-market-low-balance-dark');
   // metas dos dias seguintes pelo mesmo caminho do servidor (relógio simulado): +40 Siclos por dia
   for (let k = 1; k <= 5; k++) {

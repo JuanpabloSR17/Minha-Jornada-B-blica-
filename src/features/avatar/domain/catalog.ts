@@ -117,6 +117,11 @@ export const displayNameOf = (id: string) => {
   return it ? displayName(it) : id;
 };
 
+/** Missões dos Raros e marcos dos Santos do catálogo (itens que cada um concede). */
+export type CatalogMission = { id: string; kind: 'mission' | 'milestone'; name: string; description: string; book: string; chapter: number; rewardItems: string[] };
+export const CATALOG_MISSIONS: CatalogMission[] = (raw as { missions?: CatalogMission[] }).missions ?? [];
+export const getCatalogMission = (id: string | null | undefined) => (id ? CATALOG_MISSIONS.find((m) => m.id === id) : undefined);
+
 /** Itens santos (Santuário): relíquias de exposição e obras/sinais simbólicos. */
 export const HOLY_ITEMS = COSMETIC_ITEMS.filter((i) => i.rarity === 'holy');
 

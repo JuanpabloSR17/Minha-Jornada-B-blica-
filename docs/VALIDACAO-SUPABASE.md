@@ -24,10 +24,19 @@ NODE_PATH=$(npm root -g) bash e2e/supabase-real/run.sh
 | 1 | Recria o ambiente **só com as migrações anteriores ao Mercado** (o Mercado e as seguintes, como o catálogo v7, ficam para a fase 2), cria duas contas comuns pela API de Auth (cadastro, identidade, personagem e meta 1 pelo app) e registra metas de dias anteriores pelo caminho do servidor com **datas controladas** (`private.complete_reading_mission_at`, 09:00 de São Paulo de cada dia); Ana resgata uma escolha gratuita | `seed-pre-market.cjs` |
 | 2 | Aplica o Mercado e as migrações seguintes, na ordem (`supabase migration up`), confere que todas as migrações do repositório estão registradas, que o banco está no mesmo catálogo do app (v7, 14 missões) e que saldos, itens e metas foram preservados | `verify-upgrade.cjs` |
 | 3 | Conta comum: operações autorizadas; escrita direta bloqueada (saldo, posse, compras, metas, XP, preços, regras); isolamento entre contas; visitante sem login | `permissions.cjs` |
-| 4 | App web apontando para este Supabase: meta do dia pela tela, escolha gratuita, compra, saldo, guarda-roupa, resposta perdida, duas compras disputando o saldo em dois aparelhos e a missão de Êxodo 28 com o Peitoral já obtido (resposta perdida e reenvio) — interface + banco | `flow.cjs` |
+| 4 | App web apontando para este Supabase: meta do dia pela tela, escolha gratuita, compra, saldo, guarda-roupa, resposta perdida, duas compras disputando o saldo em dois aparelhos, a missão de Êxodo 28 com o Peitoral já obtido e o marco de Êxodo 25 com a Mesa já obtida (resposta perdida e reenvio) — interface + banco | `flow.cjs` |
 | 5 | Bateria SQL do repositório (`supabase/tests/10`–`70`) num banco recriado com todas as 15 migrações | `run.sh` |
 
-## Resultado — catálogo v7 (última execução completa, 16 migrações)
+## Resultado — catálogo v8 (última execução completa, 18 migrações)
+
+| Cenário | Resultado |
+|---|---|
+| Migrações | ✔ 14 antes do Mercado; depois Mercado, v7, sessões com marco e v8 (18 registradas); banco no catálogo v8 com 14 missões e 20 marcos |
+| Atualização, permissões, meta, compra, resposta perdida, saldo disputado, Êxodo 28 | ✔ iguais à execução v7 |
+| Marco de Êxodo 25 com a Mesa já obtida | ✔ escolhido na aba Ler; resposta perdida; vínculo mostrado ao reabrir; reenvio concede só Arca e Candelabro (1 sessão vinculada, 1 marco, 2 recompensas); Santuário 3 de 13 |
+| Bateria SQL no Postgres do Supabase | ✔ 449 verificações (10–90) |
+
+## Resultado — catálogo v7 (16 migrações)
 
 | Cenário | Resultado |
 |---|---|

@@ -130,7 +130,7 @@ export function MissionCompletedScreen() {
       })() : null}
 
       {result.missions.map((m) => (
-        <Notice key={m.id} tone="success">{fmt(strings.mission.missionDone, { name: m.name })}</Notice>
+        <Notice key={m.id} tone="success">{fmt(m.kind === 'milestone' ? strings.mission.milestoneDone : strings.mission.missionDone, { name: m.name })}</Notice>
       ))}
 
       <Card>
@@ -148,6 +148,7 @@ export function MissionCompletedScreen() {
                 <AppText variant="label">{displayName(item)}</AppText>
                 <AppText variant="caption" color={RARITY_COLOR[item.rarity]}>{strings.rarity[item.rarity]}</AppText>
                 {item.scriptureRef ? <AppText variant="caption" muted>{item.scriptureRef}</AppText> : null}
+                {item.meaning ? <AppText variant="caption" muted>{item.meaning}</AppText> : null}
                 {isEquippable(item) ? (
                   <Button compact title={strings.mission.equipNow} loading={busy === id} onPress={() => void equip(item.id)} />
                 ) : (
@@ -158,6 +159,7 @@ export function MissionCompletedScreen() {
           );
         })}
         {result.granted.length ? <Button variant="secondary" title={strings.mission.seeInventory} onPress={() => router.push('/avatar/wardrobe')} /> : null}
+        {result.granted.some((id) => getItem(id)?.rarity === 'holy') ? <Button variant="secondary" title={strings.mission.seeSanctuary} onPress={() => router.push('/avatar/sanctuary')} /> : null}
       </Card>
 
       {next ? (
