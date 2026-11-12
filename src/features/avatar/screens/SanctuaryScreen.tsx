@@ -9,7 +9,7 @@ import { errorMessage } from '@/lib/errors';
 import { StepHeader } from '../components/StepHeader';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { COLLECTIONS, COSMETIC_ITEMS, getItem, getRarity, resolveItemId } from '../domain/catalog';
+import { COLLECTIONS, COSMETIC_ITEMS, displayName, getItem, getRarity, resolveItemId } from '../domain/catalog';
 import { getWardrobe } from '../services/wardrobe.service';
 import bible from '../../reading/bible-books.json';
 
@@ -88,7 +88,7 @@ export function SanctuaryScreen() {
                         </View>
                       ) : null}
                     </View>
-                    <AppText variant="caption" numberOfLines={2} style={styles.relicLabel}>{item.name}</AppText>
+                    <AppText variant="caption" numberOfLines={2} style={styles.relicLabel}>{displayName(item)}</AppText>
                     {!has ? <AppText variant="caption" muted numberOfLines={2} style={styles.relicHint}>{item.scriptureRef}</AppText> : null}
                   </Pressable>
                 );

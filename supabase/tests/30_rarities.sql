@@ -127,9 +127,9 @@ select tests.assert_raises($$select tests.ev8('MISSION_COMPLETED', 'mission:miss
 select tests.assert_raises($$select tests.ev8('MILESTONE_REACHED', 'milestone:holy_mana_do_deserto', '{"milestone":"holy_mana_do_deserto"}')$$, 'unknown_trigger', 'marco santo não cadastrado é recusado');
 select tests.assert_raises($$select tests.ev8('WORLD_COMPLETED', 'world:x', '{"world":"x"}')$$, 'unknown_trigger', 'mundo não cadastrado é recusado');
 select tests.assert(
-  (select array_agg(id order by id) from public.reward_triggers) = array['missao_manto_do_profeta']
+  (select count(*) from public.reward_triggers where kind = 'mission' and is_active and book_code is not null) = 14
   and not exists (select 1 from public.reward_triggers where kind = 'milestone'),
-  'só a missão curada do Manto do Profeta está cadastrada; nenhum marco santo');
+  'missões especiais dos Raros cadastradas (14, incluindo o Manto do Profeta); nenhum marco santo');
 
 -- cenário isolado: um marco curado cadastrado só neste banco de teste
 insert into public.reward_triggers (id, kind, name) values ('holy_selo_da_promessa', 'milestone', 'Marco de teste');

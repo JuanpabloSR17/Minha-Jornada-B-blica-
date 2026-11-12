@@ -10,7 +10,7 @@ import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { getItem } from '@/features/avatar/domain/catalog';
+import { displayName, displayNameOf, getItem } from '@/features/avatar/domain/catalog';
 import { INVENTORY_CATEGORIES } from '@/features/avatar/domain/wardrobe';
 import { uuidv4 } from '@/features/reading/mission/session';
 import { getMarket, pendingPurchaseStorage, purchaseItem, type MarketItem, type MarketState, type PendingPurchase } from './market.service';
@@ -51,7 +51,7 @@ export function MarketScreen() {
     }, [load, userId]),
   );
 
-  const name = (id: string) => getItem(id)?.name ?? id;
+  const name = displayNameOf;
 
   /** Envia (ou reenvia) a compra pendente e trata o resultado. */
   const send = async (p: PendingPurchase) => {
@@ -154,7 +154,7 @@ export function MarketScreen() {
               <ItemIcon item={item} size={60} />
             </View>
             <View style={styles.info}>
-              <AppText variant="label">{item.name}</AppText>
+              <AppText variant="label">{displayName(item)}</AppText>
               <AppText variant="caption" color={RARITY_COLOR[item.rarity]}>{strings.rarity[item.rarity]} · {category}</AppText>
               <AppText variant="label">{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
               {it.owned ? (

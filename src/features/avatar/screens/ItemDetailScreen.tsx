@@ -10,7 +10,7 @@ import { StepHeader } from '../components/StepHeader';
 import { AvatarStage } from '../components/AvatarStage';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { collectionsOf, getItem, getRarity } from '../domain/catalog';
+import { collectionsOf, displayName, getItem, getRarity } from '../domain/catalog';
 import bible from '../../reading/bible-books.json';
 
 const bookName = (code: string) => (bible as { code: string; name: string }[]).find((b) => b.code === code)?.name ?? code;
@@ -76,7 +76,7 @@ export function ItemDetailScreen({ id }: { id: string }) {
 
   return (
     <Screen>
-      <StepHeader title={item.name} onBack={() => router.back()} />
+      <StepHeader title={displayName(item)} onBack={() => router.back()} />
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
       {item.slot === 'relic' ? (
         <View style={[styles.relicHero, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.stage }]}>

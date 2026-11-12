@@ -485,7 +485,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar missão: 1 Reis 19' }).click();
   await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
   await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
-  await C.page.getByText('Missão especial concluída: Missão especial: o chamado de Eliseu').waitFor();
+  await C.page.getByText('Missão especial: o chamado de Eliseu — concluída').waitFor();
   await C.page.getByText('Manto do Profeta').waitFor();
   const biaId = (await db.query(`select id from profiles where username = 'bia_teste'`)).rows[0].id;
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'cloak-elijah'`, [biaId])).rows[0].count), 1);
@@ -546,6 +546,47 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByText('Meta cumprida hoje!').waitFor();
   assert.equal(await C.page.getByText('Recompensa da meta diária esperando sua escolha').count(), 0);
   step('escolha pendente volta ao reabrir o app; queda de conexão após o servidor registrar: nova confirmação sem novo item');
+
+  // ============================================================ MISSÕES ESPECIAIS DOS RAROS
+  // Bia já tem o Peitoral (obtido antes): Êxodo 28 entrega só a Estola e o Turbante
+  await db.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'rare_peitoral_das_doze_pedras', 'test:obtido-antes')`, [biaId]);
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByRole('button', { name: /Missão especial: as vestes do sumo sacerdote/ }).click();
+  await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 28' }).click();
+  await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
+  await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await C.page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
+  await C.page.getByText('Estola Sacerdotal', { exact: true }).waitFor();
+  await C.page.getByText('Turbante do Sacerdote', { exact: true }).waitFor();
+  assert.equal(await C.page.getByText('Peitoral das Doze Pedras', { exact: true }).count(), 0, 'o Peitoral já obtido não é mostrado como concedido');
+  assert.equal(await C.page.getByRole('button', { name: 'Equipar agora' }).count(), 2);
+  const ex28 = (await db.query(`select item_id from user_items where user_id = $1 and item_id like 'rare_%' order by item_id`, [biaId])).rows.map((r) => r.item_id);
+  assert.deepEqual(ex28, ['rare_estola_sacerdotal', 'rare_peitoral_das_doze_pedras', 'rare_turbante_do_sacerdote']);
+  await shot(C.page, 'm8-01-mission-exodus28-dark');
+  step('missão de Êxodo 28: a tela mostra só os Raros concedidos (Estola e Turbante), sem repetir o Peitoral já obtido');
+
+  await C.page.goto(`${APP}/read`);
+  await C.page.getByRole('button', { name: /Missão especial: uma noiva para Isaque/ }).click();
+  await C.page.getByRole('button', { name: 'Iniciar missão: Gênesis 24' }).click();
+  await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
+  await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await C.page.getByText('Missão especial: uma noiva para Isaque — concluída').waitFor();
+  await C.page.getByText('Bracelete da Corte', { exact: true }).waitFor();
+  await C.page.getByText('Jarro de Rebeca', { exact: true }).waitFor();
+  await C.page.getByText('Raro', { exact: true }).first().waitFor();
+  await C.page.getByText('Épico', { exact: true }).first().waitFor();
+  await shot(C.page, 'm8-02-mission-genesis24-dark');
+  step('Gênesis 24: a mesma leitura mostra o Raro (Bracelete da Corte) e o Épico (Jarro de Rebeca)');
+
+  await C.page.goto(`${APP}/avatar/item/rare_rolo_do_escriba`);
+  await C.page.getByText('Rolo do Escriba (Raro)').first().waitFor();
+  await C.page.getByText('Conclua a missão especial de Esdras 7 no Modo Missão').waitFor();
+  await C.page.goto(`${APP}/avatar/item/book_ezr`);
+  await C.page.getByText('Rolo do Escriba (Lendário)').first().waitFor();
+  await C.page.goto(`${APP}/avatar/item/rare_sandalias_do_peregrino`);
+  await C.page.getByText('Inspirado em (associação metafórica)').waitFor();
+  step('nomes repetidos com a raridade (Rolo do Escriba Raro × Lendário) e associação metafórica das Sandálias do Peregrino');
+  await C.page.goto(`${APP}/home`);
 
   // ============================================================ MERCADO DOS VIAJANTES
   const biaBalance = async () => Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [biaId])).rows[0].s);

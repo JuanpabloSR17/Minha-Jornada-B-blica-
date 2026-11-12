@@ -1,4 +1,38 @@
-# Missões especiais dos Raros — proposta para revisão editorial
+# Missões especiais dos Raros
+
+> **Situação (catálogo v7):** cadastradas 13 missões novas para 15 Raros, mais a missão do Manto do
+> Profeta (16 de 18). **Pendentes de revisão editorial:** Cálice de Bronze e Bolsa do Mensageiro
+> (seguem fora de missão; a Bolsa continua à venda). Decisões aplicadas: D-01 aprovado; D-02 opção A
+> (uma missão para Êxodo 28 com os três Raros); D-03 aceito (Gn 24 e Ed 7 podem conceder Raro, Épico
+> e, se for o último capítulo do livro, o Lendário); D-04 sem compensação; D-05 Raros fora da escolha
+> gratuita; D-06 nome com a raridade na interface ("Rolo do Escriba (Raro)" / "(Lendário)"), IDs e
+> nomes oficiais preservados; D-09 "inspirado em" e Sandálias do Peregrino como associação metafórica;
+> D-07 e D-08 pendentes; D-10 fora desta entrega.
+
+## Missões cadastradas
+
+| Missão (ID) | Capítulo | Itens |
+|---|---|---|
+| `missao_manto_do_profeta` · o chamado de Eliseu | 1 Reis 19 | Manto do Profeta (`cloak-elijah`) |
+| `missao_vestes_do_sumo_sacerdote` · as vestes do sumo sacerdote | Êxodo 28 | Estola Sacerdotal, Peitoral das Doze Pedras, Turbante do Sacerdote |
+| `missao_arca_sobe_a_jerusalem` · a arca sobe a Jerusalém | 1 Crônicas 15 | Faixa dos Levitas |
+| `missao_voz_no_deserto` · a voz que clama no deserto | Mateus 3 | Cinto de Couro de João |
+| `missao_uncao_de_salomao` · a unção de Salomão | 1 Reis 1 | Flauta do Músico (também no Mercado, 400) |
+| `missao_o_atalaia` · o atalaia | Ezequiel 33 | Trombeta do Atalaia |
+| `missao_esdras_o_escriba` · Esdras, o escriba | Esdras 7 | Rolo do Escriba (Raro) |
+| `missao_noiva_para_isaque` · uma noiva para Isaque | Gênesis 24 | Bracelete da Corte |
+| `missao_jose_diante_de_farao` · José diante de Faraó | Gênesis 41 | Anel de Selo |
+| `missao_ovelha_perdida` · a ovelha perdida | Lucas 15 | Manto de Lã do Pastor (também no Mercado, 400) |
+| `missao_tudo_que_tem_folego` · tudo o que tem fôlego | Salmos 150 | Instrumento de Cordas (também no Mercado, 450) |
+| `missao_consagracao_de_arao` · a consagração de Arão | Levítico 8 | Túnica Cerimonial |
+| `missao_pes_do_mensageiro` · os pés do mensageiro | Isaías 52 | Sandálias do Peregrino (também no Mercado, 400) |
+| `missao_armadura_de_deus` · a armadura de Deus | Efésios 6 | Cinto da Verdade |
+
+Cadastro: `catalog.json#missions` (`rewardItems` aceita vários itens) → `reward_triggers` e regras
+`mission_completed` geradas na migração do catálogo v7. Ajustes editoriais por item ficam em
+`catalog.json#editorialOverrides` e são reaplicados a cada importação.
+
+# Proposta original para revisão editorial
 
 Base: catálogo vigente v6 (`src/features/avatar/catalog/catalog.json`), commit `f6cca4d`. Nada foi cadastrado:
 as missões propostas dependem das decisões no fim deste documento.

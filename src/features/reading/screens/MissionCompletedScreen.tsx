@@ -10,7 +10,7 @@ import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { getItem, isEquippable } from '@/features/avatar/domain/catalog';
+import { displayName, displayNameOf, getItem, isEquippable } from '@/features/avatar/domain/catalog';
 import { equipItem, getWardrobe } from '@/features/avatar/services/wardrobe.service';
 import bible from '../bible-books.json';
 import { missionStorage } from '../mission/storage';
@@ -116,7 +116,7 @@ export function MissionCompletedScreen() {
               goal.options.length === 0 ? (
                 <AppText muted>{strings.mission.goalAllOwned}</AppText>
               ) : goal.chosenItem ? (
-                <Notice tone="success">{fmt(strings.mission.goalChosen, { item: getItem(goal.chosenItem)?.name ?? goal.chosenItem })}</Notice>
+                <Notice tone="success">{fmt(strings.mission.goalChosen, { item: displayNameOf(goal.chosenItem) })}</Notice>
               ) : (
                 <GoalChoice goal={goal} onChange={(g) => {
                   const next = { ...result, dailyGoal: { ...dg, goal: g } };
@@ -145,7 +145,7 @@ export function MissionCompletedScreen() {
                 <ItemIcon item={item} size={72} />
               </View>
               <View style={styles.flex}>
-                <AppText variant="label">{item.name}</AppText>
+                <AppText variant="label">{displayName(item)}</AppText>
                 <AppText variant="caption" color={RARITY_COLOR[item.rarity]}>{strings.rarity[item.rarity]}</AppText>
                 {item.scriptureRef ? <AppText variant="caption" muted>{item.scriptureRef}</AppText> : null}
                 {isEquippable(item) ? (

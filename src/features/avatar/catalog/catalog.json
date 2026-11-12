@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "appearance": {
     "body": [
       {
@@ -578,7 +578,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -616,7 +616,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -639,7 +639,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -677,7 +677,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -700,7 +700,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -723,7 +723,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -746,7 +746,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -769,7 +769,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -792,7 +792,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -815,7 +815,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -838,7 +838,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -861,7 +861,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -884,7 +884,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -907,7 +907,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -930,7 +930,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -953,7 +953,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -976,7 +976,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -999,7 +999,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -1022,7 +1022,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -1045,7 +1045,7 @@
         "payload": {
           "pool": "common"
         },
-        "label": "Recompensa de missão (Modo Missão, em breve)"
+        "label": "Escolha gratuita da meta diária ou Mercado dos Viajantes"
       },
       "series": "oficial-v2"
     },
@@ -1063,11 +1063,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_vestes_do_sumo_sacerdote"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Êxodo 28 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1085,11 +1085,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_vestes_do_sumo_sacerdote"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Êxodo 28 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1107,11 +1107,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_vestes_do_sumo_sacerdote"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Êxodo 28 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1129,11 +1129,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_arca_sobe_a_jerusalem"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de 1 Crônicas 15 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1173,11 +1173,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_voz_no_deserto"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Mateus 3 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1196,11 +1196,11 @@
       "shopPriceSuggested": 400,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_uncao_de_salomao"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de 1 Reis 1 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1218,11 +1218,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_o_atalaia"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Ezequiel 33 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1240,11 +1240,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_esdras_o_escriba"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Esdras 7 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1262,11 +1262,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_noiva_para_isaque"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Gênesis 24 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1284,11 +1284,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_jose_diante_de_farao"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Gênesis 41 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1307,11 +1307,11 @@
       "shopPriceSuggested": 400,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_ovelha_perdida"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Lucas 15 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1330,11 +1330,11 @@
       "shopPriceSuggested": 450,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_tudo_que_tem_folego"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Salmos 150 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1356,7 +1356,7 @@
         "payload": {
           "pool": "rare"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Missão especial em revisão editorial"
       },
       "series": "oficial-v2"
     },
@@ -1374,11 +1374,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_consagracao_de_arao"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Levítico 8 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1401,7 +1401,7 @@
         "payload": {
           "pool": "rare"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Mercado dos Viajantes (missão especial em revisão editorial)"
       },
       "series": "oficial-v2"
     },
@@ -1409,22 +1409,22 @@
       "id": "rare_sandalias_do_peregrino",
       "officialId": "rare_sandalias_do_peregrino",
       "name": "Sandálias do Peregrino",
-      "description": "Inspirado em Isaías 52:7. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Isaías 52:7. Item cosmético e simbólico.",
       "rarity": "rare",
       "category": "footwear",
       "slot": "feet",
       "scriptureRef": "Isaías 52:7",
-      "representation": "inspired",
+      "representation": "metaphorical",
       "acquisition": "mission",
       "shopEligible": true,
       "shopPriceSuggested": 400,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_pes_do_mensageiro"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Isaías 52 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -1432,7 +1432,7 @@
       "id": "rare_cinto_da_verdade",
       "officialId": "rare_cinto_da_verdade",
       "name": "Cinto da Verdade",
-      "description": "Imagem inspirada em Efésios 6:14. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Efésios 6:14. Item cosmético e simbólico.",
       "rarity": "rare",
       "category": "belt",
       "slot": "waist",
@@ -1442,11 +1442,11 @@
       "shopEligible": false,
       "starter": false,
       "unlock": {
-        "type": "mission_pool",
+        "type": "mission_completed",
         "payload": {
-          "pool": "rare"
+          "mission": "missao_armadura_de_deus"
         },
-        "label": "Recompensa de missão especial (Modo Missão, em breve)"
+        "label": "Conclua a missão especial de Efésios 6 no Modo Missão"
       },
       "series": "oficial-v2"
     },
@@ -2263,7 +2263,7 @@
       "id": "crown-wisdom",
       "officialId": "book_pro",
       "name": "Coroa da Sabedoria",
-      "description": "Imagem inspirada em Provérbios 4:9. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Provérbios 4:9. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "headwear",
       "slot": "head",
@@ -2381,7 +2381,7 @@
       "id": "book_lam",
       "officialId": "book_lam",
       "name": "Lanterna da Esperança",
-      "description": "Imagem inspirada em Lamentações 3:21-23. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Lamentações 3:21-23. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "container",
       "slot": "hands",
@@ -2451,7 +2451,7 @@
       "id": "book_hos",
       "officialId": "book_hos",
       "name": "Laço da Fidelidade",
-      "description": "Imagem inspirada em Oseias 2:19. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Oseias 2:19. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "jewelry",
       "slot": "neck",
@@ -2520,7 +2520,7 @@
       "id": "book_oba",
       "officialId": "book_oba",
       "name": "Insígnia de Sião",
-      "description": "Imagem inspirada em Obadias 1:17. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Obadias 1:17. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "frame",
       "slot": "frame",
@@ -2589,7 +2589,7 @@
       "id": "book_nam",
       "officialId": "book_nam",
       "name": "Sandálias do Mensageiro",
-      "description": "Imagem inspirada em Naum 1:15. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Naum 1:15. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "footwear",
       "slot": "feet",
@@ -2635,7 +2635,7 @@
       "id": "book_zep",
       "officialId": "book_zep",
       "name": "Emblema do Cântico",
-      "description": "Imagem inspirada em Sofonias 3:17. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Sofonias 3:17. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -2750,7 +2750,7 @@
       "id": "book_mrk",
       "officialId": "book_mrk",
       "name": "Manto do Servo",
-      "description": "Imagem inspirada em Marcos 10:45. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Marcos 10:45. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "cloak",
       "slot": "back",
@@ -2845,7 +2845,7 @@
       "id": "book_rom",
       "officialId": "book_rom",
       "name": "Emblema da Esperança",
-      "description": "Imagem inspirada em Romanos 5:5. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Romanos 5:5. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "frame",
       "slot": "frame",
@@ -2915,7 +2915,7 @@
       "id": "book_gal",
       "officialId": "book_gal",
       "name": "Insígnia do Fruto",
-      "description": "Imagem inspirada em Gálatas 5:22-23. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Gálatas 5:22-23. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -2938,7 +2938,7 @@
       "id": "book_eph",
       "officialId": "book_eph",
       "name": "Escudo da Fé",
-      "description": "Imagem inspirada em Efésios 6:16. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Efésios 6:16. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "emblem",
       "slot": "hands",
@@ -2961,7 +2961,7 @@
       "id": "book_php",
       "officialId": "book_php",
       "name": "Faixa da Alegria",
-      "description": "Imagem inspirada em Filipenses 4:4. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Filipenses 4:4. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "belt",
       "slot": "waist",
@@ -2984,7 +2984,7 @@
       "id": "book_col",
       "officialId": "book_col",
       "name": "Manto da Compaixão",
-      "description": "Imagem inspirada em Colossenses 3:12. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Colossenses 3:12. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "cloak",
       "slot": "back",
@@ -3007,7 +3007,7 @@
       "id": "book_1th",
       "officialId": "book_1th",
       "name": "Peitoral da Fé e do Amor",
-      "description": "Imagem inspirada em 1 Tessalonicenses 5:8. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 1 Tessalonicenses 5:8. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "ceremonial",
       "slot": "chest",
@@ -3030,7 +3030,7 @@
       "id": "book_2th",
       "officialId": "book_2th",
       "name": "Emblema da Perseverança",
-      "description": "Imagem inspirada em 2 Tessalonicenses 1:4. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 2 Tessalonicenses 1:4. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "frame",
       "slot": "frame",
@@ -3053,7 +3053,7 @@
       "id": "book_1ti",
       "officialId": "book_1ti",
       "name": "Selo do Bom Combate",
-      "description": "Imagem inspirada em 1 Timóteo 6:12. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 1 Timóteo 6:12. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -3076,7 +3076,7 @@
       "id": "book_2ti",
       "officialId": "book_2ti",
       "name": "Tocha da Fidelidade",
-      "description": "Imagem inspirada em 2 Timóteo 4:7. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 2 Timóteo 4:7. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "container",
       "slot": "hands",
@@ -3099,7 +3099,7 @@
       "id": "book_tit",
       "officialId": "book_tit",
       "name": "Manto das Boas Obras",
-      "description": "Imagem inspirada em Tito 3:8. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Tito 3:8. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "cloak",
       "slot": "back",
@@ -3122,7 +3122,7 @@
       "id": "book_phm",
       "officialId": "book_phm",
       "name": "Selo da Reconciliação",
-      "description": "Imagem inspirada em Filemom 1:15-17. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Filemom 1:15-17. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -3145,7 +3145,7 @@
       "id": "book_heb",
       "officialId": "book_heb",
       "name": "Âncora da Alma",
-      "description": "Imagem inspirada em Hebreus 6:19. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Hebreus 6:19. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -3191,7 +3191,7 @@
       "id": "book_1pe",
       "officialId": "book_1pe",
       "name": "Coroa da Glória",
-      "description": "Imagem inspirada em 1 Pedro 5:4. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 1 Pedro 5:4. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "headwear",
       "slot": "head",
@@ -3214,7 +3214,7 @@
       "id": "book_2pe",
       "officialId": "book_2pe",
       "name": "Lâmpada Profética",
-      "description": "Imagem inspirada em 2 Pedro 1:19. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 2 Pedro 1:19. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "container",
       "slot": "hands",
@@ -3237,7 +3237,7 @@
       "id": "book_1jn",
       "officialId": "book_1jn",
       "name": "Emblema do Amor",
-      "description": "Imagem inspirada em 1 João 4:7-8. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 1 João 4:7-8. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "insignia",
       "slot": "special",
@@ -3260,7 +3260,7 @@
       "id": "book_2jn",
       "officialId": "book_2jn",
       "name": "Pergaminho da Verdade",
-      "description": "Imagem inspirada em 2 João 1:4. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 2 João 1:4. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "scroll",
       "slot": "hands",
@@ -3283,7 +3283,7 @@
       "id": "book_3jn",
       "officialId": "book_3jn",
       "name": "Bolsa da Hospitalidade",
-      "description": "Imagem inspirada em 3 João 1:5-8. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em 3 João 1:5-8. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "container",
       "slot": "waist",
@@ -3306,7 +3306,7 @@
       "id": "book_jud",
       "officialId": "book_jud",
       "name": "Escudo da Perseverança",
-      "description": "Imagem inspirada em Judas 1:20-21. Item cosmético e simbólico.",
+      "description": "Associação metafórica, inspirada em Judas 1:20-21. Item cosmético e simbólico.",
       "rarity": "legendary",
       "category": "emblem",
       "slot": "hands",
@@ -3353,7 +3353,7 @@
       "id": "holy_luz_da_criacao",
       "officialId": "holy_luz_da_criacao",
       "name": "Luz da Criação",
-      "description": "A luz criada por Deus no princípio. Representação simbólica de Gênesis 1:3. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A luz criada por Deus no princípio. Representação simbólica, inspirada em Gênesis 1:3. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "effect",
       "slot": "effect",
@@ -3379,7 +3379,7 @@
       "id": "holy_coluna_de_nuvem_e_fogo",
       "officialId": "holy_coluna_de_nuvem_e_fogo",
       "name": "Coluna de Nuvem e Fogo",
-      "description": "A condução de Israel no deserto. Representação simbólica de Êxodo 13:21-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A condução de Israel no deserto. Representação simbólica, inspirada em Êxodo 13:21-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3405,7 +3405,7 @@
       "id": "holy_travessia_do_mar",
       "officialId": "holy_travessia_do_mar",
       "name": "Travessia do Mar",
-      "description": "A abertura do mar na narrativa do Êxodo. Representação simbólica de Êxodo 14:21-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A abertura do mar na narrativa do Êxodo. Representação simbólica, inspirada em Êxodo 14:21-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3431,7 +3431,7 @@
       "id": "holy_mana_do_deserto",
       "officialId": "holy_mana_do_deserto",
       "name": "Maná do Deserto",
-      "description": "O alimento providenciado no deserto. Representação simbólica de Êxodo 16:14-15. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "O alimento providenciado no deserto. Representação simbólica, inspirada em Êxodo 16:14-15. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3457,7 +3457,7 @@
       "id": "holy_tabuas_da_alianca",
       "officialId": "holy_tabuas_da_alianca",
       "name": "Tábuas da Aliança",
-      "description": "As tábuas do testemunho. Representação simbólica de Êxodo 31:18. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "As tábuas do testemunho. Representação simbólica, inspirada em Êxodo 31:18. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3483,7 +3483,7 @@
       "id": "holy_arca_da_alianca_representacao",
       "officialId": "holy_arca_da_alianca_representacao",
       "name": "Arca da Aliança (Representação)",
-      "description": "Modelo ilustrado da arca descrita no Tabernáculo. Representação simbólica de Êxodo 25:10-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Modelo ilustrado da arca descrita no Tabernáculo. Representação simbólica, inspirada em Êxodo 25:10-22. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3509,7 +3509,7 @@
       "id": "holy_candelabro_do_tabernaculo",
       "officialId": "holy_candelabro_do_tabernaculo",
       "name": "Candelabro do Tabernáculo",
-      "description": "O candelabro sagrado descrito na construção. Representação simbólica de Êxodo 25:31-40. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "O candelabro sagrado descrito na construção. Representação simbólica, inspirada em Êxodo 25:31-40. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3535,7 +3535,7 @@
       "id": "holy_mesa_dos_paes_da_presenca",
       "officialId": "holy_mesa_dos_paes_da_presenca",
       "name": "Mesa dos Pães da Presença",
-      "description": "Mesa do Tabernáculo. Representação simbólica de Êxodo 25:23-30. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Mesa do Tabernáculo. Representação simbólica, inspirada em Êxodo 25:23-30. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3561,7 +3561,7 @@
       "id": "holy_altar_do_incenso",
       "officialId": "holy_altar_do_incenso",
       "name": "Altar do Incenso",
-      "description": "Altar do Tabernáculo. Representação simbólica de Êxodo 30:1-10. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Altar do Tabernáculo. Representação simbólica, inspirada em Êxodo 30:1-10. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3587,7 +3587,7 @@
       "id": "holy_fogo_no_carmelo",
       "officialId": "holy_fogo_no_carmelo",
       "name": "Fogo no Carmelo",
-      "description": "A resposta de Deus no Monte Carmelo. Representação simbólica de 1 Reis 18:36-39. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A resposta de Deus no Monte Carmelo. Representação simbólica, inspirada em 1 Reis 18:36-39. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3613,7 +3613,7 @@
       "id": "holy_fogo_da_dedicacao_do_templo",
       "officialId": "holy_fogo_da_dedicacao_do_templo",
       "name": "Fogo da Dedicação do Templo",
-      "description": "O fogo na dedicação do templo. Representação simbólica de 2 Crônicas 7:1-3. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "O fogo na dedicação do templo. Representação simbólica, inspirada em 2 Crônicas 7:1-3. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3639,7 +3639,7 @@
       "id": "holy_rolo_da_lei_encontrado",
       "officialId": "holy_rolo_da_lei_encontrado",
       "name": "Rolo da Lei Encontrado",
-      "description": "A descoberta do Livro da Lei no templo. Representação simbólica de 2 Reis 22:8-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A descoberta do Livro da Lei no templo. Representação simbólica, inspirada em 2 Reis 22:8-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3665,7 +3665,7 @@
       "id": "holy_livramento_na_fornalha",
       "officialId": "holy_livramento_na_fornalha",
       "name": "Livramento na Fornalha",
-      "description": "O livramento narrado no episódio da fornalha. Representação simbólica de Daniel 3:24-27. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "O livramento narrado no episódio da fornalha. Representação simbólica, inspirada em Daniel 3:24-27. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3691,7 +3691,7 @@
       "id": "holy_sinal_do_cordeiro_de_deus",
       "officialId": "holy_sinal_do_cordeiro_de_deus",
       "name": "Sinal do Cordeiro de Deus",
-      "description": "Símbolo do testemunho acerca de Jesus. Representação simbólica de João 1:29. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Símbolo do testemunho acerca de Jesus. Representação simbólica, inspirada em João 1:29. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "frame",
       "slot": "frame",
@@ -3717,7 +3717,7 @@
       "id": "holy_agua_transformada_em_vinho",
       "officialId": "holy_agua_transformada_em_vinho",
       "name": "Água Transformada em Vinho",
-      "description": "Sinal de Jesus em Caná, representado pelos jarros. Representação simbólica de João 2:6-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Sinal de Jesus em Caná, representado pelos jarros. Representação simbólica, inspirada em João 2:6-11. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3743,7 +3743,7 @@
       "id": "holy_paes_da_multiplicacao",
       "officialId": "holy_paes_da_multiplicacao",
       "name": "Pães da Multiplicação",
-      "description": "A multiplicação dos pães. Representação simbólica de João 6:11-13. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "A multiplicação dos pães. Representação simbólica, inspirada em João 6:11-13. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "relic",
       "slot": "relic",
@@ -3769,7 +3769,7 @@
       "id": "holy_tumulo_vazio",
       "officialId": "holy_tumulo_vazio",
       "name": "Túmulo Vazio",
-      "description": "Símbolo da ressurreição de Jesus. Representação simbólica de Lucas 24:2-6. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Símbolo da ressurreição de Jesus. Representação simbólica, inspirada em Lucas 24:2-6. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3795,7 +3795,7 @@
       "id": "holy_cenario_do_monte_da_transfiguracao",
       "officialId": "holy_cenario_do_monte_da_transfiguracao",
       "name": "Cenário do Monte da Transfiguração",
-      "description": "Representação do cenário da transfiguração sem personificar Deus como item. Representação simbólica de Mateus 17:1-5. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Representação do cenário da transfiguração sem personificar Deus como item. Representação simbólica, inspirada em Mateus 17:1-5. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -3821,7 +3821,7 @@
       "id": "holy_sinal_da_pomba",
       "officialId": "holy_sinal_da_pomba",
       "name": "Sinal da Pomba",
-      "description": "Símbolo da descida do Espírito no batismo de Jesus. Representação simbólica de Mateus 3:16. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Símbolo da descida do Espírito no batismo de Jesus. Representação simbólica, inspirada em Mateus 3:16. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "frame",
       "slot": "frame",
@@ -3847,7 +3847,7 @@
       "id": "holy_chamas_de_pentecostes",
       "officialId": "holy_chamas_de_pentecostes",
       "name": "Chamas de Pentecostes",
-      "description": "Sinal visual das línguas como de fogo. Representação simbólica de Atos 2:1-4. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Sinal visual das línguas como de fogo. Representação simbólica, inspirada em Atos 2:1-4. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "effect",
       "slot": "effect",
@@ -3873,7 +3873,7 @@
       "id": "holy_selo_da_promessa",
       "officialId": "holy_selo_da_promessa",
       "name": "Selo da Promessa",
-      "description": "Representação simbólica do Espírito como selo. Representação simbólica de Efésios 1:13. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Representação simbólica do Espírito como selo. Representação simbólica, inspirada em Efésios 1:13. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "frame",
       "slot": "frame",
@@ -3899,7 +3899,7 @@
       "id": "holy_cenario_da_nova_criacao",
       "officialId": "holy_cenario_da_nova_criacao",
       "name": "Cenário da Nova Criação",
-      "description": "Representação artística da promessa de todas as coisas novas. Representação simbólica de Apocalipse 21:1-5. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
+      "description": "Representação artística da promessa de todas as coisas novas. Representação simbólica, inspirada em Apocalipse 21:1-5. Representação simbólica para o Santuário; o objeto não é divino e não confere poder.",
       "rarity": "holy",
       "category": "background",
       "slot": "background",
@@ -4457,7 +4457,164 @@
       "description": "Leia 1 Reis 19 no Modo Missão: Elias lança o manto sobre Eliseu (1 Reis 19:19).",
       "book": "1KI",
       "chapter": 19,
-      "rewardItem": "cloak-elijah"
+      "rewardItems": [
+        "cloak-elijah"
+      ]
+    },
+    {
+      "id": "missao_vestes_do_sumo_sacerdote",
+      "kind": "mission",
+      "name": "Missão especial: as vestes do sumo sacerdote",
+      "description": "Leia Êxodo 28 no Modo Missão: a estola, o peitoral das doze pedras e o turbante de Arão (Êxodo 28:6-8, 15-21, 39-40).",
+      "book": "EXO",
+      "chapter": 28,
+      "rewardItems": [
+        "rare_estola_sacerdotal",
+        "rare_peitoral_das_doze_pedras",
+        "rare_turbante_do_sacerdote"
+      ]
+    },
+    {
+      "id": "missao_arca_sobe_a_jerusalem",
+      "kind": "mission",
+      "name": "Missão especial: a arca sobe a Jerusalém",
+      "description": "Leia 1 Crônicas 15 no Modo Missão: Davi e os levitas, vestidos de linho, levam a arca (1 Crônicas 15:27).",
+      "book": "1CH",
+      "chapter": 15,
+      "rewardItems": [
+        "rare_faixa_dos_levitas"
+      ]
+    },
+    {
+      "id": "missao_voz_no_deserto",
+      "kind": "mission",
+      "name": "Missão especial: a voz que clama no deserto",
+      "description": "Leia Mateus 3 no Modo Missão: João Batista, com roupa de pelos de camelo e cinto de couro (Mateus 3:4).",
+      "book": "MAT",
+      "chapter": 3,
+      "rewardItems": [
+        "rare_cinto_de_couro_de_joao"
+      ]
+    },
+    {
+      "id": "missao_uncao_de_salomao",
+      "kind": "mission",
+      "name": "Missão especial: a unção de Salomão",
+      "description": "Leia 1 Reis 1 no Modo Missão: o povo celebra com flautas a unção de Salomão (1 Reis 1:40).",
+      "book": "1KI",
+      "chapter": 1,
+      "rewardItems": [
+        "rare_flauta_do_musico"
+      ]
+    },
+    {
+      "id": "missao_o_atalaia",
+      "kind": "mission",
+      "name": "Missão especial: o atalaia",
+      "description": "Leia Ezequiel 33 no Modo Missão: o atalaia toca a trombeta para avisar o povo (Ezequiel 33:3-6).",
+      "book": "EZK",
+      "chapter": 33,
+      "rewardItems": [
+        "rare_trombeta_do_atalaia"
+      ]
+    },
+    {
+      "id": "missao_esdras_o_escriba",
+      "kind": "mission",
+      "name": "Missão especial: Esdras, o escriba",
+      "description": "Leia Esdras 7 no Modo Missão: Esdras, escriba versado na Lei de Moisés (Esdras 7:6).",
+      "book": "EZR",
+      "chapter": 7,
+      "rewardItems": [
+        "rare_rolo_do_escriba"
+      ]
+    },
+    {
+      "id": "missao_noiva_para_isaque",
+      "kind": "mission",
+      "name": "Missão especial: uma noiva para Isaque",
+      "description": "Leia Gênesis 24 no Modo Missão: o servo de Abraão presenteia Rebeca com braceletes (Gênesis 24:22).",
+      "book": "GEN",
+      "chapter": 24,
+      "rewardItems": [
+        "rare_bracelete_da_corte"
+      ]
+    },
+    {
+      "id": "missao_jose_diante_de_farao",
+      "kind": "mission",
+      "name": "Missão especial: José diante de Faraó",
+      "description": "Leia Gênesis 41 no Modo Missão: Faraó entrega seu anel de selo a José (Gênesis 41:42).",
+      "book": "GEN",
+      "chapter": 41,
+      "rewardItems": [
+        "rare_anel_de_selo"
+      ]
+    },
+    {
+      "id": "missao_ovelha_perdida",
+      "kind": "mission",
+      "name": "Missão especial: a ovelha perdida",
+      "description": "Leia Lucas 15 no Modo Missão. Item inspirado na parábola da ovelha perdida (Lucas 15:4-6).",
+      "book": "LUK",
+      "chapter": 15,
+      "rewardItems": [
+        "rare_manto_de_la_do_pastor"
+      ]
+    },
+    {
+      "id": "missao_tudo_que_tem_folego",
+      "kind": "mission",
+      "name": "Missão especial: tudo o que tem fôlego",
+      "description": "Leia Salmos 150 no Modo Missão: louvem com harpa e lira (Salmos 150:3-4).",
+      "book": "PSA",
+      "chapter": 150,
+      "rewardItems": [
+        "rare_instrumento_de_cordas"
+      ]
+    },
+    {
+      "id": "missao_consagracao_de_arao",
+      "kind": "mission",
+      "name": "Missão especial: a consagração de Arão",
+      "description": "Leia Levítico 8 no Modo Missão: Moisés veste Arão com a túnica (Levítico 8:7).",
+      "book": "LEV",
+      "chapter": 8,
+      "rewardItems": [
+        "rare_tunica_cerimonial"
+      ]
+    },
+    {
+      "id": "missao_pes_do_mensageiro",
+      "kind": "mission",
+      "name": "Missão especial: os pés do mensageiro",
+      "description": "Leia Isaías 52 no Modo Missão. Item inspirado em “como são belos os pés dos que anunciam boas-novas” (Isaías 52:7), uma associação metafórica.",
+      "book": "ISA",
+      "chapter": 52,
+      "rewardItems": [
+        "rare_sandalias_do_peregrino"
+      ]
+    },
+    {
+      "id": "missao_armadura_de_deus",
+      "kind": "mission",
+      "name": "Missão especial: a armadura de Deus",
+      "description": "Leia Efésios 6 no Modo Missão. Item inspirado no “cinto da verdade” da armadura de Deus (Efésios 6:14), uma associação simbólica.",
+      "book": "EPH",
+      "chapter": 6,
+      "rewardItems": [
+        "rare_cinto_da_verdade"
+      ]
     }
+  ],
+  "editorialOverrides": {
+    "rare_sandalias_do_peregrino": {
+      "representation": "metaphorical",
+      "note": "Is 52:7 é uma metáfora (decisão editorial D-09)"
+    }
+  },
+  "pendingEditorialReview": [
+    "rare_calice_de_bronze",
+    "rare_bolsa_do_mensageiro"
   ]
 }

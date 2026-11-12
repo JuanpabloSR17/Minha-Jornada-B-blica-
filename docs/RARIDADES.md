@@ -10,7 +10,7 @@
 | Raridade | Quantidade | O que é | Como se obtém |
 |---|---:|---|---|
 | Comum | 22 | Equipamentos do dia a dia | Recompensa do Modo Missão (em breve); 2 já são peças iniciais gratuitas |
-| Raro | 18 | Sacerdotes, profetas, funções especiais | Missão especial: só o Manto do Profeta tem missão curada (1 Reis 19); os demais aguardam definição |
+| Raro | 18 | Sacerdotes, profetas, funções especiais | Missão especial (16 itens, 14 missões — `docs/MISSOES-RAROS.md`); 2 pendentes de revisão editorial; 5 também no Mercado |
 | Épico | 16 | Personagens e acontecimentos marcantes | **Gratuito**: concluir o capítulo da passagem |
 | Lendário | 66 | Um por livro da Bíblia | **Gratuito**: concluir todos os capítulos do livro |
 | Santo | 22 | Artefatos sagrados e representações simbólicas das obras de Deus | Marco bíblico curado, validado pelo servidor |

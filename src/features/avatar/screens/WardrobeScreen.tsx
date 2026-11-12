@@ -12,7 +12,7 @@ import { GroupTabs } from '../components/GroupTabs';
 import { ItemCard } from '../components/ItemCard';
 import { RarityBadge } from '../components/RarityBadge';
 import { OptionCarousel } from '../components/OptionCarousel';
-import { RARITIES, getItem } from '../domain/catalog';
+import { RARITIES, displayName, getItem } from '../domain/catalog';
 import { RARITY_COLOR } from '../components/RarityBadge';
 import type { Rarity } from '../domain/avatar.types';
 import {
@@ -257,7 +257,7 @@ export function WardrobeScreen() {
     <View style={[styles.detail, { backgroundColor: colors.surfaceRaised, borderColor: colors.borderStrong }]}>
       <View style={styles.flex}>
         <View style={styles.detailTitle}>
-          <AppText variant="label" numberOfLines={2} style={styles.flexShrink}>{selected.item.name}</AppText>
+          <AppText variant="label" numberOfLines={2} style={styles.flexShrink}>{displayName(selected.item)}</AppText>
           <View style={styles.inlineBadge}><RarityBadge rarity={selected.item.rarity} /></View>
         </View>
         <AppText variant="caption" muted numberOfLines={2}>

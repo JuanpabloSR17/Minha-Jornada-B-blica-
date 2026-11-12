@@ -104,14 +104,23 @@ describe('catálogo oficial: cinco raridades e 144 itens', () => {
   });
 
   it('comuns e raros oficiais vêm do Modo Missão (nunca de uma leitura comum)', () => {
-    const missions = (require('../catalog/catalog.json') as { missions?: { id: string; rewardItem: string }[] }).missions ?? [];
+    const cat = require('../catalog/catalog.json') as { missions?: { id: string; rewardItems: string[] }[]; pendingEditorialReview?: string[] };
+    const missions = cat.missions ?? [];
     for (const it of raw.items.filter((i) => i.officialId?.startsWith('common_') || i.officialId?.startsWith('rare_'))) {
       if (!it.unlock) continue;
-      const curated = missions.find((m) => m.rewardItem === it.id);
+      const curated = missions.find((m) => m.rewardItems.includes(it.id));
       if (curated) expect(it.unlock).toMatchObject({ type: 'mission_completed', payload: { mission: curated.id } });
       else expect(it.unlock.type).toBe('mission_pool');
     }
-    expect(missions.map((m) => m.rewardItem)).toEqual(['cloak-elijah']);
+    // 18 Raros: 16 com missão (13 missões novas + Manto do Profeta), 2 pendentes de revisão editorial
+    const rares = raw.items.filter((i) => i.rarity === 'rare' && i.officialId?.startsWith('rare_'));
+    expect(rares).toHaveLength(18);
+    expect(rares.filter((i) => i.unlock?.type === 'mission_completed')).toHaveLength(16);
+    expect(rares.filter((i) => i.unlock?.type === 'mission_pool').map((i) => i.id).sort()).toEqual(['rare_bolsa_do_mensageiro', 'rare_calice_de_bronze']);
+    expect(cat.pendingEditorialReview).toEqual(['rare_calice_de_bronze', 'rare_bolsa_do_mensageiro']);
+    expect(missions).toHaveLength(14);
+    expect(missions.find((m) => m.id === 'missao_vestes_do_sumo_sacerdote')!.rewardItems).toEqual(['rare_estola_sacerdotal', 'rare_peitoral_das_doze_pedras', 'rare_turbante_do_sacerdote']);
+    expect(missions.find((m) => m.id === 'missao_manto_do_profeta')!.rewardItems).toEqual(['cloak-elijah']);
   });
 
   it('filtro por raridade e novas categorias no inventário', () => {
@@ -151,5 +160,16 @@ describe('compatibilidade com visuais e posse antigos', () => {
       const item = getItem(id);
       if (item) expect(item.slot).toBe(slot);
     }
+  });
+});
+
+describe('nomes oficiais repetidos', () => {
+  it('“Rolo do Escriba” mostra a raridade junto ao nome; IDs e nomes do catálogo preservados', () => {
+    const { displayName, getItem } = require('../domain/catalog');
+    expect(getItem('rare_rolo_do_escriba').name).toBe('Rolo do Escriba');
+    expect(getItem('book_ezr').name).toBe('Rolo do Escriba');
+    expect(displayName(getItem('rare_rolo_do_escriba'))).toBe('Rolo do Escriba (Raro)');
+    expect(displayName(getItem('book_ezr'))).toBe('Rolo do Escriba (Lendário)');
+    expect(displayName(getItem('rare_anel_de_selo'))).toBe('Anel de Selo');
   });
 });

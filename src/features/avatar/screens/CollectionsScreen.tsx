@@ -9,7 +9,7 @@ import { errorMessage } from '@/lib/errors';
 import { StepHeader } from '../components/StepHeader';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { getItem } from '../domain/catalog';
+import { displayName, getItem } from '../domain/catalog';
 import { getCollections, type CollectionProgress } from '../services/wardrobe.service';
 
 /** Coleções (P05): itens obtidos e faltantes, percentual e recompensa (concedida só pelo servidor). */
@@ -47,7 +47,7 @@ export function CollectionsScreen() {
             </View>
           ) : null}
         </View>
-        <AppText variant="caption" numberOfLines={2} style={[styles.tileLabel, { width: size + 16 }]}>{item.name}</AppText>
+        <AppText variant="caption" numberOfLines={2} style={[styles.tileLabel, { width: size + 16 }]}>{displayName(item)}</AppText>
       </Pressable>
     );
   };

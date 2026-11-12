@@ -40,7 +40,8 @@ const SLOT = {
 };
 const EXPECTED = { common: 22, rare: 18, epic: 16, legendary: 66, holy: 22 };
 const REPRESENTATION = { literal: 'literal', inspired: 'inspired', metaphorical: 'metaphorical', simbolica: 'symbolic', symbolic: 'symbolic' };
-const REP_PREFIX = { literal: 'Descrito em', inspired: 'Inspirado em', metaphorical: 'Imagem inspirada em', symbolic: 'Representação simbólica de' };
+// associações não literais sempre dizem "inspirado em" (decisão editorial)
+const REP_PREFIX = { literal: 'Descrito em', inspired: 'Inspirado em', metaphorical: 'Associação metafórica, inspirada em', symbolic: 'Representação simbólica, inspirada em' };
 const ACQUISITION = { common: 'mission', rare: 'mission', epic: 'reading', legendary: 'reading', holy: 'milestone' };
 
 const bookName = (code) => bible.find((b) => b.code === code)?.name ?? code;
@@ -140,6 +141,12 @@ export function convert(input) {
       ...(book && rarity === 'legendary' ? { book } : {}),
     };
     it.unlock = toUnlock(pick(r, 'desbloqueio', 'regra', 'regra_obtencao', 'obtencao', 'unlock'), rarity, book, it.id, ref);
+    // rótulo das rotas que existem hoje (Comuns: escolha gratuita da meta; Raros: missão especial)
+    if (it.unlock?.type === 'mission_pool') {
+      it.unlock.label = it.unlock.payload.pool === 'common'
+        ? (it.shopEligible ? 'Escolha gratuita da meta diária ou Mercado dos Viajantes' : 'Escolha gratuita da meta diária')
+        : (it.shopEligible ? 'Mercado dos Viajantes (missão especial em revisão editorial)' : 'Missão especial em revisão editorial');
+    }
     const where = `item ${i + 1}${it.id ? ` (${it.id})` : ''}`;
     for (const k of ['id', 'name', 'description', 'rarity', 'slot', 'scriptureRef']) if (!it[k]) errors.push(`${where}: campo "${k}" ausente ou inválido`);
     if (it.scriptureRef && !parseRef(it.scriptureRef)) errors.push(`${where}: referência "${it.scriptureRef}" não aponta para livro/capítulo existente`);
@@ -182,6 +189,8 @@ const sameRef = (a, b) => {
 
 /** Reconciliação NÃO destrutiva entre o catálogo oficial e o existente. */
 const isStarterItem = (i) => !!i && (i.series === 'starter' || i.starter === true);
+/** Itens de uma missão (`rewardItems`; `rewardItem` mantido por compatibilidade). */
+export const missionItems = (m) => m.rewardItems ?? (m.rewardItem ? [m.rewardItem] : []);
 
 export function reconcile(catalog, imported, history = historyIds()) {
   const existing = catalog.items;
@@ -229,8 +238,14 @@ export function reconcile(catalog, imported, history = historyIds()) {
     // inicial vence: gratuita para todos, fora das recompensas de missão e da loja
     if (isStarterItem(match)) { out.starter = true; out.acquisition = 'starter'; out.shopEligible = false; delete out.shopPriceSuggested; delete out.unlock; }
     if (match?.variantOf) out.variantOf = match.variantOf;
-    // missão curada do Modo Missão vinculada a este item (catalog.missions)
-    const mission = (catalog.missions ?? []).find((m) => m.rewardItem === keepId || m.rewardItem === off.id);
+    // ajustes editoriais aprovados (catalog.editorialOverrides), aplicados a cada reimportação
+    const override = catalog.editorialOverrides?.[keepId] ?? catalog.editorialOverrides?.[off.id];
+    if (override?.representation && override.representation !== out.representation) {
+      out.description = out.description.replace(REP_PREFIX[out.representation], REP_PREFIX[override.representation]);
+      out.representation = override.representation;
+    }
+    // missão curada do Modo Missão (catalog.missions); uma missão pode conceder vários itens
+    const mission = (catalog.missions ?? []).find((m) => missionItems(m).includes(keepId) || missionItems(m).includes(off.id));
     if (mission && !out.starter) {
       out.unlock = { type: 'mission_completed', payload: { mission: mission.id }, label: `Conclua a missão especial de ${bookName(mission.book)} ${mission.chapter} no Modo Missão` };
     }
@@ -275,6 +290,12 @@ export function reconcile(catalog, imported, history = historyIds()) {
   ];
   const slots = [...new Set([...(catalog.slots ?? []), 'chest', 'special', 'effect', 'back_item'])];
 
+  // cada missão precisa apontar para itens existentes num capítulo real
+  for (const m of catalog.missions ?? []) {
+    const b = bible.find((x) => x.code === m.book);
+    if (!b || !(m.chapter >= 1 && m.chapter <= b.chapters)) throw new Error(`missão ${m.id}: capítulo inválido ${m.book} ${m.chapter}`);
+    for (const id of missionItems(m)) if (!items.some((i) => i.id === id)) throw new Error(`missão ${m.id}: item inexistente ${id}`);
+  }
   return {
     catalog: { ...catalog, items, idAliases: aliases, collections, slots, draft: undefined },
     rows,

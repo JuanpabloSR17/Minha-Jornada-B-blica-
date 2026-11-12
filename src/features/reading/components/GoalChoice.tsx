@@ -7,7 +7,7 @@ import { fmt, strings } from '@/i18n';
 import { errorCode, errorMessage } from '@/lib/errors';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { getItem } from '@/features/avatar/domain/catalog';
+import { displayName, displayNameOf, getItem } from '@/features/avatar/domain/catalog';
 import { claimDailyGoalItem, type DailyGoalState } from '../mission/mission.service';
 
 /**
@@ -23,7 +23,7 @@ export function GoalChoice({ goal, onChange }: { goal: DailyGoalState; onChange?
   const [done, setDone] = useState<string | null>(goal.chosenItem);
 
   if (done) {
-    return <Notice tone="success">{fmt(strings.mission.goalClaimed, { item: getItem(done)?.name ?? done })}</Notice>;
+    return <Notice tone="success">{fmt(strings.mission.goalClaimed, { item: displayNameOf(done) })}</Notice>;
   }
   if (!goal.choicePending) return null;
 
@@ -44,7 +44,7 @@ export function GoalChoice({ goal, onChange }: { goal: DailyGoalState; onChange?
     }
   };
 
-  const selectedName = selected ? getItem(selected)?.name ?? selected : '';
+  const selectedName = selected ? displayNameOf(selected) : '';
   return (
     <View style={styles.wrap}>
       <AppText variant="heading">{strings.mission.goalChooseTitle}</AppText>
@@ -55,13 +55,13 @@ export function GoalChoice({ goal, onChange }: { goal: DailyGoalState; onChange?
           if (!item) return null;
           const sel = id === selected;
           return (
-            <Pressable key={id} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${item.name}, ${strings.rarity[item.rarity]}`}
+            <Pressable key={id} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${displayName(item)}, ${strings.rarity[item.rarity]}`}
               onPress={() => setSelected(id)}
               style={[styles.option, { borderColor: sel ? colors.primary : RARITY_COLOR[item.rarity], backgroundColor: sel ? colors.surfaceRaised : colors.surface, borderWidth: sel ? 2 : 1 }]}>
               <View style={[styles.icon, { backgroundColor: colors.stage }]}>
                 <ItemIcon item={item} size={64} />
               </View>
-              <AppText variant="caption" style={styles.name} numberOfLines={2}>{item.name}</AppText>
+              <AppText variant="caption" style={styles.name} numberOfLines={2}>{displayName(item)}</AppText>
               {item.scriptureRef ? <AppText variant="caption" muted style={styles.ref} numberOfLines={1}>{item.scriptureRef}</AppText> : null}
             </Pressable>
           );

@@ -1,5 +1,6 @@
 import raw from '../catalog/catalog.json';
 import { hasArt } from '../art/manifest';
+import { strings } from '@/i18n';
 import type {
   AppearanceCategory,
   AppearanceKey,
@@ -98,6 +99,23 @@ export function resolveEquipmentIds(equipment: Equipment): Equipment {
   }
   return out;
 }
+
+/** Nomes oficiais repetidos (ex.: "Rolo do Escriba" Raro e Lendário): o nome no catálogo é mantido. */
+const DUPLICATE_NAMES = (() => {
+  const seen = new Map<string, number>();
+  for (const i of COSMETIC_ITEMS) seen.set(i.name, (seen.get(i.name) ?? 0) + 1);
+  return new Set([...seen].filter(([, n]) => n > 1).map(([name]) => name));
+})();
+
+/** Nome para exibir: inclui a raridade quando outro item tem o mesmo nome oficial. */
+export function displayName(item: CosmeticItem): string {
+  return DUPLICATE_NAMES.has(item.name) ? `${item.name} (${strings.rarity[item.rarity]})` : item.name;
+}
+/** Nome para exibir a partir do ID (aliases aceitos). */
+export const displayNameOf = (id: string) => {
+  const it = getItem(id);
+  return it ? displayName(it) : id;
+};
 
 /** Itens santos (Santuário): relíquias de exposição e obras/sinais simbólicos. */
 export const HOLY_ITEMS = COSMETIC_ITEMS.filter((i) => i.rarity === 'holy');

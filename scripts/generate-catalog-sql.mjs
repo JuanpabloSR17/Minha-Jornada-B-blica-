@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = join(root, 'src/features/avatar/catalog/catalog.json');
 /** Prefixo de data da migração de cada versão do catálogo. */
-const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200', 5: '20261115000200', 6: '20261116000200' };
+const VERSION_PREFIX = { 1: '20261111000200', 2: '20261112000200', 3: '20261113000200', 4: '20261114000200', 5: '20261115000200', 6: '20261116000200', 7: '20261120000200' };
 export const outPathFor = (version) => {
   const prefix = VERSION_PREFIX[version];
   if (!prefix) throw new Error(`Defina o prefixo da migração para o catálogo v${version} em VERSION_PREFIX`);

@@ -106,7 +106,7 @@
 | XP | Definido: 40 por capítulo inédito, 0 por releitura, +20 ao cumprir a meta diária (`economy_rules`). |
 | Siclos | Só a meta diária credita (40). **Não há onde gastar**: não existe loja. |
 | Uso dos Siclos | Mercado dos Viajantes v1 (`docs/MERCADO.md`). |
-| 17 Raros "missão especial ou loja" | Só o Manto do Profeta tem missão curada. Proposta das outras missões, em revisão editorial: `docs/MISSOES-RAROS.md`. |
+| Raros "missão especial ou loja" | 16 de 18 com missão (catálogo v7, `docs/MISSOES-RAROS.md`). Cálice de Bronze e Bolsa do Mensageiro aguardam revisão editorial. |
 | 22 Santos | Regra vigente: só por marco curado validado pelo servidor. **Nenhum marco está cadastrado** — falta o conteúdo das missões curadas. O mecanismo já funciona (testado com marco de teste). |
 | Leitor digital | Falta texto bíblico licenciado. |
 | Mundos (`WORLD_COMPLETED`) | Sem mapa de mundos definido. |

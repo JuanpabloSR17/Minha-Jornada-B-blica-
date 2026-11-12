@@ -7,6 +7,7 @@ import { strings } from '@/i18n';
 import { ItemIcon } from './ItemIcon';
 import { RarityBadge, RARITY_COLOR } from './RarityBadge';
 import type { ItemView } from '../domain/wardrobe';
+import { displayName } from '../domain/catalog';
 
 /** Cartão de inventário: ícone da peça, raridade, bloqueio, equipado e situação da arte. */
 export const ItemCard = memo(function ItemCard({ view, selected, onPress, width }: { view: ItemView; selected: boolean; onPress: (v: ItemView) => void; width: number }) {
@@ -46,7 +47,7 @@ export const ItemCard = memo(function ItemCard({ view, selected, onPress, width 
         ) : null}
       </View>
       <AppText variant="caption" numberOfLines={2} style={styles.label} color={selected ? colors.text : colors.textMuted}>
-        {item.name}
+        {displayName(item)}
       </AppText>
     </Pressable>
   );
