@@ -160,7 +160,7 @@ echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicaçã
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -175,7 +175,7 @@ echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback2 -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
@@ -190,7 +190,7 @@ echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação
 "${PSQL[@]}" -c "create database jb_rollback3" postgres
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261116*|20261117*|20261118*|20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
@@ -208,7 +208,7 @@ echo "→ reversão manual do Modo Missão (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback4" postgres
 "${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261117*|20261118*|20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261117*|20261118*|20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
@@ -226,7 +226,7 @@ echo "→ reversão manual da meta diária (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback5" postgres
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261118*|20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261118*|20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/rollbacks/20261117000100_daily_goal.down.sql"
@@ -242,7 +242,7 @@ echo "→ reversão manual da meta diária v2 (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback6" postgres
 "${PSQL[@]}" -d jb_rollback6 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261119*|20261120*|20261121*) continue ;; esac
+  case "$(basename "$f")" in 20261119*|20261120*|20261121*|20261122*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback6 -c "insert into auth.users (id) values ('f6666666-0000-0000-0000-000000000006');

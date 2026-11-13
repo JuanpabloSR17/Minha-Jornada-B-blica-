@@ -29,7 +29,7 @@ const CARD_COMPACT = { w: 78, h: 70 };
 const Card = memo(function Card({ option, selected, onSelect, compact }: { option: CarouselOption; selected: boolean; onSelect: (o: CarouselOption) => void; compact?: boolean }) {
   const { colors } = useTheme();
   const dim = compact ? CARD_COMPACT : CARD;
-  const ring = selected ? colors.primary : option.rarity && option.rarity !== 'common' ? RARITY_COLOR[option.rarity] : colors.border;
+  const ring = selected ? colors.selection : option.rarity && option.rarity !== 'common' ? RARITY_COLOR[option.rarity] : colors.border;
   return (
     <Pressable
       accessibilityRole="radio"
@@ -38,7 +38,7 @@ const Card = memo(function Card({ option, selected, onSelect, compact }: { optio
       accessibilityLabel={option.label}
       accessibilityHint={option.locked ? option.hint : undefined}
       onPress={() => onSelect(option)}
-      style={({ pressed }) => [styles.card, { width: dim.w, borderColor: ring, borderWidth: selected ? 3 : 1.5, backgroundColor: colors.surfaceRaised, transform: [{ scale: pressed ? 0.96 : 1 }] }]}
+      style={({ pressed }) => [styles.card, { width: dim.w, borderColor: ring, borderWidth: selected ? 3 : 1.5, backgroundColor: colors.surfaceRaised, transform: [{ scale: pressed ? 0.96 : 1 }] }, selected && { shadowColor: colors.selection, shadowOpacity: 0.55, shadowRadius: 8 }]}
     >
       <View style={[styles.art, { width: dim.w - 6, height: dim.h, backgroundColor: colors.stage }]}>
         {option.look ? (
@@ -62,7 +62,7 @@ const Card = memo(function Card({ option, selected, onSelect, compact }: { optio
           </View>
         ) : null}
         {selected ? (
-          <View style={[styles.check, { backgroundColor: colors.primary }]}>
+          <View style={[styles.check, { backgroundColor: colors.selection }]}>
             <Icon name="check" size={13} color={colors.onPrimary} />
           </View>
         ) : null}
@@ -108,7 +108,7 @@ export function ColorSwatches({ options, value, onSelect, label }: { options: { 
             onPress={() => onSelect(o.id)}
             style={styles.swatchItem}
           >
-            <View style={[styles.swatchRing, { borderColor: selected ? colors.primary : 'transparent' }]}>
+            <View style={[styles.swatchRing, { borderColor: selected ? colors.selection : 'transparent' }]}>
               <View style={[styles.swatch, { backgroundColor: o.color ?? colors.border, borderColor: colors.border }]} />
             </View>
             <AppText variant="caption" muted={!selected} numberOfLines={1} style={styles.swatchLabel}>{o.label}</AppText>

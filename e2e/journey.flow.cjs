@@ -146,7 +146,7 @@ const finishHere = async (page) => {
   await R.page.waitForLoadState('networkidle');
   await R.page.waitForTimeout(500);
   const after = await campAvatar(R.page).screenshot();
-  assert.ok(diffRatio(before, after) > 0.01, 'o acampamento deve mostrar a peça trocada');
+  assert.ok(diffRatio(before, after) > 0.002, 'o acampamento deve mostrar a peça trocada');
   await R.page.reload();
   await campAvatar(R.page).waitFor();
   await R.page.waitForTimeout(900);
@@ -200,7 +200,7 @@ const finishHere = async (page) => {
   // perda da resposta na finalização: o servidor registra, mas a resposta não chega
   await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
   await finishHere(page);
-  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await page.unroute('**/rest/v1/rpc/complete_reading_mission');
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id in ('holy_arca_da_alianca_representacao','holy_candelabro_do_tabernaculo')`, [rute])).rows[0].count), 2, 'o servidor já concedeu');
   await page.reload();

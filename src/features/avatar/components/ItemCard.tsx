@@ -13,7 +13,7 @@ import { displayName } from '../domain/catalog';
 export const ItemCard = memo(function ItemCard({ view, selected, onPress, width }: { view: ItemView; selected: boolean; onPress: (v: ItemView) => void; width: number }) {
   const { colors } = useTheme();
   const { item } = view;
-  const ring = selected ? colors.primary : item.rarity !== 'common' ? RARITY_COLOR[item.rarity] : colors.border;
+  const ring = selected ? colors.selection : item.rarity !== 'common' ? RARITY_COLOR[item.rarity] : colors.border;
   const status = view.equipped ? strings.wardrobe.equipped : view.locked ? strings.wardrobe.locked : strings.wardrobe.owned;
   return (
     <Pressable
@@ -23,7 +23,7 @@ export const ItemCard = memo(function ItemCard({ view, selected, onPress, width 
       accessibilityLabel={`${item.name}, ${strings.rarity[item.rarity]}, ${status}`}
       accessibilityHint={view.locked ? item.unlockLabel : undefined}
       onPress={() => onPress(view)}
-      style={({ pressed }) => [styles.card, { width, borderColor: ring, borderWidth: selected ? 3 : 1.5, backgroundColor: colors.surfaceRaised, opacity: pressed ? 0.85 : 1 }]}
+      style={({ pressed }) => [styles.card, { width, borderColor: ring, borderWidth: selected ? 3 : 1.5, backgroundColor: colors.surfaceRaised, opacity: pressed ? 0.85 : 1 }, selected && { shadowColor: colors.selection, shadowOpacity: 0.55, shadowRadius: 8 }]}
     >
       <View style={[styles.art, { height: width - 8, backgroundColor: colors.stage, opacity: view.locked ? 0.7 : 1 }]}>
         <ItemIcon item={item} size={width - 8} />
@@ -34,7 +34,7 @@ export const ItemCard = memo(function ItemCard({ view, selected, onPress, width 
           </View>
         ) : null}
         {view.equipped ? (
-          <View style={[styles.corner, styles.tr, { backgroundColor: colors.primary }]}>
+          <View style={[styles.corner, styles.tr, { backgroundColor: colors.selection }]}>
             <Icon name="check" size={13} color={colors.onPrimary} />
           </View>
         ) : null}

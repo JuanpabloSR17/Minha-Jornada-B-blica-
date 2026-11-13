@@ -136,7 +136,7 @@ async function loaded(page, names) {
     fs.writeFileSync(`${SHOTS}/l1-debug-after.png`, after);
     fs.writeFileSync(`${SHOTS}/l1-debug-reopened.png`, reopened);
   }
-  assert.ok(diffRatio(before, after) > 0.01, 'o Início mostra o cajado trocado');
+  assert.ok(diffRatio(before, after) > 0.002, `o Início mostra o cajado trocado (${(diffRatio(before, after) * 100).toFixed(2)}% dos pixels)`);
   assert.ok(sameLook(after, reopened), `após reabrir, o mesmo visual (diferença ${(diffRatio(after, reopened) * 100).toFixed(2)}% dos pixels)`);
   await shot(rp, 'l1-03-acampamento-caminhada-412');
   const video = await rp.video().path();

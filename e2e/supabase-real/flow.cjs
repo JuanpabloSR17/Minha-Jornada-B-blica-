@@ -169,11 +169,11 @@ async function login(page, email) {
     await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
     await page.getByRole('button', { name: 'Finalizar missão' }).click();
     await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-    await page.getByText('Finalização pendente').first().waitFor();
+    await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
     await page.unroute('**/rest/v1/rpc/complete_reading_mission');
     assert.deepEqual(await rareRows(), RARES.map((item_id) => ({ item_id, n: 1 })), 'servidor concedeu Estola e Turbante uma vez; Peitoral continua único');
     await page.reload();
-    await page.getByText('Finalização pendente').first().waitFor();
+    await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
     await page.getByRole('button', { name: 'Tentar novamente' }).click();
     await page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
     await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
@@ -205,7 +205,7 @@ async function login(page, email) {
     await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
     await page.getByRole('button', { name: 'Finalizar missão' }).click();
     await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-    await page.getByText('Finalização pendente').first().waitFor();
+    await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
     await page.unroute('**/rest/v1/rpc/complete_reading_mission');
     await page.reload();
     // aba Ler destaca a sessão aguardando confirmação, com o marco vinculado

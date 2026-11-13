@@ -360,7 +360,7 @@ async function newPhone(browser, scheme = 'light') {
   await page.route('**/rest/v1/rpc/complete_reading_mission', (r) => r.abort('internetdisconnected'));
   await page.getByRole('button', { name: 'Finalizar missão' }).click();
   await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   assert.equal(await rutCount(), 0);
   const frozen = await clockText();
   await page.waitForTimeout(1200);
@@ -369,13 +369,13 @@ async function newPhone(browser, scheme = 'light') {
   await page.unroute('**/rest/v1/rpc/complete_reading_mission');
   await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
   await page.getByRole('button', { name: 'Tentar novamente' }).click();
-  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await page.waitForTimeout(400);
   assert.equal(await rutCount(), 1, 'servidor registrou a conclusão uma vez');
   await shot(page, 'm4-03-mission-pending');
   await page.unroute('**/rest/v1/rpc/complete_reading_mission');
   await page.reload();
-  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await page.getByRole('button', { name: 'Tentar novamente' }).click();
   await page.getByText('Missão concluída').waitFor();
   await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
@@ -653,7 +653,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
   await C.page.route('**/rest/v1/rpc/complete_reading_mission', (r) => r.abort('internetdisconnected'));
   await finishHere();
-  await C.page.getByText('Finalização pendente').first().waitFor();
+  await C.page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await C.page.unroute('**/rest/v1/rpc/complete_reading_mission');
   await C.page.reload();
   await C.page.goto(`${APP}/read`);

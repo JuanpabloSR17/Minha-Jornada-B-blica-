@@ -21,6 +21,8 @@ export type ThemeColors = {
   infoSurface: string;
   focus: string;
   overlay: string;
+  /** seleção e conquistas (neon violeta na paleta da jornada) */
+  selection: string;
 };
 
 export const lightColors: ThemeColors = {
@@ -46,6 +48,7 @@ export const lightColors: ThemeColors = {
   infoSurface: '#E5DCC8',
   focus: '#2F5D8A',
   overlay: 'rgba(30, 20, 10, 0.55)',
+  selection: '#8C4A2F',
 };
 
 export const darkColors: ThemeColors = {
@@ -71,6 +74,7 @@ export const darkColors: ThemeColors = {
   infoSurface: '#2A241C',
   focus: '#8DB8E8',
   overlay: 'rgba(0, 0, 0, 0.65)',
+  selection: '#E0B252',
 };
 
 /**
@@ -98,8 +102,9 @@ export const cinemaColors: ThemeColors = {
   warning: '#F2C66C',
   warningSurface: '#3A2E17',
   infoSurface: '#221D36',
-  focus: '#9CC3F0',
+  focus: '#8FC2FF',
   overlay: 'rgba(4, 4, 14, 0.72)',
+  selection: '#B48CFF',
 };
 
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 } as const;

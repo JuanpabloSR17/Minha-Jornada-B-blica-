@@ -24,9 +24,9 @@ export function GroupTabs<T extends string>({
             accessibilityState={{ selected: active }}
             aria-selected={active}
             onPress={() => onChange(it.id)}
-            style={[styles.tab, { backgroundColor: active ? colors.text : colors.surface, borderColor: active ? colors.text : colors.border }]}
+            style={[styles.tab, { backgroundColor: active ? colors.surfaceRaised : colors.surface, borderColor: active ? colors.selection : colors.border, borderWidth: active ? 2 : 1 }]}
           >
-            <AppText variant="label" color={active ? colors.background : colors.text}>{it.label}</AppText>
+            <AppText variant="label" color={colors.text}>{it.label}</AppText>
           </Pressable>
         );
       })}

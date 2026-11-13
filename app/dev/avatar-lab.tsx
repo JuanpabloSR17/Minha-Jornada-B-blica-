@@ -7,6 +7,9 @@ import { anchors, geometryFor, GROUND_Y, HEAD } from '@/features/avatar/art/geom
 import { artStatus } from '@/features/avatar/art/manifest';
 import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, LOOK_PRESETS, appearanceHasArt, itemHasArt } from '@/features/avatar/domain/catalog';
 import { defaultLook } from '@/features/avatar/domain/avatar.rules';
+import { ItemIcon } from '@/features/avatar/components/ItemIcon';
+import { hasItemIcon } from '@/features/avatar/art/icons';
+import { isArtifact } from '@/features/journey/art/artifacts';
 import type { AvatarLook } from '@/features/avatar/domain/avatar.types';
 
 /**
@@ -69,9 +72,24 @@ function ExportView({ template, source, body, layer, pose, scale, skin, hair }: 
 
 export default function AvatarLab() {
   const [guides, setGuides] = useState(false);
-  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
+  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; icons?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
   if (!ENABLED) return <Text style={{ padding: 24 }}>Ferramenta interna indisponível.</Text>;
   if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} pose={q.pose} scale={q.scale} skin={q.skin} hair={q.hair} />;
+  if (q.icons) {
+    // folha de revisão dos ícones: com miniatura própria primeiro, em 64 e 48 px
+    const px = Number(q.icons) > 1 ? Number(q.icons) : 64;
+    const list = [...COSMETIC_ITEMS].sort((a, b) => Number(hasItemIcon(b.id) || isArtifact(b.id)) - Number(hasItemIcon(a.id) || isArtifact(a.id)));
+    return (
+      <View testID="icons" style={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#F3E8D2', padding: 6, gap: 6 }}>
+        {list.map((it) => (
+          <View key={it.id} style={{ width: px + 34, alignItems: 'center' }}>
+            <ItemIcon item={it} size={px} />
+            <Text style={{ fontSize: 9, textAlign: 'center' }} numberOfLines={2}>{it.name}</Text>
+          </View>
+        ))}
+      </View>
+    );
+  }
   if (q.fit) {
     // encaixe das peças de viagem: três corpos × três cabelos, com e sem cobertura de cabeça
     const kit = { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd', feet: 'sandals-leather' };

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, TextInput, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, ConfirmDialog, Icon, Notice } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -31,7 +31,16 @@ import {
 import { activateLoadout, getWardrobe, saveWardrobe } from '../services/wardrobe.service';
 
 /** Guarda-roupa (P03): inventário por categoria, prévia ao vivo, equipar/remover e Salvar/Descartar. */
+/** Guarda-roupa na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
 export function WardrobeScreen() {
+  return (
+    <CinemaTheme>
+      <Wardrobe />
+    </CinemaTheme>
+  );
+}
+
+function Wardrobe() {
   const { colors } = useTheme();
   const router = useRouter();
   const params = useLocalSearchParams<{ loadout?: string; category?: string }>();

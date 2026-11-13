@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, ConfirmDialog, Icon, Notice, type IconName } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -43,7 +43,16 @@ function visibleGroups(step: CreatorStep): CreatorGroup[] {
   });
 }
 
-export function CharacterCreatorScreen({ mode, onFinished, onExit }: Props) {
+/** Criador na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
+export function CharacterCreatorScreen(props: Props) {
+  return (
+    <CinemaTheme>
+      <CharacterCreator {...props} />
+    </CinemaTheme>
+  );
+}
+
+function CharacterCreator({ mode, onFinished, onExit }: Props) {
   const { colors } = useTheme();
   const router = useRouter();
   const { width, height } = useWindowDimensions();

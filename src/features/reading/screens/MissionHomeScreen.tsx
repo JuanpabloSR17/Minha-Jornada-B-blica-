@@ -98,6 +98,7 @@ export function MissionHomeScreen() {
             </View>
           ))}
           <AppText variant="caption" muted>{strings.mission.noTime}</AppText>
+          <AppText variant="caption" muted>{strings.mission.digital}: {strings.mission.digitalUnavailable}</AppText>
         </Card>
       ) : null}
 

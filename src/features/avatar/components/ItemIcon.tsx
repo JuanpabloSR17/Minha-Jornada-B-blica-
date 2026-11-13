@@ -31,13 +31,19 @@ const CROP_BY_SLOT: Record<ItemSlot, AvatarCrop> = {
 /** Peça isolada, como ícone de inventário (renderizada do mesmo manifest do avatar). */
 export const ItemIcon = memo(function ItemIcon({ item, size, appearance }: { item: CosmeticItem; size: number; appearance?: AvatarAppearance }) {
   const source = `${item.slot}/${item.id}`;
-  // miniatura própria (separada da arte vestida) ou arte do artefato do Santuário
+  // miniatura própria por ID canônico (separada da arte vestida), com a raridade na moldura
+  const frame = item.starter && item.rarity === 'common' ? STARTER_FRAME : RARITY_COLOR[item.rarity];
   if (isArtifact(item.id)) {
     const w = Math.min(size, size * ARTIFACT_RATIO[item.id]);
-    return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ArtifactArt id={item.id} width={w * 0.94} /></View>;
+    return (
+      <View style={[styles.placeholder, styles.framed, { width: size, height: size, borderColor: frame, borderRadius: size * 0.16, borderWidth: Math.max(2, size * 0.05) }]}
+        accessible accessibilityRole="image" accessibilityLabel={item.name}>
+        <ArtifactArt id={item.id} width={w * 0.78} />
+      </View>
+    );
   }
   if (hasItemIcon(item.id)) {
-    return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ItemThumbnail id={item.id} size={size * 0.9} /></View>;
+    return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ItemThumbnail id={item.id} size={size} frame={frame} /></View>;
   }
   if (!hasArt(source)) {
     // sem arte e sem substituto visual: ícone genérico (item continua utilizável e visível)
@@ -74,4 +80,7 @@ export const ItemIcon = memo(function ItemIcon({ item, size, appearance }: { ite
   );
 });
 
-const styles = StyleSheet.create({ placeholder: { alignItems: 'center', justifyContent: 'center' } });
+/** Peças iniciais (gratuitas): moldura de bronze, distinta das raridades. */
+const STARTER_FRAME = '#8C6A3A';
+
+const styles = StyleSheet.create({ placeholder: { alignItems: 'center', justifyContent: 'center' }, framed: { backgroundColor: '#211B31' } });

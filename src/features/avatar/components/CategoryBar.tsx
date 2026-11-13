@@ -35,7 +35,7 @@ export function CategoryBar<T extends string>({
             onPress={() => onChange(it.id)}
             style={[styles.tab, compact && styles.tabCompact, active && { backgroundColor: colors.surfaceRaised, borderColor: colors.borderStrong }, dim && { opacity: 0.45 }]}
           >
-            <Icon name={it.icon} size={20} color={active ? colors.primary : colors.textMuted} />
+            <Icon name={it.icon} size={20} color={active ? colors.selection : colors.textMuted} />
             {!compact || active ? (
               <AppText variant="caption" color={active ? colors.text : colors.textMuted} style={styles.label} numberOfLines={1}>
                 {it.label}

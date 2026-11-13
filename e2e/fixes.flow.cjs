@@ -118,7 +118,7 @@ const panel = (page) => page.getByTestId('home-action-panel');
   await page.route('**/rest/v1/rpc/complete_reading_mission', (r) => r.abort('internetdisconnected'));
   await page.getByRole('button', { name: 'Finalizar missão' }).click();
   await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-  await page.getByText('Finalização pendente').first().waitFor();
+  await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await page.unroute('**/rest/v1/rpc/complete_reading_mission');
   for (let i = 0; i < 4 && !/\/home$/.test(page.url()); i++) {
     await page.goBack();
