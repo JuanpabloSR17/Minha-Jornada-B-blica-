@@ -2,6 +2,7 @@ import { memo, useId, useMemo, type ReactElement } from 'react';
 import { Image, StyleSheet, View, type ImageSourcePropType, type StyleProp, type ViewStyle } from 'react-native';
 import Svg, { Defs, G, Image as SvgImage, LinearGradient, Mask, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { ART_REGISTRY } from '../art/registry';
+import { VECTOR_MANIFEST } from '../art/manifest';
 import { CANVAS, CROPS, geometryFor, type ArmPose, type AvatarCrop } from '../art/geometry';
 import type { ArtContext, VectorArt } from '../art/types';
 import { getOption } from '../domain/catalog';
@@ -28,6 +29,8 @@ export type AvatarRendererProps = {
    * da fogueira à direita; `neutral` (padrão) = luz neutra, para comparar peças no guarda-roupa.
    */
   lighting?: 'neutral' | 'camp';
+  /** só a arte vetorial de referência (moldes de encaixe para a pintura), ignorando PNG/WebP registrados */
+  vectorOnly?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
 };
@@ -76,18 +79,19 @@ function AvatarRendererBase({
   accessibilityLabel,
   style,
   lighting = 'neutral',
+  vectorOnly = false,
 }: AvatarRendererProps) {
   const rawId = useId();
   const uid = useMemo(() => `av${rawId.replace(/[^a-zA-Z0-9]/g, '')}`, [rawId]);
   const { layers, armPose } = useMemo(() => {
-    const all = resolveLayers(appearance, equippedItems, { showBackground });
+    const all = resolveLayers(appearance, equippedItems, { showBackground, manifest: vectorOnly ? VECTOR_MANIFEST : undefined });
     // a pose dos braços depende do conjunto equipado (ex.: o cajado dobra o braço direito)
     const pose = all.some((l) => l.params.armPose === 'staff') ? ('staff' as const) : ('rest' as const);
     return {
       layers: all.filter((l) => (!onlySources || onlySources.includes(l.source)) && (!onlyLayers || onlyLayers.includes(l.slot))),
       armPose: pose,
     };
-  }, [appearance, equippedItems, showBackground, onlySources, onlyLayers]);
+  }, [appearance, equippedItems, showBackground, onlySources, onlyLayers, vectorOnly]);
 
   const ctxBase = useMemo(
     () => ({

@@ -1,0 +1,130 @@
+# Lote 1 de avatares 2.5D semirrealistas — camadas e âncoras para a pintura
+
+**Para:** quem vai pintar as camadas finais (Codex ou ilustração).
+**Escopo:** uma combinação jogável no **corpo B (Atlético)**, com troca de cajado.
+**Referência de acabamento:** os dois viajantes pintados anexados pelo usuário (volume pintado no rosto,
+cabelo e roupa, caimento e materiais convincentes). O cenário ilustrado do acampamento está em
+`origin/codex/acampamento-cinematografico` (f2eb61f); o avatar entra por cima dele.
+
+Lista legível por máquina: [`lote-1.json`](lote-1.json). Moldes de cada camada (2048×3072, transparentes,
+na mesma árvore de pastas dos arquivos finais): [`lote-1/moldes/`](lote-1/moldes/). Molde completo com
+âncoras: [`lote-1/molde-corpo-b-cajado.png`](lote-1/molde-corpo-b-cajado.png). Folha com todas as
+camadas: [`lote-1/folha-de-camadas.png`](lote-1/folha-de-camadas.png).
+
+## 1. O que já está no app
+
+O pipeline já recebe essas camadas e foi verificado no guarda-roupa e no acampamento
+(`FLOW=avatar-lote1 bash e2e/run.sh`). Os arquivos atuais em `assets/avatars/` são **camadas de teste**:
+o desenho vetorial exportado e passado por uma pintura procedural (`scripts/paint-pass.py`). Para entregar a
+pintura final, **substitua os arquivos com o mesmo nome e caminho** e rode `npm run assets`. Nada mais muda.
+
+## 2. Formato
+
+| Item | Regra |
+|---|---|
+| Canvas | **2048×3072 (`@2x`) e 1024×1536 (base), os dois obrigatórios neste lote** — o acampamento mostra o personagem com ~1100 px reais |
+| Formato | WebP com alfa (PNG aceito), fundo transparente, peça já posicionada no canvas inteiro |
+| Caminho | `assets/avatars/{categoria}/{id}/{body-b|all}/{camada}[.staff][.mask|.shade][@2x].webp` |
+| `.mask` | só a forma, em cor chapada clara (`#F0F0F0`); o app tinge com a cor da conta (pele ou cabelo). A cor pintada é ignorada, só o alfa conta |
+| `.shade` | sombras e luzes translúcidas **sem cor de base**: preto translúcido para sombra, branco translúcido para luz, por cima da máscara |
+| `.staff` | variante de pose: braço direito dobrado segurando o cajado (só `arms`, `hands`, `sleeves`, `cloak_front`) |
+| Luz pintada | **neutra**, principal do alto à esquerda, preenchimento suave. Não pinte o azul da noite nem o laranja da fogueira: o app aplica a luz de cada tela sobre a silhueta |
+| Contorno | discreto, marrom quente escuro, mais fino que o atual; o volume vem da pintura |
+
+Validação automática (`npm run assets`): tamanho, alfa, caminho, camada, corpo, id do catálogo, `.mask`
+só em pele/cabelo e em `hand_item`, `.staff` só nas camadas de pose.
+
+## 3. Espaço de pintura e âncoras (corpo B, canvas 1024×1536; no `@2x` multiplique por 2)
+
+A pintura fica no **espaço final do corpo**. A cabeça já está na proporção adulta (~7 cabeças).
+
+| Ponto | Repouso (esq. / dir. do observador) | Pose do cajado (braço direito) |
+|---|---|---|
+| Topo da cabeça | y 216 | — |
+| Queixo | y 391 | — |
+| Olhos | (485, 310) e (539, 310) | — |
+| Boca | (512, 362) | — |
+| Meia-largura da cabeça | ~63 | — |
+| Ombros | (382, 476) e (642, 476) | (642, 476) |
+| Cotovelos | (354, 690) e (670, 690) | **(690, 704)** |
+| Pulsos | (365, 884) e (659, 884) | **(658, 566)** |
+| Punho fechado no cajado | — | **y 496 a 572, centro x 664** |
+| Haste do cajado | — | **x 664**, do gancho (topo y 236; gancho até x ~762) ao chão (y 1456) |
+| Quadris | (457, 792) e (567, 792) | — |
+| Joelhos | (460, 1078) e (564, 1078) | — |
+| Tornozelos | (465, 1386) e (559, 1386) | — |
+| Chão (sola) | y 1450 | — |
+| Barra da túnica de linho | y 1120 | — |
+| Alça da bolsa | do ombro direito (626, 452), curva sobre o peito, até (457, 840) | — |
+| Bolsa | centro (437, 896), ~120 × 122, repousando no quadril esquerdo | — |
+| Drapeado do manto | do ombro esquerdo (346, 448) até o quadril direito (615, 900); broche em (380, 468) | — |
+| Costas do manto | barra em y ~1400, meia-largura na barra ~286 | — |
+
+## 4. As 23 camadas (ordem de pintura = ordem de sobreposição, de trás para frente)
+
+Camadas marcadas com **(par)** são dois arquivos: `.mask` + `.shade`. As misturas (`mixed`) são a parte
+que não é pele em `.webp` e a parte que é pele em `.shade`.
+
+| # | Arquivo(s) em `assets/avatars/` | Tipo | O que pintar e como encaixa |
+|---|---|---|---|
+| 1 | `back/cloak-night/body-b/cloak_back` | base | Costas do manto de lã roxo até a canela, atrás do corpo inteiro; dobras verticais, barra bordada dourada |
+| 2 | `hair/hair-short/all/back_hair` **(par)** | mask | Volume de trás do cabelo curto, atrás da cabeça |
+| 3 | `body/base/body-b/body` **(par)** | mask | Cabeça, orelhas, pescoço, tronco e pernas em pele; volume do rosto pintado na `.shade` |
+| 4 | `body/base/body-b/face.shade` (+ `face`) | mixed | Nariz, maçãs do rosto, sombra sob o queixo, só como sombreamento sobre a pele |
+| 5 | `eyes/eyes-almond/all/face` + `face.shade` | mixed | Olhos (íris, brilho, cílios) em cor; pálpebras e olheiras como `.shade` |
+| 6 | `brows/brows-soft/all/face` **(par)** | mask | Sobrancelhas (tinta do cabelo) |
+| 7 | `feet/sandals-leather/body-b/feet` | base | Sandálias de couro sobre os pés do corpo; tiras cruzadas, sola com espessura |
+| 8 | `outfit/tunic-linen/body-b/upper_outfit` | base | Túnica de linho cru até y 1120, trama visível, bordado turquesa na gola e na barra; sem mangas |
+| 9 | `back/cloak-night/body-b/chest` | base | Drapeado do manto: cai do ombro esquerdo, cruza o peito até o quadril direito, **por baixo dos braços**; broche de bronze |
+| 10 | `waist/common_bolsa_do_viajante/body-b/chest` | base | Alça a tiracolo **por cima** do drapeado e da túnica, acompanhando o volume do peito, com sombra suave na roupa e fivela |
+| 11 | `waist/common_bolsa_do_viajante/body-b/waist` | base | Bolsa de couro gasto no quadril esquerdo, por baixo do braço; sombra de contato na túnica |
+| 12 | `body/base/body-b/arms` **(par)** | mask | Braços relaxados, sem mãos |
+| 13 | `body/base/body-b/arms.staff` **(par)** | mask | Braço esquerdo relaxado; direito com cotovelo para fora (690, 704) e antebraço subindo até (658, 566) |
+| 14 | `outfit/tunic-linen/body-b/sleeves` | base | Mangas três-quartos, braços relaxados |
+| 15 | `outfit/tunic-linen/body-b/sleeves.staff` | base | Manga esquerda igual à 14; manga direita acompanhando o braço dobrado (braço + meio antebraço) |
+| 16 | `hands/staff-shepherd/body-b/cloak_front.staff` | base | Haste do cajado de pastor em x 664, gancho acima da cabeça, madeira com veios e desgaste; **abaixo** da mão |
+| 17 | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff` | base | Cajado de caminhada reto, topo y ~262, tira de couro abaixo do topo — **peça da troca** |
+| 18 | `body/base/body-b/hands` **(par)** | mask | As duas mãos relaxadas nos pulsos |
+| 19 | `body/base/body-b/hands.staff` **(par)** | mask | **Só a mão esquerda** (a direita está na camada 22/23) |
+| 20 | `expression/expr-smile/all/mouth.shade` (+ `mouth`) | mixed | Boca sorrindo. Lábios em cor translúcida (alfa 40–60%), para servir a todos os tons de pele |
+| 21 | `hair/hair-short/all/front_hair` **(par)** | mask | Franja e mechas da frente |
+| 22 | `hands/staff-shepherd/body-b/hand_item` **(par)** | skinmask | Mão direita fechada envolvendo a haste: dedos dobrados à frente com nós visíveis, polegar por cima; a haste aparece acima e abaixo do punho |
+| 23 | `hands/common_cajado_de_caminhada/body-b/hand_item` **(par)** | skinmask | A mesma mão, na haste do cajado de caminhada |
+
+Total: 35 arquivos base + 35 `@2x`.
+
+## 5. Regras de encaixe que a pintura precisa respeitar
+
+- Peças que tocam o corpo seguem o contorno do **molde da própria camada**. Pode passar 4–8 px da borda
+  para o caimento do tecido, mas não pode descobrir pele que o molde cobre.
+- **Mão no cajado:** a haste (16/17) não pode ter interrupção onde fica o punho. A mão (20/21) cobre a
+  haste entre y 496 e 572 e deixa a madeira visível acima e abaixo.
+- **Bolsa:** a alça (10) termina por baixo da bolsa (11). A bolsa fica abaixo da camada dos braços
+  (12/13), então o braço esquerdo pode passar à frente dela.
+- **Manto:** o drapeado (9) fica abaixo dos braços. As costas (1) não podem aparecer entre as pernas
+  abaixo da barra da túnica além do que o molde mostra.
+- **Pose:** com o cajado equipado, o app usa só `arms.staff`, `hands.staff` e `sleeves.staff`. Se faltar
+  uma delas, essa camada volta para o vetor (fica visível como diferença de acabamento).
+- **Tingimento:** nunca pinte a cor da pele ou do cabelo dentro de `.mask`. Todo o volume vai na `.shade`.
+
+## 6. Como verificar uma entrega
+
+```bash
+npm run assets                               # valida e registra
+FLOW=avatar-lote1 bash e2e/run.sh            # guarda-roupa, acampamento, troca de cajado, reabrir
+# moldes de outras peças, corpos ou poses (app web com EXPO_PUBLIC_AVATAR_LAB=1):
+node scripts/export-avatar-layers.cjs docs/arte-lotes/lote-1.json <pasta>
+```
+
+Conferir também `/dev/avatar-lab?fit=1` (os outros corpos continuam vetoriais) e a luz do acampamento
+sobre a silhueta.
+
+## 7. Próximos lotes (sugestão)
+
+1. Lote 2: corpos A e C da mesma combinação (as mesmas 23 camadas, por corpo; cabelo, olhos, boca e
+   sobrancelhas em `all/` já servem).
+2. Lote 3: as outras peças de viagem já encaixadas — Cinto com Bolsa, Manto de Viagem, Turbante de Areia
+   (`headwear` + `back_item`), Lenço de Cabeça e Pano de Cabeça (`headwear` + `back_item`), e o cabelo sob a
+   cobertura (`back_item`) para curto, cacheado e longo ondulado.
+3. Lote 4: os outros 9 estilos de cabelo, olhos, sobrancelhas, expressões e barbas.
+4. Depois: as 158 peças equipáveis ainda sem arte vestida, por slot e por prioridade de loja e capítulos.

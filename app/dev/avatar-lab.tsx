@@ -60,6 +60,7 @@ function ExportView({ template, source, body, layer, pose, scale, skin, hair }: 
         showBackground={false}
         onlySources={source ? [source] : [`body/${bodyId}`]}
         onlyLayers={layer ? [layer] : template ? ['shadow', 'body', 'face', 'arms', 'hands'] : undefined}
+        vectorOnly
       />
       {template ? <Guides look={look} h={1536 * k} /> : null}
     </View>

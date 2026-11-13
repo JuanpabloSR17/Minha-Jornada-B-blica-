@@ -85,6 +85,13 @@ Regras importantes:
 
 ## 5. Nomenclatura dos arquivos
 
+> **Lotes de arte 2.5D:** a relação exata de camadas, arquivos e âncoras de cada lote está em
+> [`docs/arte-lotes/`](arte-lotes/) (lote 1: [`LOTE-1.md`](arte-lotes/LOTE-1.md)). A cabeça é pintada já na
+> proporção adulta (topo y 216, queixo y 391 no corpo); as âncoras do corpo continuam as da seção 3.
+> Variante de pose: `{camada}.staff` (braço direito segurando o cajado) para `arms`, `hands`, `sleeves` e
+> `cloak_front`. Camadas de encaixe das peças de viagem: `chest` (alça, drapeado), `back_item` (cabelo sob
+> cobertura, caimento do lenço) e `hand_item` (mão fechada no cajado, com `.mask` de pele).
+
 ```
 assets/avatars/{categoria}/{assetId}/{corpo|all}/{camada}.webp
 ```
