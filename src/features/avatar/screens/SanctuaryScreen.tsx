@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
+import { ExhibitionHall, counterText } from '@/features/journey/components/ExhibitionHall';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
 import { useMilestones } from '@/features/reading/useMilestones';
@@ -23,6 +24,14 @@ type Book = { code: string; name: string; chapters: number; testament: 'AT' | 'N
  * e do Deus Triúno (relíquias só em exibição), e a Biblioteca Lendária (um lendário por livro).
  */
 export function SanctuaryScreen() {
+  return (
+    <CinemaTheme>
+      <Sanctuary />
+    </CinemaTheme>
+  );
+}
+
+function Sanctuary() {
   const { colors } = useTheme();
   const router = useRouter();
   const [owned, setOwned] = useState<Set<string> | null>(null);
@@ -60,19 +69,19 @@ export function SanctuaryScreen() {
   return (
     <Screen>
       <StepHeader title={strings.sanctuary.title} onBack={() => router.back()} />
+      {/* sala de exposição com os contadores: marcos cumpridos (registro) × Santos obtidos (posse) */}
+      <ExhibitionHall
+        owned={owned}
+        counters={milestoneSum ? counterText(milestoneSum.milestonesDone, milestoneSum.milestonesTotal, milestoneSum.saintsOwned, milestoneSum.saintsTotal) : null}
+        onOpenItem={open}
+      />
+      <Button compact variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
+
       <AppText muted>{strings.sanctuary.intro}</AppText>
       {holy ? (
         <View style={[styles.rarityNote, { borderLeftColor: RARITY_COLOR.holy }]}>
           <AppText variant="caption" muted>{holy.description}</AppText>
         </View>
-      ) : null}
-
-      {milestoneSum ? (
-        <Card>
-          <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
-          <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
-          <Button compact variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
-        </Card>
       ) : null}
 
       {COLLECTIONS.filter((c) => WORKS.includes(c.id)).map((c) => {

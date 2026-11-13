@@ -58,9 +58,27 @@ function ExportView({ template, source, body, layer }: { template?: string; sour
 
 export default function AvatarLab() {
   const [guides, setGuides] = useState(false);
-  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string }>();
+  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string }>();
   if (!ENABLED) return <Text style={{ padding: 24 }}>Ferramenta interna indisponível.</Text>;
   if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} />;
+  if (q.fit) {
+    // encaixe das peças de viagem: três corpos × três cabelos, com e sem cobertura de cabeça
+    const kit = { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd', feet: 'sandals-leather' };
+    const heads = [undefined, 'headwrap-sand', 'headscarf-ochre'];
+    const hairs = ['hair-short', 'hair-curly', 'hair-long-wavy'];
+    return (
+      <View testID="fit" style={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#fff', padding: 4, gap: 4 }}>
+        {['body-a', 'body-b', 'body-c'].flatMap((b, bi) => hairs.map((h, hi) => (
+          <View key={`${b}${h}`} style={{ alignItems: 'center' }}>
+            <AvatarRenderer appearance={{ ...defaultLook().appearance, bodyId: b, hairStyleId: h, skinToneId: `skin-${1 + ((bi * 3 + hi) % 6)}` }}
+              equippedItems={{ ...kit, ...(heads[hi] ? { head: heads[hi] } : {}), ...(bi === 1 ? { waist: 'belt-pouch', hands: 'common_cajado_de_caminhada', back: 'common_manto_de_viagem' } : {}) }}
+              size={Number(q.fit) > 1 ? Number(q.fit) : 300} showBackground={false} />
+            <Text style={{ fontSize: 10 }}>{b} · {h} · {heads[hi] ?? 'sem cobertura'}</Text>
+          </View>
+        )))}
+      </View>
+    );
+  }
   if (q.compare) {
     // mesma peça nos três corpos: mostra qual usa ilustração final e qual usa a provisória
     const [slot, id] = q.compare.split('/') as ['outfit', string];

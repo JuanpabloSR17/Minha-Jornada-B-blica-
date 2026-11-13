@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, ConfirmDialog, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -14,6 +14,14 @@ import { getCatalogMission } from '@/features/avatar/domain/catalog';
 
 /** Missão em andamento: capítulo, cronômetro (só tempo ativo), pausar/retomar e finalizar. */
 export function ActiveMissionScreen() {
+  return (
+    <CinemaTheme>
+      <ActiveMission />
+    </CinemaTheme>
+  );
+}
+
+function ActiveMission() {
   const { colors } = useTheme();
   const router = useRouter();
   const { session, loaded, now, commit, finish } = useMissionSession();
@@ -65,14 +73,6 @@ export function ActiveMissionScreen() {
           {fmt(strings.mission.milestoneBanner, { name: getCatalogMission(session.milestone)?.name ?? session.milestone })}
         </AppText>
       ) : null}
-      {session.mode === 'physical' ? (
-        <Card>
-          <AppText variant="heading">{strings.mission.readNow}</AppText>
-          <AppText variant="display" style={styles.ref}>{ref}</AppText>
-          <AppText muted>{fmt(strings.mission.physicalInstructions, { ref })}</AppText>
-        </Card>
-      ) : null}
-
       <View style={[styles.timer, { borderColor: pending ? colors.danger : colors.primary, backgroundColor: colors.surface }]}
         accessible accessibilityRole="timer" accessibilityLabel={`${strings.mission.time}: ${clock}, ${statusLabel}`}>
         <AppText style={[styles.clock, { color: colors.text }]}>{clock}</AppText>
@@ -83,7 +83,7 @@ export function ActiveMissionScreen() {
       {pending ? <Notice tone="info">{strings.mission.pendingBody}</Notice> : null}
 
       {pending || finishing ? (
-        <Button title={strings.mission.retry} loading={finishing} onPress={() => void doFinish()} />
+        <Button variant="gold" title={strings.mission.retry} loading={finishing} onPress={() => void doFinish()} />
       ) : (
         <>
           {session.status === 'running' ? (
@@ -91,9 +91,18 @@ export function ActiveMissionScreen() {
           ) : (
             <Button variant="secondary" title={strings.mission.resumeTimer} onPress={() => void commit(resumeMission(session))} />
           )}
-          <Button title={strings.mission.finish} onPress={() => setConfirm('finish')} />
+          <Button variant="gold" title={strings.mission.finish} onPress={() => setConfirm('finish')} />
         </>
       )}
+      {/* instruções da Bíblia física depois dos controles: cronômetro, pausa e finalização ficam no topo */}
+      {session.mode === 'physical' ? (
+        <Card>
+          <AppText variant="heading">{strings.mission.readNow}</AppText>
+          <AppText variant="display" style={styles.ref}>{ref}</AppText>
+          <AppText muted>{fmt(strings.mission.physicalInstructions, { ref })}</AppText>
+        </Card>
+      ) : null}
+
       <AppText variant="caption" muted>{strings.mission.noTime}</AppText>
       {!finishing ? <Button variant="danger" title={strings.mission.abandon} onPress={() => setConfirm('abandon')} /> : null}
 

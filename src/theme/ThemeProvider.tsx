@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { AccessibilityInfo, useColorScheme } from 'react-native';
-import { darkColors, lightColors, type ThemeColors } from './tokens';
+import { cinemaColors, darkColors, lightColors, type ThemeColors } from './tokens';
 
 type Theme = { colors: ThemeColors; dark: boolean; reduceMotion: boolean };
 
@@ -22,3 +22,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 }
 
 export const useTheme = () => useContext(ThemeContext);
+
+/** Força a paleta noturna da jornada (acampamento, marco, leitura, revelação, Santuário). */
+export function CinemaTheme({ children }: { children: ReactNode }) {
+  const { reduceMotion } = useContext(ThemeContext);
+  const value = useMemo(() => ({ colors: cinemaColors, dark: true, reduceMotion }), [reduceMotion]);
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+}

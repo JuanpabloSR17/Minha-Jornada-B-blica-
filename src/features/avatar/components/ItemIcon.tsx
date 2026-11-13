@@ -6,6 +6,8 @@ import { RARITY_COLOR } from './RarityBadge';
 import { AvatarRenderer } from './AvatarRenderer';
 import type { AvatarCrop } from '../art/geometry';
 import { hasArt } from '../art/manifest';
+import { ItemThumbnail, hasItemIcon } from '../art/icons';
+import { ArtifactArt, ARTIFACT_RATIO, isArtifact } from '@/features/journey/art/artifacts';
 import { defaultLook } from '../domain/avatar.rules';
 import type { AvatarAppearance, CosmeticItem, ItemSlot } from '../domain/avatar.types';
 
@@ -29,6 +31,14 @@ const CROP_BY_SLOT: Record<ItemSlot, AvatarCrop> = {
 /** Peça isolada, como ícone de inventário (renderizada do mesmo manifest do avatar). */
 export const ItemIcon = memo(function ItemIcon({ item, size, appearance }: { item: CosmeticItem; size: number; appearance?: AvatarAppearance }) {
   const source = `${item.slot}/${item.id}`;
+  // miniatura própria (separada da arte vestida) ou arte do artefato do Santuário
+  if (isArtifact(item.id)) {
+    const w = Math.min(size, size * ARTIFACT_RATIO[item.id]);
+    return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ArtifactArt id={item.id} width={w * 0.94} /></View>;
+  }
+  if (hasItemIcon(item.id)) {
+    return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ItemThumbnail id={item.id} size={size * 0.9} /></View>;
+  }
   if (!hasArt(source)) {
     // sem arte e sem substituto visual: ícone genérico (item continua utilizável e visível)
     // sem arte e sem substituto visual: emblema da raridade (provisório, sinalizado na interface)

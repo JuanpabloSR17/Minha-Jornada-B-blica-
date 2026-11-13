@@ -73,6 +73,35 @@ export const darkColors: ThemeColors = {
   overlay: 'rgba(0, 0, 0, 0.65)',
 };
 
+/**
+ * Paleta "RPG cinematográfico" (acampamento noturno, Tabernáculo, Santuário): céu azul-noite,
+ * tecidos roxos, pedra, bronze e dourado. Usada pelas telas da jornada em qualquer tema do aparelho.
+ */
+export const cinemaColors: ThemeColors = {
+  background: '#0C1124',
+  backgroundAlt: '#161A33',
+  surface: '#1B1631',
+  surfaceRaised: '#251E3D',
+  stage: '#1E1934',
+  border: '#4A3E5E',
+  borderStrong: '#C9A24A',
+  text: '#F6ECD6',
+  textMuted: '#C9BBA0',
+  primary: '#E9BA5B',
+  primaryPressed: '#D2A246',
+  onPrimary: '#241606',
+  accent: '#E9BA5B',
+  danger: '#F2907E',
+  dangerSurface: '#3E1F24',
+  success: '#A9D693',
+  successSurface: '#1E2E22',
+  warning: '#F2C66C',
+  warningSurface: '#3A2E17',
+  infoSurface: '#221D36',
+  focus: '#9CC3F0',
+  overlay: 'rgba(4, 4, 14, 0.72)',
+};
+
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 } as const;
 export const radius = { sm: 8, md: 12, lg: 18, xl: 26, pill: 999 } as const;
 

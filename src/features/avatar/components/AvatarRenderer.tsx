@@ -77,9 +77,10 @@ function AvatarRendererBase({
       bodyId: appearance.bodyId,
       skin: getOption('skin_tone', appearance.skinToneId)?.color ?? '#AC764B',
       hair: getOption('hair_color', appearance.hairColorId)?.color ?? '#3A281D',
+      hairStyle: appearance.hairStyleId,
       uid,
     }),
-    [appearance.bodyId, appearance.skinToneId, appearance.hairColorId, uid],
+    [appearance.bodyId, appearance.skinToneId, appearance.hairColorId, appearance.hairStyleId, uid],
   );
 
   // enquadramento: viewBox do recorte, estendido na horizontal se pedido

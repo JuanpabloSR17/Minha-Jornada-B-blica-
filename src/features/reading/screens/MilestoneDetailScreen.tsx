@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -15,11 +15,21 @@ import { useMissionSession } from '../mission/useMissionSession';
 import { useMilestones } from '../useMilestones';
 import { ActiveSessionCard } from '../components/ActiveSessionCard';
 import { refLabel } from '../refs';
+import { TabernacleStage } from '@/features/journey/components/TabernacleStage';
+import { isArtifact } from '@/features/journey/art/artifacts';
 
 const m = strings.mission;
 
 /** Marco dos Santos: passagem, itens (com a posse do jogador) e início da sessão vinculada. */
 export function MilestoneDetailScreen() {
+  return (
+    <CinemaTheme>
+      <MilestoneDetail />
+    </CinemaTheme>
+  );
+}
+
+function MilestoneDetail() {
   const { colors } = useTheme();
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -56,12 +66,28 @@ export function MilestoneDetailScreen() {
     }
   };
 
+  const scene = row.items.some((i) => isArtifact(i.id));
+  const action = row.completed ? (
+    <Notice tone="success">{m.milestoneAlreadyDone}</Notice>
+  ) : loaded && session ? (
+    <>
+      <Notice tone="info">{fmt(m.milestoneBusy, { ref: refLabel(session.book, session.chapter) })}</Notice>
+      <ActiveSessionCard />
+    </>
+  ) : (
+    <Button variant="gold" title={fmt(m.milestoneStart, { ref })} onPress={() => void start()} disabled={!loaded} />
+  );
+
   return (
     <Screen>
       <StepHeader title={row.name} onBack={() => router.back()} />
       <AppText variant="label" color={row.completed ? colors.success : RARITY_COLOR.holy}>
-        {row.completed ? m.milestoneStateDone : m.milestoneStateTodo}
+        {row.completed ? m.milestoneStateDone : m.milestoneStateTodo} · {ref}
       </AppText>
+      {/* cena ilustrada antes de iniciar: o que já possui e o que pode receber */}
+      {scene ? <TabernacleStage items={row.items} completed={row.completed} /> : null}
+      {startError ? <Notice tone="error">{startError}</Notice> : null}
+      {action}
       <Card>
         <AppText variant="caption" muted>{m.milestonePassage}</AppText>
         <AppText variant="heading">{ref}</AppText>
@@ -90,17 +116,6 @@ export function MilestoneDetailScreen() {
         {!row.completed && row.grantable.length === 0 ? <Notice tone="info">{m.milestoneAllOwned}</Notice> : null}
         {!row.completed && row.grantable.length > 0 ? <AppText variant="caption" muted>{m.milestoneOwnedNote}</AppText> : null}
       </Card>
-      {startError ? <Notice tone="error">{startError}</Notice> : null}
-      {row.completed ? (
-        <Notice tone="success">{m.milestoneAlreadyDone}</Notice>
-      ) : loaded && session ? (
-        <>
-          <Notice tone="info">{fmt(m.milestoneBusy, { ref: refLabel(session.book, session.chapter) })}</Notice>
-          <ActiveSessionCard />
-        </>
-      ) : (
-        <Button title={fmt(m.milestoneStart, { ref })} onPress={() => void start()} disabled={!loaded} />
-      )}
     </Screen>
   );
 }

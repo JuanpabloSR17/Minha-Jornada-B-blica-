@@ -3,6 +3,7 @@ import { beards, brows, eyes, mouths } from './parts/face';
 import { hair } from './parts/hair';
 import { cloak, fallback, feet, tunic } from './parts/clothing';
 import { background } from './parts/accessories';
+import { gear } from './parts/gear';
 import { IMAGE_LAYERS } from './imageAssets.generated';
 import { VECTOR_MANIFEST, imageArtKey } from './manifest';
 import type { ArtDefinition, ImageArt } from './types';
@@ -30,6 +31,7 @@ export const ART_REGISTRY: Record<string, ArtDefinition> = {
   ...prefixed('cloak', cloak),
   ...prefixed('feet', feet),
   ...prefixed('bg', background),
+  ...prefixed('gear', gear),
   ...prefixed('fallback', fallback),
   // ilustrações finais (geradas a partir de assets/avatars/)
   ...Object.fromEntries(

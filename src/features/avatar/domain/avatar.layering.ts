@@ -103,7 +103,10 @@ export function resolveLayers(
     const key = `${slot}/${itemId}`;
     // só esconde camadas se a peça realmente for desenhada (tem arte compatível)
     const entry = manifest[key];
-    if (entry && (!entry.bodyCompatibility || entry.bodyCompatibility.includes(bodyId))) item?.hides?.forEach((h) => hidden.add(h));
+    if (entry && (!entry.bodyCompatibility || entry.bodyCompatibility.includes(bodyId))) {
+      item?.hides?.forEach((h) => hidden.add(h));
+      entry.hides?.forEach((h) => hidden.add(h));
+    }
     push(key, manifest[key], SLOT_FALLBACK_LAYERS[slot] ?? []);
   }
 

@@ -7,6 +7,8 @@ export type ArtContext = {
   bodyId: string;
   skin: string;
   hair: string;
+  /** estilo de cabelo do jogador (coberturas de cabeça ajustam o cabelo visível) */
+  hairStyle?: string;
   params: Record<string, string | number | boolean>;
   /** prefixo único por instância, para ids de gradientes não colidirem */
   uid: string;

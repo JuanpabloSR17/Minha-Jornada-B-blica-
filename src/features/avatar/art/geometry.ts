@@ -141,5 +141,7 @@ export const CROPS = {
   feet: '352 1300 320 180',
   hand: '520 600 400 520',
   head: '352 60 320 320',
+  /** acampamento: enquadramento mais próximo (cabeça até a canela), com espaço para o cajado */
+  camp: '262 92 520 1020',
 } as const;
 export type AvatarCrop = keyof typeof CROPS;

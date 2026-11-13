@@ -19,6 +19,8 @@ export type MissionResult = {
   missions: { id: string; kind: 'mission' | 'milestone'; name: string }[];
   /** marco vinculado a esta sessão (null = leitura comum) */
   milestone?: string | null;
+  /** só no aparelho: a revelação dos Santos já foi vista (não repete ao reabrir) */
+  revealed?: boolean;
   bookJustCompleted: boolean;
   chaptersCompleted: number;
   totalChapters: number;

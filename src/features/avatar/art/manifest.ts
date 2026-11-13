@@ -49,6 +49,8 @@ export type ManifestEntry = {
   params?: Record<string, string | number | boolean>;
   /** IDs de corpo suportados; ausente = todos. */
   bodyCompatibility?: string[];
+  /** camadas que a peça esconde quando é desenhada (ex.: cabelo sob a cobertura de cabeça) */
+  hides?: LayerSlot[];
 };
 
 const BODY: ManifestEntry = { layers: { shadow: 'shadow', body: 'body.base', face: 'face.base', arms: 'body.arms', hands: 'body.hands' } };
@@ -103,6 +105,17 @@ export const VECTOR_MANIFEST: Record<string, ManifestEntry> = {
   // ---- Calçados ----------------------------------------------------------
   'feet/sandals-leather': { layers: { feet: 'feet.sandals' }, params: { base: '#7A4E2C' } },
   'feet/boots-travel': { layers: { feet: 'feet.boots' }, params: { base: '#5C3E28', accent: '#C9B48A' } },
+
+  // ---- Peças de viagem (pose de repouso; encaixe por camadas, ver parts/gear.tsx) ----
+  'back/cloak-night': { layers: { cloak_back: 'cloak.wool.back', chest: 'gear.drape' }, params: { base: '#3E2C63', trim: '#C9A24A', 'dy.body-c': 14 } },
+  'back/common_manto_de_viagem': { layers: { cloak_back: 'cloak.wool.back', chest: 'gear.drape' }, params: { base: '#6B5A3A', trim: '#C9B48A', 'dy.body-c': 14 } },
+  'waist/common_bolsa_do_viajante': { layers: { chest: 'gear.satchel.strap', waist: 'gear.satchel.bag' }, params: { base: '#7B4F2A', trim: '#C9A24A', 'dx.body-c': -10, 'dy.body-c': 8, 'dx.body-a': 4 } },
+  'waist/belt-pouch': { layers: { waist: 'gear.belt.pouch' }, params: { base: '#6A4428', metal: '#C9A24A', 'dy.body-c': 6 } },
+  'hands/staff-shepherd': { layers: { cloak_front: 'gear.staff.crook', hand_item: 'gear.grip' }, params: { wood: '#7A5230' } },
+  'hands/common_cajado_de_caminhada': { layers: { cloak_front: 'gear.staff.walk', hand_item: 'gear.grip' }, params: { wood: '#8A6038' } },
+  'head/headwrap-sand': { layers: { back_item: 'gear.underhair', headwear: 'gear.turban' }, params: { base: '#D8BE8C', trim: '#9C3B2A' }, hides: ['front_hair', 'back_hair'] },
+  'head/headscarf-ochre': { layers: { back_item: 'gear.scarf.back', headwear: 'gear.scarf.front' }, params: { base: '#C98B3A', trim: '#5A3A6E' }, hides: ['front_hair', 'back_hair'] },
+  'head/common_pano_de_cabeca': { layers: { back_item: 'gear.scarf.back', headwear: 'gear.scarf.front' }, params: { base: '#E6D8BC', trim: '#3C6E8C' }, hides: ['front_hair', 'back_hair'] },
 
   // ---- Fundos ------------------------------------------------------------
   'background/bg-parchment': { layers: { background: 'bg.parchment' } },

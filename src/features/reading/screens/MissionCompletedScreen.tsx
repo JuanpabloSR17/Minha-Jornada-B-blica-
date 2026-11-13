@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -10,7 +10,8 @@ import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { displayName, displayNameOf, getItem, isEquippable } from '@/features/avatar/domain/catalog';
+import { displayName, displayNameOf, getCatalogMission, getItem, isEquippable } from '@/features/avatar/domain/catalog';
+import { RevealOverlay } from '@/features/journey/components/RevealOverlay';
 import { equipItem, getWardrobe } from '@/features/avatar/services/wardrobe.service';
 import bible from '../bible-books.json';
 import { missionStorage } from '../mission/storage';
@@ -23,6 +24,14 @@ import { bookName, refLabel } from './MissionHomeScreen';
 
 /** Recompensa pós-leitura (B02): confirmação do servidor, progresso e itens concedidos de fato. */
 export function MissionCompletedScreen() {
+  return (
+    <CinemaTheme>
+      <MissionCompleted />
+    </CinemaTheme>
+  );
+}
+
+function MissionCompleted() {
   const { colors } = useTheme();
   const router = useRouter();
   const { userId } = useAuth();
@@ -52,6 +61,17 @@ export function MissionCompletedScreen() {
   }
 
   const ref = refLabel(result.book.code, result.chapter);
+  // revelação: só depois da confirmação do servidor (esta tela só abre com o resultado), só os Santos
+  // concedidos de fato e só uma vez por resultado
+  const holyGranted = result.milestone ? result.granted.filter((id) => getItem(id)?.rarity === 'holy') : [];
+  const marcoItems = getCatalogMission(result.milestone)?.rewardItems ?? [];
+  const showReveal = holyGranted.length > 0 && !result.revealed;
+  const closeReveal = (then?: () => void) => {
+    const next = { ...result, revealed: true };
+    setResult(next);
+    if (userId) void missionStorage.saveResult(userId, next);
+    then?.();
+  };
   const pendingMarcos = (milestones ?? []).filter((r) => !r.completed && r.book === result.book.code && r.chapter === result.chapter);
   const next = nextChapter(bible as { code: string; chapters: number }[], result.book.code, result.chapter);
 
@@ -70,6 +90,7 @@ export function MissionCompletedScreen() {
   };
 
   return (
+    <View style={styles.root}>
     <Screen>
       <StepHeader title={result.alreadyCompleted ? strings.mission.rereadTitle : strings.mission.completedTitle} />
       <AppText variant="display" style={styles.ref}>{ref}</AppText>
@@ -180,10 +201,21 @@ export function MissionCompletedScreen() {
       ) : null}
       <Button variant="secondary" title={strings.mission.backToMissions} onPress={() => router.replace('/(tabs)/read')} />
     </Screen>
+    {showReveal ? (
+      <RevealOverlay
+        granted={holyGranted}
+        alreadyOwned={marcoItems.filter((id) => !holyGranted.includes(id))}
+        reference={ref}
+        onSanctuary={() => closeReveal(() => router.push('/avatar/sanctuary'))}
+        onClose={() => closeReveal()}
+      />
+    ) : null}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  root: { flex: 1 },
   flex: { flex: 1, gap: 2 },
   ref: { fontSize: 28 },
   stats: { flexDirection: 'row', gap: spacing.lg },

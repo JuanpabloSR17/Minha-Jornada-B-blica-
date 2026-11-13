@@ -19,7 +19,9 @@ describe('manifest de arte', () => {
   });
   it('mantos ilustrados têm camada traseira e dianteira; cabelos têm traseira e frontal', () => {
     for (const it of COSMETIC_ITEMS.filter((i) => i.slot === 'back' && ART_MANIFEST[`back/${i.id}`])) {
-      expect(Object.keys(ART_MANIFEST[`back/${it.id}`]!.layers).sort()).toEqual(['cloak_back', 'cloak_front']);
+      // frente sobre o braço (cloak_front) ou drapeado que passa atrás do braço (chest)
+      const layers = Object.keys(ART_MANIFEST[`back/${it.id}`]!.layers).sort();
+      expect([['cloak_back', 'cloak_front'], ['chest', 'cloak_back']]).toContainEqual(layers);
     }
     for (const [key, entry] of Object.entries(ART_MANIFEST).filter(([k]) => k.startsWith('hair/'))) {
       expect(Object.keys(entry.layers).sort()).toEqual(['back_hair', 'front_hair']);
@@ -67,8 +69,36 @@ describe('resolveLayers', () => {
 
   it('acessório sem arte publicada não esconde o cabelo', () => {
     const look = defaultLook();
-    const slots = resolveLayers(look.appearance, { ...look.equipment, head: 'headwrap-sand' }).map((l) => l.slot);
+    const slots = resolveLayers(look.appearance, { ...look.equipment, head: 'rare_turbante_do_sacerdote' }).map((l) => l.slot);
     expect(slots).toContain('front_hair');
+  });
+
+  it('cobertura de cabeça com arte esconde o cabelo original e desenha o cabelo ajustado por baixo', () => {
+    const look = defaultLook();
+    const layers = resolveLayers(look.appearance, { ...look.equipment, head: 'headwrap-sand' });
+    const slots = layers.map((l) => l.slot);
+    expect(slots).not.toContain('front_hair');
+    expect(slots).not.toContain('back_hair');
+    expect(layers.find((l) => l.assetKey === 'gear.underhair')?.slot).toBe('back_item');
+    expect(slots.indexOf('back_item')).toBeLessThan(slots.indexOf('body'));
+    expect(slots.indexOf('headwear')).toBeGreaterThan(slots.indexOf('face'));
+  });
+
+  it('encaixes das peças de viagem: alça, bolsa, cajado na mão e manto atrás do braço', () => {
+    const look = defaultLook();
+    const eq = { ...look.equipment, back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd' };
+    const keys = resolveLayers(look.appearance, eq).map((l) => l.assetKey);
+    const at = (k: string) => keys.indexOf(k);
+    // alça cruza a túnica e o manto drapeado; a bolsa repousa no quadril, sob o braço
+    expect(at('gear.satchel.strap')).toBeGreaterThan(at('tunic.linen.body'));
+    expect(at('gear.satchel.strap')).toBeGreaterThan(at('gear.drape'));
+    expect(at('gear.satchel.bag')).toBeLessThan(at('body.arms'));
+    // o manto drapeado passa atrás do braço
+    expect(at('gear.drape')).toBeLessThan(at('body.arms'));
+    // a mão envolve o cajado: haste abaixo da mão, dedos fechados acima da haste
+    expect(at('gear.staff.crook')).toBeLessThan(at('body.hands'));
+    expect(at('gear.grip')).toBeGreaterThan(at('gear.staff.crook'));
+    expect(at('gear.grip')).toBeGreaterThan(at('body.hands'));
   });
 
   it('opção de aparência sem arte (avatar antigo) usa a arte padrão da categoria', () => {

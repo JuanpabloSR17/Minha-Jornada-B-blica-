@@ -1,10 +1,11 @@
 import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import type { ReactNode } from 'react';
 import { useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+import { fonts, radius, spacing } from '@/theme/tokens';
 import { AppText } from './AppText';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'gold';
 
 export function Button({
   title,
@@ -34,7 +35,9 @@ export function Button({
     secondary: { bg: colors.surfaceRaised, pressed: colors.backgroundAlt, fg: colors.text, border: colors.borderStrong },
     ghost: { bg: 'transparent', pressed: colors.backgroundAlt, fg: colors.text, border: 'transparent' },
     danger: { bg: 'transparent', pressed: colors.dangerSurface, fg: colors.danger, border: colors.danger },
+    gold: { bg: '#D9A441', pressed: '#B9862E', fg: '#2A1606', border: '#7A5418' },
   }[variant];
+  const gold = variant === 'gold';
 
   return (
     <Pressable
@@ -48,20 +51,44 @@ export function Button({
         styles.base,
         compact && styles.compact,
         { backgroundColor: pressed ? palette.pressed : palette.bg, borderColor: palette.border, opacity: isDisabled ? 0.55 : 1 },
+        gold && styles.gold,
         style,
       ]}
     >
+      {({ pressed }) => (
+      <>
+      {gold ? <GoldBevel pressed={pressed} /> : null}
       <View style={styles.row}>
         {loading ? <ActivityIndicator color={palette.fg} /> : icon}
-        <AppText variant="label" color={palette.fg} style={{ fontSize: compact ? 14 : 16 }} numberOfLines={1}>
+        <AppText variant="label" color={palette.fg} style={gold ? { fontFamily: fonts.display, fontSize: compact ? 15 : 18, fontWeight: '700' } : { fontSize: compact ? 14 : 16 }} numberOfLines={1}>
           {title}
         </AppText>
       </View>
+      </>
+      )}
     </Pressable>
   );
 }
 
+/** Fundo dourado em relevo (botão principal das telas da jornada). */
+function GoldBevel({ pressed }: { pressed: boolean }) {
+  return (
+    <Svg style={StyleSheet.absoluteFill} width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 40" pointerEvents="none">
+      <Defs>
+        <LinearGradient id={pressed ? 'goldBtnP' : 'goldBtn'} x1="0" y1="0" x2="0" y2="1">
+          <Stop offset="0" stopColor={pressed ? '#E2B04E' : '#FFE7A3'} />
+          <Stop offset="0.45" stopColor={pressed ? '#C9922E' : '#EFC160'} />
+          <Stop offset="1" stopColor={pressed ? '#8A5A16' : '#B47A22'} />
+        </LinearGradient>
+      </Defs>
+      <Rect x={0} y={0} width={100} height={40} fill={`url(#${pressed ? 'goldBtnP' : 'goldBtn'})`} />
+      <Rect x={1.2} y={1.5} width={97.6} height={37} fill="none" stroke="#FFF3CC" strokeOpacity={0.55} strokeWidth={0.6} />
+    </Svg>
+  );
+}
+
 const styles = StyleSheet.create({
+  gold: { overflow: 'hidden', borderWidth: 2, minHeight: 54 },
   base: {
     minHeight: 50,
     borderRadius: radius.md,

@@ -37,4 +37,4 @@ echo "→ build web apontando para o fake-supabase"
 node "$ROOT/e2e/static-server.mjs" "$WORK/dist" 8081 & PIDS+=($!)
 sleep 1
 mkdir -p "$SHOTS_DIR"
-node "$ROOT/e2e/marco1.flow.cjs"
+node "$ROOT/e2e/${FLOW:-marco1}.flow.cjs"

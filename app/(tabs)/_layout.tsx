@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
+import { cinemaColors } from '@/theme/tokens';
 import { Icon, type IconName } from '@/ui';
 import { strings } from '@/i18n';
 
@@ -17,9 +18,10 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.textMuted,
-        tabBarStyle: { backgroundColor: colors.surface, borderTopColor: colors.border },
+        // barra de abas na identidade da jornada (noite, bronze e dourado) em qualquer tema
+        tabBarActiveTintColor: cinemaColors.primary,
+        tabBarInactiveTintColor: cinemaColors.textMuted,
+        tabBarStyle: { backgroundColor: '#120E1C', borderTopColor: '#7A5A2A', borderTopWidth: 1.5, height: 64, paddingTop: 4, paddingBottom: 8 },
         tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
         sceneStyle: { backgroundColor: colors.background },
       }}
