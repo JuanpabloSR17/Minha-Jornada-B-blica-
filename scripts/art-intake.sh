@@ -29,6 +29,9 @@ fi
 
 echo "→ 2. validação e registro"
 npm run -s assets
+if [ -n "$SRC" ] && command -v python3 >/dev/null && python3 -c 'import PIL' 2>/dev/null; then
+  ( cd "$SRC" && find . -type f \( -name '*.webp' -o -name '*.png' \) -print0 | xargs -0 python3 -I "$ROOT/scripts/art-alpha-check.py" ) || true
+fi
 echo "→ 3. estado do lote"
 node scripts/art-status.mjs "$SPEC"
 echo "→ 4. tipos e testes de encaixe"

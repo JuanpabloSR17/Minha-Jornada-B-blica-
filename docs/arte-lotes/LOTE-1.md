@@ -147,7 +147,47 @@ não foi pintado.
 Só a validação: `npm run assets` · só o estado: `npm run art:status` · moldes de outras peças, corpos ou poses
 (app com `EXPO_PUBLIC_AVATAR_LAB=1`): `node scripts/export-avatar-layers.cjs docs/arte-lotes/lote-1.json <pasta>`.
 
-## 8. Próximos lotes (sugestão)
+## 8. Entregas recebidas
+
+### Entrega 1 — Manto Noturno e bolsa (Codex, `Jornada_Biblica_Lote_2D_Pintado.zip`)
+
+| Arquivo (`assets/avatars/…`) | SHA-256 | Encaixe |
+|---|---|---|
+| `back/cloak-night/body-b/cloak_back` (+`@2x`) | ✔ confere | costas do manto entre x 224–798 e y 425–1415, como o molde |
+| `back/cloak-night/body-b/chest` (+`@2x`) | ✔ confere | drapeado com broche do ombro esquerdo ao quadril direito, atrás do braço |
+| `waist/common_bolsa_do_viajante/body-b/waist` (+`@2x`) | ✔ confere | bolsa no quadril esquerdo (centro ~ 440, 894); a alça atual chega até ela |
+
+Verificação (`npm run art:intake`):
+- validação do pipeline e 30 testes de encaixe passaram;
+- o percurso no navegador passou: guarda-roupa com luz neutra, acampamento, troca do Cajado de Pastor pelo de Caminhada com reabertura, pose do cajado e repouso, 320 e 412 px;
+- comparação e antes × depois em [`lote-1/capturas-entrega/`](lote-1/capturas-entrega/).
+
+[`ESTADO.md`](lote-1/ESTADO.md): 6 de 70 arquivos com pintura entregue.
+
+**A corrigir na próxima exportação: névoa de alfa.** Fora das peças, 69–99% do canvas das versões
+1024×1536 tem alfa entre 1 e 15, preto. Isso deixa uma borda reta quase invisível no palco do guarda-roupa: o
+céu cai de 219 para 216 de luminância onde começa o canvas. Exporte o canal alfa sem perdas (WebP lossless,
+ou `alpha_quality=100` com `exact`) e o fundo com alfa 0. Os arquivos foram aplicados exatamente como
+entregues. A entrada agora avisa automaticamente (`scripts/art-alpha-check.py`).
+
+### Próximo pedido: rosto, cabelo, mãos e túnica (corpo B)
+
+| # | Arquivos | Tipo |
+|---|---|---|
+| 1 | `body/base/body-b/body.mask` + `body.shade` | pele (máscara chapada + sombreamento) |
+| 2 | `body/base/body-b/face.shade` | nariz, maçãs, sombra do queixo |
+| 3 | `eyes/eyes-almond/all/face` + `face.shade` | olhos (cor) + pálpebras (sombreamento) |
+| 4 | `brows/brows-soft/all/face.mask` + `face.shade` | sobrancelhas (tinta do cabelo) |
+| 5 | `expression/expr-smile/all/mouth.shade` (+ `mouth` opcional) | boca; lábios translúcidos |
+| 6 | `hair/hair-short/all/back_hair.mask/.shade`, `front_hair.mask/.shade` | cabelo curto (tinta do cabelo) |
+| 7 | `body/base/body-b/hands.mask/.shade`, `hands.staff.mask/.shade` | mãos em repouso; só a esquerda na pose do cajado |
+| 8 | `hands/staff-shepherd/body-b/hand_item.mask/.shade`, `hands/common_cajado_de_caminhada/body-b/hand_item.mask/.shade` | mão fechada na haste |
+| 9 | `outfit/tunic-linen/body-b/upper_outfit`, `sleeves`, `sleeves.staff` | túnica e mangas, com a pose do cajado |
+
+Cada arquivo vai em duas resoluções, `@2x` e base. Os moldes de cada camada estão em `lote-1/moldes/`, com o
+mesmo caminho.
+
+## 9. Próximos lotes (sugestão)
 
 1. Lote 2: corpos A e C da mesma combinação (as mesmas 23 camadas, por corpo; cabelo, olhos, boca e
    sobrancelhas em `all/` já servem).

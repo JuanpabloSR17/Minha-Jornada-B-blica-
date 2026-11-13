@@ -1,6 +1,6 @@
 # Lote 1 — estado das camadas
 
-Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **0**, ainda teste procedural: **70**, faltando: **0**.
+Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **6**, ainda teste procedural: **64**, faltando: **0**.
 
 | Peça | Camada | Arquivo | Estado |
 |---|---|---|---|
@@ -52,14 +52,14 @@ Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura en
 | outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves@2x.webp` | teste procedural |
 | outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff.webp` | teste procedural |
 | outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff@2x.webp` | teste procedural |
-| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back.webp` | teste procedural |
-| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back@2x.webp` | teste procedural |
-| back/cloak-night | chest | `back/cloak-night/body-b/chest.webp` | teste procedural |
-| back/cloak-night | chest | `back/cloak-night/body-b/chest@2x.webp` | teste procedural |
+| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back.webp` | pintura entregue |
+| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back@2x.webp` | pintura entregue |
+| back/cloak-night | chest | `back/cloak-night/body-b/chest.webp` | pintura entregue |
+| back/cloak-night | chest | `back/cloak-night/body-b/chest@2x.webp` | pintura entregue |
 | waist/common_bolsa_do_viajante | chest | `waist/common_bolsa_do_viajante/body-b/chest.webp` | teste procedural |
 | waist/common_bolsa_do_viajante | chest | `waist/common_bolsa_do_viajante/body-b/chest@2x.webp` | teste procedural |
-| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist.webp` | teste procedural |
-| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist@2x.webp` | teste procedural |
+| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist.webp` | pintura entregue |
+| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist@2x.webp` | pintura entregue |
 | feet/sandals-leather | feet | `feet/sandals-leather/body-b/feet.webp` | teste procedural |
 | feet/sandals-leather | feet | `feet/sandals-leather/body-b/feet@2x.webp` | teste procedural |
 | hands/staff-shepherd | cloak_front.staff | `hands/staff-shepherd/body-b/cloak_front.staff.webp` | teste procedural |
