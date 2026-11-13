@@ -22,7 +22,7 @@ import { BOOKS, refLabel } from '../refs';
 export function MissionHomeScreen() {
   const { colors } = useTheme();
   const router = useRouter();
-  const params = useLocalSearchParams<{ book?: string; chapter?: string }>();
+  const params = useLocalSearchParams<{ book?: string; chapter?: string; selection?: string }>();
   const { userId, session, loaded, commit } = useMissionSession();
   const [overview, setOverview] = useState<MissionOverview | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -42,12 +42,13 @@ export function MissionHomeScreen() {
 
   // "Próximo capítulo" na tela de recompensa chega aqui já selecionado
   useEffect(() => {
-    if (params.book && BOOKS.some((b) => b.code === params.book)) {
-      setBook(params.book);
+    const requested = BOOKS.find((b) => b.code === params.book);
+    if (requested) {
+      setBook(requested.code);
       const ch = Number(params.chapter);
-      setChapter(Number.isInteger(ch) && ch >= 1 ? ch : null);
+      setChapter(Number.isInteger(ch) && ch >= 1 && ch <= requested.chapters ? ch : null);
     }
-  }, [params.book, params.chapter]);
+  }, [params.book, params.chapter, params.selection]);
 
   const selectedBook = BOOKS.find((b) => b.code === book) ?? null;
   const done = useMemo(() => new Set(overview?.chaptersByBook[book ?? ''] ?? []), [overview, book]);

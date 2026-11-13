@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, ImageBackground, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
+import { fonts, radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, ConfirmDialog, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorCode, errorMessage } from '@/lib/errors';
@@ -16,6 +16,7 @@ import { uuidv4 } from '@/features/reading/mission/session';
 import { getMarket, pendingPurchaseStorage, purchaseItem, type MarketItem, type MarketState, type PendingPurchase } from './market.service';
 
 const m = strings.market;
+const marketArt = require('../../../assets/journey/market.webp');
 type Msg = { tone: 'success' | 'error' | 'info'; text: string; itemId?: string };
 
 /**
@@ -24,6 +25,10 @@ type Msg = { tone: 'success' | 'error' | 'info'; text: string; itemId?: string }
  * idempotente pelo ID gerado aqui, guardado até a resposta chegar.
  */
 export function MarketScreen() {
+  return <CinemaTheme><MarketContent /></CinemaTheme>;
+}
+
+function MarketContent() {
   const { colors } = useTheme();
   const router = useRouter();
   const { userId } = useAuth();
@@ -149,10 +154,13 @@ export function MarketScreen() {
   return (
     <Screen>
       <StepHeader title={m.title} onBack={() => router.back()} />
-      <AppText muted>{m.intro}</AppText>
-      <Card>
-        <AppText variant="heading" accessibilityLabel={fmt(m.balance, { balance })}>{fmt(m.balance, { balance })}</AppText>
-      </Card>
+      <ImageBackground source={marketArt} resizeMode="cover" testID="market-banner"
+        style={[styles.banner, { borderColor: colors.borderStrong }]}>
+        <View style={styles.bannerText}>
+          <AppText variant="heading" style={styles.balance} color={colors.primary}>{fmt(m.balance, { balance })}</AppText>
+          <AppText variant="caption" muted>{m.intro}</AppText>
+        </View>
+      </ImageBackground>
 
       {busy && pending ? <ActivityIndicator color={colors.primary} /> : null}
       {pending && !busy ? (
@@ -191,7 +199,8 @@ export function MarketScreen() {
               ) : short > 0 ? (
                 <AppText variant="caption" muted>{fmt(m.missing, { n: short })}</AppText>
               ) : (
-                <Button compact title={`${m.buy} ${item.name}`} disabled={busy || !!pending} onPress={() => void ask(it)} />
+                <Button compact title={m.buy} accessibilityLabel={`${m.buy} ${item.name}`} variant="gold"
+                  disabled={busy || !!pending} onPress={() => void ask(it)} />
               )}
             </View>
           </View>
@@ -213,7 +222,10 @@ export function MarketScreen() {
 }
 
 const styles = StyleSheet.create({
+  banner: { minHeight: 180, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
+  bannerText: { backgroundColor: 'rgba(12, 10, 22, 0.9)', padding: spacing.md, gap: spacing.xs },
+  balance: { fontFamily: fonts.display },
   row: { flexDirection: 'row', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
   icon: { width: 64, height: 64, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
-  info: { flex: 1, gap: 2 },
+  info: { flex: 1, minWidth: 0, gap: 2 },
 });
