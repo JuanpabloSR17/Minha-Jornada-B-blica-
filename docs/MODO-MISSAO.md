@@ -109,7 +109,7 @@
 | Raros "missão especial ou loja" | 16 de 18 com missão (catálogo v7, `docs/MISSOES-RAROS.md`). Cálice de Bronze e Bolsa do Mensageiro aguardam revisão editorial. |
 | 22 Santos | 20 marcos cadastrados (catálogo v8): o jogador escolhe o marco na aba Ler e só a sessão vinculada concede o Santo (`docs/MARCOS-SANTOS.md`). |
 | Leitor digital | Falta texto bíblico licenciado. |
-| Mundos (`WORLD_COMPLETED`) | Sem mapa de mundos definido. |
+| Mundos (`WORLD_COMPLETED`) | A aba Jornada agrupa os 66 livros em sete mundos. O progresso usa os capítulos já registrados pelo servidor. Recompensas próprias por mundo ainda não foram cadastradas. |
 
 ## Manto do Profeta → Manto da Sucessão → Coleção dos Profetas
 

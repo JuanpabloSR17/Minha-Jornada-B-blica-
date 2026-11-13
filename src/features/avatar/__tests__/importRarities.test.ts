@@ -3,6 +3,7 @@ import { createHash } from 'crypto';
 import { mkdtempSync, readFileSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
+import { pathToFileURL } from 'url';
 
 const root = join(__dirname, '../../../..');
 const officialDir = join(root, 'docs/catalogo-oficial');
@@ -32,7 +33,7 @@ function run(file: string, extra: string[] = []) {
 /** Roda reconcile() contra o catalog.json atual (módulo ESM, via processo filho). */
 function reconcileNow(): { hows: Record<string, number>; retired: number; sameItems: boolean; sameAliases: boolean } {
   const code = `
-    import { convert, reconcile } from ${JSON.stringify(join(root, 'scripts/import-rarities-catalog.mjs'))};
+    import { convert, reconcile } from ${JSON.stringify(pathToFileURL(join(root, 'scripts/import-rarities-catalog.mjs')).href)};
     import { readFileSync } from 'node:fs';
     const off = convert(JSON.parse(readFileSync(${JSON.stringify(officialFile)}, 'utf8')));
     const cat = JSON.parse(readFileSync(${JSON.stringify(join(root, 'src/features/avatar/catalog/catalog.json'))}, 'utf8'));

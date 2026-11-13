@@ -15,6 +15,7 @@ export function Button({
   loading,
   icon,
   style,
+  accessibilityLabel,
   accessibilityHint,
   compact,
 }: {
@@ -25,6 +26,7 @@ export function Button({
   loading?: boolean;
   icon?: ReactNode;
   style?: StyleProp<ViewStyle>;
+  accessibilityLabel?: string;
   accessibilityHint?: string;
   compact?: boolean;
 }) {
@@ -42,7 +44,7 @@ export function Button({
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={title}
+      accessibilityLabel={accessibilityLabel ?? title}
       accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled: !!isDisabled, busy: !!loading }}
       disabled={isDisabled}

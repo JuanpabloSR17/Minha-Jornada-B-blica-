@@ -246,6 +246,9 @@ export const ptBR = {
   tabs: { home: 'Início', journey: 'Jornada', read: 'Ler', friends: 'Amigos', profile: 'Perfil' },
   journey: {
     appTitle: 'Jornada Bíblica',
+    worldChapters: '{done} de {total} capítulos',
+    worldSummary: '{books} livros concluídos · {worlds} de {total} mundos',
+    worldReadChapter: 'Ler capítulo {chapter}',
     campAvatarLabel: 'Seu personagem no acampamento: {summary}',
     nextReading: 'Próxima leitura',
     activeReading: 'Leitura em andamento',
@@ -430,7 +433,7 @@ export const ptBR = {
   },
   market: {
     title: 'Mercado dos Viajantes',
-    intro: 'Troque os Siclos conquistados na leitura por itens cosméticos. Itens Santos, Lendários e recompensas de leitura não são vendidos.',
+    intro: 'Use os Siclos da leitura para comprar peças para seu personagem.',
     balance: 'Saldo: {balance} Siclos',
     price: '{price} Siclos',
     pricePending: 'Preço a definir',
@@ -453,7 +456,6 @@ export const ptBR = {
     empty: 'Nenhum item à venda no momento.',
   },
   placeholders: {
-    journey: 'O mapa de mundos e livros chega em um próximo marco.',
     read: 'A biblioteca e o leitor bíblico chegam no Marco 3, com conteúdo licenciado.',
     friends: 'Amigos, perfis públicos e desafios chegam no Marco 4.',
   },

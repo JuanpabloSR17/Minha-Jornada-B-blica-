@@ -1,0 +1,7 @@
+# Preserve the original bytes used by the official catalog checksums.
+docs/catalogo-oficial/Jornada_Biblica_Raridades_144_Itens_Claude_Code.md -text
+docs/catalogo-oficial/catalogo_raridades_144_itens_v2.json -text
+
+# Keep generated files byte-identical to the output of their generators.
+src/features/avatar/art/imageAssets.generated.ts text eol=lf
+supabase/migrations/*.sql text eol=lf
