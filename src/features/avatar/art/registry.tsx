@@ -6,7 +6,13 @@ import { background } from './parts/accessories';
 import { gear } from './parts/gear';
 import { IMAGE_LAYERS } from './imageAssets.generated';
 import { VECTOR_MANIFEST, imageArtKey } from './manifest';
-import type { ArtDefinition, ImageArt } from './types';
+import { G } from 'react-native-svg';
+import { HEAD_T } from './geometry';
+import type { ArtDefinition, ImageArt, VectorArt } from './types';
+
+/** Camadas desenhadas no espaço da cabeça: reduzidas em torno do queixo (proporção adulta). */
+const inHead = (fn: VectorArt): VectorArt => (ctx) => <G transform={HEAD_T}>{fn(ctx)}</G>;
+const headDefs = (defs: Record<string, VectorArt>) => Object.fromEntries(Object.entries(defs).map(([k, fn]) => [k, inHead(fn)]));
 
 const prefixed = (prefix: string, defs: Record<string, ArtDefinition>) =>
   Object.fromEntries(Object.entries(defs).map(([k, v]) => [`${prefix}.${k}`, v]));
@@ -21,12 +27,12 @@ export const ART_REGISTRY: Record<string, ArtDefinition> = {
   'body.base': bodyBase,
   'body.arms': arms,
   'body.hands': hands,
-  'face.base': faceBase,
-  ...prefixed('eyes', eyes),
-  ...prefixed('brows', brows),
-  ...prefixed('mouth', mouths),
-  ...prefixed('beard', beards),
-  ...prefixed('hair', hair),
+  'face.base': inHead(faceBase),
+  ...prefixed('eyes', headDefs(eyes)),
+  ...prefixed('brows', headDefs(brows)),
+  ...prefixed('mouth', headDefs(mouths)),
+  ...prefixed('beard', headDefs(beards)),
+  ...prefixed('hair', headDefs(hair)),
   ...prefixed('tunic', tunic),
   ...prefixed('cloak', cloak),
   ...prefixed('feet', feet),

@@ -8,6 +8,19 @@
 export const CANVAS = { width: 1024, height: 1536, cx: 512 } as const;
 
 export const HEAD = { top: 148, chin: 390, cx: 512, halfW: 88 } as const;
+
+/**
+ * Proporção adulta (revisão visual v3): as camadas da cabeça (rosto, cabelo, barba, coberturas)
+ * continuam desenhadas no espaço original e são reduzidas em torno do queixo. Cabeça ≈ 174 u e
+ * altura ≈ 1234 u → ~7,1 cabeças, sem mudar ombros, quadril, mãos e pés já encaixados.
+ */
+export const HEAD_SCALE = 0.72;
+export const HEAD_PIVOT = { x: 512, y: 392 } as const;
+export const HEAD_T = `translate(${HEAD_PIVOT.x} ${HEAD_PIVOT.y}) scale(${HEAD_SCALE}) translate(${-HEAD_PIVOT.x} ${-HEAD_PIVOT.y})`;
+/** Ponto do espaço da cabeça levado ao espaço do corpo (para peças que ligam cabeça e ombros). */
+export const headPt = (x: number, y: number) => ({ x: HEAD_PIVOT.x + (x - HEAD_PIVOT.x) * HEAD_SCALE, y: HEAD_PIVOT.y + (y - HEAD_PIVOT.y) * HEAD_SCALE });
+/** Topo da cabeça já reduzida, no espaço do corpo. */
+export const HEAD_TOP_Y = Math.round(headPt(512, HEAD.top).y);
 export const FACE = { eyeY: 278, eyeDX: 37, browY: 252, noseY: 318, mouthY: 350 } as const;
 export const GROUND_Y = 1450;
 
@@ -42,10 +55,24 @@ export type Pt = { x: number; y: number };
 type Side = -1 | 1;
 const CX = CANVAS.cx;
 
+/** Pose dos braços: repouso, ou braço direito dobrado segurando o cajado à altura do peito. */
+export type ArmPose = 'rest' | 'staff';
+
 /** Pontos de ancoragem fixos por corpo (usados por roupas, mantos e itens). */
-export function anchors(g: BodyGeometry, side: Side) {
+export function anchors(g: BodyGeometry, side: Side, pose: ArmPose = 'rest') {
   const elbowOff = Math.max(g.shoulder + 4, g.waist + g.upperArm + 10);
   const wristOff = Math.max(g.shoulder - 8, g.hip + g.forearm + 6);
+  if (pose === 'staff' && side === 1) {
+    // cotovelo para fora e para baixo, antebraço subindo até a mão que envolve o cajado
+    return {
+      shoulder: { x: CX + (g.shoulder - 24), y: 476 },
+      elbow: { x: CX + g.shoulder + 22, y: 676 },
+      wrist: { x: CX + g.shoulder - 4, y: 612 },
+      hip: { x: CX + g.hip * 0.48, y: 792 },
+      knee: { x: CX + (g.hip * 0.42 + 4), y: 1078 },
+      ankle: { x: CX + (g.hip * 0.36 + 6), y: 1386 },
+    };
+  }
   return {
     shoulder: { x: CX + side * (g.shoulder - 24), y: 476 },
     elbow: { x: CX + side * elbowOff, y: 690 },
@@ -132,16 +159,16 @@ export function sliver(a: Pt, b: Pt, w: number, bend = 0) {
 /** Recortes de enquadramento (viewBox). */
 export const CROPS = {
   full: '0 0 1024 1536',
-  portrait: '292 70 440 600',
-  eyes: '432 214 160 160',
-  mouth: '442 286 140 140',
-  bust: '352 110 320 320',
+  portrait: '332 176 360 490',
+  eyes: '452 256 120 120',
+  mouth: '460 310 104 104',
+  bust: '384 190 256 256',
   outfit: '232 400 560 1000',
   back: '172 400 680 1080',
   feet: '352 1300 320 180',
   hand: '520 600 400 520',
-  head: '352 60 320 320',
+  head: '382 150 260 260',
   /** acampamento: enquadramento mais próximo (cabeça até a canela), com espaço para o cajado */
-  camp: '262 92 520 1020',
+  camp: '262 176 520 980',
 } as const;
 export type AvatarCrop = keyof typeof CROPS;

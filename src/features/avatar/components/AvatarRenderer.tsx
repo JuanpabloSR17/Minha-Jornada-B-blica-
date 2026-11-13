@@ -1,6 +1,6 @@
 import { memo, useId, useMemo, type ReactElement } from 'react';
 import { Image, StyleSheet, View, type ImageSourcePropType, type StyleProp, type ViewStyle } from 'react-native';
-import Svg, { G } from 'react-native-svg';
+import Svg, { Defs, G, LinearGradient, Mask, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { ART_REGISTRY } from '../art/registry';
 import { CANVAS, CROPS, geometryFor, type AvatarCrop } from '../art/geometry';
 import type { ArtContext, VectorArt } from '../art/types';
@@ -23,6 +23,11 @@ export type AvatarRendererProps = {
   onlyLayers?: string[];
   /** reservado para poses futuras; hoje só existe "idle" */
   pose?: 'idle';
+  /**
+   * Luz da cena sobre o personagem, recortada pela silhueta: `camp` = noite azulada com reflexo quente
+   * da fogueira à direita; `neutral` (padrão) = luz neutra, para comparar peças no guarda-roupa.
+   */
+  lighting?: 'neutral' | 'camp';
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
 };
@@ -63,12 +68,18 @@ function AvatarRendererBase({
   onlyLayers,
   accessibilityLabel,
   style,
+  lighting = 'neutral',
 }: AvatarRendererProps) {
   const rawId = useId();
   const uid = useMemo(() => `av${rawId.replace(/[^a-zA-Z0-9]/g, '')}`, [rawId]);
-  const layers = useMemo(() => {
+  const { layers, armPose } = useMemo(() => {
     const all = resolveLayers(appearance, equippedItems, { showBackground });
-    return all.filter((l) => (!onlySources || onlySources.includes(l.source)) && (!onlyLayers || onlyLayers.includes(l.slot)));
+    // a pose dos braços depende do conjunto equipado (ex.: o cajado dobra o braço direito)
+    const pose = all.some((l) => l.params.armPose === 'staff') ? ('staff' as const) : ('rest' as const);
+    return {
+      layers: all.filter((l) => (!onlySources || onlySources.includes(l.source)) && (!onlyLayers || onlyLayers.includes(l.slot))),
+      armPose: pose,
+    };
   }, [appearance, equippedItems, showBackground, onlySources, onlyLayers]);
 
   const ctxBase = useMemo(
@@ -78,9 +89,10 @@ function AvatarRendererBase({
       skin: getOption('skin_tone', appearance.skinToneId)?.color ?? '#AC764B',
       hair: getOption('hair_color', appearance.hairColorId)?.color ?? '#3A281D',
       hairStyle: appearance.hairStyleId,
+      armPose,
       uid,
     }),
-    [appearance.bodyId, appearance.skinToneId, appearance.hairColorId, appearance.hairStyleId, uid],
+    [appearance.bodyId, appearance.skinToneId, appearance.hairColorId, appearance.hairStyleId, armPose, uid],
   );
 
   // enquadramento: viewBox do recorte, estendido na horizontal se pedido
@@ -103,12 +115,16 @@ function AvatarRendererBase({
     if (!vectorRun.length) return;
     const run = vectorRun;
     vectorRun = [];
+    const draw = (suffix: string) =>
+      run.map(({ layer, fn }) => {
+        const ctx: ArtContext = { ...ctxBase, params: layer.params };
+        return <G key={`${layer.id}${suffix}`}>{fn(ctx)}</G>;
+      });
+    const key = `v${run[0]!.layer.id}`;
     chunks.push(
-      <Svg key={`v${run[0]!.layer.id}`} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
-        {run.map(({ layer, fn }) => {
-          const ctx: ArtContext = { ...ctxBase, params: layer.params };
-          return <G key={layer.id}>{fn(ctx)}</G>;
-        })}
+      <Svg key={key} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
+        {draw('')}
+        {lighting === 'camp' ? <CampLight id={`${uid}${chunks.length}`}>{draw('#m')}</CampLight> : null}
       </Svg>,
     );
   };
@@ -142,6 +158,36 @@ function AvatarRendererBase({
     >
       {chunks}
     </View>
+  );
+}
+
+/**
+ * Luz do acampamento sobre o personagem: as próprias camadas viram uma máscara (alfa) e só a
+ * silhueta recebe o tom azul da noite (esquerda/alto) e o reflexo quente da fogueira (direita/baixo).
+ */
+function CampLight({ id, children }: { id: string; children: ReactElement[] }) {
+  return (
+    <>
+      <Defs>
+        <Mask id={`${id}-m`} maskType="alpha" maskUnits="userSpaceOnUse" x={-400} y={0} width={1824} height={1536}>
+          <G>{children}</G>
+        </Mask>
+        <LinearGradient id={`${id}-n`} gradientUnits="userSpaceOnUse" x1={300} y1={300} x2={780} y2={700}>
+          <Stop offset="0" stopColor="#16245C" stopOpacity={0.42} />
+          <Stop offset="0.5" stopColor="#16245C" stopOpacity={0.14} />
+          <Stop offset="1" stopColor="#16245C" stopOpacity={0.02} />
+        </LinearGradient>
+        <RadialGradient id={`${id}-f`} gradientUnits="userSpaceOnUse" cx={980} cy={1050} r={620}>
+          <Stop offset="0" stopColor="#FF9440" stopOpacity={0.5} />
+          <Stop offset="0.55" stopColor="#FF8A3A" stopOpacity={0.18} />
+          <Stop offset="1" stopColor="#FF8A3A" stopOpacity={0} />
+        </RadialGradient>
+      </Defs>
+      <G mask={`url(#${id}-m)`}>
+        <Rect x={-400} y={0} width={1824} height={1536} fill={`url(#${id}-n)`} />
+        <Rect x={-400} y={0} width={1824} height={1536} fill={`url(#${id}-f)`} />
+      </G>
+    </>
   );
 }
 

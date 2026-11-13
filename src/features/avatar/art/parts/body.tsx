@@ -1,6 +1,6 @@
 import { Defs, Ellipse, G, Path } from 'react-native-svg';
 import { lineOf, mix, shade } from '../color';
-import { CANVAS, FACE, GROUND_Y, anchors, f, limbPath, type BodyGeometry, type Pt } from '../geometry';
+import { CANVAS, FACE, GROUND_Y, HEAD_T, anchors, f, limbPath, type BodyGeometry, type Pt } from '../geometry';
 import { SoftRadial, VolumeGradient, url } from '../paint';
 import type { ArtContext, VectorArt } from '../types';
 
@@ -8,6 +8,19 @@ const CX = CANVAS.cx;
 const SIDES = [-1, 1] as const;
 
 export const HEAD_PATH = `M512 148 C568 148 602 190 602 252 C602 300 594 332 578 356 C558 380 536 390 512 391 C488 390 466 380 446 356 C430 332 422 300 422 252 C422 190 456 148 512 148 Z`;
+
+/** Contorno do rosto por corpo (rostos distintos): queixo e mandíbula mais estreitos ou mais largos. */
+const JAW: Record<string, { jaw: number; chin: number; cheek: number }> = {
+  'body-a': { jaw: -8, chin: -4, cheek: -4 },
+  'body-b': { jaw: 4, chin: 2, cheek: 0 },
+  'body-c': { jaw: 12, chin: 8, cheek: 6 },
+};
+export function headPath(bodyId: string) {
+  const j = JAW[bodyId] ?? { jaw: 0, chin: 0, cheek: 0 };
+  const L = (x: number) => 512 - x;
+  const R = (x: number) => 512 + x;
+  return `M512 148 C568 148 602 190 ${R(90 + j.cheek)} 252 C${R(90 + j.cheek)} 300 ${R(82 + j.jaw)} 332 ${R(66 + j.jaw)} 356 C${R(46 + j.chin)} 380 ${R(24 + j.chin)} 390 512 391 C${L(24 + j.chin)} 390 ${L(46 + j.chin)} 380 ${L(66 + j.jaw)} 356 C${L(82 + j.jaw)} 332 ${L(90 + j.cheek)} 300 ${L(90 + j.cheek)} 252 C422 190 456 148 512 148 Z`;
+}
 
 function footPath(a: Pt, side: -1 | 1, ankle: number) {
   const s = side;
@@ -74,13 +87,16 @@ export const bodyBase: VectorArt = (ctx) => {
       <Path d={torso} fill={url(gid)} stroke={line} strokeWidth={3} strokeLinejoin="round" />
       <Path d={neck} fill={url(gid)} stroke={line} strokeWidth={3} />
       <Path d={`M${CX - g.neck} 372 C${CX - 10} 404 ${CX + 10} 404 ${CX + g.neck} 372 L${CX + g.neck} 398 C${CX} 420 ${CX} 420 ${CX - g.neck} 398 Z`} fill={shade(skin, -0.28)} opacity={0.55} />
+      {/* cabeça e orelhas no espaço da cabeça, reduzidas para a proporção adulta */}
+      <G transform={HEAD_T}>
       {SIDES.map((side) => (
         <G key={`ear${side}`}>
           <Path d={`M${CX + side * 86} 262 C${CX + side * 104} 250 ${CX + side * 112} 276 ${CX + side * 104} 300 C${CX + side * 100} 318 ${CX + side * 90} 322 ${CX + side * 84} 316 Z`} fill={shade(skin, -0.06)} stroke={line} strokeWidth={3} strokeLinejoin="round" />
           <Path d={`M${CX + side * 92} 272 C${CX + side * 102} 274 ${CX + side * 102} 294 ${CX + side * 94} 304`} stroke={shade(skin, -0.32)} strokeWidth={2.4} fill="none" strokeLinecap="round" />
         </G>
       ))}
-      <Path d={HEAD_PATH} fill={url(hid)} stroke={line} strokeWidth={3.2} />
+      <Path d={headPath(ctx.bodyId)} fill={url(hid)} stroke={line} strokeWidth={3.2} />
+      </G>
     </G>
   );
 };
@@ -116,7 +132,7 @@ export const arms: VectorArt = (ctx) => {
         <VolumeGradient id={gid} base={skin} edge={-0.22} light={0.06} />
       </Defs>
       {SIDES.map((side) => {
-        const a = anchors(g, side);
+        const a = anchors(g, side, ctx.armPose);
         return (
           <G key={side}>
             <Path d={limbPath(a.shoulder, a.elbow, g.upperArm, g.forearm + 2, 0.14)} fill={url(gid)} stroke={line} strokeWidth={3} />
@@ -136,6 +152,8 @@ export const hands: VectorArt = (ctx) => {
   return (
     <G>
       {SIDES.map((side) => {
+        // com o cajado, a mão direita fechada é desenhada pela própria peça (camada hand_item)
+        if (side === 1 && ctx.armPose === 'staff') return null;
         const a = anchors(g, side);
         const h = handShapes({ x: a.wrist.x, y: a.wrist.y - 8 }, g, side);
         const parts = [...h.fingers, h.thumb, h.palm];

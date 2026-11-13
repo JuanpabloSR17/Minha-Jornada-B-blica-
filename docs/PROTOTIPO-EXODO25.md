@@ -102,6 +102,32 @@ então trocar uma peça e voltar ao Início mostra a mudança, também depois de
 6. **Telas ainda no tema antigo:** Mercado, Jornada, Amigos, Perfil, guarda-roupa e criador ainda não usam a
    paleta da jornada nem as placas.
 
+## 3b. Revisão visual dos avatares (v3)
+
+Alvo de acabamento: a referência pintada dos dois viajantes (manto roxo, túnica de linho, bolsa, cajado,
+sandálias, turbante). Comparativos: [antes × depois no acampamento](prototipo-exodo25/v3-antes-depois-acampamento.png),
+[antes × depois nos três corpos](prototipo-exodo25/v3-antes-depois-tres-corpos.png) e
+[dois personagens no guarda-roupa e no acampamento](prototipo-exodo25/j-comparativo-dois-personagens.png).
+
+| O que mudou | Como |
+|---|---|
+| Proporção adulta | as camadas da cabeça (rosto, olhos, sobrancelhas, boca, barba, cabelo, coberturas) são reduzidas em torno do queixo (`HEAD_SCALE` 0,72, `HEAD_T`): ~7,1 cabeças, sem mexer em ombros, quadril, mãos e pés já encaixados. Recortes do criador e do inventário realinhados |
+| Rostos distintos | contorno do rosto por corpo (`headPath`): mandíbula e queixo mais estreitos no Esguio, mais largos no Robusto |
+| Pose do cajado | o cajado (`armPose: 'staff'` na peça) dobra o braço direito: cotovelo para fora, mão fechada à altura do peito. Braço, manga e mão seguem as mesmas âncoras; a mão aberta é trocada pela mão fechada da peça, que envolve a haste |
+| Alça e bolsa | alça em curva que acompanha o volume do peito, com costuras, sombra suave na túnica e fivela de bronze; bolsa com couro gasto (bordas claras, riscos), tira de fecho e sombra de contato no quadril |
+| Cajado | madeira com gradiente, veios, nós, trecho polido perto da mão e pé escurecido |
+| Manto | costas próprias (`gear.drape.back`) mais volumosas; lã com trama, dobras com sombra profunda e luz na crista, sombra do manto sobre a túnica e barra bordada em dourado |
+| Túnica | trama de linho em todas as túnicas ilustradas |
+| Sandálias | brilho do couro nas tiras e sola com espessura |
+| Turbante e lenço | turbante com trama e ponta caindo até o ombro; lenço com capuz no espaço da cabeça e abas até os ombros (as abas ligam a cabeça reduzida ao corpo) |
+| Contornos | `lineOf` mais claro e quente; traços de 2,6–3 u |
+| Luz por tela | `AvatarRenderer lighting="camp"`: as próprias camadas viram máscara (alfa) e só a silhueta recebe o azul da noite (esquerda/alto) e o reflexo quente da fogueira (direita). Guarda-roupa e demais telas: `neutral` |
+
+**Limites desta revisão.** Continua sendo desenho vetorial, sem pintura: não há gerador de imagens
+neste ambiente, então a textura pintada, a luz volumétrica e a pose ¾ da referência ainda precisam das
+ilustrações finais (o pipeline PNG/WebP por corpo já está pronto). A luz por máscara foi verificada no
+navegador; no app nativo, `maskType="alpha"` do `react-native-svg` ainda precisa ser conferido em aparelho.
+
 ## 4. Regras preservadas
 
 - A leitura comum de Êxodo 25 segue as recompensas habituais, sem Santos e sem revelação

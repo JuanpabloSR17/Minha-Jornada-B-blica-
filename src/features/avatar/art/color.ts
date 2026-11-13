@@ -22,4 +22,5 @@ export function mix(a: string, b: string, t: number): string {
 }
 
 /** Cor de contorno: tom escuro e quente derivado da cor base (evita preto chapado). */
-export const lineOf = (c: string) => mix(shade(c, -0.6), '#2A1A10', 0.35);
+/** Contorno discreto (revisão v3): mais claro e mais quente, perto do tom do material. */
+export const lineOf = (c: string) => mix(shade(c, -0.52), '#2A1A10', 0.25);

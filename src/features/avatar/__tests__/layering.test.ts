@@ -3,6 +3,7 @@ import { defaultLook } from '../domain/avatar.rules';
 import { APPEARANCE_KEY_CATEGORY, APPEARANCE_OPTIONS, COSMETIC_ITEMS } from '../domain/catalog';
 import { ART_MANIFEST, LAYER_ORDER } from '../art/manifest';
 import { ART_REGISTRY } from '../art/registry';
+import { GROUND_Y, HEAD, HEAD_SCALE, HEAD_TOP_Y, anchors, geometryFor } from '../art/geometry';
 
 const prefix: Record<string, string> = { body: 'body', eyes: 'eyes', brows: 'brows', expression: 'expression', beard: 'beard', hair_style: 'hair' };
 
@@ -82,6 +83,25 @@ describe('resolveLayers', () => {
     expect(layers.find((l) => l.assetKey === 'gear.underhair')?.slot).toBe('back_item');
     expect(slots.indexOf('back_item')).toBeLessThan(slots.indexOf('body'));
     expect(slots.indexOf('headwear')).toBeGreaterThan(slots.indexOf('face'));
+  });
+
+  it('proporção adulta: cabeça reduzida em torno do queixo, cerca de 7 cabeças de altura', () => {
+    const head = (HEAD.chin - HEAD.top) * HEAD_SCALE;
+    const heads = (GROUND_Y - HEAD_TOP_Y) / head;
+    expect(heads).toBeGreaterThan(6.8);
+    expect(heads).toBeLessThan(7.6);
+  });
+
+  it('o cajado dobra só o braço direito: mão à altura do peito, à frente do ombro', () => {
+    for (const body of ['body-a', 'body-b', 'body-c']) {
+      const g = geometryFor(body);
+      const rest = anchors(g, 1);
+      const staff = anchors(g, 1, 'staff');
+      expect(staff.wrist.y).toBeLessThan(rest.elbow.y);
+      expect(staff.elbow.y).toBeGreaterThan(staff.wrist.y);
+      expect(staff.shoulder).toEqual(rest.shoulder);
+      expect(anchors(g, -1, 'staff')).toEqual(anchors(g, -1));
+    }
   });
 
   it('encaixes das peças de viagem: alça, bolsa, cajado na mão e manto atrás do braço', () => {

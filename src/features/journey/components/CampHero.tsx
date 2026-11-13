@@ -39,6 +39,7 @@ export function CampHero({ look, height, top, bottom }: { look: AvatarLook | nul
                 equippedItems={look.equipment}
                 size={avatarH}
                 crop="camp"
+                lighting="camp"
                 showBackground={false}
                 accessibilityLabel={fmt(strings.journey.campAvatarLabel, { summary: describeLook(look) })}
               />

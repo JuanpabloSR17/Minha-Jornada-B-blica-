@@ -12,6 +12,7 @@ import {
   quadPt,
   sleevePath,
   sliver,
+  type ArmPose,
   type BodyGeometry,
   type Pt,
 } from '../geometry';
@@ -52,6 +53,27 @@ const swirl = (x: number, y: number, s = 1, flip = 1) =>
   `M${f(x - 7 * s * flip)} ${f(y + 3 * s)} c0 ${f(-8 * s)} ${f(11 * s * flip)} ${f(-9 * s)} ${f(11 * s * flip)} ${f(-2 * s)} c0 ${f(5 * s)} ${f(-7 * s * flip)} ${f(5 * s)} ${f(-6 * s * flip)} 0`;
 
 // =============================================================== túnicas
+
+/** Trama de linho: fios horizontais e verticais muito finos, irregulares, recortados pela peça. */
+function weave(clipId: string, d: string, base: string) {
+  let h = '';
+  for (let y = 420; y < 1380; y += 7) h += `M200 ${y} L824 ${y + ((y / 7) % 3) - 1} `;
+  let v = '';
+  for (let x = 200; x < 824; x += 9) v += `M${x} 420 L${x + ((x / 9) % 3) - 1} 1380 `;
+  return (
+    <G>
+      <Defs>
+        <ClipPath id={clipId}>
+          <Path d={d} />
+        </ClipPath>
+      </Defs>
+      <G clipPath={`url(#${clipId})`}>
+        <Path d={h} stroke={shade(base, -0.35)} strokeWidth={1} opacity={0.12} />
+        <Path d={v} stroke={shade(base, 0.35)} strokeWidth={0.8} opacity={0.12} />
+      </G>
+    </G>
+  );
+}
 
 type Sleeve = 'elbow' | 'three' | 'long';
 type Neck = 'placket' | 'round' | 'wrap';
@@ -99,8 +121,8 @@ function hemCurve(g: BodyGeometry, hemY: number, off: number) {
   return { p0: { x: L(w), y }, c: { x: CX, y: y + 26 }, p2: { x: R(w), y } };
 }
 
-function sleeveGeo(g: BodyGeometry, side: -1 | 1, kind: Sleeve) {
-  const a = anchors(g, side);
+function sleeveGeo(g: BodyGeometry, side: -1 | 1, kind: Sleeve, pose?: ArmPose) {
+  const a = anchors(g, side, pose);
   const t = kind === 'elbow' ? 0.2 : kind === 'three' ? 0.5 : 0.95;
   const end = lerpPt(a.elbow, a.wrist, t);
   const wEnd = kind === 'elbow' ? g.forearm + 22 : kind === 'three' ? g.forearm + 16 : g.forearm + 18;
@@ -186,7 +208,8 @@ function makeTunic(spec: TunicSpec, decorate: (ctx: ArtContext, g: BodyGeometry)
           <Defs>
             <VolumeGradient id={id} base={base} />
           </Defs>
-          <Path d={tunicOutline(ctx.g, spec.hemY, spec.neck)} fill={url(id)} stroke={lineOf(base)} strokeWidth={3} strokeLinejoin="round" />
+          <Path d={tunicOutline(ctx.g, spec.hemY, spec.neck)} fill={url(id)} stroke={lineOf(base)} strokeWidth={2.6} strokeLinejoin="round" />
+          {weave(`${id}-w`, tunicOutline(ctx.g, spec.hemY, spec.neck), base)}
           {folds(ctx.g, spec.hemY, base)}
           {decorate(ctx, ctx.g)}
           {neckTrim(ctx.g, spec.neck, p(ctx, 'trim', '#3E8E9A'))}
@@ -203,7 +226,7 @@ function makeTunic(spec: TunicSpec, decorate: (ctx: ArtContext, g: BodyGeometry)
             <VolumeGradient id={id} base={base} edge={-0.26} />
           </Defs>
           {SIDES.map((side) => {
-            const s = sleeveGeo(ctx.g, side, spec.sleeve);
+            const s = sleeveGeo(ctx.g, side, spec.sleeve, ctx.armPose);
             const cuffA = lerpPt(s.a.elbow, s.end, 0.62);
             return (
               <G key={side}>
@@ -334,12 +357,12 @@ const joseph: TunicParts = {
           <ShadeOverlay id={sh} />
           {SIDES.map((side) => (
             <ClipPath key={side} id={`${ctx.uid}-jsl${side}`}>
-              <Path d={sleeveGeo(ctx.g, side, 'long').d} />
+              <Path d={sleeveGeo(ctx.g, side, 'long', ctx.armPose).d} />
             </ClipPath>
           ))}
         </Defs>
         {SIDES.map((side) => {
-          const s = sleeveGeo(ctx.g, side, 'long');
+          const s = sleeveGeo(ctx.g, side, 'long', ctx.armPose);
           const cuffA = lerpPt(s.a.elbow, s.end, 0.8);
           return (
             <G key={side}>
@@ -515,8 +538,10 @@ export const cloak: Record<string, VectorArt> = {
 function strap(d: string, color: string, w = 7) {
   return (
     <G>
-      <Path d={d} stroke={lineOf(color)} strokeWidth={w + 4} fill="none" strokeLinecap="round" />
+      <Path d={d} stroke={lineOf(color)} strokeWidth={w + 3} fill="none" strokeLinecap="round" />
       <Path d={d} stroke={color} strokeWidth={w} fill="none" strokeLinecap="round" />
+      {/* couro: brilho na borda superior da tira */}
+      <Path d={d} stroke={shade(color, 0.32)} strokeWidth={Math.max(1.2, w * 0.28)} fill="none" strokeLinecap="round" transform="translate(0 -1.5)" opacity={0.7} />
     </G>
   );
 }
@@ -534,6 +559,9 @@ export const feet: Record<string, VectorArt> = {
           return (
             <G key={side}>
               <Path d={`M${f(x - 28 + s * 4)} ${GROUND_Y - 4} C${f(x - 30)} ${GROUND_Y + 10} ${f(x + 34 + s * 10)} ${GROUND_Y + 12} ${f(x + 34 + s * 10)} ${GROUND_Y - 4} C${f(x + 30 + s * 10)} ${GROUND_Y + 2} ${f(x - 22)} ${GROUND_Y + 2} ${f(x - 28 + s * 4)} ${GROUND_Y - 4} Z`} fill={sole} stroke={lineOf(base)} strokeWidth={2.6} />
+              {/* espessura da sola e borda gasta */}
+              <Path d={`M${f(x - 26 + s * 4)} ${GROUND_Y + 2} C${f(x - 10)} ${GROUND_Y + 10} ${f(x + 20 + s * 10)} ${GROUND_Y + 10} ${f(x + 32 + s * 10)} ${GROUND_Y + 2}`} stroke={shade(base, -0.5)} strokeWidth={4} fill="none" strokeLinecap="round" />
+              <Path d={`M${f(x - 22 + s * 4)} ${GROUND_Y - 3} C${f(x)} ${GROUND_Y + 1} ${f(x + 20 + s * 10)} ${GROUND_Y + 1} ${f(x + 30 + s * 10)} ${GROUND_Y - 3}`} stroke={shade(base, 0.25)} strokeWidth={1.6} fill="none" opacity={0.7} />
               {strap(`M${f(x - 16 + s * 6)} 1432 Q${f(x + 4 + s * 8)} 1422 ${f(x + 24 + s * 9)} 1432`, base, 6)}
               {strap(`M${f(x - ctx.g.ankle - 2)} 1404 L${f(x + 18 + s * 6)} 1428`, base, 6)}
               {strap(`M${f(x + ctx.g.ankle + 2)} 1404 L${f(x - 12 + s * 4)} 1428`, base, 6)}

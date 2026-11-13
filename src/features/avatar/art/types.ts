@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { ImageSourcePropType } from 'react-native';
-import type { BodyGeometry } from './geometry';
+import type { ArmPose, BodyGeometry } from './geometry';
 
 export type ArtContext = {
   g: BodyGeometry;
@@ -9,6 +9,8 @@ export type ArtContext = {
   hair: string;
   /** estilo de cabelo do jogador (coberturas de cabeça ajustam o cabelo visível) */
   hairStyle?: string;
+  /** pose dos braços (o cajado dobra o braço direito) */
+  armPose?: ArmPose;
   params: Record<string, string | number | boolean>;
   /** prefixo único por instância, para ids de gradientes não colidirem */
   uid: string;
