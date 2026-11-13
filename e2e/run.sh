@@ -30,7 +30,7 @@ fi
 node "$ROOT/e2e/fake-supabase.mjs" & PIDS+=($!)
 
 echo "→ build web apontando para o fake-supabase"
-( cd "$ROOT" && EXPO_OFFLINE=1 CI=1 \
+( cd "$ROOT" && EXPO_OFFLINE=1 CI=1 EXPO_PUBLIC_AVATAR_LAB=1 \
   EXPO_PUBLIC_SUPABASE_URL=http://localhost:54321 \
   EXPO_PUBLIC_SUPABASE_ANON_KEY=chave-publica-de-teste-local-0000000000 \
   npx expo export -p web --output-dir "$WORK/dist" --clear >/dev/null )

@@ -1,10 +1,13 @@
-import { useRouter } from 'expo-router';
-import { useState } from 'react';
+import { useFocusEffect, useRouter } from 'expo-router';
+import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, ComingSoon, Icon, Notice, Screen, type IconName } from '@/ui';
-import { strings } from '@/i18n';
+import { fmt, strings } from '@/i18n';
+import { useMilestones } from '@/features/reading/useMilestones';
+import { milestoneSummary } from '@/features/reading/milestones';
+import { getWorldProgress, type WorldProgress } from '@/features/reading/mission/mission.service';
 import { errorMessage } from '@/lib/errors';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { signOut } from '@/features/auth/auth.service';
@@ -21,7 +24,46 @@ const SHORTCUTS: { label: string; icon: IconName; href: '/avatar/wardrobe' | '/a
   { label: 'Santuário', icon: 'sparkle', href: '/avatar/sanctuary' },
 ];
 
+/** Perfil na identidade da jornada, com as conquistas reais da conta. */
 export default function ProfileTab() {
+  return (
+    <CinemaTheme>
+      <Profile />
+    </CinemaTheme>
+  );
+}
+
+/** Placas de conquista: marcos cumpridos, Santos obtidos e mundos concluídos (dados do servidor). */
+function Achievements() {
+  const { colors } = useTheme();
+  const { rows } = useMilestones();
+  const [worlds, setWorlds] = useState<WorldProgress[] | null>(null);
+  useFocusEffect(useCallback(() => { getWorldProgress().then(setWorlds, () => setWorlds(null)); }, []));
+  const sum = rows ? milestoneSummary(rows) : null;
+  const items: ({ label: string; value: string } | null)[] = [
+    sum ? { label: strings.profile.achMilestones, value: fmt('{a} de {b}', { a: sum.milestonesDone, b: sum.milestonesTotal }) } : null,
+    sum ? { label: strings.profile.achSaints, value: fmt('{a} de {b}', { a: sum.saintsOwned, b: sum.saintsTotal }) } : null,
+    worlds ? { label: strings.profile.achWorlds, value: fmt('{a} de {b}', { a: worlds.filter((w) => w.completedAt).length, b: worlds.length }) } : null,
+  ];
+  const shown = items.filter((x): x is { label: string; value: string } => !!x);
+  if (!shown.length) return null;
+  return (
+    <Card testID="profile-achievements">
+      <AppText variant="heading">{strings.profile.achievements}</AppText>
+      <View style={styles.plaques}>
+        {shown.map((it) => (
+          <View key={it.label} style={[styles.plaque, { borderColor: colors.selection, backgroundColor: colors.surfaceRaised }]}
+            accessible accessibilityLabel={`${it.label}: ${it.value}`}>
+            <AppText variant="heading" color={colors.selection}>{it.value}</AppText>
+            <AppText variant="caption" muted style={styles.center}>{it.label}</AppText>
+          </View>
+        ))}
+      </View>
+    </Card>
+  );
+}
+
+function Profile() {
   const router = useRouter();
   const { colors } = useTheme();
   const { profile, readingPreferences, refreshProfile } = useAuth();
@@ -82,7 +124,7 @@ export default function ProfileTab() {
                 aria-checked={on}
                 accessibilityState={{ checked: on }}
                 onPress={() => void changePrivacy(m)}
-                style={[styles.segItem, { borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.surfaceRaised : 'transparent' }]}
+                style={[styles.segItem, { borderColor: on ? colors.selection : colors.border, backgroundColor: on ? colors.surfaceRaised : 'transparent' }]}
               >
                 <AppText variant="label" color={on ? colors.text : colors.textMuted}>{strings.profile.privacy[m]}</AppText>
               </Pressable>
@@ -94,7 +136,8 @@ export default function ProfileTab() {
         {privacyError ? <Notice tone="error">{privacyError}</Notice> : null}
         <Button compact variant="ghost" title={strings.social.viewPublic} onPress={() => router.push({ pathname: '/users/[username]', params: { username: profile.username } })} />
       </Card>
-      <ComingSoon title={`${strings.profile.achievements} · ${strings.profile.share}`} body="O mural de conquistas e o compartilhamento chegam com a leitura (Marco 3) e o social (Marco 4)." />
+      <Achievements />
+      <ComingSoon title={strings.profile.share} body="O compartilhamento chega com o social (Marco 4)." />
       <Button title={strings.profile.signOut} variant="danger" onPress={() => void signOut()} />
     </Screen>
   );
@@ -107,5 +150,7 @@ const styles = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   shortcut: { flexGrow: 1, flexBasis: '45%', minHeight: 76, borderRadius: radius.lg, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center', gap: 4 },
   segment: { flexDirection: 'row', gap: spacing.sm },
+  plaques: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
+  plaque: { flexGrow: 1, flexBasis: '30%', minWidth: 88, minHeight: 76, borderWidth: 1.5, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', padding: spacing.sm, gap: 2 },
   segItem: { flex: 1, minHeight: 44, borderRadius: radius.md, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
 });

@@ -20,10 +20,10 @@ compartilhados (cartões de item, carrossel, abas, barra de categorias) usam a m
 
 | Tela | Situação |
 |---|---|
-| Início (acampamento), marco, leitura, recompensa/revelação, Santuário, Jornada (Codex), personagem 3D | ✔ |
+| Início (acampamento), marco, leitura, recompensa/revelação, Santuário, Jornada (Codex) | ✔ |
 | **Criador de personagem** e **guarda-roupa** | ✔ desta entrega: base índigo, ação dourada, seleção neon violeta; sem rolagem lateral em 320 e 412 px |
-| Ler (Modo Missão) | próxima: envolver em `CinemaTheme`; trocar a grade de livros por cartões de mundo (reaproveitar `worlds.ts`); destacar a passagem escolhida com a moldura de bronze |
-| Perfil | próxima: cabeçalho com o personagem no palco (2D ou 3D) e as placas de conquista (marcos, Santos, mundos) em neon violeta |
+| **Ler (Modo Missão)** | ✔ na identidade, com passagem escolhida no topo e seleção de livro/capítulo em neon violeta; próximo: cartões de mundo no lugar da grade de livros |
+| **Perfil** | ✔ na identidade, com placas de conquista reais (marcos cumpridos, Santos obtidos, mundos concluídos pelo servidor) |
 | Mercado | o Codex ilustrou a vitrine; falta só a moldura das miniaturas (já automática pelo `ItemIcon`) |
 | Configurações, autenticação, onboarding | por último: legibilidade em primeiro lugar |
 
@@ -87,5 +87,5 @@ Próximos lotes sugeridos:
 2. Os 66 lendários: um molde de ícone por livro, com o símbolo do livro.
 3. Fundos, molduras e efeitos.
 
-As miniaturas das peças com modelo 3D devem passar a ser renderizadas do próprio modelo (PNG 512² pedido em
-`docs/MODELO-3D.md`) quando ele chegar.
+Quando as peças pintadas chegarem (`docs/arte-lotes/`), as miniaturas dessas peças podem ser recortadas da própria
+pintura, mantendo o mesmo registro por ID.

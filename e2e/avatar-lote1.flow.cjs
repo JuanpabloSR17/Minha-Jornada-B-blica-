@@ -157,6 +157,17 @@ async function loaded(page, names) {
   await shot(page, 'l1-05-acampamento-caminhada-320');
   step('320 px: guarda-roupa e acampamento sem rolagem lateral');
 
+  // ---------------------------------------------------------------- comparação: referência vetorial × pintura (luz neutra e do acampamento)
+  const cmp = await browser.newPage({ viewport: { width: 1400, height: 760 } });
+  for (const staff of ['shepherd', 'walk']) {
+    await cmp.goto(`${APP}/dev/avatar-lab?pintura=1&staff=${staff}`);
+    await cmp.getByTestId('pintura').waitFor();
+    await cmp.waitForLoadState('networkidle');
+    await cmp.waitForTimeout(800);
+    await cmp.getByTestId('pintura').screenshot({ path: `${SHOTS}/l1-00-comparacao-${staff === 'walk' ? 'caminhada' : 'pastor'}.png` });
+  }
+  step('comparação referência vetorial × pintura, no guarda-roupa e no acampamento, para os dois cajados');
+
   await browser.close();
   await db.end();
   console.log('✔ Lote 1 de avatares pintados verificado.');

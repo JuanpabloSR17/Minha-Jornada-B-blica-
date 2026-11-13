@@ -72,9 +72,30 @@ function ExportView({ template, source, body, layer, pose, scale, skin, hair }: 
 
 export default function AvatarLab() {
   const [guides, setGuides] = useState(false);
-  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; icons?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
+  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; icons?: string; pintura?: string; staff?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
   if (!ENABLED) return <Text style={{ padding: 24 }}>Ferramenta interna indisponível.</Text>;
   if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} pose={q.pose} scale={q.scale} skin={q.skin} hair={q.hair} />;
+  if (q.pintura) {
+    // lote 1: referência vetorial × pintura atual, com luz neutra (guarda-roupa) e do acampamento
+    const look: AvatarLook = {
+      appearance: { ...defaultLook().appearance, bodyId: 'body-b', skinToneId: q.skin ?? 'skin-4', hairStyleId: 'hair-short', hairColorId: q.hair ?? 'haircolor-black' },
+      equipment: { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: q.staff === 'walk' ? 'common_cajado_de_caminhada' : 'staff-shepherd', feet: 'sandals-leather' },
+    };
+    const cell = (label: string, vectorOnly: boolean, lighting: 'neutral' | 'camp') => (
+      <View key={label} style={{ alignItems: 'center', backgroundColor: lighting === 'camp' ? '#141a33' : '#e9e2d4', padding: 6 }}>
+        <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} size={520} crop="camp" showBackground={false} vectorOnly={vectorOnly} lighting={lighting} />
+        <Text style={{ fontSize: 12, color: lighting === 'camp' ? '#f6ecd6' : '#2a1f16' }}>{label}</Text>
+      </View>
+    );
+    return (
+      <View testID="pintura" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4, backgroundColor: '#fff' }}>
+        {cell('Referência vetorial · guarda-roupa', true, 'neutral')}
+        {cell('Pintura · guarda-roupa', false, 'neutral')}
+        {cell('Referência vetorial · acampamento', true, 'camp')}
+        {cell('Pintura · acampamento', false, 'camp')}
+      </View>
+    );
+  }
   if (q.icons) {
     // folha de revisão dos ícones: com miniatura própria primeiro, em 64 e 48 px
     const px = Number(q.icons) > 1 ? Number(q.icons) : 64;

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
-import { useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
@@ -19,7 +19,16 @@ export { bookName, refLabel } from '../refs';
 import { BOOKS, refLabel } from '../refs';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
+/** Aba Ler na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
 export function MissionHomeScreen() {
+  return (
+    <CinemaTheme>
+      <MissionHome />
+    </CinemaTheme>
+  );
+}
+
+function MissionHome() {
   const { colors } = useTheme();
   const router = useRouter();
   const params = useLocalSearchParams<{ book?: string; chapter?: string; selection?: string }>();
@@ -67,7 +76,7 @@ export function MissionHomeScreen() {
     }
   };
 
-  const chip = (selected: boolean) => [styles.chip, { borderColor: selected ? colors.primary : colors.border, backgroundColor: selected ? colors.surfaceRaised : colors.surface }];
+  const chip = (selected: boolean) => [styles.chip, { borderColor: selected ? colors.selection : colors.border, backgroundColor: selected ? colors.surfaceRaised : colors.surface }];
 
   return (
     <Screen edges={['top', 'left', 'right']} scrollToTopKey={scrollKey}>
@@ -172,8 +181,8 @@ export function MissionHomeScreen() {
                 <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: sel }}
                   accessibilityLabel={`${strings.mission.chooseChapter} ${n}${isDone ? `, ${strings.mission.chapterDone}` : ''}`}
                   onPress={() => { setChapter(n); setScrollKey(`${book}:${n}:${Date.now()}`); }}
-                  style={[styles.num, { borderColor: sel ? colors.primary : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.primary : colors.surface }]}>
-                  <AppText variant="label" color={sel ? colors.onPrimary : isDone ? colors.primary : colors.text}>{n}</AppText>
+                  style={[styles.num, { borderColor: sel ? colors.selection : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.selection : colors.surface }]}>
+                  <AppText variant="label" color={sel ? colors.background : isDone ? colors.primary : colors.text}>{n}</AppText>
                   {isDone && !sel ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
                 </Pressable>
               );

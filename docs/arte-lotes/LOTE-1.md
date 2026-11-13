@@ -122,17 +122,30 @@ depois da troca, e no acampamento ilustrado do Codex numa integração local) e
   reabrir o app, mostra o mesmo visual pixel a pixel.
 - 320 e 412 px sem rolagem lateral; corpos A e C continuam com a arte vetorial.
 
-## 7. Como verificar uma entrega
+## 7. Como entregar e verificar
 
-```bash
-npm run assets                               # valida e registra
-FLOW=avatar-lote1 bash e2e/run.sh            # guarda-roupa, acampamento, troca de cajado, reabrir
-# moldes de outras peças, corpos ou poses (app web com EXPO_PUBLIC_AVATAR_LAB=1):
-node scripts/export-avatar-layers.cjs docs/arte-lotes/lote-1.json <pasta>
-```
+A direção aprovada é o personagem **ilustrado** (a prova 3D foi arquivada, ver `docs/MODELO-3D.md`). A arte
+final vem das ilustrações pintadas. As camadas atuais servem de molde e de opção provisória para o que ainda
+não foi pintado.
 
-Conferir também `/dev/avatar-lab?fit=1` (os outros corpos continuam vetoriais) e a luz do acampamento
-sobre a silhueta.
+1. Pinte sobre o molde da camada (`lote-1/moldes/…@2x.webp`, mesma árvore de pastas) e salve com o **mesmo
+   caminho** em uma pasta de entrega, nas duas resoluções (`@2x` 2048×3072 e base 1024×1536). Pode entregar uma
+   peça por vez, por exemplo só `outfit/tunic-linen/body-b/upper_outfit` e `@2x`.
+2. Rode `npm run art:intake -- <pasta-da-entrega>` (ou `bash scripts/art-intake.sh <pasta>`). O comando:
+   - copia as camadas para `assets/avatars/`, substituindo uma a uma;
+   - valida e registra (`npm run assets`);
+   - atualiza [`lote-1/ESTADO.md`](lote-1/ESTADO.md): pintura entregue × teste procedural × faltando, pelo hash
+     registrado em `assets/avatars/ORIGEM.json`;
+   - roda os testes de encaixe e o percurso no navegador: guarda-roupa, acampamento, troca de cajado, reabrir,
+     320 e 412 px;
+   - gera em `lote-1/capturas-entrega/`:
+     - a comparação **referência vetorial × pintura**, no guarda-roupa e no acampamento;
+     - o **antes × depois** das telas;
+     - o vídeo da troca.
+3. Combinações sem pintura (outros corpos, outras peças) continuam com a camada vetorial correspondente.
+
+Só a validação: `npm run assets` · só o estado: `npm run art:status` · moldes de outras peças, corpos ou poses
+(app com `EXPO_PUBLIC_AVATAR_LAB=1`): `node scripts/export-avatar-layers.cjs docs/arte-lotes/lote-1.json <pasta>`.
 
 ## 8. Próximos lotes (sugestão)
 

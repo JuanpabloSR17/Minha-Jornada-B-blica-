@@ -111,7 +111,7 @@ export function scan(dir = DIR) {
   const entries = {};
   for (const file of walk(dir)) {
     const rel = relative(dir, file).split(sep).join('/');
-    if (rel.endsWith('.md') || rel.startsWith('.')) continue;
+    if (rel.endsWith('.md') || rel.endsWith('.json') || rel.startsWith('.')) continue;
     const parts = rel.split('/');
     if (parts.length !== 4) {
       errors.push(`${rel}: caminho fora do padrão {categoria}/{assetId}/{corpo|all}/{camada}.webp`);

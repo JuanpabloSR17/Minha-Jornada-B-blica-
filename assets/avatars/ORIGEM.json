@@ -1,0 +1,282 @@
+{
+  "back/cloak-night/body-b/chest.webp": {
+    "origem": "teste-procedural",
+    "sha256": "df61157b66661c343b959044faf81765a9be19054df8e8e7816d1a02039cd124"
+  },
+  "back/cloak-night/body-b/chest@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "6e20739ca32f007b6aa1c7bcd4edeff786fc106e17476999584dcd8e7922d704"
+  },
+  "back/cloak-night/body-b/cloak_back.webp": {
+    "origem": "teste-procedural",
+    "sha256": "60ab8789d6064716dd55113e173c822e168c757ab3d731a9d2d9dccec9a66228"
+  },
+  "back/cloak-night/body-b/cloak_back@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "98a783c4e3f9e634db41f0831d9c43f3bf923ee3e37e091290c8a17c104c7d3b"
+  },
+  "body/base/body-b/arms.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "d6b2ad946b89411e75e7b74758c84846befe159acf9992766aee730b57260d22"
+  },
+  "body/base/body-b/arms.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "9c56c143713e1f76425df26f1f4d234d4becd17f768f27555aeda92c333f675c"
+  },
+  "body/base/body-b/arms.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "aa3c33f11f9258498b2dde8afe9506294906fef707f53c2657b923c9bd0386d3"
+  },
+  "body/base/body-b/arms.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "78daec2751cbc7b452af82174053a30e3641c42814f414c10c6ffc8d8cc19ed9"
+  },
+  "body/base/body-b/arms.staff.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a82ac2a7996b920e51e53f7ca7076903400cb11019837889e99852dbc8bf29c2"
+  },
+  "body/base/body-b/arms.staff.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a3a90c3df388320f71a060d3eeaa497f03e8ba6ce935090c254dff019f2f6b1f"
+  },
+  "body/base/body-b/arms.staff.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "c51005d58c2232e5ba3978d58d19d43e29db0d4b15f855fdfbd9c85a41450071"
+  },
+  "body/base/body-b/arms.staff.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "7bd9f0a815a4f51d291681edbda23d918c4d9fc95ac9965fc9d9a706e64e9b1b"
+  },
+  "body/base/body-b/body.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "7455bc308ed383fcdebfb7f1442a89230d97958f556ad5e9cf82058a8361f403"
+  },
+  "body/base/body-b/body.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "ebb1bf20100fdab3087bbd95dc616e151b777ae3550692c9601f45b196e7c9b6"
+  },
+  "body/base/body-b/body.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "6e0a49f9df30dcae47b09cf70f625734b1c88fdaf508bf2f8fbf6c4faadcc488"
+  },
+  "body/base/body-b/body.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "42b2b72f5ae28aea8d49d216c5629fb1c5021ce8c868816b288e7ec818b442fa"
+  },
+  "body/base/body-b/face.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "0c4f6c1f6cbf6af2464b9182ea5e2b1c26e2e7817a6fd97c043ca5f195a328bc"
+  },
+  "body/base/body-b/face.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "df27a774d1acbe446409e5c383e1c3718a045b74ebd17a37b9ab7c80c7477601"
+  },
+  "body/base/body-b/face.webp": {
+    "origem": "teste-procedural",
+    "sha256": "1369733191f7e24248f71b9a1aa8dd65c2941ab2605f84dba6bec7e825559508"
+  },
+  "body/base/body-b/face@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "ebeee51a5669d2d69b3129a3cb4b6461763203eaab8addf288d051155af6af96"
+  },
+  "body/base/body-b/hands.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "f4a71a4a534977c2ec4fbbcccf055c04406c9d4182e66ced208927e91709c0b7"
+  },
+  "body/base/body-b/hands.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "70008d730e235d2acaa54051968cdef010129246f3a2ab9416013e11d02af0c0"
+  },
+  "body/base/body-b/hands.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "b02883559d7d4603d9b0d01626d31f96c099523e27d43072f3f63a9abbb21675"
+  },
+  "body/base/body-b/hands.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "f7674fc8420361252235b3d836bdbc99317eebb474903fa76f9684b098a36b58"
+  },
+  "body/base/body-b/hands.staff.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "2fd8f9f2e0717caa5f062be88e5abf8e22dfaf5684bf381085d8c30d0a25a500"
+  },
+  "body/base/body-b/hands.staff.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "e6504fd3c2a3b4aad497a41f899cb8d3449c625f99c74454ea3b66e7da8c4e6e"
+  },
+  "body/base/body-b/hands.staff.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "fdaf135f54881b0cac472e727d51338d16b4fcc0ea16759093de04778ec93d19"
+  },
+  "body/base/body-b/hands.staff.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "cfbcde9fa1f4f676ec3db70cae2187a33a7dbe137e71ca606018ae3b70ec6c68"
+  },
+  "brows/brows-soft/all/face.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "7177cfde57290cb7503bc9302d582828c8d6814082eba0008b41084330767eb8"
+  },
+  "brows/brows-soft/all/face.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "c44376090205f0ba24029efffc9275bd2a15bdc20fe6230ae5551b07fc07d216"
+  },
+  "brows/brows-soft/all/face.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "d8153d1765118e7c49b63d777b19c7f1a6ab208a2badfd81127e8859eddf40a5"
+  },
+  "brows/brows-soft/all/face.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "97fa4905eb77e0ba9d04e47d6f538997ae6ab60da0f62bd0810b872312351d06"
+  },
+  "expression/expr-smile/all/mouth.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "b883b1a4810508f390fe2cce2768e5c19cce4f7becfcca401434027778d06f3a"
+  },
+  "expression/expr-smile/all/mouth.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "3b30c0d107e573e6386aaa22479f33a4d44fcca749cc80774775155b7f37e67f"
+  },
+  "eyes/eyes-almond/all/face.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "455bbabf10d37c801869f03511a2420dfc81cd148543b888d3a56bb5c4270324"
+  },
+  "eyes/eyes-almond/all/face.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "aecaad8c663ef96df734033d10a9ea0273ee002af0c6ac1f63b62ab918deb197"
+  },
+  "eyes/eyes-almond/all/face.webp": {
+    "origem": "teste-procedural",
+    "sha256": "79755cb5b9a7c8d7339ab45b34432fe4f676514b696ebdcc6195370ab976e5ba"
+  },
+  "eyes/eyes-almond/all/face@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "71df10d774777f4b8ef60ba2dc4290d7d633a578a62bd3cd541361810a211777"
+  },
+  "feet/sandals-leather/body-b/feet.webp": {
+    "origem": "teste-procedural",
+    "sha256": "84a7b132b2627b3d944943b6d67bf74eabde9735b6313da1e29da1bd0da79974"
+  },
+  "feet/sandals-leather/body-b/feet@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "973666a9d82df4e99a002f0d96bf813d1fc03cb06d0de5d13f4946e2aa47eac7"
+  },
+  "hair/hair-short/all/back_hair.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "4f549eb7e2d25b67b365b3f2f025aa7b3501f79a3c6fe74a3f8bdd442ece4288"
+  },
+  "hair/hair-short/all/back_hair.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "bd5895322168c7ac2951de0fae9c3f38c2335f7a1e7c5d1657a7fecd2a9d1839"
+  },
+  "hair/hair-short/all/back_hair.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "4e220493df936d30bf08b0d8c8cfd2636a536cf60f997a104b3809f306fee668"
+  },
+  "hair/hair-short/all/back_hair.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a9463be8cfd865d95e17680d8cc4807bd599265bf709953b84d99c8ec554c168"
+  },
+  "hair/hair-short/all/front_hair.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "dc99ce5600593856b39502a0a775b5a44111c13aa697f8aea2af5c78847cbeb7"
+  },
+  "hair/hair-short/all/front_hair.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "0a126b454490084a93d9169f42cdaa1941da20c5dd1854f050ac20dda096c461"
+  },
+  "hair/hair-short/all/front_hair.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "73dd91ab4ce6e48b9d20f0fdf42a7b4236316ea36fcf3aa41082405f1f880e14"
+  },
+  "hair/hair-short/all/front_hair.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "dcfa4e9f364ba0dd5580ae89263e36773e7bd52d741d46e86e44755f3ce7f9d3"
+  },
+  "hands/common_cajado_de_caminhada/body-b/cloak_front.staff.webp": {
+    "origem": "teste-procedural",
+    "sha256": "f61fce27649e9875eb3cc588c49d4d3036e524ce65b07b07ca139d02ab06a6dc"
+  },
+  "hands/common_cajado_de_caminhada/body-b/cloak_front.staff@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "79fff50f529e5edfe0c6fb8e2d4784220b301d26ca61aceedc9c5f2aa8152e23"
+  },
+  "hands/common_cajado_de_caminhada/body-b/hand_item.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "15590807e60be726028b716753da77ad0c1d23bd7a3a0d588c208ed5313ef903"
+  },
+  "hands/common_cajado_de_caminhada/body-b/hand_item.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "1d4c1d8eea0cc1b3f92bbc8a3c76aac6841f540e777aa965a8ca1e09c5e68f85"
+  },
+  "hands/common_cajado_de_caminhada/body-b/hand_item.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "692a7d6ec77357f51be6147e943529f6c0c0c5471c567a590668ef76dac38dea"
+  },
+  "hands/common_cajado_de_caminhada/body-b/hand_item.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "5b267267404c36d656357dadb85d804b84b51c91698fc43c1e43223de92a17e7"
+  },
+  "hands/staff-shepherd/body-b/cloak_front.staff.webp": {
+    "origem": "teste-procedural",
+    "sha256": "3ac4dedc87c883052e6ad284b07d783134273e3e5d9a4b76ec25535bfa7ad773"
+  },
+  "hands/staff-shepherd/body-b/cloak_front.staff@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "0e09626e33417ae5f26ba21d9c073c8cba483ee2da7f08c970e61b42d1bc222d"
+  },
+  "hands/staff-shepherd/body-b/hand_item.mask.webp": {
+    "origem": "teste-procedural",
+    "sha256": "15590807e60be726028b716753da77ad0c1d23bd7a3a0d588c208ed5313ef903"
+  },
+  "hands/staff-shepherd/body-b/hand_item.mask@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "1d4c1d8eea0cc1b3f92bbc8a3c76aac6841f540e777aa965a8ca1e09c5e68f85"
+  },
+  "hands/staff-shepherd/body-b/hand_item.shade.webp": {
+    "origem": "teste-procedural",
+    "sha256": "692a7d6ec77357f51be6147e943529f6c0c0c5471c567a590668ef76dac38dea"
+  },
+  "hands/staff-shepherd/body-b/hand_item.shade@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "5b267267404c36d656357dadb85d804b84b51c91698fc43c1e43223de92a17e7"
+  },
+  "outfit/tunic-linen/body-b/sleeves.staff.webp": {
+    "origem": "teste-procedural",
+    "sha256": "e5b8ccf36ac9792583b269978f330cb758a16e08d6a1e9889b3583798510881a"
+  },
+  "outfit/tunic-linen/body-b/sleeves.staff@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "6a60eb0aa30d8f8c3f0c4b20aee5fe5725e958a3fab7fd70eba034103297273c"
+  },
+  "outfit/tunic-linen/body-b/sleeves.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a0674003b64c09a9f41b85fae9e943d78fdb2689b0aabb7cd793f903c309e659"
+  },
+  "outfit/tunic-linen/body-b/sleeves@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a74bae20d3c409911d5702596c418745742b2703295c2eee12fd7d6a111bc930"
+  },
+  "outfit/tunic-linen/body-b/upper_outfit.webp": {
+    "origem": "teste-procedural",
+    "sha256": "05e0a294231c2ef2ed2fd61ae0b54dc1b82e3195048e3c58f87546dc2892d29f"
+  },
+  "outfit/tunic-linen/body-b/upper_outfit@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "6be098f6b2c27f67e2f39ec9da0c1d78dc9d9163bdab4d65f7a9de3e74774ab2"
+  },
+  "waist/common_bolsa_do_viajante/body-b/chest.webp": {
+    "origem": "teste-procedural",
+    "sha256": "3ed1d1d8b81f9646cfe60b2db8d04c599d07c5089056b6bd429cd4ce73f11544"
+  },
+  "waist/common_bolsa_do_viajante/body-b/chest@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "3fad095225029fe1d933361013ab4882867e462dcfe3645fa9324e40d7c7e138"
+  },
+  "waist/common_bolsa_do_viajante/body-b/waist.webp": {
+    "origem": "teste-procedural",
+    "sha256": "a872b4e09633c7b7df5dee8674b387e0c44edbd79b321f45a87cc011140cd4f5"
+  },
+  "waist/common_bolsa_do_viajante/body-b/waist@2x.webp": {
+    "origem": "teste-procedural",
+    "sha256": "4a4cbe3fe2016c8bc0b063f95cc63f2c1359833ec33ca329700ee950419f6e8b"
+  }
+}

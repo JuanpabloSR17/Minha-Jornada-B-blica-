@@ -1,0 +1,76 @@
+# Lote 1 — estado das camadas
+
+Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **0**, ainda teste procedural: **70**, faltando: **0**.
+
+| Peça | Camada | Arquivo | Estado |
+|---|---|---|---|
+| body/body-b | body | `body/base/body-b/body.mask.webp` | teste procedural |
+| body/body-b | body | `body/base/body-b/body.mask@2x.webp` | teste procedural |
+| body/body-b | body | `body/base/body-b/body.shade.webp` | teste procedural |
+| body/body-b | body | `body/base/body-b/body.shade@2x.webp` | teste procedural |
+| body/body-b | face | `body/base/body-b/face.webp` | teste procedural |
+| body/body-b | face | `body/base/body-b/face@2x.webp` | teste procedural |
+| body/body-b | face | `body/base/body-b/face.shade.webp` | teste procedural |
+| body/body-b | face | `body/base/body-b/face.shade@2x.webp` | teste procedural |
+| body/body-b | arms | `body/base/body-b/arms.mask.webp` | teste procedural |
+| body/body-b | arms | `body/base/body-b/arms.mask@2x.webp` | teste procedural |
+| body/body-b | arms | `body/base/body-b/arms.shade.webp` | teste procedural |
+| body/body-b | arms | `body/base/body-b/arms.shade@2x.webp` | teste procedural |
+| body/body-b | arms.staff | `body/base/body-b/arms.staff.mask.webp` | teste procedural |
+| body/body-b | arms.staff | `body/base/body-b/arms.staff.mask@2x.webp` | teste procedural |
+| body/body-b | arms.staff | `body/base/body-b/arms.staff.shade.webp` | teste procedural |
+| body/body-b | arms.staff | `body/base/body-b/arms.staff.shade@2x.webp` | teste procedural |
+| body/body-b | hands | `body/base/body-b/hands.mask.webp` | teste procedural |
+| body/body-b | hands | `body/base/body-b/hands.mask@2x.webp` | teste procedural |
+| body/body-b | hands | `body/base/body-b/hands.shade.webp` | teste procedural |
+| body/body-b | hands | `body/base/body-b/hands.shade@2x.webp` | teste procedural |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask.webp` | teste procedural |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask@2x.webp` | teste procedural |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade.webp` | teste procedural |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade@2x.webp` | teste procedural |
+| eyes/eyes-almond | face | `eyes/eyes-almond/all/face.webp` | teste procedural |
+| eyes/eyes-almond | face | `eyes/eyes-almond/all/face@2x.webp` | teste procedural |
+| eyes/eyes-almond | face | `eyes/eyes-almond/all/face.shade.webp` | teste procedural |
+| eyes/eyes-almond | face | `eyes/eyes-almond/all/face.shade@2x.webp` | teste procedural |
+| brows/brows-soft | face | `brows/brows-soft/all/face.mask.webp` | teste procedural |
+| brows/brows-soft | face | `brows/brows-soft/all/face.mask@2x.webp` | teste procedural |
+| brows/brows-soft | face | `brows/brows-soft/all/face.shade.webp` | teste procedural |
+| brows/brows-soft | face | `brows/brows-soft/all/face.shade@2x.webp` | teste procedural |
+| expression/expr-smile | mouth | `expression/expr-smile/all/mouth.shade.webp` | teste procedural |
+| expression/expr-smile | mouth | `expression/expr-smile/all/mouth.shade@2x.webp` | teste procedural |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask.webp` | teste procedural |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask@2x.webp` | teste procedural |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade.webp` | teste procedural |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade@2x.webp` | teste procedural |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask.webp` | teste procedural |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask@2x.webp` | teste procedural |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade.webp` | teste procedural |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade@2x.webp` | teste procedural |
+| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit.webp` | teste procedural |
+| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit@2x.webp` | teste procedural |
+| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves.webp` | teste procedural |
+| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves@2x.webp` | teste procedural |
+| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff.webp` | teste procedural |
+| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff@2x.webp` | teste procedural |
+| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back.webp` | teste procedural |
+| back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back@2x.webp` | teste procedural |
+| back/cloak-night | chest | `back/cloak-night/body-b/chest.webp` | teste procedural |
+| back/cloak-night | chest | `back/cloak-night/body-b/chest@2x.webp` | teste procedural |
+| waist/common_bolsa_do_viajante | chest | `waist/common_bolsa_do_viajante/body-b/chest.webp` | teste procedural |
+| waist/common_bolsa_do_viajante | chest | `waist/common_bolsa_do_viajante/body-b/chest@2x.webp` | teste procedural |
+| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist.webp` | teste procedural |
+| waist/common_bolsa_do_viajante | waist | `waist/common_bolsa_do_viajante/body-b/waist@2x.webp` | teste procedural |
+| feet/sandals-leather | feet | `feet/sandals-leather/body-b/feet.webp` | teste procedural |
+| feet/sandals-leather | feet | `feet/sandals-leather/body-b/feet@2x.webp` | teste procedural |
+| hands/staff-shepherd | cloak_front.staff | `hands/staff-shepherd/body-b/cloak_front.staff.webp` | teste procedural |
+| hands/staff-shepherd | cloak_front.staff | `hands/staff-shepherd/body-b/cloak_front.staff@2x.webp` | teste procedural |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask.webp` | teste procedural |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask@2x.webp` | teste procedural |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade.webp` | teste procedural |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade@2x.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | cloak_front.staff | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | cloak_front.staff | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff@2x.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask@2x.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade@2x.webp` | teste procedural |

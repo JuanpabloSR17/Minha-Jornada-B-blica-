@@ -116,6 +116,14 @@ const finishHere = async (page) => {
     await P.page.waitForTimeout(300);
     await shot(P.page, `j-${tag}-camp-${w}`);
   }
+  // a prova 3D saiu do caminho padrão: nenhuma entrada visível no Início nem no guarda-roupa
+  for (const P of [A, B]) {
+    assert.equal(await P.page.getByText('Ver em 3D').count(), 0, 'sem entrada 3D no Início');
+  }
+  await A.page.goto(`${APP}/avatar/wardrobe`);
+  await A.page.getByRole('button', { name: 'Salvar' }).waitFor();
+  assert.equal(await A.page.getByText('Ver em 3D').count(), 0, 'sem entrada 3D no guarda-roupa');
+  await A.page.goto(`${APP}/home`);
   step('dois personagens (corpo, tom, cabelo diferentes) com túnica, manto, bolsa, cajado, sandálias e cobertura de cabeça: guarda-roupa e acampamento com o mesmo equipamento');
 
   // ================================================================ troca de peça → Início → reabrir (gravação)

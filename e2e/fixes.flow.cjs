@@ -210,6 +210,24 @@ const panel = (page) => page.getByTestId('home-action-panel');
   assert.equal(await balance(), before - row3.price);
   step('Mercado: posse por outra via comunicada (compra não registrada, nada cobrado), sem "Compra confirmada"; confirmação só com o ID da própria compra');
 
+  // ================================================================ identidade em Ler e Perfil (320 e 412 px)
+  for (const [P, w] of [[A, 320], [B, 412]]) {
+    await P.page.goto(`${APP}/read`);
+    await P.page.getByText('Modo Missão', { exact: true }).first().waitFor();
+    await P.page.waitForTimeout(500);
+    assert.equal(await P.page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `Ler ${w}px sem rolagem lateral`);
+    await shot(P.page, `fx-07-ler-${w}`);
+    await P.page.goto(`${APP}/profile`);
+    const ach = P.page.getByTestId('profile-achievements').filter({ visible: true });
+    await ach.waitFor();
+    await ach.getByText('Mundos concluídos').waitFor();
+    await ach.getByText('Marcos cumpridos').waitFor();
+    assert.equal(await P.page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `Perfil ${w}px sem rolagem lateral`);
+    await ach.scrollIntoViewIfNeeded();
+    await shot(P.page, `fx-08-perfil-${w}`);
+  }
+  step('Ler e Perfil na identidade da jornada, com as conquistas da conta (marcos, Santos, mundos), em 320 e 412 px');
+
   await browser.close();
   await db.end();
   console.log('✔ Quatro correções verificadas.');

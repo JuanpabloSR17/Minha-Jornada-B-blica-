@@ -167,9 +167,6 @@ function Wardrobe() {
     <View style={[styles.stageWrap, wide ? styles.stageWide : { height: short ? height * 0.26 : height * 0.31 }]} onLayout={(e) => setStageH(Math.round(e.nativeEvent.layout.height))}>
       {stageH ? (
         <AvatarStage look={draft} height={stageH}>
-          {/* prova 3D: o mesmo visual salvo da conta num palco 3D */}
-          <Button compact variant="secondary" title={strings.avatar3d.open} style={styles.stage3d}
-            onPress={() => router.push('/avatar/3d')} />
           {loadout.locked ? (
             <View style={[styles.stageBadge, { backgroundColor: colors.warningSurface }]}>
               <Icon name="lock" size={14} color={colors.warning} />
@@ -368,7 +365,6 @@ const styles = StyleSheet.create({
   col: { flexDirection: 'column', gap: spacing.sm },
   stageWrap: { minHeight: 160 },
   stageWide: { flex: 1 },
-  stage3d: { position: 'absolute', top: spacing.sm, right: spacing.sm, minHeight: 40 },
   stageBadge: { position: 'absolute', top: spacing.sm, left: spacing.sm, flexDirection: 'row', gap: 6, alignItems: 'center', paddingHorizontal: spacing.sm, paddingVertical: 4, borderRadius: radius.pill },
   panel: { flex: 1, borderRadius: radius.xl, borderWidth: 1, padding: spacing.md, gap: spacing.sm, minHeight: 0 },
   panelWide: { maxWidth: 600 },

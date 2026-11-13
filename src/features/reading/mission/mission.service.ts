@@ -107,6 +107,11 @@ export type NextReading = {
 /** Próxima leitura sugerida pelo progresso da conta (vale em qualquer aparelho). */
 export const getNextReading = async () => (await rpc('get_next_reading')) as NextReading;
 
+export type WorldProgress = { id: string; name: string; position: number; chapters: number; done: number; completedAt: string | null };
+
+/** Progresso dos sete mundos pela conta (conclusão registrada no servidor, uma vez). */
+export const getWorldProgress = async () => (await rpc('get_world_progress')) as WorldProgress[];
+
 /** Finaliza a missão. Idempotente pelo ID da sessão: pode ser repetida após falha de conexão. */
 export async function completeMission(s: MissionSession): Promise<MissionResult> {
   return (await rpc('complete_reading_mission', {

@@ -95,7 +95,6 @@ export default function Home() {
               <Button compact title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />
             </View>
             <Button compact variant="secondary" title={strings.sanctuary.title} onPress={() => router.push('/avatar/sanctuary')} />
-            <Button compact variant="secondary" title={strings.avatar3d.open} onPress={() => router.push('/avatar/3d')} />
           </Card>
         </View>
       </Screen>
