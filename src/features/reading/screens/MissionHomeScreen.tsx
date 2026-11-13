@@ -28,7 +28,8 @@ export function MissionHomeScreen() {
   const [error, setError] = useState<string | null>(null);
   const [book, setBook] = useState<string | null>(null);
   const [chapter, setChapter] = useState<number | null>(null);
-  const [mode, setMode] = useState<MissionMode>('physical');
+  const [mode] = useState<MissionMode>('physical');
+  const [scrollKey, setScrollKey] = useState<string | null>(null);
   // marcos dos Santos: só o resumo aqui; a escolha do marco fica na tela do marco
   const { rows: milestoneRowsData } = useMilestones();
   const milestoneSum = milestoneRowsData ? milestoneSummary(milestoneRowsData) : null;
@@ -47,16 +48,19 @@ export function MissionHomeScreen() {
       setBook(requested.code);
       const ch = Number(params.chapter);
       setChapter(Number.isInteger(ch) && ch >= 1 && ch <= requested.chapters ? ch : null);
+      setScrollKey(`${params.book}:${params.chapter}:${params.selection ?? ''}`);
     }
   }, [params.book, params.chapter, params.selection]);
 
   const selectedBook = BOOKS.find((b) => b.code === book) ?? null;
+  // marcos Santos a cumprir neste capítulo: escolha explícita, separada da leitura comum
+  const chapterMarcos = selectedBook && chapter ? (milestoneRowsData ?? []).filter((r) => !r.completed && r.book === selectedBook.code && r.chapter === chapter) : [];
   const done = useMemo(() => new Set(overview?.chaptersByBook[book ?? ''] ?? []), [overview, book]);
 
-  const start = async () => {
+  const start = async (milestone?: string) => {
     if (!userId || !book || !chapter || session) return;
     try {
-      await commit(startMission({ userId, book, chapter, mode }));
+      await commit(startMission({ userId, book, chapter, mode, ...(milestone ? { milestone } : {}) }));
       router.push('/reading/mission');
     } catch (e) {
       setError(errorMessage(e));
@@ -66,11 +70,36 @@ export function MissionHomeScreen() {
   const chip = (selected: boolean) => [styles.chip, { borderColor: selected ? colors.primary : colors.border, backgroundColor: selected ? colors.surfaceRaised : colors.surface }];
 
   return (
-    <Screen edges={['top', 'left', 'right']}>
+    <Screen edges={['top', 'left', 'right']} scrollToTopKey={scrollKey}>
       <AppText variant="title">{strings.mission.title}</AppText>
       <AppText muted>{strings.mission.intro}</AppText>
       {error ? <Notice tone="error">{error}</Notice> : null}
       <ActiveSessionCard />
+
+      {/* passagem escolhida (pela Jornada, pelo Início ou pela grade abaixo): ação de iniciar já no topo */}
+      {selectedBook && chapter ? (
+        <Card style={{ borderColor: colors.primary }} testID="selected-passage">
+          <AppText variant="caption" muted>{strings.mission.selectedPassage}</AppText>
+          <AppText variant="display" style={styles.ref}>{refLabel(selectedBook.code, chapter)}</AppText>
+          <AppText variant="caption" muted>
+            {done.has(chapter) ? strings.mission.selectedReread : strings.mission.selectedNew} · {strings.mission.physical}
+          </AppText>
+          {session ? <Notice tone="info">{fmt(strings.mission.otherActive, { ref: refLabel(session.book, session.chapter) })}</Notice> : null}
+          <Button variant="gold"
+            title={`${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
+            onPress={() => void start()} disabled={!!session || !loaded} />
+          {chapterMarcos.map((mk) => (
+            <View key={mk.id} style={[styles.marco, { borderColor: RARITY_COLOR.holy }]} testID="chapter-milestone-hint">
+              <AppText variant="label">{fmt(strings.mission.chapterHasMilestone, { name: mk.name })}</AppText>
+              <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
+              <Button compact variant="secondary" title={fmt(strings.mission.startByMilestone, { name: mk.name })}
+                onPress={() => void start(mk.id)} disabled={!!session || !loaded} />
+              <Button compact variant="ghost" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
+            </View>
+          ))}
+          <AppText variant="caption" muted>{strings.mission.noTime}</AppText>
+        </Card>
+      ) : null}
 
       {overview ? (
         <Card>
@@ -141,7 +170,7 @@ export function MissionHomeScreen() {
               return (
                 <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: sel }}
                   accessibilityLabel={`${strings.mission.chooseChapter} ${n}${isDone ? `, ${strings.mission.chapterDone}` : ''}`}
-                  onPress={() => setChapter(n)}
+                  onPress={() => { setChapter(n); setScrollKey(`${book}:${n}:${Date.now()}`); }}
                   style={[styles.num, { borderColor: sel ? colors.primary : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.primary : colors.surface }]}>
                   <AppText variant="label" color={sel ? colors.onPrimary : isDone ? colors.primary : colors.text}>{n}</AppText>
                   {isDone && !sel ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
@@ -152,38 +181,6 @@ export function MissionHomeScreen() {
         </Card>
       ) : null}
 
-      {selectedBook && chapter ? (milestoneRowsData ?? []).filter((r) => !r.completed && r.book === selectedBook.code && r.chapter === chapter).map((mk) => (
-        <Card key={mk.id} style={{ borderColor: RARITY_COLOR.holy }} testID="chapter-milestone-hint">
-          <AppText variant="label">{fmt(strings.mission.chapterHasMilestone, { name: mk.name })}</AppText>
-          <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
-          <Button compact variant="secondary" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
-        </Card>
-      )) : null}
-
-      {selectedBook && chapter ? (
-        <Card>
-          <AppText variant="heading">{strings.mission.chooseMode}</AppText>
-          <Pressable accessibilityRole="radio" accessibilityState={{ checked: mode === 'physical' }} onPress={() => setMode('physical')} style={[styles.mode, chip(mode === 'physical')]}>
-            <Icon name="book" size={22} color={colors.primary} />
-            <View style={styles.flex}>
-              <AppText variant="label">{strings.mission.physical}</AppText>
-              <AppText variant="caption" muted>{strings.mission.physicalHint}</AppText>
-            </View>
-          </Pressable>
-          <Pressable accessibilityRole="radio" accessibilityState={{ checked: false, disabled: true }} disabled style={[styles.mode, chip(false), { opacity: 0.55 }]}>
-            <Icon name="device" size={22} color={colors.textMuted} />
-            <View style={styles.flex}>
-              <AppText variant="label">{strings.mission.digital}</AppText>
-              <AppText variant="caption" muted>{strings.mission.digitalUnavailable}</AppText>
-            </View>
-          </Pressable>
-          {session ? <Notice tone="info">{fmt(strings.mission.otherActive, { ref: refLabel(session.book, session.chapter) })}</Notice> : null}
-          <AppText variant="caption" muted>{strings.mission.noTime}</AppText>
-          <Button
-            title={`${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
-            onPress={() => void start()} disabled={!!session || !loaded} />
-        </Card>
-      ) : null}
     </Screen>
   );
 }
@@ -197,5 +194,7 @@ const styles = StyleSheet.create({
   num: { width: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   dot: { position: 'absolute', bottom: 4, width: 5, height: 5, borderRadius: 3 },
   mode: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md },
+  ref: { fontSize: 28 },
+  marco: { borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, gap: spacing.xs },
   missionRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.xs },
 });

@@ -8,7 +8,7 @@ import { AppText, Button, Card, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { useMyAvatar } from '@/features/avatar/hooks/useMyAvatar';
-import { getDailyGoalStatus, getMissionOverview, type DailyGoalStatus, type MissionOverview } from '@/features/reading/mission/mission.service';
+import { getDailyGoalStatus, getMissionOverview, getNextReading, type DailyGoalStatus, type MissionOverview } from '@/features/reading/mission/mission.service';
 import { useMissionSession } from '@/features/reading/mission/useMissionSession';
 import { missionStorage } from '@/features/reading/mission/storage';
 import { nextChapter } from '@/features/reading/mission/session';
@@ -38,14 +38,20 @@ export default function Home() {
       getDailyGoalStatus().then(setGoal, () => setGoal(null));
     }, []),
   );
-  // próxima leitura sugerida: o capítulo seguinte ao último lido neste aparelho (ou Gênesis 1)
+  // próxima leitura sugerida pelo servidor (progresso da conta, vale num aparelho novo);
+  // sem conexão, usa a última leitura deste aparelho
   useEffect(() => {
     if (!userId) return;
-    void missionStorage.loadResult(userId).then((r) => {
-      const n = r ? nextChapter(bible as { code: string; chapters: number }[], r.book.code, r.chapter) : null;
-      setNext(n ?? { book: 'GEN', chapter: 1 });
-    });
-  }, [userId, session]);
+    let alive = true;
+    getNextReading().then(
+      (r) => alive && setNext(r.next ?? { book: 'GEN', chapter: 1 }),
+      () => missionStorage.loadResult(userId).then((r) => {
+        const n = r ? nextChapter(bible as { code: string; chapters: number }[], r.book.code, r.chapter) : null;
+        if (alive) setNext(n ?? { book: 'GEN', chapter: 1 });
+      }),
+    );
+    return () => { alive = false; };
+  }, [userId, session, overview]);
 
   const heroH = Math.max(470, Math.min(820, winH - insets.top - TAB_BAR));
 
@@ -68,7 +74,8 @@ export default function Home() {
               next={next}
               today={goal ? { done: goal.newChaptersToday, target: goal.target ?? null } : null}
               onOpenSession={() => router.push('/reading/mission')}
-              onStart={() => (next ? router.push({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter) } }) : router.push('/(tabs)/read'))}
+              onStart={() => (next ? router.push({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter), selection: String(Date.now()) } }) : router.push('/(tabs)/read'))}
+              onChoose={() => router.push('/(tabs)/read')}
             />
           }
         />

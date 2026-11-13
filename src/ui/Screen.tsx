@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 import { useTheme } from '@/theme/ThemeProvider';
@@ -11,16 +11,23 @@ export function Screen({
   footer,
   edges = ['top', 'bottom', 'left', 'right'],
   contentStyle,
+  scrollToTopKey,
 }: {
   children: ReactNode;
   scroll?: boolean;
   footer?: ReactNode;
   edges?: Edge[];
   contentStyle?: StyleProp<ViewStyle>;
+  /** quando muda, a rolagem volta ao topo (ex.: um capítulo escolhido em outra tela) */
+  scrollToTopKey?: string | number | null;
 }) {
   const { colors } = useTheme();
+  const ref = useRef<{ scrollTo: (o: { y: number; animated: boolean }) => void } | null>(null);
+  useEffect(() => {
+    if (scrollToTopKey != null) ref.current?.scrollTo({ y: 0, animated: false });
+  }, [scrollToTopKey]);
   const body = scroll ? (
-    <ScrollView contentContainerStyle={[styles.content, contentStyle]} keyboardShouldPersistTaps="handled">
+    <ScrollView ref={ref as never} contentContainerStyle={[styles.content, contentStyle]} keyboardShouldPersistTaps="handled">
       {children}
     </ScrollView>
   ) : (

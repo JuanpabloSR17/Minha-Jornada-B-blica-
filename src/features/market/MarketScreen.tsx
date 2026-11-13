@@ -88,14 +88,21 @@ function MarketContent() {
         // a compra fica guardada: o jogador pode verificar depois sem risco de cobrança dupla
         setPending(p);
         setMsg({ tone: 'error', text: errorMessage(e) });
-        // se a vitrine já mostra o item como seu, o servidor registrou a compra: não é mais "pendente"
+        // a resposta se perdeu: o registro das compras da conta diz o estado real desta compra
         try {
           const fresh = await getMarket();
           setMarket(fresh);
-          if (fresh.items.find((x) => x.itemId === p.itemId)?.owned) {
+          const record = fresh.purchases.find((x) => x.purchaseId === p.purchaseId);
+          if (record) {
+            // só confirma se ESTA compra (mesmo ID) foi registrada
             await pendingPurchaseStorage.clear(p.userId);
             setPending(null);
             setMsg({ tone: 'success', itemId: p.itemId, text: fmt(m.confirmedOffline, { item: name(p.itemId) }) });
+          } else if (fresh.items.find((x) => x.itemId === p.itemId)?.owned) {
+            // o item chegou por outra via (escolha gratuita, outro aparelho): esta compra não existe e nada foi cobrado
+            await pendingPurchaseStorage.clear(p.userId);
+            setPending(null);
+            setMsg({ tone: 'info', itemId: p.itemId, text: fmt(m.ownedNotPurchased, { item: name(p.itemId) }) });
           }
         } catch {
           /* sem conexão também para a vitrine: continua pendente */
@@ -103,7 +110,7 @@ function MarketContent() {
       } else {
         await pendingPurchaseStorage.clear(p.userId);
         setPending(null);
-        setMsg({ tone: code === 'item_already_owned' ? 'info' : 'error', text: code === 'item_already_owned' ? fmt(m.alreadyOwned, { item: name(p.itemId) }) : errorMessage(e) });
+        setMsg({ tone: code === 'item_already_owned' ? 'info' : 'error', text: code === 'item_already_owned' ? fmt(m.ownedNotPurchased, { item: name(p.itemId) }) : errorMessage(e) });
       }
     } finally {
       setBusy(false);

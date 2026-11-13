@@ -33,6 +33,7 @@ export function ActionPanel({
   today,
   onOpenSession,
   onStart,
+  onChoose,
 }: {
   session: MissionSession | null;
   now: number;
@@ -40,6 +41,8 @@ export function ActionPanel({
   today: { done: number; target: number | null } | null;
   onOpenSession: () => void;
   onStart: () => void;
+  /** escolher outro capítulo (inclusive releitura) */
+  onChoose?: () => void;
 }) {
   const pending = !!session && (session.status === 'pending' || session.status === 'finishing');
   const marco = session ? getCatalogMission(session.milestone) : null;
@@ -71,6 +74,7 @@ export function ActionPanel({
         </View>
       ) : null}
       <Button variant="gold" title={button} onPress={session ? onOpenSession : onStart} />
+      {!session && onChoose ? <Button compact variant="ghost" title={j.chooseOther} onPress={onChoose} /> : null}
     </View>
   );
 }

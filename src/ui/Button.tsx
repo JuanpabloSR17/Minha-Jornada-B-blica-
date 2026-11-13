@@ -62,7 +62,7 @@ export function Button({
       {gold ? <GoldBevel pressed={pressed} /> : null}
       <View style={styles.row}>
         {loading ? <ActivityIndicator color={palette.fg} /> : icon}
-        <AppText variant="label" color={palette.fg} style={gold ? { fontFamily: fonts.display, fontSize: compact ? 15 : 18, fontWeight: '700' } : { fontSize: compact ? 14 : 16 }} numberOfLines={1}>
+        <AppText variant="label" color={palette.fg} style={[styles.label, gold ? { fontFamily: fonts.display, fontSize: compact ? 15 : 17, fontWeight: "700" } : { fontSize: compact ? 14 : 16 }]} numberOfLines={2}>
           {title}
         </AppText>
       </View>
@@ -99,5 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   compact: { minHeight: 44, paddingHorizontal: spacing.md },
-  row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm },
+  row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm, paddingVertical: 4 },
+  /** rótulos longos quebram em duas linhas em vez de serem cortados (320 px) */
+  label: { textAlign: 'center', flexShrink: 1 },
 });

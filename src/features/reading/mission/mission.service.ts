@@ -97,6 +97,16 @@ export type MissionOverview = {
 
 const rpc = async (fn: string, args?: Record<string, unknown>) => throwIfError(await requireSupabase().rpc(fn, args));
 
+export type NextReading = {
+  last: { book: string; chapter: number } | null;
+  /** próximo capítulo inédito depois da última leitura (null quando a Bíblia toda foi lida) */
+  next: { book: string; chapter: number } | null;
+  allDone: boolean;
+};
+
+/** Próxima leitura sugerida pelo progresso da conta (vale em qualquer aparelho). */
+export const getNextReading = async () => (await rpc('get_next_reading')) as NextReading;
+
 /** Finaliza a missão. Idempotente pelo ID da sessão: pode ser repetida após falha de conexão. */
 export async function completeMission(s: MissionSession): Promise<MissionResult> {
   return (await rpc('complete_reading_mission', {
