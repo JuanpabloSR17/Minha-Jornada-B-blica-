@@ -1,94 +1,32 @@
 import { memo } from 'react';
-import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
+import { Image } from 'react-native';
+import Svg, { Circle, Defs, Ellipse, G, Image as SvgImage, LinearGradient, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
 /**
- * Cenários em camadas (SVG). Cada camada é um componente próprio para poder ser animada ou
- * reaproveitada: fundo estático, fogo/luz (animável) e efeitos. Todas usam o mesmo viewBox
+ * Cenários em camadas. Cada camada é um componente próprio para poder ser animada ou
+ * reaproveitada: fundo estático, fogo/luz (animável) e efeitos. As camadas SVG usam o mesmo viewBox
  * e `preserveAspectRatio="xMidYMid slice"`, então se sobrepõem alinhadas em qualquer tamanho.
  */
 
 export const CAMP_VIEWBOX = '0 0 360 480';
 /** Posição da fogueira no viewBox do acampamento (a luz animada e o avatar usam a mesma). */
-export const CAMP_FIRE = { x: 266, y: 300 };
+const CAMP_FIRE = { x: 264, y: 282 };
 
 type LayerProps = { width: number; height: number };
 const svgProps = (vb: string, { width, height }: LayerProps) => ({ width, height, viewBox: vb, preserveAspectRatio: 'xMidYMid slice' as const });
 
-const STARS = Array.from({ length: 46 }, (_, i) => {
-  const x = (i * 97.3) % 360;
-  const y = ((i * 53.7) % 190) + 6;
-  return { x, y, r: i % 7 === 0 ? 1.5 : i % 3 === 0 ? 1 : 0.7 };
-});
+const campNight = require('../../../../assets/journey/camp-night.webp');
+const campFlame = require('../../../../assets/journey/camp-flame.webp');
 
-/** Céu azul-noite, lua, montanhas, tendas iluminadas e chão. Estático. */
-export const CampBackdrop = memo(function CampBackdrop(p: LayerProps) {
+/** Ilustração em 3:4, com o mesmo recorte central das camadas de fogo. */
+export const CampBackdrop = memo(function CampBackdrop({ width, height }: LayerProps) {
   return (
-    <Svg {...svgProps(CAMP_VIEWBOX, p)}>
-      <Defs>
-        <LinearGradient id="campSky" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor="#070C1E" />
-          <Stop offset="0.45" stopColor="#14214A" />
-          <Stop offset="0.62" stopColor="#2B2D5A" />
-          <Stop offset="0.7" stopColor="#3B2F55" />
-        </LinearGradient>
-        <RadialGradient id="campMoon" cx="50%" cy="50%" r="50%">
-          <Stop offset="0" stopColor="#F4EBD0" stopOpacity={0.55} />
-          <Stop offset="1" stopColor="#F4EBD0" stopOpacity={0} />
-        </RadialGradient>
-        <LinearGradient id="campRock" x1="0" y1="0" x2="1" y2="0.4">
-          <Stop offset="0" stopColor="#1C2140" />
-          <Stop offset="0.65" stopColor="#2A2547" />
-          <Stop offset="1" stopColor="#5A3A3A" />
-        </LinearGradient>
-        <LinearGradient id="campGround" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor="#3A2A2E" />
-          <Stop offset="0.4" stopColor="#2A1D1C" />
-          <Stop offset="1" stopColor="#140E0C" />
-        </LinearGradient>
-        <LinearGradient id="campTent" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor="#F3DCA8" />
-          <Stop offset="0.6" stopColor="#E7A95A" />
-          <Stop offset="1" stopColor="#B86A2C" />
-        </LinearGradient>
-        <LinearGradient id="campTentFar" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor="#B9A27A" />
-          <Stop offset="1" stopColor="#7A5A3A" />
-        </LinearGradient>
-      </Defs>
-      <Rect x={0} y={0} width={360} height={480} fill="url(#campSky)" />
-      {STARS.map((s, i) => <Circle key={i} cx={s.x} cy={s.y} r={s.r} fill="#F6EFD8" opacity={0.5 + (i % 4) * 0.12} />)}
-      <Circle cx={292} cy={66} r={42} fill="url(#campMoon)" />
-      <Circle cx={292} cy={66} r={15} fill="#F4EBD0" />
-      <Circle cx={287} cy={62} r={3} fill="#D9CFB4" opacity={0.6} />
-      <Circle cx={297} cy={71} r={2} fill="#D9CFB4" opacity={0.6} />
-      {/* montanhas e falésias (luz quente da fogueira à direita) */}
-      <Path d="M0 222 L40 196 L74 210 L120 168 L160 196 L196 176 L240 150 L268 118 L300 132 L336 112 L360 120 L360 300 L0 300 Z" fill="url(#campRock)" />
-      <Path d="M240 150 L268 118 L300 132 L336 112 L360 120 L360 160 L330 150 L300 170 L270 160 Z" fill="#6A4440" opacity={0.45} />
-      <Path d="M0 226 L60 210 L110 222 L170 204 L230 216 L290 200 L360 212 L360 300 L0 300 Z" fill="#1A1A30" />
-      {/* tendas distantes */}
-      {[[150, 232, 0.7], [196, 228, 0.8], [118, 236, 0.6]].map(([x, y, s], i) => (
-        <G key={i} transform={`translate(${x} ${y}) scale(${s})`}>
-          <Path d="M-30 30 L0 -22 L30 30 Z" fill="url(#campTentFar)" stroke="#3A2A1E" strokeWidth={1.2} />
-          <Path d="M-6 30 L0 4 L6 30 Z" fill="#FFB860" opacity={0.85} />
-        </G>
-      ))}
-      <Path d="M0 240 C80 230 160 242 240 234 C290 230 330 234 360 238 L360 480 L0 480 Z" fill="url(#campGround)" />
-      {/* tendas próximas, iluminadas por dentro (tecido listrado) */}
-      {[[318, 252, 1.25], [212, 262, 0.95]].map(([x, y, s], i) => (
-        <G key={i} transform={`translate(${x} ${y}) scale(${s})`}>
-          <Path d="M-46 38 L-4 -36 L42 38 Z" fill="url(#campTent)" stroke="#4A2A14" strokeWidth={1.4} />
-          <Path d="M-30 38 L-4 -36 L-18 38 Z" fill="#6B3B6A" opacity={0.55} />
-          <Path d="M14 38 L-4 -36 L26 38 Z" fill="#6B3B6A" opacity={0.55} />
-          <Path d="M-10 38 L-4 6 L4 38 Z" fill="#FFE2A0" />
-          <Path d="M-4 -36 L-4 -46" stroke="#4A2A14" strokeWidth={2} />
-        </G>
-      ))}
-      {/* pedras ao redor da fogueira */}
-      {[-26, -14, 0, 14, 26].map((dx, i) => (
-        <Ellipse key={i} cx={CAMP_FIRE.x + dx} cy={CAMP_FIRE.y + 8 + Math.abs(dx) * -0.12} rx={8} ry={5} fill="#4A3A34" stroke="#22160F" strokeWidth={1} />
-      ))}
-      <Path d={`M${CAMP_FIRE.x - 22} ${CAMP_FIRE.y + 4} L${CAMP_FIRE.x + 18} ${CAMP_FIRE.y - 6} M${CAMP_FIRE.x - 18} ${CAMP_FIRE.y - 6} L${CAMP_FIRE.x + 22} ${CAMP_FIRE.y + 4}`} stroke="#3E2414" strokeWidth={6} strokeLinecap="round" />
-    </Svg>
+    <Image
+      source={campNight}
+      style={{ width, height }}
+      resizeMode="cover"
+      accessible={false}
+    />
   );
 });
 
@@ -108,15 +46,11 @@ export const CampFireGlow = memo(function CampFireGlow(p: LayerProps) {
   );
 });
 
-/** Chamas (camada animável: escala e opacidade). */
+/** A chama pintada usa as mesmas coordenadas da luz e da lenha no cenário. */
 export const CampFlames = memo(function CampFlames(p: LayerProps) {
-  const { x, y } = CAMP_FIRE;
   return (
     <Svg {...svgProps(CAMP_VIEWBOX, p)}>
-      <Path d={`M${x - 16} ${y} C${x - 22} ${y - 18} ${x - 8} ${y - 26} ${x - 6} ${y - 44} C${x + 4} ${y - 30} ${x + 10} ${y - 34} ${x + 8} ${y - 52} C${x + 22} ${y - 34} ${x + 22} ${y - 12} ${x + 16} ${y} Z`} fill="#F07A22" />
-      <Path d={`M${x - 10} ${y} C${x - 12} ${y - 14} ${x - 2} ${y - 18} ${x} ${y - 32} C${x + 6} ${y - 20} ${x + 14} ${y - 16} ${x + 10} ${y} Z`} fill="#FFC44D" />
-      <Path d={`M${x - 4} ${y} C${x - 5} ${y - 8} ${x} ${y - 12} ${x + 1} ${y - 18} C${x + 4} ${y - 10} ${x + 6} ${y - 6} ${x + 4} ${y} Z`} fill="#FFF2C2" />
-      {([[-12, -64], [6, -78], [16, -58], [-4, -92]] as const).map(([dx, dy], i) => <Circle key={i} cx={x + dx} cy={y + dy} r={1.4} fill="#FFC44D" opacity={0.8} />)}
+      <SvgImage href={campFlame} x={CAMP_FIRE.x - 25} y={CAMP_FIRE.y - 50} width={50} height={55} />
     </Svg>
   );
 });
