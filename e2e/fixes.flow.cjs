@@ -214,6 +214,11 @@ const panel = (page) => page.getByTestId('home-action-panel');
   for (const [P, w] of [[A, 320], [B, 412]]) {
     await P.page.goto(`${APP}/read`);
     await P.page.getByText('Modo Missão', { exact: true }).first().waitFor();
+    // livros agrupados pelos sete mundos, com o progresso de cada um
+    for (const id of ['origens', 'reinos', 'sabedoria', 'profetas', 'evangelhos', 'igreja', 'nova-criacao']) {
+      await P.page.getByTestId(`read-world-${id}`).filter({ visible: true }).waitFor();
+    }
+    await P.page.getByTestId('read-world-origens').filter({ visible: true }).getByText('Origens e Aliança').waitFor();
     await P.page.waitForTimeout(500);
     assert.equal(await P.page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `Ler ${w}px sem rolagem lateral`);
     await shot(P.page, `fx-07-ler-${w}`);
@@ -226,7 +231,7 @@ const panel = (page) => page.getByTestId('home-action-panel');
     await ach.scrollIntoViewIfNeeded();
     await shot(P.page, `fx-08-perfil-${w}`);
   }
-  step('Ler e Perfil na identidade da jornada, com as conquistas da conta (marcos, Santos, mundos), em 320 e 412 px');
+  step('Ler (livros por mundo) e Perfil na identidade da jornada, com as conquistas da conta (marcos, Santos, mundos), em 320 e 412 px');
 
   await browser.close();
   await db.end();

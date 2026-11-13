@@ -17,6 +17,7 @@ import { milestoneSummary } from '../milestones';
 
 export { bookName, refLabel } from '../refs';
 import { BOOKS, refLabel } from '../refs';
+import { WORLDS } from '@/features/journey/worlds';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
 /** Aba Ler na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
@@ -150,24 +151,36 @@ function MissionHome() {
 
       <Card>
         <AppText variant="heading">{strings.mission.chooseBook}</AppText>
-        {(['AT', 'NT'] as const).map((t) => (
-          <View key={t} style={styles.section}>
-            <AppText variant="caption" muted>{t === 'AT' ? strings.mission.oldTestament : strings.mission.newTestament}</AppText>
-            <View style={styles.wrap} accessibilityRole="radiogroup">
-              {BOOKS.filter((b) => b.testament === t).map((b) => {
-                const n = overview?.chaptersByBook[b.code]?.length ?? 0;
-                const sel = b.code === book;
-                return (
-                  <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
-                    onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
-                    <AppText variant="caption" style={styles.chipText}>{b.name}</AppText>
-                    <AppText variant="caption" muted style={styles.chipText}>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
-                  </Pressable>
-                );
-              })}
+        {/* livros agrupados pelos sete mundos da Jornada, com o progresso de cada mundo */}
+        {WORLDS.map((w) => {
+          const books = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
+          const total = books.reduce((acc, b) => acc + b.chapters, 0);
+          const read = books.reduce((acc, b) => acc + (overview?.chaptersByBook[b.code]?.length ?? 0), 0);
+          return (
+            <View key={w.id} style={styles.section} testID={`read-world-${w.id}`}>
+              <View style={styles.worldHead}>
+                <AppText variant="label" style={styles.flex}>{w.name}</AppText>
+                <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: read, total })}</AppText>
+              </View>
+              <View style={[styles.worldBar, { backgroundColor: colors.backgroundAlt }]} importantForAccessibility="no">
+                <View style={[styles.worldFill, { backgroundColor: colors.primary, width: `${total ? (100 * read) / total : 0}%` }]} />
+              </View>
+              <View style={styles.wrap} accessibilityRole="radiogroup" accessibilityLabel={w.name}>
+                {books.map((b) => {
+                  const n = overview?.chaptersByBook[b.code]?.length ?? 0;
+                  const sel = b.code === book;
+                  return (
+                    <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
+                      onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
+                      <AppText variant="caption" style={styles.chipText}>{b.name}</AppText>
+                      <AppText variant="caption" muted style={styles.chipText}>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
+                    </Pressable>
+                  );
+                })}
+              </View>
             </View>
-          </View>
-        ))}
+          );
+        })}
       </Card>
 
       {selectedBook ? (
@@ -205,6 +218,9 @@ const styles = StyleSheet.create({
   dot: { position: 'absolute', bottom: 4, width: 5, height: 5, borderRadius: 3 },
   mode: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md },
   ref: { fontSize: 28 },
+  worldHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  worldBar: { height: 5, borderRadius: radius.pill, overflow: 'hidden' },
+  worldFill: { height: 5 },
   marco: { borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, gap: spacing.xs },
   missionRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.xs },
 });
