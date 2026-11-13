@@ -1,8 +1,8 @@
 import { memo, useId, useMemo, type ReactElement } from 'react';
 import { Image, StyleSheet, View, type ImageSourcePropType, type StyleProp, type ViewStyle } from 'react-native';
-import Svg, { Defs, G, LinearGradient, Mask, RadialGradient, Rect, Stop } from 'react-native-svg';
+import Svg, { Defs, G, Image as SvgImage, LinearGradient, Mask, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { ART_REGISTRY } from '../art/registry';
-import { CANVAS, CROPS, geometryFor, type AvatarCrop } from '../art/geometry';
+import { CANVAS, CROPS, geometryFor, type ArmPose, type AvatarCrop } from '../art/geometry';
 import type { ArtContext, VectorArt } from '../art/types';
 import { getOption } from '../domain/catalog';
 import { resolveLayers, type ResolvedLayer } from '../domain/avatar.layering';
@@ -40,11 +40,18 @@ type Resolved =
  * Resolve a arte de uma camada para um corpo. Política de variantes:
  * versão do corpo → versão "all" → arte provisória (vetor) da mesma camada → nada.
  */
-export function resolveArt(key: string, bodyId: string): Resolved | null {
+/** Camadas cuja arte muda com a pose do braço (variante `.staff` dos arquivos pintados). */
+const POSE_LAYERS = ['arms', 'hands', 'sleeves', 'cloak_front'];
+
+export function resolveArt(key: string, bodyId: string, armPose: ArmPose = 'rest'): Resolved | null {
   const def = ART_REGISTRY[key];
   if (!def) return null;
   if (typeof def === 'function') return { type: 'vector', fn: def };
-  const parts = def.parts
+  // pose: usa a variante da pose; numa camada que depende da pose e não tem a variante, cai no vetor
+  const layer = key.split('#')[1] ?? '';
+  const posed = def.parts.filter((pt) => (pt.pose ?? 'rest') === armPose);
+  const candidates = armPose !== 'rest' && POSE_LAYERS.includes(layer) ? posed : posed.length ? posed : def.parts.filter((pt) => !pt.pose);
+  const parts = candidates
     .map((pt) => ({ source: pt.sources[bodyId] ?? pt.sources.all, tint: pt.tint }))
     .filter((pt): pt is { source: ImageSourcePropType; tint: 'skin' | 'hair' | undefined } => !!pt.source);
   if (parts.length) return { type: 'image', parts };
@@ -110,6 +117,8 @@ function AvatarRendererBase({
 
   // agrupa camadas vetoriais consecutivas num único <Svg>; imagens entram na posição exata da pilha
   const chunks: ReactElement[] = [];
+  /** silhueta de todas as camadas (vetor e imagem), usada como máscara da luz da cena */
+  const silhouette: ReactElement[] = [];
   let vectorRun: { layer: ResolvedLayer; fn: VectorArt }[] = [];
   const flush = () => {
     if (!vectorRun.length) return;
@@ -120,23 +129,22 @@ function AvatarRendererBase({
         const ctx: ArtContext = { ...ctxBase, params: layer.params };
         return <G key={`${layer.id}${suffix}`}>{fn(ctx)}</G>;
       });
-    const key = `v${run[0]!.layer.id}`;
     chunks.push(
-      <Svg key={key} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
+      <Svg key={`v${run[0]!.layer.id}`} width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill}>
         {draw('')}
-        {lighting === 'camp' ? <CampLight id={`${uid}${chunks.length}`}>{draw('#m')}</CampLight> : null}
       </Svg>,
     );
+    if (lighting === 'camp') silhouette.push(...draw('#m'));
   };
   for (const layer of layers) {
-    const art = resolveArt(layer.assetKey, appearance.bodyId);
+    const art = resolveArt(layer.assetKey, appearance.bodyId, armPose);
     if (!art) continue;
     if (art.type === 'vector') {
       vectorRun.push({ layer, fn: art.fn });
       continue;
     }
     flush();
-    art.parts.forEach((pt, i) =>
+    art.parts.forEach((pt, i) => {
       chunks.push(
         <Image
           key={`${layer.id}#${i}`}
@@ -144,10 +152,21 @@ function AvatarRendererBase({
           resizeMode="stretch"
           style={[styles.abs, canvasStyle, pt.tint ? { tintColor: pt.tint === 'skin' ? ctxBase.skin : ctxBase.hair } : null]}
         />,
-      ),
-    );
+      );
+      if (lighting === 'camp') {
+        silhouette.push(<SvgImage key={`${layer.id}#${i}#m`} href={pt.source} x={0} y={0} width={CANVAS.width} height={CANVAS.height} preserveAspectRatio="none" />);
+      }
+    });
   }
   flush();
+  // luz da cena por cima de tudo, recortada pela silhueta (vale para arte vetorial e pintada)
+  if (lighting === 'camp' && silhouette.length) {
+    chunks.push(
+      <Svg key="light" width={width} height={size} viewBox={viewBox} style={StyleSheet.absoluteFill} pointerEvents="none">
+        <CampLight id={`${uid}l`}>{silhouette}</CampLight>
+      </Svg>,
+    );
+  }
 
   return (
     <View

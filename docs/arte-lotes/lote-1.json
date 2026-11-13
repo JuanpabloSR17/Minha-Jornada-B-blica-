@@ -1,0 +1,37 @@
+{
+  "lote": 1,
+  "descricao": "Primeira combinação jogável 2.5D semirrealista no corpo B (Atlético): viajante com túnica de linho, manto noturno, bolsa, cajado e sandálias; troca de cajado (pastor ↔ caminhada).",
+  "corpo": "body-b",
+  "canvas": { "base": [1024, 1536], "x2": [2048, 3072] },
+  "tipos": {
+    "mask": "máscara tingível (cor chapada clara, só a forma) + sombreamento translúcido (.shade). Tinta: pele para body/*, cabelo para hair/* e brows/*",
+    "base": "pintura final colorida com alfa",
+    "mixed": "pintura colorida do que não é pele (.png) + sombreamento translúcido do que é pele (.shade), para servir a qualquer tom de pele",
+    "skinmask": "peça que mostra a pele do personagem (mão fechada no cajado): máscara de pele (.mask) + sombreamento (.shade)"
+  },
+  "camadas": [
+    { "source": "body/body-b", "layer": "body", "type": "mask", "o_que": "cabeça, orelhas, pescoço, tronco e pernas (pele)" },
+    { "source": "body/body-b", "layer": "face", "type": "mixed", "o_que": "nariz, bochechas e sombra sob o queixo (só sombreamento sobre a pele)" },
+    { "source": "body/body-b", "layer": "arms", "type": "mask", "o_que": "braços relaxados, sem mãos" },
+    { "source": "body/body-b", "layer": "arms", "pose": "staff", "type": "mask", "o_que": "braço esquerdo relaxado; braço direito dobrado (cotovelo para fora, antebraço subindo até o peito)" },
+    { "source": "body/body-b", "layer": "hands", "type": "mask", "o_que": "as duas mãos relaxadas" },
+    { "source": "body/body-b", "layer": "hands", "pose": "staff", "type": "mask", "o_que": "só a mão esquerda (a direita vem fechada no cajado, em hand_item)" },
+    { "source": "eyes/eyes-almond", "layer": "face", "type": "mixed", "o_que": "olhos amendoados, pálpebras e cílios" },
+    { "source": "brows/brows-soft", "layer": "face", "type": "mask", "o_que": "sobrancelhas suaves (tinta do cabelo)" },
+    { "source": "expression/expr-smile", "layer": "mouth", "type": "mixed", "o_que": "boca sorrindo" },
+    { "source": "hair/hair-short", "layer": "back_hair", "type": "mask", "o_que": "volume de trás do cabelo curto" },
+    { "source": "hair/hair-short", "layer": "front_hair", "type": "mask", "o_que": "franja e mechas da frente" },
+    { "source": "outfit/tunic-linen", "layer": "upper_outfit", "type": "base", "o_que": "túnica de linho cru com bordado turquesa" },
+    { "source": "outfit/tunic-linen", "layer": "sleeves", "type": "base", "o_que": "mangas três-quartos, braços relaxados" },
+    { "source": "outfit/tunic-linen", "layer": "sleeves", "pose": "staff", "type": "base", "o_que": "manga direita acompanhando o braço dobrado" },
+    { "source": "back/cloak-night", "layer": "cloak_back", "type": "base", "o_que": "costas do manto de lã roxo até a canela, barra bordada" },
+    { "source": "back/cloak-night", "layer": "chest", "type": "base", "o_que": "drapeado que cai do ombro esquerdo e cruza o peito, ABAIXO dos braços; broche" },
+    { "source": "waist/common_bolsa_do_viajante", "layer": "chest", "type": "base", "o_que": "alça a tiracolo (ombro direito → quadril esquerdo) com sombra na túnica e fivela" },
+    { "source": "waist/common_bolsa_do_viajante", "layer": "waist", "type": "base", "o_que": "bolsa de couro gasto repousando no quadril esquerdo" },
+    { "source": "feet/sandals-leather", "layer": "feet", "type": "base", "o_que": "sandálias de couro" },
+    { "source": "hands/staff-shepherd", "layer": "cloak_front", "type": "base", "pose": "staff", "o_que": "haste do cajado de pastor com o gancho acima da cabeça (abaixo da mão)" },
+    { "source": "hands/staff-shepherd", "layer": "hand_item", "type": "skinmask", "o_que": "mão direita fechada envolvendo a haste (acima da haste)" },
+    { "source": "hands/common_cajado_de_caminhada", "layer": "cloak_front", "type": "base", "pose": "staff", "o_que": "haste reta do cajado de caminhada com tira de couro" },
+    { "source": "hands/common_cajado_de_caminhada", "layer": "hand_item", "type": "skinmask", "o_que": "mão direita fechada envolvendo a haste" }
+  ]
+}

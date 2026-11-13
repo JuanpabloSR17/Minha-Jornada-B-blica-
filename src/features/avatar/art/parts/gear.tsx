@@ -458,7 +458,8 @@ export const drapeFront: VectorArt = (ctx) => {
       ))}
       <Path d={sliver({ x: CX - s - 8, y: 600 }, { x: CX - s - 20, y: 1080 }, 8, -8)} fill={shade(base, 0.3)} opacity={0.28} />
       <Path d={sliver({ x: CX - s + 10, y: 640 }, { x: CX - s - 4, y: 1060 }, 7, 6)} fill={shade(base, -0.45)} opacity={0.4} />
-      {embroidery({ x: CX - s - 26, y: 1104 }, { x: CX - s + 30, y: 800 }, { x: hipR.x - 90, y: hipR.y + 10 }, trim, 10)}
+      {/* barra bordada só na borda inferior visível do drapeado (a cauda esquerda fica sob a manga) */}
+      {embroidery({ x: hipR.x - 92, y: hipR.y + 10 }, { x: CX - 30, y: 790 }, { x: CX - s + 26, y: 846 }, trim, 7)}
       {/* broche de bronze no ombro */}
       <Ellipse cx={CX - s + 22} cy={468} rx={22} ry={22} fill="#4A2E10" />
       <Ellipse cx={CX - s + 22} cy={468} rx={19} ry={19} fill={trim} />

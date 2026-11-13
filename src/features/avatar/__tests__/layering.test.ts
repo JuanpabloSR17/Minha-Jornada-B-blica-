@@ -1,7 +1,7 @@
 import { resolveLayers, zIndexOf } from '../domain/avatar.layering';
 import { defaultLook } from '../domain/avatar.rules';
 import { APPEARANCE_KEY_CATEGORY, APPEARANCE_OPTIONS, COSMETIC_ITEMS } from '../domain/catalog';
-import { ART_MANIFEST, LAYER_ORDER } from '../art/manifest';
+import { ART_MANIFEST, LAYER_ORDER, VECTOR_MANIFEST } from '../art/manifest';
 import { ART_REGISTRY } from '../art/registry';
 import { GROUND_Y, HEAD, HEAD_SCALE, HEAD_TOP_Y, anchors, geometryFor } from '../art/geometry';
 
@@ -107,7 +107,8 @@ describe('resolveLayers', () => {
   it('encaixes das peças de viagem: alça, bolsa, cajado na mão e manto atrás do braço', () => {
     const look = defaultLook();
     const eq = { ...look.equipment, back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd' };
-    const keys = resolveLayers(look.appearance, eq).map((l) => l.assetKey);
+    // ordem das camadas no manifesto vetorial (a arte pintada usa as mesmas camadas, testado abaixo)
+    const keys = resolveLayers(look.appearance, eq, { manifest: VECTOR_MANIFEST }).map((l) => l.assetKey);
     const at = (k: string) => keys.indexOf(k);
     // alça cruza a túnica e o manto drapeado; a bolsa repousa no quadril, sob o braço
     expect(at('gear.satchel.strap')).toBeGreaterThan(at('tunic.linen.body'));
@@ -125,7 +126,20 @@ describe('resolveLayers', () => {
     const look = defaultLook();
     look.appearance.hairStyleId = 'hair-locs';
     const hair = resolveLayers(look.appearance, look.equipment).filter((l) => l.source === 'hair/hair-locs');
-    expect(hair.map((l) => l.assetKey).sort()).toEqual(['hair.short.back', 'hair.short.front']);
+    expect(hair.map((l) => l.assetKey).sort()).toEqual(Object.values(ART_MANIFEST['hair/hair-short']!.layers).sort());
+  });
+
+  it('lote 1 pintado: as camadas pintadas ocupam as mesmas posições de encaixe da arte vetorial', () => {
+    const look = defaultLook();
+    const appearance = { ...look.appearance, bodyId: 'body-b', hairStyleId: 'hair-short' };
+    const eq = { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd', feet: 'sandals-leather' };
+    const painted = resolveLayers(appearance, eq).map((l) => `${l.source}#${l.slot}`);
+    const vector = resolveLayers(appearance, eq, { manifest: VECTOR_MANIFEST }).map((l) => `${l.source}#${l.slot}`);
+    expect(painted).toEqual(vector);
+    const keys = resolveLayers(appearance, eq).map((l) => l.assetKey);
+    for (const k of ['img:outfit/tunic-linen#upper_outfit', 'img:back/cloak-night#chest', 'img:waist/common_bolsa_do_viajante#chest', 'img:waist/common_bolsa_do_viajante#waist', 'img:hands/staff-shepherd#cloak_front', 'img:hands/staff-shepherd#hand_item', 'img:body/body-b#arms']) {
+      expect(keys).toContain(k);
+    }
   });
 
   it('ignora item colocado em slot que não é o dele', () => {
@@ -164,5 +178,32 @@ describe('resolveLayers', () => {
   it('zIndex segue LAYER_ORDER', () => {
     LAYER_ORDER.forEach((slot, i) => expect(zIndexOf(slot)).toBe(i * 10));
     expect(Object.keys(APPEARANCE_KEY_CATEGORY)).toHaveLength(8);
+  });
+});
+
+describe('arte pintada por pose (resolveArt)', () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { resolveArt } = require('../components/AvatarRenderer') as typeof import('../components/AvatarRenderer');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { IMAGE_LAYERS } = require('../art/imageAssets.generated') as typeof import('../art/imageAssets.generated');
+  const parts = (source: string, layer: string, pose?: string) =>
+    (IMAGE_LAYERS[source]?.[layer] ?? []).filter((p) => (p.pose ?? undefined) === pose).map((p) => p.sources['body-b'] ?? p.sources.all);
+
+  it('com o cajado, braços, mãos e mangas usam a variante .staff; em repouso, a de repouso', () => {
+    for (const [source, layer] of [['body/body-b', 'arms'], ['body/body-b', 'hands'], ['outfit/tunic-linen', 'sleeves']] as const) {
+      const staff = resolveArt(`img:${source}#${layer}`, 'body-b', 'staff');
+      const rest = resolveArt(`img:${source}#${layer}`, 'body-b', 'rest');
+      expect(staff?.type).toBe('image');
+      expect(rest?.type).toBe('image');
+      if (staff?.type === 'image' && rest?.type === 'image') {
+        expect(staff.parts.map((p) => p.source)).toEqual(parts(source, layer, 'staff'));
+        expect(rest.parts.map((p) => p.source)).toEqual(parts(source, layer));
+      }
+    }
+  });
+
+  it('corpo sem a pintura cai na arte vetorial da mesma camada (que segue a pose)', () => {
+    expect(resolveArt('img:outfit/tunic-linen#sleeves', 'body-a', 'staff')?.type).toBe('vector');
+    expect(resolveArt('img:hands/staff-shepherd#cloak_front', 'body-c', 'staff')?.type).toBe('vector');
   });
 });

@@ -1,11 +1,13 @@
 // Pipeline de assets ilustrados do avatar.
 // Varre assets/avatars/, valida cada arquivo e gera src/features/avatar/art/imageAssets.generated.ts.
 //
-// Convenção:  {categoria}/{assetId}/{corpo|all}/{camada}[.mask|.shade][@2x].{webp|png}
+// Convenção:  {categoria}/{assetId}/{corpo|all}/{camada}[.staff][.mask|.shade][@2x].{webp|png}
 //   - categoria body usa assetId "base" e a pasta do corpo:  body/base/body-b/body.mask.webp
 //   - ".mask"  = forma em cor chapada, tingida com a cor da pele (body) ou do cabelo (hair/brows/beard)
 //   - ".shade" = sombras/luzes translúcidas desenhadas por cima da máscara
 //   - "@2x"    = versão 2048×3072 (opcional); a versão base 1024×1536 é obrigatória
+//   - ".staff" = variante de pose (braço direito dobrado segurando o cajado) para arms, hands, sleeves
+//               e cloak_front; sem ela, o app usa a arte vetorial dessa camada quando o cajado está equipado
 //
 // Uso: node scripts/avatar-assets.mjs [--dir assets/avatars] [--out arquivo.ts] [--check] [--json]
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -24,15 +26,19 @@ const OUT = resolve(root, arg('--out', 'src/features/avatar/art/imageAssets.gene
 export const CANVAS = { width: 1024, height: 1536 };
 export const BODIES = ['body-a', 'body-b', 'body-c'];
 export const LAYERS = [
-  'background', 'shadow', 'cloak_back', 'back_hair', 'body', 'face', 'lower_outfit', 'feet', 'upper_outfit',
-  'waist', 'arms', 'sleeves', 'cloak_front', 'hands', 'neck', 'beard', 'mouth', 'front_hair', 'headwear',
-  'face_accessory', 'hand_item', 'special_fx', 'frame',
+  'background', 'shadow', 'cloak_back', 'back_item', 'back_hair', 'body', 'face', 'lower_outfit', 'feet', 'upper_outfit',
+  'chest', 'waist', 'arms', 'sleeves', 'cloak_front', 'hands', 'neck', 'beard', 'mouth', 'front_hair', 'headwear',
+  'face_accessory', 'hand_item', 'emblem', 'special_fx', 'frame',
 ];
+/** Camadas que mudam com a pose do braço (variante `.staff`). */
+export const POSE_LAYERS = ['arms', 'hands', 'sleeves', 'cloak_front'];
 const APPEARANCE_CATS = { body: 'body', eyes: 'eyes', brows: 'brows', expression: 'expression', beard: 'beard', hair: 'hair_style' };
 const ITEM_CATS = ['outfit', 'back', 'feet', 'waist', 'neck', 'head', 'hands', 'background', 'frame'];
 /** Categorias cujas peças precisam de uma versão por corpo (ou "all" se servir aos três). */
 const PER_BODY = ['body', 'outfit', 'back', 'feet', 'waist', 'hands'];
 const TINT = { body: 'skin', hair: 'hair', brows: 'hair', beard: 'hair' };
+/** Camadas de peças que mostram pele do personagem (ex.: a mão fechada no cajado): máscara de pele. */
+const SKIN_LAYERS = ['hand_item'];
 
 // ---------------------------------------------------------------- leitura de cabeçalhos
 
@@ -95,7 +101,7 @@ function walk(dir) {
   });
 }
 
-const FILE_RE = /^([a-z_]+)(?:\.(mask|shade))?(@2x)?\.(webp|png)$/;
+const FILE_RE = /^([a-z_]+)(?:\.(staff))?(?:\.(mask|shade))?(@2x)?\.(webp|png)$/;
 
 export function scan(dir = DIR) {
   const sources = knownSources();
@@ -114,10 +120,11 @@ export function scan(dir = DIR) {
     const [category, assetId, body, fileName] = parts;
     const m = FILE_RE.exec(fileName);
     if (!m) {
-      errors.push(`${rel}: nome de arquivo inválido (use camada[.mask|.shade][@2x].webp|png)`);
+      errors.push(`${rel}: nome de arquivo inválido (use camada[.staff][.mask|.shade][@2x].webp|png)`);
       continue;
     }
-    const [, layer, kind, hi] = m;
+    const [, layer, pose, kind, hi] = m;
+    if (pose && !POSE_LAYERS.includes(layer)) errors.push(`${rel}: variante de pose ".${pose}" só vale para ${POSE_LAYERS.join(', ')}`);
     if (!LAYERS.includes(layer)) errors.push(`${rel}: camada desconhecida "${layer}"`);
     if (body !== 'all' && !BODIES.includes(body)) errors.push(`${rel}: corpo desconhecido "${body}"`);
     let source;
@@ -132,7 +139,8 @@ export function scan(dir = DIR) {
       errors.push(`${rel}: categoria desconhecida "${category}"`);
       continue;
     }
-    if (kind === 'mask' && !TINT[category]) errors.push(`${rel}: ".mask" só vale para pele/cabelo (body, hair, brows, beard)`);
+    const tint = TINT[category] ?? (SKIN_LAYERS.includes(layer) ? 'skin' : undefined);
+    if (kind === 'mask' && !tint) errors.push(`${rel}: ".mask" só vale para pele/cabelo (body, hair, brows, beard) e para a pele em ${SKIN_LAYERS.join(', ')}`);
 
     const info = imageInfo(readFileSync(file));
     const expected = hi ? { w: CANVAS.width * 2, h: CANVAS.height * 2 } : { w: CANVAS.width, h: CANVAS.height };
@@ -142,11 +150,11 @@ export function scan(dir = DIR) {
       if (!info.alpha && layer !== 'background') errors.push(`${rel}: sem transparência (canal alfa obrigatório)`);
     }
     if (hi) continue; // o @2x é escolhido automaticamente pelo empacotador a partir do arquivo base
-    const partKey = kind ?? 'base';
+    const partKey = `${pose ? `${pose}:` : ''}${kind ?? 'base'}`;
     entries[source] ??= {};
     entries[source][layer] ??= {};
     entries[source][layer][partKey] ??= {};
-    entries[source][layer][partKey][body] = { rel, tint: kind === 'mask' ? TINT[category] : undefined };
+    entries[source][layer][partKey][body] = { rel, tint: kind === 'mask' ? tint : undefined };
   }
 
   // política de variantes por corpo
@@ -180,11 +188,15 @@ export function generate({ entries }, outFile = OUT) {
     for (const layer of Object.keys(entries[source]).sort()) {
       lines.push(`    ${layer}: [`);
       const partMap = entries[source][layer];
-      for (const partKey of ['mask', 'base', 'shade'].filter((k) => partMap[k])) {
-        const bodies = partMap[partKey];
-        const tint = Object.values(bodies)[0]?.tint;
-        const srcs = Object.keys(bodies).sort().map((b) => `'${b}': require('${relTo(bodies[b].rel)}')`).join(', ');
-        lines.push(`      { sources: { ${srcs} }${tint ? `, tint: '${tint}'` : ''} },`);
+      for (const pose of ['', 'staff']) {
+        for (const kind of ['mask', 'base', 'shade']) {
+          const partKey = `${pose ? `${pose}:` : ''}${kind}`;
+          const bodies = partMap[partKey];
+          if (!bodies) continue;
+          const tint = Object.values(bodies)[0]?.tint;
+          const srcs = Object.keys(bodies).sort().map((b) => `'${b}': require('${relTo(bodies[b].rel)}')`).join(', ');
+          lines.push(`      { sources: { ${srcs} }${tint ? `, tint: '${tint}'` : ''}${pose ? `, pose: '${pose}'` : ''} },`);
+        }
       }
       lines.push('    ],');
     }

@@ -23,6 +23,8 @@ export type ImagePart = {
   sources: Partial<Record<string, ImageSourcePropType>>;
   /** máscara colorizável: a imagem é tingida com a cor da pele ou do cabelo */
   tint?: 'skin' | 'hair';
+  /** variante de pose (ex.: braço direito segurando o cajado); ausente = pose de repouso */
+  pose?: ArmPose;
 };
 
 /** Arte final em PNG/WebP transparente, alinhada ao canvas 1024×1536. */

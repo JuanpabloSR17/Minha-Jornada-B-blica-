@@ -98,6 +98,28 @@ describe('pipeline de assets ilustrados', () => {
     expect(r.code.indexOf('body.mask')).toBeLessThan(r.code.indexOf('body.shade'));
   });
 
+  it('aceita as camadas de encaixe das peças de viagem e a variante de pose do cajado', () => {
+    const r = run({
+      'waist/common_bolsa_do_viajante/body-b/chest.png': OK,
+      'waist/common_bolsa_do_viajante/body-b/waist.png': OK,
+      'head/headwrap-sand/all/back_item.png': OK,
+      'outfit/tunic-linen/body-b/sleeves.png': OK,
+      'outfit/tunic-linen/body-b/sleeves.staff.png': OK,
+      'body/base/body-b/arms.staff.mask.png': OK,
+      'body/base/body-b/arms.staff.shade.png': OK,
+    });
+    expect(r.errors).toEqual([]);
+    expect(r.code).toContain('chest: [');
+    expect(r.code).toContain('back_item: [');
+    expect(r.code).toMatch(/sleeves\.staff\.png'\) \}, pose: 'staff' \}/);
+    expect(r.code).toMatch(/arms\.staff\.mask\.png'\) \}, tint: 'skin', pose: 'staff' \}/);
+  });
+
+  it('recusa variante de pose em camada que não depende do braço', () => {
+    const r = run({ 'outfit/tunic-linen/body-b/upper_outfit.staff.png': OK });
+    expect(r.errors.some((e) => e.includes('variante de pose ".staff" só vale para'))).toBe(true);
+  });
+
   it('o registro versionado está em dia com assets/avatars', () => {
     expect(() => execFileSync(process.execPath, [join(root, 'scripts/avatar-assets.mjs'), '--check'], { stdio: 'pipe' })).not.toThrow();
   });

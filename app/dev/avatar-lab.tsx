@@ -30,37 +30,47 @@ function Guides({ look, h }: { look: AvatarLook; h: number }) {
 }
 
 /**
- * Modos de exportação (1024×1536, fundo transparente), usados para gerar moldes de
- * alinhamento para ilustradores e para testar o caminho de imagens do renderer:
+ * Modos de exportação (canvas inteiro, fundo transparente), usados para gerar moldes de
+ * alinhamento para ilustradores e camadas de encaixe do pipeline de PNG/WebP:
  *   ?template=body-b            corpo base neutro + guias de ancoragem
- *   ?export=outfit/tunic-joseph&body=body-b&layer=upper_outfit   uma camada isolada
+ *   ?export=outfit/tunic-linen&body=body-b&layer=sleeves&pose=staff&scale=2
+ *       uma camada isolada de uma peça ou aparência, no corpo e na pose pedidos (scale=2 → 2048×3072)
  */
-function ExportView({ template, source, body, layer }: { template?: string; source?: string; body?: string; layer?: string }) {
+const APPEARANCE_SOURCE: Record<string, keyof AvatarLook['appearance']> = {
+  body: 'bodyId', eyes: 'eyesId', brows: 'browsId', expression: 'expressionId', beard: 'beardId', hair: 'hairStyleId',
+};
+function ExportView({ template, source, body, layer, pose, scale, skin, hair }: { template?: string; source?: string; body?: string; layer?: string; pose?: string; scale?: string; skin?: string; hair?: string }) {
   const bodyId = template ?? body ?? 'body-b';
-  const look: AvatarLook = {
-    appearance: { ...defaultLook().appearance, bodyId, skinToneId: 'skin-2', hairStyleId: 'hair-short', beardId: 'beard-none' },
-    equipment: source ? { [source.split('/')[0] as 'outfit']: source.split('/')[1]! } : {},
-  };
+  const k = scale === '2' ? 2 : 1;
+  const [cat, id] = (source ?? `body/${bodyId}`).split('/') as [string, string];
+  const appearance = { ...defaultLook().appearance, bodyId, skinToneId: skin ?? 'skin-2', hairColorId: hair ?? defaultLook().appearance.hairColorId, hairStyleId: 'hair-short', beardId: 'beard-none' };
+  const equipment: Record<string, string> = {};
+  const appKey = APPEARANCE_SOURCE[cat];
+  if (appKey && cat !== 'body') (appearance as Record<string, string>)[appKey] = id;
+  else if (!appKey) equipment[cat] = id;
+  // pose do cajado: o cajado entra no equipamento só para definir a pose (não é desenhado)
+  if (pose === 'staff' && cat !== 'hands') equipment.hands = 'staff-shepherd';
+  const look: AvatarLook = { appearance, equipment };
   return (
-    <View testID="export" style={{ width: 1024, height: 1536 }}>
+    <View testID="export" style={{ width: 1024 * k, height: 1536 * k }}>
       <AvatarRenderer
         appearance={look.appearance}
         equippedItems={look.equipment}
-        size={1536}
+        size={1536 * k}
         showBackground={false}
         onlySources={source ? [source] : [`body/${bodyId}`]}
         onlyLayers={layer ? [layer] : template ? ['shadow', 'body', 'face', 'arms', 'hands'] : undefined}
       />
-      {template ? <Guides look={look} h={1536} /> : null}
+      {template ? <Guides look={look} h={1536 * k} /> : null}
     </View>
   );
 }
 
 export default function AvatarLab() {
   const [guides, setGuides] = useState(false);
-  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string }>();
+  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
   if (!ENABLED) return <Text style={{ padding: 24 }}>Ferramenta interna indisponível.</Text>;
-  if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} />;
+  if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} pose={q.pose} scale={q.scale} skin={q.skin} hair={q.hair} />;
   if (q.fit) {
     // encaixe das peças de viagem: três corpos × três cabelos, com e sem cobertura de cabeça
     const kit = { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: 'staff-shepherd', feet: 'sandals-leather' };
