@@ -224,13 +224,22 @@ async function login(page, email) {
       (select count(*)::int from reward_events where user_id = $1 and item_id = any($2)) r,
       (select count(*)::int from user_items where user_id = $1 and item_id = any($2)) i`, [uid, SANTOS])).rows[0];
     assert.deepEqual(mk, { s: 1, m: 1, r: 2, i: 3 }, 'uma sessão vinculada, um marco, duas recompensas (Arca e Candelabro), três Santos');
-    await page.getByRole('button', { name: 'Ver no Santuário' }).click();
+    // revelação (após a confirmação): só os dois Santos concedidos; pular e abrir o Santuário por ela
+    const reveal = page.getByTestId('reveal-overlay');
+    await reveal.waitFor();
+    await reveal.getByTestId('reveal-item-holy_arca_da_alianca_representacao').waitFor();
+    await reveal.getByTestId('reveal-item-holy_candelabro_do_tabernaculo').waitFor();
+    assert.equal(await reveal.getByTestId('reveal-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta');
+    await reveal.getByRole('button', { name: 'Pular animação' }).click();
+    await shot(page, 'real-08b-reveal');
+    await reveal.getByRole('button', { name: 'Ver no Santuário' }).click();
     await page.getByText('Obras do Pai').waitFor();
+    await page.getByTestId('exhibition-hall').waitFor();
     assert.equal(await page.getByTestId('collection-owned-works-father').innerText(), '3 de 13 Santos obtidos');
     await page.getByText('Marcos cumpridos: 1 de 20').last().waitFor();
     await page.getByText('Santos obtidos: 3 de 22').last().waitFor();
     await shot(page, 'real-09-sanctuary');
-    ok('marco de Êxodo 25 aberto pela lista de marcos, com a Mesa já obtida: resposta perdida, sessão pendente destacada na aba Ler, reenvio — só Arca e Candelabro, 1 marco; Santuário: 1 de 20 marcos, 3 de 22 Santos, coleção 3 de 13');
+    ok('marco de Êxodo 25 aberto pela lista de marcos, com a Mesa já obtida: resposta perdida, sessão pendente destacada na aba Ler, reenvio — revelação e banco só com Arca e Candelabro, 1 marco; Santuário: 1 de 20 marcos, 3 de 22 Santos, coleção 3 de 13');
   } finally {
     await browser.close();
     await conn.end();
