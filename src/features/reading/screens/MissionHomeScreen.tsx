@@ -151,6 +151,14 @@ export function MissionHomeScreen() {
         </Card>
       ) : null}
 
+      {selectedBook && chapter ? (milestoneRowsData ?? []).filter((r) => !r.completed && r.book === selectedBook.code && r.chapter === chapter).map((mk) => (
+        <Card key={mk.id} style={{ borderColor: RARITY_COLOR.holy }} testID="chapter-milestone-hint">
+          <AppText variant="label">{fmt(strings.mission.chapterHasMilestone, { name: mk.name })}</AppText>
+          <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
+          <Button compact variant="secondary" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
+        </Card>
+      )) : null}
+
       {selectedBook && chapter ? (
         <Card>
           <AppText variant="heading">{strings.mission.chooseMode}</AppText>

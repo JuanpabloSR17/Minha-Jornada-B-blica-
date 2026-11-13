@@ -93,24 +93,26 @@ async function login(page, email) {
     const b2 = await balance();
     const y = (await unowned(b2)).at(-1);
     await page.goto(`${APP}/market`);
-    await page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+    // pedido sem resposta: fica pendente, sobrevive a reabrir; a verificação automática com resposta
+    // perdida confirma pela vitrine, sem cobrança dupla nem estado "aguardando" + "Obtido"
+    await page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
     await page.getByRole('button', { name: `Comprar ${y.name}` }).click();
     await page.getByRole('button', { name: `Pagar ${y.price} Siclos` }).click();
-    await page.getByText('Sem conexão com o servidor', { exact: false }).waitFor();
     await page.getByText('Compra aguardando confirmação').waitFor();
+    assert.equal(await owns(y.id), 0, 'o pedido não chegou ao servidor');
     await page.unroute('**/rest/v1/rpc/purchase_market_item');
-    assert.equal(await owns(y.id), 1, 'o servidor registrou a compra antes de a resposta se perder');
+    await page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
     await page.reload();
-    await page.getByText('Compra aguardando confirmação').waitFor();
-    await page.getByRole('button', { name: 'Verificar compra' }).click();
-    await page.getByText(`Compra já registrada: ${y.name}`, { exact: false }).waitFor();
+    await page.getByText(`Compra confirmada: ${y.name} já está no seu inventário`, { exact: false }).waitFor();
+    assert.equal(await page.getByText('Compra aguardando confirmação').count(), 0);
+    await page.unroute('**/rest/v1/rpc/purchase_market_item');
     await page.getByText(`Saldo: ${b2 - y.price} Siclos`).first().waitFor();
     const lost = (await conn.query(`select (select count(*)::int from market_purchases where user_id = $1 and item_id = $2) p,
       (select count(*)::int from siclos_ledger where user_id = $1 and event_type = 'MARKET_PURCHASE' and source_event_id in (select 'purchase:' || id from market_purchases where user_id = $1 and item_id = $2)) d`, [uid, y.id])).rows[0];
     assert.deepEqual(lost, { p: 1, d: 1 });
     assert.equal(await balance(), b2 - y.price);
     await shot(page, 'real-05-recovered');
-    ok(`resposta perdida: ${y.name} registrada uma vez (1 compra, 1 débito), recuperada depois de reabrir o app; saldo ${b2 - y.price}`);
+    ok(`compra sem resposta: pendente após reabrir; verificação automática com resposta perdida confirma ${y.name} uma vez (1 compra, 1 débito); saldo ${b2 - y.price}`);
 
     // ------------------------------------------------ duas compras disputando o saldo (dois aparelhos)
     const b3 = await balance();

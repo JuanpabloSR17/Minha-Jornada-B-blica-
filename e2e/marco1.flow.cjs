@@ -607,6 +607,9 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 16' }).click();
   await finishHere();
   await C.page.getByText('Nenhum item novo nesta missão.').waitFor();
+  // piloto: a leitura comum explica que o capítulo tem um marco e como cumpri-lo
+  await C.page.getByTestId('ordinary-milestone-hint').filter({ visible: true }).getByText('Este capítulo também tem o “Marco: Maná do Deserto”.').waitFor();
+  await shot(C.page, 'p1-ordinary-reading-milestone-hint');
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = 'holy_mana_do_deserto'`, [biaId])).rows[0].count), 0);
   step('tela estreita: aba Ler com resumo dos marcos; leitura comum de Êxodo 16 sem o Santo');
 
@@ -733,8 +736,9 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByText(`${buyRow.name} foi adicionado ao seu inventário`, { exact: false }).waitFor();
   assert.equal(await biaBalance(), 240 - buyRow.price);
   await C.page.getByRole('button', { name: 'Ver no inventário' }).click();
-  await C.page.getByText(buyRow.name).first().waitFor();
-  await C.page.getByText('Obtido').first().waitFor();
+  // a tela do Mercado continua montada por baixo: conferir só o que está visível
+  await C.page.getByText(buyRow.name).filter({ visible: true }).first().waitFor();
+  await C.page.getByText('Obtido').filter({ visible: true }).first().waitFor();
   const cat = buyRow.slot;
   await C.page.goto(`${APP}/avatar/wardrobe?category=${cat}`);
   await C.page.getByRole('radio', { name: new RegExp(`^${buyRow.name},.*Obtido`) }).waitFor();
@@ -747,22 +751,29 @@ async function newPhone(browser, scheme = 'light') {
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [biaId, 240 - buyRow.price])).rows[0];
   await C.page.goto(`${APP}/market`);
-  await C.page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  // 1) o pedido nem chega ao servidor: a compra fica pendente e sobrevive a reabrir o app
+  await C.page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
   await C.page.getByRole('button', { name: `Comprar ${lostRow.name}` }).click();
   await C.page.getByRole('button', { name: `Pagar ${lostRow.price} Siclos` }).click();
   await C.page.getByText('Sem conexão com o servidor', { exact: false }).waitFor();
   await C.page.getByText('Compra aguardando confirmação').waitFor();
-  await C.page.unroute('**/rest/v1/rpc/purchase_market_item');
-  await C.page.reload();
-  await C.page.getByText('Compra aguardando confirmação').waitFor();
+  assert.equal(Number((await db.query(`select count(*) from market_purchases where user_id = $1 and item_id = $2`, [biaId, lostRow.id])).rows[0].count), 0);
   await shot(C.page, 'm7-05-market-pending-dark');
-  await C.page.getByRole('button', { name: 'Verificar compra' }).click();
-  await C.page.getByText(`Compra já registrada: ${lostRow.name}`, { exact: false }).waitFor();
+  // 2) ao reabrir, a verificação automática reenvia o mesmo ID: o servidor registra, mas a resposta se perde
+  await C.page.unroute('**/rest/v1/rpc/purchase_market_item');
+  await C.page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  await C.page.reload();
+  // a vitrine já mostra o item como seu: a tela confirma a compra em vez de continuar "aguardando"
+  await C.page.getByText(`Compra confirmada: ${lostRow.name} já está no seu inventário`, { exact: false }).waitFor();
+  assert.equal(await C.page.getByText('Compra aguardando confirmação').count(), 0, 'não mostra pendente e obtido ao mesmo tempo');
+  await C.page.getByTestId(`market-${lostRow.id}`).getByText('Obtido').waitFor();
+  await C.page.unroute('**/rest/v1/rpc/purchase_market_item');
+  await shot(C.page, 'p2-market-confirmed-after-lost-response-dark');
   const lost = (await db.query(`select (select count(*) from market_purchases where user_id = $1 and item_id = $2)::int p,
     (select count(*) from user_items where user_id = $1 and item_id = $2)::int i`, [biaId, lostRow.id])).rows[0];
   assert.deepEqual(lost, { p: 1, i: 1 });
   assert.equal(await biaBalance(), 240 - buyRow.price - lostRow.price, 'um único débito');
-  step('resposta perdida: compra pendente sobrevive a reabrir o app e é recuperada sem débito duplo');
+  step('compra pendente sobrevive a reabrir o app; verificação automática com resposta perdida confirma a compra sem débito duplo e sem estado contraditório');
   await C.page.goto(`${APP}/users/ana_teste`);
   await C.page.getByText('Ana Teste').waitFor();
   assert.equal(await C.page.getByText('ana+', { exact: false }).count(), 0);

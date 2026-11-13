@@ -14,6 +14,7 @@ import { displayName, displayNameOf, getItem, isEquippable } from '@/features/av
 import { equipItem, getWardrobe } from '@/features/avatar/services/wardrobe.service';
 import bible from '../bible-books.json';
 import { missionStorage } from '../mission/storage';
+import { useMilestones } from '../useMilestones';
 import type { MissionResult } from '../mission/mission.service';
 import { formatClock, nextChapter } from '../mission/session';
 import { GoalChoice } from '../components/GoalChoice';
@@ -28,6 +29,7 @@ export function MissionCompletedScreen() {
   const [result, setResult] = useState<MissionResult | null | undefined>(undefined);
   const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string } | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const { rows: milestones } = useMilestones();
 
   useEffect(() => {
     if (userId) void missionStorage.loadResult(userId).then(setResult);
@@ -50,6 +52,7 @@ export function MissionCompletedScreen() {
   }
 
   const ref = refLabel(result.book.code, result.chapter);
+  const pendingMarcos = (milestones ?? []).filter((r) => !r.completed && r.book === result.book.code && r.chapter === result.chapter);
   const next = nextChapter(bible as { code: string; chapters: number }[], result.book.code, result.chapter);
 
   const equip = async (itemId: string) => {
@@ -128,6 +131,15 @@ export function MissionCompletedScreen() {
           </Card>
         );
       })() : null}
+
+      {/* leitura comum num capítulo que tem marco a cumprir: explica como receber os Santos */}
+      {!result.milestone ? pendingMarcos.map((mk) => (
+        <Card key={mk.id} style={{ borderColor: RARITY_COLOR.holy }} testID="ordinary-milestone-hint">
+          <AppText variant="label">{fmt(strings.mission.ordinaryHasMilestone, { name: mk.name })}</AppText>
+          <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
+          <Button compact variant="secondary" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
+        </Card>
+      )) : null}
 
       {result.missions.map((m) => (
         <Notice key={m.id} tone="success">{fmt(m.kind === 'milestone' ? strings.mission.milestoneDone : strings.mission.missionDone, { name: m.name })}</Notice>

@@ -11,7 +11,7 @@ async function player(tag, username, display, pastDays) {
   const c = client();
   const { data, error } = await c.auth.signUp({ email, password: PASSWORD });
   if (error) throw error;
-  assert.ok(data.session, 'cadastro sem confirmação de e-mail no ambiente de testes');
+  assert.ok(data.session, 'cadastro sem confirmação de e-mail: desligue "Confirm email" no projeto de testes');
   const uid = data.user.id;
   for (const [fn, args] of [
     ['claim_profile', { p_username: username, p_display_name: display }],
@@ -53,7 +53,8 @@ async function player(tag, username, display, pastDays) {
   const before = { ana: await snap(ana.uid), bia: await snap(bia.uid) };
   const market = (await conn.query(`select to_regclass('public.market_purchases') is not null as exists`)).rows[0].exists;
   await conn.end();
-  assert.equal(market, false, 'esta fase roda antes da migração do Mercado');
+  // no Supabase local a fase 1 roda antes do Mercado; num projeto hospedado já atualizado, use PRE_MARKET=0
+  if (process.env.PRE_MARKET !== '0') assert.equal(market, false, 'esta fase roda antes da migração do Mercado');
   saveState({ ana: { email: ana.email, uid: ana.uid }, bia: { email: bia.email, uid: bia.uid }, claimed: claim.data.itemId, before });
   ok(`pré-Mercado: Ana ${before.ana.siclos} Siclos, ${before.ana.goals} metas, ${before.ana.items} itens (inclui escolha gratuita ${claim.data.itemId}); Bia ${before.bia.siclos} Siclos`);
 })().catch((e) => { console.error('✘', e); process.exit(1); });

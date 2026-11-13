@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
@@ -47,9 +47,24 @@ export function MarketScreen() {
   useFocusEffect(
     useCallback(() => {
       void load();
-      if (userId) void pendingPurchaseStorage.load(userId).then(setPending);
+      if (userId) {
+        void pendingPurchaseStorage.load(userId).then((p) => {
+          setPending(p);
+          // compra que ficou sem resposta: verifica sozinha ao abrir (mesmo ID, sem cobrança dupla),
+          // para a tela não mostrar "aguardando" e "Obtido" ao mesmo tempo
+          if (p) autoVerify.current = p;
+        });
+      }
     }, [load, userId]),
   );
+  const autoVerify = useRef<PendingPurchase | null>(null);
+  useEffect(() => {
+    const p = autoVerify.current;
+    if (p && pending?.purchaseId === p.purchaseId && !busy) {
+      autoVerify.current = null;
+      void send(p);
+    }
+  });
 
   const name = displayNameOf;
 
@@ -68,6 +83,18 @@ export function MarketScreen() {
         // a compra fica guardada: o jogador pode verificar depois sem risco de cobrança dupla
         setPending(p);
         setMsg({ tone: 'error', text: errorMessage(e) });
+        // se a vitrine já mostra o item como seu, o servidor registrou a compra: não é mais "pendente"
+        try {
+          const fresh = await getMarket();
+          setMarket(fresh);
+          if (fresh.items.find((x) => x.itemId === p.itemId)?.owned) {
+            await pendingPurchaseStorage.clear(p.userId);
+            setPending(null);
+            setMsg({ tone: 'success', itemId: p.itemId, text: fmt(m.confirmedOffline, { item: name(p.itemId) }) });
+          }
+        } catch {
+          /* sem conexão também para a vitrine: continua pendente */
+        }
       } else {
         await pendingPurchaseStorage.clear(p.userId);
         setPending(null);
