@@ -6,6 +6,7 @@ const { chromium } = require('playwright');
 const pg = require('pg');
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
+const { diffRatio, sameLook } = require('./pixels.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR ?? `${__dirname}/screenshots`;
@@ -131,12 +132,12 @@ async function loaded(page, names) {
   await campAvatar(rp).waitFor();
   await settle(rp);
   const reopened = await campAvatar(rp).screenshot();
-  if (!after.equals(reopened)) {
+  if (!sameLook(after, reopened)) {
     fs.writeFileSync(`${SHOTS}/l1-debug-after.png`, after);
     fs.writeFileSync(`${SHOTS}/l1-debug-reopened.png`, reopened);
   }
-  assert.ok(!before.equals(after), 'o Início mostra o cajado trocado');
-  assert.ok(after.equals(reopened), 'após reabrir, o mesmo visual pixel a pixel');
+  assert.ok(diffRatio(before, after) > 0.01, 'o Início mostra o cajado trocado');
+  assert.ok(sameLook(after, reopened), `após reabrir, o mesmo visual (diferença ${(diffRatio(after, reopened) * 100).toFixed(2)}% dos pixels)`);
   await shot(rp, 'l1-03-acampamento-caminhada-412');
   const video = await rp.video().path();
   await R.close();

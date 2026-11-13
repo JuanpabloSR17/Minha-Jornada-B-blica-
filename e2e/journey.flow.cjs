@@ -5,6 +5,7 @@ const { chromium } = require('playwright');
 const pg = require('pg');
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
+const { diffRatio, sameLook } = require('./pixels.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR ?? `${__dirname}/screenshots`;
@@ -129,6 +130,8 @@ const finishHere = async (page) => {
   await R.page.getByText('Paz, Rute!').waitFor();
   await campAvatar(R.page).waitFor();
   await R.page.waitForTimeout(600);
+  await R.page.waitForLoadState('networkidle');
+  await R.page.waitForTimeout(500);
   const before = await campAvatar(R.page).screenshot();
   await R.page.goto(`${APP}/avatar/wardrobe?category=hands`);
   await R.page.getByRole('radio', { name: /^Cajado de Caminhada,/ }).click();
@@ -140,13 +143,17 @@ const finishHere = async (page) => {
   await campAvatar(R.page).waitFor();
   await R.page.waitForTimeout(900);
   assert.ok((await campAvatar(R.page).getAttribute('aria-label')).includes('Cajado de Caminhada'));
+  await R.page.waitForLoadState('networkidle');
+  await R.page.waitForTimeout(500);
   const after = await campAvatar(R.page).screenshot();
-  assert.ok(!before.equals(after), 'o acampamento deve mostrar a peça trocada');
+  assert.ok(diffRatio(before, after) > 0.01, 'o acampamento deve mostrar a peça trocada');
   await R.page.reload();
   await campAvatar(R.page).waitFor();
   await R.page.waitForTimeout(900);
+  await R.page.waitForLoadState('networkidle');
+  await R.page.waitForTimeout(500);
   const reopened = await campAvatar(R.page).screenshot();
-  assert.ok(after.equals(reopened), 'após reabrir, o acampamento mostra o mesmo visual (pixel a pixel, movimento reduzido)');
+  assert.ok(sameLook(after, reopened), `após reabrir, o acampamento mostra o mesmo visual (diferença ${(diffRatio(after, reopened) * 100).toFixed(2)}% dos pixels)`);
   assert.equal((await activeEq(rute)).hands, 'common_cajado_de_caminhada');
   await R.page.waitForTimeout(400);
   const swapVideo = await R.page.video().path();

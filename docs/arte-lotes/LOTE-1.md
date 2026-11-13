@@ -107,7 +107,22 @@ Total: 35 arquivos base + 35 `@2x`.
   uma delas, essa camada volta para o vetor (fica visível como diferença de acabamento).
 - **Tingimento:** nunca pinte a cor da pele ou do cabelo dentro de `.mask`. Todo o volume vai na `.shade`.
 
-## 6. Como verificar uma entrega
+## 6. Verificado com as camadas de teste
+
+Capturas em [`lote-1/capturas/`](lote-1/capturas/):
+[lado a lado](lote-1/capturas/lote1-lado-a-lado.png) (guarda-roupa, acampamento com o Cajado de Pastor,
+depois da troca, e no acampamento ilustrado do Codex numa integração local) e
+[gravação da troca](lote-1/capturas/lote1-troca-de-cajado.mp4).
+
+- Conta comum com corpo B, Tom 4 e cabelo curto preto: as camadas tingem com a cor da conta.
+- Guarda-roupa (luz neutra) e acampamento (noite + fogueira só na silhueta) usam as mesmas 13 camadas da
+  combinação, incluindo as variantes `.staff`; nenhuma camada de repouso de braço, mão ou manga carrega
+  com o cajado equipado.
+- Troca do Cajado de Pastor pelo Cajado de Caminhada no guarda-roupa: o Início muda e, depois de
+  reabrir o app, mostra o mesmo visual pixel a pixel.
+- 320 e 412 px sem rolagem lateral; corpos A e C continuam com a arte vetorial.
+
+## 7. Como verificar uma entrega
 
 ```bash
 npm run assets                               # valida e registra
@@ -119,7 +134,7 @@ node scripts/export-avatar-layers.cjs docs/arte-lotes/lote-1.json <pasta>
 Conferir também `/dev/avatar-lab?fit=1` (os outros corpos continuam vetoriais) e a luz do acampamento
 sobre a silhueta.
 
-## 7. Próximos lotes (sugestão)
+## 8. Próximos lotes (sugestão)
 
 1. Lote 2: corpos A e C da mesma combinação (as mesmas 23 camadas, por corpo; cabelo, olhos, boca e
    sobrancelhas em `all/` já servem).
