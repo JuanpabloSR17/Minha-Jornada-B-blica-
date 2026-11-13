@@ -164,11 +164,13 @@ Verificação (`npm run art:intake`):
 
 [`ESTADO.md`](lote-1/ESTADO.md): 6 de 70 arquivos com pintura entregue.
 
-**A corrigir na próxima exportação: névoa de alfa.** Fora das peças, 69–99% do canvas das versões
-1024×1536 tem alfa entre 1 e 15, preto. Isso deixa uma borda reta quase invisível no palco do guarda-roupa: o
-céu cai de 219 para 216 de luminância onde começa o canvas. Exporte o canal alfa sem perdas (WebP lossless,
-ou `alpha_quality=100` com `exact`) e o fundo com alfa 0. Os arquivos foram aplicados exatamente como
-entregues. A entrada agora avisa automaticamente (`scripts/art-alpha-check.py`).
+**Névoa de alfa: corrigida (`Jornada_Biblica_Lote_2D_Alfa_Corrigido.zip`).**
+- **O problema:** na primeira exportação, 69–99% do canvas das versões 1024×1536 tinha alfa entre 1 e 15, preto. Isso deixava uma borda reta no palco do guarda-roupa: o céu caía de 219,3 para 216,3 de luminância onde começava o canvas.
+- **A reexportação:** o Codex reexportou só as três WebP base, com alfa sem perdas. As três `@2x` são byte a byte iguais às já aplicadas.
+- **Integridade:** o novo `SHA256SUMS.txt` confere para os seis sprites.
+- **Transparência:** fundo aberto com alfa 0 em 70–99% do canvas; pixels de alfa 1–15 só junto às bordas (0,03–0,18%); bordas suaves (16–239) iguais às da primeira entrega.
+- **`art:intake`:** "alfa: sem névoa residual"; validação, testes de encaixe e percurso no guarda-roupa e no acampamento passaram.
+- **Palco do guarda-roupa:** céu contínuo, 219,3 dentro e fora do canvas.
 
 ### Próximo pedido: rosto, cabelo, mãos e túnica (corpo B)
 
