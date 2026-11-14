@@ -207,10 +207,10 @@ async function loaded(page, names) {
     const srcs = await hp.evaluate(() => [...document.querySelectorAll('img')].map((i) => decodeURIComponent(i.currentSrc || i.src)));
     assert.ok(srcs.some((s) => /hair-short\/all\/front_hair\.mask[.@]/.test(s)) && srcs.some((s) => /hair-short\/all\/back_hair\.shade[.@]/.test(s)), `cabelo ${label}: máscaras e sombras pintadas`);
     await hp.getByTestId('pintura').screenshot({ path: `${SHOTS}/l1-08-cabelo-${label}.png` });
-    // célula "Pintura · guarda-roupa": recorte camp 262 176 520 980; cabelo pintado em 442–581 × 196–328
+    // Recorte do acampamento: origem (262, 176), altura 980; cabelo pintado em 442–581 × 196–328.
     const box = await hp.getByText('Pintura · guarda-roupa').locator('..').locator('svg').first().boundingBox();
-    const sx = box.width / 520, sy = box.height / 980;
-    hairShots[label] = await hp.screenshot({ clip: { x: box.x + (452 - 262) * sx, y: box.y + (200 - 176) * sy, width: 120 * sx, height: 60 * sy } });
+    const scale = box.height / 980;
+    hairShots[label] = await hp.screenshot({ clip: { x: box.x + (452 - 262) * scale, y: box.y + (200 - 176) * scale, width: 120 * scale, height: 60 * scale } });
   }
   const { PNG } = require('pngjs');
   const lum = (buf) => { const p = PNG.sync.read(buf); let s = 0; for (let i = 0; i < p.data.length; i += 4) s += 0.2126 * p.data[i] + 0.7152 * p.data[i + 1] + 0.0722 * p.data[i + 2]; return s / (p.width * p.height); };
@@ -223,7 +223,7 @@ async function loaded(page, names) {
   // ---------------------------------------------------------------- tom de pele nas mãos pintadas: tons 1 e 6, luz neutra, nas duas poses
   const tp = await browser.newPage({ viewport: { width: 1400, height: 760 } });
   const handLum = {};
-  const handBox = { fist: [636, 500, 60, 66], relaxed: [340, 874, 58, 64], rest: [632, 874, 52, 64] };
+  const handBox = { fist: [724, 535, 38, 57], forearm: [707, 624, 18, 14], relaxed: [340, 874, 58, 64], rest: [632, 874, 52, 64] };
   for (const [pose, staff] of [['cajado', 'shepherd'], ['caminhada', 'walk'], ['repouso', 'none']]) {
     for (const skin of ['skin-1', 'skin-6']) {
       await tp.goto(`${APP}/dev/avatar-lab?pintura=1&staff=${staff}&skin=${skin}`);
@@ -234,8 +234,8 @@ async function loaded(page, names) {
       for (const w of want) assert.ok(srcs.some((s) => s.includes(w)), `${pose} ${skin}: ${w} pintada carregada`);
       await tp.getByTestId('pintura').screenshot({ path: `${SHOTS}/l1-09-maos-${pose}-${skin}.png` });
       const box = await tp.getByText('Pintura · guarda-roupa').locator('..').locator('svg').first().boundingBox();
-      const k = box.width / 520;
-      const zones = staff === 'none' ? ['relaxed', 'rest'] : ['fist', 'relaxed'];
+      const k = box.height / 980;
+      const zones = staff === 'none' ? ['relaxed', 'rest'] : ['fist', 'forearm', 'relaxed'];
       for (const z of zones) {
         const [x, y, w, h] = handBox[z];
         const buf = await tp.screenshot({ clip: { x: box.x + (x - 262) * k, y: box.y + (y - 176) * k, width: w * k, height: h * k } });
@@ -249,7 +249,7 @@ async function loaded(page, names) {
     assert.ok(handLum[key] - handLum[`${base}/skin-6`] > 25, `${base}: tom 1 mais claro que o tom 6 (${handLum[key].toFixed(0)} × ${handLum[`${base}/skin-6`].toFixed(0)})`);
   }
   assert.ok(Math.abs(handLum['cajado/fist/skin-1'] - handLum['caminhada/fist/skin-1']) < 12, 'a mão fechada é a mesma nos dois cajados (mesma âncora)');
-  step(`mãos pintadas nas quatro variantes (repouso, relaxada e fechada nos dois cajados) seguem o tom: ${Object.entries(handLum).map(([k2, v]) => `${k2} ${v.toFixed(0)}`).join(', ')}`);
+  step(`mãos e antebraço visível nos dois cajados seguem o tom da pele: ${Object.entries(handLum).map(([k2, v]) => `${k2} ${v.toFixed(0)}`).join(', ')}`);
 
   // ---------------------------------------------------------------- 320 px
   await page.setViewportSize({ width: 320, height: 640 });

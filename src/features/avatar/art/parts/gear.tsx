@@ -11,7 +11,7 @@ import { p, type ArtContext, type VectorArt } from '../types';
  * - bolsa: alça em `chest` (curva que acompanha o volume do peito e da túnica, com sombra suave) e
  *   bolsa em `waist` (repousa no quadril oposto, sob o braço);
  * - cajado: haste em `cloak_front` e mão fechada em `hand_item`. O cajado põe o braço direito na
- *   pose `staff` (cotovelo dobrado, mão à altura do peito) — braço, manga e mão seguem as âncoras;
+ *   pose `staff` (antebraço sobe em diagonal até a mão) — braço, manga e mão seguem as âncoras;
  * - coberturas de cabeça: `headwear` no espaço da cabeça (reduzida) + cabelo ajustado em `back_item`;
  * - manto drapeado: costas em `cloak_back` e frente em `chest`, abaixo dos braços.
  *
@@ -148,15 +148,11 @@ export const beltPouch: VectorArt = (ctx) => {
 // ================================================================= cajados
 
 /**
- * Encaixe do cajado: a haste passa pelo punho fechado da mão direita. Na pose `staff` o punho fica
- * acima do pulso (antebraço subindo); a haste corre à frente do corpo até o chão.
+ * A haste fica do lado de fora do pulso, deixando visível o antebraço até a palma.
  */
 function staffFit(ctx: ArtContext) {
-  const pose = ctx.armPose ?? 'rest';
-  const w = anchors(ctx.g, 1, pose).wrist;
-  const { dx } = adj(ctx);
-  const raised = pose === 'staff';
-  return { x: w.x + dx + (raised ? 6 : 0), fistTop: raised ? w.y - 70 : w.y - 8, raised };
+  const { wrist } = anchors(ctx.g, 1, 'staff');
+  return { x: wrist.x + ctx.g.forearm - 1, fistTop: wrist.y - 86 };
 }
 
 function staffShaft(ctx: ArtContext, top: number, crook: boolean) {
@@ -218,23 +214,26 @@ export const staffWalk: VectorArt = (ctx) => {
 export const staffGrip: VectorArt = (ctx) => {
   const { g, skin } = ctx;
   const { x, fistTop } = staffFit(ctx);
-  const hw = g.forearm * 0.8 + 7;
+  const scale = g.forearm / 27;
   const line = lineOf(skin);
-  const fingers = [0, 1, 2, 3].map((i) => {
-    const y = fistTop + 22 + i * 13;
-    return `M${f(x - hw - 1)} ${f(y)} C${f(x - hw - 5)} ${f(y + 12)} ${f(x + hw + 2)} ${f(y + 14)} ${f(x + hw + 5)} ${f(y + 2)} C${f(x + hw + 3)} ${f(y - 6)} ${f(x - hw)} ${f(y - 8)} ${f(x - hw - 1)} ${f(y)} Z`;
-  });
-  const back = `M${f(x + hw - 6)} ${f(fistTop - 2)} C${f(x + hw + 8)} ${f(fistTop + 20)} ${f(x + hw + 10)} ${f(fistTop + 50)} ${f(x + hw + 4)} ${f(fistTop + 76)} L${f(x - hw + 4)} ${f(fistTop + 74)} C${f(x - hw - 2)} ${f(fistTop + 50)} ${f(x - hw)} ${f(fistTop + 20)} ${f(x - hw + 6)} ${f(fistTop)} Z`;
-  const thumb = `M${f(x - hw + 2)} ${f(fistTop + 8)} C${f(x - 6)} ${f(fistTop + 2)} ${f(x + 12)} ${f(fistTop + 8)} ${f(x + 16)} ${f(fistTop + 18)} C${f(x + 12)} ${f(fistTop + 28)} ${f(x - 8)} ${f(fistTop + 26)} ${f(x - hw + 2)} ${f(fistTop + 22)} Z`;
-  const parts = [back, ...fingers, thumb];
+  const fingers = [
+    'M-9 30 C0 27 7 23 19 23 C31 23 36 33 30 39 C22 48 6 50 -7 47 C-18 45 -18 35 -9 30Z',
+    'M-10 45 C2 44 13 39 26 43 C40 46 38 57 27 61 C15 66 1 65 -11 61 C-21 58 -21 48 -10 45Z',
+    'M-10 60 C3 60 15 56 24 59 C36 61 36 72 25 76 C12 80 1 78 -10 74 C-20 70 -19 63 -10 60Z',
+    'M-8 74 C3 75 13 74 20 77 C31 82 24 91 14 92 C3 93 -7 89 -12 86 C-19 82 -15 75 -8 74Z',
+  ];
+  const palm = 'M-50 95 C-40 83 -41 66 -33 47 C-30 37 -24 27 -19 24 C-15 26 1 36 4 44 C9 56 11 73 6 83 C0 89 -8 90 -13 94 C-16 98 -17 103 -22 109 Q-38 106 -50 95Z';
+  const thumb = 'M-33 47 C-30 33 -25 19 -18 15 C-12 7 -8 3 0 6 Q8 10 13 15 C16 20 9 24 2 25 L-11 24 C-15 37 -19 47 -27 49 Q-31 50 -33 47Z';
+  const crease = 'M-28 51 C-23 54 -24 66 -23 73 Q-20 81 -16 84';
+  const gradient = `${ctx.uid}-grip`;
   return (
-    <G>
-      {parts.map((d, i) => <Path key={`o${i}`} d={d} fill={line} stroke={line} strokeWidth={4} strokeLinejoin="round" />)}
-      {parts.map((d, i) => <Path key={`f${i}`} d={d} fill={i === 0 ? shade(skin, -0.12) : i === parts.length - 1 ? shade(skin, 0.04) : shade(skin, -0.02 - i * 0.02)} />)}
-      {fingers.map((_, i) => (
-        <Path key={`k${i}`} d={`M${f(x + hw - 4)} ${f(fistTop + 23 + i * 13)} q4 -4 6 0`} stroke={shade(skin, -0.32)} strokeWidth={1.4} fill="none" />
-      ))}
-      <Path d={`M${f(x - hw + 6)} ${f(fistTop + 12)} q10 -4 18 2`} stroke={shade(skin, 0.18)} strokeWidth={2} fill="none" opacity={0.7} />
+    <G transform={`translate(${f(x)} ${f(fistTop)}) scale(${f(scale)} 1)`}>
+      <Defs><VolumeGradient id={gradient} base={skin} edge={-0.19} /></Defs>
+      <Path d={palm} fill={url(gradient)} />
+      <Path d="M-49 95 C-39 83 -41 66 -33 47 M-23 108 C-19 102 -16 96 -13 94" stroke={line} strokeWidth={2} fill="none" />
+      <Path d={crease} stroke={shade(skin, -0.29)} strokeWidth={1.6} strokeLinecap="round" fill="none" />
+      {fingers.map((d, i) => <Path key={i} d={d} fill={url(gradient)} stroke={line} strokeWidth={2.1} />)}
+      <Path d={thumb} fill={url(gradient)} stroke={line} strokeWidth={2.1} />
     </G>
   );
 };

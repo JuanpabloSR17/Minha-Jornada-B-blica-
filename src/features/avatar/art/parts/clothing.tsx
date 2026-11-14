@@ -124,15 +124,16 @@ function hemCurve(g: BodyGeometry, hemY: number, off: number) {
 function sleeveGeo(g: BodyGeometry, side: -1 | 1, kind: Sleeve, pose?: ArmPose) {
   const a = anchors(g, side, pose);
   const t = kind === 'elbow' ? 0.2 : kind === 'three' ? 0.5 : 0.95;
+  if (pose === 'staff' && side === 1) {
+    const end = lerpPt(a.elbow, a.wrist, kind === 'three' ? 0.34 : t);
+    const wEnd = g.forearm + (kind === 'long' ? 1 : 7);
+    const e = lerpPt(a.elbow, end, 0.08);
+    const upper = limbPath(a.shoulder, a.elbow, g.upperArm + 15, g.upperArm + 13, 0.06);
+    const fore = band(e, end, g.forearm + 15, wEnd);
+    return { a, end, wEnd, d: `${upper} ${fore}` };
+  }
   const end = lerpPt(a.elbow, a.wrist, t);
   const wEnd = kind === 'elbow' ? g.forearm + 22 : kind === 'three' ? g.forearm + 16 : g.forearm + 18;
-  // braço dobrado (cajado): o antebraço sobe, então a manga vira dois segmentos — braço e antebraço —
-  // em vez de um contorno único que se cruzaria no cotovelo
-  if (pose === 'staff' && side === 1) {
-    const upper = limbPath(a.shoulder, a.elbow, g.upperArm + 15, g.upperArm + 13, 0.06);
-    const fore = limbPath(a.elbow, end, g.upperArm + 12, wEnd - 2, 0.04);
-    return { a, end, wEnd: wEnd - 2, d: `${upper} ${fore}` };
-  }
   return { a, end, wEnd, d: sleevePath(a.shoulder, a.elbow, end, g.upperArm + 15, g.upperArm + 13, wEnd) };
 }
 

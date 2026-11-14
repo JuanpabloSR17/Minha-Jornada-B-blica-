@@ -8,8 +8,9 @@ cabelo e roupa, caimento e materiais convincentes). O cenário ilustrado do acam
 
 Lista legível por máquina: [`lote-1.json`](lote-1.json). Moldes de cada camada (2048×3072, transparentes,
 na mesma árvore de pastas dos arquivos finais): [`lote-1/moldes/`](lote-1/moldes/). Molde completo com
-âncoras: [`lote-1/molde-corpo-b-cajado.png`](lote-1/molde-corpo-b-cajado.png). Folha com todas as
-camadas: [`lote-1/folha-de-camadas.png`](lote-1/folha-de-camadas.png).
+âncoras: [`lote-1/molde-corpo-b-cajado.png`](lote-1/molde-corpo-b-cajado.png). A folha de
+[camadas](lote-1/folha-de-camadas.png) e os moldes arquivados registram a pose inicial. Use as
+âncoras desta página para pintar a pegada atual.
 
 ## 1. O que já está no app
 
@@ -46,10 +47,10 @@ A pintura fica no **espaço final do corpo**. A cabeça já está na proporção
 | Boca | (512, 362) | — |
 | Meia-largura da cabeça | ~63 | — |
 | Ombros | (382, 476) e (642, 476) | (642, 476) |
-| Cotovelos | (354, 690) e (670, 690) | **(690, 704)** |
-| Pulsos | (365, 884) e (659, 884) | **(658, 566)** |
-| Punho fechado no cajado | — | **y 496 a 572, centro x 664** |
-| Haste do cajado | — | **x 664**, do gancho (topo y 236; gancho até x ~762) ao chão (y 1456) |
+| Cotovelos | (354, 690) e (670, 690) | **(678, 704)** |
+| Pulsos | (365, 884) e (659, 884) | **(716, 600)** |
+| Punho fechado no cajado | — | **y ~514 a 605, centro x 742** |
+| Haste do cajado | — | **x 742**, do gancho (topo y ~236; gancho até x ~845) ao chão (y 1456) |
 | Quadris | (457, 792) e (567, 792) | — |
 | Joelhos | (460, 1078) e (564, 1078) | — |
 | Tornozelos | (465, 1386) e (559, 1386) | — |
@@ -79,10 +80,10 @@ que não é pele em `.webp` e a parte que é pele em `.shade`.
 | 10 | `waist/common_bolsa_do_viajante/body-b/chest` | base | Alça a tiracolo **por cima** do drapeado e da túnica, acompanhando o volume do peito, com sombra suave na roupa e fivela |
 | 11 | `waist/common_bolsa_do_viajante/body-b/waist` | base | Bolsa de couro gasto no quadril esquerdo, por baixo do braço; sombra de contato na túnica |
 | 12 | `body/base/body-b/arms` **(par)** | mask | Braços relaxados, sem mãos |
-| 13 | `body/base/body-b/arms.staff` **(par)** | mask | Braço esquerdo relaxado; direito com cotovelo para fora (690, 704) e antebraço subindo até (658, 566) |
+| 13 | `body/base/body-b/arms.staff` **(par)** | mask | Um braço relaxado. O braço que segura o cajado sobe do cotovelo (678, 704) ao pulso (716, 600) |
 | 14 | `outfit/tunic-linen/body-b/sleeves` | base | Mangas três-quartos, braços relaxados |
 | 15 | `outfit/tunic-linen/body-b/sleeves.staff` | base | Manga esquerda igual à 14; manga direita acompanhando o braço dobrado (braço + meio antebraço) |
-| 16 | `hands/staff-shepherd/body-b/cloak_front.staff` | base | Haste do cajado de pastor em x 664, gancho acima da cabeça, madeira com veios e desgaste; **abaixo** da mão |
+| 16 | `hands/staff-shepherd/body-b/cloak_front.staff` | base | Haste do cajado de pastor em x 742, gancho acima da cabeça e madeira com veios e desgaste |
 | 17 | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff` | base | Cajado de caminhada reto, topo y ~262, tira de couro abaixo do topo — **peça da troca** |
 | 18 | `body/base/body-b/hands` **(par)** | mask | As duas mãos relaxadas nos pulsos |
 | 19 | `body/base/body-b/hands.staff` **(par)** | mask | **Só a mão esquerda** (a direita está na camada 22/23) |
@@ -97,8 +98,9 @@ Total: 35 arquivos base + 35 `@2x`.
 
 - Peças que tocam o corpo seguem o contorno do **molde da própria camada**. Pode passar 4–8 px da borda
   para o caimento do tecido, mas não pode descobrir pele que o molde cobre.
-- **Mão no cajado:** a haste (16/17) não pode ter interrupção onde fica o punho. A mão (20/21) cobre a
-  haste entre y 496 e 572 e deixa a madeira visível acima e abaixo.
+- **Mão no cajado:** desenhe manga, antebraço, pulso e dedos na mesma pose antes de exportar as camadas.
+  Deixe o antebraço visível entre a manga e a mão. A haste passa atrás dos dedos e segue visível acima
+  e abaixo da pegada. Confira os dois cajados no guarda-roupa e no acampamento, em tela pequena.
 - **Bolsa:** a alça (10) termina por baixo da bolsa (11). A bolsa fica abaixo da camada dos braços
   (12/13), então o braço esquerdo pode passar à frente dela.
 - **Manto:** o drapeado (9) fica abaixo dos braços. As costas (1) não podem aparecer entre as pernas
@@ -106,6 +108,10 @@ Total: 35 arquivos base + 35 `@2x`.
 - **Pose:** com o cajado equipado, o app usa só `arms.staff`, `hands.staff` e `sleeves.staff`. Se faltar
   uma delas, essa camada volta para o vetor (fica visível como diferença de acabamento).
 - **Tingimento:** nunca pinte a cor da pele ou do cabelo dentro de `.mask`. Todo o volume vai na `.shade`.
+
+A revisão da pegada usa o mesmo desenho de antebraço e mão nos dois cajados do corpo Atlético.
+A arte vetorial dos corpos Esguio e Robusto acompanha as novas âncoras. O roteiro do avatar verifica
+os tons 1 e 6 no antebraço exposto, além da troca do cajado, da remoção e da reabertura do visual.
 
 ## 6. Verificado com as camadas de teste
 

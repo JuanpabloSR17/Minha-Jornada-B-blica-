@@ -66,8 +66,8 @@ export function anchors(g: BodyGeometry, side: Side, pose: ArmPose = 'rest') {
     // cotovelo para fora e para baixo, antebraço subindo até a mão que envolve o cajado
     return {
       shoulder: { x: CX + (g.shoulder - 24), y: 476 },
-      elbow: { x: CX + g.shoulder + 24, y: 704 },
-      wrist: { x: CX + g.shoulder - 8, y: 566 },
+      elbow: { x: CX + g.shoulder + 12, y: 704 },
+      wrist: { x: CX + g.shoulder + 50, y: 600 },
       hip: { x: CX + g.hip * 0.48, y: 792 },
       knee: { x: CX + (g.hip * 0.42 + 4), y: 1078 },
       ankle: { x: CX + (g.hip * 0.36 + 6), y: 1386 },
@@ -169,6 +169,6 @@ export const CROPS = {
   hand: '520 600 400 520',
   head: '382 150 260 260',
   /** acampamento: enquadramento mais próximo (cabeça até a canela), com espaço para o cajado */
-  camp: '262 176 520 980',
+  camp: '262 176 580 980',
 } as const;
 export type AvatarCrop = keyof typeof CROPS;
