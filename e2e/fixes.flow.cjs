@@ -157,7 +157,8 @@ const panel = (page) => page.getByTestId('home-action-panel');
   // ================================================================ 4) Mercado: confirmação só com o ID desta compra
   await db.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount) values ($1, 'TEST_GRANT', 'fix-market', 400)`, [ana.id]);
   const row = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    where i.shop_eligible and i.is_active and not i.is_starter and i.shop_price_suggested <= 400
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested <= 400
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
   const balance = async () => Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [ana.id])).rows[0].s);
@@ -183,7 +184,8 @@ const panel = (page) => page.getByTestId('home-action-panel');
   await shot(page, 'fx-06-mercado-posse-por-outra-via-412');
   // com resposta: o servidor recusa (item já possuído) e a tela comunica o mesmo estado real
   const row2 = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    where i.shop_eligible and i.is_active and not i.is_starter and i.shop_price_suggested <= 400
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested <= 400
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
   await page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
@@ -198,7 +200,8 @@ const panel = (page) => page.getByTestId('home-action-panel');
   assert.equal(await balance(), before);
   // e a compra de verdade continua confirmada só pelo próprio ID (a resposta se perde depois do registro)
   const row3 = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    where i.shop_eligible and i.is_active and not i.is_starter and i.shop_price_suggested <= 400
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested <= 400
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
   await page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
@@ -225,12 +228,28 @@ const panel = (page) => page.getByTestId('home-action-panel');
     await P.page.goto(`${APP}/profile`);
     const ach = P.page.getByTestId('profile-achievements').filter({ visible: true });
     await ach.waitFor();
+    await ach.getByLabel(/^Capítulos lidos:/).waitFor();
     await ach.getByText('Mundos concluídos').waitFor();
-    await ach.getByText('Marcos cumpridos').waitFor();
+    await ach.getByLabel(/^Marcos cumpridos:/).waitFor();
+    await ach.getByRole('button', { name: 'Abrir mapa da Jornada' }).waitFor();
     assert.equal(await P.page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, `Perfil ${w}px sem rolagem lateral`);
     await ach.scrollIntoViewIfNeeded();
     await shot(P.page, `fx-08-perfil-${w}`);
   }
+
+  // A conclusão de um mundo já registrado aparece no mapa e como medalha no Perfil.
+  for (let chapter = 1; chapter <= 22; chapter++) {
+    await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:REV.' || $2::int,
+      jsonb_build_object('book', 'REV', 'chapter', $2::int))`, [ana.id, chapter]);
+  }
+  await B.page.goto(`${APP}/profile`);
+  const medal = B.page.getByTestId('profile-medal-nova-criacao');
+  await medal.getByText('Visão da Nova Criação', { exact: true }).waitFor();
+  await medal.getByText('22 de 22 capítulos', { exact: true }).waitFor();
+  await B.page.getByRole('button', { name: 'Abrir mapa da Jornada' }).click();
+  await B.page.getByTestId('journey-pin-nova-criacao').click();
+  await B.page.getByTestId('journey-world-nova-criacao').getByText('Mundo concluído', { exact: true }).waitFor();
+  step('Perfil e mapa mostram a mesma conclusão de mundo registrada no servidor');
   step('Ler (livros por mundo) e Perfil na identidade da jornada, com as conquistas da conta (marcos, Santos, mundos), em 320 e 412 px');
 
   await browser.close();

@@ -15,7 +15,7 @@ const priority = () => [...new Set([
   ...ARTIFACTS,
 ])];
 
-describe('ícones de inventário (lote 1)', () => {
+describe('ícones de inventário', () => {
   it('todo item prioritário tem miniatura própria por ID canônico', () => {
     const missing = priority().filter((id) => !hasItemIcon(id) && !isArtifact(id));
     expect(missing).toEqual([]);
@@ -27,8 +27,7 @@ describe('ícones de inventário (lote 1)', () => {
   });
 
   it('cobertura total registrada', () => {
-    const covered = COSMETIC_ITEMS.filter((i) => hasItemIcon(i.id) || isArtifact(i.id)).length;
-    expect(COSMETIC_ITEMS).toHaveLength(185);
-    expect(covered).toBe(63);
+    const missing = COSMETIC_ITEMS.filter((i) => !hasItemIcon(i.id) && !isArtifact(i.id));
+    expect(missing.map((i) => i.id)).toEqual([]);
   });
 });

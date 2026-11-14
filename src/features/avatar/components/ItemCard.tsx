@@ -7,7 +7,7 @@ import { strings } from '@/i18n';
 import { ItemIcon } from './ItemIcon';
 import { RarityBadge, RARITY_COLOR } from './RarityBadge';
 import type { ItemView } from '../domain/wardrobe';
-import { displayName } from '../domain/catalog';
+import { displayName, isEquippable } from '../domain/catalog';
 
 /** Cartão de inventário: ícone da peça, raridade, bloqueio, equipado e situação da arte. */
 export const ItemCard = memo(function ItemCard({ view, selected, onPress, width }: { view: ItemView; selected: boolean; onPress: (v: ItemView) => void; width: number }) {
@@ -38,17 +38,15 @@ export const ItemCard = memo(function ItemCard({ view, selected, onPress, width 
             <Icon name="check" size={13} color={colors.onPrimary} />
           </View>
         ) : null}
-        {view.art !== 'final' ? (
-          <View style={[styles.artTag, { backgroundColor: colors.surfaceRaised }]}>
-            <AppText variant="caption" style={styles.artTagText} muted>
-              {view.art === 'missing' ? strings.wardrobe.artMissing : strings.wardrobe.artProvisional}
-            </AppText>
-          </View>
-        ) : null}
       </View>
       <AppText variant="caption" numberOfLines={2} style={styles.label} color={selected ? colors.text : colors.textMuted}>
         {displayName(item)}
       </AppText>
+      {isEquippable(item) && view.art !== 'final' ? (
+        <AppText variant="caption" style={styles.artTagText} muted>
+          {strings.wardrobe.avatarArtPending}
+        </AppText>
+      ) : null}
     </Pressable>
   );
 });
@@ -59,7 +57,6 @@ const styles = StyleSheet.create({
   corner: { position: 'absolute', width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
   br: { bottom: 4, right: 4 },
   tr: { top: 4, right: 4 },
-  artTag: { position: 'absolute', bottom: 3, left: 3, paddingHorizontal: 4, borderRadius: 4, opacity: 0.9 },
-  artTagText: { fontSize: 9, lineHeight: 12 },
+  artTagText: { fontSize: 9, lineHeight: 12, textAlign: 'center' },
   label: { textAlign: 'center', minHeight: 30, fontSize: 12, lineHeight: 15 },
 });

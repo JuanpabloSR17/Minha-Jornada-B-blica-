@@ -33,7 +33,8 @@ async function login(page, email) {
   const owns = async (item) => Number((await conn.query(`select count(*) from user_items where user_id = $1 and item_id = $2`, [uid, item])).rows[0].count);
   const unowned = async (max) => (await conn.query(
     `select i.id, i.name, i.slot, i.shop_price_suggested::int price from cosmetic_items i
-     where i.shop_eligible and i.is_active and not i.is_starter and i.rarity <> 'holy' and i.shop_price_suggested <= $2
+     join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+     where i.shop_price_suggested <= $2
        and not private.owns_canonical($1, i.id) order by i.shop_price_suggested desc, i.id`, [uid, max])).rows;
   const browser = await chromium.launch();
   try {
@@ -116,8 +117,16 @@ async function login(page, email) {
 
     // ------------------------------------------------ duas compras disputando o saldo (dois aparelhos)
     const b3 = await balance();
-    const [z, w] = await unowned(b3);
-    assert.ok(z && w && z.price + w.price > b3, `precisa de dois itens que não cabem juntos no saldo ${b3}`);
+    // A seleção diária muda. Deixe exatamente o maior preço como saldo para
+    // que cada oferta caiba separadamente e as duas não caibam juntas.
+    const [highest] = await unowned(b3);
+    if (highest && b3 > highest.price) {
+      await conn.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount)
+        values ($1, 'TEST_ADJUST', 'market-race', $2)`, [uid, highest.price - b3]);
+    }
+    const raceBalance = await balance();
+    const [z, w] = await unowned(raceBalance);
+    assert.ok(z && w && z.price + w.price > raceBalance, `precisa de dois itens que não cabem juntos no saldo ${raceBalance}`);
     const B = await phone(browser);
     await login(B.page, s.ana.email);
     await page.goto(`${APP}/market`);
@@ -149,11 +158,11 @@ async function login(page, email) {
     const loser = winner === z ? w : z;
     assert.equal(await owns(winner.id), 1);
     assert.equal(await owns(loser.id), 0);
-    assert.equal(await balance(), b3 - winner.price);
+    assert.equal(await balance(), raceBalance - winner.price);
     assert.ok((await balance()) >= 0);
     await shot(page, 'real-06-race-a');
     await shot(B.page, 'real-06-race-b');
-    ok(`saldo disputado em dois aparelhos (${b3}: ${z.name} ${z.price} × ${w.name} ${w.price}): um aparelho comprou ${winner.name}, o outro recebeu "saldo insuficiente"; saldo final ${b3 - winner.price}`);
+    ok(`saldo disputado em dois aparelhos (${raceBalance}: ${z.name} ${z.price} × ${w.name} ${w.price}): um aparelho comprou ${winner.name}, o outro recebeu "saldo insuficiente"; saldo final ${raceBalance - winner.price}`);
 
     // ------------------------------------------------ missão de Êxodo 28 (catálogo v7) com o Peitoral já obtido
     // posse anterior do Peitoral (ambiente de testes: o item ainda não tem outra rota de obtenção)

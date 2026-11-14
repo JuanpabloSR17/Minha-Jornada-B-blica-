@@ -105,7 +105,7 @@ select tests.assert(
 select tests.mk_r('c7000000-0000-0000-0000-0000000000c7', 'raros_compra');
 insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values ('c7000000-0000-0000-0000-0000000000c7', 'TEST_GRANT', 'fixture', 500);
 select set_config('request.jwt.claim.sub', 'c7000000-0000-0000-0000-0000000000c7', false);
-select public.purchase_market_item(md5('raro-flauta')::uuid, 'rare_flauta_do_musico');
+select tests.buy('c7000000-0000-0000-0000-0000000000c7', 'raro-flauta', 'rare_flauta_do_musico');
 select tests.assert(
   (select tests.granted_set(r) = '{}' and r -> 'missions' -> 0 ->> 'id' = 'missao_uncao_de_salomao' from tests.rfin('c7000000-0000-0000-0000-0000000000c7', '1ki1', '1KI', 1) r),
   'quem comprou a Flauta conclui a missão de 1 Reis 1 sem receber o item de novo');

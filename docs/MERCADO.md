@@ -1,15 +1,26 @@
-# Mercado dos Viajantes (v1)
+# Mercado dos Viajantes
 
 O jogador troca os Siclos que recebe ao cumprir a meta diária (40 por meta) por itens cosméticos.
 Entrada: botão **Mercado dos Viajantes** no Início (`/market`).
 
-## O que está à venda
+## Vitrine diária
 
-Somente itens que o catálogo vigente marca para a loja (`cosmetic_items.shop_eligible`, vindo de
-`loja: true` no catálogo oficial v2), ativos, não Santos, não Premium e não peças iniciais.
+Às **21h no horário de Brasília**, o servidor troca a seleção para todas as contas. A tela mostra
+quanto falta para a virada e atualiza ao chegar a hora ou ao reabrir o Mercado.
+
+- **7 itens do dia:** dois Comuns de vestir, três Comuns de outras categorias e dois Raros.
+- **4 permanentes:** Cantil de Água, Ferramenta da Colheita, Lamparina de Barro e Túnica de Linho Cru.
+- Os Comuns da vitrine são embaralhados pela data. Os Raros percorrem uma fila embaralhada, dois
+  por dia, garantindo que a composição mude a cada virada enquanto houver mais de dois Raros.
+- O jogador vê a peça e o preço antes de confirmar. A compra concede a peça exibida.
+
+## Catálogo elegível
+
+Somente Comuns e Raros ativos que o catálogo vigente marca para venda (`cosmetic_items.shop_eligible`,
+vindo de `loja: true` no catálogo oficial v2), fora das peças iniciais e Premium.
 Preço = `shop_price_suggested` (`preco_siclos_sugerido` do catálogo oficial).
 
-- **25 itens à venda** (20 Comuns e 5 Raros), **todos com preço definido**.
+- **25 itens elegíveis** (20 Comuns e 5 Raros), todos com preço definido.
 - O catálogo oficial marca 27 itens com `loja: true`. Os 2 que ficam de fora são as peças iniciais
   **Sandálias de Couro** (`sandals-leather`, oficial `common_sandalias_de_couro`, 100) e **Cinto de
   Corda** (`belt-rope`, oficial `common_cinto_de_corda`, 160): todo jogador já os recebe de graça.
@@ -44,14 +55,14 @@ Preço = `shop_price_suggested` (`preco_siclos_sugerido` do catálogo oficial).
 | Sandálias do Peregrino | `rare_sandalias_do_peregrino` | Raro | 400 |
 | Instrumento de Cordas | `rare_instrumento_de_cordas` | Raro | 450 |
 
-## Compra — `public.purchase_market_item(id_da_compra, item)`
+## Compra
 
 Tudo na mesma transação, sob a mesma trava do jogador usada por missões, meta diária e escolha gratuita:
 
 1. Resolve o **ID canônico** (aliases e IDs antigos, ex.: `net-fishing` → `common_rede_de_pesca`).
-2. Confere **disponibilidade** (`item_not_for_sale`), **preço** (`price_not_defined`),
-   **posse** pela identidade canônica, inclusive posse registrada com ID antigo (`item_already_owned`),
-   e **saldo** (`insufficient_siclos`).
+2. Confere disponibilidade no catálogo, posse pela identidade canônica e validade da oferta
+   (`market_offer_expired`). Na versão atual do app, o servidor também compara o dia e o preço
+   apresentados na confirmação (`market_price_changed`). Em seguida, confere o saldo.
 3. Debita (`siclos_ledger`, `MARKET_PURCHASE`, `purchase:<id>`, valor negativo) e concede
    (`user_items`, origem `purchase:<id>`). Se qualquer passo falhar, nada muda: saldo e posse ficam como estavam.
 4. Registra a compra (`market_purchases`, única por jogador e item) com o resultado.
@@ -71,9 +82,6 @@ obtido pela escolha gratuita (ou em outro aparelho) até a confirmação, o serv
 passa a mostrar "Obtido", sem gastar Siclos. A escolha pendente da meta deixa de oferecer itens
 comprados. A escolha gratuita também passou a reconhecer posse por ID antigo.
 
-`public.get_market()` devolve saldo, itens (preço, situação, posse canônica) e compras do jogador.
-
-## Fora do escopo da v1
-
-Não há venda de itens Santos, Lendários, Épicos ou recompensas de leitura; não há caixas aleatórias
-nem compra de Siclos com dinheiro (Lei 15.211/2025). Não há devolução/reembolso.
+`public.get_market()` devolve saldo, a vitrine atual com preços e posse, a próxima virada e as
+compras registradas. A migração `20261123000100_market_rotation.sql` funciona sobre o catálogo
+vigente e o histórico existente. A reversão restaura a vitrine anterior com as compras preservadas.

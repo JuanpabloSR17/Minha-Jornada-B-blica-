@@ -68,18 +68,16 @@ recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).
 - **Marcos dos Santos**: 20 marcos para os 22 Santos. A aba Ler mostra um resumo e **Ver todos os
   marcos** (filtros Todos / A cumprir / Concluídos); cada marco mostra a passagem e os itens que o
   jogador já possui; só a leitura vinculada ao marco concede os Santos ([`docs/MARCOS-SANTOS.md`](docs/MARCOS-SANTOS.md)).
-- **Mercado dos Viajantes**: 25 itens cosméticos (20 Comuns e 5 Raros) com os preços em Siclos do
-  catálogo oficial; débito e item na mesma transação, compra idempotente e recuperável após queda de
-  conexão, posse reconhecida por ID antigo. Detalhes e preços: [`docs/MERCADO.md`](docs/MERCADO.md).
-- Contrato para o futuro Modo Missão (missões, marcos, mundos) — sem cronômetro e sem leitura ainda.
+- **Mercado dos Viajantes**: 25 itens elegíveis, com 7 ofertas que mudam às 21h de Brasília e
+  4 permanentes. A compra valida o dia, o preço, a posse pelo ID canônico e o saldo. Pode ser
+  recuperada após queda de conexão sem cobrar de novo. [Detalhes e preços](docs/MERCADO.md).
+- **Jornada e Perfil**: sete mundos, progresso por livro e capítulo, marcos cumpridos e medalhas
+  por mundo concluído. As medalhas exibem o registro da conta no servidor.
+- **Inventário**: 185 itens com miniaturas identificadas por item, incluindo 144 oficiais.
+  [Cobertura dos ícones](docs/IDENTIDADE-E-ICONES.md).
 
-Telas ainda não implementadas (Jornada, Ler, Amigos, missões/XP, inventário, conquistas)
-aparecem **sinalizadas como "Em construção"** — nada nelas é contabilizado.
-
-> **Arte:** o conjunto atual é um **protótipo vetorial** da nova direção (proporção, silhueta,
-> encaixe e experiência). O acabamento pintado da referência exige ilustração profissional:
-> a especificação completa e a lista de assets estão em [`docs/ARTE.md`](docs/ARTE.md).
-> Os PNG/WebP finais entram registrando a mesma chave no manifest, sem mudar o renderizador.
+O acabamento dos sprites equipados segue em [lotes de arte](docs/arte-lotes/LOTE-1.md).
+O leitor digital segue à espera do texto licenciado.
 
 ## Configuração
 
@@ -134,11 +132,11 @@ npm run web        # navegador
 `test:e2e` também precisa do Playwright com Chromium disponível
 (`NODE_PATH=$(npm root -g) npm run test:e2e` se ele estiver instalado globalmente).
 
-Como não há Docker neste ambiente, os testes usam `supabase/tests/00_supabase_shim.sql`
+Os testes de banco isolados usam `supabase/tests/00_supabase_shim.sql`
 (papéis `anon`/`authenticated`, `auth.uid()` e privilégios padrão do Supabase) e, no e2e,
 `e2e/fake-supabase.mjs`, que imita **apenas as rotas HTTP** de Auth/PostgREST usadas pelo app
 e executa as consultas e funções **reais** das migrações como papel `authenticated`.
-Ambos são somente para teste. **Ainda não houve execução contra um projeto Supabase real.**
+Ambos são somente para teste.
 
 ### Validar num Supabase real
 

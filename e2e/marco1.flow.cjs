@@ -690,7 +690,9 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Mercado dos Viajantes' }).click();
   await C.page.getByText('Saldo: 40 Siclos').first().waitFor();
   // um item de 80 que a conta ainda não tem (a escolha gratuita varia com o ID da conta)
-  const cheap = (await db.query(`select i.id from cosmetic_items i where i.shop_eligible and i.is_active and i.shop_price_suggested = 80
+  const cheap = (await db.query(`select i.id from cosmetic_items i
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested = 80
     and not private.owns_canonical($1, i.id) order by i.id limit 1`, [biaId])).rows[0].id;
   await C.page.getByTestId(`market-${cheap}`).getByText('Faltam 40 Siclos').waitFor();
   await shot(C.page, 'm7-01-market-low-balance-dark');
@@ -704,8 +706,14 @@ async function newPhone(browser, scheme = 'light') {
   step('Mercado: saldo vindo das metas diárias, preços do catálogo e quanto falta para cada item');
 
   // o item é obtido pela escolha gratuita (outro aparelho) com a confirmação da compra aberta
-  const nextGoal = (await db.query(`select day::text as d, options from daily_goals where user_id = $1 and chosen_item is null order by day limit 1`, [biaId])).rows[0];
-  const raceItem = nextGoal.options[0];
+  const nextGoal = (await db.query(`select g.day::text as d, o.item_id
+    from daily_goals g
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = any(g.options)
+    join cosmetic_items i on i.id = o.item_id
+    where g.user_id = $1 and g.chosen_item is null and i.shop_price_suggested <= 240
+      and not private.owns_canonical(g.user_id, o.item_id)
+    order by g.day, i.id limit 1`, [biaId])).rows[0];
+  const raceItem = nextGoal.item_id;
   const raceName = (await db.query(`select name from cosmetic_items where id = $1`, [raceItem])).rows[0].name;
   await C.page.getByRole('button', { name: `Comprar ${raceName}` }).click();
   await C.page.getByText('Confirmar compra').waitFor();
@@ -725,7 +733,8 @@ async function newPhone(browser, scheme = 'light') {
 
   // compra bem-sucedida até o inventário
   const buyRow = (await db.query(`select i.id, i.name, i.slot, i.shop_price_suggested price from cosmetic_items i
-    where i.shop_eligible and i.is_active and not i.is_starter and i.shop_price_suggested <= 240 and i.slot in ('outfit','back','feet','waist','hands')
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested <= 240 and i.slot in ('outfit','back','feet','waist','hands')
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [biaId])).rows[0];
   await C.page.getByRole('button', { name: `Comprar ${buyRow.name}` }).click();
@@ -747,7 +756,8 @@ async function newPhone(browser, scheme = 'light') {
 
   // perda da resposta do servidor: recuperar o resultado sem cobrar duas vezes
   const lostRow = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    where i.shop_eligible and i.is_active and not i.is_starter and i.shop_price_suggested <= $2
+    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
+    where i.shop_price_suggested <= $2
       and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
     order by i.shop_price_suggested, i.id limit 1`, [biaId, 240 - buyRow.price])).rows[0];
   await C.page.goto(`${APP}/market`);

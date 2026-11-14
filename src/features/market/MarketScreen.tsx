@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, ImageBackground, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, AppState, ImageBackground, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { fonts, radius, spacing } from '@/theme/tokens';
@@ -19,6 +19,18 @@ const m = strings.market;
 const marketArt = require('../../../assets/journey/market.webp');
 type Msg = { tone: 'success' | 'error' | 'info'; text: string; itemId?: string };
 
+function RotationCountdown({ deadline }: { deadline: number }) {
+  const [now, setNow] = useState(Date.now);
+  useEffect(() => {
+    setNow(Date.now());
+    const timer = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, [deadline]);
+  const minutes = Math.max(0, Math.ceil((deadline - now) / 60_000));
+  const time = `${Math.floor(minutes / 60)}h ${String(minutes % 60).padStart(2, '0')}min`;
+  return <AppText variant="caption" testID="market-refresh">{minutes ? fmt(m.remaining, { time }) : m.updating}</AppText>;
+}
+
 /**
  * Mercado dos Viajantes: itens que o catálogo marca para a loja, com preço em Siclos.
  * O servidor confere disponibilidade, preço, posse e saldo na hora da compra; a compra é
@@ -37,31 +49,61 @@ function MarketContent() {
   const [confirm, setConfirm] = useState<MarketItem | null>(null);
   // conteúdo do diálogo (item e saldo do momento em que foi aberto) continua igual durante a
   // animação de fechar, mesmo que o saldo mude com a resposta do servidor
-  const [shown, setShown] = useState<{ item: MarketItem; balance: number } | null>(null);
+  const [shown, setShown] = useState<{ item: MarketItem; balance: number; offerDay?: string } | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<Msg | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const requested = useRef(0);
+  const purchasing = useRef(false);
 
-  const load = useCallback(async () => {
+  const refresh = useCallback(async () => {
+    const request = ++requested.current;
     try {
-      setMarket(await getMarket());
+      const state = await getMarket();
+      if (request === requested.current) {
+        setMarket(state);
+        setLoadError(null);
+      }
+      return state;
     } catch (e) {
-      setMsg({ tone: 'error', text: errorMessage(e) });
+      if (request === requested.current) setLoadError(errorMessage(e));
+      throw e;
     }
   }, []);
+  const load = useCallback(async () => {
+    try {
+      await refresh();
+    } catch { /* Refresh keeps the last usable shop and shows the retry action. */ }
+  }, [refresh]);
 
   useFocusEffect(
     useCallback(() => {
+      let active = true;
       void load();
+      const resume = AppState.addEventListener('change', (state) => {
+        if (state === 'active') void load();
+      });
       if (userId) {
         void pendingPurchaseStorage.load(userId).then((p) => {
+          if (!active || purchasing.current) return;
+          autoVerify.current = p;
           setPending(p);
           // compra que ficou sem resposta: verifica sozinha ao abrir (mesmo ID, sem cobrança dupla),
           // para a tela não mostrar "aguardando" e "Obtido" ao mesmo tempo
-          if (p) autoVerify.current = p;
         });
       }
+      return () => {
+        active = false;
+        resume.remove();
+      };
     }, [load, userId]),
   );
+  const deadline = market?.offerDeadline;
+  useFocusEffect(useCallback(() => {
+    if (deadline == null) return;
+    const timer = setTimeout(() => void load(), Math.max(250, deadline - Date.now() + 250));
+    return () => clearTimeout(timer);
+  }, [deadline, load]));
   const autoVerify = useRef<PendingPurchase | null>(null);
   useEffect(() => {
     const p = autoVerify.current;
@@ -75,10 +117,12 @@ function MarketContent() {
 
   /** Envia (ou reenvia) a compra pendente e trata o resultado. */
   const send = async (p: PendingPurchase) => {
+    if (purchasing.current) return;
+    purchasing.current = true;
     setBusy(true);
     setMsg(null);
     try {
-      const r = await purchaseItem(p.purchaseId, p.itemId);
+      const r = await purchaseItem(p);
       await pendingPurchaseStorage.clear(p.userId);
       setPending(null);
       setMsg({ tone: 'success', itemId: r.itemId, text: fmt(r.duplicate ? m.alreadyBought : m.bought, { item: name(r.itemId), balance: r.siclosBalance }) });
@@ -90,8 +134,7 @@ function MarketContent() {
         setMsg({ tone: 'error', text: errorMessage(e) });
         // a resposta se perdeu: o registro das compras da conta diz o estado real desta compra
         try {
-          const fresh = await getMarket();
-          setMarket(fresh);
+          const fresh = await refresh();
           const record = fresh.purchases.find((x) => x.purchaseId === p.purchaseId);
           if (record) {
             // só confirma se ESTA compra (mesmo ID) foi registrada
@@ -113,6 +156,7 @@ function MarketContent() {
         setMsg({ tone: code === 'item_already_owned' ? 'info' : 'error', text: code === 'item_already_owned' ? fmt(m.ownedNotPurchased, { item: name(p.itemId) }) : errorMessage(e) });
       }
     } finally {
+      purchasing.current = false;
       setBusy(false);
       void load();
     }
@@ -122,15 +166,22 @@ function MarketContent() {
   const ask = async (it: MarketItem) => {
     setMsg(null);
     try {
-      const fresh = await getMarket();
-      setMarket(fresh);
+      const fresh = await refresh();
       const now = fresh.items.find((x) => x.itemId === it.itemId);
       if (now?.owned) {
         setMsg({ tone: 'info', text: fmt(m.alreadyOwned, { item: name(it.itemId) }) });
         return;
       }
-      setShown({ item: now ?? it, balance: fresh.siclosBalance });
-      setConfirm(now ?? it);
+      if (!now || now.status !== 'available' || now.price == null) {
+        setMsg({ tone: 'info', text: now ? m.pricePending : strings.errors.market_offer_expired });
+        return;
+      }
+      if (fresh.siclosBalance < now.price) {
+        setMsg({ tone: 'info', text: strings.errors.insufficient_siclos });
+        return;
+      }
+      setShown({ item: now, balance: fresh.siclosBalance, offerDay: fresh.rotation?.day });
+      setConfirm(now);
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
     }
@@ -139,10 +190,13 @@ function MarketContent() {
   const buy = async () => {
     const it = confirm;
     setConfirm(null);
-    if (!it || !userId || it.price == null) return;
-    const p: PendingPurchase = { purchaseId: uuidv4(), itemId: it.itemId, price: it.price, userId };
+    if (!it || !userId || it.price == null || purchasing.current || pending) return;
+    const p: PendingPurchase = { purchaseId: uuidv4(), itemId: it.itemId, price: it.price, userId, offerDay: shown?.offerDay };
+    purchasing.current = true;
+    setBusy(true);
     await pendingPurchaseStorage.save(p).catch(() => undefined);
     setPending(p);
+    purchasing.current = false;
     await send(p);
   };
 
@@ -150,13 +204,52 @@ function MarketContent() {
     return (
       <Screen>
         <StepHeader title={m.title} onBack={() => router.back()} />
-        {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : <ActivityIndicator color={colors.primary} />}
+        {loadError ? (
+          <>
+            <Notice tone="error">{loadError}</Notice>
+            <Button title={strings.common.retry} onPress={() => void load()} />
+          </>
+        ) : <ActivityIndicator color={colors.primary} />}
       </Screen>
     );
   }
 
   const balance = market.siclosBalance;
   const confirmItem = shown ? getItem(shown.item.itemId) : null;
+  const sections = market.rotation
+    ? [
+        { title: m.daily, items: market.items.filter((i) => i.section === 'daily') },
+        { title: m.essentials, items: market.items.filter((i) => i.section === 'essentials') },
+      ]
+    : [{ title: null, items: market.items }];
+
+  function renderItem(it: MarketItem) {
+    const item = getItem(it.itemId);
+    if (!item) return null;
+    const category = INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
+    const short = it.price != null ? it.price - balance : 0;
+    return (
+      <View key={it.itemId} style={[styles.row, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.surface }]}
+        accessible={false} testID={`market-${it.itemId}`}>
+        <View style={[styles.icon, { backgroundColor: colors.stage }]}>
+          <ItemIcon item={item} size={60} />
+        </View>
+        <View style={styles.info}>
+          <AppText variant="label">{displayName(item)}</AppText>
+          <AppText variant="caption" muted>{strings.rarity[item.rarity]} · {category}</AppText>
+          <AppText variant="label">{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
+          {it.owned ? (
+            <AppText variant="caption" color={colors.success}>{m.owned}</AppText>
+          ) : it.status === 'available' ? (
+            short > 0 ? <AppText variant="caption" muted>{fmt(m.missing, { n: short })}</AppText> : (
+              <Button compact title={m.buy} accessibilityLabel={`${m.buy} ${item.name}`} variant="gold"
+                disabled={busy || !!pending} onPress={() => void ask(it)} />
+            )
+          ) : null}
+        </View>
+      </View>
+    );
+  }
 
   return (
     <Screen>
@@ -181,38 +274,27 @@ function MarketContent() {
       ) : null}
 
       {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : null}
+      {loadError ? (
+        <Card>
+          <Notice tone="error">{loadError}</Notice>
+          <Button compact title={strings.common.retry} onPress={() => void load()} />
+        </Card>
+      ) : null}
       {msg?.itemId ? <Button variant="secondary" title={m.seeItem} onPress={() => router.push({ pathname: '/avatar/item/[id]', params: { id: msg.itemId! } })} /> : null}
       {market.items.length === 0 ? <Notice tone="info">{m.empty}</Notice> : null}
 
-      {market.items.map((it) => {
-        const item = getItem(it.itemId);
-        if (!item) return null;
-        const category = INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
-        const short = it.price != null ? it.price - balance : 0;
-        return (
-          <View key={it.itemId} style={[styles.row, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.surface }]}
-            accessible={false} testID={`market-${it.itemId}`}>
-            <View style={[styles.icon, { backgroundColor: colors.stage }]}>
-              <ItemIcon item={item} size={60} />
+      {sections.filter((section) => section.items.length).map((section) => (
+        <View key={section.title ?? 'catalog'} style={styles.section}>
+          {section.title ? <AppText variant="heading" accessibilityRole="header">{section.title}</AppText> : null}
+          {section.title === m.daily ? (
+            <View style={styles.schedule}>
+              <AppText variant="caption" muted>{m.rotationTime}</AppText>
+              {deadline != null ? <RotationCountdown deadline={deadline} /> : null}
             </View>
-            <View style={styles.info}>
-              <AppText variant="label">{displayName(item)}</AppText>
-              <AppText variant="caption" color={RARITY_COLOR[item.rarity]}>{strings.rarity[item.rarity]} · {category}</AppText>
-              <AppText variant="label">{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
-              {it.owned ? (
-                <AppText variant="caption" color={colors.success}>{m.owned}</AppText>
-              ) : it.status === 'price_pending' ? (
-                <AppText variant="caption" muted>{m.pricePending}</AppText>
-              ) : short > 0 ? (
-                <AppText variant="caption" muted>{fmt(m.missing, { n: short })}</AppText>
-              ) : (
-                <Button compact title={m.buy} accessibilityLabel={`${m.buy} ${item.name}`} variant="gold"
-                  disabled={busy || !!pending} onPress={() => void ask(it)} />
-              )}
-            </View>
-          </View>
-        );
-      })}
+          ) : null}
+          {section.items.map(renderItem)}
+        </View>
+      ))}
 
       <ConfirmDialog
         visible={!!confirm}
@@ -232,6 +314,8 @@ const styles = StyleSheet.create({
   banner: { minHeight: 180, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
   bannerText: { backgroundColor: 'rgba(12, 10, 22, 0.9)', padding: spacing.md, gap: spacing.xs },
   balance: { fontFamily: fonts.display },
+  section: { gap: spacing.sm },
+  schedule: { gap: 2 },
   row: { flexDirection: 'row', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
   icon: { width: 64, height: 64, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   info: { flex: 1, minWidth: 0, gap: 2 },

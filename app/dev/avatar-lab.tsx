@@ -103,7 +103,7 @@ export default function AvatarLab() {
     return (
       <View testID="icons" style={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#F3E8D2', padding: 6, gap: 6 }}>
         {list.map((it) => (
-          <View key={it.id} style={{ width: px + 34, alignItems: 'center' }}>
+          <View key={it.id} testID={`catalog-icon-${it.id}`} style={{ width: px + 34, alignItems: 'center' }}>
             <ItemIcon item={it} size={px} />
             <Text style={{ fontSize: 9, textAlign: 'center' }} numberOfLines={2}>{it.name}</Text>
           </View>

@@ -23,11 +23,11 @@ export function ConfirmDialog({
   onCancel: () => void;
   destructive?: boolean;
 }) {
-  const { colors } = useTheme();
+  const { colors, reduceMotion } = useTheme();
   // rótulos longos (ex.: "Pagar 180 Siclos") não cabem lado a lado em telas estreitas: empilha
   const stack = confirmLabel.length > 12;
   return (
-    <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>
+    <Modal visible={visible} transparent animationType={reduceMotion ? 'none' : 'fade'} onRequestClose={onCancel}>
       <View style={[styles.backdrop, { backgroundColor: colors.overlay }]}>
         <View accessibilityViewIsModal style={[styles.box, { backgroundColor: colors.surface, borderColor: colors.borderStrong }]}>
           <AppText variant="title">{title}</AppText>

@@ -94,7 +94,7 @@ export function ItemDetailScreen({ id }: { id: string }) {
           </View>
         </View>
       )}
-      {view.art !== 'final' ? <Notice tone="info">{view.art === 'missing' ? `${strings.wardrobe.artMissing}: a peça aparece com um visual substituto até a ilustração ficar pronta.` : `${strings.wardrobe.artProvisional}: protótipo vetorial até a ilustração final.`}</Notice> : null}
+      {item.slot !== 'relic' && view.art !== 'final' ? <Notice tone="info">{strings.wardrobe.avatarArtInfo}</Notice> : null}
       <Card>
         {row(strings.item.category, category)}
         {row(strings.item.rarity, strings.rarity[item.rarity])}

@@ -15,7 +15,7 @@ const denied = (res) => !!res.error || (Array.isArray(res.data) && res.data.leng
             (select count(*)::int from market_purchases) purchases, (select count(*)::int from daily_goals where chosen_item is not null) chosen`)).rows[0];
 
   // ---------------------------------------------------------------- operações autorizadas
-  for (const fn of ['get_market', 'get_daily_goal_status', 'get_mission_overview', 'get_wardrobe', 'get_reading_progress']) {
+  for (const fn of ['get_market', 'get_daily_goal_status', 'get_mission_overview', 'get_world_progress', 'get_wardrobe', 'get_reading_progress']) {
     const r = await rpc(ana.c, fn, {});
     assert.equal(r.code, null, `${fn}: ${r.code}`);
   }
@@ -23,7 +23,9 @@ const denied = (res) => !!res.error || (Array.isArray(res.data) && res.data.leng
   const biaMarket = (await rpc(bia.c, 'get_market', {})).data;
   const biaItem = biaMarket.items.find((x) => !x.owned && x.price <= biaMarket.siclosBalance);
   const biaPurchaseId = crypto.randomUUID();
-  const bp = await rpc(bia.c, 'purchase_market_item', { p_purchase_id: biaPurchaseId, p_item: biaItem.itemId });
+  const bp = await rpc(bia.c, 'purchase_market_item', {
+    p_purchase_id: biaPurchaseId, p_item: biaItem.itemId, p_price: biaItem.price, p_offer_day: biaMarket.rotation.day,
+  });
   assert.equal(bp.code, null, bp.code);
   assert.equal(bp.data.siclosBalance, biaMarket.siclosBalance - biaItem.price);
   ok(`conta comum usa as operações autorizadas (vitrine, metas, progresso, guarda-roupa) e compra pelo RPC: Bia comprou ${biaItem.itemId} por ${biaItem.price}`);

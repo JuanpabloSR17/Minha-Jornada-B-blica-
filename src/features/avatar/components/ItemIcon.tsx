@@ -46,7 +46,6 @@ export const ItemIcon = memo(function ItemIcon({ item, size, appearance }: { ite
     return <View style={[styles.placeholder, { width: size, height: size }]} accessible accessibilityRole="image" accessibilityLabel={item.name}><ItemThumbnail id={item.id} size={size} frame={frame} /></View>;
   }
   if (!hasArt(source)) {
-    // sem arte e sem substituto visual: ícone genérico (item continua utilizável e visível)
     // sem arte e sem substituto visual: emblema da raridade (provisório, sinalizado na interface)
     const color = RARITY_COLOR[item.rarity];
     return (

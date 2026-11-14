@@ -12,7 +12,11 @@ end $$;
 create function tests.buy(p_user uuid, p_label text, p_item text) returns jsonb language plpgsql as $$
 begin
   perform set_config('request.jwt.claim.sub', p_user::text, true);
-  return public.purchase_market_item(md5('buy' || p_user::text || p_label)::uuid, p_item);
+  -- Escolhe um dia em que a peça está na vitrine para testar a compra com o catálogo inteiro.
+  return private.purchase_market_item_at(md5('buy' || p_user::text || p_label)::uuid, p_item, null, null,
+    coalesce((select min(at) from generate_series(timestamptz '2026-11-01 15:00-03', timestamptz '2026-12-31 15:00-03', interval '1 day') at
+      where exists (select 1 from private.market_offers(private.market_rotation_day(at)) o
+                    where o.item_id = private.resolve_item_id(p_item))), now()));
 end $$;
 create function tests.bal(p_user uuid) returns int language sql as $$ select private.siclos_balance(p_user) $$;
 create function tests.has(p_user uuid, p_item text) returns int language sql as $$
@@ -27,8 +31,8 @@ end $$;
 -- ---------------------------------------------------------------- vitrine
 select tests.mk_m('a1000000-0000-0000-0000-0000000000a1', 'compra_um', 100);
 select tests.assert(
-  (select jsonb_array_length(m -> 'items') = 25 and (m ->> 'siclosBalance')::int = 100 from tests.market('a1000000-0000-0000-0000-0000000000a1') m),
-  'vitrine: 25 itens da loja do catálogo vigente e o saldo');
+  (select jsonb_array_length(m -> 'items') = 11 and (m ->> 'siclosBalance')::int = 100 from tests.market('a1000000-0000-0000-0000-0000000000a1') m),
+  'vitrine: 4 permanentes, 7 do dia e o saldo');
 select tests.assert(
   not exists (select 1 from jsonb_array_elements(tests.market('a1000000-0000-0000-0000-0000000000a1') -> 'items') x
     join public.cosmetic_items i on i.id = x ->> 'itemId'
@@ -80,7 +84,10 @@ select tests.assert_raises($$update public.cosmetic_items set shop_eligible = tr
 -- ---------------------------------------------------------------- identidade canônica e posse por ID legado
 insert into public.user_items (user_id, item_id, source_event_id) values ('a2000000-0000-0000-0000-0000000000a2', 'net-fishing', 'legacy:test');
 select tests.assert(
-  (select (x ->> 'owned')::boolean from jsonb_array_elements(tests.market('a2000000-0000-0000-0000-0000000000a2') -> 'items') x where x ->> 'itemId' = 'common_rede_de_pesca'),
+  (select (x ->> 'owned')::boolean
+     from generate_series(timestamptz '2026-11-01 15:00-03', timestamptz '2026-12-31 15:00-03', interval '1 day') at
+     cross join lateral jsonb_array_elements(private.market_state('a2000000-0000-0000-0000-0000000000a2', at) -> 'items') x
+     where x ->> 'itemId' = 'common_rede_de_pesca' limit 1),
   'posse pelo ID legado (net-fishing) aparece como posse da Rede de Pesca');
 select tests.assert_raises($$select tests.buy('a2000000-0000-0000-0000-0000000000a2', 'rede', 'common_rede_de_pesca')$$, 'item_already_owned', 'não compra de novo item possuído por ID legado');
 select tests.assert_raises($$select tests.buy('a2000000-0000-0000-0000-0000000000a2', 'rede-alias', 'net-fishing')$$, 'item_already_owned', 'comprar pelo ID legado resolve para o item canônico');
@@ -106,7 +113,7 @@ select tests.assert(
 -- escolha gratuita primeiro → a compra do mesmo item é recusada, sem débito
 select tests.claim('a4000000-0000-0000-0000-0000000000a4', '2026-11-20', (select o[2] from tests.mopt));
 select tests.assert(
-  (select (x ->> 'owned')::boolean from jsonb_array_elements(tests.market('a4000000-0000-0000-0000-0000000000a4') -> 'items') x where x ->> 'itemId' = (select o[2] from tests.mopt)),
+  private.owns_canonical('a4000000-0000-0000-0000-0000000000a4', (select o[2] from tests.mopt)),
   'item resgatado de graça aparece como obtido na vitrine');
 create table tests.bal4 as select tests.bal('a4000000-0000-0000-0000-0000000000a4') b;
 select tests.assert_raises($$select tests.buy('a4000000-0000-0000-0000-0000000000a4', 'opt2', (select o[2] from tests.mopt))$$, 'item_already_owned', 'compra de item já resgatado é recusada');

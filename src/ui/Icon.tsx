@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search';
+export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search' | 'medal';
 
 /** Ícones de traço simples desenhados para o app (sem biblioteca externa). */
 export function Icon({ name, size = 22, color }: { name: IconName; size?: number; color: string }) {
@@ -33,6 +33,7 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
     ),
     undo: <Path {...s} d="M9 7 4 12l5 5M4 12h11a5 5 0 0 1 0 10h-2" />,
     check: <Path {...s} d="M4 12.5 9.5 18 20 6" />,
+    medal: <Path {...s} d="M7 3h4l3 6M13 3h4l-3 6M10 17l-1 4 3-1.5 3 1.5-1-4m3-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm-5-2v4m-2-2h4" />,
     cloud: <Path {...s} d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18zM9.5 13.5l2 2 3.5-4" />,
     cloudOff: <Path {...s} d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18zM10 11l4 4M14 11l-4 4" />,
     device: <Path {...s} d="M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2" />,

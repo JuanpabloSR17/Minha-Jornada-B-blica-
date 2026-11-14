@@ -22,15 +22,15 @@ compartilhados (cartões de item, carrossel, abas, barra de categorias) usam a m
 |---|---|
 | Início (acampamento), marco, leitura, recompensa/revelação, Santuário, Jornada (Codex) | ✔ |
 | **Criador de personagem** e **guarda-roupa** | ✔ desta entrega: base índigo, ação dourada, seleção neon violeta; sem rolagem lateral em 320 e 412 px |
-| **Ler (Modo Missão)** | ✔ na identidade, com passagem escolhida no topo e seleção de livro/capítulo em neon violeta; próximo: cartões de mundo no lugar da grade de livros |
-| **Perfil** | ✔ na identidade, com placas de conquista reais (marcos cumpridos, Santos obtidos, mundos concluídos pelo servidor) |
-| Mercado | o Codex ilustrou a vitrine; falta só a moldura das miniaturas (já automática pelo `ItemIcon`) |
+| **Ler (Modo Missão)** | Passagem escolhida no topo e livros agrupados pelos sete mundos |
+| **Perfil** | Capítulos e livros lidos, marcos, Santos e medalhas dos mundos registrados no servidor |
+| **Mercado** | Vitrine ilustrada, molduras de raridade e ofertas do dia com contagem para a próxima troca |
 | Configurações, autenticação, onboarding | por último: legibilidade em primeiro lugar |
 
 Regras mantidas: ação principal visível sem rolagem em 320 px; movimento reduzido (`reduceMotion`) desliga
 fogo, brilho e respiração; alvos de toque ≥ 44 px.
 
-## 2. Ícones por ID canônico (lote 1)
+## 2. Ícones por ID canônico
 
 Registro em `src/features/avatar/art/icons.tsx`. Cada miniatura é desenhada para o seu ID, reconhecível pela
 silhueta e pelos detalhes, com a raridade na moldura:
@@ -44,48 +44,18 @@ silhueta e pelos detalhes, com a raridade na moldura:
 `ItemIcon` usa o registro em todas as telas (Mercado, recompensa, escolha da meta, guarda-roupa, detalhe,
 coleções, Santuário, revelação), então a mesma arte aparece em todo lugar.
 
-| | Quantidade |
+| Cobertura do catálogo v8 | Quantidade |
 |---|---:|
-| IDs ativos | 185 |
-| **Entregues neste lote** (prova 3D + iniciais + 25 do Mercado + 3 artefatos de Êxodo 25, sem repetição) | **63** |
-| Faltam | 122 |
+| Itens no app | 185 |
+| Miniaturas com composição por ID no registro | 182 |
+| Arte de artefato reutilizada na miniatura | 3 |
+| Itens elegíveis para o Mercado com miniatura | 25 |
 
-Os 122 que faltam, por raridade:
+São 144 itens oficiais e 41 adicionais do app. Entre os oficiais são 22 Comuns, 18 Raros, 16 Épicos,
+66 Lendários e 22 Santos. Os 66 Lendários trazem a sigla do livro para distinguir recompensas de
+nomes ou formatos semelhantes. As formas de cada família são reutilizadas com materiais, símbolos
+e paletas escolhidos por item. O tamanho pequeno prioriza a silhueta e o contraste.
 
-| Raridade | Faltam |
-|---|---:|
-| Lendários (um por livro) | 66 |
-| Raros | 19 |
-| Épicos | 18 |
-| Santos sem arte | 19 |
-
-E por tipo de peça:
-
-| Tipo | Faltam |
-|---|---:|
-| Mão | 43 |
-| Fundos | 14 |
-| Mantos | 13 |
-| Emblemas | 10 |
-| Molduras | 10 |
-| Cintura | 8 |
-| Relíquias | 6 |
-| Túnicas | 4 |
-| Cabeça | 4 |
-| Peitorais | 3 |
-| Pescoço | 2 |
-| Calçados | 2 |
-| Efeitos | 2 |
-| Costas | 1 |
-
-Validação: `src/features/avatar/__tests__/icons.test.ts` exige miniatura para todos os 63 prioritários e confere
-os IDs. A folha de revisão visual em 48 e 64 px está em `/dev/avatar-lab?icons=64` e `?icons=48`
-(capturas em `docs/icones/`).
-
-Próximos lotes sugeridos:
-1. Os 19 Santos sem arte (a mesma linguagem dos artefatos) e os 18 épicos.
-2. Os 66 lendários: um molde de ícone por livro, com o símbolo do livro.
-3. Fundos, molduras e efeitos.
-
-Quando as peças pintadas chegarem (`docs/arte-lotes/`), as miniaturas dessas peças podem ser recortadas da própria
-pintura, mantendo o mesmo registro por ID.
+Miniatura de inventário e sprite vestido têm coberturas próprias. A folha de revisão de todas as
+miniaturas está em `/dev/avatar-lab?icons=48`. O teste `src/features/avatar/__tests__/icons.test.ts`
+compara o registro e os artefatos com todos os IDs do catálogo vigente.

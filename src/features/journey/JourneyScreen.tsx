@@ -4,7 +4,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { ActiveSessionCard } from '@/features/reading/components/ActiveSessionCard';
-import { getMissionOverview, type MissionOverview } from '@/features/reading/mission/mission.service';
+import { getMissionOverview, getWorldProgress, type MissionOverview, type WorldProgress } from '@/features/reading/mission/mission.service';
 import { refLabel } from '@/features/reading/refs';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { fonts, radius, spacing } from '@/theme/tokens';
@@ -14,6 +14,15 @@ import { journeyProgress } from './worlds';
 const t = strings.journey;
 const atlas = require('../../../assets/journey/worlds.webp');
 type World = ReturnType<typeof journeyProgress>[number];
+const MAP_STOPS = [
+  { left: '10%', top: '76%' },
+  { left: '23%', top: '44%' },
+  { left: '37%', top: '72%' },
+  { left: '49%', top: '40%' },
+  { left: '63%', top: '68%' },
+  { left: '76%', top: '31%' },
+  { left: '90%', top: '60%' },
+] as const;
 
 function ChapterProgress({ done, total }: { done: number; total: number }) {
   const { colors } = useTheme();
@@ -27,8 +36,9 @@ function ChapterProgress({ done, total }: { done: number; total: number }) {
   );
 }
 
-function WorldCard({ world, expanded, onToggle, onRead }: {
+function WorldCard({ world, completed, expanded, onToggle, onRead }: {
   world: World;
+  completed: boolean;
   expanded: boolean;
   onToggle: () => void;
   onRead: (book: string, chapter: number) => void;
@@ -36,14 +46,17 @@ function WorldCard({ world, expanded, onToggle, onRead }: {
   const { colors } = useTheme();
   const [openBook, setOpenBook] = useState<string | null>(null);
   return (
-    <Card style={{ borderColor: expanded ? colors.primary : colors.border }}>
+    <Card testID={`journey-world-${world.id}`} style={{ borderColor: completed ? colors.selection : expanded ? colors.primary : colors.border }}>
       <Pressable accessibilityRole="button" accessibilityState={{ expanded }} onPress={onToggle} style={styles.row}>
         <View style={[styles.seal, { backgroundColor: colors.background, borderColor: colors.borderStrong }]}>
-          <Icon name={world.done === world.total ? 'check' : 'map'} color={colors.primary} />
+          <Icon name={completed ? 'medal' : 'map'} color={completed ? colors.selection : colors.primary} />
         </View>
         <View style={styles.grow}>
           <AppText variant="heading" style={styles.worldTitle}>{world.name}</AppText>
           <ChapterProgress done={world.done} total={world.total} />
+          <AppText variant="caption" color={completed ? colors.selection : colors.textMuted}>
+            {completed ? t.worldCompleted : world.done > 0 ? t.worldStarted : t.worldNotStarted}
+          </AppText>
         </View>
         <AppText color={colors.primary} accessibilityElementsHidden importantForAccessibility="no">{expanded ? '−' : '+'}</AppText>
       </Pressable>
@@ -90,30 +103,52 @@ function WorldCard({ world, expanded, onToggle, onRead }: {
 function Atlas() {
   const { colors } = useTheme();
   const router = useRouter();
-  const [overview, setOverview] = useState<MissionOverview | null>(null);
+  const [progress, setProgress] = useState<{ overview: MissionOverview; worlds: WorldProgress[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
   const refresh = useCallback(async () => {
     setError(null);
     try {
-      setOverview(await getMissionOverview());
+      const [overview, worlds] = await Promise.all([getMissionOverview(), getWorldProgress()]);
+      setProgress({ overview, worlds });
     } catch (e) {
       setError(errorMessage(e));
     }
   }, []);
   useFocusEffect(useCallback(() => { void refresh(); }, [refresh]));
+  const overview = progress?.overview;
   const worlds = useMemo(() => overview ? journeyProgress(overview.chaptersByBook) : [], [overview]);
+  const completed = new Set(progress?.worlds.filter((world) => world.completedAt).map((world) => world.id));
+  const visibleWorlds = selected ? worlds.filter((world) => world.id === selected) : worlds;
   const openChapter = (book: string, chapter: number) =>
     router.navigate({ pathname: '/(tabs)/read', params: { book, chapter: String(chapter), selection: String(Date.now()) } });
 
   return (
     <Screen edges={['top', 'left', 'right']}>
-      <ImageBackground source={atlas} resizeMode="cover" style={[styles.hero, { borderColor: colors.borderStrong }]} testID="journey-atlas">
+      <View style={[styles.hero, { borderColor: colors.borderStrong }]} testID="journey-atlas">
+        <ImageBackground source={atlas} resizeMode="cover" style={StyleSheet.absoluteFill} pointerEvents="none" />
+        <View style={styles.map}>
+          {worlds.map((world, i) => {
+            const done = completed.has(world.id);
+            const active = selected === world.id;
+            const accent = active || done ? colors.selection : colors.primary;
+            return (
+              <Pressable key={world.id} testID={`journey-pin-${world.id}`}
+                accessibilityRole="button" accessibilityState={{ selected: active }}
+                accessibilityLabel={fmt(t.mapStop, { position: i + 1, world: world.name })}
+                onPress={() => { setSelected(world.id); setExpanded(world.id); }}
+                style={[styles.pin, MAP_STOPS[i], { borderColor: accent, backgroundColor: colors.background }]}>
+                {done ? <Icon name="medal" color={accent} size={19} /> : <AppText variant="label" color={accent}>{i + 1}</AppText>}
+              </Pressable>
+            );
+          })}
+        </View>
         <View style={styles.heroText}>
           <AppText variant="title" accessibilityRole="header" style={styles.title}>{strings.tabs.journey}</AppText>
-          {overview && <AppText variant="label" muted>{fmt(t.worldSummary, { books: overview.booksCompleted, worlds: worlds.filter((world) => world.done === world.total).length, total: worlds.length })}</AppText>}
+          {overview && <AppText variant="label" muted>{fmt(t.worldSummary, { books: overview.booksCompleted, worlds: completed.size, total: worlds.length })}</AppText>}
         </View>
-      </ImageBackground>
+      </View>
       <ActiveSessionCard />
       {error ? <Card>
         <Notice tone="error">{error}</Notice>
@@ -122,8 +157,9 @@ function Atlas() {
       {overview ? (
         <>
           <Card><ChapterProgress done={overview.chaptersCompleted} total={overview.totalChapters} /></Card>
-          {worlds.map((world) => (
-            <WorldCard key={world.id} world={world} expanded={expanded === world.id}
+          {selected ? <Button compact variant="secondary" title={t.allWorlds} onPress={() => setSelected(null)} /> : null}
+          {visibleWorlds.map((world) => (
+            <WorldCard key={world.id} world={world} completed={completed.has(world.id)} expanded={expanded === world.id}
               onToggle={() => setExpanded(expanded === world.id ? null : world.id)} onRead={openChapter} />
           ))}
         </>
@@ -137,7 +173,10 @@ export function JourneyScreen() {
 }
 
 const styles = StyleSheet.create({
-  hero: { height: 216, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
+  hero: { minHeight: 216, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
+  map: { height: 170 },
+  pin: { position: 'absolute', width: 44, height: 44, marginLeft: -22, marginTop: -22, borderWidth: 2,
+    borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center' },
   heroText: { backgroundColor: 'rgba(12, 10, 22, 0.87)', padding: spacing.md, gap: spacing.xs },
   title: { fontFamily: fonts.display },
   worldTitle: { fontFamily: fonts.displayRegular, fontSize: 16 },
