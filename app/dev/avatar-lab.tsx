@@ -79,7 +79,7 @@ export default function AvatarLab() {
     // lote 1: referência vetorial × pintura atual, com luz neutra (guarda-roupa) e do acampamento
     const look: AvatarLook = {
       appearance: { ...defaultLook().appearance, bodyId: 'body-b', skinToneId: q.skin ?? 'skin-4', hairStyleId: 'hair-short', hairColorId: q.hair ?? 'haircolor-black' },
-      equipment: { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', hands: q.staff === 'walk' ? 'common_cajado_de_caminhada' : 'staff-shepherd', feet: 'sandals-leather' },
+      equipment: { outfit: 'tunic-linen', back: 'cloak-night', waist: 'common_bolsa_do_viajante', ...(q.staff === 'none' ? {} : { hands: q.staff === 'walk' ? 'common_cajado_de_caminhada' : 'staff-shepherd' }), feet: 'sandals-leather' },
     };
     const cell = (label: string, vectorOnly: boolean, lighting: 'neutral' | 'camp') => (
       <View key={label} style={{ alignItems: 'center', backgroundColor: lighting === 'camp' ? '#141a33' : '#e9e2d4', padding: 6 }}>

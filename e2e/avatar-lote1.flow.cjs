@@ -151,6 +151,9 @@ async function loaded(page, names) {
       rest: srcs.some((s) => /tunic-linen\/body-b\/sleeves(?!\.staff)[.@]/.test(s)),
       staff: srcs.some((s) => /tunic-linen\/body-b\/sleeves\.staff[.@]/.test(s)),
       armsRest: srcs.some((s) => /body-b\/arms\.mask[.@]/.test(s)),
+      handsRest: srcs.some((s) => /body-b\/hands\.mask[.@]/.test(s)) && srcs.some((s) => /body-b\/hands\.shade[.@]/.test(s)),
+      handsStaff: srcs.some((s) => /body-b\/hands\.staff\.mask[.@]/.test(s)) && srcs.some((s) => /body-b\/hands\.staff\.shade[.@]/.test(s)),
+      fist: srcs.some((s) => /body-b\/hand_item\.mask[.@]/.test(s)) && srcs.some((s) => /body-b\/hand_item\.shade[.@]/.test(s)),
     };
   });
   const poseCycle = async (w, current) => {
@@ -161,17 +164,17 @@ async function loaded(page, names) {
     await page.getByText('Visual salvo.').waitFor();
     assert.equal((await db.query(`select count(*)::int n from avatar_loadout_equipment e join avatar_loadouts l on l.id = e.loadout_id where l.user_id = $1 and l.is_active and e.slot = 'hands'`, [uid])).rows[0].n, 0, 'sem item de mão salvo');
     await settle(page);
-    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: sem cajado, mangas pintadas em repouso`);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true, handsRest: true, handsStaff: false, fist: false }, `${w}: sem cajado, mangas pintadas em repouso`);
     await noOverflow(page, `guarda-roupa sem cajado ${w}`);
     await shot(page, `l1-06-guarda-roupa-sem-cajado-${w}`);
     await page.reload();
     await page.getByRole('button', { name: 'Salvar' }).waitFor();
     await settle(page);
-    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: sem cajado após reabrir`);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true, handsRest: true, handsStaff: false, fist: false }, `${w}: sem cajado após reabrir`);
     await page.goto(`${APP}/home`);
     await campAvatar(page).waitFor();
     await settle(page);
-    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: acampamento sem cajado`);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true, handsRest: true, handsStaff: false, fist: false }, `${w}: acampamento sem cajado`);
     await noOverflow(page, `Início sem cajado ${w}`);
     await shot(page, `l1-07-acampamento-sem-cajado-${w}`);
     await page.goto(`${APP}/avatar/wardrobe?category=hands`);
@@ -181,11 +184,11 @@ async function loaded(page, names) {
     await page.reload();
     await page.getByRole('button', { name: 'Salvar' }).waitFor();
     await settle(page);
-    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false }, `${w}: cajado de volta, pose do cajado após reabrir`);
+    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false, handsRest: false, handsStaff: true, fist: true }, `${w}: cajado de volta, pose do cajado após reabrir`);
     await page.goto(`${APP}/home`);
     await campAvatar(page).waitFor();
     await settle(page);
-    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false }, `${w}: acampamento com o cajado de volta`);
+    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false, handsRest: false, handsStaff: true, fist: true }, `${w}: acampamento com o cajado de volta`);
   };
   await poseCycle('412', 'Cajado de Caminhada');
   await page.setViewportSize({ width: 320, height: 640 });
@@ -216,6 +219,37 @@ async function loaded(page, names) {
   assert.ok(blond - black > 40, `loiro bem mais claro que preto no cabelo (${black.toFixed(1)} × ${blond.toFixed(1)})`);
   await hp.close();
   step(`cabelo curto pintado tingido pela cor da conta: preto (${black.toFixed(0)}) e loiro (${blond.toFixed(0)}) com as mesmas máscaras`);
+
+  // ---------------------------------------------------------------- tom de pele nas mãos pintadas: tons 1 e 6, luz neutra, nas duas poses
+  const tp = await browser.newPage({ viewport: { width: 1400, height: 760 } });
+  const handLum = {};
+  const handBox = { fist: [636, 500, 60, 66], relaxed: [340, 874, 58, 64], rest: [632, 874, 52, 64] };
+  for (const [pose, staff] of [['cajado', 'shepherd'], ['caminhada', 'walk'], ['repouso', 'none']]) {
+    for (const skin of ['skin-1', 'skin-6']) {
+      await tp.goto(`${APP}/dev/avatar-lab?pintura=1&staff=${staff}&skin=${skin}`);
+      await tp.getByTestId('pintura').waitFor();
+      await settle(tp);
+      const srcs = await tp.evaluate(() => [...document.querySelectorAll('img')].filter((i) => i.naturalWidth > 0).map((i) => decodeURIComponent(i.currentSrc || i.src)));
+      const want = staff === 'none' ? ['body-b/hands.mask', 'body-b/hands.shade'] : ['body-b/hands.staff.mask', 'body-b/hands.staff.shade', 'body-b/hand_item.mask', 'body-b/hand_item.shade'];
+      for (const w of want) assert.ok(srcs.some((s) => s.includes(w)), `${pose} ${skin}: ${w} pintada carregada`);
+      await tp.getByTestId('pintura').screenshot({ path: `${SHOTS}/l1-09-maos-${pose}-${skin}.png` });
+      const box = await tp.getByText('Pintura · guarda-roupa').locator('..').locator('svg').first().boundingBox();
+      const k = box.width / 520;
+      const zones = staff === 'none' ? ['relaxed', 'rest'] : ['fist', 'relaxed'];
+      for (const z of zones) {
+        const [x, y, w, h] = handBox[z];
+        const buf = await tp.screenshot({ clip: { x: box.x + (x - 262) * k, y: box.y + (y - 176) * k, width: w * k, height: h * k } });
+        handLum[`${pose}/${z}/${skin}`] = lum(buf);
+      }
+    }
+  }
+  await tp.close();
+  for (const key of Object.keys(handLum).filter((x) => x.endsWith('/skin-1'))) {
+    const base = key.slice(0, -'/skin-1'.length);
+    assert.ok(handLum[key] - handLum[`${base}/skin-6`] > 25, `${base}: tom 1 mais claro que o tom 6 (${handLum[key].toFixed(0)} × ${handLum[`${base}/skin-6`].toFixed(0)})`);
+  }
+  assert.ok(Math.abs(handLum['cajado/fist/skin-1'] - handLum['caminhada/fist/skin-1']) < 12, 'a mão fechada é a mesma nos dois cajados (mesma âncora)');
+  step(`mãos pintadas nas quatro variantes (repouso, relaxada e fechada nos dois cajados) seguem o tom: ${Object.entries(handLum).map(([k2, v]) => `${k2} ${v.toFixed(0)}`).join(', ')}`);
 
   // ---------------------------------------------------------------- 320 px
   await page.setViewportSize({ width: 320, height: 640 });

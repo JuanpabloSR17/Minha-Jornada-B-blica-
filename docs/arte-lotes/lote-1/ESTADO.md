@@ -1,6 +1,6 @@
 # Lote 1 — estado das camadas
 
-Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **20**, ainda teste procedural: **50**, faltando: **0**.
+Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **36**, ainda teste procedural: **34**, faltando: **0**.
 
 | Peça | Camada | Arquivo | Estado |
 |---|---|---|---|
@@ -20,14 +20,14 @@ Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura en
 | body/body-b | arms.staff | `body/base/body-b/arms.staff.mask@2x.webp` | teste procedural |
 | body/body-b | arms.staff | `body/base/body-b/arms.staff.shade.webp` | teste procedural |
 | body/body-b | arms.staff | `body/base/body-b/arms.staff.shade@2x.webp` | teste procedural |
-| body/body-b | hands | `body/base/body-b/hands.mask.webp` | teste procedural |
-| body/body-b | hands | `body/base/body-b/hands.mask@2x.webp` | teste procedural |
-| body/body-b | hands | `body/base/body-b/hands.shade.webp` | teste procedural |
-| body/body-b | hands | `body/base/body-b/hands.shade@2x.webp` | teste procedural |
-| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask.webp` | teste procedural |
-| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask@2x.webp` | teste procedural |
-| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade.webp` | teste procedural |
-| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade@2x.webp` | teste procedural |
+| body/body-b | hands | `body/base/body-b/hands.mask.webp` | pintura entregue |
+| body/body-b | hands | `body/base/body-b/hands.mask@2x.webp` | pintura entregue |
+| body/body-b | hands | `body/base/body-b/hands.shade.webp` | pintura entregue |
+| body/body-b | hands | `body/base/body-b/hands.shade@2x.webp` | pintura entregue |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask.webp` | pintura entregue |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.mask@2x.webp` | pintura entregue |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade.webp` | pintura entregue |
+| body/body-b | hands.staff | `body/base/body-b/hands.staff.shade@2x.webp` | pintura entregue |
 | eyes/eyes-almond | face | `eyes/eyes-almond/all/face.webp` | teste procedural |
 | eyes/eyes-almond | face | `eyes/eyes-almond/all/face@2x.webp` | teste procedural |
 | eyes/eyes-almond | face | `eyes/eyes-almond/all/face.shade.webp` | teste procedural |
@@ -64,13 +64,13 @@ Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura en
 | feet/sandals-leather | feet | `feet/sandals-leather/body-b/feet@2x.webp` | teste procedural |
 | hands/staff-shepherd | cloak_front.staff | `hands/staff-shepherd/body-b/cloak_front.staff.webp` | teste procedural |
 | hands/staff-shepherd | cloak_front.staff | `hands/staff-shepherd/body-b/cloak_front.staff@2x.webp` | teste procedural |
-| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask.webp` | teste procedural |
-| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask@2x.webp` | teste procedural |
-| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade.webp` | teste procedural |
-| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade@2x.webp` | teste procedural |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask.webp` | pintura entregue |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.mask@2x.webp` | pintura entregue |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade.webp` | pintura entregue |
+| hands/staff-shepherd | hand_item | `hands/staff-shepherd/body-b/hand_item.shade@2x.webp` | pintura entregue |
 | hands/common_cajado_de_caminhada | cloak_front.staff | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff.webp` | teste procedural |
 | hands/common_cajado_de_caminhada | cloak_front.staff | `hands/common_cajado_de_caminhada/body-b/cloak_front.staff@2x.webp` | teste procedural |
-| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask.webp` | teste procedural |
-| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask@2x.webp` | teste procedural |
-| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade.webp` | teste procedural |
-| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade@2x.webp` | teste procedural |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask.webp` | pintura entregue |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.mask@2x.webp` | pintura entregue |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade.webp` | pintura entregue |
+| hands/common_cajado_de_caminhada | hand_item | `hands/common_cajado_de_caminhada/body-b/hand_item.shade@2x.webp` | pintura entregue |

@@ -210,7 +210,50 @@ Verificação (`npm run art:intake`):
 Pele, feições (olhos, sobrancelhas, boca, sombras do rosto) e mãos continuam nas camadas atuais até o próximo
 lote pintado.
 
-### Próximo pedido: rosto e mãos (corpo B)
+### Entrega 3 — Mãos do corpo Atlético (Codex, `Jornada_Biblica_Maos_2D.zip`)
+
+16 WebP sem perdas com alfa (8 camadas, base + `@2x`), aplicados por `scripts/art-intake.sh` a partir de `assets/avatars` da pasta extraída.
+
+| Variante | Arquivos (`assets/avatars/…`, `.mask` + `.shade`) | SHA-256 | Encaixe |
+|---|---|---|---|
+| Duas mãos em repouso | `body/base/body-b/hands` | ✔ confere | x 336–689, y 868–945: as duas mãos abaixo das mangas em repouso |
+| Mão relaxada (pose do cajado) | `body/base/body-b/hands.staff` | ✔ confere | x 336–402, y 868–945: só a mão esquerda, ao lado da bolsa |
+| Mão fechada no Cajado de Pastor | `hands/staff-shepherd/body-b/hand_item` | ✔ confere | x 632–702, y 492–574: punho na âncora do cajado, fechando a manga dobrada |
+| Mão fechada no Cajado de Caminhada | `hands/common_cajado_de_caminhada/body-b/hand_item` | ✔ confere | mesma pintura, byte a byte, e a mesma âncora |
+
+**Integridade e alfa:**
+- `SHA256SUMS.txt` confere para os 16 WebP e o `LEIA-ME.md`.
+- As caixas das camadas coincidem com as atuais com diferença de até 2 px.
+- As máscaras são quase brancas e opacas (alfa médio 245–248), então recebem o tom da conta.
+- As sombras são escuras e translúcidas (alfa médio 54–61).
+- `art:intake`: "alfa: sem névoa residual".
+
+**Verificação:**
+- `art:intake`: validação do pipeline e 30 testes de encaixe passaram.
+- **Duas poses, em 412 e 320 px, após salvar e reabrir (guarda-roupa e acampamento):** o percurso `FLOW=avatar-lote1` agora confere também as mãos pintadas.
+  - Com o cajado, carregam `hands.staff` e `hand_item`, e não `hands`.
+  - Sem o cajado, carrega `hands` em repouso, sem `hands.staff` nem `hand_item`.
+- **Troca de cajado:** do Pastor para o de Caminhada, o Início muda, carrega o `hand_item` pintado do novo cajado e fica igual após reabrir (gravado).
+- **Troca de tom de pele, em luz neutra, nas três poses** (Cajado de Pastor, Cajado de Caminhada, repouso):
+
+  | Mão | Tom 1 | Tom 6 |
+  |---|---:|---:|
+  | Fechada (os dois cajados) | 182 | 60 |
+  | Relaxada | 181 | 57 |
+  | Em repouso, direita | 188 | 61 |
+
+  Os números são a luminância média na área da mão. As mesmas máscaras recebem os dois tons. Nos dois cajados, a mão fechada tem a mesma luminância.
+- Capturas em [`lote-1/capturas-entrega/`](lote-1/capturas-entrega/):
+  - `l1-09-maos-{cajado,caminhada,repouso}-skin-{1,6}`;
+  - `l1-06`/`l1-07`: sem cajado, em 412 e 320 px;
+  - comparações e antes × depois.
+
+[`ESTADO.md`](lote-1/ESTADO.md): 36 de 70 arquivos com pintura entregue.
+
+As feições (rosto, olhos, sobrancelhas, boca) e o restante da pele (`body.mask`/`.shade`) seguem nas camadas atuais
+até a próxima entrega.
+
+### Próximo pedido: feições e pele (corpo B)
 
 | # | Arquivos | Tipo |
 |---|---|---|
@@ -220,8 +263,8 @@ lote pintado.
 | 4 | `brows/brows-soft/all/face.mask` + `face.shade` | sobrancelhas (tinta do cabelo) |
 | 5 | `expression/expr-smile/all/mouth.shade` (+ `mouth` opcional) | boca; lábios translúcidos |
 | 6 | ~~`hair/hair-short/all/…`~~ | ✔ recebido na entrega 2 |
-| 7 | `body/base/body-b/hands.mask/.shade`, `hands.staff.mask/.shade` | mãos em repouso; só a esquerda na pose do cajado |
-| 8 | `hands/staff-shepherd/body-b/hand_item.mask/.shade`, `hands/common_cajado_de_caminhada/body-b/hand_item.mask/.shade` | mão fechada na haste |
+| 7 | ~~`body/base/body-b/hands…`~~ | ✔ recebido na entrega 3 |
+| 8 | ~~`hands/…/body-b/hand_item…`~~ | ✔ recebido na entrega 3 |
 | 9 | ~~`outfit/tunic-linen/body-b/…`~~ | ✔ recebido na entrega 2 |
 
 Cada arquivo vai em duas resoluções, `@2x` e base. Os moldes de cada camada estão em `lote-1/moldes/`, com o
