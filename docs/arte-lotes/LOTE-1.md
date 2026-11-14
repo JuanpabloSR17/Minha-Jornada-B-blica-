@@ -172,7 +172,45 @@ Verificação (`npm run art:intake`):
 - **`art:intake`:** "alfa: sem névoa residual"; validação, testes de encaixe e percurso no guarda-roupa e no acampamento passaram.
 - **Palco do guarda-roupa:** céu contínuo, 219,3 dentro e fora do canvas.
 
-### Próximo pedido: rosto, cabelo, mãos e túnica (corpo B)
+### Entrega 2 — Túnica de Linho e cabelo curto (Codex, `Jornada_Biblica_Tunica_e_Cabelo_2D.zip`)
+
+14 WebP sem perdas com alfa, aplicados por `scripts/art-intake.sh` a partir de `assets/avatars` da pasta extraída.
+
+| Arquivo (`assets/avatars/…`, base + `@2x`) | SHA-256 | Encaixe |
+|---|---|---|
+| `outfit/tunic-linen/body-b/upper_outfit` | ✔ confere | corpo da túnica em x 343–680, y 422–1148, como o molde |
+| `outfit/tunic-linen/body-b/sleeves` | ✔ confere | mangas em repouso, caindo ao lado do corpo até a altura do punho |
+| `outfit/tunic-linen/body-b/sleeves.staff` | ✔ confere | manga direita dobrada no cotovelo (690, 704) até o punho (658, 566), fechando sob a mão no cajado; até x 791 |
+| `hair/hair-short/all/back_hair.mask` + `.shade` | ✔ confere | nuca atrás da cabeça |
+| `hair/hair-short/all/front_hair.mask` + `.shade` | ✔ confere | cabelo curto em x 442–581, y 196–328, sobre a testa sem cobrir os olhos |
+
+**Integridade e alfa:**
+- `SHA256SUMS.txt` confere para os 14 arquivos, antes e depois de copiados.
+- Fundo com alfa 0; alfa 1–15 só junto às bordas (≤ 0,06% do canvas). `art:intake`: "alfa: sem névoa residual".
+- As máscaras do cabelo são quase brancas e opacas, então recebem a cor da conta.
+- As sombras são escuras e translúcidas (alfa médio 78–91, máximo 224), como pede a §2.
+
+**Verificação:**
+- `art:intake`: validação do pipeline, `tsc` e 30 testes de encaixe passaram.
+- Jest, rodado à parte: 13 suítes, 108 testes passaram.
+- Percurso `FLOW=avatar-lote1`, com conta simulada (José, corpo B, Tom 4, Curto, Preto), passou por inteiro:
+  - **Pose do cajado:** com o Cajado de Pastor, guarda-roupa e acampamento carregam `sleeves.staff` e nenhuma camada de repouso.
+  - **Repouso, em 412 e em 320 px:** tirar o cajado e salvar não deixa item de mão no banco. Guarda-roupa e acampamento passam a carregar `sleeves` e `arms.mask` de repouso, sem `sleeves.staff`. Continua igual após reabrir. Não há rolagem lateral.
+  - **Cajado de volta:** equipar o Cajado de Pastor de novo, salvar e reabrir restaura `sleeves.staff` no guarda-roupa e no acampamento.
+  - **Cor do cabelo:** preto e loiro usam as mesmas `front_hair.mask` e `back_hair.shade`. A luminância média na área do cabelo pintado foi 72 com preto e 169 com loiro.
+  - **Troca de cajado:** a troca gravada e a reabertura continuam passando (`sameLook`).
+- Capturas em [`lote-1/capturas-entrega/`](lote-1/capturas-entrega/):
+  - `l1-06`/`l1-07`: sem cajado, em 412 e 320 px.
+  - `l1-04`/`l1-05`: com cajado, em 320 px.
+  - `l1-08-cabelo-preto` e `l1-08-cabelo-loiro`.
+  - Comparações e antes × depois.
+
+[`ESTADO.md`](lote-1/ESTADO.md): 20 de 70 arquivos com pintura entregue.
+
+Pele, feições (olhos, sobrancelhas, boca, sombras do rosto) e mãos continuam nas camadas atuais até o próximo
+lote pintado.
+
+### Próximo pedido: rosto e mãos (corpo B)
 
 | # | Arquivos | Tipo |
 |---|---|---|
@@ -181,10 +219,10 @@ Verificação (`npm run art:intake`):
 | 3 | `eyes/eyes-almond/all/face` + `face.shade` | olhos (cor) + pálpebras (sombreamento) |
 | 4 | `brows/brows-soft/all/face.mask` + `face.shade` | sobrancelhas (tinta do cabelo) |
 | 5 | `expression/expr-smile/all/mouth.shade` (+ `mouth` opcional) | boca; lábios translúcidos |
-| 6 | `hair/hair-short/all/back_hair.mask/.shade`, `front_hair.mask/.shade` | cabelo curto (tinta do cabelo) |
+| 6 | ~~`hair/hair-short/all/…`~~ | ✔ recebido na entrega 2 |
 | 7 | `body/base/body-b/hands.mask/.shade`, `hands.staff.mask/.shade` | mãos em repouso; só a esquerda na pose do cajado |
 | 8 | `hands/staff-shepherd/body-b/hand_item.mask/.shade`, `hands/common_cajado_de_caminhada/body-b/hand_item.mask/.shade` | mão fechada na haste |
-| 9 | `outfit/tunic-linen/body-b/upper_outfit`, `sleeves`, `sleeves.staff` | túnica e mangas, com a pose do cajado |
+| 9 | ~~`outfit/tunic-linen/body-b/…`~~ | ✔ recebido na entrega 2 |
 
 Cada arquivo vai em duas resoluções, `@2x` e base. Os moldes de cada camada estão em `lote-1/moldes/`, com o
 mesmo caminho.

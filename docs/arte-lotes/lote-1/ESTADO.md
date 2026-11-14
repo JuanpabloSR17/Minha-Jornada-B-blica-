@@ -1,6 +1,6 @@
 # Lote 1 — estado das camadas
 
-Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **6**, ainda teste procedural: **64**, faltando: **0**.
+Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura entregue: **20**, ainda teste procedural: **50**, faltando: **0**.
 
 | Peça | Camada | Arquivo | Estado |
 |---|---|---|---|
@@ -38,20 +38,20 @@ Gerado por `node scripts/art-status.mjs docs/arte-lotes/lote-1.json`. Pintura en
 | brows/brows-soft | face | `brows/brows-soft/all/face.shade@2x.webp` | teste procedural |
 | expression/expr-smile | mouth | `expression/expr-smile/all/mouth.shade.webp` | teste procedural |
 | expression/expr-smile | mouth | `expression/expr-smile/all/mouth.shade@2x.webp` | teste procedural |
-| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask.webp` | teste procedural |
-| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask@2x.webp` | teste procedural |
-| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade.webp` | teste procedural |
-| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade@2x.webp` | teste procedural |
-| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask.webp` | teste procedural |
-| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask@2x.webp` | teste procedural |
-| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade.webp` | teste procedural |
-| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade@2x.webp` | teste procedural |
-| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit.webp` | teste procedural |
-| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit@2x.webp` | teste procedural |
-| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves.webp` | teste procedural |
-| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves@2x.webp` | teste procedural |
-| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff.webp` | teste procedural |
-| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff@2x.webp` | teste procedural |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask.webp` | pintura entregue |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.mask@2x.webp` | pintura entregue |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade.webp` | pintura entregue |
+| hair/hair-short | back_hair | `hair/hair-short/all/back_hair.shade@2x.webp` | pintura entregue |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask.webp` | pintura entregue |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.mask@2x.webp` | pintura entregue |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade.webp` | pintura entregue |
+| hair/hair-short | front_hair | `hair/hair-short/all/front_hair.shade@2x.webp` | pintura entregue |
+| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit.webp` | pintura entregue |
+| outfit/tunic-linen | upper_outfit | `outfit/tunic-linen/body-b/upper_outfit@2x.webp` | pintura entregue |
+| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves.webp` | pintura entregue |
+| outfit/tunic-linen | sleeves | `outfit/tunic-linen/body-b/sleeves@2x.webp` | pintura entregue |
+| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff.webp` | pintura entregue |
+| outfit/tunic-linen | sleeves.staff | `outfit/tunic-linen/body-b/sleeves.staff@2x.webp` | pintura entregue |
 | back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back.webp` | pintura entregue |
 | back/cloak-night | cloak_back | `back/cloak-night/body-b/cloak_back@2x.webp` | pintura entregue |
 | back/cloak-night | chest | `back/cloak-night/body-b/chest.webp` | pintura entregue |

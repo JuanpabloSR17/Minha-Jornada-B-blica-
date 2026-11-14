@@ -144,17 +144,90 @@ async function loaded(page, names) {
   fs.renameSync(video, `${VIDEOS}/lote1-troca-de-cajado.webm`);
   step('troca do Cajado de Pastor pelo Cajado de Caminhada: Início muda e continua igual após reabrir (gravado)');
 
+  // ---------------------------------------------------------------- sem cajado: mangas em repouso; com cajado: pose do cajado (salvar e reabrir)
+  const sleeves = (p) => p.evaluate(() => {
+    const srcs = [...document.querySelectorAll('img')].filter((i) => i.complete && i.naturalWidth > 0).map((i) => decodeURIComponent(i.currentSrc || i.src));
+    return {
+      rest: srcs.some((s) => /tunic-linen\/body-b\/sleeves(?!\.staff)[.@]/.test(s)),
+      staff: srcs.some((s) => /tunic-linen\/body-b\/sleeves\.staff[.@]/.test(s)),
+      armsRest: srcs.some((s) => /body-b\/arms\.mask[.@]/.test(s)),
+    };
+  });
+  const poseCycle = async (w, current) => {
+    await page.goto(`${APP}/avatar/wardrobe?category=hands`);
+    await page.getByRole('radio', { name: new RegExp(`^${current},`) }).click();
+    await page.getByRole('button', { name: 'Remover', exact: true }).click();
+    await page.getByRole('button', { name: 'Salvar' }).click();
+    await page.getByText('Visual salvo.').waitFor();
+    assert.equal((await db.query(`select count(*)::int n from avatar_loadout_equipment e join avatar_loadouts l on l.id = e.loadout_id where l.user_id = $1 and l.is_active and e.slot = 'hands'`, [uid])).rows[0].n, 0, 'sem item de mão salvo');
+    await settle(page);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: sem cajado, mangas pintadas em repouso`);
+    await noOverflow(page, `guarda-roupa sem cajado ${w}`);
+    await shot(page, `l1-06-guarda-roupa-sem-cajado-${w}`);
+    await page.reload();
+    await page.getByRole('button', { name: 'Salvar' }).waitFor();
+    await settle(page);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: sem cajado após reabrir`);
+    await page.goto(`${APP}/home`);
+    await campAvatar(page).waitFor();
+    await settle(page);
+    assert.deepEqual(await sleeves(page), { rest: true, staff: false, armsRest: true }, `${w}: acampamento sem cajado`);
+    await noOverflow(page, `Início sem cajado ${w}`);
+    await shot(page, `l1-07-acampamento-sem-cajado-${w}`);
+    await page.goto(`${APP}/avatar/wardrobe?category=hands`);
+    await page.getByRole('radio', { name: /^Cajado de Pastor,/ }).click();
+    await page.getByRole('button', { name: 'Salvar' }).click();
+    await page.getByText('Visual salvo.').waitFor();
+    await page.reload();
+    await page.getByRole('button', { name: 'Salvar' }).waitFor();
+    await settle(page);
+    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false }, `${w}: cajado de volta, pose do cajado após reabrir`);
+    await page.goto(`${APP}/home`);
+    await campAvatar(page).waitFor();
+    await settle(page);
+    assert.deepEqual(await sleeves(page), { rest: false, staff: true, armsRest: false }, `${w}: acampamento com o cajado de volta`);
+  };
+  await poseCycle('412', 'Cajado de Caminhada');
+  await page.setViewportSize({ width: 320, height: 640 });
+  await poseCycle('320', 'Cajado de Pastor');
+  await page.setViewportSize({ width: 412, height: 915 });
+  step('412 e 320 px: tirar o cajado ativa as mangas pintadas em repouso e equipá-lo restaura a pose, após salvar e reabrir (guarda-roupa e acampamento)');
+
+  // ---------------------------------------------------------------- cor do cabelo: mesmas máscaras, preto × loiro
+  const hp = await browser.newPage({ viewport: { width: 1400, height: 760 } });
+  const hairShots = {};
+  for (const [label, hair] of [['preto', 'haircolor-black'], ['loiro', 'haircolor-blond']]) {
+    await hp.goto(`${APP}/dev/avatar-lab?pintura=1&hair=${hair}`);
+    await hp.getByTestId('pintura').waitFor();
+    await hp.waitForLoadState('networkidle');
+    await hp.waitForTimeout(800);
+    const srcs = await hp.evaluate(() => [...document.querySelectorAll('img')].map((i) => decodeURIComponent(i.currentSrc || i.src)));
+    assert.ok(srcs.some((s) => /hair-short\/all\/front_hair\.mask[.@]/.test(s)) && srcs.some((s) => /hair-short\/all\/back_hair\.shade[.@]/.test(s)), `cabelo ${label}: máscaras e sombras pintadas`);
+    await hp.getByTestId('pintura').screenshot({ path: `${SHOTS}/l1-08-cabelo-${label}.png` });
+    // célula "Pintura · guarda-roupa": recorte camp 262 176 520 980; cabelo pintado em 442–581 × 196–328
+    const box = await hp.getByText('Pintura · guarda-roupa').locator('..').locator('svg').first().boundingBox();
+    const sx = box.width / 520, sy = box.height / 980;
+    hairShots[label] = await hp.screenshot({ clip: { x: box.x + (452 - 262) * sx, y: box.y + (200 - 176) * sy, width: 120 * sx, height: 60 * sy } });
+  }
+  const { PNG } = require('pngjs');
+  const lum = (buf) => { const p = PNG.sync.read(buf); let s = 0; for (let i = 0; i < p.data.length; i += 4) s += 0.2126 * p.data[i] + 0.7152 * p.data[i + 1] + 0.0722 * p.data[i + 2]; return s / (p.width * p.height); };
+  const black = lum(hairShots.preto);
+  const blond = lum(hairShots.loiro);
+  assert.ok(blond - black > 40, `loiro bem mais claro que preto no cabelo (${black.toFixed(1)} × ${blond.toFixed(1)})`);
+  await hp.close();
+  step(`cabelo curto pintado tingido pela cor da conta: preto (${black.toFixed(0)}) e loiro (${blond.toFixed(0)}) com as mesmas máscaras`);
+
   // ---------------------------------------------------------------- 320 px
   await page.setViewportSize({ width: 320, height: 640 });
   await page.goto(`${APP}/avatar/wardrobe`);
   await page.waitForTimeout(1200);
   await noOverflow(page, 'guarda-roupa 320');
-  await shot(page, 'l1-04-guarda-roupa-caminhada-320');
+  await shot(page, 'l1-04-guarda-roupa-pastor-320');
   await page.goto(`${APP}/home`);
   await campAvatar(page).waitFor();
   await page.waitForTimeout(1200);
   await noOverflow(page, 'Início 320');
-  await shot(page, 'l1-05-acampamento-caminhada-320');
+  await shot(page, 'l1-05-acampamento-pastor-320');
   step('320 px: guarda-roupa e acampamento sem rolagem lateral');
 
   // ---------------------------------------------------------------- comparação: referência vetorial × pintura (luz neutra e do acampamento)
