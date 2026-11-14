@@ -191,7 +191,7 @@ async function newPhone(browser, scheme = 'light') {
   // guarda-roupa: equipar manto e salvar
   await page.goto(`${APP}/profile`);
   await page.getByRole('button', { name: 'Guarda-roupa' }).click();
-  await page.getByText('Guarda-roupa').first().waitFor();
+  await page.getByText('Guarda-roupa').filter({ visible: true }).first().waitFor();
   await page.getByRole('tab', { name: 'Mantos' }).click();
   await page.getByRole('radio', { name: /^Manto do Deserto,/ }).click();
   await page.getByRole('button', { name: 'Salvar' }).click();

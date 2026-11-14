@@ -86,7 +86,9 @@ const panel = (page) => page.getByTestId('home-action-panel');
   await page.waitForTimeout(600);
   await page.mouse.wheel(0, 3000);
   await page.getByRole('tab', { name: 'Jornada' }).click();
-  await page.getByRole('button', { name: /Origens e Aliança/ }).click();
+  // o alfinete do mapa seleciona e abre o mundo (o cartão logo abaixo tem o mesmo nome)
+  await page.getByTestId('journey-pin-origens').click();
+  await page.getByTestId('journey-world-origens').getByText('A explorar', { exact: true }).waitFor();
   await page.getByRole('button', { name: /^Êxodo/ }).click();
   await page.getByRole('button', { name: 'Êxodo 25', exact: true }).click();
   const passage = page.getByTestId('selected-passage').filter({ visible: true });
