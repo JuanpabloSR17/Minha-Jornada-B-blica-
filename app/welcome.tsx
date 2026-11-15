@@ -6,6 +6,8 @@ import { spacing } from '@/theme/tokens';
 import { AppText, Button, Icon, Notice, Ornament, Screen } from '@/ui';
 import { strings } from '@/i18n';
 import { isSupabaseConfigured } from '@/lib/supabase/client';
+import { isDemo } from '@/lib/supabase/demo';
+import { signIn } from '@/features/auth/auth.service';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
 import { defaultLook, normalizeLook } from '@/features/avatar/domain/avatar.rules';
 import { LOOK_PRESETS } from '@/features/avatar/domain/catalog';
@@ -17,6 +19,19 @@ export default function Welcome() {
   const { colors } = useTheme();
   const [look, setLook] = useState<AvatarLook>(() => (LOOK_PRESETS[0] ? normalizeLook(LOOK_PRESETS[0].look) : defaultLook()));
   const [hasGuest, setHasGuest] = useState(false);
+  const [startingDemo, setStartingDemo] = useState(false);
+  const [demoFailed, setDemoFailed] = useState(false);
+
+  async function enterDemo() {
+    setStartingDemo(true);
+    setDemoFailed(false);
+    try {
+      await signIn('viajante@demonstracao.invalid', 'demonstracao-local');
+    } catch {
+      setDemoFailed(true);
+      setStartingDemo(false);
+    }
+  }
 
   useFocusEffect(
     useCallback(() => {
@@ -31,9 +46,15 @@ export default function Welcome() {
     <Screen
       footer={
         <>
-          <Button title={strings.welcome.signUp} onPress={() => router.push({ pathname: '/auth', params: { mode: 'signup' } })} disabled={!isSupabaseConfigured} />
-          <Button title={strings.welcome.signIn} variant="secondary" onPress={() => router.push({ pathname: '/auth', params: { mode: 'signin' } })} disabled={!isSupabaseConfigured} />
-          <Button title={strings.welcome.tryIt} variant="ghost" onPress={() => router.push('/try')} accessibilityHint={strings.welcome.tryHint} />
+          {isDemo ? (
+            <Button title="Começar demonstração" loading={startingDemo} onPress={() => void enterDemo()} />
+          ) : (
+            <>
+              <Button title={strings.welcome.signUp} onPress={() => router.push({ pathname: '/auth', params: { mode: 'signup' } })} disabled={!isSupabaseConfigured} />
+              <Button title={strings.welcome.signIn} variant="secondary" onPress={() => router.push({ pathname: '/auth', params: { mode: 'signin' } })} disabled={!isSupabaseConfigured} />
+              <Button title={strings.welcome.tryIt} variant="ghost" onPress={() => router.push('/try')} accessibilityHint={strings.welcome.tryHint} />
+            </>
+          )}
         </>
       }
     >
@@ -42,6 +63,8 @@ export default function Welcome() {
         <AppText variant="display" style={styles.center}>{strings.app.name}</AppText>
         <Ornament />
       </View>
+      {isDemo ? <Notice title="Versão de teste">Seu progresso fica neste navegador. A demonstração começa com 80 Siclos para testar o Mercado. Você pode mudar o visual no Perfil.</Notice> : null}
+      {demoFailed ? <Notice tone="error">A demonstração não abriu. Tente novamente em uma janela normal do navegador.</Notice> : null}
       <AvatarStage look={look} height={360} />
       <AppText muted style={styles.center}>{strings.app.tagline}</AppText>
       <View style={styles.principles}>
@@ -53,7 +76,7 @@ export default function Welcome() {
         ))}
       </View>
       {hasGuest ? <Notice>{strings.auth.guestDraftNotice}</Notice> : null}
-      {!isSupabaseConfigured ? <Notice tone="warning" title={strings.config.missingTitle}>{strings.config.missingBody}</Notice> : null}
+      {!isSupabaseConfigured && !isDemo ? <Notice tone="warning" title={strings.config.missingTitle}>{strings.config.missingBody}</Notice> : null}
     </Screen>
   );
 }

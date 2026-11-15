@@ -73,7 +73,7 @@ export function ActionPanel({
           <View style={styles.bar}><View style={[styles.fill, { width: `${pct * 100}%` }]} /></View>
         </View>
       ) : null}
-      <Button variant="gold" title={button} onPress={session ? onOpenSession : onStart} />
+      <Button variant="gold" icon={pending ? 'cloud' : 'play'} title={button} onPress={session ? onOpenSession : onStart} />
       {!session && onChoose ? <Button compact variant="ghost" title={j.chooseOther} onPress={onChoose} /> : null}
     </View>
   );
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   pending: { borderColor: '#F2907E' },
   row: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   flex: { flex: 1, minWidth: 0 },
-  ref: { fontFamily: fonts.display, fontSize: 24, lineHeight: 30 },
+  ref: { fontFamily: fonts.bold, fontSize: 24, lineHeight: 30 },
   gap: { gap: 6 },
   bar: { height: 10, borderRadius: 5, backgroundColor: '#2A2336', borderWidth: 1, borderColor: '#5A4A2A', overflow: 'hidden' },
   fill: { height: '100%', backgroundColor: '#E9BA5B' },

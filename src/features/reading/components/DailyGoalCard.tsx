@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Notice } from '@/ui';
+import { AppText, Button, Card, IconBadge, Notice } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import {
@@ -69,7 +69,10 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
 
   return (
     <Card style={{ borderColor: s.achievedToday ? colors.success : colors.primary }}>
-      <AppText variant="heading">{title}</AppText>
+      <View style={styles.heading}>
+        <IconBadge name={s.achievedToday ? 'check' : 'flag'} color={s.achievedToday ? colors.success : colors.primary} />
+        <AppText variant="heading" style={styles.title}>{title}</AppText>
+      </View>
 
       {s.needsFreeChoice ? (
         s.canChooseFreeTarget ? (
@@ -132,7 +135,7 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
       {s.pending.length ? (
         <View style={styles.gap}>
           <AppText variant="label">{strings.mission.goalPendingCard}</AppText>
-          <Button variant="secondary" title={strings.mission.goalPendingOpen} onPress={() => router.push('/reading/goal')} />
+          <Button variant="secondary" icon="chest" title={strings.mission.goalPendingOpen} onPress={() => router.push('/reading/goal')} />
         </View>
       ) : null}
     </Card>
@@ -140,6 +143,8 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
 }
 
 const styles = StyleSheet.create({
+  heading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  title: { flex: 1, minWidth: 0 },
   gap: { gap: spacing.sm },
   row: { flexDirection: 'row', gap: spacing.xs, flexWrap: 'wrap' },
   chip: { minWidth: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center', paddingHorizontal: spacing.sm },

@@ -6,11 +6,11 @@ type Variant = 'display' | 'title' | 'heading' | 'body' | 'label' | 'caption';
 
 const variantStyle: Record<Variant, TextStyle> = {
   display: { fontFamily: fonts.display, fontSize: 30, lineHeight: 38, letterSpacing: 0.5 },
-  title: { fontFamily: fonts.display, fontSize: 22, lineHeight: 30, letterSpacing: 0.3 },
-  heading: { fontFamily: fonts.displayRegular, fontSize: 17, lineHeight: 24 },
-  body: { fontSize: 16, lineHeight: 23 },
-  label: { fontSize: 14, lineHeight: 20, fontWeight: '600' },
-  caption: { fontSize: 13, lineHeight: 18 },
+  title: { fontFamily: fonts.bold, fontSize: 26, lineHeight: 32 },
+  heading: { fontFamily: fonts.bold, fontSize: 20, lineHeight: 26 },
+  body: { fontFamily: fonts.medium, fontSize: 17, lineHeight: 25 },
+  label: { fontFamily: fonts.semibold, fontSize: 15, lineHeight: 21 },
+  caption: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 20 },
 };
 
 export function AppText({

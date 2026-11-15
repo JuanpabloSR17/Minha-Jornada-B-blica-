@@ -4,7 +4,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CinemaTheme } from '@/theme/ThemeProvider';
 import { spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, IconBadge, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { useMyAvatar } from '@/features/avatar/hooks/useMyAvatar';
@@ -83,18 +83,21 @@ export default function Home() {
           {error ? <Notice tone="error">{error}</Notice> : null}
           <DailyGoalCard session={session} hideStart />
           <Card>
-            <AppText variant="heading">{strings.home.missionsTitle}</AppText>
+            <View style={styles.sectionTitle}>
+              <IconBadge name="compass" />
+              <AppText variant="heading" style={styles.flex}>{strings.home.missionsTitle}</AppText>
+            </View>
             {overview ? (
               <AppText variant="label">
                 {fmt(strings.home.progress, { chapters: overview.chaptersCompleted, total: overview.totalChapters, xp: overview.xpTotal, siclos: overview.siclosBalance })}
               </AppText>
             ) : null}
-            <Button title={strings.market.open} onPress={() => router.push('/market')} />
+            <Button icon="bag" title={strings.market.open} onPress={() => router.push('/market')} />
             <View style={styles.row}>
-              <Button compact variant="secondary" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} style={styles.flex} />
-              <Button compact title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />
+              <Button compact variant="secondary" icon="flag" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} style={styles.flex} />
+              <Button compact icon="outfit" title={strings.wardrobe.title} onPress={() => router.push('/avatar/wardrobe')} style={styles.flex} />
             </View>
-            <Button compact variant="secondary" title={strings.sanctuary.title} onPress={() => router.push('/avatar/sanctuary')} />
+            <Button compact variant="secondary" icon="sanctuary" title={strings.sanctuary.title} onPress={() => router.push('/avatar/sanctuary')} />
           </Card>
         </View>
       </Screen>
@@ -107,5 +110,6 @@ const styles = StyleSheet.create({
   below: { padding: spacing.lg, gap: spacing.lg },
   greeting: { fontSize: 18, lineHeight: 24, textAlign: 'center', textShadowColor: 'rgba(0,0,0,0.7)', textShadowRadius: 6 },
   row: { flexDirection: 'row', gap: spacing.sm },
-  flex: { flex: 1 },
+  sectionTitle: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  flex: { flex: 1, minWidth: 0 },
 });

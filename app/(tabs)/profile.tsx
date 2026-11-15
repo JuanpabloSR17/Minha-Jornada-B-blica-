@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, ComingSoon, Icon, Notice, Screen, type IconName } from '@/ui';
+import { AppText, Button, Card, ComingSoon, Icon, IconBadge, Notice, Screen, type IconName } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { useMilestones } from '@/features/reading/useMilestones';
 import { milestoneSummary } from '@/features/reading/milestones';
@@ -19,10 +19,10 @@ import { setPrivacyMode } from '@/features/avatar/services/wardrobe.service';
 
 const SHORTCUTS: { label: string; icon: IconName; href: '/avatar/wardrobe' | '/avatar/loadouts' | '/avatar/collections' | '/avatar/editor' | '/avatar/sanctuary' }[] = [
   { label: 'Guarda-roupa', icon: 'outfit', href: '/avatar/wardrobe' },
-  { label: 'Visuais salvos', icon: 'profile', href: '/avatar/loadouts' },
-  { label: 'Coleções', icon: 'sparkle', href: '/avatar/collections' },
+  { label: 'Visuais salvos', icon: 'bag', href: '/avatar/loadouts' },
+  { label: 'Coleções', icon: 'chest', href: '/avatar/collections' },
   { label: 'Aparência', icon: 'face', href: '/avatar/editor' },
-  { label: 'Santuário', icon: 'sparkle', href: '/avatar/sanctuary' },
+  { label: 'Santuário', icon: 'sanctuary', href: '/avatar/sanctuary' },
 ];
 
 /** Perfil na identidade da jornada, com as conquistas reais da conta. */
@@ -53,17 +53,21 @@ function Achievements() {
   const progressError = error ?? worldError;
   const medals = worlds?.filter((w) => w.completedAt);
   const milestones = rows?.filter((row) => row.completed);
-  const items: ({ label: string; value: string } | null)[] = [
-    overview ? { label: p.chaptersRead, value: `${overview.chaptersCompleted} de ${overview.totalChapters}` } : null,
-    overview ? { label: p.booksRead, value: `${overview.booksCompleted} de ${BOOKS.length}` } : null,
-    sum ? { label: p.achMilestones, value: `${sum.milestonesDone} de ${sum.milestonesTotal}` } : null,
-    sum ? { label: p.achSaints, value: `${sum.saintsOwned} de ${sum.saintsTotal}` } : null,
-    medals && worlds ? { label: p.achWorlds, value: `${medals.length} de ${worlds.length}` } : null,
+  type Counter = { label: string; done: number; total: number; icon: IconName };
+  const items: (Counter | null)[] = [
+    overview ? { label: p.chaptersRead, done: overview.chaptersCompleted, total: overview.totalChapters, icon: 'scroll' } : null,
+    overview ? { label: p.booksRead, done: overview.booksCompleted, total: BOOKS.length, icon: 'book' } : null,
+    sum ? { label: p.achMilestones, done: sum.milestonesDone, total: sum.milestonesTotal, icon: 'flag' } : null,
+    sum ? { label: p.achSaints, done: sum.saintsOwned, total: sum.saintsTotal, icon: 'chest' } : null,
+    medals && worlds ? { label: p.achWorlds, done: medals.length, total: worlds.length, icon: 'compass' } : null,
   ];
-  const shown = items.filter((x): x is { label: string; value: string } => !!x);
+  const shown = items.filter((x): x is Counter => x !== null);
   return (
     <Card testID="profile-achievements">
-      <AppText variant="heading" accessibilityRole="header">{p.progress}</AppText>
+      <View style={styles.heading}>
+        <IconBadge name="medal" />
+        <AppText variant="heading" accessibilityRole="header" style={styles.detail}>{p.progress}</AppText>
+      </View>
       {progressError ? (
         <>
           <Notice tone="error">{progressError}</Notice>
@@ -74,20 +78,24 @@ function Achievements() {
       <View style={styles.plaques}>
         {shown.map((it) => (
           <View key={it.label} style={[styles.plaque, { borderColor: colors.selection, backgroundColor: colors.surfaceRaised }]}
-            accessible accessibilityLabel={`${it.label}: ${it.value}`}>
-            <AppText variant="heading" color={colors.selection}>{it.value}</AppText>
-            <AppText variant="caption" muted style={styles.center}>{it.label}</AppText>
+            accessible accessibilityLabel={`${it.label}: ${it.done} de ${it.total}`}>
+            <Icon name={it.icon} color={colors.primary} size={20} />
+            <AppText variant="heading" color={colors.selection} style={styles.center}>{it.done} de {it.total}</AppText>
+            <AppText variant="caption" style={styles.center}>{it.label}</AppText>
+            <View aria-hidden style={[styles.track, { backgroundColor: colors.background }]}>
+              <View style={[styles.fill, { backgroundColor: colors.selection, width: `${it.total ? Math.min(100, it.done / it.total * 100) : 0}%` }]} />
+            </View>
           </View>
         ))}
       </View>
-      <Button compact variant="secondary" title={p.openJourney} icon={<Icon name="map" color={colors.primary} size={18} />}
+      <Button compact variant="secondary" title={p.openJourney} icon="map"
         onPress={() => router.navigate('/journey')} />
       {medals ? (
         <>
           <AppText variant="heading" accessibilityRole="header">{p.worldsMedals}</AppText>
           {medals.length ? medals.map((world) => (
             <View key={world.id} testID={`profile-medal-${world.id}`} style={[styles.achievement, { borderColor: colors.border }]}>
-              <Icon name="medal" size={28} color={colors.primary} />
+              <IconBadge name="medal" size={42} />
               <View style={styles.detail}>
                 <AppText variant="label">{world.name}</AppText>
                 <AppText variant="caption" muted>{fmt(strings.journey.worldChapters, { done: world.done, total: world.chapters })}</AppText>
@@ -100,14 +108,14 @@ function Achievements() {
         <Pressable key={row.id} accessibilityRole="link"
           onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: row.id } })}
           style={[styles.achievement, { borderColor: colors.border }]}>
-          <Icon name="check" color={colors.selection} />
+          <IconBadge name="flag" color={colors.selection} />
           <View style={styles.detail}>
             <AppText variant="label">{row.name}</AppText>
             <AppText variant="caption" muted>{refLabel(row.book, row.chapter)}</AppText>
           </View>
         </Pressable>
       ))}
-      <Button compact variant="secondary" title={p.openMilestones} onPress={() => router.push('/reading/milestones')} />
+      <Button compact variant="secondary" icon="flag" title={p.openMilestones} onPress={() => router.push('/reading/milestones')} />
     </Card>
   );
 }
@@ -133,7 +141,6 @@ function Profile() {
   return (
     <Screen edges={['top', 'left', 'right']}>
       {error ? <Notice tone="error">{error}</Notice> : null}
-      {avatar ? <AvatarStage look={avatar} height={460} /> : null}
       <View style={styles.identity}>
         <AppText variant="title" style={styles.center}>{profile.display_name}</AppText>
         <AppText muted style={styles.center}>@{profile.username}</AppText>
@@ -143,6 +150,7 @@ function Profile() {
         </View>
       </View>
       <Achievements key={profile.id} />
+      {avatar ? <AvatarStage look={avatar} height={300} /> : null}
       <View style={styles.grid}>
         {SHORTCUTS.map((s) => (
           <Pressable
@@ -152,15 +160,15 @@ function Profile() {
             onPress={() => router.push(s.href)}
             style={({ pressed }) => [styles.shortcut, { backgroundColor: pressed ? colors.backgroundAlt : colors.surface, borderColor: colors.borderStrong }]}
           >
-            <Icon name={s.icon} size={26} color={colors.primary} />
-            <AppText variant="label" color={colors.text}>{s.label}</AppText>
+            <IconBadge name={s.icon} />
+            <AppText variant="label" color={colors.text} style={styles.center}>{s.label}</AppText>
           </Pressable>
         ))}
       </View>
       <Card>
         <AppText variant="label" muted>{strings.profile.readingGoal}</AppText>
         <AppText variant="heading">{goalLabel(readingPreferences)}</AppText>
-        <Button compact variant="secondary" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} />
+          <Button compact variant="secondary" icon="flag" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} />
       </Card>
       <Card>
         <AppText variant="heading">{strings.social.privacyTitle}</AppText>
@@ -197,11 +205,14 @@ const styles = StyleSheet.create({
   center: { textAlign: 'center' },
   badge: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.md, paddingVertical: 4, borderRadius: radius.pill, borderWidth: 1, marginTop: 4 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  shortcut: { width: '48%', minHeight: 76, borderRadius: radius.lg, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center', gap: 4 },
+  shortcut: { width: '48%', minHeight: 86, borderRadius: radius.lg, borderWidth: 1.5, padding: spacing.sm, alignItems: 'center', justifyContent: 'center', gap: 4 },
+  heading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   segment: { flexDirection: 'row', gap: spacing.sm },
   plaques: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   achievement: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.sm, minHeight: 52, borderWidth: 1, borderRadius: radius.md },
   detail: { flex: 1, minWidth: 0 },
   plaque: { flexGrow: 1, flexBasis: '30%', minWidth: 88, minHeight: 76, borderWidth: 1.5, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', padding: spacing.sm, gap: 2 },
+  track: { width: '100%', height: 4, marginTop: spacing.xs, borderRadius: radius.pill, overflow: 'hidden' },
+  fill: { height: '100%' },
   segItem: { flex: 1, minHeight: 44, borderRadius: radius.md, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
 });

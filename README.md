@@ -118,6 +118,18 @@ npm start          # Expo (Android/iOS via Expo Go ou dev build)
 npm run web        # navegador
 ```
 
+### Demonstração web
+
+A demonstração abre com um viajante fictício e guarda o progresso no navegador. Ela usa as
+migrações da aplicação em uma base local e dispensa conta, credenciais e serviços externos de dados.
+
+1. Defina `EXPO_PUBLIC_JORNADA_DEMO=1` para o comando `npm run export:web`.
+2. Instale `@electric-sql/pglite@0.5.16` numa pasta auxiliar e execute
+   `node demo/prepare.mjs dist <pasta-do-pacote-pglite>/dist`.
+3. Sirva `dist/` com fallback das rotas do app para `index.html`.
+
+O relatório do tour e o roteiro de teste estão em [Tour e piloto](docs/TOUR-E-PILOTO.md).
+
 ## Testes
 
 | Comando | O que verifica |

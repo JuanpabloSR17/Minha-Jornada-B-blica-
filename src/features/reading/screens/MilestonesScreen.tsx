@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
-import { AppText, Card, Icon, Notice, Screen } from '@/ui';
+import { fonts, radius, spacing } from '@/theme/tokens';
+import { AppText, Card, Icon, IconBadge, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
@@ -31,10 +31,13 @@ export function MilestonesScreen() {
       {error ? <Notice tone="error">{error}</Notice> : null}
       {!rows && !error ? <ActivityIndicator color={colors.primary} /> : null}
       {sum ? (
-        <View style={styles.summary}>
-          <AppText variant="label">{fmt(m.milestonesDone, { done: sum.milestonesDone, total: sum.milestonesTotal })}</AppText>
-          <AppText variant="caption" muted>{fmt(m.saintsOwned, { owned: sum.saintsOwned, total: sum.saintsTotal })}</AppText>
-        </View>
+        <Card style={styles.summary}>
+          <IconBadge name="flag" color={RARITY_COLOR.holy} size={42} />
+          <View style={styles.flex}>
+            <AppText variant="label">{fmt(m.milestonesDone, { done: sum.milestonesDone, total: sum.milestonesTotal })}</AppText>
+            <AppText variant="caption" muted>{fmt(m.saintsOwned, { owned: sum.saintsOwned, total: sum.saintsTotal })}</AppText>
+          </View>
+        </Card>
       ) : null}
       <View style={styles.filters} accessibilityRole="radiogroup" accessibilityLabel={m.filtersLabel}>
         {FILTERS.map((f) => {
@@ -56,7 +59,7 @@ export function MilestonesScreen() {
               accessibilityLabel={`${r.name}, ${refLabel(r.book, r.chapter)}, ${r.completed ? m.milestoneStateDone : m.milestoneStateTodo}, ${fmt(m.milestoneItemsOwned, { owned: r.ownedCount, total: r.items.length })}`}
               onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: r.id } })}
               style={[styles.row, i > 0 && { borderTopWidth: 1, borderTopColor: colors.border }]}>
-              <Icon name={r.completed ? 'check' : 'sparkle'} size={18} color={r.completed ? colors.success : RARITY_COLOR.holy} />
+              <Icon name={r.completed ? 'check' : 'flag'} size={18} color={r.completed ? colors.success : RARITY_COLOR.holy} />
               <View style={styles.flex}>
                 <AppText variant="label">{r.name}</AppText>
                 <AppText variant="caption" muted>{refLabel(r.book, r.chapter)} · {fmt(m.milestoneItemsOwned, { owned: r.ownedCount, total: r.items.length })}</AppText>
@@ -74,9 +77,9 @@ export function MilestonesScreen() {
 
 const styles = StyleSheet.create({
   flex: { flex: 1, minWidth: 0 },
-  summary: { gap: 2 },
+  summary: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   filters: { flexDirection: 'row', gap: spacing.xs, flexWrap: 'wrap' },
-  filter: { borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: spacing.md, paddingVertical: 6 },
-  row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.sm },
-  state: { fontWeight: '600' },
+  filter: { borderWidth: 1, borderRadius: radius.pill, minHeight: 44, justifyContent: 'center', paddingHorizontal: spacing.md, paddingVertical: 6 },
+  row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44, paddingVertical: spacing.sm },
+  state: { fontFamily: fonts.semibold, flexShrink: 1 },
 });

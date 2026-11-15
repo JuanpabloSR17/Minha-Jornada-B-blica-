@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, Icon, IconBadge, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
@@ -18,6 +18,7 @@ import { milestoneSummary } from '../milestones';
 export { bookName, refLabel } from '../refs';
 import { BOOKS, refLabel } from '../refs';
 import { WORLDS } from '@/features/journey/worlds';
+import { worldIcons } from '@/features/journey/worldIcons';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
 /** Aba Ler na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
@@ -81,7 +82,10 @@ function MissionHome() {
 
   return (
     <Screen edges={['top', 'left', 'right']} scrollToTopKey={scrollKey}>
-      <AppText variant="title">{strings.mission.title}</AppText>
+      <View style={styles.heading}>
+        <IconBadge name="book" size={42} />
+        <AppText variant="title" style={styles.flex}>{strings.mission.title}</AppText>
+      </View>
       <AppText muted>{strings.mission.intro}</AppText>
       {error ? <Notice tone="error">{error}</Notice> : null}
       <ActiveSessionCard />
@@ -90,19 +94,19 @@ function MissionHome() {
       {selectedBook && chapter ? (
         <Card style={{ borderColor: colors.primary }} testID="selected-passage">
           <AppText variant="caption" muted>{strings.mission.selectedPassage}</AppText>
-          <AppText variant="display" style={styles.ref}>{refLabel(selectedBook.code, chapter)}</AppText>
+          <AppText variant="title" style={styles.ref}>{refLabel(selectedBook.code, chapter)}</AppText>
           <AppText variant="caption" muted>
             {done.has(chapter) ? strings.mission.selectedReread : strings.mission.selectedNew} · {strings.mission.physical}
           </AppText>
           {session ? <Notice tone="info">{fmt(strings.mission.otherActive, { ref: refLabel(session.book, session.chapter) })}</Notice> : null}
-          <Button variant="gold"
+          <Button variant="gold" icon="play"
             title={`${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
             onPress={() => void start()} disabled={!!session || !loaded} />
           {chapterMarcos.map((mk) => (
             <View key={mk.id} style={[styles.marco, { borderColor: RARITY_COLOR.holy }]} testID="chapter-milestone-hint">
               <AppText variant="label">{fmt(strings.mission.chapterHasMilestone, { name: mk.name })}</AppText>
               <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
-              <Button compact variant="secondary" title={fmt(strings.mission.startByMilestone, { name: mk.name })}
+              <Button compact variant="secondary" icon="flag" title={fmt(strings.mission.startByMilestone, { name: mk.name })}
                 onPress={() => void start(mk.id)} disabled={!!session || !loaded} />
               <Button compact variant="ghost" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
             </View>
@@ -126,17 +130,23 @@ function MissionHome() {
 
       {milestoneSum ? (
         <Card style={{ borderColor: RARITY_COLOR.holy }}>
-          <AppText variant="heading">{strings.mission.milestones}</AppText>
+          <View style={styles.heading}>
+            <IconBadge name="flag" color={RARITY_COLOR.holy} />
+            <AppText variant="heading" style={styles.flex}>{strings.mission.milestones}</AppText>
+          </View>
           <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
           <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
           {nextMilestone ? <AppText variant="caption" muted>{fmt(strings.mission.milestonesNext, { name: nextMilestone.name, ref: refLabel(nextMilestone.book, nextMilestone.chapter) })}</AppText> : null}
-          <Button variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
+          <Button variant="secondary" icon="flag" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
         </Card>
       ) : null}
 
       {overview?.missions.some((m) => m.kind === 'mission') ? (
         <Card>
-          <AppText variant="heading">{strings.mission.curated}</AppText>
+          <View style={styles.heading}>
+            <IconBadge name="sparkle" />
+            <AppText variant="heading" style={styles.flex}>{strings.mission.curated}</AppText>
+          </View>
           {overview.missions.filter((m) => m.kind === 'mission').map((m) => (
             <Pressable key={m.id} accessibilityRole="button" onPress={() => { setBook(m.book); setChapter(m.chapter); }} style={styles.missionRow}>
               <Icon name={m.completed ? 'check' : 'sparkle'} size={18} color={m.completed ? colors.success : colors.primary} />
@@ -150,7 +160,10 @@ function MissionHome() {
       ) : null}
 
       <Card>
-        <AppText variant="heading">{strings.mission.chooseBook}</AppText>
+        <View style={styles.heading}>
+          <IconBadge name="scroll" />
+          <AppText variant="heading" style={styles.flex}>{strings.mission.chooseBook}</AppText>
+        </View>
         {/* livros agrupados pelos sete mundos da Jornada, com o progresso de cada mundo */}
         {WORLDS.map((w) => {
           const books = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
@@ -159,6 +172,7 @@ function MissionHome() {
           return (
             <View key={w.id} style={styles.section} testID={`read-world-${w.id}`}>
               <View style={styles.worldHead}>
+                <Icon name={worldIcons[w.id]} size={18} color={colors.primary} />
                 <AppText variant="label" style={styles.flex}>{w.name}</AppText>
                 <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: read, total })}</AppText>
               </View>
@@ -172,8 +186,8 @@ function MissionHome() {
                   return (
                     <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
                       onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
-                      <AppText variant="caption" style={styles.chipText}>{b.name}</AppText>
-                      <AppText variant="caption" muted style={styles.chipText}>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
+                      <AppText variant="label">{b.name}</AppText>
+                      <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
                     </Pressable>
                   );
                 })}
@@ -209,14 +223,13 @@ function MissionHome() {
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1 },
+  flex: { flex: 1, minWidth: 0 },
+  heading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   section: { gap: spacing.xs, marginTop: spacing.sm },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
-  chip: { borderWidth: 1, borderRadius: radius.md, paddingVertical: 6, paddingHorizontal: 10 },
-  chipText: { fontSize: 12, lineHeight: 15 },
+  chip: { borderWidth: 1, borderRadius: radius.md, paddingVertical: 4, paddingHorizontal: 10, minHeight: 44 },
   num: { width: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   dot: { position: 'absolute', bottom: 4, width: 5, height: 5, borderRadius: 3 },
-  mode: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md },
   ref: { fontSize: 28 },
   worldHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   worldBar: { height: 5, borderRadius: radius.pill, overflow: 'hidden' },
