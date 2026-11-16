@@ -13,13 +13,14 @@ import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { displayName, displayNameOf, getCatalogMission, getItem, isEquippable } from '@/features/avatar/domain/catalog';
 import { RevealOverlay } from '@/features/journey/components/RevealOverlay';
 import { equipItem, getWardrobe } from '@/features/avatar/services/wardrobe.service';
-import bible from '../bible-books.json';
+import { ChapterResultBanner } from '@/features/journey/components/ChapterResultBanner';
 import { missionStorage } from '../mission/storage';
 import { useMilestones } from '../useMilestones';
-import type { MissionResult } from '../mission/mission.service';
-import { formatClock, nextChapter } from '../mission/session';
+import { getNextReading, type MissionResult, type NextReading } from '../mission/mission.service';
+import { formatClock } from '../mission/session';
 import { GoalChoice } from '../components/GoalChoice';
 import { GoalCelebration } from '../components/GoalCelebration';
+import { RelatedTrailReflection } from '../trails/TrailReflection';
 import { bookName, refLabel } from './MissionHomeScreen';
 
 /** Recompensa pós-leitura (B02): confirmação do servidor, progresso e itens concedidos de fato. */
@@ -36,6 +37,7 @@ function MissionCompleted() {
   const router = useRouter();
   const { userId } = useAuth();
   const [result, setResult] = useState<MissionResult | null | undefined>(undefined);
+  const [reading, setReading] = useState<NextReading | null>(null);
   const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string } | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const { rows: milestones } = useMilestones();
@@ -43,6 +45,15 @@ function MissionCompleted() {
   useEffect(() => {
     if (userId) void missionStorage.loadResult(userId).then(setResult);
   }, [userId]);
+
+  const sessionId = result?.sessionId;
+  useEffect(() => {
+    if (!sessionId) return;
+    let active = true;
+    setReading(null);
+    void getNextReading().then((next) => { if (active) setReading(next); }, () => undefined);
+    return () => { active = false; };
+  }, [sessionId]);
 
   if (result === undefined) {
     return (
@@ -73,7 +84,7 @@ function MissionCompleted() {
     then?.();
   };
   const pendingMarcos = (milestones ?? []).filter((r) => !r.completed && r.book === result.book.code && r.chapter === result.chapter);
-  const next = nextChapter(bible as { code: string; chapters: number }[], result.book.code, result.chapter);
+  const next = reading?.next;
 
   const equip = async (itemId: string) => {
     setBusy(itemId);
@@ -98,6 +109,7 @@ function MissionCompleted() {
       {result.duplicate ? <Notice tone="info">{strings.mission.duplicateNote}</Notice> : null}
       {result.bookJustCompleted ? <Notice tone="success">{fmt(strings.mission.bookCompleted, { book: result.book.name })}</Notice> : null}
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
+      <ChapterResultBanner result={result} />
 
       <Card>
         <View style={styles.stats}>
@@ -195,10 +207,13 @@ function MissionCompleted() {
         {result.granted.some((id) => getItem(id)?.rarity === 'holy') ? <Button variant="secondary" title={strings.mission.seeSanctuary} onPress={() => router.push('/avatar/sanctuary')} /> : null}
       </Card>
 
+      <RelatedTrailReflection result={result} />
+
       {next ? (
         <Button title={`${strings.mission.nextChapter}: ${bookName(next.book)} ${next.chapter}`}
           onPress={() => router.replace({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter) } })} />
       ) : null}
+      {reading?.allDone ? <Button icon="medal" variant="gold" title="Ver conquistas da Jornada" onPress={() => router.replace('/(tabs)/profile')} /> : null}
       <Button variant="secondary" title={strings.mission.backToMissions} onPress={() => router.replace('/(tabs)/read')} />
     </Screen>
     {showReveal ? (

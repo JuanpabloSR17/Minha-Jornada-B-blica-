@@ -17,6 +17,8 @@ import { DailyGoalCard } from '@/features/reading/components/DailyGoalCard';
 import { CampHero } from '@/features/journey/components/CampHero';
 import { ActionPanel } from '@/features/journey/components/ActionPanel';
 import { Plaque } from '@/features/journey/components/Plaque';
+import { FeaturedTrail } from '@/features/journey/components/FeaturedTrail';
+import { nextBookObjective, readingLevel } from '@/features/journey/progression';
 
 const TAB_BAR = 64;
 
@@ -31,6 +33,7 @@ export default function Home() {
   const [overview, setOverview] = useState<MissionOverview | null>(null);
   const [goal, setGoal] = useState<DailyGoalStatus | null>(null);
   const [next, setNext] = useState<{ book: string; chapter: number } | null>(null);
+  const [allDone, setAllDone] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -44,7 +47,11 @@ export default function Home() {
     if (!userId) return;
     let alive = true;
     getNextReading().then(
-      (r) => alive && setNext(r.next ?? { book: 'GEN', chapter: 1 }),
+      (r) => {
+        if (!alive) return;
+        setAllDone(r.allDone);
+        setNext(r.allDone ? null : r.next ?? { book: 'GEN', chapter: 1 });
+      },
       () => missionStorage.loadResult(userId).then((r) => {
         const n = r ? nextChapter(bible as { code: string; chapters: number }[], r.book.code, r.chapter) : null;
         if (alive) setNext(n ?? { book: 'GEN', chapter: 1 });
@@ -54,6 +61,8 @@ export default function Home() {
   }, [userId, session, overview]);
 
   const heroH = Math.max(470, Math.min(820, winH - insets.top - TAB_BAR));
+  const level = overview ? readingLevel(overview.xpTotal) : null;
+  const objective = overview ? nextBookObjective(overview.chaptersByBook) : null;
 
   return (
     <CinemaTheme>
@@ -65,6 +74,12 @@ export default function Home() {
             <>
               <Plaque title={strings.journey.appTitle} />
               <AppText variant="title" style={styles.greeting} color="#F6ECD6">{fmt(strings.home.greeting, { name: profile?.display_name ?? '' })}</AppText>
+              {level ? (
+                <View style={styles.hud} testID="camp-level">
+                  <IconBadge name={level.rankIcon} color="#F2CE84" size={31} />
+                  <AppText variant="label" color="#F4D899">Nível {level.level} · {level.title}</AppText>
+                </View>
+              ) : null}
             </>
           }
           bottom={
@@ -72,15 +87,31 @@ export default function Home() {
               session={session}
               now={now}
               next={next}
+              allDone={allDone}
               today={goal ? { done: goal.newChaptersToday, target: goal.target ?? null } : null}
               onOpenSession={() => router.push('/reading/mission')}
-              onStart={() => (next ? router.push({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter), selection: String(Date.now()) } }) : router.push('/(tabs)/read'))}
+              onStart={() => allDone ? router.push('/(tabs)/profile') : next ? router.push({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter), selection: String(Date.now()) } }) : router.push('/(tabs)/read')}
               onChoose={() => router.push('/(tabs)/read')}
             />
           }
         />
         <View style={styles.below}>
           {error ? <Notice tone="error">{error}</Notice> : null}
+          {objective && objective.chaptersRead > 0 ? (
+            <Card testID="camp-next-objective">
+              <View style={styles.sectionTitle}>
+                <IconBadge name="medal" />
+                <View style={styles.flex}>
+                  <AppText variant="caption" muted>Conquista ao alcance</AppText>
+                  <AppText variant="heading">Concluir {objective.bookName}</AppText>
+                </View>
+              </View>
+              <AppText muted>{objective.remaining === 1 ? 'Falta 1 capítulo' : `Faltam ${objective.remaining} capítulos`} · {objective.worldName}</AppText>
+              <Button compact variant="secondary" icon="forward" title="Retomar esse livro"
+                onPress={() => router.push({ pathname: '/(tabs)/read', params: { book: objective.book, chapter: String(objective.chapter), selection: String(Date.now()) } })} />
+            </Card>
+          ) : null}
+          <FeaturedTrail completed={overview ? (overview.chaptersByBook.RUT?.length ?? 0) : undefined} />
           <DailyGoalCard session={session} hideStart />
           <Card>
             <View style={styles.sectionTitle}>
@@ -106,6 +137,7 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
+  hud: { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderColor: '#9E713B', backgroundColor: 'rgba(16, 12, 27, 0.9)', borderRadius: 22, paddingVertical: 2, paddingHorizontal: 9 },
   content: { padding: 0, gap: 0 },
   below: { padding: spacing.lg, gap: spacing.lg },
   greeting: { fontSize: 18, lineHeight: 24, textAlign: 'center', textShadowColor: 'rgba(0,0,0,0.7)', textShadowRadius: 6 },

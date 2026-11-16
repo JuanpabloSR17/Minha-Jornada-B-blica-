@@ -30,6 +30,7 @@ export function ActionPanel({
   session,
   now,
   next,
+  allDone,
   today,
   onOpenSession,
   onStart,
@@ -38,6 +39,7 @@ export function ActionPanel({
   session: MissionSession | null;
   now: number;
   next: { book: string; chapter: number } | null;
+  allDone?: boolean;
   today: { done: number; target: number | null } | null;
   onOpenSession: () => void;
   onStart: () => void;
@@ -48,7 +50,8 @@ export function ActionPanel({
   const marco = session ? getCatalogMission(session.milestone) : null;
   const ref = session ? refLabel(session.book, session.chapter) : next ? refLabel(next.book, next.chapter) : null;
   const pct = today?.target ? Math.min(1, today.done / today.target) : 0;
-  const label = pending ? j.pendingReading : session ? j.activeReading : j.nextReading;
+  const complete = !!allDone && !session;
+  const label = pending ? j.pendingReading : session ? j.activeReading : complete ? 'Jornada de leitura concluída' : j.nextReading;
   const button = pending ? m.sessionVerify : session || (today?.done ?? 0) > 0 ? strings.home.dailyContinue : strings.home.dailyStart;
 
   return (
@@ -73,8 +76,8 @@ export function ActionPanel({
           <View style={styles.bar}><View style={[styles.fill, { width: `${pct * 100}%` }]} /></View>
         </View>
       ) : null}
-      <Button variant="gold" icon={pending ? 'cloud' : 'play'} title={button} onPress={session ? onOpenSession : onStart} />
-      {!session && onChoose ? <Button compact variant="ghost" title={j.chooseOther} onPress={onChoose} /> : null}
+      <Button variant="gold" icon={complete ? 'medal' : pending ? 'cloud' : 'play'} title={complete ? 'Ver conquistas' : button} onPress={session ? onOpenSession : onStart} />
+      {!session && onChoose ? <Button compact variant="ghost" title={complete ? 'Escolher um capítulo para reler' : j.chooseOther} onPress={onChoose} /> : null}
     </View>
   );
 }

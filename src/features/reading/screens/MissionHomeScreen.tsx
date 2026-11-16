@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Icon, IconBadge, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, Icon, IconBadge, Notice, Screen, TextField } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
@@ -19,6 +19,8 @@ export { bookName, refLabel } from '../refs';
 import { BOOKS, refLabel } from '../refs';
 import { WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
+import { FeaturedTrail } from '@/features/journey/components/FeaturedTrail';
+import { normalizeReference, parseReferenceSearch } from '../referenceSearch';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
 /** Aba Ler na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
@@ -41,6 +43,7 @@ function MissionHome() {
   const [chapter, setChapter] = useState<number | null>(null);
   const [mode] = useState<MissionMode>('physical');
   const [scrollKey, setScrollKey] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
   // marcos dos Santos: só o resumo aqui; a escolha do marco fica na tela do marco
   const { rows: milestoneRowsData } = useMilestones();
   const milestoneSum = milestoneRowsData ? milestoneSummary(milestoneRowsData) : null;
@@ -57,6 +60,7 @@ function MissionHome() {
     const requested = BOOKS.find((b) => b.code === params.book);
     if (requested) {
       setBook(requested.code);
+      setSearch('');
       const ch = Number(params.chapter);
       setChapter(Number.isInteger(ch) && ch >= 1 && ch <= requested.chapters ? ch : null);
       setScrollKey(`${params.book}:${params.chapter}:${params.selection ?? ''}`);
@@ -67,6 +71,18 @@ function MissionHome() {
   // marcos Santos a cumprir neste capítulo: escolha explícita, separada da leitura comum
   const chapterMarcos = selectedBook && chapter ? (milestoneRowsData ?? []).filter((r) => !r.completed && r.book === selectedBook.code && r.chapter === chapter) : [];
   const done = useMemo(() => new Set(overview?.chaptersByBook[book ?? ''] ?? []), [overview, book]);
+  const lookup = parseReferenceSearch(search);
+  const matches = BOOKS.filter((candidate) => {
+    const byName = normalizeReference(candidate.name).includes(lookup.book);
+    const byCode = normalizeReference(candidate.code).startsWith(lookup.book);
+    return (byName || byCode) && (lookup.chapter === null || (lookup.chapter > 0 && lookup.chapter <= candidate.chapters));
+  });
+
+  const selectPassage = (code: string, number: number) => {
+    setBook(code);
+    setChapter(number);
+    setScrollKey(`${code}:${number}:${Date.now()}`);
+  };
 
   const start = async (milestone?: string) => {
     if (!userId || !book || !chapter || session) return;
@@ -126,7 +142,7 @@ function MissionHome() {
       ) : null}
 
       <DailyGoalCard session={session} hideStart />
-
+      <FeaturedTrail completed={overview ? (overview.chaptersByBook.RUT?.length ?? 0) : undefined} />
 
       {milestoneSum ? (
         <Card style={{ borderColor: RARITY_COLOR.holy }}>
@@ -148,7 +164,7 @@ function MissionHome() {
             <AppText variant="heading" style={styles.flex}>{strings.mission.curated}</AppText>
           </View>
           {overview.missions.filter((m) => m.kind === 'mission').map((m) => (
-            <Pressable key={m.id} accessibilityRole="button" onPress={() => { setBook(m.book); setChapter(m.chapter); }} style={styles.missionRow}>
+            <Pressable key={m.id} accessibilityRole="button" onPress={() => selectPassage(m.book, m.chapter)} style={styles.missionRow}>
               <Icon name={m.completed ? 'check' : 'sparkle'} size={18} color={m.completed ? colors.success : colors.primary} />
               <View style={styles.flex}>
                 <AppText variant="label">{m.name}</AppText>
@@ -164,11 +180,15 @@ function MissionHome() {
           <IconBadge name="scroll" />
           <AppText variant="heading" style={styles.flex}>{strings.mission.chooseBook}</AppText>
         </View>
-        {/* livros agrupados pelos sete mundos da Jornada, com o progresso de cada mundo */}
+        <TextField label="Buscar livro ou passagem" value={search} onChangeText={setSearch} placeholder="Ex.: Rute 2 ou Êxodo" />
+        {matches.length === 0 ? <Notice>Nenhuma passagem encontrada. Tente outro nome ou número de capítulo.</Notice> : null}
         {WORLDS.map((w) => {
-          const books = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
-          const total = books.reduce((acc, b) => acc + b.chapters, 0);
-          const read = books.reduce((acc, b) => acc + (overview?.chaptersByBook[b.code]?.length ?? 0), 0);
+          const worldBooks = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
+          const books = matches.filter((b) => (w.codes as readonly string[]).includes(b.code));
+          if (!books.length) return null;
+          const total = worldBooks.reduce((acc, b) => acc + b.chapters, 0);
+          const read = worldBooks.reduce((acc, b) => acc + (overview?.chaptersByBook[b.code]?.length ?? 0), 0);
+          const activeBook = books.find((candidate) => candidate.code === book);
           return (
             <View key={w.id} style={styles.section} testID={`read-world-${w.id}`}>
               <View style={styles.worldHead}>
@@ -185,38 +205,40 @@ function MissionHome() {
                   const sel = b.code === book;
                   return (
                     <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
-                      onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
+                      onPress={() => {
+                        if (lookup.chapter !== null) selectPassage(b.code, lookup.chapter);
+                        else { setBook(b.code); setChapter(null); }
+                      }} style={chip(sel)}>
                       <AppText variant="label">{b.name}</AppText>
                       <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
                     </Pressable>
                   );
                 })}
               </View>
+              {activeBook ? (
+                <View style={styles.chapterPicker}>
+                  <AppText variant="heading">{fmt('{c}: {b}', { c: strings.mission.chooseChapter, b: activeBook.name })}</AppText>
+                  <View style={styles.wrap} accessibilityRole="radiogroup" accessibilityLabel={activeBook.name + ' · capítulos'}>
+                    {Array.from({ length: activeBook.chapters }, (_, index) => index + 1).map((n) => {
+                      const selected = n === chapter;
+                      const read = done.has(n);
+                      return (
+                        <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: selected }}
+                          accessibilityLabel={`${strings.mission.chooseChapter} ${n}${read ? `, ${strings.mission.chapterDone}` : ''}`}
+                          onPress={() => selectPassage(activeBook.code, n)}
+                          style={[styles.num, { borderColor: selected ? colors.selection : read ? colors.primary : colors.border, backgroundColor: selected ? colors.selection : colors.surface }]}>
+                          <AppText variant="label" color={selected ? colors.background : read ? colors.primary : colors.text}>{n}</AppText>
+                          {read && !selected ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                </View>
+              ) : null}
             </View>
           );
         })}
       </Card>
-
-      {selectedBook ? (
-        <Card>
-          <AppText variant="heading">{fmt('{c}: {b}', { c: strings.mission.chooseChapter, b: selectedBook.name })}</AppText>
-          <View style={styles.wrap} accessibilityRole="radiogroup">
-            {Array.from({ length: selectedBook.chapters }, (_, i) => i + 1).map((n) => {
-              const sel = n === chapter;
-              const isDone = done.has(n);
-              return (
-                <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: sel }}
-                  accessibilityLabel={`${strings.mission.chooseChapter} ${n}${isDone ? `, ${strings.mission.chapterDone}` : ''}`}
-                  onPress={() => { setChapter(n); setScrollKey(`${book}:${n}:${Date.now()}`); }}
-                  style={[styles.num, { borderColor: sel ? colors.selection : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.selection : colors.surface }]}>
-                  <AppText variant="label" color={sel ? colors.background : isDone ? colors.primary : colors.text}>{n}</AppText>
-                  {isDone && !sel ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
-                </Pressable>
-              );
-            })}
-          </View>
-        </Card>
-      ) : null}
 
     </Screen>
   );
@@ -226,6 +248,7 @@ const styles = StyleSheet.create({
   flex: { flex: 1, minWidth: 0 },
   heading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   section: { gap: spacing.xs, marginTop: spacing.sm },
+  chapterPicker: { gap: spacing.sm, marginVertical: spacing.sm },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
   chip: { borderWidth: 1, borderRadius: radius.md, paddingVertical: 4, paddingHorizontal: 10, minHeight: 44 },
   num: { width: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },

@@ -179,7 +179,7 @@ export const ptBR = {
     symbolicNote: 'Item cosmético e simbólico: não dá vantagens nem representa uma relíquia histórica.',
     notFound: 'Item não encontrado.',
     acquisition: 'Como se obtém',
-    acquisitionLabels: { starter: 'Peça inicial gratuita', reading: 'Leitura bíblica', collection: 'Recompensa de coleção', mission: 'Missão (Modo Missão, em breve)', milestone: 'Marco especial', event: 'Evento' },
+    acquisitionLabels: { starter: 'Peça inicial gratuita', reading: 'Leitura bíblica', collection: 'Recompensa de coleção', mission: 'Missão especial', milestone: 'Marco especial', event: 'Evento' },
     book: 'Livro',
     relicNote: 'Relíquia do Santuário das Conquistas: fica em exibição e não é equipada no personagem.',
     holyNote: 'Item santo: representação simbólica de uma obra ou sinal de Deus. Nunca é vendido nem sorteado, e não representa uma pessoa divina.',

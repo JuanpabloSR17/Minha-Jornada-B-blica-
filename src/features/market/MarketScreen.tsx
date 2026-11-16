@@ -3,7 +3,7 @@ import { ActivityIndicator, AppState, ImageBackground, StyleSheet, View } from '
 import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { fonts, radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, ConfirmDialog, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, ConfirmDialog, Icon, IconBadge, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorCode, errorMessage } from '@/lib/errors';
 import { useAuth } from '@/features/auth/AuthProvider';
@@ -237,7 +237,10 @@ function MarketContent() {
         <View style={styles.info}>
           <AppText variant="label">{displayName(item)}</AppText>
           <AppText variant="caption" muted>{strings.rarity[item.rarity]} · {category}</AppText>
-          <AppText variant="label">{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
+          <View style={styles.inline}>
+            <Icon name="coin" color={colors.primary} size={17} />
+            <AppText variant="label" style={styles.info}>{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
+          </View>
           {it.owned ? (
             <AppText variant="caption" color={colors.success}>{m.owned}</AppText>
           ) : it.status === 'available' ? (
@@ -246,6 +249,9 @@ function MarketContent() {
                 disabled={busy || !!pending} onPress={() => void ask(it)} />
             )
           ) : null}
+          <Button compact icon="outfit" variant="ghost" title={it.owned ? 'Ver item' : 'Prévia'}
+            accessibilityLabel={`${it.owned ? 'Ver item' : 'Prévia'} · ${item.name}`}
+            onPress={() => router.push({ pathname: '/avatar/item/[id]', params: { id: it.itemId } })} />
         </View>
       </View>
     );
@@ -285,7 +291,12 @@ function MarketContent() {
 
       {sections.filter((section) => section.items.length).map((section) => (
         <View key={section.title ?? 'catalog'} style={styles.section}>
-          {section.title ? <AppText variant="heading" accessibilityRole="header">{section.title}</AppText> : null}
+          {section.title ? (
+            <View style={styles.inline}>
+              <IconBadge name={section.title === m.daily ? 'sparkle' : 'bag'} />
+              <AppText variant="heading" accessibilityRole="header" style={styles.info}>{section.title}</AppText>
+            </View>
+          ) : null}
           {section.title === m.daily ? (
             <View style={styles.schedule}>
               <AppText variant="caption" muted>{m.rotationTime}</AppText>
@@ -316,6 +327,7 @@ const styles = StyleSheet.create({
   balance: { fontFamily: fonts.display },
   section: { gap: spacing.sm },
   schedule: { gap: 2 },
+  inline: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   row: { flexDirection: 'row', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
   icon: { width: 64, height: 64, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   info: { flex: 1, minWidth: 0, gap: 2 },
