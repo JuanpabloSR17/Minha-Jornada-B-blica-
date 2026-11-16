@@ -16,6 +16,23 @@
 O token `selection` também existe nos temas claro e escuro (igual ao `primary`), então os componentes
 compartilhados (cartões de item, carrossel, abas, barra de categorias) usam a mesma propriedade em qualquer tela.
 
+### Lobby do jogo (Início)
+
+O acampamento é o lobby. Cada função tem um lugar fixo, como num jogo:
+
+| Área | O que mostra | Leva a |
+|---|---|---|
+| HUD (topo) | retrato, nome, nível e barra de XP; Siclos; capítulos lidos | retrato → Perfil; Siclos → Mercado |
+| Trilho lateral | Loja, Vestiário, Troféus, Marcos (2 × 2 em telas baixas) | Mercado, guarda-roupa, Santuário, Marcos dos Santos |
+| Painel de jogar | selo "Modo Missão", próxima leitura, meta de hoje e o botão principal | missão ou escolha de capítulo |
+| Missão diária | meta, progresso e recompensa prevista | Alterar meta |
+| Modos de jogo | Modo Missão, Mapa dos mundos, Marcos dos Santos, Santuário, com o progresso da conta | Ler, Jornada, Marcos, Santuário |
+| Doca | abas com o medalhão dourado de leitura no centro | Início, Jornada, Ler, Amigos, Perfil |
+
+O nível é só de exibição: sai do XP já registrado no servidor (`src/features/lobby/level.ts`; subir do
+nível n custa 200 + 100 × (n − 1) XP) e não concede nada. Percurso: `FLOW=lobby bash e2e/run.sh`
+(320 e 412 px, botão principal sem rolagem, cada função no seu destino). Capturas em [`lobby/`](lobby/).
+
 ### Telas na identidade
 
 | Tela | Situação |

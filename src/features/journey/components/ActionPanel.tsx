@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import Svg, { Path, Rect } from 'react-native-svg';
-import { AppText, Button } from '@/ui';
+import { AppText, Button, Icon } from '@/ui';
 import { fonts } from '@/theme/tokens';
 import { fmt, strings } from '@/i18n';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
@@ -53,6 +53,10 @@ export function ActionPanel({
 
   return (
     <View style={[styles.panel, pending && styles.pending]} testID="home-action-panel">
+      <View style={styles.modeTag} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+        <Icon name="compass" color="#E9BA5B" size={14} />
+        <AppText style={styles.modeText} color="#E9BA5B">{strings.lobby.modeMission}</AppText>
+      </View>
       <View style={styles.row}>
         <Scroll />
         <View style={styles.flex}>
@@ -73,14 +77,17 @@ export function ActionPanel({
           <View style={styles.bar}><View style={[styles.fill, { width: `${pct * 100}%` }]} /></View>
         </View>
       ) : null}
-      <Button variant="gold" title={button} onPress={session ? onOpenSession : onStart} />
+      <Button variant="gold" title={button} icon={<Icon name="play" color="#2A1606" size={18} />} onPress={session ? onOpenSession : onStart} style={styles.play} />
       {!session && onChoose ? <Button compact variant="ghost" title={j.chooseOther} onPress={onChoose} /> : null}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  panel: { backgroundColor: 'rgba(16, 12, 24, 0.9)', borderColor: '#C9A24A', borderWidth: 1.5, borderRadius: 14, padding: 12, gap: 10 },
+  panel: { backgroundColor: 'rgba(14, 10, 26, 0.92)', borderColor: '#C9A24A', borderWidth: 1.5, borderRadius: 18, padding: 12, paddingTop: 16, gap: 10, shadowColor: '#000', shadowOpacity: 0.6, shadowRadius: 14, shadowOffset: { width: 0, height: -2 } },
+  modeTag: { position: 'absolute', top: -12, left: 14, flexDirection: 'row', alignItems: 'center', gap: 5, backgroundColor: '#0C1124', borderColor: '#C9A24A', borderWidth: 1, borderRadius: 10, paddingHorizontal: 9, paddingVertical: 2 },
+  modeText: { fontFamily: fonts.display, fontSize: 12, lineHeight: 16 },
+  play: { minHeight: 60 },
   pending: { borderColor: '#F2907E' },
   row: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   flex: { flex: 1, minWidth: 0 },

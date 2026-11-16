@@ -13,13 +13,13 @@ import { useAmbient } from '../useAmbient';
  * jogador (mesma aparência e equipamento do guarda-roupa) → luz da fogueira sobre tudo (animada)
  * → vinheta para a leitura do painel. Com "reduzir movimento", tudo fica estático.
  */
-export function CampHero({ look, height, top, bottom }: { look: AvatarLook | null; height: number; top?: ReactNode; bottom?: ReactNode }) {
+export function CampHero({ look, height, top, bottom, side }: { look: AvatarLook | null; height: number; top?: ReactNode; bottom?: ReactNode; side?: ReactNode }) {
   const [width, setWidth] = useState(0);
   const fire = useAmbient(1400);
   const breath = useAmbient(4200, 300);
   const size = { width, height };
   // personagem ocupa ~60% da largura (enquadramento próximo), sem cobrir a fogueira à direita
-  const avatarH = Math.min(height * 0.8, width * 1.18, 560);
+  const avatarH = Math.min(height * 0.8, width * (width < 380 ? 1.04 : 1.18), 560);
   return (
     <View style={[styles.hero, { height }]} onLayout={(e) => setWidth(Math.round(e.nativeEvent.layout.width))} testID="camp-hero">
       {width ? (
@@ -64,6 +64,7 @@ export function CampHero({ look, height, top, bottom }: { look: AvatarLook | nul
         </>
       ) : null}
       <View style={styles.top}>{top}</View>
+      {side ? <View style={styles.side}>{side}</View> : null}
       <View style={styles.bottom}>{bottom}</View>
     </View>
   );
@@ -74,4 +75,5 @@ const styles = StyleSheet.create({
   avatar: { position: 'absolute', left: -6 },
   top: { paddingTop: 12, paddingHorizontal: 16, gap: 6, alignItems: 'center' },
   bottom: { padding: 12, paddingBottom: 14 },
+  side: { position: 'absolute', right: 8, top: 108 },
 });

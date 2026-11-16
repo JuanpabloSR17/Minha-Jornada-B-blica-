@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search' | 'medal';
+export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search' | 'medal' | 'coin' | 'shop' | 'trophy' | 'flag' | 'chest' | 'play' | 'scroll' | 'compass';
 
 /** Ícones de traço simples desenhados para o app (sem biblioteca externa). */
 export function Icon({ name, size = 22, color }: { name: IconName; size?: number; color: string }) {
@@ -62,6 +62,25 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
       <>
         <Circle {...s} cx={10.5} cy={10.5} r={6} />
         <Path {...s} d="M15 15l5 5" />
+      </>
+    ),
+    coin: (
+      <>
+        <Circle {...s} cx={12} cy={12} r={8} />
+        <Circle {...s} cx={12} cy={12} r={4.6} />
+        <Path {...s} d="M12 9.6v4.8" />
+      </>
+    ),
+    shop: <Path {...s} d="M4 9h16l-1.2 11H5.2L4 9zM8.5 9V7a3.5 3.5 0 0 1 7 0v2M9 13v2M15 13v2" />,
+    trophy: <Path {...s} d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4" />,
+    flag: <Path {...s} d="M6 21V4M6 4h10l-2 3.5L16 11H6" />,
+    chest: <Path {...s} d="M4 10c0-3 2.5-5 8-5s8 2 8 5v9H4v-9zM4 11h16M11 10.5h2V14h-2z" />,
+    play: <Path d="M8 5.5v13l10.5-6.5z" fill={color} stroke={color} strokeWidth={1.5} strokeLinejoin="round" />,
+    scroll: <Path {...s} d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7M7 4a2 2 0 0 0-2 2v1h4V6a2 2 0 0 0-2-2zM7 20a2 2 0 0 1-2-2v-1h4v1a2 2 0 0 1-2 2zM11 9h5M11 12h5M11 15h3" />,
+    compass: (
+      <>
+        <Circle {...s} cx={12} cy={12} r={8.5} />
+        <Path {...s} d="M15.5 8.5 13.4 13.4 8.5 15.5 10.6 10.6z" />
       </>
     ),
     sparkle: <Path {...s} d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />,
