@@ -41,7 +41,8 @@ export function ProgressMeter({ value, total, label, tone = 'reading', height = 
       { height, backgroundColor: colors.background, borderColor: dark ? `${tint.mid}44` : colors.border },
       style,
     ]} accessible={!!label} accessibilityRole={label ? 'progressbar' : undefined} aria-hidden={!label}
-      accessibilityLabel={label} accessibilityValue={label ? { min: 0, max, now } : undefined}>
+      accessibilityLabel={label} aria-valuemin={label ? 0 : undefined}
+      aria-valuemax={label ? max : undefined} aria-valuenow={label ? now : undefined}>
       <Animated.View style={[
         styles.fill,
         { backgroundColor: tint.mid, width: fill.interpolate({ inputRange: [0, 1], outputRange: ['0%', '100%'] }) },
