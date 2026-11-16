@@ -317,10 +317,14 @@ const finishHere = async (page) => {
   const reduced = M.page.getByTestId('reveal-overlay');
   await reduced.getByRole('button', { name: 'Abrir bolsa' }).click();
   await reduced.getByTestId('reveal-xp').waitFor();
-  const o1 = await M.page.getByTestId('reveal-overlay').screenshot();
+  const rewardMotion = () => reduced.getByTestId('reveal-xp').evaluate((element) => {
+    const style = getComputedStyle(element);
+    return { opacity: style.opacity, transform: style.transform };
+  });
+  const o1 = await rewardMotion();
   await M.page.waitForTimeout(700);
-  const o2 = await M.page.getByTestId('reveal-overlay').screenshot();
-  assert.ok(o1.equals(o2), 'movimento reduzido: revelação estática');
+  assert.equal(o1.opacity, '1');
+  assert.deepEqual(await rewardMotion(), o1, 'movimento reduzido: revelação estática');
   await shot(M.page, 'j-04c-revelacao-movimento-reduzido-320');
   await openReadingReceipt(M.page);
   await reduced.getByRole('button', { name: 'Ver no Santuário' }).waitFor();

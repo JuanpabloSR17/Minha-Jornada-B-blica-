@@ -29,6 +29,8 @@ O piloto web está pronto para ser compartilhado gratuitamente com um grupo de t
 - 122 testes automatizados do app e verificação de tipos.
 - 485 verificações SQL no mesmo motor de banco local usado pelo piloto. O serviço Supabase em nuvem, a confirmação por e-mail e a recuperação de conta fazem parte da próxima etapa.
 - Navegação e leitura em navegador com larguras de 320, 390 e 412 px. A abertura foi exercitada por toque simulado e teclado, com movimento normal e reduzido. A auditoria de imagens confirmou o manifesto dos sprites e apontou peças vestidas que ainda usam arte provisória em alguns modelos.
+- No endereço público, uma sessão nova concluiu Gênesis 1, abriu a bolsa pelo toque, passou pelo resumo e mostrou 60 de 120 XP para o próximo nível. O texto e o valor das barras foram verificados na interface de acessibilidade do navegador.
+- No teste de atualização, o navegador registrou Rute 1 usando a exportação da versão anterior. A versão publicada recuperou essa etapa e os 60 XP, registrou Rute 2, revelou o Cajado de Boaz e preservou o último resultado após recarregar.
 
 ## O que fechar antes de chamar de lançamento definitivo
 
