@@ -3,7 +3,9 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, IconBadge, Notice } from '@/ui';
+import { AppText, Button, IconBadge, Notice } from '@/ui';
+import { GlassPanel, glassTones } from '@/features/journey/components/GlassPanel';
+import { ProgressMeter } from '@/features/journey/components/ProgressMeter';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import {
@@ -25,7 +27,7 @@ const h = strings.home;
  * recompensa prevista, quanto falta e o botão de leitura. No ritmo livre, escolhe a missão do dia.
  */
 export function DailyGoalCard({ session, onStart, hideStart }: { session: MissionSession | null; onStart?: () => void; hideStart?: boolean }) {
-  const { colors } = useTheme();
+  const { colors, dark } = useTheme();
   const router = useRouter();
   const [status, setStatus] = useState<DailyGoalStatus | null>(null);
   const [tz, setTz] = useState<TimeZoneSync | null>(null);
@@ -57,7 +59,7 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
 
   const s = status;
   const target = s.target;
-  const pct = target ? Math.min(100, (s.newChaptersToday / target) * 100) : 0;
+  const tone = s.achievedToday ? 'complete' : 'reading';
   const title = s.planMode === 'free'
     ? target ? fmt(h.dailyTitleFreeMission, { n: target }) : h.dailyTitleFree
     : target === 1 ? h.dailyTitleGoalOne : fmt(h.dailyTitleGoal, { n: target ?? 0 });
@@ -68,7 +70,7 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
   const start = onStart ?? (() => router.push(session ? '/reading/mission' : '/(tabs)/read'));
 
   return (
-    <Card style={{ borderColor: s.achievedToday ? colors.success : colors.primary }}>
+    <GlassPanel tone={tone} testID="daily-goal-panel">
       <View style={styles.heading}>
         <IconBadge name={s.achievedToday ? 'check' : 'flag'} color={s.achievedToday ? colors.success : colors.primary} />
         <AppText variant="heading" style={styles.title}>{title}</AppText>
@@ -100,11 +102,10 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
         )
       ) : (
         <>
-          <AppText variant="label">{fmt(h.dailyToday, { done: Math.min(s.newChaptersToday, target ?? 0), target: target ?? 0 })}</AppText>
-          <View style={[styles.bar, { backgroundColor: colors.backgroundAlt }]} accessible accessibilityRole="progressbar"
-            accessibilityValue={{ min: 0, max: target ?? 0, now: Math.min(s.newChaptersToday, target ?? 0) }}>
-            <View style={[styles.fill, { width: `${pct}%`, backgroundColor: s.achievedToday ? colors.success : colors.primary }]} />
-          </View>
+          <AppText variant="label" style={styles.numeric} color={dark ? glassTones[tone].light : undefined}>
+            {fmt(h.dailyToday, { done: Math.min(s.newChaptersToday, target ?? 0), target: target ?? 0 })}
+          </AppText>
+          <ProgressMeter value={s.newChaptersToday} total={target ?? 0} tone={tone} label="Capítulos lidos para a meta diária" height={12} />
           {s.achievedToday ? (
             <AppText variant="label" color={colors.success}>{h.dailyAchieved}</AppText>
           ) : (
@@ -138,7 +139,7 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
           <Button variant="secondary" icon="chest" title={strings.mission.goalPendingOpen} onPress={() => router.push('/reading/goal')} />
         </View>
       ) : null}
-    </Card>
+    </GlassPanel>
   );
 }
 
@@ -148,6 +149,5 @@ const styles = StyleSheet.create({
   gap: { gap: spacing.sm },
   row: { flexDirection: 'row', gap: spacing.xs, flexWrap: 'wrap' },
   chip: { minWidth: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center', paddingHorizontal: spacing.sm },
-  bar: { height: 10, borderRadius: radius.pill, overflow: 'hidden' },
-  fill: { height: 10 },
+  numeric: { fontVariant: ['tabular-nums'] },
 });

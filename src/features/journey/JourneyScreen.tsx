@@ -13,19 +13,19 @@ import { journeyProgress } from './worlds';
 import { worldIcons } from './worldIcons';
 import { featuredWorld, nextPassage, worldStatus, type AtlasWorld } from './atlasRoute';
 import { WorldAtlasMap, statusLabel, worldColors } from './WorldAtlasMap';
+import { GlassPanel, glassTones } from './components/GlassPanel';
+import { ProgressMeter } from './components/ProgressMeter';
 
 const t = strings.journey;
 type AtlasBook = AtlasWorld['books'][number];
 type OpenChapter = (book: string, chapter: number) => void;
 
-function ChapterProgress({ done, total, color }: { done: number; total: number; color: string }) {
-  const { colors } = useTheme();
+function ChapterProgress({ done, total }: { done: number; total: number }) {
+  const tone = done === total && total > 0 ? 'complete' : 'reading';
   return (
     <View style={styles.progress}>
-      <AppText variant="caption" muted>{fmt(t.worldChapters, { done, total })}</AppText>
-      <View style={[styles.track, { backgroundColor: colors.background }]} aria-hidden importantForAccessibility="no">
-        <View style={[styles.fill, { backgroundColor: color, width: `${Math.max(0, Math.min(100, (100 * done) / (total || 1)))}%` }]} />
-      </View>
+      <AppText variant="caption" color={glassTones[tone].light} style={styles.numeric}>{fmt(t.worldChapters, { done, total })}</AppText>
+      <ProgressMeter value={done} total={total} tone={tone} />
     </View>
   );
 }
@@ -73,7 +73,7 @@ function BookRow({ book, color, expanded, onToggle, onRead }: {
       </Pressable>
       {expanded ? (
         <Entry>
-          <ChapterProgress done={done} total={book.chapters} color={color} />
+          <ChapterProgress done={done} total={book.chapters} />
           {next != null ? (
             <Button compact variant="secondary" icon="play" title={fmt(t.worldReadChapter, { chapter: next })}
               accessibilityHint={refLabel(book.code, next)} onPress={() => onRead(book.code, next)} />
@@ -160,7 +160,7 @@ function WorldCard({ world, completed, expanded, onToggle, onRead, onTrail }: {
         <IconBadge name={completed ? 'medal' : worldIcons[world.id]} color={tint} size={49} />
         <View style={[styles.grow, styles.progress]}>
           <AppText variant="heading">{world.name}</AppText>
-          <ChapterProgress done={world.done} total={world.total} color={tint} />
+          <ChapterProgress done={world.done} total={world.total} />
           <View style={styles.statusRow}>
             <Icon name={state === 'complete' ? 'check' : state === 'started' ? 'flag' : 'compass'} color={tint} size={14} />
             <AppText variant="caption" color={tint}>{statusLabel[state]}</AppText>
@@ -248,7 +248,9 @@ function Atlas() {
                 </View>
               </View>
               {featured ? <Button compact variant="secondary" icon="compass" title="Explorar destino" onPress={() => selectWorld(featured.id)} /> : null}
-              <ChapterProgress done={overview.chaptersCompleted} total={overview.totalChapters} color={colors.primary} />
+              <GlassPanel tone="reading" style={styles.atlasProgress}>
+                <ChapterProgress done={overview.chaptersCompleted} total={overview.totalChapters} />
+              </GlassPanel>
             </Card>
           ) : null}
           {visibleWorlds.map((world) => (
@@ -271,8 +273,8 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   grow: { flex: 1, minWidth: 0 },
   progress: { gap: spacing.xs },
-  track: { height: 7, borderRadius: radius.pill, overflow: 'hidden' },
-  fill: { height: '100%', borderRadius: radius.pill },
+  atlasProgress: { padding: spacing.md, borderRadius: radius.md },
+  numeric: { fontVariant: ['tabular-nums'] },
   worldCard: { backgroundColor: '#1D1833', padding: spacing.md },
   worldRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, minHeight: 52 },
   statusRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },

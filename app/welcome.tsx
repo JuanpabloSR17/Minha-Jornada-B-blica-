@@ -63,7 +63,11 @@ export default function Welcome() {
         <AppText variant="display" style={styles.center}>{strings.app.name}</AppText>
         <Ornament />
       </View>
-      {isDemo ? <Notice title="Versão de teste">Seu progresso fica neste navegador. A demonstração começa com 80 Siclos para testar o Mercado. Você pode mudar o visual no Perfil.</Notice> : null}
+      {isDemo ? (
+        <Notice title="Piloto gratuito">
+          Use sua Bíblia para acompanhar a leitura. Seu progresso fica salvo neste navegador e a demonstração começa com 80 Siclos para testar o Mercado.
+        </Notice>
+      ) : null}
       {demoFailed ? <Notice tone="error">A demonstração não abriu. Tente novamente em uma janela normal do navegador.</Notice> : null}
       <AvatarStage look={look} height={360} />
       <AppText muted style={styles.center}>{strings.app.tagline}</AppText>

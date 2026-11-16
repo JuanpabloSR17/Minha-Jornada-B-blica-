@@ -1,9 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { restoreMission, type MissionSession } from './session';
-import type { MissionResult } from './mission.service';
+import type { DailyGoalState, MissionResult } from './mission.service';
 
 const sessionKey = (userId: string) => `jb.mission.session.${userId}`;
 const resultKey = (userId: string) => `jb.mission.result.${userId}`;
+const revealKey = (userId: string, sessionId: string) => `jb.mission.reveal.${userId}.${sessionId}`;
+const choiceKey = (userId: string, day: string) => `jb.mission.goal-choice.${userId}.${day}`;
 
 /** Sessão em andamento ou pendente, por conta (nunca vaza para outra conta no mesmo aparelho). */
 export const missionStorage = {
@@ -24,10 +26,28 @@ export const missionStorage = {
   async loadResult(userId: string): Promise<MissionResult | null> {
     try {
       const raw = await AsyncStorage.getItem(resultKey(userId));
-      return raw ? (JSON.parse(raw) as MissionResult) : null;
+      if (!raw) return null;
+      const result = JSON.parse(raw) as MissionResult | null;
+      if (!result?.sessionId) return result;
+      const daily = result.dailyGoal;
+      const [seen, choice] = await Promise.all([
+        result.revealed || AsyncStorage.getItem(revealKey(userId, result.sessionId)).catch(() => null),
+        daily?.goal && !daily.goal.chosenItem ? AsyncStorage.getItem(choiceKey(userId, daily.day)).catch(() => null) : null,
+      ]);
+      if (choice && daily?.goal) {
+        result.dailyGoal = { ...daily, goal: { ...daily.goal, chosenItem: choice, choicePending: false } };
+      }
+      if (seen) result.revealed = true;
+      return result;
     } catch {
       return null;
     }
   },
   saveResult: (userId: string, r: MissionResult) => AsyncStorage.setItem(resultKey(userId), JSON.stringify(r)).catch(() => undefined),
+  // A retentativa da mesma sessão pode gravar outra cópia do recibo sem apagar a marca de leitura.
+  markRevealed: (userId: string, sessionId: string) =>
+    AsyncStorage.setItem(revealKey(userId, sessionId), '1').catch(() => undefined),
+  async saveGoalChoice(userId: string, goal: DailyGoalState) {
+    if (goal.chosenItem) await AsyncStorage.setItem(choiceKey(userId, goal.day), goal.chosenItem).catch(() => undefined);
+  },
 };

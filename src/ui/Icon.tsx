@@ -49,7 +49,7 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
     flag: <Path {...s} d="M5 21V4m0 1c5-3 8 3 14 0v9c-6 3-9-3-14 0m-3 7h7" />,
     chest: <Path {...s} d="M3 10V8a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v11H3v-9zm0 1h7m4 0h7m-11-1h4v5h-4zM7 16v1m10-1v1" />,
     sanctuary: <Path {...s} d="m3 9 9-5 9 5H3zm2 3v7m5-7v7m4-7v7m5-7v7M3 20h18" />,
-    coin: <><Circle {...s} cx={12} cy={12} r={9} /><Path {...s} d="M12 6v12m3-8c-1.5-2-5.4-1.8-5.4.2 0 2.4 5.2 1 5.2 3.5 0 2.1-4.2 2.6-5.8.4" /></>,
+    coin: <><Circle {...s} cx={12} cy={12} r={9} /><Path {...s} strokeWidth={1.5} d="M12 7.5 13.2 10.8 16.5 12 13.2 13.2 12 16.5 10.8 13.2 7.5 12 10.8 10.8Z" /></>,
     clock: <><Circle {...s} cx={12} cy={12} r={8.5} /><Path {...s} d="M12 7v5l3 1.8" /></>,
     pause: <Path {...s} d="M8 5h2v14H8zM14 5h2v14h-2z" />,
     play: <Path {...s} d="m8 5 11 7-11 7V5z" />,

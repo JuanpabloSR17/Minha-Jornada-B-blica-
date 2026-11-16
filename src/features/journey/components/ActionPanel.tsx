@@ -7,6 +7,8 @@ import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { getCatalogMission } from '@/features/avatar/domain/catalog';
 import { activeMs, formatClock, type MissionSession } from '@/features/reading/mission/session';
 import { refLabel } from '@/features/reading/refs';
+import { GlassPanel, glassTones } from './GlassPanel';
+import { ProgressMeter } from './ProgressMeter';
 
 const j = strings.journey;
 const m = strings.mission;
@@ -49,13 +51,14 @@ export function ActionPanel({
   const pending = !!session && (session.status === 'pending' || session.status === 'finishing');
   const marco = session ? getCatalogMission(session.milestone) : null;
   const ref = session ? refLabel(session.book, session.chapter) : next ? refLabel(next.book, next.chapter) : null;
-  const pct = today?.target ? Math.min(1, today.done / today.target) : 0;
+  const reached = !!today?.target && today.done >= today.target;
+  const dailyTone = reached ? 'complete' : 'reading';
   const complete = !!allDone && !session;
   const label = pending ? j.pendingReading : session ? j.activeReading : complete ? 'Jornada de leitura concluída' : j.nextReading;
   const button = pending ? m.sessionVerify : session || (today?.done ?? 0) > 0 ? strings.home.dailyContinue : strings.home.dailyStart;
 
   return (
-    <View style={[styles.panel, pending && styles.pending]} testID="home-action-panel">
+    <GlassPanel tone={session ? 'gold' : dailyTone} overArt style={[styles.panel, pending && styles.pending]} testID="home-action-panel">
       <View style={styles.row}>
         <Scroll />
         <View style={styles.flex}>
@@ -72,23 +75,24 @@ export function ActionPanel({
       {pending ? <AppText variant="caption" color="#E9DCC0">{m.sessionWaiting}</AppText> : null}
       {!session && today?.target ? (
         <View style={styles.gap}>
-          <AppText variant="caption" color="#C9BBA0">{fmt(j.todayProgress, { done: Math.min(today.done, today.target), target: today.target })}</AppText>
-          <View style={styles.bar}><View style={[styles.fill, { width: `${pct * 100}%` }]} /></View>
+          <AppText variant="label" style={styles.numeric} color={glassTones[dailyTone].light}>
+            {fmt(j.todayProgress, { done: Math.min(today.done, today.target), target: today.target })}
+          </AppText>
+          <ProgressMeter value={today.done} total={today.target} label="Meta de leitura de hoje" tone={dailyTone} height={12} />
         </View>
       ) : null}
       <Button variant="gold" icon={complete ? 'medal' : pending ? 'cloud' : 'play'} title={complete ? 'Ver conquistas' : button} onPress={session ? onOpenSession : onStart} />
       {!session && onChoose ? <Button compact variant="ghost" title={complete ? 'Escolher um capítulo para reler' : j.chooseOther} onPress={onChoose} /> : null}
-    </View>
+    </GlassPanel>
   );
 }
 
 const styles = StyleSheet.create({
-  panel: { backgroundColor: 'rgba(16, 12, 24, 0.9)', borderColor: '#C9A24A', borderWidth: 1.5, borderRadius: 14, padding: 12, gap: 10 },
+  panel: { borderRadius: 17, padding: 12, gap: 10 },
   pending: { borderColor: '#F2907E' },
   row: { flexDirection: 'row', gap: 10, alignItems: 'center' },
   flex: { flex: 1, minWidth: 0 },
   ref: { fontFamily: fonts.bold, fontSize: 24, lineHeight: 30 },
   gap: { gap: 6 },
-  bar: { height: 10, borderRadius: 5, backgroundColor: '#2A2336', borderWidth: 1, borderColor: '#5A4A2A', overflow: 'hidden' },
-  fill: { height: '100%', backgroundColor: '#E9BA5B' },
+  numeric: { fontVariant: ['tabular-nums'] },
 });

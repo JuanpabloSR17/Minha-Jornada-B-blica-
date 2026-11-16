@@ -13,6 +13,7 @@ import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { displayName, displayNameOf, getItem } from '@/features/avatar/domain/catalog';
 import { INVENTORY_CATEGORIES } from '@/features/avatar/domain/wardrobe';
 import { uuidv4 } from '@/features/reading/mission/session';
+import { GlassPanel, glassTones } from '@/features/journey/components/GlassPanel';
 import { getMarket, pendingPurchaseStorage, purchaseItem, type MarketItem, type MarketState, type PendingPurchase } from './market.service';
 
 const m = strings.market;
@@ -262,10 +263,13 @@ function MarketContent() {
       <StepHeader title={m.title} onBack={() => router.back()} />
       <ImageBackground source={marketArt} resizeMode="cover" testID="market-banner"
         style={[styles.banner, { borderColor: colors.borderStrong }]}>
-        <View style={styles.bannerText}>
-          <AppText variant="heading" style={styles.balance} color={colors.primary}>{fmt(m.balance, { balance })}</AppText>
+        <GlassPanel tone="gold" overArt style={styles.bannerText}>
+          <View style={styles.inline}>
+            <Icon name="coin" color={glassTones.gold.mid} size={22} />
+            <AppText variant="heading" style={styles.balance} color={glassTones.gold.light}>{fmt(m.balance, { balance })}</AppText>
+          </View>
           <AppText variant="caption" muted>{m.intro}</AppText>
-        </View>
+        </GlassPanel>
       </ImageBackground>
 
       {busy && pending ? <ActivityIndicator color={colors.primary} /> : null}
@@ -323,8 +327,8 @@ function MarketContent() {
 
 const styles = StyleSheet.create({
   banner: { minHeight: 180, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
-  bannerText: { backgroundColor: 'rgba(12, 10, 22, 0.9)', padding: spacing.md, gap: spacing.xs },
-  balance: { fontFamily: fonts.display },
+  bannerText: { margin: spacing.sm, padding: spacing.md, gap: spacing.xs, borderRadius: radius.md },
+  balance: { fontFamily: fonts.bold, fontVariant: ['tabular-nums'], flexShrink: 1 },
   section: { gap: spacing.sm },
   schedule: { gap: 2 },
   inline: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },

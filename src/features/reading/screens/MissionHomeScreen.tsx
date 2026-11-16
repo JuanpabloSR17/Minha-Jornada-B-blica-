@@ -9,6 +9,7 @@ import { errorMessage } from '@/lib/errors';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
 import { startMission, type MissionMode } from '../mission/session';
 import { useMissionSession } from '../mission/useMissionSession';
+import { missionStorage } from '../mission/storage';
 import { DailyGoalCard } from '../components/DailyGoalCard';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { ActiveSessionCard } from '../components/ActiveSessionCard';
@@ -38,6 +39,7 @@ function MissionHome() {
   const params = useLocalSearchParams<{ book?: string; chapter?: string; selection?: string }>();
   const { userId, session, loaded, commit } = useMissionSession();
   const [overview, setOverview] = useState<MissionOverview | null>(null);
+  const [lastResult, setLastResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [book, setBook] = useState<string | null>(null);
   const [chapter, setChapter] = useState<number | null>(null);
@@ -51,8 +53,13 @@ function MissionHome() {
 
   useFocusEffect(
     useCallback(() => {
+      let active = true;
       getMissionOverview().then((o) => { setOverview(o); setError(null); }, (e) => setError(errorMessage(e)));
-    }, []),
+      if (userId) void missionStorage.loadResult(userId).then((r) => {
+        if (active) setLastResult(r ? refLabel(r.book.code, r.chapter) : null);
+      });
+      return () => { active = false; };
+    }, [userId]),
   );
 
   // "Próximo capítulo" na tela de recompensa chega aqui já selecionado
@@ -142,6 +149,10 @@ function MissionHome() {
       ) : null}
 
       <DailyGoalCard session={session} hideStart />
+      {!session && lastResult ? (
+        <Button compact variant="secondary" icon="bag" title={`Último resultado · ${lastResult}`}
+          onPress={() => router.navigate('/reading/completed')} />
+      ) : null}
       <FeaturedTrail completed={overview ? (overview.chaptersByBook.RUT?.length ?? 0) : undefined} />
 
       {milestoneSum ? (

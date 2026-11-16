@@ -71,7 +71,7 @@ export function RelatedTrailReflection({ result }: { result: MissionResult }) {
   return (
     <>
       <TrailReflection key={result.sessionId} step={step} />
-      <Button variant="secondary" icon="compass" title={`Abrir ${trail.title.toLowerCase()}`} onPress={() => router.dismissTo({
+      <Button variant="secondary" icon="compass" title={trailId === 'ruth' ? 'Abrir trilha de Rute' : 'Abrir trilha do Tabernáculo'} onPress={() => router.dismissTo({
         pathname: '/reading/trail',
         params: { trail: trailId },
       })} />

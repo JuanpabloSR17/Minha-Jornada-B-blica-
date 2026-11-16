@@ -11,6 +11,8 @@ import { getWorldProgress, type WorldProgress } from '@/features/reading/mission
 import { BOOKS, refLabel } from '@/features/reading/refs';
 import { earnedWorldMedals, nextBookObjective } from '@/features/journey/progression';
 import { ReadingRank } from '@/features/journey/components/ReadingRank';
+import { GlassPanel, glassTones, type GlassTone } from '@/features/journey/components/GlassPanel';
+import { ProgressMeter } from '@/features/journey/components/ProgressMeter';
 import { WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
 import { errorMessage } from '@/lib/errors';
@@ -61,13 +63,13 @@ function Achievements() {
   const earned = new Set(medals?.map(({ id }) => id));
   const milestones = rows?.filter((row) => row.completed);
   const objective = overview ? nextBookObjective(overview.chaptersByBook) : null;
-  type Counter = { label: string; done: number; total: number; icon: IconName };
+  type Counter = { label: string; done: number; total: number; icon: IconName; tone: GlassTone };
   const items: (Counter | null)[] = [
-    overview ? { label: p.chaptersRead, done: overview.chaptersCompleted, total: overview.totalChapters, icon: 'scroll' } : null,
-    overview ? { label: p.booksRead, done: overview.booksCompleted, total: BOOKS.length, icon: 'book' } : null,
-    sum ? { label: p.achMilestones, done: sum.milestonesDone, total: sum.milestonesTotal, icon: 'flag' } : null,
-    sum ? { label: p.achSaints, done: sum.saintsOwned, total: sum.saintsTotal, icon: 'chest' } : null,
-    medals && worlds ? { label: p.achWorlds, done: medals.length, total: worlds.length, icon: 'compass' } : null,
+    overview ? { label: p.chaptersRead, done: overview.chaptersCompleted, total: overview.totalChapters, icon: 'scroll', tone: 'reading' } : null,
+    overview ? { label: p.booksRead, done: overview.booksCompleted, total: BOOKS.length, icon: 'book', tone: 'reading' } : null,
+    sum ? { label: p.achMilestones, done: sum.milestonesDone, total: sum.milestonesTotal, icon: 'flag', tone: 'complete' } : null,
+    sum ? { label: p.achSaints, done: sum.saintsOwned, total: sum.saintsTotal, icon: 'chest', tone: 'gold' } : null,
+    medals && worlds ? { label: p.achWorlds, done: medals.length, total: worlds.length, icon: 'compass', tone: 'gold' } : null,
   ];
   const shown = items.filter((x): x is Counter => x !== null);
   return (
@@ -113,15 +115,15 @@ function Achievements() {
         {!shown.length && !progressError ? <ActivityIndicator color={colors.primary} accessibilityLabel={strings.common.loading} /> : null}
         <View style={styles.plaques}>
           {shown.map((it) => (
-            <View key={it.label} style={[styles.plaque, { borderColor: colors.selection, backgroundColor: colors.surfaceRaised }]}
+            <GlassPanel key={it.label} tone={it.tone} style={styles.plaque}
               accessible accessibilityLabel={`${it.label}: ${it.done} de ${it.total}`}>
-              <Icon name={it.icon} color={colors.primary} size={20} />
-              <AppText variant="heading" color={colors.selection} style={styles.center}>{it.done} de {it.total}</AppText>
-              <AppText variant="caption" style={styles.center}>{it.label}</AppText>
-              <View aria-hidden style={[styles.track, { backgroundColor: colors.background }]}>
-                <View style={[styles.fill, { backgroundColor: colors.selection, width: `${it.total ? Math.min(100, it.done / it.total * 100) : 0}%` }]} />
+              <View style={styles.counterLabel}>
+                <Icon name={it.icon} color={glassTones[it.tone].mid} size={17} />
+                <AppText variant="caption" style={styles.counterCaption} muted>{it.label}</AppText>
               </View>
-            </View>
+              <AppText variant="heading" color={glassTones[it.tone].light} style={styles.counterValue}>{it.done} de {it.total}</AppText>
+              <ProgressMeter tone={it.tone} value={it.done} total={it.total} height={7} />
+            </GlassPanel>
           ))}
         </View>
         <Button compact variant="secondary" title={p.openJourney} icon="map"
@@ -283,8 +285,9 @@ const styles = StyleSheet.create({
   medal: { flexGrow: 1, flexBasis: '28%', minWidth: 74, alignItems: 'center', gap: spacing.xs, borderRadius: radius.md, borderWidth: 1, padding: spacing.sm },
   achievement: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.sm, minHeight: 52, borderWidth: 1, borderRadius: radius.md },
   detail: { flex: 1, minWidth: 0 },
-  plaque: { flexGrow: 1, flexBasis: '30%', minWidth: 88, minHeight: 76, borderWidth: 1.5, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', padding: spacing.sm, gap: 2 },
-  track: { width: '100%', height: 4, marginTop: spacing.xs, borderRadius: radius.pill, overflow: 'hidden' },
-  fill: { height: '100%' },
+  plaque: { flexGrow: 1, flexBasis: '40%', minWidth: 104, minHeight: 88, borderRadius: radius.md, justifyContent: 'space-between', padding: spacing.md, gap: 5 },
+  counterLabel: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  counterCaption: { flex: 1, minWidth: 0, fontSize: 13, lineHeight: 16 },
+  counterValue: { fontVariant: ['tabular-nums'] },
   segItem: { flex: 1, minHeight: 44, borderRadius: radius.md, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
 });

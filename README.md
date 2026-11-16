@@ -1,6 +1,9 @@
 # Jornada Bíblica
 
 App de leitura bíblica gamificada com personagens 2D ilustrados.
+
+[Piloto web gratuito](https://jornada-biblica-piloto.lushbrush67.chatgpt.site) · [Recursos e prontidão](docs/RELATORIO-PILOTO.md)
+
 Este repositório contém os **Marcos 1 e 2** do módulo de personagens: fundação (contas, onboarding,
 criador) e personalização completa (guarda-roupa, inventário, visuais salvos, coleções e motor de
 recompensas). Plano em [`docs/PLANO.md`](docs/PLANO.md).

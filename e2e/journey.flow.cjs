@@ -6,6 +6,7 @@ const pg = require('pg');
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const { diffRatio, sameLook } = require('./pixels.cjs');
+const { openReadingReceipt } = require('./reading-rewards.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR ?? `${__dirname}/screenshots`;
@@ -218,20 +219,19 @@ const finishHere = async (page) => {
   await shot(page, 'j-01c-inicio-pendente-320');
   await panel.getByRole('button', { name: 'Verificar resultado' }).click();
   await page.getByRole('button', { name: 'Tentar novamente' }).click();
-  // revelação: só os dois concedidos
-  await page.getByTestId('reveal-overlay').waitFor();
-  await page.getByTestId('reveal-item-holy_arca_da_alianca_representacao').waitFor();
-  await page.getByTestId('reveal-item-holy_candelabro_do_tabernaculo').waitFor();
-  assert.equal(await page.getByTestId('reveal-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta: não é celebrada');
-  await page.getByText('Já estava no seu Santuário: Mesa dos Pães da Presença').waitFor();
-  await page.getByRole('button', { name: 'Pular animação' }).click();
-  await page.getByTestId('reveal-overlay').getByRole('button', { name: 'Ver no Santuário' }).waitFor();
-  assert.equal(await page.getByRole('button', { name: 'Pular animação' }).count(), 0);
+  // O recibo apresenta a XP e os Santos entregues na finalização original.
+  const recovered = await openReadingReceipt(page);
+  await recovered.getByTestId('receipt-xp').waitFor();
+  await recovered.getByTestId('receipt-item-holy_arca_da_alianca_representacao').waitFor();
+  await recovered.getByTestId('receipt-item-holy_candelabro_do_tabernaculo').waitFor();
+  assert.equal(await recovered.getByTestId('receipt-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta');
+  await recovered.getByText('Já estava no seu Santuário: Mesa dos Pães da Presença').waitFor();
+  await recovered.getByRole('button', { name: 'Ver no Santuário' }).waitFor();
   await noOverflow(page, 'revelação');
   await shot(page, 'j-04-revelacao-pulada-320');
   const items = (await db.query(`select item_id, count(*)::int n from user_items where user_id = $1 and item_id like 'holy_%' group by item_id order by item_id`, [rute])).rows;
   assert.deepEqual(items.map((r) => [r.item_id, r.n]), [['holy_arca_da_alianca_representacao', 1], ['holy_candelabro_do_tabernaculo', 1], ['holy_mesa_dos_paes_da_presenca', 1]]);
-  step('leitura do marco: pausa, retomada após reabrir (Início prioriza Continuar leitura), resposta perdida → Verificar resultado → revelação só da Arca e do Candelabro, sem duplicar; Pular animação');
+  step('leitura do marco: pausa, retomada após reabrir, resposta perdida e recibo da Arca e do Candelabro recuperado uma vez');
 
   // ================================================================ Santuário com os três
   await page.getByTestId('reveal-overlay').getByRole('button', { name: 'Ver no Santuário' }).click();
@@ -262,10 +262,13 @@ const finishHere = async (page) => {
   await B.page.getByRole('radio', { name: 'Capítulo 25', exact: true }).click();
   await B.page.getByRole('button', { name: 'Iniciar missão: Êxodo 25' }).click();
   await finishHere(B.page);
+  const ordinary = await openReadingReceipt(B.page);
+  await ordinary.getByTestId('receipt-xp').waitFor();
+  assert.equal(await ordinary.getByTestId(/^receipt-item-holy_/).count(), 0, 'leitura comum concede XP e segue sem Santos');
+  await ordinary.getByRole('button', { name: 'Continuar', exact: true }).click();
   await B.page.getByText('Este capítulo também tem o “Marco: a mobília do Tabernáculo”.').first().waitFor();
-  assert.equal(await B.page.getByTestId('reveal-overlay').count(), 0, 'leitura comum: sem revelação');
   assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id in ('holy_arca_da_alianca_representacao','holy_candelabro_do_tabernaculo')`, [davi])).rows[0].count), 0);
-  step('leitura comum de Êxodo 25: recompensas habituais, sem Santos e sem revelação');
+  step('leitura comum de Êxodo 25: bolsa com recompensas habituais; Santos ficam vinculados ao marco');
 
   // ================================================================ revelação completa gravada (412 px) e movimento reduzido
   const V = await phone(browser, 412, 915, { recordVideo: { dir: VIDEOS, size: { width: 412, height: 915 } } });
@@ -283,11 +286,15 @@ const finishHere = async (page) => {
   await V.page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
   await V.page.waitForTimeout(1100);
   await finishHere(V.page);
-  await V.page.getByTestId('reveal-overlay').waitFor();
-  await V.page.waitForTimeout(1200);
+  const pouch = V.page.getByTestId('reveal-overlay');
+  await pouch.getByRole('button', { name: 'Abrir bolsa' }).click();
+  // A leitura comum já foi registrada. O marco concede apenas os dois Santos restantes.
+  await pouch.getByTestId('reveal-item-holy_arca_da_alianca_representacao').waitFor();
   await shot(V.page, 'j-04a-revelacao-em-curso-412');
-  await V.page.getByTestId('reveal-overlay').getByRole('button', { name: 'Ver no Santuário' }).waitFor({ timeout: 8000 });
-  await V.page.waitForTimeout(1500);
+  await pouch.getByRole('button', { name: 'Próxima recompensa' }).click();
+  await pouch.getByTestId('reveal-item-holy_candelabro_do_tabernaculo').waitFor();
+  await pouch.getByRole('button', { name: 'Ver todas as recompensas' }).click();
+  await pouch.getByTestId('reward-receipt').waitFor();
   await shot(V.page, 'j-04-revelacao-412');
   await V.page.getByTestId('reveal-overlay').getByRole('button', { name: 'Ver no Santuário' }).click();
   await V.page.getByTestId('exhibition-hall').waitFor();
@@ -299,7 +306,7 @@ const finishHere = async (page) => {
 
   step('revelação completa gravada em 412 px (raios, artefatos surgindo, Ver no Santuário); Santuário em 412 px');
 
-  // movimento reduzido: a mesma revelação aparece estática e completa de uma vez (sem "Pular animação")
+  // Movimento reduzido conserva os toques e apresenta cada recompensa em posição estática.
   const M = await phone(browser, 320, 640, { reducedMotion: 'reduce' });
   const ester = await onboard(M.page, { name: 'Ester', user: 'ester_proto', body: 'Modelo A', skin: 'Tom 3', hair: 'Curto', color: 'Castanho' });
   await grant(ester, 'holy_mesa_dos_paes_da_presenca');
@@ -307,15 +314,17 @@ const finishHere = async (page) => {
   await M.page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
   await M.page.waitForTimeout(1100);
   await finishHere(M.page);
-  await M.page.getByTestId('reveal-overlay').waitFor();
-  await M.page.getByTestId('reveal-overlay').getByRole('button', { name: 'Ver no Santuário' }).waitFor({ timeout: 1000 });
-  assert.equal(await M.page.getByRole('button', { name: 'Pular animação' }).count(), 0, 'sem animação para pular');
-  assert.equal(await M.page.getByTestId('reveal-item-holy_mesa_dos_paes_da_presenca').count(), 0);
+  const reduced = M.page.getByTestId('reveal-overlay');
+  await reduced.getByRole('button', { name: 'Abrir bolsa' }).click();
+  await reduced.getByTestId('reveal-xp').waitFor();
   const o1 = await M.page.getByTestId('reveal-overlay').screenshot();
   await M.page.waitForTimeout(700);
   const o2 = await M.page.getByTestId('reveal-overlay').screenshot();
   assert.ok(o1.equals(o2), 'movimento reduzido: revelação estática');
   await shot(M.page, 'j-04c-revelacao-movimento-reduzido-320');
+  await openReadingReceipt(M.page);
+  await reduced.getByRole('button', { name: 'Ver no Santuário' }).waitFor();
+  assert.equal(await reduced.getByTestId('receipt-item-holy_mesa_dos_paes_da_presenca').count(), 0);
   await M.page.goto(`${APP}/home`);
   await campAvatar(M.page).waitFor();
   await M.page.waitForTimeout(500);
