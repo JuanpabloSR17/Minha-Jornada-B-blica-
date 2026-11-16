@@ -3,7 +3,7 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, TextInput, useWin
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
+import { radius, spacing, fonts } from '@/theme/tokens';
 import { AppText, Button, ConfirmDialog, Icon, Notice } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorCode, errorMessage } from '@/lib/errors';
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
   rarityChip: { flexDirection: 'row', alignItems: 'center', gap: 5, minHeight: 32, paddingHorizontal: 10, borderRadius: radius.pill, borderWidth: 1.5 },
   rarityDot: { width: 9, height: 9, borderRadius: 5 },
   searchBtn: { marginLeft: 'auto', minWidth: 44, alignItems: 'center' },
-  search: { minHeight: 38, borderWidth: 1.5, borderRadius: radius.pill, paddingHorizontal: spacing.md, fontSize: 14 },
+  search: { minHeight: 40, borderWidth: 1.5, borderRadius: radius.pill, paddingHorizontal: spacing.md, fontSize: 15, fontFamily: fonts.body },
   grid: { flex: 1 },
   gridContent: { paddingBottom: spacing.sm },
   gridWrap: { flexDirection: 'row', flexWrap: 'wrap' },

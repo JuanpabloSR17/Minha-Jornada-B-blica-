@@ -1,25 +1,62 @@
 import type { ReactElement } from 'react';
-import Svg, { Circle, Path } from 'react-native-svg';
+import Svg, { Circle, Ellipse, Path } from 'react-native-svg';
 
-export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search' | 'medal' | 'coin' | 'shop' | 'trophy' | 'flag' | 'chest' | 'play' | 'scroll' | 'compass';
+export type IconName = 'home' | 'map' | 'book' | 'friends' | 'profile' | 'back' | 'dice' | 'undo' | 'check' | 'cloud' | 'cloudOff' | 'device' | 'lock' | 'none' | 'body' | 'face' | 'hair' | 'outfit' | 'sparkle' | 'search' | 'medal' | 'coin' | 'shop' | 'trophy' | 'flag' | 'chest' | 'play' | 'scroll' | 'compass'
+  | 'lamp' | 'tabernacle' | 'stones' | 'manna';
 
-/** Ícones de traço simples desenhados para o app (sem biblioteca externa). */
+/** Folhas de um ramo de louro (coroa), espelhadas para o lado direito. */
+const LAUREL = [
+  [8.4, 19.0, -62], [6.4, 16.6, -40], [5.3, 13.6, -16], [5.2, 10.4, 6], [6.0, 7.4, 28],
+] as const;
+
+/**
+ * Ícones desenhados para o app (sem biblioteca externa). Os da jornada são em dois tons: traço
+ * e um preenchimento suave da mesma cor, com referências bíblicas (tenda do acampamento, rolo,
+ * lâmpada de azeite, pedras memoriais, vaso do maná, tabernáculo).
+ */
 export function Icon({ name, size = 22, color }: { name: IconName; size?: number; color: string }) {
-  const s = { stroke: color, strokeWidth: 2, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  const s = { stroke: color, strokeWidth: 1.8, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  /** traço + preenchimento suave (segundo tom) */
+  const t = { ...s, fill: color, fillOpacity: 0.22 };
+  /** detalhe cheio */
+  const d = { fill: color, stroke: 'none' };
   const paths: Record<IconName, ReactElement> = {
-    home: <Path {...s} d="M3 11 12 4l9 7M5 10v10h5v-6h4v6h5V10" />,
-    map: <Path {...s} d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14" />,
-    book: <Path {...s} d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1V5zM12 6v14" />,
+    home: (
+      <>
+        <Path {...t} d="M2.6 19.5 12 4.6l9.4 14.9z" />
+        <Path {...d} fillOpacity={0.55} d="M12 10.6 8.9 19.5h6.2z" />
+        <Path {...s} d="M12 4.6v14.9M1.5 19.5h21M12 4.6V2.4l2.6 1-2.6 1" />
+      </>
+    ),
+    map: (
+      <>
+        <Path {...t} d="M5 5.5a2 2 0 0 1 2-2h11.5v14H7a2 2 0 0 0-2 2z" />
+        <Path {...s} d="M5 19.5a2 2 0 0 0 2 2h12.5v-4" />
+        <Path {...s} strokeDasharray="1.4 1.8" d="M8.4 14.8c1.4-1.9 2.9-.9 3.9-2.9s2.4-2.4 3.2-3.6" />
+        <Path {...s} d="M14.8 5.8l2.2 2.2M17 5.8l-2.2 2.2" />
+      </>
+    ),
+    book: (
+      <>
+        <Path {...t} d="M12 6.6C10 5 7 4.5 3.4 5v13.2c3.6-.5 6.6 0 8.6 1.6 2-1.6 5-2.1 8.6-1.6V5C17 4.5 14 5 12 6.6z" />
+        <Path {...s} d="M12 6.6v13.2M6 9.2h3.6M6 12h3.6M6 14.8h2.4M14.4 9.2H18M14.4 12H18" />
+        <Path {...d} d="M15.2 15.2h2.6v6l-1.3-1-1.3 1z" />
+      </>
+    ),
     friends: (
       <>
-        <Circle {...s} cx={9} cy={8} r={3.2} />
-        <Path {...s} d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15.5 5.2a3 3 0 0 1 0 5.6M17 14.3c2.4.7 4 2.8 4 5.7" />
+        <Circle {...t} cx={8} cy={6.2} r={2.3} />
+        <Circle {...t} cx={15.2} cy={7.4} r={2} />
+        <Path {...t} d="M3.6 20.5 5.2 12c.4-1.6 1.6-2.6 2.8-2.6s2.4 1 2.8 2.6l1.6 8.5z" />
+        <Path {...t} d="M12.4 20.5l1.1-7.2c.3-1.4 1-2 1.7-2s1.4.6 1.7 2l1.1 7.2z" />
+        <Path {...s} d="M20.6 20.5V5.2c0-1-1.6-1.3-2 0" />
       </>
     ),
     profile: (
       <>
-        <Circle {...s} cx={12} cy={8} r={4} />
-        <Path {...s} d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+        <Path {...t} d="M12 2.8c-4 0-6.6 3.3-6.6 7.6 0 1.6.4 3 1 4.2L5 21.2h14l-1.4-6.6c.6-1.2 1-2.6 1-4.2 0-4.3-2.6-7.6-6.6-7.6z" />
+        <Path {...d} fillOpacity={0.6} d="M12 6.8c-2 0-3.2 1.7-3.2 3.7 0 2.1 1.4 3.7 3.2 3.7s3.2-1.6 3.2-3.7c0-2-1.2-3.7-3.2-3.7z" />
+        <Path {...s} d="M9 21.2l1.4-4.4h3.2l1.4 4.4" />
       </>
     ),
     back: <Path {...s} d="M15 5l-7 7 7 7" />,
@@ -57,7 +94,14 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
       </>
     ),
     hair: <Path {...s} d="M5 14c-1-6 2.5-10 7-10s8 4 7 10M5 14c1 2 2 4 1 6M19 14c-1 2-2 4-1 6M8 8c2 2 6 2 8 0" />,
-    outfit: <Path {...s} d="M9 3h6l4 3-2 4-2-1v12H9V9L7 10 5 6l4-3zM9 3c0 2 1.5 3 3 3s3-1 3-3" />,
+    outfit: (
+      <>
+        <Path {...t} d="M8.6 3.4h6.8l4.6 3.1-2 4.2-2-1.1v10.9H8V9.6l-2 1.1-2-4.2z" />
+        <Path {...s} d="M10 3.4c.3 1.7 1 2.5 2 2.5s1.7-.8 2-2.5" />
+        <Path {...s} strokeWidth={2.6} d="M8 13.2h8" />
+        <Path {...s} strokeDasharray="1 1.4" d="M8.8 18h6.4M12 6.8v4.8" />
+      </>
+    ),
     search: (
       <>
         <Circle {...s} cx={10.5} cy={10.5} r={6} />
@@ -66,13 +110,32 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
     ),
     coin: (
       <>
-        <Circle {...s} cx={12} cy={12} r={8} />
-        <Circle {...s} cx={12} cy={12} r={4.6} />
-        <Path {...s} d="M12 9.6v4.8" />
+        <Circle {...t} cx={12} cy={12} r={8.4} />
+        <Circle {...s} cx={12} cy={12} r={6} strokeDasharray="1 1.6" />
+        <Path {...d} d="M9.6 8.6h4.8c0 2.2-1 3.6-2.4 3.6s-2.4-1.4-2.4-3.6z" />
+        <Path {...s} d="M12 12.2v2.6M10.2 15.2h3.6" />
       </>
     ),
-    shop: <Path {...s} d="M4 9h16l-1.2 11H5.2L4 9zM8.5 9V7a3.5 3.5 0 0 1 7 0v2M9 13v2M15 13v2" />,
-    trophy: <Path {...s} d="M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4" />,
+    shop: (
+      <>
+        <Path {...t} d="M3 9.6 4.6 4h14.8L21 9.6a2.25 2 0 0 1-4.5 0 2.25 2 0 0 1-4.5 0 2.25 2 0 0 1-4.5 0A2.25 2 0 0 1 3 9.6z" />
+        <Path {...s} d="M8.2 4l-.7 5.6M12 4v5.6M15.8 4l.7 5.6M4.6 11.4v9.1M19.4 11.4v9.1M3 15.6h18M2.4 20.5h19.2" />
+        <Path {...t} d="M9.2 15.6v-2.3c0-.8.6-1.3 1.3-1.3h1.4c.7 0 1.3.5 1.3 1.3v2.3z" />
+        <Circle {...d} cx={16} cy={14.4} r={1.2} />
+      </>
+    ),
+    trophy: (
+      <>
+        {LAUREL.map(([x, y, a], i) => (
+          <Ellipse key={`l${i}`} {...t} cx={x} cy={y} rx={1.05} ry={2.1} transform={`rotate(${a} ${x} ${y})`} />
+        ))}
+        {LAUREL.map(([x, y, a], i) => (
+          <Ellipse key={`r${i}`} {...t} cx={24 - x} cy={y} rx={1.05} ry={2.1} transform={`rotate(${-a} ${24 - x} ${y})`} />
+        ))}
+        <Path {...s} d="M11.2 21C7.9 20.2 6.1 17 6.1 12.8c0-2.2.6-4.2 1.7-5.8M12.8 21c3.3-.8 5.1-4 5.1-8.2 0-2.2-.6-4.2-1.7-5.8" />
+        <Path {...d} d="M12 4.2l1 2.1 2.3.3-1.7 1.6.4 2.3L12 9.4l-2 1.1.4-2.3-1.7-1.6 2.3-.3z" />
+      </>
+    ),
     flag: <Path {...s} d="M6 21V4M6 4h10l-2 3.5L16 11H6" />,
     chest: <Path {...s} d="M4 10c0-3 2.5-5 8-5s8 2 8 5v9H4v-9zM4 11h16M11 10.5h2V14h-2z" />,
     play: <Path d="M8 5.5v13l10.5-6.5z" fill={color} stroke={color} strokeWidth={1.5} strokeLinejoin="round" />,
@@ -81,6 +144,41 @@ export function Icon({ name, size = 22, color }: { name: IconName; size?: number
       <>
         <Circle {...s} cx={12} cy={12} r={8.5} />
         <Path {...s} d="M15.5 8.5 13.4 13.4 8.5 15.5 10.6 10.6z" />
+      </>
+    ),
+    lamp: (
+      <>
+        <Path {...t} d="M3.4 13.6c2.6 2.4 6.2 3.2 9.8 2.6 3-.5 5.4-1.9 6.9-3.9-2.6.3-4.6-.3-6-1.4-2.8-.3-6.6.3-10.7 2.7z" />
+        <Path {...d} d="M5.2 10.6c-1.4-1.3-1.1-3.1.6-4.7.2 1.4 1.4 1.9 1.4 3.2 0 1-.9 1.7-2 1.5z" />
+        <Path {...s} d="M20.1 12.3c1-.2 1.6-1.2 1.1-2-.5-.8-1.7-.6-2.1.2M9.2 16.6 8.2 19h7.6l-1-2.8M12.6 11.6c.3-.8 1.2-1.2 2-1" />
+      </>
+    ),
+    tabernacle: (
+      <>
+        <Path {...t} d="M2 20V14.6h20V20z" />
+        <Path {...s} d="M5.6 14.6V20M9 14.6V20M15 14.6V20M18.4 14.6V20M1.4 20h21.2" />
+        <Path {...t} d="M8 14.6V9.4l4-3.2 4 3.2v5.2z" />
+        <Path {...d} fillOpacity={0.6} d="M10.9 14.6v-3h2.2v3z" />
+        <Path {...t} d="M9.6 5.6a1.5 1.5 0 0 1 1.9-2.2 1.9 1.9 0 0 1 3.4.7 1.3 1.3 0 0 1-.2 2.6H10.3a1.2 1.2 0 0 1-.7-1.1z" />
+      </>
+    ),
+    stones: (
+      <>
+        <Path {...t} d="M2.8 20.6c0-2.1 1.8-3.4 4.6-3.4h9.2c2.8 0 4.6 1.3 4.6 3.4z" />
+        <Path {...t} d="M5.8 17.2c0-2 1.6-3.3 3.9-3.3h4.6c2.3 0 3.9 1.3 3.9 3.3z" />
+        <Path {...t} d="M8.6 13.9c0-2.1 1.5-3.6 3.4-3.6s3.4 1.5 3.4 3.6z" />
+        <Path {...d} d="M12 2.6l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" />
+      </>
+    ),
+    manna: (
+      <>
+        <Path {...t} d="M9 6.6c0 1.3-3.1 2.9-3.1 7.1 0 3.6 2.7 6.6 6.1 6.6s6.1-3 6.1-6.6c0-4.2-3.1-5.8-3.1-7.1z" />
+        <Path {...t} d="M8.4 3.8h7.2v2.8H8.4z" />
+        <Circle {...d} cx={10.4} cy={13} r={1} />
+        <Circle {...d} cx={13.4} cy={12.2} r={1} />
+        <Circle {...d} cx={12} cy={15.4} r={1} />
+        <Circle {...d} cx={14.4} cy={15.6} r={0.9} />
+        <Circle {...d} cx={9.8} cy={16} r={0.8} />
       </>
     ),
     sparkle: <Path {...s} d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />,

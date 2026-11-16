@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import { Tabs } from 'expo-router';
 import Svg, { Circle, Defs, LinearGradient, Stop } from 'react-native-svg';
 import { useTheme } from '@/theme/ThemeProvider';
-import { cinemaColors } from '@/theme/tokens';
+import { cinemaColors, fonts } from '@/theme/tokens';
 import { Icon, type IconName } from '@/ui';
 import { strings } from '@/i18n';
 
@@ -72,7 +72,7 @@ export default function TabsLayout() {
 
 const styles = StyleSheet.create({
   dock: { backgroundColor: '#120E1C', borderTopColor: '#7A5A2A', borderTopWidth: 1.5, height: 72, paddingTop: 6, paddingBottom: 8, overflow: 'visible' },
-  label: { fontSize: 12, fontWeight: '700' },
+  label: { fontSize: 12.5, fontFamily: fonts.bodyBold },
   item: { overflow: 'visible' },
   iconWrap: { width: 44, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
   iconFocused: { backgroundColor: 'rgba(233, 186, 91, 0.16)', borderWidth: 1, borderColor: 'rgba(233, 186, 91, 0.5)' },

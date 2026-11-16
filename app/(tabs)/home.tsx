@@ -32,7 +32,7 @@ const ART = {
 };
 
 /** Cabeçalho de seção do lobby: ícone gravado + título em Cinzel, com ação opcional à direita. */
-function SectionHead({ icon, title, action }: { icon: 'chest' | 'compass'; title: string; action?: ReactNode }) {
+function SectionHead({ icon, title, action }: { icon: 'manna' | 'compass'; title: string; action?: ReactNode }) {
   return (
     <View style={styles.sectionHead}>
       <View style={styles.sectionTitle}>
@@ -117,7 +117,7 @@ export default function Home() {
                 { key: 'shop', label: l.shop, accessibilityLabel: strings.market.open, icon: 'shop', onPress: () => router.push('/market') },
                 { key: 'wardrobe', label: l.wardrobe, accessibilityLabel: strings.wardrobe.title, icon: 'outfit', onPress: () => router.push('/avatar/wardrobe') },
                 { key: 'trophies', label: l.trophies, accessibilityLabel: strings.sanctuary.title, icon: 'trophy', onPress: () => router.push('/avatar/sanctuary') },
-                { key: 'milestones', label: l.milestones, accessibilityLabel: strings.mission.milestones, icon: 'flag', onPress: () => router.push('/reading/milestones') },
+                { key: 'milestones', label: l.milestones, accessibilityLabel: strings.mission.milestones, icon: 'stones', onPress: () => router.push('/reading/milestones') },
               ]}
             />
           }
@@ -138,7 +138,7 @@ export default function Home() {
 
           <View style={styles.panel} testID="lobby-daily">
             <SectionHead
-              icon="chest"
+              icon="manna"
               title={l.dailyTitle}
               action={<Button compact variant="ghost" title={strings.home.changeGoal} onPress={() => router.push('/settings/pace')} style={styles.headBtn} />}
             />
@@ -153,7 +153,7 @@ export default function Home() {
                 title={l.modeMission}
                 body={l.modeMissionBody}
                 meta={overview ? fmt(l.chaptersCount, { done: overview.chaptersCompleted, total: overview.totalChapters }) : null}
-                icon="book"
+                icon="lamp"
                 art={ART.mission}
                 tint={HUD.gold}
                 onPress={() => router.push('/(tabs)/read')}
@@ -173,7 +173,7 @@ export default function Home() {
                 title={l.modeMilestones}
                 body={l.modeMilestonesBody}
                 meta={milestonesDone != null ? fmt(l.milestonesCount, { done: milestonesDone, total: MILESTONE_TOTAL }) : null}
-                icon="flag"
+                icon="stones"
                 tint={HUD.violet}
                 onPress={() => router.push('/reading/milestones')}
               />
@@ -181,7 +181,7 @@ export default function Home() {
                 testID="mode-sanctuary"
                 title={l.modeSanctuary}
                 body={l.modeSanctuaryBody}
-                icon="trophy"
+                icon="tabernacle"
                 art={ART.market}
                 tint="#F2C66C"
                 onPress={() => router.push('/avatar/sanctuary')}

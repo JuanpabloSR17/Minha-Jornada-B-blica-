@@ -103,6 +103,15 @@ const inViewport = async (loc, label) => {
   await page.getByTestId('profile-achievements').filter({ visible: true }).waitFor();
   step('retrato do HUD abre o Perfil');
 
+  // folha de ícones (dois tons) para revisão
+  const ip = await browser.newPage({ viewport: { width: 760, height: 900 } });
+  await ip.goto(`${APP}/dev/avatar-lab?iconset=1`);
+  await ip.getByTestId('iconset').waitFor();
+  await ip.waitForTimeout(600);
+  await ip.getByTestId('iconset').screenshot({ path: `${SHOTS}/lb-04-icones.png` });
+  await ip.close();
+  step('folha de ícones da interface capturada (24, 32 e 48 px)');
+
   await browser.close();
   await db.end();
   console.log('✔ Lobby verificado.');

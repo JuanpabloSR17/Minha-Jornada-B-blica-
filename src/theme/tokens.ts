@@ -110,7 +110,20 @@ export const cinemaColors: ThemeColors = {
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 } as const;
 export const radius = { sm: 8, md: 12, lg: 18, xl: 26, pill: 999 } as const;
 
+/**
+ * Cinzel (inscrição) só em títulos curtos; Atkinson Hyperlegible Next (feita para leitura com baixa
+ * visão) em todo o texto corrido, já no peso Medium: traço mais grosso e confortável.
+ */
 export const fonts = {
   display: 'Cinzel_700Bold',
   displayRegular: 'Cinzel_600SemiBold',
+  body: 'Atkinson_500Medium',
+  bodySemibold: 'Atkinson_600SemiBold',
+  bodyBold: 'Atkinson_700Bold',
 } as const;
+
+/** Família do texto corrido para um peso pedido (cada peso é um arquivo; não se sintetiza negrito). */
+export function bodyFamily(weight?: string | number) {
+  const w = Number(weight === 'bold' ? 700 : weight ?? 500);
+  return w >= 700 ? fonts.bodyBold : w >= 600 ? fonts.bodySemibold : fonts.body;
+}

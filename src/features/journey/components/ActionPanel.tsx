@@ -54,7 +54,7 @@ export function ActionPanel({
   return (
     <View style={[styles.panel, pending && styles.pending]} testID="home-action-panel">
       <View style={styles.modeTag} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-        <Icon name="compass" color="#E9BA5B" size={14} />
+        <Icon name="lamp" color="#E9BA5B" size={16} />
         <AppText style={styles.modeText} color="#E9BA5B">{strings.lobby.modeMission}</AppText>
       </View>
       <View style={styles.row}>

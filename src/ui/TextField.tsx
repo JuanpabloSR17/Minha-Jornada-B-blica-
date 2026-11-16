@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, TextInput, View, type TextInputProps } from 'react-native';
 import { useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
+import { radius, spacing, fonts } from '@/theme/tokens';
 import { AppText } from './AppText';
 
 type Props = TextInputProps & { label: string; hint?: string; error?: string | null; status?: { text: string; tone: 'ok' | 'bad' | 'muted' } | null };
@@ -54,6 +54,6 @@ export function TextField({ label, hint, error, status, secureTextEntry, style, 
 const styles = StyleSheet.create({
   wrap: { gap: 6 },
   inputRow: { flexDirection: 'row', alignItems: 'center', borderWidth: 1.5, borderRadius: radius.md },
-  input: { flex: 1, minHeight: 50, paddingHorizontal: spacing.md, fontSize: 16 },
+  input: { flex: 1, minHeight: 50, paddingHorizontal: spacing.md, fontSize: 17, fontFamily: fonts.body },
   reveal: { paddingHorizontal: spacing.md, minHeight: 44, justifyContent: 'center' },
 });

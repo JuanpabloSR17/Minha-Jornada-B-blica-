@@ -11,6 +11,7 @@ import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { hasItemIcon } from '@/features/avatar/art/icons';
 import { isArtifact } from '@/features/journey/art/artifacts';
 import type { AvatarLook } from '@/features/avatar/domain/avatar.types';
+import { Icon, type IconName } from '@/ui';
 
 /**
  * FERRAMENTA INTERNA (não faz parte da experiência do usuário).
@@ -72,9 +73,27 @@ function ExportView({ template, source, body, layer, pose, scale, skin, hair }: 
 
 export default function AvatarLab() {
   const [guides, setGuides] = useState(false);
-  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; icons?: string; pintura?: string; staff?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
+  const q = useLocalSearchParams<{ template?: string; export?: string; body?: string; layer?: string; compare?: string; fit?: string; icons?: string; iconset?: string; pintura?: string; staff?: string; pose?: string; scale?: string; skin?: string; hair?: string }>();
   if (!ENABLED) return <Text style={{ padding: 24 }}>Ferramenta interna indisponível.</Text>;
   if (q.template || q.export) return <ExportView template={q.template} source={q.export} body={q.body} layer={q.layer} pose={q.pose} scale={q.scale} skin={q.skin} hair={q.hair} />;
+  if (q.iconset) {
+    // folha dos ícones da interface (dois tons) em 24, 32 e 48 px, sobre a noite do lobby
+    const names: IconName[] = ['home', 'map', 'book', 'friends', 'profile', 'shop', 'outfit', 'trophy', 'stones', 'manna', 'lamp', 'tabernacle', 'coin', 'play', 'compass', 'scroll', 'medal', 'sparkle'];
+    return (
+      <View testID="iconset" style={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#0C1124', padding: 12, gap: 10, width: 720 }}>
+        {names.map((n) => (
+          <View key={n} style={{ width: 160, alignItems: 'center', gap: 6, padding: 8, borderRadius: 12, borderWidth: 1, borderColor: '#4A3E5E', backgroundColor: '#15112A' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 10 }}>
+              <Icon name={n} size={24} color="#E9BA5B" />
+              <Icon name={n} size={32} color="#E9BA5B" />
+              <Icon name={n} size={48} color="#B48CFF" />
+            </View>
+            <Text style={{ color: '#F6ECD6', fontFamily: 'Atkinson_600SemiBold', fontSize: 13 }}>{n}</Text>
+          </View>
+        ))}
+      </View>
+    );
+  }
   if (q.pintura) {
     // lote 1: referência vetorial × pintura atual, com luz neutra (guarda-roupa) e do acampamento
     const look: AvatarLook = {

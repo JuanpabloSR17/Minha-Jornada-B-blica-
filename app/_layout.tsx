@@ -1,4 +1,4 @@
-import { Cinzel_600SemiBold, Cinzel_700Bold, useFonts } from '@expo-google-fonts/cinzel';
+import { useFonts } from 'expo-font';
 import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
@@ -14,7 +14,15 @@ import { strings } from '@/i18n';
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 export default function RootLayout() {
-  const [fontsLoaded, fontError] = useFonts({ Cinzel_600SemiBold, Cinzel_700Bold });
+  // fontes no próprio projeto (assets/fonts, licença OFL): o caminho publicado não tem "@",
+  // que alguns servidores estáticos redirecionam em laço
+  const [fontsLoaded, fontError] = useFonts({
+    Cinzel_600SemiBold: require('../assets/fonts/Cinzel_600SemiBold.ttf'),
+    Cinzel_700Bold: require('../assets/fonts/Cinzel_700Bold.ttf'),
+    Atkinson_500Medium: require('../assets/fonts/AtkinsonHyperlegibleNext_500Medium.ttf'),
+    Atkinson_600SemiBold: require('../assets/fonts/AtkinsonHyperlegibleNext_600SemiBold.ttf'),
+    Atkinson_700Bold: require('../assets/fonts/AtkinsonHyperlegibleNext_700Bold.ttf'),
+  });
   const ready = fontsLoaded || !!fontError;
   useEffect(() => {
     if (ready) void SplashScreen.hideAsync().catch(() => undefined);

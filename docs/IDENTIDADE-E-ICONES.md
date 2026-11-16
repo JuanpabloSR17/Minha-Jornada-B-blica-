@@ -16,6 +16,12 @@
 O token `selection` também existe nos temas claro e escuro (igual ao `primary`), então os componentes
 compartilhados (cartões de item, carrossel, abas, barra de categorias) usam a mesma propriedade em qualquer tela.
 
+### Tipografia e ícones da interface
+
+- Títulos curtos em **Cinzel**; todo o texto corrido em **Atkinson Hyperlegible Next**, a partir do Medium (17/26), com SemiBold e Bold reais. Fontes em `assets/fonts/` (OFL).
+- Ícones em dois tons com referências bíblicas: tenda, rolo de mapa, Bíblia aberta, banca, túnica, coroa de louros, pedras memoriais, vaso do maná, lâmpada, tabernáculo com a nuvem e siclo. Folha em [`lobby/lb-04-icones.png`](lobby/lb-04-icones.png).
+- Para continuar a repaginação com o Codex, veja [`CODEX-REPAGINACAO.md`](CODEX-REPAGINACAO.md).
+
 ### Lobby do jogo (Início)
 
 O acampamento é o lobby. Cada função tem um lugar fixo, como num jogo:
