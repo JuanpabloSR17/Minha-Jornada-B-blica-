@@ -16,7 +16,12 @@ const STYLES: { id: CharacterStyle; name: string; note: string }[] = [
   { id: 'gravura', name: 'Gravura', note: 'Contorno a tinta, hachura para a sombra, cor em aguada.' },
   { id: 'iluminura', name: 'Iluminura', note: 'Traço fino, cores chapadas, nicho dourado de manuscrito.' },
   { id: 'aventureiro', name: 'Aventureiro', note: 'Corpo inteiro arredondado, sombra de desenho animado, objeto na mão.' },
+  { id: 'pixel', name: 'Pixel art', note: 'Sprite de jogo retrô em 32 × 40, contorno e sombra pixel a pixel.' },
+  { id: 'mosaico', name: 'Mosaico', note: 'Pedrinhas com rejunte e fundo de ouro, como os mosaicos antigos.' },
+  { id: 'papel', name: 'Recorte de papel', note: 'Camadas de papel sem contorno, sombra macia, morros recortados.' },
+  { id: 'sombras', name: 'Teatro de sombras', note: 'Silhueta diante da lâmpada, couro colorido translúcido, rendado e varetas.' },
 ];
+const FULL_BODY = new Set<CharacterStyle>(['aventureiro', 'pixel', 'sombras']);
 
 const CHARS = [
   { name: 'José', look: { bodyId: 'body-b', skin: color('skin_tone', 'skin-4'), hair: color('hair_color', 'haircolor-black'), hairStyle: 'hair-short' },
@@ -31,7 +36,7 @@ const CHARS = [
 export default function Estilos() {
   const q = useLocalSearchParams<{ estilo?: string; w?: string }>();
   if (!ENABLED) return <AppText style={{ padding: 24 }}>Ferramenta interna indisponível.</AppText>;
-  const list = q.estilo ? STYLES.filter((s) => s.id === q.estilo) : STYLES;
+  const list = q.estilo ? STYLES.filter((s) => q.estilo!.split(',').includes(s.id)) : STYLES;
   const w = Number(q.w ?? 200);
   return (
     <CinemaTheme>
@@ -47,7 +52,7 @@ export default function Estilos() {
                   <View key={c.name} style={styles.cell}>
                     <View style={styles.frame}>
                       <StyledCharacter style={s.id} look={c.look} wear={wear} width={w} label={`${c.name} no estilo ${s.name}`} />
-                      {s.id !== 'aventureiro' ? <View style={styles.emblem}><StyledEmblem style={s.id} wear={wear} size={Math.round(w * 0.3)} /></View> : null}
+                      {!FULL_BODY.has(s.id) ? <View style={styles.emblem}><StyledEmblem style={s.id} wear={wear} size={Math.round(w * 0.3)} /></View> : null}
                     </View>
                     <AppText variant="label" color="#F6ECD6">{c.name}</AppText>
                   </View>

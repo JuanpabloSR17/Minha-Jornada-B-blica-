@@ -2,17 +2,13 @@ import type { ReactElement } from 'react';
 import Svg, { Circle, ClipPath, Defs, Ellipse, G, Line, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from 'react-native-svg';
 import type { Glyph, Wear } from './archetypes';
 import { hairFamily } from './archetypes';
+import { glyph, hex, jewel, mix, shade } from './draw';
+import { PixelCharacter } from './PixelCharacter';
+import { ShadowPuppet } from './ShadowPuppet';
 
-export type CharacterStyle = 'vitral' | 'gravura' | 'iluminura' | 'aventureiro';
+export type CharacterStyle = 'vitral' | 'gravura' | 'iluminura' | 'aventureiro' | 'mosaico' | 'papel' | 'pixel' | 'sombras';
+type BustStyle = 'vitral' | 'gravura' | 'iluminura' | 'mosaico' | 'papel';
 export type StyleLook = { bodyId: string; skin: string; hair: string; hairStyle: string };
-
-// ------------------------------------------------------------------ cores
-const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-const toHex = (c: number[]) => `#${c.map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('')}`;
-const mix = (a: string, b: string, t: number) => { const x = hex(a), y = hex(b); return toHex(x.map((v, i) => v + (y[i]! - v) * t)); };
-const shade = (a: string, t: number) => (t < 0 ? mix(a, '#000000', -t) : mix(a, '#FFFFFF', t));
-/** satura um pouco (vitral): afasta do cinza médio */
-const jewel = (a: string) => { const c = hex(a); const m = (c[0]! + c[1]! + c[2]!) / 3; return toHex(c.map((v) => m + (v - m) * 1.35)); };
 
 // ------------------------------------------------------------------ geometria do busto (viewBox 200 × 250)
 const HALF = { 'body-a': 56, 'body-b': 68, 'body-c': 76 } as Record<string, number>;
@@ -68,30 +64,6 @@ const wreathLeaves = (fill: string, ink: string, sw: number, flower: boolean) =>
   </G>
 );
 
-// ------------------------------------------------------------------ objetos (em caixa 0..60)
-function glyph(g: Glyph, c: string, ink: string, sw: number): ReactElement {
-  const s = { stroke: ink, strokeWidth: sw, strokeLinejoin: 'round' as const, strokeLinecap: 'round' as const };
-  const wood = '#8A5E34';
-  switch (g) {
-    case 'staff': return <G><Path {...s} fill="none" stroke={wood} strokeWidth={sw * 2.2} d="M30 58 L30 14 C30 4 44 4 44 14 C44 20 38 22 36 18" /><Path {...s} fill="none" d="M30 58 L30 14 C30 4 44 4 44 14 C44 20 38 22 36 18" strokeOpacity={0.5} /></G>;
-    case 'scepter': return <G><Path {...s} fill={c} d="M28 58 L32 58 L32 18 L28 18 Z" /><Circle {...s} cx={30} cy={12} r={7} fill={c} /></G>;
-    case 'scroll': return <G><Rect {...s} x={12} y={14} width={36} height={32} fill="#EFE0BE" /><Rect {...s} x={8} y={10} width={8} height={40} rx={4} fill={c} /><Rect {...s} x={44} y={10} width={8} height={40} rx={4} fill={c} /><Path {...s} fill="none" d="M20 22 H40 M20 29 H40 M20 36 H34" /></G>;
-    case 'harp': return <G><Path {...s} fill={c} d="M14 52 C8 30 14 10 24 8 L28 14 C22 22 22 36 26 48 L44 48 C48 36 46 22 40 14 L44 8 C54 12 56 32 48 52 Z" /><Path {...s} fill="none" d="M24 14 H42 M28 18 V48 M33 16 V48 M38 18 V48" /></G>;
-    case 'horn': return <Path {...s} fill={c} d="M8 40 C20 38 36 26 44 10 L54 14 C48 34 30 50 10 50 Z" />;
-    case 'flute': return <G><Rect {...s} x={10} y={26} width={42} height={8} rx={4} fill={c} /><Circle cx={22} cy={30} r={1.6} fill={ink} /><Circle cx={30} cy={30} r={1.6} fill={ink} /><Circle cx={38} cy={30} r={1.6} fill={ink} /></G>;
-    case 'jar': return <Path {...s} fill={c} d="M22 10 H38 V16 C46 22 48 36 44 46 C40 54 20 54 16 46 C12 36 14 22 22 16 Z" />;
-    case 'basket': return <G><Path {...s} fill={c} d="M8 28 H52 L46 52 H14 Z" /><Path {...s} fill="none" d="M14 28 C14 10 46 10 46 28 M12 38 H48 M14 46 H46" /></G>;
-    case 'cup': return <Path {...s} fill={c} d="M14 12 H46 C46 30 38 38 30 38 C22 38 14 30 14 12 Z M30 38 V48 M20 52 H40" />;
-    case 'lamp': return <G><Path {...s} fill={c} d="M6 38 C16 48 40 48 52 34 C42 36 34 32 30 28 C20 28 12 32 6 38 Z" /><Path d="M10 30 C6 24 10 16 16 12 C16 20 20 22 18 28 Z" fill="#F2B23A" /></G>;
-    case 'torch': return <G><Path {...s} fill={wood} d="M27 58 L33 58 L35 26 L25 26 Z" /><Path d="M30 4 C20 14 22 24 30 26 C38 24 40 14 30 4 Z" fill="#F2B23A" stroke={ink} strokeWidth={sw * 0.6} /></G>;
-    case 'shield': return <G><Path {...s} fill={c} d="M30 6 L52 14 V30 C52 44 42 52 30 56 C18 52 8 44 8 30 V14 Z" /><Circle {...s} cx={30} cy={30} r={6} fill={shade(c, 0.35)} /></G>;
-    case 'plumb': return <G><Line {...s} x1={30} y1={4} x2={30} y2={30} /><Path {...s} fill={c} d="M22 30 H38 L30 54 Z" /></G>;
-    case 'sling': return <Path {...s} fill="none" d="M8 10 C20 30 26 40 30 46 C34 40 40 30 52 10 M24 44 C28 52 32 52 36 44" />;
-    case 'mirror': return <G><Ellipse {...s} cx={30} cy={24} rx={16} ry={18} fill={shade(c, 0.4)} /><Path {...s} fill={c} d="M27 42 H33 V58 H27 Z" /></G>;
-    default: return <Path {...s} fill={c} d="M10 46 L40 16 L48 24 L18 54 Z M38 10 L54 26" />;
-  }
-}
-
 // ------------------------------------------------------------------ busto (vitral, gravura, iluminura)
 type Treat = {
   ink: string; sw: number;
@@ -100,10 +72,14 @@ type Treat = {
   face: (skin: string, ink: string) => ReactElement;
   hatch?: boolean;
   seams?: boolean;
+  /** recorte de papel: cada peça projeta uma sombra macia, sem contorno */
+  paper?: boolean;
+  /** camada por cima de tudo (rejunte do mosaico) */
+  overlay?: () => ReactElement;
   gold: string;
 };
 
-const TREAT: Record<Exclude<CharacterStyle, 'aventureiro'>, Treat> = {
+const TREAT: Record<BustStyle, Treat> = {
   vitral: {
     ink: '#17110C', sw: 3.4, fill: jewel, gold: '#E8B830', seams: true,
     bg: () => (
@@ -167,12 +143,69 @@ const TREAT: Record<Exclude<CharacterStyle, 'aventureiro'>, Treat> = {
       </G>
     ),
   },
+  mosaico: {
+    ink: '#3A2A1E', sw: 1.4, fill: (c) => mix(jewel(c), '#B9A27C', 0.12), gold: '#D4A637',
+    bg: () => (
+      <G>
+        <Rect x={0} y={0} width={200} height={250} fill="#D4A637" />
+        <Rect x={0} y={0} width={200} height={250} fill="url(#tesseraGold)" />
+        <Path d="M0 214 H200 V250 H0 Z" fill="#2F4F7A" />
+        <Path d="M0 206 H200 V214 H0 Z" fill="#8C2F2F" />
+      </G>
+    ),
+    face: (skin, base) => {
+      // em pele escura as feições usam tesselas claras, para não sumirem no rejunte
+      const dark = hex(skin).reduce((a, v) => a + v, 0) / 3 < 110;
+      const ink = dark ? '#F0E2C8' : base;
+      return (
+      <G>
+        <Path d="M84 92 Q90 87 96 92 Q90 95 84 92 Z M104 92 Q110 87 116 92 Q110 95 104 92 Z" fill={dark ? '#F0E2C8' : '#2A1C12'} />
+        <Path d="M82 84 Q90 80 97 83 M103 83 Q110 80 118 84" stroke={ink} strokeWidth={2.2} fill="none" />
+        <Path d="M100 94 L97 108 L103 108" stroke={ink} strokeWidth={1.8} fill="none" />
+        <Path d="M93 116 Q100 119 107 116" stroke={dark ? '#E89A8A' : '#8C2F2F'} strokeWidth={2.4} fill="none" />
+      </G>
+      );
+    },
+    overlay: () => (
+      <G>
+        <Rect x={0} y={0} width={200} height={250} fill="url(#tesseraShade)" />
+        <Rect x={0} y={0} width={200} height={250} fill="url(#grout)" opacity={0.75} />
+      </G>
+    ),
+  },
+  papel: {
+    ink: 'none', sw: 0, fill: (c) => mix(c, '#FFF6E6', 0.18), gold: '#E3B54A', paper: true,
+    bg: () => (
+      <G>
+        <Rect x={0} y={0} width={200} height={250} fill="#F6E3C3" />
+        <Circle cx={150} cy={58} r={22} fill="#F4B860" />
+        <Path d="M0 170 C40 150 80 160 110 150 C150 138 180 150 200 146 V250 H0 Z" fill="#2A1A10" opacity={0.15} transform="translate(0 4)" />
+        <Path d="M0 170 C40 150 80 160 110 150 C150 138 180 150 200 146 V250 H0 Z" fill="#C9935A" />
+        <Path d="M0 200 C50 186 90 196 130 186 C160 180 185 186 200 182 V250 H0 Z" fill="#2A1A10" opacity={0.15} transform="translate(0 4)" />
+        <Path d="M0 200 C50 186 90 196 130 186 C160 180 185 186 200 182 V250 H0 Z" fill="#A86E3E" />
+      </G>
+    ),
+    face: () => (
+      <G>
+        <Circle cx={90} cy={93} r={3.2} fill="#3A2416" /><Circle cx={110} cy={93} r={3.2} fill="#3A2416" />
+        <Path d="M84 84 Q90 81 96 84 L96 86 Q90 83 84 86 Z M104 84 Q110 81 116 84 L116 86 Q110 83 104 86 Z" fill="#3A2416" />
+        <Path d="M93 113 Q100 119 107 113 Q100 116 93 113 Z" fill="#9E3A3A" />
+        <Circle cx={83} cy={104} r={5} fill="#E8826E" opacity={0.55} /><Circle cx={117} cy={104} r={5} fill="#E8826E" opacity={0.55} />
+        <Path d="M99 96 Q97 104 100 106 Q102 106 103 104" fill="#000" opacity={0.12} />
+      </G>
+    ),
+  },
 };
 
-function Bust({ style, look, wear }: { style: Exclude<CharacterStyle, 'aventureiro'>; look: StyleLook; wear: Wear }) {
+function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: Wear }) {
   const T = TREAT[style];
   const B = bust(look.bodyId);
-  const p = (d: string, fill: string, extra?: object) => <Path d={d} fill={T.fill(fill)} stroke={T.ink} strokeWidth={T.sw} strokeLinejoin="round" {...extra} />;
+  const p = (d: string, fill: string, extra?: object) => (T.paper ? (
+    <G>
+      <Path d={d} fill="#2A1A10" opacity={0.22} transform="translate(2.4 3.2)" />
+      <Path d={d} fill={T.fill(fill)} {...extra} />
+    </G>
+  ) : <Path d={d} fill={T.fill(fill)} stroke={T.ink} strokeWidth={T.sw} strokeLinejoin="round" {...extra} />);
   const skin = style === 'gravura' ? mix(look.skin, '#F3EAD7', 0.35) : look.skin;
   const hairC = style === 'gravura' ? mix(look.hair, '#F3EAD7', 0.2) : look.hair;
   const fam = hairFamily(look.hairStyle);
@@ -228,6 +261,7 @@ function Bust({ style, look, wear }: { style: Exclude<CharacterStyle, 'aventurei
           : <Path d={`M${CX - 14} 146 Q${CX} 166 ${CX + 14} 146`} fill="none" stroke={T.fill(wear.neck.color)} strokeWidth={T.sw * 1.6} />
       ) : null}
       {/* cabeça */}
+      {T.paper ? <Ellipse cx={102.4} cy={95.2} rx={30} ry={37} fill="#2A1A10" opacity={0.22} /> : null}
       <Ellipse cx={71} cy={96} rx={5} ry={8} fill={skin} stroke={T.ink} strokeWidth={T.sw} />
       <Ellipse cx={129} cy={96} rx={5} ry={8} fill={skin} stroke={T.ink} strokeWidth={T.sw} />
       <Ellipse {...HEAD} fill={skin} stroke={T.ink} strokeWidth={T.sw} />
@@ -249,6 +283,7 @@ function Bust({ style, look, wear }: { style: Exclude<CharacterStyle, 'aventurei
       {wear.head?.kind?.startsWith('wreath')
         ? wreathLeaves(wear.head.kind === 'wreath-flower' ? T.fill('#6B7A3A') : T.gold, T.ink, T.sw * 0.6, wear.head.kind === 'wreath-flower')
         : null}
+      {T.overlay?.()}
     </G>
   );
 }
@@ -350,11 +385,28 @@ export function StyledCharacter({ style, look, wear, width, label }: { style: Ch
         <RadialGradient id="advSky" cx="0.5" cy="0.3" r="0.8">
           <Stop offset="0" stopColor="#FCE7B8" /><Stop offset="1" stopColor="#8FB7D9" />
         </RadialGradient>
+        <Pattern id="grout" width={8} height={8} patternUnits="userSpaceOnUse">
+          <Path d="M0 0 H8 M0 4 H8 M0 0 V4 M4 0 V4 M2 4 V8 M6 4 V8" stroke="#EFE4CC" strokeWidth={0.75} />
+        </Pattern>
+        <Pattern id="tesseraShade" width={16} height={16} patternUnits="userSpaceOnUse">
+          <Rect x={0} y={0} width={4} height={4} fill="#000" opacity={0.1} /><Rect x={8} y={4} width={4} height={4} fill="#fff" opacity={0.1} />
+          <Rect x={12} y={8} width={4} height={4} fill="#000" opacity={0.08} /><Rect x={2} y={12} width={4} height={4} fill="#fff" opacity={0.12} />
+          <Rect x={6} y={8} width={4} height={4} fill="#000" opacity={0.06} />
+        </Pattern>
+        <Pattern id="tesseraGold" width={12} height={12} patternUnits="userSpaceOnUse">
+          <Rect x={0} y={0} width={4} height={4} fill="#E8C056" /><Rect x={4} y={4} width={4} height={4} fill="#B98A2A" /><Rect x={8} y={8} width={4} height={4} fill="#F0D27A" />
+        </Pattern>
+        <RadialGradient id="lampGlow" cx="0.5" cy="0.38" r="0.75">
+          <Stop offset="0" stopColor="#FFE9A8" /><Stop offset="0.55" stopColor="#F2A54A" /><Stop offset="1" stopColor="#7A2E14" />
+        </RadialGradient>
         <ClipPath id="rightHalf"><Rect x={100} y={0} width={100} height={250} /></ClipPath>
         <ClipPath id="torsoClip"><Path d={tunicPath} /></ClipPath>
         <ClipPath id="advBody"><Path d={`M${100 - aw} 136 Q100 126 ${100 + aw} 136 L${100 + aw + 8} 206 Q100 214 ${100 - aw - 8} 206 Z`} /></ClipPath>
       </Defs>
-      {style === 'aventureiro' ? <Adventurer look={look} wear={wear} /> : <Bust style={style} look={look} wear={wear} />}
+      {style === 'aventureiro' ? <Adventurer look={look} wear={wear} />
+        : style === 'pixel' ? <PixelCharacter look={look} wear={wear} />
+        : style === 'sombras' ? <ShadowPuppet look={look} wear={wear} />
+        : <Bust style={style} look={look} wear={wear} />}
     </Svg>
   );
 }
@@ -362,8 +414,8 @@ export function StyledCharacter({ style, look, wear, width, label }: { style: Ch
 /** Emblema do item de mão no traço do estilo (para os estilos de busto). */
 export function StyledEmblem({ style, wear, size }: { style: CharacterStyle; wear: Wear; size: number }) {
   if (!wear.hand) return null;
-  const T = style === 'aventureiro' ? { ink: '#2B1E16', sw: 2.6, fill: (c: string) => c } : TREAT[style];
-  const bg = style === 'vitral' ? '#1C2C5A' : style === 'gravura' ? '#F3EAD7' : style === 'iluminura' ? '#1F3A7A' : '#FCE7B8';
+  const T = style === 'aventureiro' || style === 'pixel' || style === 'sombras' ? { ink: '#2B1E16', sw: 2.6, fill: (c: string) => c } : { ...TREAT[style], ink: TREAT[style].paper ? '#5A3A22' : TREAT[style].ink, sw: TREAT[style].sw || 2 };
+  const bg = ({ vitral: '#1C2C5A', gravura: '#F3EAD7', iluminura: '#1F3A7A', mosaico: '#D4A637', papel: '#F6E3C3', aventureiro: '#FCE7B8', pixel: '#FCE7B8', sombras: '#F2A54A' } as Record<CharacterStyle, string>)[style];
   return (
     <Svg width={size} height={size} viewBox="-8 -8 76 76" accessibilityElementsHidden importantForAccessibility="no">
       <Circle cx={30} cy={30} r={36} fill={bg} stroke={style === 'iluminura' ? '#D9A83A' : T.ink} strokeWidth={style === 'vitral' ? 4 : 2.4} />
