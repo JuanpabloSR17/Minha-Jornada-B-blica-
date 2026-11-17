@@ -13,11 +13,11 @@ type BustStyle = 'vitral' | 'gravura' | 'iluminura' | 'mosaico' | 'papel' | 'cor
 export type StyleLook = { bodyId: string; skin: string; hair: string; hairStyle: string };
 
 // ------------------------------------------------------------------ geometria do busto (viewBox 200 × 250)
-const HALF = { 'body-a': 56, 'body-b': 68, 'body-c': 76 } as Record<string, number>;
-const CX = 100;
-const HEAD = { cx: 100, cy: 92, rx: 29, ry: 36 };
+export const HALF = { 'body-a': 56, 'body-b': 68, 'body-c': 76 } as Record<string, number>;
+export const CX = 100;
+export const HEAD = { cx: 100, cy: 92, rx: 29, ry: 36 };
 
-function bust(bodyId: string) {
+export function bust(bodyId: string) {
   const w = HALF[bodyId] ?? 68;
   const nk = bodyId === 'body-c' ? 13 : bodyId === 'body-a' ? 10 : 12;
   return {
@@ -33,7 +33,7 @@ function bust(bodyId: string) {
   };
 }
 
-const HAIR = {
+export const HAIR = {
   short: 'M71 90 C68 58 84 50 100 50 C116 50 132 58 129 90 C124 74 112 67 100 68 C88 67 76 74 71 90 Z',
   curly: 'M69 92 C62 80 66 66 74 62 C72 52 84 46 92 50 C96 42 108 42 112 50 C120 46 130 52 128 62 C136 66 138 80 131 92 C126 78 114 70 100 70 C86 70 74 78 69 92 Z',
   long: 'M70 92 C66 58 84 48 100 48 C116 48 134 58 130 92 C124 74 112 66 100 67 C88 66 76 74 70 92 Z',
@@ -42,7 +42,7 @@ const HAIR = {
   strandR: 'M129 88 C136 112 136 140 130 160 L120 158 C125 136 125 112 120 92 Z',
 };
 
-const HEADWEAR = {
+export const HEADWEAR = {
   turban: 'M67 88 C64 50 84 42 100 42 C116 42 136 50 133 88 C122 78 78 78 67 88 Z',
   turbanWraps: 'M70 74 C86 62 114 62 130 74 M72 62 C90 52 112 54 128 64 M80 52 C94 46 108 46 120 54',
   scarf: 'M58 104 C56 58 78 40 100 40 C122 40 144 58 142 104 C144 132 148 152 154 172 L130 164 C126 140 128 112 124 92 C120 70 110 62 100 62 C90 62 80 70 76 92 C72 112 74 140 70 164 L46 172 C52 152 56 132 58 104 Z',
@@ -51,7 +51,7 @@ const HEADWEAR = {
 };
 /** folhas ao longo do topo da cabeça: ângulo (graus), tangentes ao contorno */
 const WREATH_ANGLES = [-165, -145, -125, -105, -75, -55, -35, -15];
-const wreathLeaves = (fill: string, ink: string, sw: number, flower: boolean) => (
+export const wreathLeaves = (fill: string, ink: string, sw: number, flower: boolean) => (
   <G>
     {WREATH_ANGLES.map((deg) => {
       const t = (deg * Math.PI) / 180;
