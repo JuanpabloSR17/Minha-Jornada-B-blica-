@@ -5,9 +5,11 @@ import { hairFamily } from './archetypes';
 import { glyph, hex, jewel, mix, shade } from './draw';
 import { PixelCharacter } from './PixelCharacter';
 import { ShadowPuppet } from './ShadowPuppet';
+import { CrossStitch } from './CrossStitch';
+import { Constellation } from './Constellation';
 
-export type CharacterStyle = 'vitral' | 'gravura' | 'iluminura' | 'aventureiro' | 'mosaico' | 'papel' | 'pixel' | 'sombras';
-type BustStyle = 'vitral' | 'gravura' | 'iluminura' | 'mosaico' | 'papel';
+export type CharacterStyle = 'vitral' | 'gravura' | 'iluminura' | 'aventureiro' | 'mosaico' | 'papel' | 'pixel' | 'sombras' | 'cordel' | 'pontocruz' | 'constelacao' | 'massinha';
+type BustStyle = 'vitral' | 'gravura' | 'iluminura' | 'mosaico' | 'papel' | 'cordel';
 export type StyleLook = { bodyId: string; skin: string; hair: string; hairStyle: string };
 
 // ------------------------------------------------------------------ geometria do busto (viewBox 200 × 250)
@@ -74,6 +76,8 @@ type Treat = {
   seams?: boolean;
   /** recorte de papel: cada peça projeta uma sombra macia, sem contorno */
   paper?: boolean;
+  /** xilogravura de cordel: roupas em preto com cortes de goiva em branco, pele e cabelo no papel */
+  carve?: boolean;
   /** camada por cima de tudo (rejunte do mosaico) */
   overlay?: () => ReactElement;
   gold: string;
@@ -195,6 +199,32 @@ const TREAT: Record<BustStyle, Treat> = {
       </G>
     ),
   },
+  cordel: {
+    ink: '#151210', sw: 2.6, fill: (c) => (hex(c).reduce((a, v) => a + v, 0) / 3 > 205 ? '#EFE3C8' : '#151210'), gold: '#151210', carve: true,
+    bg: () => (
+      <G>
+        <Rect x={0} y={0} width={200} height={250} fill="#EFE3C8" />
+        <Rect x={6} y={6} width={188} height={238} fill="none" stroke="#151210" strokeWidth={5} />
+        <Circle cx={160} cy={46} r={16} fill="#151210" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const a = (i / 8) * Math.PI * 2;
+          return <Path key={i} d={`M${160 + Math.cos(a) * 20} ${46 + Math.sin(a) * 20} L${160 + Math.cos(a) * 28} ${46 + Math.sin(a) * 28}`} stroke="#151210" strokeWidth={3} strokeLinecap="round" />;
+        })}
+        <Path d="M14 40 Q30 34 44 40 M22 52 Q36 46 50 52" stroke="#151210" strokeWidth={2.4} fill="none" strokeLinecap="round" />
+        <Path d="M6 214 Q50 204 100 212 Q150 220 194 208 L194 244 L6 244 Z" fill="#151210" />
+        <Path d="M20 226 L40 222 M60 230 L84 226 M118 228 L142 232 M160 224 L180 220" stroke="#EFE3C8" strokeWidth={2} strokeLinecap="round" />
+      </G>
+    ),
+    face: (_skin, ink) => (
+      <G>
+        <Path d="M83 92 Q90 86 97 92 Q90 96 83 92 Z M103 92 Q110 86 117 92 Q110 96 103 92 Z" fill={ink} />
+        <Path d="M81 83 Q90 77 98 82 M102 82 Q110 77 119 83" stroke={ink} strokeWidth={3.2} fill="none" strokeLinecap="round" />
+        <Path d="M100 93 L96 108 L104 108" stroke={ink} strokeWidth={2.6} fill="none" strokeLinejoin="round" />
+        <Path d="M90 116 Q100 122 110 116" stroke={ink} strokeWidth={3} fill="none" strokeLinecap="round" />
+        <Path d="M80 104 L86 106 M114 106 L120 104" stroke={ink} strokeWidth={2} strokeLinecap="round" />
+      </G>
+    ),
+  },
 };
 
 function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: Wear }) {
@@ -206,12 +236,12 @@ function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: 
       <Path d={d} fill={T.fill(fill)} {...extra} />
     </G>
   ) : <Path d={d} fill={T.fill(fill)} stroke={T.ink} strokeWidth={T.sw} strokeLinejoin="round" {...extra} />);
-  const skin = style === 'gravura' ? mix(look.skin, '#F3EAD7', 0.35) : look.skin;
-  const hairC = style === 'gravura' ? mix(look.hair, '#F3EAD7', 0.2) : look.hair;
+  const skin = style === 'gravura' ? mix(look.skin, '#F3EAD7', 0.35) : style === 'cordel' ? '#EFE3C8' : look.skin;
+  const hairC = style === 'gravura' ? mix(look.hair, '#F3EAD7', 0.2) : style === 'cordel' ? '#151210' : look.hair;
   const fam = hairFamily(look.hairStyle);
   const covered = wear.head?.kind === 'scarf' || wear.head?.kind === 'turban';
   const hood = wear.cloak?.kind === 'hood';
-  const hatch = (d: string, k: string) => (T.hatch ? <Path key={k} d={d} fill="url(#hatch)" clipPath="url(#rightHalf)" opacity={0.85} /> : null);
+  const hatch = (d: string, k: string) => (T.hatch ? <Path key={k} d={d} fill="url(#hatch)" clipPath="url(#rightHalf)" opacity={0.85} /> : T.carve ? <Path key={k} d={d} fill="url(#carve)" /> : null);
   const tunic = wear.tunic!;
   return (
     <G>
@@ -236,7 +266,7 @@ function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: 
         <G>
           {p(`M${CX - 18} 168 H${CX + 18} V202 H${CX - 18} Z`, wear.chest.color)}
           {wear.chest.stones ? [0, 1, 2, 3].flatMap((r) => [0, 1, 2].map((c) => (
-            <Circle key={`${r}${c}`} cx={CX - 10 + c * 10} cy={174 + r * 8} r={3} fill={T.fill(['#B03D4E', '#3D8F6A', '#3D6FB0', '#E8B830'][(r + c) % 4]!)} stroke={T.ink} strokeWidth={T.sw * 0.5} />
+            <Circle key={`${r}${c}`} cx={CX - 10 + c * 10} cy={174 + r * 8} r={3} fill={T.carve ? '#EFE3C8' : T.fill(['#B03D4E', '#3D8F6A', '#3D6FB0', '#E8B830'][(r + c) % 4]!)} stroke={T.ink} strokeWidth={T.sw * 0.5} />
           ))) : null}
         </G>
       ) : null}
@@ -246,6 +276,7 @@ function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: 
           <G>
             {p(B.cloakL, wear.cloak.color)}
             {p(B.cloakR, wear.cloak.color)}
+            {hatch(B.cloakL, 'hcl')}
             {hatch(B.cloakR, 'hc')}
             {wear.cloak.kind === 'hair' || wear.cloak.kind === 'fleece' ? (
               <Path d={`M${CX - B.w} 180 l4 6 l4 -6 l4 6 M${CX - B.w + 4} 200 l4 6 l4 -6 l4 6 M${CX + B.w - 16} 185 l4 6 l4 -6 l4 6 M${CX + B.w - 12} 210 l4 6 l4 -6 l4 6`}
@@ -289,11 +320,14 @@ function Bust({ style, look, wear }: { style: BustStyle; look: StyleLook; wear: 
 }
 
 // ------------------------------------------------------------------ aventureiro (corpo inteiro, arredondado)
-function Adventurer({ look, wear }: { look: StyleLook; wear: Wear }) {
-  const ink = '#2B1E16';
-  const sw = 3;
+function Adventurer({ look, wear, clay }: { look: StyleLook; wear: Wear; clay?: boolean }) {
+  const ink = clay ? '#5A3A2A' : '#2B1E16';
+  const sw = clay ? 0.8 : 3;
+  // massinha: cada cor vira um gradiente radial (volume), registrado para as definições
+  const used = new Set<string>();
+  const fl = (c: string) => { if (!clay || !c.startsWith('#')) return c; used.add(c); return `url(#clay${c.slice(1)})`; };
   const w = { 'body-a': 26, 'body-b': 32, 'body-c': 38 }[look.bodyId] ?? 32;
-  const p = (d: string, fill: string) => <Path d={d} fill={fill} stroke={ink} strokeWidth={sw} strokeLinejoin="round" />;
+  const p = (d: string, fill: string) => <Path d={d} fill={fl(fill)} stroke={ink} strokeWidth={sw} strokeLinejoin="round" strokeOpacity={clay ? 0.4 : 1} />;
   const shadow = (d: string) => <Path d={d} fill="#000" opacity={0.16} clipPath="url(#rightHalf)" />;
   const fam = hairFamily(look.hairStyle);
   const covered = wear.head?.kind === 'scarf' || wear.head?.kind === 'turban';
@@ -302,7 +336,7 @@ function Adventurer({ look, wear }: { look: StyleLook; wear: Wear }) {
   const headT = 'translate(100 84) scale(1.5 1.3) translate(-100 -92)';
   return (
     <G>
-      <Rect x={0} y={0} width={200} height={250} fill="url(#advSky)" />
+      <Rect x={0} y={0} width={200} height={250} fill={clay ? 'url(#claySky)' : 'url(#advSky)'} />
       <Ellipse cx={100} cy={232} rx={70} ry={10} fill="#000" opacity={0.18} />
       <Path d="M0 214 C50 204 150 204 200 214 L200 250 L0 250 Z" fill="#C9A46A" />
       {wear.cloak ? p(`M${100 - w - 4} 134 C${100 - w - 22} 170 ${100 - w - 24} 200 ${100 - w - 20} 222 L${100 + w + 20} 222 C${100 + w + 24} 200 ${100 + w + 22} 170 ${100 + w + 4} 134 Z`, shade(wear.cloak.color, -0.1)) : null}
@@ -313,13 +347,13 @@ function Adventurer({ look, wear }: { look: StyleLook; wear: Wear }) {
       {p('M102 226 Q114 220 122 224 L122 232 L102 232 Z', '#7A5A3A')}
       {/* braço esquerdo */}
       {p(`M${100 - w + 2} 142 Q${100 - w - 14} 166 ${100 - w - 8} 190 L${100 - w + 2} 190 Q${100 - w} 166 ${100 - w + 10} 148 Z`, tunic.color)}
-      <Circle cx={100 - w - 3} cy={193} r={6} fill={look.skin} stroke={ink} strokeWidth={sw} />
+      <Circle cx={100 - w - 3} cy={193} r={6} fill={fl(look.skin)} stroke={ink} strokeWidth={sw} />
       {/* corpo */}
       {p(body, tunic.color)}
       {tunic.stripes ? (
         <G clipPath="url(#advBody)">{tunic.stripes.map((c, i) => <Rect key={i} x={0} y={140 + i * 14} width={200} height={7} fill={c} />)}</G>
       ) : null}
-      {shadow(body)}
+      {clay ? null : shadow(body)}
       <Path d={`M${100 - w - 6} 180 H${100 + w + 6}`} stroke="#7A5A3A" strokeWidth={6} />
       {wear.chest ? p('M88 146 H112 V172 H88 Z', '#D9A83A') : null}
       {wear.cloak ? (
@@ -332,29 +366,41 @@ function Adventurer({ look, wear }: { look: StyleLook; wear: Wear }) {
       {/* braço direito segurando o objeto */}
       <G transform={`translate(${100 + w + 2} 120) scale(0.9)`}>{wear.hand ? glyph(wear.hand.glyph, wear.hand.color, ink, 2.6) : null}</G>
       {p(`M${100 + w - 2} 142 Q${100 + w + 14} 160 ${100 + w + 18} 176 L${100 + w + 10} 180 Q${100 + w + 4} 166 ${100 + w - 8} 152 Z`, tunic.color)}
-      <Circle cx={100 + w + 16} cy={176} r={6.5} fill={look.skin} stroke={ink} strokeWidth={sw} />
+      <Circle cx={100 + w + 16} cy={176} r={6.5} fill={fl(look.skin)} stroke={ink} strokeWidth={sw} />
       {/* cabeça grande */}
       <G transform={headT}>
         {fam === 'long' && !covered ? p('M66 90 C62 112 64 128 70 136 L130 136 C136 128 138 112 134 90 C128 70 72 70 66 90 Z', shade(look.hair, -0.12)) : null}
-        <Ellipse cx={71} cy={96} rx={5} ry={7} fill={look.skin} stroke={ink} strokeWidth={sw / 1.4} />
-        <Ellipse cx={129} cy={96} rx={5} ry={7} fill={look.skin} stroke={ink} strokeWidth={sw / 1.4} />
-        <Ellipse {...HEAD} fill={look.skin} stroke={ink} strokeWidth={sw / 1.4} />
-        <Path d="M100 56 C120 56 129 75 129 92 C129 112 118 128 100 128 Z" fill="#000" opacity={0.12} />
+        <Ellipse cx={71} cy={96} rx={5} ry={7} fill={fl(look.skin)} stroke={ink} strokeWidth={sw / 1.4} />
+        <Ellipse cx={129} cy={96} rx={5} ry={7} fill={fl(look.skin)} stroke={ink} strokeWidth={sw / 1.4} />
+        <Ellipse {...HEAD} fill={fl(look.skin)} stroke={ink} strokeWidth={sw / 1.4} />
+        {clay ? null : <Path d="M100 56 C120 56 129 75 129 92 C129 112 118 128 100 128 Z" fill="#000" opacity={0.12} />}
         <Ellipse cx={89} cy={96} rx={4.5} ry={6} fill="#24170F" /><Ellipse cx={111} cy={96} rx={4.5} ry={6} fill="#24170F" />
         <Circle cx={90.6} cy={94} r={1.6} fill="#fff" /><Circle cx={112.6} cy={94} r={1.6} fill="#fff" />
         <Path d="M83 85 Q89 82 95 85 M105 85 Q111 82 117 85" stroke={ink} strokeWidth={1.8} fill="none" strokeLinecap="round" />
         <Path d="M94 112 Q100 117 106 112" stroke={ink} strokeWidth={1.8} fill="none" strokeLinecap="round" />
         <Ellipse cx={82} cy={106} rx={4} ry={2.5} fill="#E07A6A" opacity={0.5} /><Ellipse cx={118} cy={106} rx={4} ry={2.5} fill="#E07A6A" opacity={0.5} />
         {!covered && fam !== 'none' ? <G>
-          <Path d={HAIR[fam === 'curly' ? 'curly' : fam === 'long' ? 'long' : 'short']} fill={look.hair} stroke={ink} strokeWidth={sw / 1.4} strokeLinejoin="round" />
-          {fam === 'long' ? <><Path d="M71 88 C66 104 66 120 70 132 L79 130 C75 116 75 104 80 92 Z" fill={look.hair} stroke={ink} strokeWidth={sw / 1.4} /><Path d="M129 88 C134 104 134 120 130 132 L121 130 C125 116 125 104 120 92 Z" fill={look.hair} stroke={ink} strokeWidth={sw / 1.4} /></> : null}
+          <Path d={HAIR[fam === 'curly' ? 'curly' : fam === 'long' ? 'long' : 'short']} fill={fl(look.hair)} stroke={ink} strokeWidth={sw / 1.4} strokeLinejoin="round" />
+          {fam === 'long' ? <><Path d="M71 88 C66 104 66 120 70 132 L79 130 C75 116 75 104 80 92 Z" fill={fl(look.hair)} stroke={ink} strokeWidth={sw / 1.4} /><Path d="M129 88 C134 104 134 120 130 132 L121 130 C125 116 125 104 120 92 Z" fill={fl(look.hair)} stroke={ink} strokeWidth={sw / 1.4} /></> : null}
         </G> : null}
-        {wear.head?.kind === 'turban' ? <Path d={HEADWEAR.turban} fill={wear.head.color} stroke={ink} strokeWidth={sw / 1.4} /> : null}
-        {wear.head?.kind === 'scarf' ? <Path d={HEADWEAR.scarf} fill={wear.head.color} stroke={ink} strokeWidth={sw / 1.4} /> : null}
-        {wear.head?.kind === 'band' ? <Path d={HEADWEAR.band} fill={wear.head.color} stroke={ink} strokeWidth={sw / 1.4} /> : null}
-        {wear.head?.kind === 'crown' ? <Path d={HEADWEAR.crown} fill="#E8B830" stroke={ink} strokeWidth={sw / 1.4} /> : null}
+        {wear.head?.kind === 'turban' ? <Path d={HEADWEAR.turban} fill={fl(wear.head.color)} stroke={ink} strokeWidth={sw / 1.4} /> : null}
+        {wear.head?.kind === 'scarf' ? <Path d={HEADWEAR.scarf} fill={fl(wear.head.color)} stroke={ink} strokeWidth={sw / 1.4} /> : null}
+        {wear.head?.kind === 'band' ? <Path d={HEADWEAR.band} fill={fl(wear.head.color)} stroke={ink} strokeWidth={sw / 1.4} /> : null}
+        {wear.head?.kind === 'crown' ? <Path d={HEADWEAR.crown} fill={fl('#E8B830')} stroke={ink} strokeWidth={sw / 1.4} /> : null}
         {wear.head?.kind?.startsWith('wreath') ? wreathLeaves(wear.head.kind === 'wreath-flower' ? '#7C9A3A' : '#E8B830', ink, 1.4, wear.head.kind === 'wreath-flower') : null}
+        {clay ? <Ellipse cx={88} cy={70} rx={9} ry={5} fill="#FFFFFF" opacity={0.35} transform="rotate(-25 88 70)" /> : null}
       </G>
+      {clay ? (
+        <Defs>
+          {[...used].map((c) => (
+            <RadialGradient key={c} id={`clay${c.slice(1)}`} cx="0.35" cy="0.3" r="0.85">
+              <Stop offset="0" stopColor={shade(c, 0.35)} />
+              <Stop offset="0.55" stopColor={c} />
+              <Stop offset="1" stopColor={shade(c, -0.35)} />
+            </RadialGradient>
+          ))}
+        </Defs>
+      ) : null}
     </G>
   );
 }
@@ -385,6 +431,19 @@ export function StyledCharacter({ style, look, wear, width, label }: { style: Ch
         <RadialGradient id="advSky" cx="0.5" cy="0.3" r="0.8">
           <Stop offset="0" stopColor="#FCE7B8" /><Stop offset="1" stopColor="#8FB7D9" />
         </RadialGradient>
+        <Pattern id="carve" width={9} height={9} patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+          <Path d="M0 3 Q2.5 1.6 5 3 T9 3" stroke="#EFE3C8" strokeWidth={1.4} fill="none" strokeLinecap="round" />
+          <Path d="M2 7.4 L6 6.6" stroke="#EFE3C8" strokeWidth={1.1} strokeLinecap="round" />
+        </Pattern>
+        <Pattern id="linen" width={3} height={3} patternUnits="userSpaceOnUse">
+          <Path d="M0 0.5 H3 M0.5 0 V3" stroke="#CDBF9E" strokeWidth={0.5} />
+        </Pattern>
+        <LinearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+          <Stop offset="0" stopColor="#05081A" /><Stop offset="1" stopColor="#1B2350" />
+        </LinearGradient>
+        <RadialGradient id="claySky" cx="0.5" cy="0.35" r="0.8">
+          <Stop offset="0" stopColor="#FFF4E0" /><Stop offset="1" stopColor="#E7C9A6" />
+        </RadialGradient>
         <Pattern id="grout" width={8} height={8} patternUnits="userSpaceOnUse">
           <Path d="M0 0 H8 M0 4 H8 M0 0 V4 M4 0 V4 M2 4 V8 M6 4 V8" stroke="#EFE4CC" strokeWidth={0.75} />
         </Pattern>
@@ -403,7 +462,9 @@ export function StyledCharacter({ style, look, wear, width, label }: { style: Ch
         <ClipPath id="torsoClip"><Path d={tunicPath} /></ClipPath>
         <ClipPath id="advBody"><Path d={`M${100 - aw} 136 Q100 126 ${100 + aw} 136 L${100 + aw + 8} 206 Q100 214 ${100 - aw - 8} 206 Z`} /></ClipPath>
       </Defs>
-      {style === 'aventureiro' ? <Adventurer look={look} wear={wear} />
+      {style === 'aventureiro' || style === 'massinha' ? <Adventurer look={look} wear={wear} clay={style === 'massinha'} />
+        : style === 'pontocruz' ? <CrossStitch look={look} wear={wear} />
+        : style === 'constelacao' ? <Constellation look={look} wear={wear} />
         : style === 'pixel' ? <PixelCharacter look={look} wear={wear} />
         : style === 'sombras' ? <ShadowPuppet look={look} wear={wear} />
         : <Bust style={style} look={look} wear={wear} />}
@@ -414,8 +475,8 @@ export function StyledCharacter({ style, look, wear, width, label }: { style: Ch
 /** Emblema do item de mão no traço do estilo (para os estilos de busto). */
 export function StyledEmblem({ style, wear, size }: { style: CharacterStyle; wear: Wear; size: number }) {
   if (!wear.hand) return null;
-  const T = style === 'aventureiro' || style === 'pixel' || style === 'sombras' ? { ink: '#2B1E16', sw: 2.6, fill: (c: string) => c } : { ...TREAT[style], ink: TREAT[style].paper ? '#5A3A22' : TREAT[style].ink, sw: TREAT[style].sw || 2 };
-  const bg = ({ vitral: '#1C2C5A', gravura: '#F3EAD7', iluminura: '#1F3A7A', mosaico: '#D4A637', papel: '#F6E3C3', aventureiro: '#FCE7B8', pixel: '#FCE7B8', sombras: '#F2A54A' } as Record<CharacterStyle, string>)[style];
+  const T = style === 'aventureiro' || style === 'pixel' || style === 'sombras' || style === 'pontocruz' || style === 'constelacao' || style === 'massinha' ? { ink: '#2B1E16', sw: 2.6, fill: (c: string) => c } : { ...TREAT[style], ink: TREAT[style].paper ? '#5A3A22' : TREAT[style].ink, sw: TREAT[style].sw || 2 };
+  const bg = ({ vitral: '#1C2C5A', gravura: '#F3EAD7', iluminura: '#1F3A7A', mosaico: '#D4A637', papel: '#F6E3C3', aventureiro: '#FCE7B8', pixel: '#FCE7B8', sombras: '#F2A54A', cordel: '#EFE3C8', pontocruz: '#EDE2C8', constelacao: '#0B1030', massinha: '#FFF4E0' } as Record<CharacterStyle, string>)[style];
   return (
     <Svg width={size} height={size} viewBox="-8 -8 76 76" accessibilityElementsHidden importantForAccessibility="no">
       <Circle cx={30} cy={30} r={36} fill={bg} stroke={style === 'iluminura' ? '#D9A83A' : T.ink} strokeWidth={style === 'vitral' ? 4 : 2.4} />

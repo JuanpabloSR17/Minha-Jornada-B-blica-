@@ -4,8 +4,8 @@ import { hairFamily } from './archetypes';
 import { mix, shade } from './draw';
 import type { StyleLook } from './StyledCharacter';
 
-const W = 32;
-const H = 40;
+export const W = 32;
+export const H = 40;
 const CELL = 200 / W; // 6,25 (viewBox 200 × 250)
 const OUTLINE = '#2A1A12';
 
@@ -27,8 +27,8 @@ const MASK: Partial<Record<Glyph, string[]>> = {
   tool: ['XXX.', '.W..', '.W..', '.W..'],
 };
 
-/** Personagem em pixel art (32 × 40), corpo inteiro, com contorno e sombra por pixel. */
-export function PixelCharacter({ look, wear }: { look: StyleLook; wear: Wear }) {
+/** Grade 32 × 40 do personagem (com contorno); serve à pixel art e ao ponto-cruz. */
+export function pixelCells(look: StyleLook, wear: Wear): (string | null)[][] {
   const grid: (string | null)[][] = Array.from({ length: H }, () => Array<string | null>(W).fill(null));
   const put = (x: number, y: number, c: string, shadeRight = 0) => {
     if (x < 0 || y < 0 || x >= W || y >= H) return;
@@ -129,6 +129,12 @@ export function PixelCharacter({ look, wear }: { look: StyleLook; wear: Wear }) 
     if ([[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => grid[y + dy!]?.[x + dx!])) out[y]![x] = OUTLINE;
   }
 
+  return out;
+}
+
+/** Personagem em pixel art (32 × 40), corpo inteiro, com contorno e sombra por pixel. */
+export function PixelCharacter({ look, wear }: { look: StyleLook; wear: Wear }) {
+  const out = pixelCells(look, wear);
   // fundo em faixas, também em pixels
   const bg = (y: number) => (y >= 38 ? '#B98A52' : y >= 36 ? '#D9B47A' : y >= 26 ? '#F4D9A0' : y >= 14 ? '#BFD7E6' : '#8FB7D9');
   const rects: { x: number; y: number; w: number; c: string }[] = [];

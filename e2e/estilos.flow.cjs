@@ -8,7 +8,7 @@ const SHOTS = process.env.SHOTS_DIR ?? `${__dirname}/screenshots`;
   fs.mkdirSync(SHOTS, { recursive: true });
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 760, height: 1200 }, deviceScaleFactor: 2 });
-  for (const s of ['vitral', 'gravura', 'iluminura', 'aventureiro', 'pixel', 'mosaico', 'papel', 'sombras']) {
+  for (const s of ['vitral', 'gravura', 'iluminura', 'aventureiro', 'pixel', 'mosaico', 'papel', 'sombras', 'cordel', 'pontocruz', 'constelacao', 'massinha']) {
     await p.goto(`${APP}/dev/estilos?estilo=${s}&w=220`);
     await p.getByTestId(`estilo-${s}`).waitFor();
     await p.waitForTimeout(600);

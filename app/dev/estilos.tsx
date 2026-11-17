@@ -20,8 +20,12 @@ const STYLES: { id: CharacterStyle; name: string; note: string }[] = [
   { id: 'mosaico', name: 'Mosaico', note: 'Pedrinhas com rejunte e fundo de ouro, como os mosaicos antigos.' },
   { id: 'papel', name: 'Recorte de papel', note: 'Camadas de papel sem contorno, sombra macia, morros recortados.' },
   { id: 'sombras', name: 'Teatro de sombras', note: 'Silhueta diante da lâmpada, couro colorido translúcido, rendado e varetas.' },
+  { id: 'cordel', name: 'Cordel', note: 'Xilogravura de capa de cordel: preto no papel, cortes de goiva nas roupas.' },
+  { id: 'pontocruz', name: 'Ponto-cruz', note: 'Bordado em X sobre linho cru, dentro do bastidor.' },
+  { id: 'constelacao', name: 'Constelação', note: 'Estrelas ligadas no céu da noite ("conta as estrelas", Gn 15:5).' },
+  { id: 'massinha', name: 'Massinha', note: 'Boneco de argila de corpo inteiro, com volume e brilho.' },
 ];
-const FULL_BODY = new Set<CharacterStyle>(['aventureiro', 'pixel', 'sombras']);
+const FULL_BODY = new Set<CharacterStyle>(['aventureiro', 'pixel', 'sombras', 'pontocruz', 'constelacao', 'massinha']);
 
 const CHARS = [
   { name: 'José', look: { bodyId: 'body-b', skin: color('skin_tone', 'skin-4'), hair: color('hair_color', 'haircolor-black'), hairStyle: 'hair-short' },
