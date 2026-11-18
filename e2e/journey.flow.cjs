@@ -203,6 +203,39 @@ async function steady(locator) {
   assert.equal(await done(davi), 0, 'leitura comum não cumpre o marco');
   step('leitura comum de Êxodo 25: XP habitual e o aviso de como cumprir o marco');
 
+  // ================================================================ Lendárias conquistadas lendo
+  // Rute já leu Êx 25 (marco); o resto de Êxodo pelo mesmo caminho do servidor, menos o capítulo 40
+  for (let c = 1; c <= 39; c++) {
+    await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:EXO.' || $2::int, jsonb_build_object('book', 'EXO', 'chapter', $2::int))`, [rute, c]);
+  }
+  const ruteSkins = async () => (await db.query(`select skin_id from user_skins where user_id = $1 and source_event_id like 'skin-reading:%' order by skin_id`, [rute])).rows.map((r) => r.skin_id);
+  assert.deepEqual(await ruteSkins(), [], 'com 39 de 40 capítulos, nenhuma Lendária ainda');
+  await page.goto(`${APP}/vestiario`);
+  await page.getByRole('tab', { name: /^Todas/ }).click();
+  await page.getByTestId('vestiario-lendario_moises').click();
+  await page.getByTestId('vestiario-progress').getByText('39 de 40').waitFor();
+  await shot(page, 'j-08-vestiario-progresso-320');
+  await page.goto(`${APP}/read`);
+  await page.getByRole('radio', { name: /^Êxodo,/ }).click();
+  await page.getByRole('radio', { name: 'Capítulo 40', exact: true }).click();
+  await page.getByRole('button', { name: 'Iniciar missão: Êxodo 40' }).click();
+  await finishHere(page);
+  const pouch40 = await openReadingReceipt(page);
+  await pouch40.getByRole('button', { name: 'Continuar', exact: true }).click();
+  await page.getByTestId('new-skin-lendario_moises').waitFor();
+  await page.getByTestId('new-skin-lendario_arao').waitFor();
+  assert.deepEqual(await ruteSkins(), ['lendario_arao', 'lendario_moises']);
+  await shot(page, 'j-09-nova-skin-320');
+  await page.getByTestId('new-skin-lendario_moises').getByRole('button', { name: 'Vestir agora' }).click();
+  await page.getByText('Pronto: você está vestindo Manto de Moisés, estilo 1.').waitFor();
+  assert.deepEqual(await worn(rute), { skin_id: 'lendario_moises', style: 1 });
+  // a comemoração não se repete ao reabrir o resultado
+  await page.goto(`${APP}/reading/completed`);
+  await page.getByText('Missão concluída').first().waitFor();
+  await page.waitForTimeout(800);
+  assert.equal(await page.getByTestId('new-skin-lendario_moises').count(), 0);
+  step('ler o último capítulo de Êxodo pelo app concede o Manto de Moisés e as Vestes de Arão (progresso 39 de 40 antes), comemora uma vez e veste com um toque');
+
   // ================================================================ movimento reduzido
   const M = await phone(browser, 320, 640, { reducedMotion: 'reduce' });
   await onboard(M.page, { name: 'Ester', user: 'ester_proto', skin: 'Peregrino do Êxodo', style: 1 });

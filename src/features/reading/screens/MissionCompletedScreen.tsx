@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { NewSkinCelebration } from '@/features/skins/NewSkinCelebration';
 import { ITEMS_VISIBLE } from '@/config/features';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -119,6 +120,7 @@ function MissionCompleted() {
       {result.bookJustCompleted ? <Notice tone="success">{fmt(strings.mission.bookCompleted, { book: result.book.name })}</Notice> : null}
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
       <ChapterResultBanner result={result} />
+      <NewSkinCelebration userId={userId} refreshKey={result.sessionId} />
 
       <GlassPanel tone="reading">
         <View style={styles.stats}>

@@ -17,7 +17,7 @@ import {
   RARITY_ORDER, SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, howToGet, skinLook, skinToneColor, styleLook,
   type Skin, type SkinSelection,
 } from './catalog';
-import { equipSkin, getMySkins } from './skins.service';
+import { equipSkin, getMySkins, type ReadingRule } from './skins.service';
 
 const v = strings.vestiario;
 type Filter = 'mine' | 'all';
@@ -62,7 +62,7 @@ function StyleSwatches({ skin, value, onChange }: { skin: Skin; value: number; o
   );
 }
 
-function SkinTile({ skin, owned, worn, active, onPress }: { skin: Skin; owned: boolean; worn: boolean; active: boolean; onPress: () => void }) {
+function SkinTile({ skin, owned, worn, active, rule, onPress }: { skin: Skin; owned: boolean; worn: boolean; active: boolean; rule?: ReadingRule; onPress: () => void }) {
   const color = SKIN_RARITY_COLOR[skin.rarity];
   return (
     <Pressable onPress={onPress} accessibilityRole="button" testID={`vestiario-${skin.id}`}
@@ -76,6 +76,11 @@ function SkinTile({ skin, owned, worn, active, onPress }: { skin: Skin; owned: b
       {!owned ? <View style={styles.lock}><Icon name="lock" color="#F6ECD6" size={16} /></View> : null}
       {worn ? <View style={styles.wornTag}><Icon name="check" color="#120E1C" size={12} /></View> : null}
       <AppText style={styles.tileName} color="#F6ECD6" numberOfLines={2}>{skin.name}</AppText>
+      {!owned && rule ? (
+        <View style={styles.tileBar} accessibilityElementsHidden>
+          <View style={[styles.tileFill, { width: `${Math.floor((rule.done / Math.max(1, rule.total)) * 100)}%`, backgroundColor: color }]} />
+        </View>
+      ) : null}
     </Pressable>
   );
 }
@@ -93,6 +98,7 @@ function VestiarioContent() {
   const [base, setBase] = useState<AvatarState | null>(null);
   const [owned, setOwned] = useState<Set<string> | null>(null);
   const [worn, setWorn] = useState<SkinSelection | null>(null);
+  const [rules, setRules] = useState<Record<string, ReadingRule>>({});
   const [focus, setFocus] = useState<SkinSelection | null>(null);
   const [filter, setFilter] = useState<Filter>('mine');
   const [busy, setBusy] = useState(false);
@@ -104,6 +110,7 @@ function VestiarioContent() {
       setBase(avatar);
       setOwned(new Set(skins.owned.map((o) => o.skinId)));
       setWorn(skins.selected);
+      setRules(Object.fromEntries(skins.reading.map((r) => [r.skinId, r])));
       setFocus((f) => f ?? skins.selected);
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
@@ -161,8 +168,16 @@ function VestiarioContent() {
             <View style={styles.lockedBox} testID="vestiario-locked">
               <Icon name="lock" color={color} size={20} />
               <View style={{ flex: 1 }}>
-                <AppText variant="label" color="#F6ECD6">{v.lockedTitle}</AppText>
-                <AppText variant="caption" color="#C9BBA0">{howToGet(skin)}</AppText>
+                <AppText variant="label" color="#F6ECD6">{rules[skin.id] ? v.readingTitle : v.lockedTitle}</AppText>
+                <AppText variant="caption" color="#C9BBA0">{rules[skin.id]?.label ?? howToGet(skin)}</AppText>
+                {rules[skin.id] ? (
+                  <View style={styles.ruleRow} testID="vestiario-progress">
+                    <View style={styles.ruleBar}>
+                      <View style={[styles.tileFill, { width: `${Math.floor((rules[skin.id]!.done / Math.max(1, rules[skin.id]!.total)) * 100)}%`, backgroundColor: color }]} />
+                    </View>
+                    <AppText variant="caption" color="#F6ECD6">{fmt(v.progress, { done: rules[skin.id]!.done, total: rules[skin.id]!.total })}</AppText>
+                  </View>
+                ) : null}
               </View>
               {skin.inShop ? <Button compact variant="secondary" icon="shop" title={v.toShop} onPress={() => router.push('/market')} /> : null}
             </View>
@@ -191,7 +206,7 @@ function VestiarioContent() {
           </View>
           <View style={styles.grid}>
             {g.items.map((s) => (
-              <SkinTile key={s.id} skin={s} owned={!!owned?.has(s.id)} worn={worn?.skinId === s.id}
+              <SkinTile key={s.id} skin={s} owned={!!owned?.has(s.id)} worn={worn?.skinId === s.id} rule={rules[s.id]}
                 active={skin?.id === s.id}
                 onPress={() => setFocus({ skinId: s.id, style: worn?.skinId === s.id ? worn.style : 1 })} />
             ))}
@@ -232,4 +247,8 @@ const styles = StyleSheet.create({
   wornTag: { position: 'absolute', top: 5, right: 5, width: 20, height: 20, borderRadius: 10, backgroundColor: '#E9BA5B', alignItems: 'center', justifyContent: 'center' },
   tileName: { fontFamily: fonts.bodyBold, fontSize: 12.5, lineHeight: 16, paddingHorizontal: 6, marginTop: 4, textAlign: 'center' },
   note: { marginTop: spacing.lg, marginBottom: spacing.xl },
+  tileBar: { height: 4, marginHorizontal: 8, marginTop: 4, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.15)', overflow: 'hidden' },
+  tileFill: { height: '100%' },
+  ruleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 6 },
+  ruleBar: { flex: 1, height: 6, borderRadius: 3, backgroundColor: 'rgba(255,255,255,0.15)', overflow: 'hidden' },
 });

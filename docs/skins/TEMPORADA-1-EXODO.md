@@ -14,10 +14,10 @@ Decisões do usuário (18/11/2026) que valem para todas as skins:
 
 | # | ID | Skin | Referência | Raridade | Como se conquista | Elemento que identifica |
 |---|---|---|---|---|---|---|
-| 1 | `glorioso_moises_rosto_resplandecente` | Moisés com o rosto resplandecente | Êx 34:29 | Glorioso | Marco de Êx 34 + concluir Êxodo | Tábuas nas mãos, luz no rosto, manto do Sinai |
-| 2 | `glorioso_arao_vara_floresceu` | Arão e a vara que floresceu | Nm 17:8 | Glorioso | Marco de Nm 17 + concluir a temporada | Vestes sacerdotais, vara com amêndoas em flor |
-| 3 | `lendario_moises` | Manto de Moisés | Êx 4:2 | Lendário | Concluir Êxodo | Cajado, manto de pastor de Midiã |
-| 4 | `lendario_arao` | Vestes de Arão | Êx 28 | Lendário | Trilha do Tabernáculo | Éfode, peitoral de 12 pedras, mitra com lâmina de ouro |
+| 1 | `glorioso_moises_rosto_resplandecente` | Moisés com o rosto resplandecente | Êx 34:29 | Glorioso | Concluir Êxodo + cumprir o Marco: Tábuas da Aliança | Tábuas nas mãos, luz no rosto, manto do Sinai |
+| 2 | `glorioso_arao_vara_floresceu` | Arão e a vara que floresceu | Nm 17:8 | Glorioso | Concluir a temporada: Êxodo, Levítico e Números | Vestes sacerdotais, vara com amêndoas em flor |
+| 3 | `lendario_moises` | Manto de Moisés | Êx 4:2 | Lendário | Concluir o livro de Êxodo | Cajado, manto de pastor de Midiã |
+| 4 | `lendario_arao` | Vestes de Arão | Êx 28 | Lendário | Ler os 3 capítulos da Trilha do Tabernáculo (Êx 25, 30 e 40) | Éfode, peitoral de 12 pedras, mitra com lâmina de ouro |
 | 5 | `epico_miria` | Tamborim de Miriã | Êx 15:20 | Épico | Temporada (faixa premium, lendo) | Tamborim, véu de profetisa |
 | 6 | `epico_bezalel` | Avental de Bezalel | Êx 31:2-5 | Épico | Temporada (faixa grátis) | Artesão: ouro, madeira de acácia e pedra |
 | 7 | `epico_jetro` | Manto de Jetro | Êx 18:1 | Épico | Temporada (faixa premium) | Sacerdote de Midiã, manto de ancião |
@@ -40,6 +40,8 @@ Decisões do usuário (18/11/2026) que valem para todas as skins:
 | 24 | `comum_tecela` | Tecelã | Êx 35:25 | Comum | Siclos | Roca e fuso, fio de linho |
 | 25 | `comum_parteira` | Parteira | Êx 1:15 | Comum | Siclos | Véu simples, lenços de linho |
 | 26 | `comum_peregrino_exodo` | Peregrino do Êxodo | Êx 12:11 | Comum | Início do jogo | Cinto cingido, sandálias, cajado na mão |
+
+As regras das Lendárias e Gloriosas já estão no servidor (`skin_unlock_rules`, migração `20261126000100_reading_skins.sql`): a skin é concedida automaticamente quando a leitura cumpre a regra.
 
 Total: 26 skins × 3 estilos = **78 pinturas** + 26 miniaturas.
 

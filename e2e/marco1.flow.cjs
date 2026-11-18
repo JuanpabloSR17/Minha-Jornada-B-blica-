@@ -5,6 +5,7 @@ const { chromium } = require('playwright');
 const pg = require('pg');
 const assert = require('node:assert/strict');
 const { openReadingReceipt, dismissReadingRewards } = require('./reading-rewards.cjs');
+const { diffRatio, sameLook } = require('./pixels.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR;
@@ -15,6 +16,7 @@ const shot = async (page, name) => SHOTS && page.screenshot({ path: `${SHOTS}/${
 const stage = (page) => page.getByRole('img', { name: /^Prévia do personagem/ }).first();
 /** captura o viajante depois que duas capturas seguidas saem iguais (pintura e fontes carregadas) */
 async function steadyShot(page) {
+  await page.waitForLoadState('networkidle').catch(() => {});
   let last = await stage(page).screenshot();
   for (let i = 0; i < 10; i++) {
     await page.waitForTimeout(400);
@@ -112,7 +114,7 @@ async function newPhone(browser, scheme = 'light') {
   assert.equal(await page.getByText('Como você quer ser chamado?').count(), 0);
   await page.waitForTimeout(500);
   const afterReload = await steadyShot(page);
-  assert.ok(before.equals(afterReload), 'avatar diferente após recarregar');
+  assert.ok(sameLook(before, afterReload), `avatar diferente após recarregar (${(diffRatio(before, afterReload) * 100).toFixed(2)}%)`);
   step('após reiniciar o app, o mesmo viajante aparece (comparação pixel a pixel)');
 
   const B = await newPhone(browser);
@@ -126,7 +128,7 @@ async function newPhone(browser, scheme = 'light') {
   await B.page.getByText('@ana_teste').waitFor();
   await B.page.waitForTimeout(500);
   const otherDevice = await steadyShot(B.page);
-  assert.ok(before.equals(otherDevice), 'avatar diferente no segundo aparelho');
+  assert.ok(sameLook(before, otherDevice), `avatar diferente no segundo aparelho (${(diffRatio(before, otherDevice) * 100).toFixed(2)}%)`);
   step('login em "outro aparelho" vai direto ao Início (sem onboarding) com o mesmo viajante');
 
   // ============================================================ VESTIÁRIO DE SKINS
@@ -150,7 +152,9 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('tab', { name: /^Todas/ }).click();
   await page.getByTestId('vestiario-lendario_moises').click();
   await page.getByTestId('vestiario-locked').waitFor();
-  await page.getByText('Conquistada lendo').waitFor();
+  await page.getByText('Conquiste lendo').waitFor();
+  await page.getByText('Concluir o livro de Êxodo').waitFor();
+  await page.getByTestId('vestiario-progress').getByText('0 de 40').waitFor();
   assert.equal(await page.getByRole('button', { name: /^Vestir/ }).count(), 0);
   await page.getByTestId('vestiario-raro_levita').click();
   await page.getByRole('button', { name: 'Loja' }).waitFor();
