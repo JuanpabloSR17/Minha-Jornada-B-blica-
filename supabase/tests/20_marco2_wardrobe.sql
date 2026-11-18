@@ -252,6 +252,6 @@ select set_config('request.jwt.claim.sub', 'a6666666-0000-0000-0000-000000000006
 set local role authenticated;
 select tests.assert((public.get_public_avatar('gratis_3') ->> 'visible')::boolean, 'perfil público mostra o avatar');
 select tests.assert(
-  (select array_agg(k order by k) from jsonb_object_keys(public.get_public_avatar('gratis_3')) k) = array['appearance', 'displayName', 'equipment', 'isSelf', 'username', 'visible'],
+  (select array_agg(k order by k) from jsonb_object_keys(public.get_public_avatar('gratis_3')) k) = array['appearance', 'displayName', 'equipment', 'isSelf', 'skin', 'username', 'visible'],
   'perfil público só expõe campos consentidos (sem id, e-mail ou leitura)');
 commit;

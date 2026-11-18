@@ -27,11 +27,11 @@ const goal: NonNullable<MissionResult['dailyGoal']> = {
 
 describe('recibo da leitura', () => {
   it('soma XP de leitura e bônus da meta, e mostra os Siclos efetivamente concedidos', () => {
-    expect(readingRewards({ ...reading, dailyGoal: goal })).toEqual([
+    expect(readingRewards({ ...reading, dailyGoal: goal }, { items: true })).toEqual([
       { kind: 'xp', amount: 60, chapterXp: 40, bonus: 20 },
       { kind: 'siclos', amount: 40 },
     ]);
-    expect(readingRewards({ ...reading, dailyGoal: { ...goal, achievedNow: false } })).toEqual([
+    expect(readingRewards({ ...reading, dailyGoal: { ...goal, achievedNow: false } }, { items: true })).toEqual([
       { kind: 'xp', amount: 40, chapterXp: 40, bonus: 0 },
     ]);
   });
@@ -42,15 +42,15 @@ describe('recibo da leitura', () => {
       duplicate: true,
       granted: ['holy_arca_da_alianca_representacao', 'book_rut', 'rare_manto_do_profeta', 'cloak-elijah'],
     };
-    expect(readingRewards(result).filter((r) => r.kind === 'item').map((r) => r.id)).toEqual([
+    expect(readingRewards(result, { items: true }).filter((r) => r.kind === 'item').map((r) => r.id)).toEqual([
       'cloak-elijah', 'book_rut', 'holy_arca_da_alianca_representacao',
     ]);
   });
 
   it('não gera bolsa para releitura vazia, mas mostra um Raro concedido na releitura', () => {
     const reread = { ...reading, alreadyCompleted: true, xpAwarded: 0 };
-    expect(readingRewards(reread)).toEqual([]);
-    expect(readingRewards({ ...reread, granted: ['cloak-elijah'] })).toMatchObject([
+    expect(readingRewards(reread, { items: true })).toEqual([]);
+    expect(readingRewards({ ...reread, granted: ['cloak-elijah'] }, { items: true })).toMatchObject([
       { kind: 'item', id: 'cloak-elijah', item: { rarity: 'rare' } },
     ]);
   });
@@ -61,8 +61,13 @@ describe('recibo da leitura', () => {
       day: goal.day, timeZone: 'America/Sao_Paulo', siclosAwarded: 40, options: [chosenItem],
       available: [], chosenItem, choicePending: false, book: 'RUT', chapter: 1,
     };
-    expect(readingRewards({ ...reading, dailyGoal: { ...goal, goal: state } })).toMatchObject([
+    expect(readingRewards({ ...reading, dailyGoal: { ...goal, goal: state } }, { items: true })).toMatchObject([
       { kind: 'xp' }, { kind: 'siclos' }, { kind: 'item', id: chosenItem, item: { rarity: 'common' } },
     ]);
+  });
+
+  it('sem peças na interface, a bolsa traz só XP e Siclos', () => {
+    const rewards = readingRewards({ ...reading, granted: ['cloak-elijah'] });
+    expect(rewards.every((r) => r.kind !== 'item')).toBe(true);
   });
 });

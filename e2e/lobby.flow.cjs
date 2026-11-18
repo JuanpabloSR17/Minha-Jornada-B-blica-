@@ -1,6 +1,6 @@
 /* eslint-disable */
 // Lobby do jogo no Início: HUD (retrato, nível, XP, Siclos, capítulos), trilho lateral (Loja,
-// Vestiário, Troféus, Marcos), painel de jogar sem rolagem, missão diária, modos de jogo e a doca
+// Vestiário, Trilhas, Marcos), painel de jogar sem rolagem, missão diária, modos de jogo e a doca
 // com o medalhão de leitura, em 320 e 412 px. `FLOW=lobby bash e2e/run.sh`
 const { chromium } = require('playwright');
 const pg = require('pg');
@@ -42,17 +42,13 @@ const inViewport = async (loc, label) => {
   await page.getByLabel('Nome de usuário').fill('rute_lobby');
   await page.getByText('Disponível').waitFor();
   await page.getByRole('button', { name: 'Continuar' }).click();
-  await page.getByText('Criar personagem').waitFor();
-  await pick(page, 'Modelo', 'Modelo B');
-  await page.getByRole('button', { name: 'Continuar' }).click();
-  await page.getByRole('button', { name: 'Continuar' }).click();
-  await page.getByRole('button', { name: 'Continuar' }).click();
-  await page.getByRole('button', { name: 'Finalizar personagem' }).click();
+  await page.getByText('Escolha seu viajante').waitFor();
+  await page.getByRole('button', { name: 'Começar com esta skin' }).click();
   await page.getByText('Qual é o seu ritmo?').waitFor();
   await page.getByRole('button', { name: 'Começar a jornada' }).click();
   await page.getByText('Paz, Rute!').waitFor();
   const uid = (await db.query(`select id from profiles where username = 'rute_lobby'`)).rows[0].id;
-  // progresso de exemplo: 12 capítulos de Gênesis (480 XP → nível 2) e saldo de 120 Siclos
+  // progresso de exemplo: 12 capítulos de Gênesis (480 XP → nível 3) e saldo de 120 Siclos
   for (let c = 1; c <= 12; c++) {
     await db.query(`insert into xp_ledger (user_id, event_type, source_event_id, amount) values ($1, 'TEST_GRANT', 'lobby:' || $2::text, 40)`, [uid, c]);
     await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:GEN.' || $2::int, jsonb_build_object('book', 'GEN', 'chapter', $2::int))`, [uid, c]);
@@ -65,10 +61,10 @@ const inViewport = async (loc, label) => {
     const hud = page.getByTestId('lobby-hud').filter({ visible: true });
     await hud.waitFor();
     await hud.getByText('120', { exact: true }).waitFor();
-    await page.getByRole('button', { name: /^Rute, nível 2\./ }).waitFor();
+    await page.getByRole('button', { name: /^Rute, nível 3\./ }).waitFor();
     await page.waitForTimeout(1500);
     await noOverflow(page, `lobby ${w}`);
-    for (const name of ['Mercado dos Viajantes', 'Guarda-roupa', 'Santuário das Conquistas', 'Marcos dos Santos']) {
+    for (const name of ['Mercado dos Viajantes', 'Vestiário', 'Trilhas guiadas', 'Marcos da Jornada']) {
       await page.getByTestId('lobby-rail').filter({ visible: true }).getByRole('button', { name, exact: true }).waitFor();
     }
     await inViewport(page.getByRole('button', { name: 'Começar leitura' }).filter({ visible: true }), `Começar leitura ${w}`);
@@ -76,11 +72,11 @@ const inViewport = async (loc, label) => {
     await page.getByTestId('lobby-daily').filter({ visible: true }).scrollIntoViewIfNeeded();
     await page.waitForTimeout(500);
     await page.screenshot({ path: `${SHOTS}/lb-02-missao-diaria-${w}.png` });
-    await page.getByTestId('mode-sanctuary').filter({ visible: true }).scrollIntoViewIfNeeded();
+    await page.getByTestId('mode-trails').filter({ visible: true }).scrollIntoViewIfNeeded();
     await page.waitForTimeout(500);
     await noOverflow(page, `modos ${w}`);
     await page.screenshot({ path: `${SHOTS}/lb-03-modos-${w}.png` });
-    step(`${w} px: HUD (nível 2, 120 Siclos, 12 capítulos), trilho com Loja, Vestiário, Troféus e Marcos, e "Começar leitura" sem rolagem`);
+    step(`${w} px: HUD (nível 3, 120 Siclos, 12 capítulos), trilho com Loja, Vestiário, Trilhas e Marcos, e "Começar leitura" sem rolagem`);
   }
   await page.setViewportSize({ width: 412, height: 915 });
 
@@ -108,13 +104,14 @@ const inViewport = async (loc, label) => {
   }
   await page.setViewportSize({ width: 412, height: 915 });
   step('loja só de skins em 412 e 320 px, sem rolagem lateral');
-  await go(() => page.getByTestId('lobby-rail').filter({ visible: true }).getByRole('button', { name: 'Guarda-roupa', exact: true }), () => page.getByRole('button', { name: 'Salvar' }).waitFor(), 'Vestiário abre o guarda-roupa');
+  await go(() => page.getByTestId('lobby-rail').filter({ visible: true }).getByRole('button', { name: 'Vestiário', exact: true }), () => page.getByTestId('vestiario-stage').waitFor(), 'Vestiário do trilho abre o Vestiário de skins');
+  await go(() => page.getByTestId('lobby-rail').filter({ visible: true }).getByRole('button', { name: 'Trilhas guiadas', exact: true }), () => page.getByText('Trilha de Rute').first().waitFor(), 'Trilhas do trilho abre as trilhas guiadas');
   await go(() => page.getByTestId('mode-map').filter({ visible: true }), () => page.getByTestId('journey-atlas').filter({ visible: true }).waitFor(), 'modo Mapa dos mundos abre a Jornada');
   await go(() => page.getByTestId('mode-mission').filter({ visible: true }), () => page.getByText('Modo Missão', { exact: true }).filter({ visible: true }).first().waitFor(), 'Modo Missão abre a aba Ler');
   await go(() => page.getByRole('tab', { name: 'Ler' }), () => page.getByText('Modo Missão', { exact: true }).filter({ visible: true }).first().waitFor(), 'medalhão Ler da doca abre a aba Ler');
   await page.goto(`${APP}/home`);
   await page.getByTestId('lobby-hud').filter({ visible: true }).waitFor();
-  await page.getByRole('button', { name: /^Rute, nível 2\./ }).click();
+  await page.getByRole('button', { name: /^Rute, nível 3\./ }).click();
   await page.getByTestId('profile-achievements').filter({ visible: true }).waitFor();
   step('retrato do HUD abre o Perfil');
 

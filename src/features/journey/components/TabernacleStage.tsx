@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ITEMS_VISIBLE } from '@/config/features';
 import { Animated, StyleSheet, View } from 'react-native';
 import Svg, { Defs, Ellipse, RadialGradient, Stop } from 'react-native-svg';
 import { AppText } from '@/ui';
@@ -51,11 +52,13 @@ export function TabernacleStage({ items, completed }: { items: { id: string; own
               </Animated.View>
             )}
             <ArtifactArt id={id} width={aw} state={state} glow={owned} />
-            <View style={[styles.chip, owned ? styles.chipOwned : styles.chipGrant]}>
-              <AppText variant="caption" numberOfLines={1} style={styles.chipText} color={owned ? '#2A1606' : '#F7D98A'}>
-                {owned ? j.stateOwned : j.stateGrantable}
-              </AppText>
-            </View>
+            {ITEMS_VISIBLE ? (
+              <View style={[styles.chip, owned ? styles.chipOwned : styles.chipGrant]}>
+                <AppText variant="caption" numberOfLines={1} style={styles.chipText} color={owned ? '#2A1606' : '#F7D98A'}>
+                  {owned ? j.stateOwned : j.stateGrantable}
+                </AppText>
+              </View>
+            ) : null}
             <AppText variant="caption" numberOfLines={2} style={styles.name} color="#F6ECD6">{displayNameOf(id)}</AppText>
           </View>
         );

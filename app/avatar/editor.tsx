@@ -1,6 +1,6 @@
-import { CharacterCreatorScreen } from '@/features/avatar/screens/CharacterCreatorScreen';
+import { Redirect } from 'expo-router';
 
-/** P02 (versão inicial): edita aparência e peças iniciais com Salvar/Descartar. */
-export default function AvatarEditor() {
-  return <CharacterCreatorScreen mode="edit" />;
+/** As peças saíram da interface: o visual do viajante agora é a skin, escolhida no Vestiário. */
+export default function LegacyItems() {
+  return <Redirect href="/vestiario" />;
 }

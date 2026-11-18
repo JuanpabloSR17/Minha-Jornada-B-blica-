@@ -146,6 +146,7 @@ function WorldCard({ world, completed, expanded, onToggle, onRead, onTrail }: {
   onTrail: (trail: 'ruth' | 'tabernacle') => void;
 }) {
   const { colors } = useTheme();
+  const router = useRouter();
   const [openBook, setOpenBook] = useState<string | null>(null);
   const state = worldStatus(world, completed);
   const tint = completed ? colors.success : worldColors[world.id];
@@ -170,6 +171,8 @@ function WorldCard({ world, completed, expanded, onToggle, onRead, onTrail }: {
       </Pressable>
       {expanded ? (
         <Entry>
+          <Button variant="gold" icon="compass" title={`${strings.world.enter}: ${world.name}`} testID={`journey-enter-${world.id}`}
+            onPress={() => router.push({ pathname: '/world/[id]', params: { id: world.id } })} />
           <WorldObjective world={world} completed={completed} color={tint} onRead={onRead} />
           {world.id === 'reinos' ? (
             <Button compact variant="secondary" icon="scroll" title="Trilha guiada de Rute" onPress={() => onTrail('ruth')} />

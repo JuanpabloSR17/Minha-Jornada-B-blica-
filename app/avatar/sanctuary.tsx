@@ -1,5 +1,6 @@
-import { SanctuaryScreen } from '@/features/avatar/screens/SanctuaryScreen';
+import { Redirect } from 'expo-router';
 
-export default function Sanctuary() {
-  return <SanctuaryScreen />;
+/** O Santuário expunha peças Santas; sem peças na interface, as conquistas ficam nos Marcos. */
+export default function LegacySanctuary() {
+  return <Redirect href="/reading/milestones" />;
 }

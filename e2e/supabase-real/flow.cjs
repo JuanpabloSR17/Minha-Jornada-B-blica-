@@ -49,7 +49,7 @@ async function login(page, email) {
     const start = await balance();
     await page.getByText('Meta pessoal: 1 capítulo por dia').waitFor();
     await page.getByText('Hoje: 0 de 1 capítulos').waitFor();
-    await page.getByText('Recompensa: 40 Siclos · 20 XP de bônus · 1 Comum à escolha').waitFor();
+    await page.getByText('Recompensa: 40 Siclos · 20 XP de bônus', { exact: true }).waitFor();
     await shot(page, 'real-01-home');
     await page.getByRole('button', { name: 'Começar leitura' }).click();
     await page.getByRole('radio', { name: /^Gênesis,/ }).click();
@@ -65,18 +65,11 @@ async function login(page, email) {
     await page.getByText(`Saldo: ${start + 40} Siclos`).first().waitFor();
     assert.equal(await balance(), start + 40, 'crédito de 40 Siclos registrado no banco');
     await shot(page, 'real-02-goal');
-    const option = page.getByRole('radio').first();
-    const optionName = (await option.getAttribute('aria-label')).split(',')[0];
-    await option.click();
-    await page.getByRole('button', { name: `Receber ${optionName}` }).click();
-    await page.getByRole('button', { name: 'Confirmar' }).click();
-    await dismissReadingRewards(page);
-    await page.getByText(`${optionName} foi adicionado ao seu inventário.`).waitFor();
-    const today = (await conn.query(`select siclos, xp_bonus, chosen_item from daily_goals where user_id = $1 and day = (now() at time zone 'America/Sao_Paulo')::date`, [uid])).rows[0];
+    assert.equal(await page.getByRole('radio').count(), 0, 'sem escolha de peça');
+    const today = (await conn.query(`select siclos, xp_bonus from daily_goals where user_id = $1 and day = (now() at time zone 'America/Sao_Paulo')::date`, [uid])).rows[0];
     assert.equal(today.siclos, 40);
     assert.equal(today.xp_bonus, 20);
-    assert.ok(today.chosen_item);
-    ok(`meta do dia pelo app: Gênesis 7 → 40 Siclos (saldo ${start} → ${start + 40}), 20 XP de bônus e ${optionName} pela escolha gratuita`);
+    ok(`meta do dia pelo app: Gênesis 7 → 40 Siclos (saldo ${start} → ${start + 40}) e 20 XP de bônus`);
 
     // ------------------------------------------------ loja de skins: compra
     // saldo de teste para as três compras (no app os Siclos vêm só da meta diária)
@@ -95,6 +88,17 @@ async function login(page, email) {
     assert.equal(await ownsSkin(x.id), 1);
     await shot(page, 'real-03-bought');
     ok(`loja de skins: ${x.name} por ${x.price} → saldo ${b1 - x.price} (interface e banco) e skin na conta`);
+
+    // ------------------------------------------------ Vestiário: vestir a skin comprada (RLS e RPC reais)
+    await page.goto(`${APP}/vestiario`);
+    await page.getByTestId(`vestiario-${x.id}`).click();
+    await page.getByRole('radio', { name: `Estilo 2 de ${x.name}` }).click();
+    await page.getByRole('button', { name: 'Vestir o estilo 2' }).click();
+    await page.getByText(`Pronto: você está vestindo ${x.name}, estilo 2.`).waitFor();
+    const sel = (await conn.query(`select skin_id, style from user_skin_selection where user_id = $1`, [uid])).rows[0];
+    assert.deepEqual(sel, { skin_id: x.id, style: 2 });
+    await shot(page, 'real-03b-vestiario');
+    ok(`Vestiário: ${x.name} vestida no estilo 2 e salva no banco`);
 
     // ------------------------------------------------ resposta perdida
     const b2 = await balance();
@@ -186,10 +190,7 @@ async function login(page, email) {
     await dismissReadingRewards(page);
     await page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
     await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
-    await page.getByText('Estola Sacerdotal', { exact: true }).waitFor();
-    await page.getByText('Turbante do Sacerdote', { exact: true }).waitFor();
-    assert.equal(await page.getByText('Peitoral das Doze Pedras', { exact: true }).count(), 0, 'Peitoral não aparece como concedido');
-    assert.equal(await page.getByRole('button', { name: 'Equipar agora' }).count(), 2);
+    assert.equal(await page.getByRole('button', { name: 'Equipar agora' }).count(), 0, 'sem peças na interface');
     await shot(page, 'real-07-exodus28');
     const ex = (await conn.query(`select (select count(*)::int from reading_sessions where user_id = $1 and book_code = 'EXO' and chapter = 28) s,
       (select count(*)::int from reward_events re join user_items ui on ui.user_id = re.user_id and ui.item_id = re.item_id
@@ -198,7 +199,7 @@ async function login(page, email) {
       (select coalesce(sum(amount),0)::int from xp_ledger where user_id = $1) xp`, [uid, RARES])).rows[0];
     assert.deepEqual(ex, { s: 1, r: 2, m: 1, xp: xpBefore + 40 }, 'uma sessão, duas recompensas (Estola e Turbante), uma missão, 40 XP');
     assert.deepEqual(await rareRows(), RARES.map((item_id) => ({ item_id, n: 1 })), 'reenvio não duplicou nada');
-    ok('Êxodo 28 com o Peitoral já obtido: tela e banco mostram só Estola e Turbante; resposta perdida e reenvio sem duplicar (1 sessão, 1 missão, 2 recompensas, 40 XP)');
+    ok('Êxodo 28 com o Peitoral já obtido: o banco registra só Estola e Turbante; resposta perdida e reenvio sem duplicar (1 sessão, 1 missão, 2 recompensas, 40 XP)');
 
     // ------------------------------------------------ marco de Êxodo 25 (catálogo v8): escolha explícita, posse parcial e reenvio
     await conn.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, 'holy_mesa_dos_paes_da_presenca', 'test:obtido-antes')`, [uid]);
@@ -206,9 +207,8 @@ async function login(page, email) {
     await page.goto(`${APP}/read`);
     await page.getByRole('button', { name: 'Ver todos os marcos' }).click();
     await page.getByRole('radio', { name: 'A cumprir (20)' }).click();
-    await page.getByRole('link', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25, A cumprir, Santos deste marco que você possui: 1 de 3/ }).click();
-    for (const id of SANTOS) await page.getByTestId(`marco-item-${id}`).waitFor();
-    assert.equal(await page.getByTestId('marco-item-state-holy_mesa_dos_paes_da_presenca').innerText(), 'Você já possui');
+    await page.getByRole('link', { name: /^Marco: a mobília do Tabernáculo, Êxodo 25, A cumprir$/ }).click();
+    await page.getByTestId('tabernacle-stage').waitFor();
     await page.getByRole('button', { name: 'Iniciar marco: Êxodo 25' }).click();
     await page.getByTestId('session-milestone').waitFor();
     await page.route('**/rest/v1/rpc/complete_reading_mission', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
@@ -225,7 +225,6 @@ async function login(page, email) {
     await page.getByRole('button', { name: 'Tentar novamente' }).click();
     await page.getByText('Marco: a mobília do Tabernáculo — concluído').waitFor();
     await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
-    for (const n of ['Arca da Aliança (Representação)', 'Candelabro do Tabernáculo']) await page.getByText(n, { exact: true }).last().waitFor();
     await shot(page, 'real-08-milestone-exodus25');
     const mk = (await conn.query(`select
       (select count(*)::int from reading_sessions where user_id = $1 and milestone_id = 'marco_mobilia_do_tabernaculo') s,
@@ -233,20 +232,19 @@ async function login(page, email) {
       (select count(*)::int from reward_events where user_id = $1 and item_id = any($2)) r,
       (select count(*)::int from user_items where user_id = $1 and item_id = any($2)) i`, [uid, SANTOS])).rows[0];
     assert.deepEqual(mk, { s: 1, m: 1, r: 2, i: 3 }, 'uma sessão vinculada, um marco, duas recompensas (Arca e Candelabro), três Santos');
-    // revelação (após a confirmação): só os dois Santos concedidos; pular e abrir o Santuário por ela
+    // recibo (após a confirmação): XP da leitura, sem peças
     const reveal = await openReadingReceipt(page);
-    await reveal.getByTestId('receipt-item-holy_arca_da_alianca_representacao').waitFor();
-    await reveal.getByTestId('receipt-item-holy_candelabro_do_tabernaculo').waitFor();
-    assert.equal(await reveal.getByTestId('receipt-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta');
+    await reveal.getByTestId('receipt-xp').waitFor();
+    assert.equal(await reveal.getByTestId(/^receipt-item-/).count(), 0, 'recibo sem peças');
     await shot(page, 'real-08b-reveal');
-    await reveal.getByRole('button', { name: 'Ver no Santuário' }).click();
-    await page.getByText('Obras do Pai').waitFor();
-    await page.getByTestId('exhibition-hall').waitFor();
-    assert.equal(await page.getByTestId('collection-owned-works-father').innerText(), '3 de 13 Santos obtidos');
-    await page.getByText('Marcos cumpridos: 1 de 20').last().waitFor();
-    await page.getByText('Santos obtidos: 3 de 22').last().waitFor();
-    await shot(page, 'real-09-sanctuary');
-    ok('marco de Êxodo 25 aberto pela lista de marcos, com a Mesa já obtida: resposta perdida, sessão pendente destacada na aba Ler, reenvio — revelação e banco só com Arca e Candelabro, 1 marco; Santuário: 1 de 20 marcos, 3 de 22 Santos, coleção 3 de 13');
+    await reveal.getByRole('button', { name: 'Continuar', exact: true }).click();
+    await page.goto(`${APP}/reading/milestones`);
+    await page.getByText('Marcos cumpridos: 1 de 20').waitFor();
+    await page.goto(`${APP}/world/origens`);
+    await page.getByTestId('world-hero-origens').waitFor();
+    await page.getByText('1/7', { exact: true }).waitFor();
+    await shot(page, 'real-09-world-origens');
+    ok('marco de Êxodo 25 aberto pela lista de marcos: resposta perdida, sessão pendente destacada na aba Ler, reenvio sem duplicar (banco: só Arca e Candelabro, 1 marco); recibo com XP; Marcos 1 de 20 e o mundo das Origens com 1 de 7');
   } finally {
     await browser.close();
     await conn.end();

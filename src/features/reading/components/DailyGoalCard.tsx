@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { ITEMS_VISIBLE } from '@/config/features';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useTheme } from '@/theme/ThemeProvider';
@@ -133,7 +134,7 @@ export function DailyGoalCard({ session, onStart, hideStart }: { session: Missio
         </View>
       ) : null}
       {hideStart ? null : <Button title={startLabel} onPress={start} />}
-      {s.pending.length ? (
+      {ITEMS_VISIBLE && s.pending.length ? (
         <View style={styles.gap}>
           <AppText variant="label">{strings.mission.goalPendingCard}</AppText>
           <Button variant="secondary" icon="chest" title={strings.mission.goalPendingOpen} onPress={() => router.push('/reading/goal')} />

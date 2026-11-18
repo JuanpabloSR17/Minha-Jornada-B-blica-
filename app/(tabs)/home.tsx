@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { StyleSheet, View, useWindowDimensions } from 'react-native';
+import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CinemaTheme } from '@/theme/ThemeProvider';
@@ -20,6 +20,7 @@ import { LobbyHud, HUD } from '@/features/lobby/LobbyHud';
 import { LobbyRail } from '@/features/lobby/LobbyRail';
 import { ModeCard } from '@/features/lobby/ModeCard';
 import { CATALOG_MISSIONS } from '@/features/avatar/domain/catalog';
+import { nextBookObjective } from '@/features/journey/progression';
 
 const MILESTONE_TOTAL = CATALOG_MISSIONS.filter((m) => m.kind === 'milestone').length;
 
@@ -28,7 +29,7 @@ const l = strings.lobby;
 const ART = {
   mission: require('../../assets/journey/camp-night.webp'),
   map: require('../../assets/journey/worlds.webp'),
-  market: require('../../assets/journey/market.webp'),
+  trail: require('../../assets/journey/ruth.webp'),
 };
 
 /** Cabeçalho de seção do lobby: ícone gravado + título em Cinzel, com ação opcional à direita. */
@@ -89,6 +90,7 @@ export default function Home() {
   const name = profile?.display_name ?? '';
   const milestonesDone = overview?.missions.filter((m) => m.kind === 'milestone' && m.completed).length ?? null;
   const worldsDone = worlds ? worlds.filter((w) => w.completedAt).length : null;
+  const objective = overview ? nextBookObjective(overview.chaptersByBook) : null;
 
   return (
     <CinemaTheme>
@@ -115,8 +117,8 @@ export default function Home() {
               compact={heroH < 700}
               items={[
                 { key: 'shop', label: l.shop, accessibilityLabel: strings.market.open, icon: 'shop', onPress: () => router.push('/market') },
-                { key: 'wardrobe', label: l.wardrobe, accessibilityLabel: strings.wardrobe.title, icon: 'outfit', onPress: () => router.push('/avatar/wardrobe') },
-                { key: 'trophies', label: l.trophies, accessibilityLabel: strings.sanctuary.title, icon: 'trophy', onPress: () => router.push('/avatar/sanctuary') },
+                { key: 'wardrobe', label: l.wardrobe, accessibilityLabel: strings.vestiario.title, icon: 'outfit', onPress: () => router.push('/vestiario') },
+                { key: 'trails', label: l.trails, accessibilityLabel: l.modeTrails, icon: 'scroll', onPress: () => router.push('/reading/trail') },
                 { key: 'milestones', label: l.milestones, accessibilityLabel: strings.mission.milestones, icon: 'stones', onPress: () => router.push('/reading/milestones') },
               ]}
             />
@@ -144,6 +146,23 @@ export default function Home() {
             />
             <DailyGoalCard session={session} hideStart />
           </View>
+
+          {objective && objective.chaptersRead > 0 ? (
+            <Pressable testID="camp-next-objective" accessibilityRole="button"
+              accessibilityLabel={fmt(l.objectiveLabel, { book: objective.bookName, n: objective.remaining })}
+              onPress={() => router.push({ pathname: '/(tabs)/read', params: { book: objective.book, chapter: String(objective.chapter), selection: String(Date.now()) } })}
+              style={styles.objective}>
+              <Icon name="medal" color={HUD.gold} size={30} />
+              <View style={styles.flex}>
+                <AppText variant="caption" color={HUD.muted}>{l.objectiveTitle}</AppText>
+                <AppText style={styles.objectiveName} color={HUD.ink}>{fmt(l.objectiveBook, { book: objective.bookName })}</AppText>
+                <AppText variant="caption" color={HUD.muted}>
+                  {objective.remaining === 1 ? l.objectiveOne : fmt(l.objectiveMany, { n: objective.remaining })} · {objective.worldName}
+                </AppText>
+              </View>
+              <Icon name="forward" color={HUD.gold} size={22} />
+            </Pressable>
+          ) : null}
 
           <View style={styles.modes}>
             <SectionHead icon="compass" title={l.modesTitle} />
@@ -178,13 +197,13 @@ export default function Home() {
                 onPress={() => router.push('/reading/milestones')}
               />
               <ModeCard
-                testID="mode-sanctuary"
-                title={l.modeSanctuary}
-                body={l.modeSanctuaryBody}
-                icon="tabernacle"
-                art={ART.market}
+                testID="mode-trails"
+                title={l.modeTrails}
+                body={l.modeTrailsBody}
+                icon="scroll"
+                art={ART.trail}
                 tint="#F2C66C"
-                onPress={() => router.push('/avatar/sanctuary')}
+                onPress={() => router.push('/reading/trail')}
               />
             </View>
           </View>
@@ -205,4 +224,7 @@ const styles = StyleSheet.create({
   headBtn: { minHeight: 40 },
   modes: { gap: spacing.sm },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.md },
+  flex: { flex: 1, minWidth: 0 },
+  objective: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.md, borderRadius: 16, borderWidth: 1.5, borderColor: 'rgba(233,186,91,0.55)', backgroundColor: 'rgba(27,22,49,0.92)' },
+  objectiveName: { fontFamily: fonts.display, fontSize: 18, lineHeight: 24 },
 });

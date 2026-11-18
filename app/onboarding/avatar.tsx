@@ -1,10 +1,10 @@
 import { useRouter } from 'expo-router';
-import { CharacterCreatorScreen } from '@/features/avatar/screens/CharacterCreatorScreen';
+import { SkinPickerScreen } from '@/features/skins/SkinPickerScreen';
 
 export default function AvatarStep() {
   const router = useRouter();
   return (
-    <CharacterCreatorScreen
+    <SkinPickerScreen
       mode="onboarding"
       onFinished={() => router.replace('/onboarding/pace')}
       onExit={() => router.replace('/onboarding/identity')}

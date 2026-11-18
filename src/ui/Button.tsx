@@ -18,6 +18,7 @@ export function Button({
   accessibilityLabel,
   accessibilityHint,
   compact,
+  testID,
 }: {
   title: string;
   onPress?: () => void;
@@ -29,6 +30,7 @@ export function Button({
   accessibilityLabel?: string;
   accessibilityHint?: string;
   compact?: boolean;
+  testID?: string;
 }) {
   const { colors } = useTheme();
   const isDisabled = disabled || loading;
@@ -44,6 +46,7 @@ export function Button({
   return (
     <Pressable
       accessibilityRole="button"
+      testID={testID}
       accessibilityLabel={accessibilityLabel ?? title}
       accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled: !!isDisabled, busy: !!loading }}

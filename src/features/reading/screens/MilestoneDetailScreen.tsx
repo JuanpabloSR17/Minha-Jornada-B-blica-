@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ITEMS_VISIBLE } from '@/config/features';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
@@ -93,7 +94,7 @@ function MilestoneDetail() {
         <AppText variant="heading">{ref}</AppText>
         <AppText muted>{row.description}</AppText>
       </Card>
-      <Card>
+      {ITEMS_VISIBLE ? <Card>
         <AppText variant="heading">{m.milestoneItems}</AppText>
         <AppText variant="caption" muted>{fmt(m.milestoneItemsOwned, { owned: row.ownedCount, total: row.items.length })}</AppText>
         {row.items.map(({ id: itemId, owned }) => {
@@ -115,7 +116,7 @@ function MilestoneDetail() {
         })}
         {!row.completed && row.grantable.length === 0 ? <Notice tone="info">{m.milestoneAllOwned}</Notice> : null}
         {!row.completed && row.grantable.length > 0 ? <AppText variant="caption" muted>{m.milestoneOwnedNote}</AppText> : null}
-      </Card>
+      </Card> : null}
     </Screen>
   );
 }

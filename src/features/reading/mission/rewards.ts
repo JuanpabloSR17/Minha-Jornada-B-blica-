@@ -1,6 +1,7 @@
 import { getItem, getRarity } from '@/features/avatar/domain/catalog';
 import type { CosmeticItem } from '@/features/avatar/domain/avatar.types';
 import type { MissionResult } from './mission.service';
+import { ITEMS_VISIBLE } from '@/config/features';
 
 export type ItemReward = { kind: 'item'; id: string; item: CosmeticItem | null };
 export type ReadingReward =
@@ -15,13 +16,16 @@ export function itemReward(id: string): ItemReward {
   return { kind: 'item', id: item?.id ?? id, item };
 }
 
-export function readingRewards(result: MissionResult): ReadingReward[] {
+/** Recompensas da leitura para a bolsa. Peças só entram se estiverem visíveis no jogo (hoje, só skins). */
+export function readingRewards(result: MissionResult, opts: { items?: boolean } = {}): ReadingReward[] {
   const rewards: ReadingReward[] = [];
   const goal = result.dailyGoal?.achievedNow ? result.dailyGoal : undefined;
   const chapterXp = result.xpAwarded;
   const bonus = goal?.xpBonus ?? 0;
   if (chapterXp + bonus > 0) rewards.push({ kind: 'xp', amount: chapterXp + bonus, chapterXp, bonus });
   if (goal && goal.siclosAwarded > 0) rewards.push({ kind: 'siclos', amount: goal.siclosAwarded });
+
+  if (!(opts.items ?? ITEMS_VISIBLE)) return rewards;
 
   // Even on a retry, the server returns the confirmed receipt for this exact session.
   const chosen = goal?.goal?.chosenItem;

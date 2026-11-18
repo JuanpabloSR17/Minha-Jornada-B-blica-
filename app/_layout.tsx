@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider, onboardingStep, useAuth } from '@/features/auth/AuthProvider';
-import { ThemeProvider, useTheme } from '@/theme/ThemeProvider';
+import { CinemaTheme, ThemeProvider, useTheme } from '@/theme/ThemeProvider';
 import { Button, Notice } from '@/ui';
 import { errorMessage } from '@/lib/errors';
 import { strings } from '@/i18n';
@@ -32,9 +32,12 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <AuthProvider>
-          <RootNavigator />
-        </AuthProvider>
+        {/* identidade de jogo em todas as telas: noite, bronze e dourado */}
+        <CinemaTheme>
+          <AuthProvider>
+            <RootNavigator />
+          </AuthProvider>
+        </CinemaTheme>
       </ThemeProvider>
     </SafeAreaProvider>
   );

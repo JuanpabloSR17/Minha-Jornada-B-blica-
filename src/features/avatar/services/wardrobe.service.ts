@@ -1,3 +1,4 @@
+import { skinLook, type SkinSelection } from '@/features/skins/catalog';
 import { requireSupabase } from '@/lib/supabase/client';
 import { throwIfError } from '@/lib/errors';
 import { normalizeLook, sanitizeEquipment } from '../domain/avatar.rules';
@@ -87,12 +88,12 @@ export const getCollections = async () => (await rpc('get_collections')) as Coll
 export type PublicAvatar =
   | null
   | { username: string; visible: false }
-  | { username: string; visible: true; displayName: string; isSelf: boolean; appearance: AvatarAppearance; equipment: Equipment };
+  | { username: string; visible: true; displayName: string; isSelf: boolean; appearance: AvatarAppearance; equipment: Equipment; skin?: SkinSelection | null };
 
 export async function getPublicAvatar(username: string): Promise<PublicAvatar> {
   const raw = (await rpc('get_public_avatar', { p_username: username })) as PublicAvatar;
   if (raw && raw.visible) {
-    const look = normalizeLook({ appearance: raw.appearance, equipment: raw.equipment });
+    const look = skinLook(normalizeLook({ appearance: raw.appearance, equipment: raw.equipment }), raw.skin);
     return { ...raw, ...look };
   }
   return raw;

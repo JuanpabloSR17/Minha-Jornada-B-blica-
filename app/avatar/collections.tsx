@@ -1,5 +1,6 @@
-import { CollectionsScreen } from '@/features/avatar/screens/CollectionsScreen';
+import { Redirect } from 'expo-router';
 
-export default function Collections() {
-  return <CollectionsScreen />;
+/** As peças saíram da interface: o visual do viajante agora é a skin, escolhida no Vestiário. */
+export default function LegacyItems() {
+  return <Redirect href="/vestiario" />;
 }

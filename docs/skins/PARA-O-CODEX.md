@@ -154,3 +154,12 @@ A venda de skins com dinheiro real (R$ 4,90 a R$ 9,90) fica para uma fase poster
 - A chave de serviço nunca vai para o app. Há RLS em todas as tabelas.
 - Use só o banco de teste. Não conceda itens reais com eventos fictícios.
 - Preserve o trabalho em paralelo: entregue um ZIP ou um patch com SHA-256, e não reescreva arquivos que você não tocou.
+
+## 8. Atualização: só skins na interface (18/11/2026)
+
+- **As peças saíram da interface.** O guarda-roupa de peças, os visuais salvos, as coleções, os detalhes de item e o Santuário foram tirados das telas; as rotas antigas levam ao **Vestiário** (`/vestiario`) ou aos Marcos. O servidor continua registrando o que cada jogador conquistou (nada foi apagado), e a chave `ITEMS_VISIBLE` em `src/config/features.ts` traz as peças de volta se elas virarem decoração do acampamento.
+- **Skin vestida no servidor.** A migração `20261125000100_skin_wardrobe.sql` cria `user_skin_selection` e os RPCs `get_my_skins()` e `equip_skin(skin, estilo)`, que conferem a posse. O cartão público (`get_public_avatar`) passa a trazer a skin vestida.
+- **Cadastro por skin.** A etapa "Criar personagem" virou "Escolha seu viajante": uma das 2 skins iniciais, num dos 3 estilos.
+- **Desenho até a pintura chegar.** O viajante é desenhado com o estilo da skin (pele e cabelo) e o traje provisório do `preview` em `season1.json`. Quando a pintura de uma skin for entregue em `assets/skins/<id>/estilo-N/corpo.webp`, ela substitui esse desenho no Vestiário, no acampamento, no perfil e na loja.
+- **Páginas dos mundos.** Cada mundo tem página própria (`/world/<id>`) com cena vetorial, trilha dos livros, marcos e skins do mundo. A Temporada 1 (Êxodo) aparece no mundo das Origens. Para as próximas temporadas, a ficha da skin já traz o `mundo`, que é o que liga a skin à página.
+- **Marcos sem peças.** Os marcos continuam como conquistas de leitura. A próxima etapa natural é ligar Lendárias e Gloriosas aos marcos e aos livros concluídos (por exemplo, Êxodo 34 → `glorioso_moises_rosto_resplandecente`), para que essas skins se conquistem lendo, como combinado.

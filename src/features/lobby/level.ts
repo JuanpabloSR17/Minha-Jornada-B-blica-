@@ -1,20 +1,13 @@
+import { readingLevel } from '@/features/journey/progression';
+
 /**
  * Nível de exibição do jogador, calculado só a partir do XP que o servidor já registrou.
- * Não concede nada: serve para o HUD mostrar progresso como num jogo.
- * Subir do nível n para n + 1 custa 200 + 100 × (n − 1) XP (200, 300, 400…).
+ * Não concede nada. É o mesmo nível do Perfil e do resultado da leitura (progression.readingLevel):
+ * as etapas pedem 120, 200, 280 XP… e cada faixa de nível tem um título de viajante.
  */
-export type Level = { level: number; into: number; span: number; progress: number };
+export type Level = { level: number; into: number; span: number; progress: number; title: string };
 
 export function levelFromXp(xp: number): Level {
-  let level = 1;
-  let floor = 0;
-  let span = 200;
-  const total = Math.max(0, Math.floor(Number.isFinite(xp) ? xp : 0));
-  while (total >= floor + span) {
-    floor += span;
-    level += 1;
-    span = 200 + 100 * (level - 1);
-  }
-  const into = total - floor;
-  return { level, into, span, progress: into / span };
+  const r = readingLevel(Math.floor(Number.isFinite(xp) ? xp : 0));
+  return { level: r.level, into: r.currentXp, span: r.xpForLevel, progress: r.currentXp / r.xpForLevel, title: r.title };
 }

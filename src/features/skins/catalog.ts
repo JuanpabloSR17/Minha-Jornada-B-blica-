@@ -1,5 +1,7 @@
 import season1 from './season1.json';
-import { APPEARANCE_OPTIONS, COSMETIC_ITEMS } from '@/features/avatar/domain/catalog';
+import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, getItem } from '@/features/avatar/domain/catalog';
+import { defaultLook } from '@/features/avatar/domain/avatar.rules';
+import type { AvatarLook, Equipment, EquipmentSlot } from '@/features/avatar/domain/avatar.types';
 
 export type SkinRarity = 'common' | 'rare' | 'epic' | 'legendary' | 'glorious';
 export type SkinOrigin = 'inicio' | 'leitura' | 'missao' | 'temporada-gratis' | 'temporada-premium' | 'loja' | 'siclos';
@@ -33,3 +35,42 @@ export function styleLook(style: SkinStyle) {
   return { bodyId: 'body-b', skin: color('skin_tone', style.skinTone), hair: color('hair_color', style.hairColor), hairStyle: style.hairStyle };
 }
 export const skinToneColor = (style: SkinStyle) => color('skin_tone', style.skinTone);
+
+export type SkinSelection = { skinId: string; style: number };
+export const DEFAULT_SELECTION: SkinSelection = { skinId: 'comum_peregrino_exodo', style: 1 };
+
+/**
+ * Viajante vestido com a skin: o estilo escolhido decide pele e cabelo, e a prévia da skin decide
+ * o traje (até a pintura própria da skin chegar). Rosto e expressão continuam os da conta.
+ */
+export function skinLook(base: AvatarLook | null | undefined, sel: SkinSelection | null | undefined): AvatarLook {
+  const look = base ?? defaultLook();
+  const skin = getSkin(sel?.skinId) ?? getSkin(DEFAULT_SELECTION.skinId)!;
+  const style = skin.styles[Math.min(Math.max((sel?.style ?? 1) - 1, 0), skin.styles.length - 1)]!;
+  const equipment: Equipment = {};
+  for (const [slot, id] of Object.entries(skin.preview)) if (id && getItem(id)) equipment[slot as EquipmentSlot] = id;
+  return {
+    appearance: { ...look.appearance, bodyId: 'body-b', skinToneId: style.skinTone, hairColorId: style.hairColor, hairStyleId: style.hairStyle },
+    equipment,
+  };
+}
+
+export const RARITY_ORDER: SkinRarity[] = ['glorious', 'legendary', 'epic', 'rare', 'common'];
+
+export const SKIN_RARITY_COLOR: Record<SkinRarity, string> = {
+  common: '#B9B2A4', rare: '#5FA8FF', epic: '#B48CFF', legendary: '#F2A93B', glorious: '#FFE7A3',
+};
+export const SKIN_RARITY_LABEL: Record<SkinRarity, string> = {
+  common: 'Comum', rare: 'Rara', epic: 'Épica', legendary: 'Lendária', glorious: 'Gloriosa',
+};
+const ORIGIN_LABEL: Record<SkinOrigin, string> = {
+  inicio: 'Skin inicial de todo viajante',
+  leitura: 'Conquistada lendo',
+  missao: 'Conquistada numa missão especial',
+  'temporada-gratis': 'Temporada de Êxodo, faixa grátis',
+  'temporada-premium': 'Temporada de Êxodo, faixa Jornada+ (lendo)',
+  loja: 'Aparece no Mercado dos Viajantes',
+  siclos: 'Aparece no Mercado dos Viajantes',
+};
+/** Como conseguir a skin, em uma frase para o jogador. */
+export const howToGet = (skin: Skin) => (skin.inShop ? ORIGIN_LABEL.loja : ORIGIN_LABEL[skin.origin]);

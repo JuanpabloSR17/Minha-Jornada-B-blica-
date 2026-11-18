@@ -1,5 +1,6 @@
-import { WardrobeScreen } from '@/features/avatar/screens/WardrobeScreen';
+import { Redirect } from 'expo-router';
 
-export default function Wardrobe() {
-  return <WardrobeScreen />;
+/** As peças saíram da interface: o visual do viajante agora é a skin, escolhida no Vestiário. */
+export default function LegacyItems() {
+  return <Redirect href="/vestiario" />;
 }

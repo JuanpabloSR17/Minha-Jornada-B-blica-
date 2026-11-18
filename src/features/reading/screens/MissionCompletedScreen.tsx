@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { ITEMS_VISIBLE } from '@/config/features';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
@@ -159,7 +160,7 @@ function MissionCompleted() {
             )}
             {result.alreadyCompleted ? <AppText variant="caption" muted>{strings.mission.goalRereadNote}</AppText> : null}
             <AppText variant="label">{fmt(strings.mission.goalBalance, { balance: dg.siclosBalance })}</AppText>
-            {dg.achievedNow && goal ? (
+            {ITEMS_VISIBLE && dg.achievedNow && goal ? (
               goal.options.length === 0 ? (
                 <AppText muted>{strings.mission.goalAllOwned}</AppText>
               ) : (

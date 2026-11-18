@@ -162,7 +162,6 @@ function MissionHome() {
             <AppText variant="heading" style={styles.flex}>{strings.mission.milestones}</AppText>
           </View>
           <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
-          <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
           {nextMilestone ? <AppText variant="caption" muted>{fmt(strings.mission.milestonesNext, { name: nextMilestone.name, ref: refLabel(nextMilestone.book, nextMilestone.chapter) })}</AppText> : null}
           <Button variant="secondary" icon="flag" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
         </Card>

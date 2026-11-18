@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { ITEMS_VISIBLE } from '@/config/features';
 import { ActivityIndicator, Animated, ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
@@ -214,7 +215,7 @@ function ReadingTrail({ trail }: { trail: Trail }) {
         </Card>
 
         {canReflect ? <TrailReflection key={step.chapter} step={step} /> : null}
-        {exodus ? (
+        {!ITEMS_VISIBLE ? null : exodus ? (
           <Button variant="secondary" icon="sanctuary" title="Visitar Santuário" onPress={() => router.push('/avatar/sanctuary')} />
         ) : ruthReward ? (
           <Card style={styles.row}>

@@ -35,7 +35,6 @@ export function MilestonesScreen() {
           <IconBadge name="flag" color={RARITY_COLOR.holy} size={42} />
           <View style={styles.flex}>
             <AppText variant="label">{fmt(m.milestonesDone, { done: sum.milestonesDone, total: sum.milestonesTotal })}</AppText>
-            <AppText variant="caption" muted>{fmt(m.saintsOwned, { owned: sum.saintsOwned, total: sum.saintsTotal })}</AppText>
           </View>
         </Card>
       ) : null}
@@ -56,13 +55,13 @@ export function MilestonesScreen() {
         <Card>
           {shown.map((r, i) => (
             <Pressable key={r.id} accessibilityRole="link"
-              accessibilityLabel={`${r.name}, ${refLabel(r.book, r.chapter)}, ${r.completed ? m.milestoneStateDone : m.milestoneStateTodo}, ${fmt(m.milestoneItemsOwned, { owned: r.ownedCount, total: r.items.length })}`}
+              accessibilityLabel={`${r.name}, ${refLabel(r.book, r.chapter)}, ${r.completed ? m.milestoneStateDone : m.milestoneStateTodo}`}
               onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: r.id } })}
               style={[styles.row, i > 0 && { borderTopWidth: 1, borderTopColor: colors.border }]}>
               <Icon name={r.completed ? 'check' : 'flag'} size={18} color={r.completed ? colors.success : RARITY_COLOR.holy} />
               <View style={styles.flex}>
                 <AppText variant="label">{r.name}</AppText>
-                <AppText variant="caption" muted>{refLabel(r.book, r.chapter)} · {fmt(m.milestoneItemsOwned, { owned: r.ownedCount, total: r.items.length })}</AppText>
+                <AppText variant="caption" muted>{refLabel(r.book, r.chapter)}</AppText>
               </View>
               <AppText variant="caption" color={r.completed ? colors.success : colors.textMuted} style={styles.state}>
                 {r.completed ? m.milestoneStateDone : m.milestoneStateTodo}

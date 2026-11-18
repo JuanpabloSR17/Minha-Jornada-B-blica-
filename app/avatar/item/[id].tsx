@@ -1,7 +1,6 @@
-import { useLocalSearchParams } from 'expo-router';
-import { ItemDetailScreen } from '@/features/avatar/screens/ItemDetailScreen';
+import { Redirect } from 'expo-router';
 
-export default function ItemDetail() {
-  const { id } = useLocalSearchParams<{ id: string }>();
-  return <ItemDetailScreen id={String(id)} />;
+/** As peças saíram da interface: o visual do viajante agora é a skin, escolhida no Vestiário. */
+export default function LegacyItem() {
+  return <Redirect href="/vestiario" />;
 }
