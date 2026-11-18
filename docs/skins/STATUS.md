@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-18. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 15 de 85 skins prontas no app.
+**Progresso:** 26 de 85 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -26,26 +26,26 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Parteira (`comum_parteira`) | Comum | origens | ✔ | — | loja |
 | ✅ | Peregrino do Êxodo (`comum_peregrino_exodo`) | Comum | origens | ✔ | ✔ | inicial |
 
-## T1-C · Temporada 1 · Pastor e skins de leitura (0/6)
+## T1-C · Temporada 1 · Pastor e skins de leitura (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| 🟡 | Pastor de ovelhas (`comum_pastor`) | Comum | origens | — | — | inicial |
-| 🟡 | Vestes de Arão (`lendario_arao`) | Lendária | origens | — | — | lendo: Ler os 3 capítulos da Trilha do Tabernáculo |
-| 🟡 | Moisés com o rosto resplandecente (`glorioso_moises_rosto_resplandecente`) | Gloriosa | origens | — | — | lendo: Concluir Êxodo e cumprir o Marco: Tábuas da Aliança |
-| 🟡 | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | Gloriosa | origens | — | — | lendo: Concluir a temporada: Êxodo, Levítico e Números |
-| 🟡 | Avental de Bezalel (`epico_bezalel`) | Épica | origens | — | — | lendo: Ler a história de Bezalel (Êxodo 31 e 35–38) |
-| 🟡 | Manto de Jetro (`epico_jetro`) | Épica | origens | — | — | lendo: Ler a história de Jetro (Êxodo 2, 3 e 18) |
+| ✅ | Pastor de ovelhas (`comum_pastor`) | Comum | origens | ✔ | ✔ | inicial |
+| ✅ | Vestes de Arão (`lendario_arao`) | Lendária | origens | ✔ | — | lendo: Ler os 3 capítulos da Trilha do Tabernáculo |
+| ✅ | Moisés com o rosto resplandecente (`glorioso_moises_rosto_resplandecente`) | Gloriosa | origens | ✔ | ✔ | lendo: Concluir Êxodo e cumprir o Marco: Tábuas da Aliança |
+| ✅ | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | Gloriosa | origens | ✔ | — | lendo: Concluir a temporada: Êxodo, Levítico e Números |
+| ✅ | Avental de Bezalel (`epico_bezalel`) | Épica | origens | ✔ | ✔ | lendo: Ler a história de Bezalel (Êxodo 31 e 35–38) |
+| ✅ | Manto de Jetro (`epico_jetro`) | Épica | origens | ✔ | — | lendo: Ler a história de Jetro (Êxodo 2, 3 e 18) |
 
-## T1-D · Temporada 1 · Épicas e Raras restantes (0/5)
+## T1-D · Temporada 1 · Épicas e Raras restantes (5/5)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| 🟡 | Tamborim de Miriã (`epico_miria`) | Épica | origens | — | — | lendo: Ler a história de Miriã (Êxodo 2 e 15, Números 12) |
-| 🟡 | Véu de Zípora (`epico_zipora`) | Épica | origens | — | — | lendo: Ler a história de Zípora (Êxodo 2, 4 e 18) |
-| 🟡 | Aoliabe, o bordador (`raro_aoliabe`) | Rara | origens | — | — | lendo: Ler a história de Aoliabe (Êxodo 31, 35 e 36) |
-| 🟡 | Hur (`raro_hur`) | Rara | origens | — | — | lendo: Ler a história de Hur (Êxodo 17 e 24) |
-| 🟡 | Tocador de shofar (`raro_shofar`) | Rara | origens | — | — | lendo: Ler o Sinai ao som do shofar (Êxodo 19–20) |
+| ✅ | Tamborim de Miriã (`epico_miria`) | Épica | origens | ✔ | — | lendo: Ler a história de Miriã (Êxodo 2 e 15, Números 12) |
+| ✅ | Véu de Zípora (`epico_zipora`) | Épica | origens | ✔ | — | lendo: Ler a história de Zípora (Êxodo 2, 4 e 18) |
+| ✅ | Aoliabe, o bordador (`raro_aoliabe`) | Rara | origens | ✔ | ✔ | lendo: Ler a história de Aoliabe (Êxodo 31, 35 e 36) |
+| ✅ | Hur (`raro_hur`) | Rara | origens | ✔ | — | lendo: Ler a história de Hur (Êxodo 17 e 24) |
+| ✅ | Tocador de shofar (`raro_shofar`) | Rara | origens | ✔ | ✔ | lendo: Ler o Sinai ao som do shofar (Êxodo 19–20) |
 
 ## P01 · Principais · Origens e Aliança (0/6)
 

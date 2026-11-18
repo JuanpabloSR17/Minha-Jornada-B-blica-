@@ -8,7 +8,7 @@ select tests.assert(public.equip_skin('comum_peregrino_exodo', 2, 'feminino') = 
   'veste a Peregrina do Êxodo (apresentação feminina), estilo 2');
 select tests.assert(public.get_my_skins() #>> '{selected,variant}' = 'feminino', 'a apresentação fica salva');
 select tests.assert(public.equip_skin('comum_pastor', 1) #>> '{variant}' = 'padrao', 'sem informar, vale a padrão');
-select tests.assert_raises($$select public.equip_skin('comum_pastor', 1, 'feminino')$$, 'invalid_variant', 'skin sem pintura feminina recusa a apresentação');
+select tests.assert_raises($$select public.equip_skin('raro_hur', 1, 'feminino')$$, 'invalid_variant', 'skin sem pintura feminina recusa a apresentação');
 select tests.assert_raises($$select public.equip_skin('comum_peregrino_exodo', 1, 'outra')$$, 'invalid_variant', 'apresentação inexistente é recusada');
 select tests.assert_raises($$select public.equip_skin('raro_levita', 1, 'feminino')$$, 'skin_not_owned', 'apresentação feminina não dá posse da skin');
 reset role;
@@ -19,7 +19,7 @@ select tests.assert(public.get_public_avatar('apresentacao_um') -> 'skin' = '{"s
   'o cartão público mostra a apresentação escolhida');
 reset role;
 select tests.assert_raises($$update public.skins set variants = '{feminino}' where id = 'comum_pastor'$$, '%check%', 'toda skin mantém a apresentação padrão');
-select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 8,
-  'Lote A e Lote B: 8 skins com apresentação feminina pintada');
+select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 13,
+  'Lotes A, B, T1-C e T1-D: 13 skins com apresentação feminina pintada');
 select tests.assert((select variants from public.skins where id = 'raro_sacerdote') = '{padrao}'::text[], 'o Sacerdote segue só com a padrão');
 rollback;

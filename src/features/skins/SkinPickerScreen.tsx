@@ -11,7 +11,7 @@ import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
 import { defaultLook } from '@/features/avatar/domain/avatar.rules';
 import { getMyAvatar, saveAvatar } from '@/features/avatar/services/avatar.service';
-import { SKINS, skinDisplayName, skinLook, skinToneColor, variantsOf, type SkinSelection, type SkinVariant } from './catalog';
+import { SKINS, skinDisplayName, variantButtonLabel, skinLook, skinToneColor, variantsOf, type SkinSelection, type SkinVariant } from './catalog';
 import { SkinThumb } from './SkinThumb';
 import { equipSkin } from './skins.service';
 
@@ -86,9 +86,9 @@ function Picker({ mode, onFinished, onExit }: { mode: 'onboarding' | 'guest'; on
             const on = vr === variant;
             return (
               <Pressable key={vr} accessibilityRole="radio" aria-checked={on} accessibilityState={{ checked: on }}
-                accessibilityLabel={fmt(strings.vestiario.variantLabel, { name: skinDisplayName(skin, vr) })}
+                accessibilityLabel={fmt(strings.vestiario.variantLabel, { name: variantButtonLabel(skin, vr) })}
                 onPress={() => setSel({ ...sel, variant: vr })} style={[styles.swatch, on && styles.swatchOn]}>
-                <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{skinDisplayName(skin, vr)}</AppText>
+                <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{variantButtonLabel(skin, vr)}</AppText>
               </Pressable>
             );
           })}

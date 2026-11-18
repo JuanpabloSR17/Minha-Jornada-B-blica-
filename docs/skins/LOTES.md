@@ -2,34 +2,6 @@
 
 Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de `TEMPORADA-1-EXODO.md` §2.
 
-## T1-C · Temporada 1 · Pastor e skins de leitura
-
-- **Pastor de ovelhas** (`comum_pastor`), Comum, Êxodo 3:1. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Vestes de Arão** (`lendario_arao`), Lendária, Êxodo 28. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Moisés com o rosto resplandecente** (`glorioso_moises_rosto_resplandecente`), Gloriosa, Êxodo 34:29. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Arão e a vara que floresceu** (`glorioso_arao_vara_floresceu`), Gloriosa, Números 17:8. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Avental de Bezalel** (`epico_bezalel`), Épica, Êxodo 31:2-5. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Manto de Jetro** (`epico_jetro`), Épica, Êxodo 18:1. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-
-## T1-D · Temporada 1 · Épicas e Raras restantes
-
-- **Tamborim de Miriã** (`epico_miria`), Épica, Êxodo 15:20. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão feminina.
-  estilo-1: skin-1, haircolor-auburn, hair-long-wavy · estilo-2: skin-3, haircolor-darkbrown, hair-braids · estilo-3: skin-5, haircolor-black, hair-long
-- **Véu de Zípora** (`epico_zipora`), Épica, Êxodo 2:16-21. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão feminina.
-  estilo-1: skin-1, haircolor-auburn, hair-long-wavy · estilo-2: skin-3, haircolor-darkbrown, hair-braids · estilo-3: skin-5, haircolor-black, hair-long
-- **Aoliabe, o bordador** (`raro_aoliabe`), Rara, Êxodo 31:6. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Hur** (`raro_hur`), Rara, Êxodo 17:12. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-- **Tocador de shofar** (`raro_shofar`), Rara, Êxodo 19:16. Traje: ver a tabela de `TEMPORADA-1-EXODO.md`. Apresentação padrão masculina.
-  estilo-1: skin-2, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-black, hair-afro
-
 ## P01 · Principais · Origens e Aliança
 
 - **Vestes de Adão** (`lendario_adao`), Lendária, Gn 2:15; 3:21. Traje: Túnica de peles, ferramenta de lavrar o jardim. Apresentação padrão masculina.

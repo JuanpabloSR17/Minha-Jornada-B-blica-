@@ -45,14 +45,21 @@ describe('pinturas entregues (art.generated)', () => {
       'epico_sumo_sacerdote', 'raro_joquebede', 'raro_filha_de_farao', 'raro_parteiras']) expect(SKIN_ART[id]?.padrao).toBeTruthy();
     expect(skinDisplayName(getSkin('comum_carpinteiro'), 'feminino')).toBe('Carpinteira de acácia');
     expect(variantsOf('raro_sacerdote')).toEqual(['padrao']);
+    const { variantButtonLabel } = require('../catalog');
+    expect(variantButtonLabel(getSkin('comum_peregrino_exodo'), 'feminino')).toBe('Peregrina do Êxodo');
+    expect(variantButtonLabel(getSkin('raro_ourives'), 'padrao')).toBe('Padrão');
+    expect(variantButtonLabel(getSkin('raro_ourives'), 'feminino')).toBe('Feminina');
+    expect(skinDisplayName(getSkin('comum_pastor'), 'feminino')).toBe('Pastora de ovelhas');
+    for (const s of require('../season1.json').skins) expect(SKIN_ART[s.id]?.padrao).toBeTruthy();
     expect(variantsOf('comum_peregrino_exodo')).toEqual(['padrao', 'feminino']);
-    expect(variantsOf('comum_pastor')).toEqual(['padrao']);
+    expect(variantsOf('raro_hur')).toEqual(['padrao']);
     expect(skinDisplayName(getSkin('comum_peregrino_exodo'), 'feminino')).toBe('Peregrina do Êxodo');
   });
-  it('skinLook usa a pintura do estilo e da apresentação, e cai no desenho provisório sem pintura', () => {
+  it('skinLook usa a pintura do estilo e da apresentação, e cai na apresentação padrão quando a pedida não existe', () => {
     const f2 = skinLook(null, { skinId: 'comum_peregrino_exodo', style: 2, variant: 'feminino' });
     expect(f2.painted).toBe(SKIN_ART.comum_peregrino_exodo.feminino.styles[1]);
     expect(f2.label).toBe('Peregrina do Êxodo, estilo 2');
-    expect(skinLook(null, { skinId: 'comum_pastor', style: 1, variant: 'feminino' }).painted).toBeUndefined();
+    // sem apresentação feminina pintada, vale a padrão
+    expect(skinLook(null, { skinId: 'raro_hur', style: 1, variant: 'feminino' }).painted).toBe(SKIN_ART.raro_hur.padrao.styles[0]);
   });
 });

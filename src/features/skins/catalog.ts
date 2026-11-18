@@ -97,3 +97,14 @@ const ORIGIN_LABEL: Record<SkinOrigin, string> = {
 };
 /** Como conseguir a skin, em uma frase para o jogador. */
 export const howToGet = (skin: Skin) => (skin.inShop ? ORIGIN_LABEL.loja : ORIGIN_LABEL[skin.origin]);
+
+/**
+ * Rótulo do botão de apresentação: o nome próprio quando ele muda (Peregrino × Peregrina); quando os
+ * dois nomes são iguais (Ourives, Moisés com o rosto resplandecente), "Padrão" e "Feminina".
+ */
+export function variantButtonLabel(skin: Skin, variant: SkinVariant): string {
+  const padrao = skinDisplayName(skin, 'padrao');
+  const feminino = skinDisplayName(skin, 'feminino');
+  if (padrao !== feminino) return variant === 'feminino' ? feminino : padrao;
+  return variant === 'feminino' ? 'Feminina' : 'Padrão';
+}

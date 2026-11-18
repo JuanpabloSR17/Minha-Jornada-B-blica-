@@ -50,6 +50,9 @@ async function expectPaint(loc, label) {
   // cadastro: miniaturas pintadas e escolha da apresentação feminina
   await page.getByText('Escolha seu viajante').waitFor();
   await page.getByTestId('thumb-painted-comum_peregrino_exodo').waitFor();
+  await page.getByRole('radio', { name: 'Pastor de ovelhas', exact: true }).click();
+  await page.getByRole('radio', { name: 'Apresentação: Pastora de ovelhas' }).waitFor();
+  await page.getByTestId('thumb-painted-comum_pastor').waitFor();
   await page.getByRole('radio', { name: 'Peregrino do Êxodo', exact: true }).click();
   await page.getByRole('radio', { name: 'Apresentação: Peregrina do Êxodo' }).click();
   await page.getByRole('radio', { name: 'Estilo 3 de Peregrino do Êxodo' }).click();
@@ -130,6 +133,17 @@ async function expectPaint(loc, label) {
   await page.goto(`${APP}/read`);
   await page.getByText('Modo Missão', { exact: true }).first().waitFor();
   step('aba Ler abre normalmente (não mostra o personagem)');
+
+  // nomes iguais nas duas apresentações: os botões dizem Padrão e Feminina
+  await page.goto(`${APP}/vestiario`);
+  await page.getByRole('tab', { name: /^Todas/ }).click();
+  await page.getByTestId('vestiario-raro_ourives').click();
+  await page.getByRole('radio', { name: 'Apresentação: Padrão' }).waitFor();
+  await page.getByRole('radio', { name: 'Apresentação: Feminina' }).click();
+  await page.getByTestId('vestiario-name').getByText('Ourives').waitFor();
+  // toda a Temporada 1 aparece pintada no Vestiário
+  for (const sk of season.skins) await page.getByTestId(`vestiario-${sk.id}`).getByTestId(`thumb-painted-${sk.id}`).waitFor();
+  step(`Vestiário: as ${season.skins.length} skins da Temporada 1 aparecem pintadas; apresentações de mesmo nome viram Padrão e Feminina`);
 
   // trocar para a apresentação padrão reflete em todas as telas
   await page.goto(`${APP}/vestiario`);

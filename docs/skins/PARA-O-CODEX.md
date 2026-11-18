@@ -227,3 +227,21 @@ Nada mudou no banco nem nas migrações. São 15 skins pintadas, e todas as da l
 - Comum: Pastor de ovelhas (a skin inicial).
 
 Prioridade sugerida: Pastor (é inicial), depois as Lendárias e Gloriosas de leitura (já conquistáveis no app) e por fim as Épicas e Raras da temporada.
+
+## 13. Lotes T1-C e T1-D: aplicados (18/11/2026), Temporada 1 completa
+
+- **T1-C:** o ZIP confere com o `.zip.sha256` (`d830a67c…`) e as 92 somas conferem.
+- **T1-D:** o ZIP confere com o `.zip.sha256` (`9ed8e7d2…`) e as 73 somas conferem.
+- Integrados nessa ordem: 48 pinturas com estilos idênticos ao catálogo e pés em y ≈ 1451.
+- As versões femininas de Pastor (Pastora de ovelhas), Moisés com o rosto resplandecente, Bezalel, Aoliabe e Tocador de shofar (Tocadora) estão registradas no banco pela migração `20261130000100_skin_variants_t1cd.sql`.
+
+**As 26 skins da Temporada 1 estão pintadas e no app**, cada uma com a forma de conquista vigente (inicial, loja ou leitura).
+
+**Ajuste feito na entrega:** `epico_bezalel/feminino/estilo-3` (1x e @2x) tinha um halo de alfa fraco (≤ 16) em volta da figura, com 74 mil pixels longe do contorno. Removi só esses pixels, sem tocar na pintura, e regravei em WebP 92. Os outros 47 arquivos estão como foram entregues. Nos próximos lotes, confira que o fundo sai totalmente transparente.
+
+**Para os próximos lotes:**
+- **As Gloriosas precisam se destacar das Lendárias do mesmo personagem.** Arão e a vara que floresceu ficou quase igual às Vestes de Arão: só a vara diferencia. Use luz, um tecido de mais presença ou um elemento do momento marcante.
+- **Moisés com o rosto resplandecente:** o "rosto que brilha" (Êx 34:29) pode aparecer mais, com uma luz suave no rosto, sem halo de santo.
+- **Nomes femininos:** quando o nome é o mesmo nas duas versões, o Vestiário mostra "Padrão" e "Feminina". Use um `nomeExibicao` próprio sempre que fizer sentido (Pastora, Tocadora, Bordadora).
+
+**Próximo lote: P01**, as principais das Origens. O briefing está em `LOTES.md`.

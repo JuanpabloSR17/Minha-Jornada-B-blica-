@@ -13,7 +13,7 @@ import { AvatarStage } from '@/features/avatar/components/AvatarStage';
 import { getMyAvatar } from '@/features/avatar/services/avatar.service';
 import type { AvatarState } from '@/features/avatar/domain/avatar.types';
 import {
-  RARITY_ORDER, SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, howToGet, skinDisplayName, skinLook, skinToneColor, variantsOf,
+  RARITY_ORDER, SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, howToGet, skinDisplayName, variantButtonLabel, skinLook, skinToneColor, variantsOf,
   type Skin, type SkinSelection, type SkinVariant,
 } from './catalog';
 import { equipSkin, getMySkins, type ReadingRule } from './skins.service';
@@ -169,9 +169,9 @@ function VestiarioContent() {
                 const on = vr === variant;
                 return (
                   <Pressable key={vr} onPress={() => setFocus({ skinId: skin.id, style, variant: vr })} accessibilityRole="radio" aria-checked={on}
-                    accessibilityState={{ checked: on }} accessibilityLabel={fmt(v.variantLabel, { name: skinDisplayName(skin, vr) })}
+                    accessibilityState={{ checked: on }} accessibilityLabel={fmt(v.variantLabel, { name: variantButtonLabel(skin, vr) })}
                     style={[styles.swatch, on && styles.swatchOn]}>
-                    <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{skinDisplayName(skin, vr)}</AppText>
+                    <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{variantButtonLabel(skin, vr)}</AppText>
                   </Pressable>
                 );
               })}
