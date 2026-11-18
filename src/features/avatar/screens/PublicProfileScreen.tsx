@@ -34,7 +34,7 @@ export function PublicProfileScreen({ username }: { username: string }) {
       ) : null}
       {data && data.visible ? (
         <>
-          <AvatarStage look={{ appearance: data.appearance, equipment: data.equipment }} height={480} />
+          <AvatarStage look={{ appearance: data.appearance, equipment: data.equipment, painted: data.painted, label: data.label }} height={480} />
           <AppText variant="title" style={{ textAlign: 'center' }}>{data.displayName}</AppText>
           <AppText muted style={{ textAlign: 'center' }}>@{data.username}</AppText>
           {data.isSelf ? <AppText variant="caption" muted style={{ textAlign: 'center' }}>{strings.social.privacyHint}</AppText> : null}

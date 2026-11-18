@@ -229,8 +229,10 @@ async function steady(locator) {
   for (let c = 1; c <= 39; c++) {
     await db.query(`select private.record_event($1, 'CHAPTER_COMPLETED', 'chapter:EXO.' || $2::int, jsonb_build_object('book', 'EXO', 'chapter', $2::int))`, [rute, c]);
   }
-  const ruteSkins = async () => (await db.query(`select skin_id from user_skins where user_id = $1 and source_event_id like 'skin-reading:%' order by skin_id`, [rute])).rows.map((r) => r.skin_id);
+  const ruteSkins = async () => (await db.query(`select skin_id from user_skins where user_id = $1 and source_event_id like 'skin-reading:lendario%' order by skin_id`, [rute])).rows.map((r) => r.skin_id);
+  const ruteRaras = async () => (await db.query(`select skin_id from user_skins where user_id = $1 and skin_id in ('raro_parteiras','raro_joquebede','raro_filha_de_farao')`, [rute])).rows.length;
   assert.deepEqual(await ruteSkins(), [], 'com 39 de 40 capítulos, nenhuma Lendária ainda');
+  assert.equal(await ruteRaras(), 3, 'Êxodo 1–2 já concederam as 3 Raras de missão');
   await page.goto(`${APP}/vestiario`);
   await page.getByRole('tab', { name: /^Todas/ }).click();
   await page.getByTestId('vestiario-lendario_moises').click();

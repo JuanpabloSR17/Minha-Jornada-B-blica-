@@ -23,7 +23,7 @@ import { nextBookObjective, readingLevel } from '@/features/journey/progression'
 import { WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
 import { WORLD_THEMES, type WorldId } from '@/features/worlds/worldThemes';
-import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin } from '@/features/skins/catalog';
+import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, skinDisplayName } from '@/features/skins/catalog';
 import { getMySkins } from '@/features/skins/skins.service';
 
 const p = strings.profile;
@@ -141,7 +141,7 @@ function Profile() {
           <Rect width={10} height={10} fill="url(#pfShade)" />
         </Svg>
         <View style={styles.heroRow}>
-          <View style={styles.heroAvatar}>{avatar ? <AvatarStage look={avatar} height={250} /> : null}</View>
+          <View style={styles.heroAvatar} testID="profile-avatar">{avatar ? <AvatarStage look={avatar} height={250} /> : null}</View>
           <View style={styles.heroInfo}>
             <View style={styles.levelRow}>
               <View style={styles.levelBadge}><AppText style={styles.levelNum} color="#120E1C">{lv.level}</AppText></View>
@@ -161,7 +161,7 @@ function Profile() {
             {skin ? (
               <View style={[styles.skinChip, { borderColor: SKIN_RARITY_COLOR[skin.rarity] }]}>
                 <Icon name="outfit" color={SKIN_RARITY_COLOR[skin.rarity]} size={14} />
-                <AppText style={styles.skinChipText} color={INK} numberOfLines={1}>{skin.name}</AppText>
+                <AppText style={styles.skinChipText} color={INK} numberOfLines={1}>{skinDisplayName(skin, selection?.variant)}</AppText>
               </View>
             ) : null}
           </View>
@@ -232,7 +232,7 @@ function Profile() {
             <Pressable key={s.id} onPress={() => router.push('/vestiario')} accessibilityRole="button"
               accessibilityLabel={`${s.name}, ${SKIN_RARITY_LABEL[s.rarity]}`}
               style={[styles.skin, { borderColor: SKIN_RARITY_COLOR[s.rarity] }, selection?.skinId === s.id && styles.skinWorn]}>
-              <SkinThumb skin={s} size={64} />
+              <SkinThumb skin={s} size={64} {...(selection?.skinId === s.id ? { variant: selection.variant, style: selection.style } : {})} />
             </Pressable>
           ))}
           <Pressable onPress={() => router.push('/market')} accessibilityRole="button" accessibilityLabel={p.moreSkins} style={[styles.skin, styles.moreSkin]}>

@@ -61,7 +61,7 @@ function StyleSwatches({ skin, value, onChange }: { skin: Skin; value: number; o
   );
 }
 
-function SkinTile({ skin, owned, worn, active, rule, onPress }: { skin: Skin; owned: boolean; worn: boolean; active: boolean; rule?: ReadingRule; onPress: () => void }) {
+function SkinTile({ skin, owned, worn, active, rule, thumb, onPress }: { skin: Skin; owned: boolean; worn: boolean; active: boolean; rule?: ReadingRule; thumb?: { style: number; variant?: SkinVariant }; onPress: () => void }) {
   const color = SKIN_RARITY_COLOR[skin.rarity];
   return (
     <Pressable onPress={onPress} accessibilityRole="button" testID={`vestiario-${skin.id}`}
@@ -69,7 +69,7 @@ function SkinTile({ skin, owned, worn, active, rule, onPress }: { skin: Skin; ow
       accessibilityState={{ selected: active }}
       style={[styles.tile, { borderColor: active ? '#FFE7A3' : color + (owned ? 'CC' : '55') }]}>
       <View style={[styles.tileArt, !owned && styles.dim]}>
-        <SkinThumb skin={skin} size={96} />
+        <SkinThumb skin={skin} size={96} {...(thumb ?? {})} />
       </View>
       <View style={[styles.tileGem, { backgroundColor: color }]} />
       {!owned ? <View style={styles.lock}><Icon name="lock" color="#F6ECD6" size={16} /></View> : null}
@@ -222,7 +222,7 @@ function VestiarioContent() {
           </View>
           <View style={styles.grid}>
             {g.items.map((s) => (
-              <SkinTile key={s.id} skin={s} owned={!!owned?.has(s.id)} worn={worn?.skinId === s.id} rule={rules[s.id]}
+              <SkinTile key={s.id} skin={s} owned={!!owned?.has(s.id)} worn={worn?.skinId === s.id} rule={rules[s.id]} thumb={worn?.skinId === s.id ? { style: worn.style, variant: worn.variant } : undefined}
                 active={skin?.id === s.id}
                 onPress={() => setFocus(worn?.skinId === s.id ? worn : { skinId: s.id, style: 1, variant: 'padrao' })} />
             ))}

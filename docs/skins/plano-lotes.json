@@ -1,0 +1,2996 @@
+{
+ "fonte": "Enciclopédia de Skins Bíblicas (288 skins), 18/11/2026",
+ "regras": {
+  "legendary": "concluir o livro do personagem",
+  "glorious": "concluir o mundo do momento marcante"
+ },
+ "lotes": [
+  {
+   "id": "T1-C",
+   "titulo": "Temporada 1 · Pastor e skins de leitura",
+   "skins": [
+    "comum_pastor",
+    "lendario_arao",
+    "glorioso_moises_rosto_resplandecente",
+    "glorioso_arao_vara_floresceu",
+    "epico_bezalel",
+    "epico_jetro"
+   ]
+  },
+  {
+   "id": "T1-D",
+   "titulo": "Temporada 1 · Épicas e Raras restantes",
+   "skins": [
+    "epico_miria",
+    "epico_zipora",
+    "raro_aoliabe",
+    "raro_hur",
+    "raro_shofar"
+   ]
+  },
+  {
+   "id": "P01",
+   "titulo": "Principais · Origens e Aliança",
+   "skins": [
+    "lendario_adao",
+    "lendario_eva",
+    "lendario_noe",
+    "lendario_abraao",
+    "lendario_sara",
+    "lendario_isaque"
+   ]
+  },
+  {
+   "id": "P02",
+   "titulo": "Principais · Origens e Aliança",
+   "skins": [
+    "lendario_rebeca",
+    "lendario_jaco",
+    "lendario_jose",
+    "glorioso_jose_governador_do_egito",
+    "glorioso_abraao_sob_as_estrelas",
+    "glorioso_noe_e_o_arco_iris"
+   ]
+  },
+  {
+   "id": "P03",
+   "titulo": "Principais · Terra e Reinos",
+   "skins": [
+    "lendario_josue",
+    "lendario_debora",
+    "lendario_gideao",
+    "lendario_sansao",
+    "lendario_rute",
+    "lendario_samuel"
+   ]
+  },
+  {
+   "id": "P04",
+   "titulo": "Principais · Terra e Reinos",
+   "skins": [
+    "lendario_davi",
+    "lendario_salomao",
+    "lendario_elias",
+    "lendario_eliseu",
+    "lendario_esdras",
+    "lendario_neemias"
+   ]
+  },
+  {
+   "id": "P05",
+   "titulo": "Principais · Terra e Reinos",
+   "skins": [
+    "lendario_ester",
+    "glorioso_davi_diante_de_golias",
+    "glorioso_elias_no_carro_de_fogo",
+    "glorioso_ester_diante_do_rei",
+    "glorioso_josue_diante_das_muralhas",
+    "glorioso_salomao_no_trono_de_marfim"
+   ]
+  },
+  {
+   "id": "P06",
+   "titulo": "Principais · Poesia e Sabedoria e Voz dos Profetas",
+   "skins": [
+    "lendario_jo",
+    "glorioso_jo_restaurado",
+    "lendario_isaias",
+    "lendario_jeremias",
+    "lendario_ezequiel",
+    "lendario_daniel"
+   ]
+  },
+  {
+   "id": "P07",
+   "titulo": "Principais · Voz dos Profetas e Vida e Ensino de Jesus",
+   "skins": [
+    "lendario_jonas",
+    "glorioso_daniel_na_cova_dos_leoes",
+    "glorioso_isaias_e_a_brasa_do_altar",
+    "glorioso_jonas_e_o_grande_peixe",
+    "glorioso_ezequiel_no_vale_de_ossos",
+    "lendario_joao_batista"
+   ]
+  },
+  {
+   "id": "P08",
+   "titulo": "Principais · Vida e Ensino de Jesus",
+   "skins": [
+    "lendario_pedro",
+    "lendario_joao_o_apostolo",
+    "lendario_tiago_filho_de_zebedeu",
+    "lendario_andre",
+    "lendario_mateus",
+    "lendario_maria_mae_de_jesus"
+   ]
+  },
+  {
+   "id": "P09",
+   "titulo": "Principais · Vida e Ensino de Jesus",
+   "skins": [
+    "lendario_maria_madalena",
+    "lendario_jose_de_nazare",
+    "glorioso_pedro_sobre_as_aguas",
+    "glorioso_joao_batista_no_jordao",
+    "glorioso_maria_madalena_na_manha_da_ressurreicao",
+    "glorioso_os_magos_e_a_estrela"
+   ]
+  },
+  {
+   "id": "P10",
+   "titulo": "Principais · Caminhos da Igreja e Visão da Nova Criação",
+   "skins": [
+    "lendario_paulo",
+    "glorioso_paulo_no_caminho_de_damasco",
+    "glorioso_pedro_no_pentecostes",
+    "glorioso_estevao_com_rosto_de_anjo",
+    "glorioso_joao_em_patmos"
+   ]
+  }
+ ],
+ "skins": [
+  {
+   "id": "glorioso_jose_governador_do_egito",
+   "name": "José, governador do Egito",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 41:42",
+   "idea": "Linho fino, colar de ouro, anel de selo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "GEN",
+     "EXO",
+     "LEV",
+     "NUM",
+     "DEU"
+    ]
+   },
+   "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_abraao_sob_as_estrelas",
+   "name": "Abraão sob as estrelas",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 15:5",
+   "idea": "Manto noturno, céu estrelado no tecido",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "GEN",
+     "EXO",
+     "LEV",
+     "NUM",
+     "DEU"
+    ]
+   },
+   "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_noe_e_o_arco_iris",
+   "name": "Noé e o arco-íris",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 9:13",
+   "idea": "Manto molhado, pomba com ramo, arco nas cores da faixa",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "GEN",
+     "EXO",
+     "LEV",
+     "NUM",
+     "DEU"
+    ]
+   },
+   "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_adao",
+   "name": "Vestes de Adão",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 2:15; 3:21",
+   "idea": "Túnica de peles, ferramenta de lavrar o jardim",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      1
+     ],
+     [
+      "GEN",
+      2
+     ],
+     [
+      "GEN",
+      3
+     ],
+     [
+      "GEN",
+      4
+     ],
+     [
+      "GEN",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Adão (Gênesis 1–5)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "lendario_eva",
+   "name": "Vestes de Eva",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 3:20-21",
+   "idea": "Túnica de peles, ramos do jardim",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      1
+     ],
+     [
+      "GEN",
+      2
+     ],
+     [
+      "GEN",
+      3
+     ],
+     [
+      "GEN",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eva (Gênesis 1–4)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "lendario_noe",
+   "name": "Vestes de Noé",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 6:14",
+   "idea": "Avental de construtor, madeira de cipreste",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      6
+     ],
+     [
+      "GEN",
+      7
+     ],
+     [
+      "GEN",
+      8
+     ],
+     [
+      "GEN",
+      9
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Noé (Gênesis 6–9)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "lendario_abraao",
+   "name": "Vestes de Abraão",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 12:1",
+   "idea": "Manto de viagem, cajado, tenda",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      12
+     ],
+     [
+      "GEN",
+      13
+     ],
+     [
+      "GEN",
+      14
+     ],
+     [
+      "GEN",
+      15
+     ],
+     [
+      "GEN",
+      16
+     ],
+     [
+      "GEN",
+      17
+     ],
+     [
+      "GEN",
+      18
+     ],
+     [
+      "GEN",
+      19
+     ],
+     [
+      "GEN",
+      20
+     ],
+     [
+      "GEN",
+      21
+     ],
+     [
+      "GEN",
+      22
+     ],
+     [
+      "GEN",
+      23
+     ],
+     [
+      "GEN",
+      24
+     ],
+     [
+      "GEN",
+      25
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Abraão (Gênesis 12–25)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_sara",
+   "name": "Vestes de Sara",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 18:6",
+   "idea": "Véu de tenda, pães de farinha fina",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      12
+     ],
+     [
+      "GEN",
+      13
+     ],
+     [
+      "GEN",
+      14
+     ],
+     [
+      "GEN",
+      15
+     ],
+     [
+      "GEN",
+      16
+     ],
+     [
+      "GEN",
+      17
+     ],
+     [
+      "GEN",
+      18
+     ],
+     [
+      "GEN",
+      19
+     ],
+     [
+      "GEN",
+      20
+     ],
+     [
+      "GEN",
+      21
+     ],
+     [
+      "GEN",
+      22
+     ],
+     [
+      "GEN",
+      23
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Sara (Gênesis 12–23)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_isaque",
+   "name": "Vestes de Isaque",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 26:18",
+   "idea": "Pastor de poços, corda e balde",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      21
+     ],
+     [
+      "GEN",
+      22
+     ],
+     [
+      "GEN",
+      23
+     ],
+     [
+      "GEN",
+      24
+     ],
+     [
+      "GEN",
+      25
+     ],
+     [
+      "GEN",
+      26
+     ],
+     [
+      "GEN",
+      27
+     ],
+     [
+      "GEN",
+      28
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Isaque (Gênesis 21–28)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "lendario_rebeca",
+   "name": "Vestes de Rebeca",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 24:15-16",
+   "idea": "Cântaro, bracelete e pendente de ouro (Gn 24:22)",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      24
+     ],
+     [
+      "GEN",
+      25
+     ],
+     [
+      "GEN",
+      26
+     ],
+     [
+      "GEN",
+      27
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rebeca (Gênesis 24–27)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jaco",
+   "name": "Vestes de Jacó",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 32:28",
+   "idea": "Cajado, faixa no quadril (Gn 32:31)",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      25
+     ],
+     [
+      "GEN",
+      26
+     ],
+     [
+      "GEN",
+      27
+     ],
+     [
+      "GEN",
+      28
+     ],
+     [
+      "GEN",
+      29
+     ],
+     [
+      "GEN",
+      30
+     ],
+     [
+      "GEN",
+      31
+     ],
+     [
+      "GEN",
+      32
+     ],
+     [
+      "GEN",
+      33
+     ],
+     [
+      "GEN",
+      34
+     ],
+     [
+      "GEN",
+      35
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Jacó (Gênesis 25–35)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jose",
+   "name": "Vestes de José",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 37:3",
+   "idea": "Túnica de muitas cores",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      37
+     ],
+     [
+      "GEN",
+      38
+     ],
+     [
+      "GEN",
+      39
+     ],
+     [
+      "GEN",
+      40
+     ],
+     [
+      "GEN",
+      41
+     ],
+     [
+      "GEN",
+      42
+     ],
+     [
+      "GEN",
+      43
+     ],
+     [
+      "GEN",
+      44
+     ],
+     [
+      "GEN",
+      45
+     ],
+     [
+      "GEN",
+      46
+     ],
+     [
+      "GEN",
+      47
+     ],
+     [
+      "GEN",
+      48
+     ],
+     [
+      "GEN",
+      49
+     ],
+     [
+      "GEN",
+      50
+     ]
+    ]
+   },
+   "howTo": "Ler a história de José (Gênesis 37–50)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_davi_diante_de_golias",
+   "name": "Davi diante de Golias",
+   "rarity": "glorious",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 17:40",
+   "idea": "Pastor jovem, funda e cinco pedras lisas",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOS",
+     "JDG",
+     "RUT",
+     "1SA",
+     "2SA",
+     "1KI",
+     "2KI",
+     "1CH",
+     "2CH",
+     "EZR",
+     "NEH",
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_elias_no_carro_de_fogo",
+   "name": "Elias no carro de fogo",
+   "rarity": "glorious",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 2:11",
+   "idea": "Manto ao vento, brilho de fogo ao redor",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOS",
+     "JDG",
+     "RUT",
+     "1SA",
+     "2SA",
+     "1KI",
+     "2KI",
+     "1CH",
+     "2CH",
+     "EZR",
+     "NEH",
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_ester_diante_do_rei",
+   "name": "Ester diante do rei",
+   "rarity": "glorious",
+   "world": "reinos",
+   "scriptureRef": "Et 5:1-2",
+   "idea": "Vestes reais, tocando o cetro de ouro",
+   "presentation": "feminina",
+   "rule": {
+    "books": [
+     "JOS",
+     "JDG",
+     "RUT",
+     "1SA",
+     "2SA",
+     "1KI",
+     "2KI",
+     "1CH",
+     "2CH",
+     "EZR",
+     "NEH",
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_josue_diante_das_muralhas",
+   "name": "Josué diante das muralhas",
+   "rarity": "glorious",
+   "world": "reinos",
+   "scriptureRef": "Js 6:20",
+   "idea": "Armadura simples, trombetas e muralha caindo ao fundo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOS",
+     "JDG",
+     "RUT",
+     "1SA",
+     "2SA",
+     "1KI",
+     "2KI",
+     "1CH",
+     "2CH",
+     "EZR",
+     "NEH",
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_salomao_no_trono_de_marfim",
+   "name": "Salomão no trono de marfim",
+   "rarity": "glorious",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 10:18-20",
+   "idea": "Vestes reais, leões nos degraus do trono",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOS",
+     "JDG",
+     "RUT",
+     "1SA",
+     "2SA",
+     "1KI",
+     "2KI",
+     "1CH",
+     "2CH",
+     "EZR",
+     "NEH",
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "lendario_josue",
+   "name": "Vestes de Josué",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Js 1:1-9",
+   "idea": "Comandante com espada e manto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOS"
+    ]
+   },
+   "howTo": "Concluir o livro de Josué",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_debora",
+   "name": "Vestes de Débora",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Jz 4:4-5",
+   "idea": "Juíza sob a palmeira, manto de profetisa",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "JDG",
+      4
+     ],
+     [
+      "JDG",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Débora (Juízes 4–5)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "lendario_gideao",
+   "name": "Vestes de Gideão",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Jz 7:20",
+   "idea": "Trombeta, cântaro e tocha",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "JDG",
+      6
+     ],
+     [
+      "JDG",
+      7
+     ],
+     [
+      "JDG",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Gideão (Juízes 6–8)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_sansao",
+   "name": "Vestes de Sansão",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Jz 16:13, 17",
+   "idea": "Nazireu com sete tranças",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "JDG",
+      13
+     ],
+     [
+      "JDG",
+      14
+     ],
+     [
+      "JDG",
+      15
+     ],
+     [
+      "JDG",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Sansão (Juízes 13–16)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "lendario_rute",
+   "name": "Vestes de Rute",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Rt 2:2-3",
+   "idea": "Respigadeira com feixe de cevada",
+   "presentation": "feminina",
+   "rule": {
+    "books": [
+     "RUT"
+    ]
+   },
+   "howTo": "Concluir o livro de Rute",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "lendario_samuel",
+   "name": "Vestes de Samuel",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 2:18-19",
+   "idea": "Éfode de linho, manto pequeno feito pela mãe, chifre de óleo",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      1
+     ],
+     [
+      "1SA",
+      2
+     ],
+     [
+      "1SA",
+      3
+     ],
+     [
+      "1SA",
+      4
+     ],
+     [
+      "1SA",
+      5
+     ],
+     [
+      "1SA",
+      6
+     ],
+     [
+      "1SA",
+      7
+     ],
+     [
+      "1SA",
+      8
+     ],
+     [
+      "1SA",
+      9
+     ],
+     [
+      "1SA",
+      10
+     ],
+     [
+      "1SA",
+      11
+     ],
+     [
+      "1SA",
+      12
+     ],
+     [
+      "1SA",
+      13
+     ],
+     [
+      "1SA",
+      14
+     ],
+     [
+      "1SA",
+      15
+     ],
+     [
+      "1SA",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Samuel (1 Samuel 1–16)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_davi",
+   "name": "Vestes de Davi",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 16:11-13",
+   "idea": "Pastor com harpa e cajado",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      16
+     ],
+     [
+      "1SA",
+      17
+     ],
+     [
+      "1SA",
+      18
+     ],
+     [
+      "1SA",
+      19
+     ],
+     [
+      "1SA",
+      20
+     ],
+     [
+      "1SA",
+      21
+     ],
+     [
+      "1SA",
+      22
+     ],
+     [
+      "1SA",
+      23
+     ],
+     [
+      "1SA",
+      24
+     ],
+     [
+      "1SA",
+      25
+     ],
+     [
+      "1SA",
+      26
+     ],
+     [
+      "1SA",
+      27
+     ],
+     [
+      "1SA",
+      28
+     ],
+     [
+      "1SA",
+      29
+     ],
+     [
+      "1SA",
+      30
+     ],
+     [
+      "1SA",
+      31
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Davi (1 Samuel 16–31)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_salomao",
+   "name": "Vestes de Salomão",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 3:9-12",
+   "idea": "Jovem rei com rolo de provérbios",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      1
+     ],
+     [
+      "1KI",
+      2
+     ],
+     [
+      "1KI",
+      3
+     ],
+     [
+      "1KI",
+      4
+     ],
+     [
+      "1KI",
+      5
+     ],
+     [
+      "1KI",
+      6
+     ],
+     [
+      "1KI",
+      7
+     ],
+     [
+      "1KI",
+      8
+     ],
+     [
+      "1KI",
+      9
+     ],
+     [
+      "1KI",
+      10
+     ],
+     [
+      "1KI",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Salomão (1 Reis 1–11)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_elias",
+   "name": "Vestes de Elias",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 19:13; 2 Rs 1:8",
+   "idea": "Manto de pelos, cinto de couro",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      17
+     ],
+     [
+      "1KI",
+      18
+     ],
+     [
+      "1KI",
+      19
+     ],
+     [
+      "1KI",
+      20
+     ],
+     [
+      "1KI",
+      21
+     ],
+     [
+      "1KI",
+      22
+     ],
+     [
+      "2KI",
+      1
+     ],
+     [
+      "2KI",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Elias (1 Reis 17 a 2 Reis 2)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_eliseu",
+   "name": "Vestes de Eliseu",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 2:13-14",
+   "idea": "Manto de Elias dobrado nas mãos",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      2
+     ],
+     [
+      "2KI",
+      3
+     ],
+     [
+      "2KI",
+      4
+     ],
+     [
+      "2KI",
+      5
+     ],
+     [
+      "2KI",
+      6
+     ],
+     [
+      "2KI",
+      7
+     ],
+     [
+      "2KI",
+      8
+     ],
+     [
+      "2KI",
+      9
+     ],
+     [
+      "2KI",
+      10
+     ],
+     [
+      "2KI",
+      11
+     ],
+     [
+      "2KI",
+      12
+     ],
+     [
+      "2KI",
+      13
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eliseu (2 Reis 2–13)",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "lendario_esdras",
+   "name": "Vestes de Esdras",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Ne 8:4-5",
+   "idea": "Escriba no púlpito de madeira, rolo aberto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "EZR"
+    ]
+   },
+   "howTo": "Concluir o livro de Esdras",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_neemias",
+   "name": "Vestes de Neemias",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Ne 1:11; 4:17",
+   "idea": "Copeiro do rei com planta dos muros",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "NEH"
+    ]
+   },
+   "howTo": "Concluir o livro de Neemias",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_ester",
+   "name": "Vestes de Ester",
+   "rarity": "legendary",
+   "world": "reinos",
+   "scriptureRef": "Et 2:17",
+   "idea": "Rainha com coroa real",
+   "presentation": "feminina",
+   "rule": {
+    "books": [
+     "EST"
+    ]
+   },
+   "howTo": "Concluir o livro de Ester",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_daniel_na_cova_dos_leoes",
+   "name": "Daniel na cova dos leões",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Dn 6:22",
+   "idea": "Manto de oficial persa, leões mansos ao redor",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ISA",
+     "JER",
+     "LAM",
+     "EZK",
+     "DAN",
+     "HOS",
+     "JOL",
+     "AMO",
+     "OBA",
+     "JON",
+     "MIC",
+     "NAM",
+     "HAB",
+     "ZEP",
+     "HAG",
+     "ZEC",
+     "MAL"
+    ]
+   },
+   "howTo": "Concluir o mundo Voz dos Profetas (17 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_isaias_e_a_brasa_do_altar",
+   "name": "Isaías e a brasa do altar",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Is 6:6-8",
+   "idea": "Brasa tocando os lábios, fumaça do templo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ISA",
+     "JER",
+     "LAM",
+     "EZK",
+     "DAN",
+     "HOS",
+     "JOL",
+     "AMO",
+     "OBA",
+     "JON",
+     "MIC",
+     "NAM",
+     "HAB",
+     "ZEP",
+     "HAG",
+     "ZEC",
+     "MAL"
+    ]
+   },
+   "howTo": "Concluir o mundo Voz dos Profetas (17 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_jonas_e_o_grande_peixe",
+   "name": "Jonas e o grande peixe",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Jn 2:10",
+   "idea": "Manto encharcado, algas, praia de Nínive",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ISA",
+     "JER",
+     "LAM",
+     "EZK",
+     "DAN",
+     "HOS",
+     "JOL",
+     "AMO",
+     "OBA",
+     "JON",
+     "MIC",
+     "NAM",
+     "HAB",
+     "ZEP",
+     "HAG",
+     "ZEC",
+     "MAL"
+    ]
+   },
+   "howTo": "Concluir o mundo Voz dos Profetas (17 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_ezequiel_no_vale_de_ossos",
+   "name": "Ezequiel no vale de ossos",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Ez 37:1-10",
+   "idea": "Vento no manto, vale que ganha vida",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ISA",
+     "JER",
+     "LAM",
+     "EZK",
+     "DAN",
+     "HOS",
+     "JOL",
+     "AMO",
+     "OBA",
+     "JON",
+     "MIC",
+     "NAM",
+     "HAB",
+     "ZEP",
+     "HAG",
+     "ZEC",
+     "MAL"
+    ]
+   },
+   "howTo": "Concluir o mundo Voz dos Profetas (17 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_jo_restaurado",
+   "name": "Jó restaurado",
+   "rarity": "glorious",
+   "world": "sabedoria",
+   "scriptureRef": "Jó 42:10-12",
+   "idea": "Manto rico, rebanhos dobrados ao fundo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOB",
+     "PSA",
+     "PRO",
+     "ECC",
+     "SNG"
+    ]
+   },
+   "howTo": "Concluir o mundo Poesia e Sabedoria (5 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jo",
+   "name": "Vestes de Jó",
+   "rarity": "legendary",
+   "world": "sabedoria",
+   "scriptureRef": "Jó 1:1; 2:8",
+   "idea": "Manto rasgado, cinzas, olhar firme",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JOB"
+    ]
+   },
+   "howTo": "Concluir o livro de Jó",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_isaias",
+   "name": "Vestes de Isaías",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Is 6:1",
+   "idea": "Profeta da corte com rolo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ISA"
+    ]
+   },
+   "howTo": "Concluir o livro de Isaías",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jeremias",
+   "name": "Vestes de Jeremias",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Jr 13:1; 27:2",
+   "idea": "Cinto de linho, canga de madeira no pescoço",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JER"
+    ]
+   },
+   "howTo": "Concluir o livro de Jeremias",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_ezequiel",
+   "name": "Vestes de Ezequiel",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Ez 2:9-3:3",
+   "idea": "Rolo escrito dos dois lados",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "EZK"
+    ]
+   },
+   "howTo": "Concluir o livro de Ezequiel",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "lendario_daniel",
+   "name": "Vestes de Daniel",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Dn 1:8-17",
+   "idea": "Jovem sábio na corte da Babilônia",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "DAN"
+    ]
+   },
+   "howTo": "Concluir o livro de Daniel",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jonas",
+   "name": "Vestes de Jonas",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Jn 1:3",
+   "idea": "Viajante com passagem de navio para Társis",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JON"
+    ]
+   },
+   "howTo": "Concluir o livro de Jonas",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_pedro_sobre_as_aguas",
+   "name": "Pedro sobre as águas",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 14:29",
+   "idea": "Pescador de manto encharcado, ondas sob os pés",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MAT",
+     "MRK",
+     "LUK",
+     "JHN"
+    ]
+   },
+   "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_joao_batista_no_jordao",
+   "name": "João Batista no Jordão",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 3:13-16",
+   "idea": "Veste de pelos de camelo na água, pomba no alto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MAT",
+     "MRK",
+     "LUK",
+     "JHN"
+    ]
+   },
+   "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+   "name": "Maria Madalena na manhã da ressurreição",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 20:16",
+   "idea": "Manto ao amanhecer, perfumes, jardim",
+   "presentation": "feminina",
+   "rule": {
+    "books": [
+     "MAT",
+     "MRK",
+     "LUK",
+     "JHN"
+    ]
+   },
+   "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_os_magos_e_a_estrela",
+   "name": "Os magos e a estrela",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 2:9-11",
+   "idea": "Três presentes (ouro, incenso e mirra), estrela no alto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MAT",
+     "MRK",
+     "LUK",
+     "JHN"
+    ]
+   },
+   "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_joao_batista",
+   "name": "Vestes de João Batista",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 3:4",
+   "idea": "Veste de pelos de camelo, cinto de couro",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      1
+     ],
+     [
+      "LUK",
+      3
+     ],
+     [
+      "MAT",
+      3
+     ],
+     [
+      "MAT",
+      11
+     ],
+     [
+      "MAT",
+      14
+     ],
+     [
+      "JHN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de João Batista (Lc 1 e 3, Mt 3, 11 e 14, Jo 1)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "lendario_pedro",
+   "name": "Vestes de Pedro",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 4:18; 16:18",
+   "idea": "Pescador com rede e chave no cinto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MAT"
+    ]
+   },
+   "howTo": "Concluir o livro de Mateus",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "lendario_joao_o_apostolo",
+   "name": "Vestes de João, o apóstolo",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 13:23; 19:27",
+   "idea": "Jovem discípulo com rolo",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "JHN"
+    ]
+   },
+   "howTo": "Concluir o livro de João",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "lendario_tiago_filho_de_zebedeu",
+   "name": "Vestes de Tiago, filho de Zebedeu",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 1:19; 3:17",
+   "idea": "Pescador, \"filho do trovão\"",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MRK"
+    ]
+   },
+   "howTo": "Concluir o livro de Marcos",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "lendario_andre",
+   "name": "Vestes de André",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 1:40-42",
+   "idea": "Pescador que leva o irmão a Jesus",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      1
+     ],
+     [
+      "JHN",
+      6
+     ],
+     [
+      "JHN",
+      12
+     ],
+     [
+      "MRK",
+      1
+     ],
+     [
+      "MRK",
+      13
+     ]
+    ]
+   },
+   "howTo": "Ler a história de André (Jo 1, 6 e 12, Mc 1 e 13)",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "lendario_mateus",
+   "name": "Vestes de Mateus",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 9:9",
+   "idea": "Publicano que deixa a coletoria, rolo de contas",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "MAT"
+    ]
+   },
+   "howTo": "Concluir o livro de Mateus",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_maria_mae_de_jesus",
+   "name": "Manto de Maria, mãe de Jesus",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 1:38; 2:19",
+   "idea": "Manto azul, véu simples (ver Perguntas)",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      1
+     ],
+     [
+      "LUK",
+      2
+     ],
+     [
+      "JHN",
+      2
+     ],
+     [
+      "JHN",
+      19
+     ],
+     [
+      "ACT",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Maria (Lc 1–2, Jo 2 e 19, At 1)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "lendario_maria_madalena",
+   "name": "Manto de Maria Madalena",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 8:2; Mc 16:1",
+   "idea": "Discípula com frasco de perfume",
+   "presentation": "feminina",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      8
+     ],
+     [
+      "MRK",
+      15
+     ],
+     [
+      "MRK",
+      16
+     ],
+     [
+      "JHN",
+      19
+     ],
+     [
+      "JHN",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Maria Madalena (Lc 8, Mc 15–16, Jo 19–20)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "lendario_jose_de_nazare",
+   "name": "Vestes de José de Nazaré",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 1:24; 13:55",
+   "idea": "Carpinteiro com ferramentas e manto de viagem",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "MAT",
+      1
+     ],
+     [
+      "MAT",
+      2
+     ],
+     [
+      "LUK",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de José de Nazaré (Mt 1–2, Lc 2)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_paulo_no_caminho_de_damasco",
+   "name": "Paulo no caminho de Damasco",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 9:3-4",
+   "idea": "Viajante envolto em luz, manto ao chão",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ACT",
+     "ROM",
+     "1CO",
+     "2CO",
+     "GAL",
+     "EPH",
+     "PHP",
+     "COL",
+     "1TH",
+     "2TH",
+     "1TI",
+     "2TI",
+     "TIT",
+     "PHM",
+     "HEB",
+     "JAS",
+     "1PE",
+     "2PE",
+     "1JN",
+     "2JN",
+     "3JN",
+     "JUD"
+    ]
+   },
+   "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_pedro_no_pentecostes",
+   "name": "Pedro no Pentecostes",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 2:3, 14",
+   "idea": "Pescador pregando, línguas de fogo no alto",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ACT",
+     "ROM",
+     "1CO",
+     "2CO",
+     "GAL",
+     "EPH",
+     "PHP",
+     "COL",
+     "1TH",
+     "2TH",
+     "1TI",
+     "2TI",
+     "TIT",
+     "PHM",
+     "HEB",
+     "JAS",
+     "1PE",
+     "2PE",
+     "1JN",
+     "2JN",
+     "3JN",
+     "JUD"
+    ]
+   },
+   "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_estevao_com_rosto_de_anjo",
+   "name": "Estêvão com rosto de anjo",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 6:15; 7:56",
+   "idea": "Diácono de manto claro, rosto iluminado",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "ACT",
+     "ROM",
+     "1CO",
+     "2CO",
+     "GAL",
+     "EPH",
+     "PHP",
+     "COL",
+     "1TH",
+     "2TH",
+     "1TI",
+     "2TI",
+     "TIT",
+     "PHM",
+     "HEB",
+     "JAS",
+     "1PE",
+     "2PE",
+     "1JN",
+     "2JN",
+     "3JN",
+     "JUD"
+    ]
+   },
+   "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "glorioso_joao_em_patmos",
+   "name": "João em Patmos",
+   "rarity": "glorious",
+   "world": "nova-criacao",
+   "scriptureRef": "Ap 1:9-11",
+   "idea": "Ancião com rolo, mar e sete candelabros",
+   "presentation": "masculina",
+   "rule": {
+    "books": [
+     "REV"
+    ]
+   },
+   "howTo": "Concluir o mundo Visão da Nova Criação (1 livros)",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "lendario_paulo",
+   "name": "Vestes de Paulo",
+   "rarity": "legendary",
+   "world": "igreja",
+   "scriptureRef": "At 9:15; 2 Tm 4:13",
+   "idea": "Capa de viagem, pergaminhos e cartas",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      9
+     ],
+     [
+      "ACT",
+      10
+     ],
+     [
+      "ACT",
+      11
+     ],
+     [
+      "ACT",
+      12
+     ],
+     [
+      "ACT",
+      13
+     ],
+     [
+      "ACT",
+      14
+     ],
+     [
+      "ACT",
+      15
+     ],
+     [
+      "ACT",
+      16
+     ],
+     [
+      "ACT",
+      17
+     ],
+     [
+      "ACT",
+      18
+     ],
+     [
+      "ACT",
+      19
+     ],
+     [
+      "ACT",
+      20
+     ],
+     [
+      "ACT",
+      21
+     ],
+     [
+      "ACT",
+      22
+     ],
+     [
+      "ACT",
+      23
+     ],
+     [
+      "ACT",
+      24
+     ],
+     [
+      "ACT",
+      25
+     ],
+     [
+      "ACT",
+      26
+     ],
+     [
+      "ACT",
+      27
+     ],
+     [
+      "ACT",
+      28
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Paulo (Atos 9–28)",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  }
+ ]
+}

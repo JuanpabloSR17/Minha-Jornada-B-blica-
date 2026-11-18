@@ -21,7 +21,7 @@ select tests.read_all(auth.uid(), 'EXO', 39);
 select tests.assert(not tests.has_skin(auth.uid(), 'lendario_moises'), 'com 39 de 40 capítulos de Êxodo, ainda não recebe o Manto de Moisés');
 set local role authenticated;
 select tests.assert(tests.reading('lendario_moises') @> '{"done": 39, "total": 40}', 'progresso visível: 39 de 40');
-select tests.assert(jsonb_array_length(public.get_my_skins() -> 'reading') = 4, 'as 4 skins de leitura aparecem com regra e progresso');
+select tests.assert(jsonb_array_length(public.get_my_skins() -> 'reading') = 14, 'as 14 skins de leitura da Temporada 1 aparecem com regra e progresso');
 reset role;
 select tests.read_all(auth.uid(), 'EXO');
 select tests.assert(tests.has_skin(auth.uid(), 'lendario_moises'), 'concluir Êxodo concede o Manto de Moisés');
@@ -50,4 +50,14 @@ reset role;
 select tests.mk_m('bb000000-0000-0000-0000-0000000000bb', 'leitor_sem_leitura', 0);
 select tests.assert(not exists (select 1 from public.user_skins where user_id = 'bb000000-0000-0000-0000-0000000000bb'), 'conta sem leitura não recebe skins de leitura');
 select tests.assert(not exists (select 1 from public.skins s join public.skin_unlock_rules r on r.skin_id = s.id where s.in_shop), 'skins de leitura nunca estão na loja');
+-- Raras de missão e Épicas da temporada: capítulos da história do personagem
+select tests.mk_m('bd000000-0000-0000-0000-0000000000bd', 'leitor_missoes', 0);
+select tests.read_all('bd000000-0000-0000-0000-0000000000bd', 'EXO', 2);
+select tests.assert(tests.has_skin('bd000000-0000-0000-0000-0000000000bd', 'raro_parteiras')
+  and tests.has_skin('bd000000-0000-0000-0000-0000000000bd', 'raro_joquebede')
+  and tests.has_skin('bd000000-0000-0000-0000-0000000000bd', 'raro_filha_de_farao'), 'Êxodo 1–2 concedem as 3 Raras de missão');
+select tests.assert(not tests.has_skin('bd000000-0000-0000-0000-0000000000bd', 'epico_zipora'), 'Zípora pede também Êxodo 4 e 18');
+select private.record_event('bd000000-0000-0000-0000-0000000000bd', 'CHAPTER_COMPLETED', 'chapter:EXO.4', '{"book":"EXO","chapter":4}');
+select private.record_event('bd000000-0000-0000-0000-0000000000bd', 'CHAPTER_COMPLETED', 'chapter:EXO.18', '{"book":"EXO","chapter":18}');
+select tests.assert(tests.has_skin('bd000000-0000-0000-0000-0000000000bd', 'epico_zipora'), 'Êxodo 2, 4 e 18 concedem o Véu de Zípora');
 rollback;

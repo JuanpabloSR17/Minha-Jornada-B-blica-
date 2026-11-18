@@ -2,7 +2,7 @@ import { skinLook, type SkinSelection } from '@/features/skins/catalog';
 import { requireSupabase } from '@/lib/supabase/client';
 import { throwIfError } from '@/lib/errors';
 import { normalizeLook, sanitizeEquipment } from '../domain/avatar.rules';
-import type { AvatarAppearance, Equipment } from '../domain/avatar.types';
+import type { AvatarAppearance, AvatarLook, Equipment } from '../domain/avatar.types';
 import type { ReadingProgress } from '@/features/rewards/contract';
 
 export type LoadoutInfo = {
@@ -88,7 +88,7 @@ export const getCollections = async () => (await rpc('get_collections')) as Coll
 export type PublicAvatar =
   | null
   | { username: string; visible: false }
-  | { username: string; visible: true; displayName: string; isSelf: boolean; appearance: AvatarAppearance; equipment: Equipment; skin?: SkinSelection | null };
+  | { username: string; visible: true; displayName: string; isSelf: boolean; appearance: AvatarAppearance; equipment: Equipment; skin?: SkinSelection | null; painted?: AvatarLook['painted']; label?: string };
 
 export async function getPublicAvatar(username: string): Promise<PublicAvatar> {
   const raw = (await rpc('get_public_avatar', { p_username: username })) as PublicAvatar;

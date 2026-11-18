@@ -1,4 +1,5 @@
 import season1 from './season1.json';
+import principais from './principais.json';
 import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, getItem } from '@/features/avatar/domain/catalog';
 import { defaultLook } from '@/features/avatar/domain/avatar.rules';
 import type { AvatarLook, Equipment, EquipmentSlot } from '@/features/avatar/domain/avatar.types';
@@ -15,6 +16,8 @@ export type Skin = {
   scriptureRef: string;
   origin: SkinOrigin;
   inShop: boolean;
+  /** mundo da Bíblia onde a skin aparece (a Temporada 1 é toda das Origens) */
+  world?: string;
   styles: SkinStyle[];
   /** prévia provisória (peças do catálogo) até a pintura da skin chegar */
   preview: Partial<Record<'outfit' | 'back' | 'head' | 'neck' | 'chest' | 'hands', string>>;
@@ -23,7 +26,7 @@ export type Skin = {
 const BY_NAME = new Map(COSMETIC_ITEMS.map((i) => [i.name, i.id]));
 
 /** Temporada 1 (Êxodo). O servidor tem a mesma lista: id, nome, raridade e se vai para a loja. */
-export const SKINS: Skin[] = (season1.skins as unknown as (Omit<Skin, "preview"> & { preview: Record<string, string> })[]).map((s) => ({
+export const SKINS: Skin[] = ([...season1.skins.map((s) => ({ ...s, world: 'origens' })), ...principais.skins] as unknown as (Omit<Skin, "preview"> & { preview: Record<string, string> })[]).map((s) => ({
   ...s,
   preview: Object.fromEntries(Object.entries(s.preview).map(([slot, name]) => [slot, BY_NAME.get(name) ?? name])),
 }));

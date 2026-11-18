@@ -14,14 +14,12 @@ import { useMilestones } from '@/features/reading/useMilestones';
 import { refLabel } from '@/features/reading/refs';
 import { journeyProgress, WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
-import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL } from '@/features/skins/catalog';
+import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, paintedBody } from '@/features/skins/catalog';
 import { getMySkins } from '@/features/skins/skins.service';
 import { WorldScene } from './WorldScene';
 import { WORLD_THEMES, type WorldId } from './worldThemes';
 
 const w = strings.world;
-/** Skins da Temporada 1 (Êxodo) pertencem ao mundo das Origens. */
-const SEASON_WORLD: WorldId = 'origens';
 
 /** Anel de progresso do mundo (capítulos lidos). */
 function Ring({ done, total, color, size = 64 }: { done: number; total: number; color: string; size?: number }) {
@@ -108,7 +106,7 @@ function WorldContent({ id }: { id: string }) {
   const next = books.find((b) => b.chaptersRead.size > 0 && b.nextChapter != null) ?? books.find((b) => b.nextChapter != null);
   const codes = new Set<string>(world.codes);
   const marcos = (rows ?? []).filter((r) => codes.has(r.book));
-  const skins = wid === SEASON_WORLD ? SKINS : [];
+  const skins = SKINS.filter((x) => (x.world ?? 'origens') === wid).sort((a, b) => Number(!!paintedBody(b.id, 1)) - Number(!!paintedBody(a.id, 1)));
   const read = (book: string, chapter: number) =>
     router.navigate({ pathname: '/(tabs)/read', params: { book, chapter: String(chapter), selection: String(Date.now()) } });
   const heroH = Math.min(340, Math.max(250, width * 0.72));
