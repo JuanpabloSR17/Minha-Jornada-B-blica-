@@ -194,3 +194,13 @@ Pacote `Jornada_Biblica_Exodo_Lote_A_Ampliado.zip` (SHA-256 `2c1e43ed54dcbee8828
 O SHA-256 do ZIP confere com o `.zip.sha256` e as 72 somas internas conferem.
 - **Cenas dos 7 mundos:** aprovadas. Medem 1600 × 960 e pesam de 229 a 327 KB, com o assunto no alto e no centro e a base calma. Estão no topo de cada página de mundo e em faixa nos cartões do mapa da Jornada.
 - **Skins do Lote A:** as pinturas de corpo são idênticas às já aplicadas. Só os 6 ícones mudaram (moldura ajustada) e foram atualizados.
+
+## 11. Lote B da loja: aplicado (18/11/2026)
+
+`Jornada_Biblica_Exodo_Lote_B_Loja.zip`: o SHA-256 confere com o `.zip.sha256` e as 114 somas internas conferem.
+- **Aprovado:** 33 pinturas (6 skins e 5 apresentações femininas). Pesam de 131 a 171 KB, os estilos são idênticos ao catálogo, os pés ficam em y ≈ 1451 e os cantos são transparentes.
+- **Skins:** Carpinteiro (e Carpinteira) de acácia, Sacerdote (só a padrão, Êx 28:40-42), Bordador/Bordadora, Ourives, Gravador/Gravadora de pedras e Perfumista.
+- A migração `20261128000100_skin_variants_lote_b.sql` registra a apresentação feminina das 5 skins. As 11 skins pintadas já aparecem na loja, no Vestiário, no acampamento e no Perfil.
+- **Estudo do Manto de Moisés** (`entregas/lote-b/Estudo_Lendaria.png`): **aprovado como direção.** Manto longo e volumoso, borda dupla legível, faixa na cintura e cajado com ponta bifurcada. Entregue as 3 pinturas do Moisés novo (e da apresentação feminina) para substituir as do Lote A, com o mesmo ID e as mesmas âncoras.
+
+**Próximo:** o Moisés revisado e a Épica da semana (`epico_sumo_sacerdote`), que aparece na loja. Depois, as Raras de missão (Joquebede, filha de Faraó, Sifrá e Puá) e as Épicas da temporada.

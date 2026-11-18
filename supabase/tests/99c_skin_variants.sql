@@ -19,4 +19,7 @@ select tests.assert(public.get_public_avatar('apresentacao_um') -> 'skin' = '{"s
   'o cartão público mostra a apresentação escolhida');
 reset role;
 select tests.assert_raises($$update public.skins set variants = '{feminino}' where id = 'comum_pastor'$$, '%check%', 'toda skin mantém a apresentação padrão');
+select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 8,
+  'Lote A e Lote B: 8 skins com apresentação feminina pintada');
+select tests.assert((select variants from public.skins where id = 'raro_sacerdote') = '{padrao}'::text[], 'o Sacerdote segue só com a padrão');
 rollback;
