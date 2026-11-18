@@ -4,6 +4,13 @@ Este é o ponto de partida da próxima rodada. Ele junta tudo o que foi decidido
 
 **O que pedimos a você:** pintar as skins da Temporada 1 no padrão pintado que você já definiu para o personagem 2.5D. São o mesmo enquadramento, a mesma luz, o mesmo acabamento e as mesmas âncoras do `AvatarRenderer`. Comece pelo **Lote A**.
 
+> **Estilo obrigatório: mantenha o 2.5D pintado que você já está fazendo.**
+> As skins seguem exatamente a linha de arte 2.5D dos lotes de personagem já entregues (o lote 1 e a pegada do cajado): pintura digital semirrealista de RPG, volume com luz e sombra pintadas, materiais com textura (linho, lã, couro, madeira, metal), contorno suave e proporção adulta.
+> - **Não trocar de estilo:** nada de vetor chapado, pixel art, anime, cartum, 3D renderizado nem os estilos de teste (vitral, gravura, sombras, ponto-cruz, constelação etc.). Esses foram só experimentos e não valem para as skins.
+> - **Mesma luz neutra** do guarda-roupa nas pinturas base. O app aplica por cima a luz de cada tela, como a fogueira no acampamento.
+> - **As 78 pinturas devem parecer da mesma mão:** os 3 estilos de uma skin e todas as skins da temporada, lado a lado com os personagens 2.5D atuais.
+> - Na dúvida, compare com as pinturas do lote 1 em `assets/avatars/` (corpo B, camadas pintadas) e siga a mesma referência.
+
 ---
 
 ## 1. A virada: skins em vez de itens
