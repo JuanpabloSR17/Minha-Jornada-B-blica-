@@ -39,9 +39,10 @@ select tests.assert(
   ),
   'só skins da loja aparecem; nunca Lendárias, Gloriosas, de leitura, missão ou temporada');
 select tests.assert(
-  (select count(distinct o.skin_id) = 9 from generate_series(date '2026-11-02', date '2026-12-31', interval '1 day') d
+  (select count(distinct o.skin_id) = (select count(*) from public.skins where in_shop and is_active and rarity in ('common', 'rare'))
+     from generate_series(date '2026-11-02', date '2027-06-30', interval '1 day') d
    cross join lateral private.skin_offers(d::date) o where o.section <> 'epic'),
-  'as 9 Comuns e Raras da loja passam pela vitrine ao longo de dois meses');
+  'toda Comum e Rara da loja passa pela vitrine (a loja cresce com os ofícios da enciclopédia)');
 select tests.assert(
   (select bool_and(o.gift = (extract(dow from d)::int = private.economy('skin_gift_weekday')))
      and bool_and(o.price = case when o.gift then 0 else 1000 end)

@@ -21,7 +21,9 @@ select tests.read_all(auth.uid(), 'EXO', 39);
 select tests.assert(not tests.has_skin(auth.uid(), 'lendario_moises'), 'com 39 de 40 capítulos de Êxodo, ainda não recebe o Manto de Moisés');
 set local role authenticated;
 select tests.assert(tests.reading('lendario_moises') @> '{"done": 39, "total": 40}', 'progresso visível: 39 de 40');
-select tests.assert(jsonb_array_length(public.get_my_skins() -> 'reading') = 14, 'as 14 skins de leitura da Temporada 1 aparecem com regra e progresso');
+select tests.assert(jsonb_array_length(public.get_my_skins() -> 'reading') = (select count(*) from public.skin_unlock_rules r join public.skins s on s.id = r.skin_id where s.is_active),
+  'toda skin de leitura aparece com regra e progresso');
+select tests.assert((select count(*) from public.skin_unlock_rules r join public.skins s on s.id = r.skin_id where s.season = 't1-exodo') = 14, 'Temporada 1: 14 skins de leitura');
 reset role;
 select tests.read_all(auth.uid(), 'EXO');
 select tests.assert(tests.has_skin(auth.uid(), 'lendario_moises'), 'concluir Êxodo concede o Manto de Moisés');

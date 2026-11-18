@@ -1,7 +1,7 @@
-// Coloca no app as skins de um lote do plano (docs/skins/plano-lotes.json) depois que a pintura
+// Coloca no app as skins de um lote do plano (personagens com regra de leitura; ofícios e trajes de corte na loja) (docs/skins/plano-lotes.json) depois que a pintura
 // foi aprovada: acrescenta ao catálogo (src/features/skins/principais.json) e gera a migração
 // aditiva com as skins e as regras de leitura. Uso: node scripts/skins-add-lot.mjs P01 [AAAAMMDD]
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const [lotId, day = new Date().toISOString().slice(0, 10).replace(/-/g, '')] = process.argv.slice(2);
@@ -25,17 +25,20 @@ for (const id of lot.skins) {
 }
 if (!add.length) { console.log('nada a acrescentar'); process.exit(0); }
 const order = 100 + cat.skins.length;
-cat.skins.push(...add.map((s) => ({ id: s.id, name: s.name, rarity: s.rarity, world: s.world, scriptureRef: s.scriptureRef, origin: 'leitura', inShop: false, ...(s.character ? { character: s.character } : {}), styles: s.styles, preview: {} })));
+cat.skins.push(...add.map((s) => ({ id: s.id, name: s.name, rarity: s.rarity, world: s.world, scriptureRef: s.scriptureRef, origin: s.inShop ? 'loja' : 'leitura', inShop: !!s.inShop, ...(s.character ? { character: s.character } : {}), styles: s.styles, preview: {} })));
 writeFileSync(catPath, JSON.stringify(cat, null, 1) + '\n');
-const file = `supabase/migrations/${day}000100_skins_${lotId.toLowerCase()}.sql`;
+// versão única: o dia + sequência (000100, 000200…) depois das migrações que já existem nesse dia
+const taken = readdirSync('supabase/migrations').filter((f) => f.startsWith(day)).map((f) => Number(f.slice(8, 14)));
+const seq = String((Math.max(0, ...taken) + 100)).padStart(6, '0');
+const file = `supabase/migrations/${day}${seq}_skins_${lotId.toLowerCase()}.sql`;
 writeFileSync(file, `-- Lote ${lot.id} (${lot.titulo}): skins principais conquistadas lendo. Aditiva, só dados.
 -- Gerada por scripts/skins-add-lot.mjs a partir de docs/skins/plano-lotes.json.
 insert into public.skins (id, name, rarity, origin, scripture_ref, season, in_shop, sort_order, variants, character_sex) values
-${add.map((s, i) => `  (${q(s.id)}, ${q(s.name)}, ${q(s.rarity)}, 'leitura', ${q(s.scriptureRef)}, 'principais', false, ${order + i}, ${s.fem ? "'{padrao,feminino}'" : "'{padrao}'"}, ${s.character ? q(s.character) : 'null'})`).join(',\n')};
+${add.map((s, i) => `  (${q(s.id)}, ${q(s.name)}, ${q(s.rarity)}, ${s.inShop ? "'loja'" : "'leitura'"}, ${q(s.scriptureRef)}, 'enciclopedia', ${s.inShop ? 'true' : 'false'}, ${order + i}, ${s.fem ? "'{padrao,feminino}'" : "'{padrao}'"}, ${s.character ? q(s.character) : 'null'})`).join(',\n')};
 
-insert into public.skin_unlock_rules (skin_id, rule, label, sort_order) values
-${add.map((s, i) => `  (${q(s.id)}, ${q(JSON.stringify(s.rule))}, ${q(s.howTo)}, ${order + i})`).join(',\n')};
-
+${add.some((s) => s.rule) ? `insert into public.skin_unlock_rules (skin_id, rule, label, sort_order) values
+${add.filter((s) => s.rule).map((s, i) => `  (${q(s.id)}, ${q(JSON.stringify(s.rule))}, ${q(s.howTo)}, ${order + i})`).join(',\n')};
+` : '-- (lote só de loja: sem regras de leitura)\n'}
 -- concede na hora a quem já cumpriu as regras
 do $$
 declare r record;

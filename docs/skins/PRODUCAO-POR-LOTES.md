@@ -1,6 +1,6 @@
 # Produção de skins por lotes
 
-**Objetivo:** ter no app as skins principais de todos os livros da Bíblia, cada uma conquistada lendo. O Codex pinta **um lote por vez**, sem sobrecarga. O Claude confere cada entrega, aplica, coloca as skins no app com a regra de leitura, roda a auditoria em todas as abas e atualiza o painel.
+**Objetivo (meta de lançamento):** ter no app **todas as 288 skins da enciclopédia**, mais o Peregrino do Êxodo, antes de abrir o app para o público. Os personagens se conquistam lendo; os ofícios e trajes de corte vêm do Mercado dos Viajantes. O Codex pinta **um lote por vez**, sem sobrecarga. O Claude confere cada entrega, aplica, coloca as skins no app com a regra de leitura, roda a auditoria em todas as abas e atualiza o painel.
 
 ## Arquivos
 
@@ -13,30 +13,28 @@
 | `scripts/skins-add-lot.mjs <LOTE>` | Coloca no app as skins pintadas de um lote: catálogo `principais.json` e migração aditiva com as regras de leitura. |
 | `e2e/skins-audit.flow.cjs` | **Auditoria:** com uma skin pintada vestida, confere a pintura em cada tela (Início, retrato do HUD, Perfil, Vestiário, Amigos, cartão público, outra conta, loja, mundos, cadastro e troca de apresentação). |
 
-## Ordem dos lotes
+## Ordem dos lotes (plano completo)
 
-| Lote | Conteúdo | Skins |
-|---|---|---|
-| T1-C | Temporada 1: Pastor de ovelhas (inicial), Vestes de Arão, as 2 Gloriosas de Êxodo, Bezalel e Jetro | 6 |
-| T1-D | Temporada 1: Miriã, Zípora, Aoliabe, Hur e Tocador de shofar | 5 |
-| P01–P02 | Principais de Origens e Aliança: Adão, Eva, Noé, Abraão, Sara, Isaque, Rebeca, Jacó, José + Gloriosas de José, Abraão e Noé | 12 |
-| P03–P05 | Principais de Terra e Reinos: Josué, Débora, Gideão, Sansão, Rute, Samuel, Davi, Salomão, Elias, Eliseu, Esdras, Neemias, Ester + 5 Gloriosas | 18 |
-| P06–P07 | Principais de Poesia e Sabedoria e de Voz dos Profetas: Jó, Isaías, Jeremias, Ezequiel, Daniel, Jonas + 5 Gloriosas | 11 |
-| P07–P09 | Principais de Vida e Ensino de Jesus: João Batista, Pedro, João, Tiago, André, Mateus, Maria, Maria Madalena, José de Nazaré + 4 Gloriosas | 13 |
-| P10 | Principais de Caminhos da Igreja e Nova Criação: Paulo + Gloriosas de Paulo, Pedro no Pentecostes, Estêvão e João em Patmos | 5 |
+| Fase | Lotes | Conteúdo | Skins |
+|---|---|---|---|
+| Temporada 1 (Êxodo) | T1-A a T1-D | **Concluída**: as 26 skins pintadas e no app | 26 |
+| Principais | P01–P10 | Lendárias e Gloriosas de todos os mundos: patriarcas, juízes, reis, profetas, apóstolos e os momentos marcantes | 59 |
+| Personagens | S01–S25 | Épicas e Raras que são personagens, na ordem de leitura dos mundos: Raquel, Lia, Calebe, Rute e Boaz, Ana, Jônatas, Abigail, Naamã, os profetas menores, Marta, Maria de Betânia, Lázaro, Zaqueu, Barnabé, Timóteo, Lídia… | 147 |
+| Ofícios | O01–O08 | Os ofícios da Bíblia que ainda faltam (pescador, oleiro, escriba, médico, centurião…), para a loja | 47 |
+| Realeza | R01–R02 | Rainha Candace, reis Asa, Uzias e Jotão, filhas de Jó e os trajes de corte (rei, rainha, príncipe, princesa) | 10 |
 
-São 70 skins (11 da Temporada 1 e 59 principais), cerca de 210 pinturas, mais as versões femininas.
+São **47 lotes** a produzir, com 263 skins novas e cerca de 790 pinturas, mais as versões femininas das 54 figuras genéricas. O briefing exato de cada lote está em [`LOTES.md`](./LOTES.md).
 
-**Depois das principais:** as 76 Épicas (personagens secundários), as Raras e Comuns dos ofícios (59) e a realeza, no mesmo formato. Os lotes dessa fase serão acrescentados ao plano quando as principais terminarem.
+**Ritmo sugerido:** até 2 lotes por entrega (12 skins, cerca de 36 pinturas), em ZIPs de até 30 MB. Antes do lançamento, o painel `STATUS.md` precisa mostrar 289 de 289.
 
 ## Como se conquista (regras no servidor)
 
-| Raridade | Regra | Exemplo |
+| Skin | Regra | Exemplo |
 |---|---|---|
-| **Lendária** | Ler a história do personagem (os capítulos dele) ou concluir o livro dele | Vestes de José: Gênesis 37–50 · Vestes de Rute: concluir Rute |
-| **Gloriosa** | Concluir o **mundo** do momento marcante, como decidido na enciclopédia | Elias no carro de fogo: concluir Terra e Reinos |
-| Épica e Rara da temporada | Ler os capítulos do personagem | Véu de Zípora: Êxodo 2, 4 e 18 |
-| Comum e Rara da loja | Mercado dos Viajantes, com Siclos | Tecelã: 160 Siclos |
+| **Lendária** (personagem principal) | Ler a história do personagem (os capítulos dele) ou concluir o livro dele | Vestes de José: Gênesis 37–50 · Vestes de Rute: concluir Rute |
+| **Gloriosa** (momento marcante) | Concluir o **mundo** do momento, como decidido na enciclopédia | Elias no carro de fogo: concluir Terra e Reinos |
+| **Épica ou Rara que é personagem** | Ler os capítulos da história do personagem (as referências da enciclopédia) | Traje de Raquel: Gênesis 29 · Traje de Zaqueu: Lucas 19 |
+| **Ofício ou traje de corte** (Comum, Raro ou Épico) | Mercado dos Viajantes, com Siclos (Comuns e Raros na vitrine do dia, Épicos na Épica da semana) | Pescador: 160 Siclos |
 
 Uma skin **entra no app quando a pintura é aprovada**, para que toda skin visível já esteja pintada. As da Temporada 1 já estão no catálogo e mostram o traje provisório até a pintura chegar.
 

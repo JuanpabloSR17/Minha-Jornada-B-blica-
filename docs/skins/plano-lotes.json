@@ -3,7 +3,9 @@
  "regras": {
   "legendary": "concluir o livro do personagem",
   "glorious": "concluir o mundo do momento marcante",
-  "apresentacao": "personagem bíblico com sexo definido (principal ou secundário): só a apresentação do sexo do personagem; ofícios e figuras genéricas: padrão e feminina"
+  "apresentacao": "personagem bíblico com sexo definido (principal ou secundário): só a apresentação do sexo do personagem; ofícios e figuras genéricas: padrão e feminina",
+  "epic_rare_personagem": "ler os capítulos da história do personagem (referências da enciclopédia)",
+  "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana"
  },
  "lotes": [
   {
@@ -146,6 +148,420 @@
     "glorioso_pedro_no_pentecostes",
     "glorioso_estevao_com_rosto_de_anjo",
     "glorioso_joao_em_patmos"
+   ]
+  },
+  {
+   "id": "S01",
+   "titulo": "Personagens · Origens",
+   "skins": [
+    "epico_raquel",
+    "epico_lia",
+    "epico_abel",
+    "epico_enoque",
+    "epico_melquisedeque",
+    "epico_agar"
+   ]
+  },
+  {
+   "id": "S02",
+   "titulo": "Personagens · Origens",
+   "skins": [
+    "epico_ismael",
+    "epico_esau",
+    "epico_juda",
+    "epico_benjamim",
+    "epico_calebe",
+    "epico_eleazar"
+   ]
+  },
+  {
+   "id": "S03",
+   "titulo": "Personagens · Origens",
+   "skins": [
+    "epico_fineias",
+    "raro_labao",
+    "raro_ruben",
+    "raro_eliezer_servo_de_abraao",
+    "raro_filhas_de_zelofeade",
+    "raro_debora_ama_de_rebeca"
+   ]
+  },
+  {
+   "id": "S04",
+   "titulo": "Personagens · Origens e Terra e Reinos",
+   "skins": [
+    "raro_matusalem",
+    "epico_noemi",
+    "epico_boaz",
+    "epico_raabe",
+    "epico_ana",
+    "epico_jonatas"
+   ]
+  },
+  {
+   "id": "S05",
+   "titulo": "Personagens · Terra e Reinos",
+   "skins": [
+    "epico_abigail",
+    "epico_nata",
+    "epico_rainha_de_saba",
+    "epico_naama",
+    "epico_ezequias",
+    "epico_josias"
+   ]
+  },
+  {
+   "id": "S06",
+   "titulo": "Personagens · Terra e Reinos",
+   "skins": [
+    "epico_mardoqueu",
+    "epico_zorobabel",
+    "raro_baraque",
+    "raro_eli",
+    "raro_mical",
+    "raro_joabe"
+   ]
+  },
+  {
+   "id": "S07",
+   "titulo": "Personagens · Terra e Reinos",
+   "skins": [
+    "raro_mefibosete",
+    "raro_urias",
+    "raro_isai",
+    "raro_viuva_de_sarepta",
+    "raro_menina_serva_de_naama",
+    "raro_sunamita"
+   ]
+  },
+  {
+   "id": "S08",
+   "titulo": "Personagens · Terra e Reinos",
+   "skins": [
+    "raro_jeosafa",
+    "raro_joas_menino_rei",
+    "raro_hulda_profetisa",
+    "raro_zadoque",
+    "raro_benaia",
+    "raro_os_valentes_de_davi"
+   ]
+  },
+  {
+   "id": "S09",
+   "titulo": "Personagens · Terra e Reinos",
+   "skins": [
+    "raro_asafe",
+    "raro_hema_e_jedutum",
+    "raro_obede_edom",
+    "raro_ciro",
+    "raro_josue_o_sumo_sacerdote",
+    "raro_elcana"
+   ]
+  },
+  {
+   "id": "S10",
+   "titulo": "Personagens · Terra e Reinos e Sabedoria",
+   "skins": [
+    "raro_ido_o_vidente",
+    "raro_profeta_gade",
+    "epico_mulher_virtuosa",
+    "epico_o_pregador",
+    "epico_a_amada_de_canticos",
+    "raro_agur"
+   ]
+  },
+  {
+   "id": "S11",
+   "titulo": "Personagens · Sabedoria e Profetas",
+   "skins": [
+    "raro_lemuel",
+    "raro_filhos_de_cora",
+    "raro_eta_o_ezraita",
+    "raro_eliu",
+    "epico_sadraque_mesaque_e_abede_nego",
+    "epico_oseias"
+   ]
+  },
+  {
+   "id": "S12",
+   "titulo": "Personagens · Profetas",
+   "skins": [
+    "epico_joel",
+    "epico_amos",
+    "epico_miqueias",
+    "epico_habacuque",
+    "epico_ageu",
+    "epico_zacarias"
+   ]
+  },
+  {
+   "id": "S13",
+   "titulo": "Personagens · Profetas",
+   "skins": [
+    "epico_baruque",
+    "raro_obadias",
+    "raro_naum",
+    "raro_sofonias",
+    "raro_malaquias",
+    "raro_ebede_meleque"
+   ]
+  },
+  {
+   "id": "S14",
+   "titulo": "Personagens · Profetas e Evangelhos",
+   "skins": [
+    "raro_os_recabitas",
+    "raro_dario_o_medo",
+    "raro_hananias_misael_e_azarias",
+    "raro_aspenaz",
+    "raro_gemarias",
+    "epico_marta"
+   ]
+  },
+  {
+   "id": "S15",
+   "titulo": "Personagens · Evangelhos",
+   "skins": [
+    "epico_maria_de_betania",
+    "epico_lazaro",
+    "epico_nicodemos",
+    "epico_jose_de_arimateia",
+    "epico_zaqueu",
+    "epico_a_samaritana"
+   ]
+  },
+  {
+   "id": "S16",
+   "titulo": "Personagens · Evangelhos",
+   "skins": [
+    "epico_a_mulher_do_perfume",
+    "epico_o_bom_samaritano",
+    "epico_o_filho_prodigo",
+    "epico_zacarias_o_sacerdote",
+    "epico_isabel",
+    "epico_simeao"
+   ]
+  },
+  {
+   "id": "S17",
+   "titulo": "Personagens · Evangelhos",
+   "skins": [
+    "epico_ana_a_profetisa",
+    "epico_bartimeu",
+    "raro_filipe",
+    "raro_natanael",
+    "raro_tome",
+    "raro_tiago_filho_de_alfeu"
+   ]
+  },
+  {
+   "id": "S18",
+   "titulo": "Personagens · Evangelhos",
+   "skins": [
+    "raro_tadeu",
+    "raro_simao_o_zelote",
+    "raro_os_pastores_de_belem",
+    "raro_o_menino_dos_paes_e_peixes",
+    "raro_a_viuva_pobre",
+    "raro_o_centuriao_de_cafarnaum"
+   ]
+  },
+  {
+   "id": "S19",
+   "titulo": "Personagens · Evangelhos",
+   "skins": [
+    "raro_jairo",
+    "raro_a_mulher_que_tocou_o_manto",
+    "raro_o_semeador",
+    "raro_simao_de_cirene",
+    "raro_joana_e_susana",
+    "raro_salome"
+   ]
+  },
+  {
+   "id": "S20",
+   "titulo": "Personagens · Evangelhos e Igreja",
+   "skins": [
+    "raro_cleopas",
+    "raro_a_crianca_no_colo_de_jesus",
+    "epico_barnabe",
+    "epico_estevao",
+    "epico_tiago_irmao_do_senhor",
+    "epico_lucas"
+   ]
+  },
+  {
+   "id": "S21",
+   "titulo": "Personagens · Igreja",
+   "skins": [
+    "epico_timoteo",
+    "epico_silas",
+    "epico_priscila_e_aquila",
+    "epico_lidia",
+    "epico_filipe_o_evangelista",
+    "epico_o_eunuco_etiope"
+   ]
+  },
+  {
+   "id": "S22",
+   "titulo": "Personagens · Igreja",
+   "skins": [
+    "epico_cornelio",
+    "raro_tito",
+    "raro_tabita",
+    "raro_apolo",
+    "raro_febe",
+    "raro_onesimo"
+   ]
+  },
+  {
+   "id": "S23",
+   "titulo": "Personagens · Igreja",
+   "skins": [
+    "raro_filemom",
+    "raro_ananias_de_damasco",
+    "raro_rode",
+    "raro_eutico",
+    "raro_o_carcereiro_de_filipos",
+    "raro_loide_e_eunice"
+   ]
+  },
+  {
+   "id": "S24",
+   "titulo": "Personagens · Igreja",
+   "skins": [
+    "raro_epafrodito",
+    "raro_joao_marcos",
+    "raro_matias",
+    "raro_agabo",
+    "raro_judas_irmao_de_tiago",
+    "raro_erasto"
+   ]
+  },
+  {
+   "id": "S25",
+   "titulo": "Personagens · Igreja e Nova Criação",
+   "skins": [
+    "raro_trofimo",
+    "epico_os_anciaos_de_vestes_brancas",
+    "epico_o_vencedor"
+   ]
+  },
+  {
+   "id": "O01",
+   "titulo": "Ofícios · Comuns",
+   "skins": [
+    "comum_pescador",
+    "comum_lavrador",
+    "comum_ceifeiro_respigadeira",
+    "comum_vinhateiro",
+    "comum_oleiro",
+    "comum_pedreiro"
+   ]
+  },
+  {
+   "id": "O02",
+   "titulo": "Ofícios · Comuns",
+   "skins": [
+    "comum_padeiro",
+    "comum_cozinheira",
+    "comum_aguadeira",
+    "comum_boiadeiro",
+    "comum_cacador",
+    "comum_lavandeiro"
+   ]
+  },
+  {
+   "id": "O03",
+   "titulo": "Ofícios · Comuns",
+   "skins": [
+    "comum_curtidor",
+    "comum_fazedor_de_tendas",
+    "comum_ferreiro",
+    "comum_mercador",
+    "comum_marinheiro",
+    "comum_soldado"
+   ]
+  },
+  {
+   "id": "O04",
+   "titulo": "Ofícios · Comuns e Raros",
+   "skins": [
+    "comum_mensageiro",
+    "comum_lenhador",
+    "comum_carregador_de_agua",
+    "raro_escriba",
+    "raro_copeiro_do_rei",
+    "raro_profeta"
+   ]
+  },
+  {
+   "id": "O05",
+   "titulo": "Ofícios · Raros",
+   "skins": [
+    "raro_juiz_da_porta",
+    "raro_cantor_levita",
+    "raro_harpista",
+    "raro_porteiro_do_templo",
+    "raro_medico",
+    "raro_publicano"
+   ]
+  },
+  {
+   "id": "O06",
+   "titulo": "Ofícios · Raros",
+   "skins": [
+    "raro_centuriao",
+    "raro_arqueiro",
+    "raro_fundibulario",
+    "raro_atalaia",
+    "raro_arauto",
+    "raro_construtor_de_muros"
+   ]
+  },
+  {
+   "id": "O07",
+   "titulo": "Ofícios · Raros",
+   "skins": [
+    "raro_navegante",
+    "raro_mestre_de_obras",
+    "raro_escudeiro",
+    "raro_condutor_de_carro",
+    "raro_correio_a_cavalo",
+    "raro_tesoureiro"
+   ]
+  },
+  {
+   "id": "O08",
+   "titulo": "Ofícios · Raros e Épicos",
+   "skins": [
+    "raro_mordomo",
+    "raro_anciao",
+    "raro_nazireu",
+    "epico_sabio_do_oriente",
+    "epico_rainha_da_corte"
+   ]
+  },
+  {
+   "id": "R01",
+   "titulo": "Realeza",
+   "skins": [
+    "epico_rainha_candace",
+    "epico_rei",
+    "epico_rainha",
+    "raro_rei_asa",
+    "raro_rei_uzias",
+    "raro_rei_jotao"
+   ]
+  },
+  {
+   "id": "R02",
+   "titulo": "Realeza",
+   "skins": [
+    "raro_filhas_de_jo",
+    "raro_jovens_da_linhagem_real",
+    "raro_principe",
+    "raro_princesa"
    ]
   }
  ],
@@ -3051,6 +3467,7428 @@
     }
    ],
    "character": "masculino"
+  },
+  {
+   "id": "comum_pescador",
+   "name": "Pescador",
+   "rarity": "common",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Mt 4:18",
+   "idea": "Túnica curta, rede no ombro, pés descalços",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "comum_lavrador",
+   "name": "Lavrador",
+   "rarity": "common",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 9:20",
+   "idea": "Túnica de trabalho, enxada de madeira",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "comum_ceifeiro_respigadeira",
+   "name": "Ceifeiro",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Rt 2:3",
+   "idea": "Feixe de cevada, lenço contra o sol. Apresentação feminina: Respigadeira",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "comum_vinhateiro",
+   "name": "Vinhateiro",
+   "rarity": "common",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Is 5:1-2; Mt 20:1",
+   "idea": "Avental manchado de uva, cesto",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "comum_oleiro",
+   "name": "Oleiro",
+   "rarity": "common",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Jr 18:3",
+   "idea": "Braços de barro, vaso em mãos",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "comum_pedreiro",
+   "name": "Pedreiro",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "2 Rs 12:11-12",
+   "idea": "Pano na cabeça, prumo e cinzel",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "comum_padeiro",
+   "name": "Padeiro",
+   "rarity": "common",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 40:1; 1 Sm 8:13",
+   "idea": "Avental de linho, cesto de pães na cabeça",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "comum_cozinheira",
+   "name": "Cozinheira",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Sm 8:13",
+   "idea": "Avental, panela de barro",
+   "presentation": "feminina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "comum_aguadeira",
+   "name": "Aguadeira",
+   "rarity": "common",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 24:15",
+   "idea": "Cântaro no ombro",
+   "presentation": "feminina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "comum_boiadeiro",
+   "name": "Boiadeiro",
+   "rarity": "common",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Am 7:14",
+   "idea": "Aguilhada, manto rústico",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "comum_cacador",
+   "name": "Caçador",
+   "rarity": "common",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 25:27",
+   "idea": "Arco curto, pele de animal no ombro",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "comum_lavandeiro",
+   "name": "Lavandeiro",
+   "rarity": "common",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Mc 9:3",
+   "idea": "Mangas arregaçadas, tecido alvejado",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "comum_curtidor",
+   "name": "Curtidor",
+   "rarity": "common",
+   "world": "igreja",
+   "group": "oficios",
+   "scriptureRef": "At 9:43",
+   "idea": "Avental de couro grosso, peles",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "comum_fazedor_de_tendas",
+   "name": "Fazedor de tendas",
+   "rarity": "common",
+   "world": "igreja",
+   "group": "oficios",
+   "scriptureRef": "At 18:3",
+   "idea": "Agulha grossa, rolo de pano de pelo de cabra",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "comum_ferreiro",
+   "name": "Ferreiro",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Sm 13:19-20",
+   "idea": "Avental de couro, martelo, brasa",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "comum_mercador",
+   "name": "Mercador",
+   "rarity": "common",
+   "world": "sabedoria",
+   "group": "oficios",
+   "scriptureRef": "Pv 31:24; Mt 13:45",
+   "idea": "Bolsa de moedas, balança",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "comum_marinheiro",
+   "name": "Marinheiro",
+   "rarity": "common",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Jn 1:5; At 27:30",
+   "idea": "Corda enrolada, lenço de cabeça",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "comum_soldado",
+   "name": "Soldado",
+   "rarity": "common",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Lc 3:14",
+   "idea": "Gibão de couro, lança curta",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "comum_mensageiro",
+   "name": "Mensageiro",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "2 Sm 18:19-23",
+   "idea": "Túnica cingida para correr, rolo selado",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "comum_lenhador",
+   "name": "Lenhador",
+   "rarity": "common",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Dt 19:5; Js 9:21",
+   "idea": "Machado, feixe de lenha",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "comum_carregador_de_agua",
+   "name": "Carregador de água",
+   "rarity": "common",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Js 9:21",
+   "idea": "Dois odres pendurados",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_escriba",
+   "name": "Escriba",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Ed 7:6; Ez 9:2",
+   "idea": "Rolo, tinteiro de escrivão à cintura",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_copeiro_do_rei",
+   "name": "Copeiro do rei",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 40:11; Ne 1:11",
+   "idea": "Taça de ouro, veste de corte",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_profeta",
+   "name": "Profeta",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Zc 13:4",
+   "idea": "Manto de pelos, cinto de couro",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_juiz_da_porta",
+   "name": "Juiz da porta",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Dt 16:18; Rt 4:2",
+   "idea": "Manto de ancião, banco de pedra",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_cantor_levita",
+   "name": "Cantor levita",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Cr 15:16",
+   "idea": "Túnica branca, címbalos",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_harpista",
+   "name": "Harpista",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Sm 16:23",
+   "idea": "Lira portátil (kinnor)",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_porteiro_do_templo",
+   "name": "Porteiro do templo",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Cr 9:17-19",
+   "idea": "Chave grande, bastão",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_medico",
+   "name": "Médico",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "oficios",
+   "scriptureRef": "Cl 4:14",
+   "idea": "Bolsa de unguentos, faixas de linho",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_publicano",
+   "name": "Publicano",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Lc 5:27",
+   "idea": "Mesa de coletoria, bolsa pesada",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_centuriao",
+   "name": "Centurião",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Mt 8:5",
+   "idea": "Elmo com crista, vara de videira",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_arqueiro",
+   "name": "Arqueiro",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Cr 12:2",
+   "idea": "Arco longo, aljava",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_fundibulario",
+   "name": "Fundibulário",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Jz 20:16",
+   "idea": "Funda de couro, bolsa de pedras",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_atalaia",
+   "name": "Atalaia",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Ez 33:2-3",
+   "idea": "Manto contra o vento, trombeta",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_arauto",
+   "name": "Arauto",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "oficios",
+   "scriptureRef": "Dn 3:4",
+   "idea": "Rolo de decreto, voz em destaque",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_construtor_de_muros",
+   "name": "Construtor de muros",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Ne 4:17",
+   "idea": "Ferramenta numa mão, espada na outra",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_navegante",
+   "name": "Navegante",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Rs 9:27",
+   "idea": "Mapa de couro, corda de navio",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_mestre_de_obras",
+   "name": "Mestre de obras",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "oficios",
+   "scriptureRef": "1 Co 3:10",
+   "idea": "Corda de medir, prancha de planta",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_escudeiro",
+   "name": "Escudeiro",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Sm 16:21",
+   "idea": "Escudo e armas de outro",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_condutor_de_carro",
+   "name": "Condutor de carro",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "1 Rs 22:34",
+   "idea": "Rédeas, proteção de braço",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_correio_a_cavalo",
+   "name": "Correio a cavalo",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Et 8:10",
+   "idea": "Bolsa de cartas seladas, capa de viagem",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_tesoureiro",
+   "name": "Tesoureiro",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "oficios",
+   "scriptureRef": "At 8:27",
+   "idea": "Rolo de contas, selo",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_mordomo",
+   "name": "Mordomo",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Gn 43:16; Lc 16:1",
+   "idea": "Molho de chaves, livro de contas",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_anciao",
+   "name": "Ancião",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Rt 4:2; At 14:23",
+   "idea": "Barba longa, manto escuro, cajado",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_nazireu",
+   "name": "Nazireu",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "oficios",
+   "scriptureRef": "Nm 6:5",
+   "idea": "Cabelo longo nunca cortado, faixa simples",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_sabio_do_oriente",
+   "name": "Sábio do Oriente",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "oficios",
+   "scriptureRef": "Mt 2:1",
+   "idea": "Manto bordado de estrelas, presente em cofre",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_rainha_da_corte",
+   "name": "Rainha da corte",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "oficios",
+   "scriptureRef": "Et 5:1",
+   "idea": "Vestes reais, coroa leve",
+   "presentation": "feminina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_raquel",
+   "name": "Traje de Raquel",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 29:9",
+   "idea": "Pastora com cajado, lenço de cabeça",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      29
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Raquel (Gn 29:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    }
+   ]
+  },
+  {
+   "id": "epico_lia",
+   "name": "Traje de Lia",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 29:16-17",
+   "idea": "Véu, vestes de casa",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      29
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Lia (Gn 29:16-17)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_abel",
+   "name": "Traje de Abel",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 4:2-4",
+   "idea": "Pastor com cordeiro primogênito",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Abel (Gn 4:2-4)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "epico_enoque",
+   "name": "Traje de Enoque",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 5:24",
+   "idea": "Manto claro, olhar para o alto",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Enoque (Gn 5:24)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_melquisedeque",
+   "name": "Traje de Melquisedeque",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 14:18",
+   "idea": "Rei e sacerdote: pão e vinho",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      14
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Melquisedeque (Gn 14:18)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_agar",
+   "name": "Traje de Agar",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 21:19",
+   "idea": "Odre de água, manto do deserto",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      21
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Agar (Gn 21:19)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_ismael",
+   "name": "Traje de Ismael",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 21:20",
+   "idea": "Arqueiro do deserto",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      21
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ismael (Gn 21:20)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_esau",
+   "name": "Traje de Esaú",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 25:25-27",
+   "idea": "Caçador ruivo, manto peludo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      25
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Esaú (Gn 25:25-27)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "epico_juda",
+   "name": "Traje de Judá",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 38:18; 49:9",
+   "idea": "Selo, cordão e cajado, leão no bordado",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      38
+     ],
+     [
+      "GEN",
+      49
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Judá (Gn 38:18; 49:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_benjamim",
+   "name": "Traje de Benjamim",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 44:12",
+   "idea": "Saco de cereal com a taça de prata",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      44
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Benjamim (Gn 44:12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_calebe",
+   "name": "Traje de Calebe",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Nm 13:30; Js 14:11",
+   "idea": "Guerreiro idoso e forte, cacho de uvas de Escol",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "NUM",
+      13
+     ],
+     [
+      "JOS",
+      14
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Calebe (Nm 13:30; Js 14:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_eleazar",
+   "name": "Traje de Eleazar",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Nm 20:28",
+   "idea": "Vestes sacerdotais herdadas de Arão",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "NUM",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eleazar (Nm 20:28)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_fineias",
+   "name": "Traje de Finéias",
+   "rarity": "epic",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Nm 25:11",
+   "idea": "Sacerdote com lança",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "NUM",
+      25
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Finéias (Nm 25:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_labao",
+   "name": "Traje de Labão",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 29:13",
+   "idea": "Rico pastor arameu",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      29
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Labão (Gn 29:13)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_ruben",
+   "name": "Traje de Rúben",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 37:22",
+   "idea": "Primogênito com manto rasgado",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      37
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rúben (Gn 37:22)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_eliezer_servo_de_abraao",
+   "name": "Traje de Eliézer, servo de Abraão",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 24:2-10",
+   "idea": "Camelos e presentes para a noiva",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      24
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eliézer, servo de Abraão (Gn 24:2-10)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_filhas_de_zelofeade",
+   "name": "Traje das filhas de Zelofeade",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Nm 27:1-7",
+   "idea": "Cinco irmãs diante da porta da tenda",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "NUM",
+      27
+     ]
+    ]
+   },
+   "howTo": "Ler a história das filhas de Zelofeade (Nm 27:1-7)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_debora_ama_de_rebeca",
+   "name": "Traje de Débora, ama de Rebeca",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 35:8",
+   "idea": "Ama idosa, manto simples",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      35
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Débora, ama de Rebeca (Gn 35:8)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_matusalem",
+   "name": "Traje de Matusalém",
+   "rarity": "rare",
+   "world": "origens",
+   "group": "origens",
+   "scriptureRef": "Gn 5:27",
+   "idea": "Ancião de barba muito longa",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "GEN",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Matusalém (Gn 5:27)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_noemi",
+   "name": "Traje de Noemi",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Rt 1:20-22",
+   "idea": "Viúva de manto escuro, saco de viagem",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "RUT",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Noemi (Rt 1:20-22)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_boaz",
+   "name": "Traje de Boaz",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Rt 2:4; 3:15",
+   "idea": "Senhor da colheita, manto de ancião",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "RUT",
+      2
+     ],
+     [
+      "RUT",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Boaz (Rt 2:4; 3:15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_raabe",
+   "name": "Traje de Raabe",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Js 2:18",
+   "idea": "Cordão vermelho na janela",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "JOS",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Raabe (Js 2:18)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_ana",
+   "name": "Traje de Ana",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 1:10-11; 2:19",
+   "idea": "Mulher em oração, túnica pequena nas mãos",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      1
+     ],
+     [
+      "1SA",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ana (1 Sm 1:10-11; 2:19)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    }
+   ]
+  },
+  {
+   "id": "epico_jonatas",
+   "name": "Traje de Jônatas",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 18:4",
+   "idea": "Príncipe com arco, entregando o manto",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      18
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Jônatas (1 Sm 18:4)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_abigail",
+   "name": "Traje de Abigail",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 25:18",
+   "idea": "Jumento carregado de pães e figos",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      25
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Abigail (1 Sm 25:18)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_nata",
+   "name": "Traje de Natã",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 12:1",
+   "idea": "Profeta da corte com rolo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      12
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Natã (2 Sm 12:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_rainha_de_saba",
+   "name": "Traje de Rainha de Sabá",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Rs 10:1-2",
+   "idea": "Caravana de especiarias, ouro e pedras",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      10
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rainha de Sabá (1 Rs 10:1-2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_naama",
+   "name": "Traje de Naamã",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 5:14",
+   "idea": "General arameu, pele restaurada",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Naamã (2 Rs 5:14)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_ezequias",
+   "name": "Traje de Ezequias",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 18:5; 20:5",
+   "idea": "Rei em oração, carta estendida no templo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      18
+     ],
+     [
+      "2KI",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ezequias (2 Rs 18:5; 20:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_josias",
+   "name": "Traje de Josias",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 22:11; 23:2",
+   "idea": "Jovem rei com o Livro da Lei",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      22
+     ],
+     [
+      "2KI",
+      23
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Josias (2 Rs 22:11; 23:2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_mardoqueu",
+   "name": "Traje de Mardoqueu",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Et 8:15",
+   "idea": "Veste real azul e branca, manto de púrpura",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "EST",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Mardoqueu (Et 8:15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_zorobabel",
+   "name": "Traje de Zorobabel",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Ed 3:8; Ag 2:23",
+   "idea": "Líder do retorno com anel de selo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "EZR",
+      3
+     ],
+     [
+      "HAG",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Zorobabel (Ed 3:8; Ag 2:23)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_baraque",
+   "name": "Traje de Baraque",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Jz 4:14",
+   "idea": "Comandante ao lado de Débora",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JDG",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Baraque (Jz 4:14)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_eli",
+   "name": "Traje de Eli",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 1:9",
+   "idea": "Sacerdote idoso sentado à porta",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eli (1 Sm 1:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_mical",
+   "name": "Traje de Mical",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 19:12",
+   "idea": "Princesa à janela",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      19
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Mical (1 Sm 19:12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_joabe",
+   "name": "Traje de Joabe",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 2:13",
+   "idea": "Comandante do exército de Davi",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Joabe (2 Sm 2:13)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_mefibosete",
+   "name": "Traje de Mefibosete",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 9:7",
+   "idea": "À mesa do rei",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      9
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Mefibosete (2 Sm 9:7)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_urias",
+   "name": "Traje de Urias",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 11:11",
+   "idea": "Soldado fiel com escudo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Urias (2 Sm 11:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_isai",
+   "name": "Traje de Isaí",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 16:10-11",
+   "idea": "Pai pastor de Belém",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Isaí (1 Sm 16:10-11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_viuva_de_sarepta",
+   "name": "Traje de Viúva de Sarepta",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Rs 17:12-16",
+   "idea": "Jarra de farinha e botija de azeite",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      17
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Viúva de Sarepta (1 Rs 17:12-16)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_menina_serva_de_naama",
+   "name": "Traje de Menina serva de Naamã",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 5:2-3",
+   "idea": "Menina israelita que indicou o profeta",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Menina serva de Naamã (2 Rs 5:2-3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_sunamita",
+   "name": "Traje de Sunamita",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 4:8-10",
+   "idea": "Senhora com o quarto do profeta",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Sunamita (2 Rs 4:8-10)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "raro_jeosafa",
+   "name": "Traje de Jeosafá",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Cr 20:21",
+   "idea": "Rei com cantores à frente do exército",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2CH",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Jeosafá (2 Cr 20:21)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_joas_menino_rei",
+   "name": "Traje de Joás, menino rei",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 11:12",
+   "idea": "Criança coroada com o testemunho",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Joás, menino rei (2 Rs 11:12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_hulda_profetisa",
+   "name": "Traje de Hulda, profetisa",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Rs 22:14",
+   "idea": "Profetisa de Jerusalém",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "2KI",
+      22
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Hulda, profetisa (2 Rs 22:14)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_zadoque",
+   "name": "Traje de Zadoque",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Rs 1:39",
+   "idea": "Sacerdote com o chifre de azeite",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Zadoque (1 Rs 1:39)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_benaia",
+   "name": "Traje de Benaia",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 23:20",
+   "idea": "Valente que venceu o leão num dia de neve",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      23
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Benaia (2 Sm 23:20)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_os_valentes_de_davi",
+   "name": "Os valentes de Davi",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 23:8-39",
+   "idea": "Guerreiros com armas variadas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      23
+     ]
+    ]
+   },
+   "howTo": "Ler a história dos valentes de Davi (2 Sm 23:8-39)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_asafe",
+   "name": "Traje de Asafe",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Cr 16:5",
+   "idea": "Chefe dos cantores com címbalos",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1CH",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Asafe (1 Cr 16:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_hema_e_jedutum",
+   "name": "Traje de Hemã e Jedutum",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Cr 25:1",
+   "idea": "Músicos com harpas e liras",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1CH",
+      25
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Hemã e Jedutum (1 Cr 25:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_obede_edom",
+   "name": "Traje de Obede-Edom",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Sm 6:11",
+   "idea": "Casa abençoada pela arca",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2SA",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Obede-Edom (2 Sm 6:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_ciro",
+   "name": "Traje de Ciro",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Ed 1:1-3",
+   "idea": "Rei persa com o decreto do retorno",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "EZR",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ciro (Ed 1:1-3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_josue_o_sumo_sacerdote",
+   "name": "Traje de Josué, o sumo sacerdote",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "Ed 3:2; Zc 3:5",
+   "idea": "Mitra limpa e vestes novas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "EZR",
+      3
+     ],
+     [
+      "ZEC",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Josué, o sumo sacerdote (Ed 3:2; Zc 3:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_elcana",
+   "name": "Traje de Elcana",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 1:1-3",
+   "idea": "Peregrino anual a Siló",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Elcana (1 Sm 1:1-3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_mulher_virtuosa",
+   "name": "Traje de Mulher virtuosa",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Pv 31:10-31",
+   "idea": "Roca e fuso, lã escarlate, campo comprado",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "PRO",
+      31
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Mulher virtuosa (Pv 31:10-31)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_o_pregador",
+   "name": "O Pregador",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Ec 1:1; 12:9",
+   "idea": "Sábio de Jerusalém com rolos e ampulheta de areia",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ECC",
+      1
+     ],
+     [
+      "ECC",
+      12
+     ]
+    ]
+   },
+   "howTo": "Ler a história do Pregador (Ec 1:1; 12:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_a_amada_de_canticos",
+   "name": "A amada de Cânticos",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Ct 1:5-6",
+   "idea": "Guardadora de vinhas, flores do campo (traje discreto)",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "SNG",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história da amada de Cânticos (Ct 1:5-6)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_sadraque_mesaque_e_abede_nego",
+   "name": "Traje de Sadraque, Mesaque e Abede-Nego",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Dn 3:21-27",
+   "idea": "Três amigos com mantos e turbantes intactos no fogo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "DAN",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Sadraque, Mesaque e Abede-Nego (Dn 3:21-27)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_oseias",
+   "name": "Traje de Oseias",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Os 1:1; 14:5",
+   "idea": "Profeta com ramo de lírio e orvalho",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "HOS",
+      1
+     ],
+     [
+      "HOS",
+      14
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Oseias (Os 1:1; 14:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "epico_joel",
+   "name": "Traje de Joel",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Jl 2:28",
+   "idea": "Profeta com chifre e a chuva temporã",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JOL",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Joel (Jl 2:28)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_amos",
+   "name": "Traje de Amós",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Am 7:14-15",
+   "idea": "Boiadeiro e cultivador de sicômoros",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "AMO",
+      7
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Amós (Am 7:14-15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_miqueias",
+   "name": "Traje de Miqueias",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Mq 6:8",
+   "idea": "Profeta do campo de Moresete",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MIC",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Miqueias (Mq 6:8)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_habacuque",
+   "name": "Traje de Habacuque",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Hc 2:1-2",
+   "idea": "Vigia na torre com tábuas para escrever",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "HAB",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Habacuque (Hc 2:1-2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_ageu",
+   "name": "Traje de Ageu",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Ag 1:8",
+   "idea": "Profeta com madeira para reconstruir o templo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "HAG",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ageu (Ag 1:8)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_zacarias",
+   "name": "Traje de Zacarias",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Zc 4:2-3",
+   "idea": "Profeta com o candelabro e as duas oliveiras",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ZEC",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Zacarias (Zc 4:2-3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_baruque",
+   "name": "Traje de Baruque",
+   "rarity": "epic",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Jr 36:4",
+   "idea": "Escriba com rolo e tinta",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JER",
+      36
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Baruque (Jr 36:4)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_obadias",
+   "name": "Traje de Obadias",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Ob 1:1",
+   "idea": "Mensageiro com rolo selado",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "OBA",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Obadias (Ob 1:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_naum",
+   "name": "Traje de Naum",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Na 1:15",
+   "idea": "Arauto sobre os montes com boas novas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "NAM",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Naum (Na 1:15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_sofonias",
+   "name": "Traje de Sofonias",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Sf 3:17",
+   "idea": "Profeta com o cântico de alegria",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ZEP",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Sofonias (Sf 3:17)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_malaquias",
+   "name": "Traje de Malaquias",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Ml 3:16",
+   "idea": "Profeta com o livro da memória",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MAL",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Malaquias (Ml 3:16)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_ebede_meleque",
+   "name": "Traje de Ebede-Meleque",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Jr 38:7-13",
+   "idea": "Oficial etíope com cordas e trapos para o resgate",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JER",
+      38
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ebede-Meleque (Jr 38:7-13)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_os_recabitas",
+   "name": "Os recabitas",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Jr 35:6-7",
+   "idea": "Família de tenda que não bebe vinho",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JER",
+      35
+     ]
+    ]
+   },
+   "howTo": "Ler a história dos recabitas (Jr 35:6-7)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_agur",
+   "name": "Traje de Agur",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Pv 30:1",
+   "idea": "Sábio humilde com perguntas sobre a natureza",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PRO",
+      30
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Agur (Pv 30:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_lemuel",
+   "name": "Traje de Lemuel",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Pv 31:1",
+   "idea": "Rei que guarda as palavras da mãe",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PRO",
+      31
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Lemuel (Pv 31:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_filhos_de_cora",
+   "name": "Traje dos filhos de Corá",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Sl 42 (título)",
+   "idea": "Cantores do templo com liras",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PSA",
+      42
+     ]
+    ]
+   },
+   "howTo": "Ler a história dos filhos de Corá (Sl 42, título)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_eta_o_ezraita",
+   "name": "Traje de Etã, o ezraíta",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Sl 89 (título)",
+   "idea": "Salmista sábio",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PSA",
+      89
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Etã, o ezraíta (Sl 89, título)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_dario_o_medo",
+   "name": "Traje de Dario, o medo",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Dn 6:25-26",
+   "idea": "Rei com o decreto que honra o Deus de Daniel",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "DAN",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Dario, o medo (Dn 6:25-26)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_hananias_misael_e_azarias",
+   "name": "Traje de Hananias, Misael e Azarias",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Dn 1:6-7",
+   "idea": "Os três amigos ainda estudantes na corte",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "DAN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Hananias, Misael e Azarias (Dn 1:6-7)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_aspenaz",
+   "name": "Traje de Aspenaz",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Dn 1:9",
+   "idea": "Chefe dos oficiais da corte",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "DAN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Aspenaz (Dn 1:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_gemarias",
+   "name": "Traje de Gemarias",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "profetas",
+   "scriptureRef": "Jr 36:10-12",
+   "idea": "Oficial que ouviu o rolo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JER",
+      36
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Gemarias (Jr 36:10-12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_ido_o_vidente",
+   "name": "Traje de Ido, o vidente",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "2 Cr 9:29; Zc 1:1",
+   "idea": "Vidente com crônicas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2CH",
+      9
+     ],
+     [
+      "ZEC",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ido, o vidente (2 Cr 9:29; Zc 1:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_profeta_gade",
+   "name": "Traje de Profeta Gade",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "reinos",
+   "scriptureRef": "1 Sm 22:5",
+   "idea": "Vidente de Davi",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1SA",
+      22
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Profeta Gade (1 Sm 22:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_eliu",
+   "name": "Traje de Eliú",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "sabedoria",
+   "scriptureRef": "Jó 32:2-6",
+   "idea": "O jovem que fala depois dos anciãos",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JOB",
+      32
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Eliú (Jó 32:2-6)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "epico_marta",
+   "name": "Traje de Marta",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 10:40; Jo 11:20-27",
+   "idea": "Avental de casa, jarra",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      10
+     ],
+     [
+      "JHN",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Marta (Lc 10:40; Jo 11:20-27)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_maria_de_betania",
+   "name": "Traje de Maria de Betânia",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 12:3",
+   "idea": "Frasco de nardo puro",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      12
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Maria de Betânia (Jo 12:3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "epico_lazaro",
+   "name": "Traje de Lázaro",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 11:44",
+   "idea": "Faixas de linho se soltando",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Lázaro (Jo 11:44)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_nicodemos",
+   "name": "Traje de Nicodemos",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 3:1-2; 19:39",
+   "idea": "Fariseu à noite com lâmpada; mirra e aloés",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      3
+     ],
+     [
+      "JHN",
+      19
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Nicodemos (Jo 3:1-2; 19:39)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_jose_de_arimateia",
+   "name": "Traje de José de Arimateia",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mt 27:57-60",
+   "idea": "Rico conselheiro com lençol de linho",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MAT",
+      27
+     ]
+    ]
+   },
+   "howTo": "Ler a história de José de Arimateia (Mt 27:57-60)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_zaqueu",
+   "name": "Traje de Zaqueu",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 19:4-8",
+   "idea": "Publicano baixinho no sicômoro",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      19
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Zaqueu (Lc 19:4-8)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_a_samaritana",
+   "name": "A samaritana",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 4:28-29",
+   "idea": "Cântaro deixado no poço",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história da samaritana (Jo 4:28-29)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_a_mulher_do_perfume",
+   "name": "A mulher do perfume",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 14:3",
+   "idea": "Vaso de alabastro quebrado",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      14
+     ]
+    ]
+   },
+   "howTo": "Ler a história da mulher do perfume (Mc 14:3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "epico_o_bom_samaritano",
+   "name": "O bom samaritano (parábola)",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 10:33-35",
+   "idea": "Viajante com azeite, vinho e jumento",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      10
+     ]
+    ]
+   },
+   "howTo": "Ler a história do bom samaritano (Lc 10:33-35)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_o_filho_prodigo",
+   "name": "O filho pródigo (parábola)",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 15:22",
+   "idea": "Melhor roupa, anel e sandálias novas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      15
+     ]
+    ]
+   },
+   "howTo": "Ler a história do filho pródigo (Lc 15:22)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_zacarias_o_sacerdote",
+   "name": "Traje de Zacarias, o sacerdote",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 1:8-9",
+   "idea": "Sacerdote no altar do incenso",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Zacarias, o sacerdote (Lc 1:8-9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_isabel",
+   "name": "Traje de Isabel",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 1:41-42",
+   "idea": "Senhora idosa em louvor",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Isabel (Lc 1:41-42)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "epico_simeao",
+   "name": "Traje de Simeão",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 2:28",
+   "idea": "Ancião no templo com o olhar de quem viu a promessa",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Simeão (Lc 2:28)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_ana_a_profetisa",
+   "name": "Traje de Ana, a profetisa",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 2:36-38",
+   "idea": "Viúva idosa em oração no templo",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ana, a profetisa (Lc 2:36-38)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    }
+   ]
+  },
+  {
+   "id": "epico_bartimeu",
+   "name": "Traje de Bartimeu",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 10:46-50",
+   "idea": "Mendigo que lança o manto e se levanta",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      10
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Bartimeu (Mc 10:46-50)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_filipe",
+   "name": "Traje de Filipe",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 1:43-46",
+   "idea": "Discípulo de Betsaida",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Filipe (Jo 1:43-46)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_natanael",
+   "name": "Traje de Natanael",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 1:48",
+   "idea": "Debaixo da figueira",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Natanael (Jo 1:48)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_tome",
+   "name": "Traje de Tomé",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 20:27-28",
+   "idea": "Discípulo que passa da dúvida à fé",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tomé (Jo 20:27-28)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_tiago_filho_de_alfeu",
+   "name": "Traje de Tiago, filho de Alfeu",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 3:18",
+   "idea": "Apóstolo de manto simples",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      3
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tiago, filho de Alfeu (Mc 3:18)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_tadeu",
+   "name": "Traje de Tadeu",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 6:16; Jo 14:22",
+   "idea": "Apóstolo de manto simples",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      6
+     ],
+     [
+      "JHN",
+      14
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tadeu (Lc 6:16; Jo 14:22)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_simao_o_zelote",
+   "name": "Traje de Simão, o zelote",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 6:15",
+   "idea": "Apóstolo de faixa vermelha",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Simão, o zelote (Lc 6:15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_os_pastores_de_belem",
+   "name": "Os pastores de Belém",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 2:8-16",
+   "idea": "Pastores com lanternas à noite",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história dos pastores de Belém (Lc 2:8-16)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_o_menino_dos_paes_e_peixes",
+   "name": "O menino dos pães e peixes",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Jo 6:9",
+   "idea": "Cesto com cinco pães e dois peixes",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JHN",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história do menino dos pães e peixes (Jo 6:9)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_a_viuva_pobre",
+   "name": "A viúva pobre",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 12:42-44",
+   "idea": "Duas moedinhas na mão",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      12
+     ]
+    ]
+   },
+   "howTo": "Ler a história da viúva pobre (Mc 12:42-44)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_o_centuriao_de_cafarnaum",
+   "name": "O centurião de Cafarnaum",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mt 8:5-10",
+   "idea": "Oficial romano de fé",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MAT",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história do centurião de Cafarnaum (Mt 8:5-10)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_jairo",
+   "name": "Traje de Jairo",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 5:22-23",
+   "idea": "Chefe da sinagoga",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Jairo (Mc 5:22-23)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_a_mulher_que_tocou_o_manto",
+   "name": "A mulher que tocou o manto",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 5:27-29",
+   "idea": "Mão estendida para a orla do manto",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      5
+     ]
+    ]
+   },
+   "howTo": "Ler a história da mulher que tocou o manto (Mc 5:27-29)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_o_semeador",
+   "name": "O semeador (parábola)",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mt 13:3",
+   "idea": "Bolsa de sementes, campo arado",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MAT",
+      13
+     ]
+    ]
+   },
+   "howTo": "Ler a história do semeador (Mt 13:3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_simao_de_cirene",
+   "name": "Traje de Simão de Cirene",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 15:21",
+   "idea": "Viajante do campo com a madeira da cruz",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      15
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Simão de Cirene (Mc 15:21)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_joana_e_susana",
+   "name": "Traje de Joana e Susana",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 8:3",
+   "idea": "Mulheres que serviam com seus bens",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Joana e Susana (Lc 8:3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_salome",
+   "name": "Traje de Salomé",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 16:1",
+   "idea": "Mulher com especiarias ao amanhecer",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Salomé (Mc 16:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "raro_cleopas",
+   "name": "Traje de Cleopas",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Lc 24:18",
+   "idea": "Caminhante de Emaús, pão partido",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "LUK",
+      24
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Cleopas (Lc 24:18)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_a_crianca_no_colo_de_jesus",
+   "name": "A criança no colo de Jesus",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "group": "evangelhos",
+   "scriptureRef": "Mc 9:36",
+   "idea": "Criança de túnica simples (skin infantil)",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "MRK",
+      9
+     ]
+    ]
+   },
+   "howTo": "Ler Mc 9:36",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_barnabe",
+   "name": "Traje de Barnabé",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 4:36-37; 11:24",
+   "idea": "\"Filho da consolação\", bolsa do campo vendido",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      4
+     ],
+     [
+      "ACT",
+      11
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Barnabé (At 4:36-37; 11:24)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_estevao",
+   "name": "Traje de Estêvão",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 6:5-8",
+   "idea": "Diácono servindo as mesas",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      6
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Estêvão (At 6:5-8)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "epico_tiago_irmao_do_senhor",
+   "name": "Traje de Tiago, irmão do Senhor",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 15:13; Tg 1:1",
+   "idea": "Líder de Jerusalém, joelhos de quem ora",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      15
+     ],
+     [
+      "JAS",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tiago, irmão do Senhor (At 15:13; Tg 1:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_lucas",
+   "name": "Traje de Lucas",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Cl 4:14; Lc 1:3",
+   "idea": "Médico e historiador com rolo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "COL",
+      4
+     ],
+     [
+      "LUK",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Lucas (Cl 4:14; Lc 1:3)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_timoteo",
+   "name": "Traje de Timóteo",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "1 Tm 4:12; 2 Tm 1:5",
+   "idea": "Jovem pastor com cartas de Paulo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1TI",
+      4
+     ],
+     [
+      "2TI",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Timóteo (1 Tm 4:12; 2 Tm 1:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "epico_silas",
+   "name": "Traje de Silas",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 16:25",
+   "idea": "Cantando na prisão à meia-noite",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Silas (At 16:25)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_priscila_e_aquila",
+   "name": "Traje de Priscila e Áquila",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 18:2-3, 26",
+   "idea": "Fazedores de tendas com agulha e lona",
+   "presentation": "masculina",
+   "pair": "Priscila",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      18
+     ]
+    ]
+   },
+   "howTo": "Ler At 18:2-3, 26",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "epico_lidia",
+   "name": "Traje de Lídia",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 16:14",
+   "idea": "Vendedora de púrpura de Tiatira",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Lídia (At 16:14)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    }
+   ]
+  },
+  {
+   "id": "epico_filipe_o_evangelista",
+   "name": "Traje de Filipe, o evangelista",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 8:29-30",
+   "idea": "Correndo ao lado da carruagem",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Filipe, o evangelista (At 8:29-30)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_o_eunuco_etiope",
+   "name": "O eunuco etíope",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 8:27-28",
+   "idea": "Tesoureiro da rainha lendo Isaías na carruagem",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história do eunuco etíope (At 8:27-28)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "epico_cornelio",
+   "name": "Traje de Cornélio",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 10:1-2",
+   "idea": "Centurião temente a Deus",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      10
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Cornélio (At 10:1-2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_os_anciaos_de_vestes_brancas",
+   "name": "Os anciãos de vestes brancas",
+   "rarity": "epic",
+   "world": "nova-criacao",
+   "group": "nova-criacao",
+   "scriptureRef": "Ap 4:4",
+   "idea": "Vestes brancas e coroa de ouro",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "REV",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história dos anciãos de vestes brancas (Ap 4:4)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_o_vencedor",
+   "name": "O vencedor",
+   "rarity": "epic",
+   "world": "nova-criacao",
+   "group": "nova-criacao",
+   "scriptureRef": "Ap 3:5; 2:17",
+   "idea": "Vestes brancas e pedrinha branca com nome novo",
+   "presentation": "masculina",
+   "rule": {
+    "chapters": [
+     [
+      "REV",
+      3
+     ],
+     [
+      "REV",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler Ap 3:5; 2:17",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_tito",
+   "name": "Traje de Tito",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Tt 1:4-5",
+   "idea": "Pastor em Creta com carta",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "TIT",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tito (Tt 1:4-5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_tabita",
+   "name": "Traje de Tabita (Dorcas)",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 9:36-39",
+   "idea": "Túnicas e vestidos costurados para as viúvas",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      9
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Tabita (At 9:36-39)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_apolo",
+   "name": "Traje de Apolo",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 18:24",
+   "idea": "Orador de Alexandria com as Escrituras",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      18
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Apolo (At 18:24)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_febe",
+   "name": "Traje de Febe",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Rm 16:1-2",
+   "idea": "Diaconisa com a carta aos Romanos",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "ROM",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Febe (Rm 16:1-2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_onesimo",
+   "name": "Traje de Onésimo",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Fm 1:10-11",
+   "idea": "Servo que volta como irmão, carta nas mãos",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PHM",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Onésimo (Fm 1:10-11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_filemom",
+   "name": "Traje de Filemom",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Fm 1:1-2",
+   "idea": "Anfitrião da igreja em casa",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PHM",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Filemom (Fm 1:1-2)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_ananias_de_damasco",
+   "name": "Traje de Ananias de Damasco",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 9:17",
+   "idea": "Discípulo que impõe as mãos sobre Saulo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      9
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ananias de Damasco (At 9:17)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_rode",
+   "name": "Traje de Rode",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 12:13-14",
+   "idea": "Menina que corre do portão com a notícia",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      12
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rode (At 12:13-14)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "raro_eutico",
+   "name": "Traje de Êutico",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 20:9-12",
+   "idea": "Jovem na janela do terceiro andar",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      20
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Êutico (At 20:9-12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_o_carcereiro_de_filipos",
+   "name": "O carcereiro de Filipos",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 16:29-30",
+   "idea": "Tocha na mão, chaves da prisão",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história do carcereiro de Filipos (At 16:29-30)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_loide_e_eunice",
+   "name": "Traje de Loide e Eunice",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "2 Tm 1:5",
+   "idea": "Avó e mãe com as Escrituras",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "2TI",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Loide e Eunice (2 Tm 1:5)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    }
+   ]
+  },
+  {
+   "id": "raro_epafrodito",
+   "name": "Traje de Epafrodito",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Fp 2:25",
+   "idea": "Mensageiro com a oferta de Filipos",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "PHP",
+      2
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Epafrodito (Fp 2:25)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_joao_marcos",
+   "name": "Traje de João Marcos",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 12:25; 2 Tm 4:11",
+   "idea": "Jovem companheiro de viagem",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      12
+     ],
+     [
+      "2TI",
+      4
+     ]
+    ]
+   },
+   "howTo": "Ler a história de João Marcos (At 12:25; 2 Tm 4:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_matias",
+   "name": "Traje de Matias",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 1:26",
+   "idea": "Apóstolo escolhido por sorte",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Matias (At 1:26)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ]
+  },
+  {
+   "id": "raro_agabo",
+   "name": "Traje de Ágabo",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 21:11",
+   "idea": "Profeta com o cinto de Paulo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      21
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Ágabo (At 21:11)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_judas_irmao_de_tiago",
+   "name": "Traje de Judas, irmão de Tiago",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Jd 1:1",
+   "idea": "Autor da carta, manto simples",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "JUD",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Judas, irmão de Tiago (Jd 1:1)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_erasto",
+   "name": "Traje de Erasto",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "Rm 16:23",
+   "idea": "Tesoureiro da cidade de Corinto",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ROM",
+      16
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Erasto (Rm 16:23)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    }
+   ]
+  },
+  {
+   "id": "raro_trofimo",
+   "name": "Traje de Trófimo",
+   "rarity": "rare",
+   "world": "igreja",
+   "group": "igreja",
+   "scriptureRef": "At 21:29",
+   "idea": "Companheiro de Éfeso",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      21
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Trófimo (At 21:29)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "epico_rainha_candace",
+   "name": "Traje de Rainha Candace",
+   "rarity": "epic",
+   "world": "igreja",
+   "group": "realeza",
+   "scriptureRef": "At 8:27",
+   "idea": "Rainha dos etíopes com joias de ouro e manto real",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "ACT",
+      8
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rainha Candace (At 8:27)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
+  },
+  {
+   "id": "epico_rei",
+   "name": "Traje de corte do rei",
+   "rarity": "epic",
+   "world": "reinos",
+   "group": "realeza",
+   "scriptureRef": "1 Rs 10:18-19",
+   "idea": "Manto de púrpura, coroa de ouro e cetro",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ]
+  },
+  {
+   "id": "epico_rainha",
+   "name": "Traje de corte da rainha",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "group": "realeza",
+   "scriptureRef": "Sl 45:9",
+   "idea": "Vestes com ouro de Ofir, coroa leve",
+   "presentation": "feminina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    }
+   ]
+  },
+  {
+   "id": "raro_rei_asa",
+   "name": "Traje de Rei Asa",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "realeza",
+   "scriptureRef": "1 Rs 15:11-12",
+   "idea": "Rei reformador com manto real e coroa simples",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "1KI",
+      15
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rei Asa (1 Rs 15:11-12)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ]
+  },
+  {
+   "id": "raro_rei_uzias",
+   "name": "Traje de Rei Uzias",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "realeza",
+   "scriptureRef": "2 Cr 26:4-5, 15",
+   "idea": "Rei construtor com a planta das torres de Jerusalém",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2CH",
+      26
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rei Uzias (2 Cr 26:4-5, 15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ]
+  },
+  {
+   "id": "raro_rei_jotao",
+   "name": "Traje de Rei Jotão",
+   "rarity": "rare",
+   "world": "reinos",
+   "group": "realeza",
+   "scriptureRef": "2 Cr 27:3, 6",
+   "idea": "Jovem rei que construiu a porta superior do templo",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "2CH",
+      27
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Rei Jotão (2 Cr 27:3, 6)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_filhas_de_jo",
+   "name": "Traje das filhas de Jó",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "realeza",
+   "scriptureRef": "Jó 42:14-15",
+   "idea": "Três irmãs herdeiras com joias e mantos finos",
+   "presentation": "feminina",
+   "character": "feminino",
+   "rule": {
+    "chapters": [
+     [
+      "JOB",
+      42
+     ]
+    ]
+   },
+   "howTo": "Ler a história das filhas de Jó (Jó 42:14-15)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    }
+   ]
+  },
+  {
+   "id": "raro_jovens_da_linhagem_real",
+   "name": "Traje dos jovens da linhagem real",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "realeza",
+   "scriptureRef": "Dn 1:3-4",
+   "idea": "Príncipes de Judá vestidos para a corte da Babilônia",
+   "presentation": "masculina",
+   "character": "masculino",
+   "rule": {
+    "chapters": [
+     [
+      "DAN",
+      1
+     ]
+    ]
+   },
+   "howTo": "Ler a história de Jovens da linhagem real (Dn 1:3-4)",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_principe",
+   "name": "Traje de corte do príncipe",
+   "rarity": "rare",
+   "world": "profetas",
+   "group": "realeza",
+   "scriptureRef": "Dn 1:3",
+   "idea": "Túnica fina, faixa e anel de selo",
+   "presentation": "masculina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ]
+  },
+  {
+   "id": "raro_princesa",
+   "name": "Traje de corte da princesa",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "group": "realeza",
+   "scriptureRef": "Sl 45:13-14",
+   "idea": "Vestido bordado a ouro, véu e diadema",
+   "presentation": "feminina",
+   "rule": null,
+   "howTo": "Mercado dos Viajantes (Siclos)",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    }
+   ]
   }
  ]
 }

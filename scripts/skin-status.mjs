@@ -34,7 +34,7 @@ for (const lot of lots) {
   lines.push(`## ${lot.id} · ${lot.titulo} (${ok}/${st.length})`, '', '| | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |', '|---|---|---|---|---|---|---|');
   for (const s of st) {
     const meta = s.app ?? planned.get(s.id) ?? {};
-    const how = s.how === 'leitura' ? `lendo: ${ruleLabel(s.id)}` : s.how ?? planned.get(s.id)?.howTo ?? '—';
+    const how = s.how === 'leitura' ? `lendo: ${ruleLabel(s.id)}` : s.how ?? (planned.get(s.id)?.inShop ? 'loja (Siclos)' : planned.get(s.id)?.howTo) ?? '—';
     lines.push(`| ${s.icon} | ${meta.name ?? s.id} (\`${s.id}\`) | ${RAR[meta.rarity] ?? '—'} | ${meta.world ?? 'origens'} | ${s.p ? '✔' : '—'} | ${s.f ? '✔' : '—'} | ${how} |`);
   }
   lines.push('');
@@ -53,7 +53,8 @@ for (const lot of plan.lotes) {
     const p = planned.get(id); const app = inApp.get(id);
     const name = p?.name ?? app?.name ?? id; const ref = p?.scriptureRef ?? app?.scriptureRef ?? '';
     const sty = (p?.styles ?? app?.styles ?? []).map((st, i) => `estilo-${i + 1}: ${st.skinTone}, ${st.hairColor}, ${st.hairStyle}`).join(' · ');
-    brief.push(`- **${name}** (\`${id}\`), ${RAR[p?.rarity ?? app?.rarity] ?? ''}, ${ref}. ${p?.idea ? `Traje: ${p.idea}.` : 'Traje: ver a tabela de `TEMPORADA-1-EXODO.md`.'} Apresentação ${p?.presentation ?? (/(miria|zipora)/.test(id) ? 'feminina' : 'masculina')}${(p?.character || app?.character || ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity)) ? ' (personagem bíblico: só esta apresentação, sem a do outro sexo)' : ' (figura genérica: feminina adicional quando o traje permitir)'}.`, `  ${sty}`);
+    const extra = p?.pair ? ` Casal: apresentação padrão masculina (Áquila) e feminina (${p.pair}), com o nome de cada um no \`nomeExibicao\`.` : p?.inShop ? ' Vai para a loja (Siclos).' : '';
+    brief.push(`- **${name}** (\`${id}\`), ${RAR[p?.rarity ?? app?.rarity] ?? ''}, ${ref}.${extra} ${p?.idea ? `Traje: ${p.idea}.` : 'Traje: ver a tabela de `TEMPORADA-1-EXODO.md`.'} Apresentação ${p?.presentation ?? (/(miria|zipora)/.test(id) ? 'feminina' : 'masculina')}${p?.pair ? '' : (p?.character || app?.character || ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity)) ? ' (personagem bíblico: só esta apresentação, sem a do outro sexo)' : ' (figura genérica: feminina adicional quando o traje permitir)'}.`, `  ${sty}`);
   }
   brief.push('');
 }
