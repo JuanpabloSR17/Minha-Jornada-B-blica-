@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { SkinThumb } from '@/features/skins/SkinThumb';
 import { ActivityIndicator, AppState, ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
@@ -10,9 +11,7 @@ import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { uuidv4 } from '@/features/reading/mission/session';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
-import { getSkin, skinToneColor, styleLook } from '@/features/skins/catalog';
+import { getSkin, skinToneColor, variantsOf } from '@/features/skins/catalog';
 import { getSkinMarket, pendingSkinStorage, purchaseSkin, type PendingSkinPurchase, type SkinMarketState, type SkinOffer } from './market.service';
 
 const m = strings.market;
@@ -247,18 +246,18 @@ function MarketContent() {
     const skin = getSkin(o.skinId);
     if (!skin) return null;
     const idx = style[o.skinId] ?? 0;
-    const look = styleLook(skin.styles[idx] ?? skin.styles[0]!);
     const color = RARITY_COLOR[o.rarity];
     const days = market!.days[o.rarity];
     return (
       <View key={o.skinId} testID={`market-${o.skinId}`} accessible={false}
         style={[big ? styles.featured : styles.card, { borderColor: color, backgroundColor: colors.surface }]}>
         <View style={[styles.portrait, { borderColor: color }]}>
-          <FirelightPortrait look={look} wear={wearFrom(skin.preview)} width={big ? 168 : 112} />
+          <SkinThumb skin={skin} style={idx + 1} size={big ? 168 : 112} />
         </View>
         <View style={styles.info}>
           <AppText variant="label" style={styles.name}>{skin.name}</AppText>
           <AppText variant="caption" color={color} style={styles.rarity}>{strings.rarity[o.rarity]} · {skin.scriptureRef}</AppText>
+          {variantsOf(skin.id).length > 1 ? <AppText variant="caption" muted>{strings.vestiario.hasFeminine}</AppText> : null}
           <StylePicker skinId={o.skinId} value={idx} onChange={(i) => setStyle((s) => ({ ...s, [o.skinId]: i }))} />
           <View style={styles.priceRow}>
             {o.gift ? (

@@ -90,7 +90,7 @@ assets/skins/<id>/
 
 ## 3. Ordem dos lotes
 
-1. **Lote A (prova):** `comum_peregrino_exodo`, `raro_levita` e `lendario_moises`, nos 3 estilos (9 pinturas). Serve para validar enquadramento, âncoras e recortes antes do volume.
+1. **Lote A (prova) — entregue e aplicado, com apresentações femininas, Tecelã e Parteira:** `comum_peregrino_exodo`, `raro_levita` e `lendario_moises`, nos 3 estilos (9 pinturas). Serve para validar enquadramento, âncoras e recortes antes do volume.
 2. **Lote B:** as demais Comuns e Raras (18 skins).
 3. **Lote C:** Épicas.
 4. **Lote D:** Lendárias e Gloriosas.

@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
+import { SkinThumb } from './SkinThumb';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import Svg, { Defs, LinearGradient, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
@@ -9,13 +10,11 @@ import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
 import { getMyAvatar } from '@/features/avatar/services/avatar.service';
 import type { AvatarState } from '@/features/avatar/domain/avatar.types';
 import {
-  RARITY_ORDER, SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, howToGet, skinLook, skinToneColor, styleLook,
-  type Skin, type SkinSelection,
+  RARITY_ORDER, SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, howToGet, skinDisplayName, skinLook, skinToneColor, variantsOf,
+  type Skin, type SkinSelection, type SkinVariant,
 } from './catalog';
 import { equipSkin, getMySkins, type ReadingRule } from './skins.service';
 
@@ -70,7 +69,7 @@ function SkinTile({ skin, owned, worn, active, rule, onPress }: { skin: Skin; ow
       accessibilityState={{ selected: active }}
       style={[styles.tile, { borderColor: active ? '#FFE7A3' : color + (owned ? 'CC' : '55') }]}>
       <View style={[styles.tileArt, !owned && styles.dim]}>
-        <FirelightPortrait look={styleLook(skin.styles[0]!)} wear={wearFrom(skin.preview)} width={96} />
+        <SkinThumb skin={skin} size={96} />
       </View>
       <View style={[styles.tileGem, { backgroundColor: color }]} />
       {!owned ? <View style={styles.lock}><Icon name="lock" color="#F6ECD6" size={16} /></View> : null}
@@ -120,10 +119,13 @@ function VestiarioContent() {
 
   const skin = getSkin(focus?.skinId) ?? getSkin(worn?.skinId);
   const style = focus?.style ?? 1;
+  const variants = skin ? variantsOf(skin.id) : (['padrao'] as SkinVariant[]);
+  const variant: SkinVariant = focus?.variant && variants.includes(focus.variant) ? focus.variant : 'padrao';
+  const shownName = skin ? skinDisplayName(skin, variant) : '';
   const isOwned = !!skin && !!owned?.has(skin.id);
-  const isWorn = !!skin && worn?.skinId === skin.id && worn.style === style;
+  const isWorn = !!skin && worn?.skinId === skin.id && worn.style === style && (worn.variant ?? 'padrao') === variant;
   const color = skin ? SKIN_RARITY_COLOR[skin.rarity] : '#E9BA5B';
-  const look = useMemo(() => skinLook(base, skin ? { skinId: skin.id, style } : worn), [base, skin, style, worn]);
+  const look = useMemo(() => skinLook(base, skin ? { skinId: skin.id, style, variant } : worn), [base, skin, style, variant, worn]);
   const list = SKINS.filter((s) => filter === 'all' || owned?.has(s.id));
   const groups = RARITY_ORDER.map((r) => ({ r, items: list.filter((s) => s.rarity === r) })).filter((g) => g.items.length);
   const total = SKINS.length;
@@ -133,9 +135,9 @@ function VestiarioContent() {
     setBusy(true);
     setMsg(null);
     try {
-      const sel = await equipSkin(skin.id, style);
+      const sel = await equipSkin(skin.id, style, variant);
       setWorn(sel);
-      setMsg({ tone: 'success', text: fmt(v.wearing, { skin: skin.name, n: style }) });
+      setMsg({ tone: 'success', text: fmt(v.wearing, { skin: shownName, n: style }) });
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
     } finally {
@@ -159,9 +161,23 @@ function VestiarioContent() {
 
       {skin ? (
         <View style={styles.info}>
-          <AppText style={styles.name} color="#F6ECD6" testID="vestiario-name">{skin.name}</AppText>
+          <AppText style={styles.name} color="#F6ECD6" testID="vestiario-name">{shownName}</AppText>
           <AppText variant="caption" color="#C9BBA0">{skin.scriptureRef}</AppText>
-          <StyleSwatches skin={skin} value={style} onChange={(n) => setFocus({ skinId: skin.id, style: n })} />
+          {variants.length > 1 ? (
+            <View style={styles.swatches} accessibilityRole="radiogroup" accessibilityLabel={v.variants}>
+              {variants.map((vr) => {
+                const on = vr === variant;
+                return (
+                  <Pressable key={vr} onPress={() => setFocus({ skinId: skin.id, style, variant: vr })} accessibilityRole="radio" aria-checked={on}
+                    accessibilityState={{ checked: on }} accessibilityLabel={fmt(v.variantLabel, { name: skinDisplayName(skin, vr) })}
+                    style={[styles.swatch, on && styles.swatchOn]}>
+                    <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{skinDisplayName(skin, vr)}</AppText>
+                  </Pressable>
+                );
+              })}
+            </View>
+          ) : null}
+          <StyleSwatches skin={skin} value={style} onChange={(n) => setFocus({ skinId: skin.id, style: n, variant })} />
           {isOwned ? (
             <Button variant="gold" icon="check" title={isWorn ? v.isWorn : fmt(v.wear, { n: style })} disabled={isWorn} loading={busy} onPress={wear} />
           ) : (
@@ -208,7 +224,7 @@ function VestiarioContent() {
             {g.items.map((s) => (
               <SkinTile key={s.id} skin={s} owned={!!owned?.has(s.id)} worn={worn?.skinId === s.id} rule={rules[s.id]}
                 active={skin?.id === s.id}
-                onPress={() => setFocus({ skinId: s.id, style: worn?.skinId === s.id ? worn.style : 1 })} />
+                onPress={() => setFocus(worn?.skinId === s.id ? worn : { skinId: s.id, style: 1, variant: 'padrao' })} />
             ))}
           </View>
         </View>

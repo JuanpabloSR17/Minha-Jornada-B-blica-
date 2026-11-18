@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
+import { SkinThumb } from '@/features/skins/SkinThumb';
 import { ActivityIndicator, Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,9 +14,7 @@ import { useMilestones } from '@/features/reading/useMilestones';
 import { refLabel } from '@/features/reading/refs';
 import { journeyProgress, WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
-import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, styleLook } from '@/features/skins/catalog';
+import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL } from '@/features/skins/catalog';
 import { getMySkins } from '@/features/skins/skins.service';
 import { WorldScene } from './WorldScene';
 import { WORLD_THEMES, type WorldId } from './worldThemes';
@@ -222,7 +221,7 @@ function WorldContent({ id }: { id: string }) {
                 <Pressable key={s.id} onPress={() => router.push('/vestiario')} accessibilityRole="button"
                   accessibilityLabel={`${s.name}, ${SKIN_RARITY_LABEL[s.rarity]}${has ? '' : `, ${strings.vestiario.locked}`}`}
                   style={[styles.skin, { borderColor: SKIN_RARITY_COLOR[s.rarity] + (has ? 'DD' : '55') }]}>
-                  <View style={!has && { opacity: 0.4 }}><FirelightPortrait look={styleLook(s.styles[0]!)} wear={wearFrom(s.preview)} width={72} /></View>
+                  <View style={!has && { opacity: 0.4 }}><SkinThumb skin={s} size={72} /></View>
                   {!has ? <View style={styles.lock}><Icon name="lock" color="#F6ECD6" size={14} /></View> : null}
                 </Pressable>
               );

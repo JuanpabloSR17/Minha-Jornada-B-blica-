@@ -514,6 +514,9 @@ export const ptBR = {
     locked: 'bloqueada',
     lockedTitle: 'Ainda não é sua',
     readingTitle: 'Conquiste lendo',
+    variants: 'Apresentação da skin',
+    variantLabel: 'Apresentação: {name}',
+    hasFeminine: 'Inclui apresentação feminina',
     progress: '{done} de {total}',
     newTitle: 'Nova skin conquistada!',
     newBody: 'Sua leitura conquistou {skin}. Ela já está no seu Vestiário, com os 3 estilos.',
@@ -525,7 +528,7 @@ export const ptBR = {
     wearing: 'Pronto: você está vestindo {skin}, estilo {n}.',
     mine: 'Minhas ({n})',
     all: 'Todas ({n})',
-    note: 'As skins pintadas da Temporada de Êxodo chegam aos poucos; até lá, cada skin aparece com o traje provisório.',
+    note: 'As pinturas da Temporada de Êxodo chegam em lotes; as skins ainda sem pintura aparecem com o traje provisório.',
   },
   market: {
     title: 'Mercado dos Viajantes',
@@ -566,7 +569,7 @@ export const ptBR = {
     pendingBody: 'Skin {item} por {price} Siclos: a conexão caiu antes da resposta do servidor. Verifique para recuperar o resultado; nada será cobrado duas vezes.',
     pendingCheck: 'Verificar compra',
     pendingDiscard: 'Descartar aviso',
-    previewNote: 'Prévia provisória: a pintura final da skin chega com a Temporada 1.',
+    previewNote: 'Skins ainda sem pintura aparecem com o traje provisório até a arte final chegar.',
     empty: 'Nenhuma skin à venda no momento.',
   },
 

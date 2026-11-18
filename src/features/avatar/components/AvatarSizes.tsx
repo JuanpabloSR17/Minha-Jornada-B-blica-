@@ -15,7 +15,7 @@ export function AvatarBadge({ look, size = 48, label }: { look: AvatarLook; size
   const { colors } = useTheme();
   return (
     <View style={[styles.badge, { width: size, height: size, borderRadius: size / 2, borderColor: colors.borderStrong, backgroundColor: colors.stage }]}>
-      <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} size={size} fillWidth={size} crop="bust" showBackground={false} accessibilityLabel={label} />
+      <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} painted={look.painted} size={size} fillWidth={size} crop="bust" showBackground={false} accessibilityLabel={label} />
     </View>
   );
 }
@@ -25,7 +25,7 @@ export function AvatarCard({ look, title, subtitle, height = 220, width = 150 }:
   return (
     <View style={[styles.card, { width, backgroundColor: colors.surfaceRaised, borderColor: colors.border }]}>
       <View style={[styles.cardArt, { height, backgroundColor: colors.stage }]}>
-        <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} size={height} fillWidth={width - 8} accessibilityLabel={title} />
+        <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} painted={look.painted} size={height} fillWidth={width - 8} accessibilityLabel={title} />
       </View>
       {title ? <AppText variant="label" numberOfLines={1}>{title}</AppText> : null}
       {subtitle ? <AppText variant="caption" muted numberOfLines={1}>{subtitle}</AppText> : null}

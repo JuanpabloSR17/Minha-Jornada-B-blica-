@@ -3,6 +3,7 @@ import type { AppearanceKey, AvatarLook } from './avatar.types';
 
 /** Descrição textual do visual, para leitores de tela. */
 export function describeLook(look: AvatarLook): string {
+  if (look.label) return look.label;
   const parts: string[] = [];
   for (const key of ['bodyId', 'skinToneId', 'hairStyleId', 'hairColorId', 'expressionId', 'beardId'] as AppearanceKey[]) {
     const opt = getOption(APPEARANCE_KEY_CATEGORY[key], look.appearance[key]);

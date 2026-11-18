@@ -170,3 +170,21 @@ A venda de skins com dinheiro real (R$ 4,90 a R$ 9,90) fica para uma fase poster
 - **Desenho até a pintura chegar.** O viajante é desenhado com o estilo da skin (pele e cabelo) e o traje provisório do `preview` em `season1.json`. Quando a pintura de uma skin for entregue em `assets/skins/<id>/estilo-N/corpo.webp`, ela substitui esse desenho no Vestiário, no acampamento, no perfil e na loja.
 - **Páginas dos mundos.** Cada mundo tem página própria (`/world/<id>`) com cena vetorial, trilha dos livros, marcos e skins do mundo. A Temporada 1 (Êxodo) aparece no mundo das Origens. Para as próximas temporadas, a ficha da skin já traz o `mundo`, que é o que liga a skin à página.
 - **Marcos sem peças.** Os marcos continuam como conquistas de leitura. A próxima etapa natural é ligar Lendárias e Gloriosas aos marcos e aos livros concluídos (por exemplo, Êxodo 34 → `glorioso_moises_rosto_resplandecente`), para que essas skins se conquistem lendo, como combinado.
+
+## 9. Entrega do Lote A ampliado: aplicada (18/11/2026)
+
+Pacote `Jornada_Biblica_Exodo_Lote_A_Ampliado.zip` (SHA-256 `2c1e43ed54dcbee8828e1f40b91f60a96e628a42047d8266c648d3be9a1dd55b`). Não veio o arquivo `.zip.sha256` citado no LEIA-ME; o hash acima foi calculado na chegada. As 83 somas do `SHA256SUMS.txt` conferem.
+
+**Aprovado e aplicado:** 24 pinturas, incluindo o Lote A completo (Peregrino, Levita e Manto de Moisés), as apresentações femininas dessas 3 skins, a Tecelã e a Parteira.
+- Tamanhos 1024 × 1536 e 2048 × 3072. Ícones de 256 × 256. Base entre 165 e 217 KB.
+- Pés em y = 1451–1452. Cantos transparentes. Névoa de alfa desprezível.
+- Estilos idênticos ao `season1.json`. O 2.5D é coerente com os personagens.
+
+**Como entrou no app:**
+- A pintura substitui o traje provisório no Vestiário, no acampamento (com a luz da fogueira), no Perfil, na loja, no cartão público e na comemoração.
+- O mapa das pinturas é gerado por `node scripts/gen-skin-art.mjs` → `src/features/skins/art.generated.ts`.
+- **Apresentação feminina:** a migração `20261127000100_skin_variants.sql` cria `skins.variants` e `user_skin_selection.variant`, e o RPC passa a ser `equip_skin(skin, estilo, apresentação)`. A escolha aparece no Vestiário e no cadastro ("Peregrino do Êxodo / Peregrina do Êxodo") e usa o `nomeExibicao` da ficha.
+
+**Observação para os próximos lotes:** o Manto de Moisés (Lendário) ficou próximo do Peregrino (Comum): cajado, bolsa e manto parecidos. Reforce o que torna a Lendária reconhecível, como o manto de pastor de Midiã mais nobre e o cajado característico, sem fugir do 2.5D.
+
+**Próximo lote (B):** as demais Comuns e Raras, começando pelas que estão na loja (Carpinteiro, Sacerdote, Bordador, Ourives, Gravador e Perfumista). Inclua a apresentação feminina na mesma rodada quando fizer sentido para o traje. Para cada apresentação nova, a skin precisa constar em `skins.variants` no banco; eu faço essa migração ao aplicar o lote.

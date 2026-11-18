@@ -20,8 +20,8 @@ export async function getMySkins(): Promise<MySkins> {
 }
 
 /** Veste uma skin que o jogador tem, num dos 3 estilos. */
-export async function equipSkin(skinId: string, style: number): Promise<SkinSelection> {
-  return (await rpc('equip_skin', { p_skin: skinId, p_style: style })) as SkinSelection;
+export async function equipSkin(skinId: string, style: number, variant: 'padrao' | 'feminino' = 'padrao'): Promise<SkinSelection> {
+  return (await rpc('equip_skin', { p_skin: skinId, p_style: style, p_variant: variant })) as SkinSelection;
 }
 
 /** Skins conquistadas lendo que ainda não foram comemoradas neste aparelho. */

@@ -2,6 +2,8 @@ import season1 from './season1.json';
 import { APPEARANCE_OPTIONS, COSMETIC_ITEMS, getItem } from '@/features/avatar/domain/catalog';
 import { defaultLook } from '@/features/avatar/domain/avatar.rules';
 import type { AvatarLook, Equipment, EquipmentSlot } from '@/features/avatar/domain/avatar.types';
+import { SKIN_ART, type SkinVariant } from './art.generated';
+export type { SkinVariant } from './art.generated';
 
 export type SkinRarity = 'common' | 'rare' | 'epic' | 'legendary' | 'glorious';
 export type SkinOrigin = 'inicio' | 'leitura' | 'missao' | 'temporada-gratis' | 'temporada-premium' | 'loja' | 'siclos';
@@ -36,8 +38,21 @@ export function styleLook(style: SkinStyle) {
 }
 export const skinToneColor = (style: SkinStyle) => color('skin_tone', style.skinTone);
 
-export type SkinSelection = { skinId: string; style: number };
-export const DEFAULT_SELECTION: SkinSelection = { skinId: 'comum_peregrino_exodo', style: 1 };
+export type SkinSelection = { skinId: string; style: number; variant?: SkinVariant };
+export const DEFAULT_SELECTION: SkinSelection = { skinId: 'comum_peregrino_exodo', style: 1, variant: 'padrao' };
+
+/** Apresentações pintadas da skin (a padrão sempre existe; a feminina, quando entregue). */
+export const variantsOf = (id: string): SkinVariant[] => {
+  const art = SKIN_ART[id];
+  return art?.feminino ? ['padrao', 'feminino'] : ['padrao'];
+};
+/** Nome da skin na apresentação escolhida (ex.: "Peregrina do Êxodo"). */
+export const skinDisplayName = (skin: Skin, variant?: SkinVariant) => (variant && SKIN_ART[skin.id]?.[variant]?.name) || skin.name;
+/** Pintura do corpo inteiro (1024×1536) do estilo, se já entregue. */
+export const paintedBody = (id: string, style: number, variant: SkinVariant = 'padrao') =>
+  (SKIN_ART[id]?.[variant] ?? SKIN_ART[id]?.padrao)?.styles[Math.min(Math.max(style - 1, 0), 2)];
+/** Miniatura pintada (256×256) da apresentação, se já entregue. */
+export const paintedIcon = (id: string, variant: SkinVariant = 'padrao') => (SKIN_ART[id]?.[variant] ?? SKIN_ART[id]?.padrao)?.icon;
 
 /**
  * Viajante vestido com a skin: o estilo escolhido decide pele e cabelo, e a prévia da skin decide
@@ -49,9 +64,14 @@ export function skinLook(base: AvatarLook | null | undefined, sel: SkinSelection
   const style = skin.styles[Math.min(Math.max((sel?.style ?? 1) - 1, 0), skin.styles.length - 1)]!;
   const equipment: Equipment = {};
   for (const [slot, id] of Object.entries(skin.preview)) if (id && getItem(id)) equipment[slot as EquipmentSlot] = id;
+  const n = Math.min(Math.max(sel?.style ?? 1, 1), 3);
+  const variant = sel?.variant && variantsOf(skin.id).includes(sel.variant) ? sel.variant : 'padrao';
+  const painted = paintedBody(skin.id, n, variant);
   return {
     appearance: { ...look.appearance, bodyId: 'body-b', skinToneId: style.skinTone, hairColorId: style.hairColor, hairStyleId: style.hairStyle },
     equipment,
+    ...(painted ? { painted } : {}),
+    label: `${skinDisplayName(skin, variant)}, estilo ${n}`,
   };
 }
 

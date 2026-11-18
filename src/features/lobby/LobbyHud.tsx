@@ -61,7 +61,7 @@ export function LobbyHud({
       >
         <View style={styles.portraitRing}>
           <View style={styles.portrait}>
-            {look ? <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} size={46} crop="head" showBackground={false} accessibilityLabel="" /> : null}
+            {look ? <AvatarRenderer appearance={look.appearance} equippedItems={look.equipment} painted={look.painted} size={46} crop="head" showBackground={false} accessibilityLabel="" /> : null}
           </View>
           <LevelShield n={lv.level} />
         </View>

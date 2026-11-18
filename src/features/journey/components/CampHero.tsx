@@ -37,6 +37,7 @@ export function CampHero({ look, height, top, bottom, side }: { look: AvatarLook
               <AvatarRenderer
                 appearance={look.appearance}
                 equippedItems={look.equipment}
+                painted={look.painted}
                 size={avatarH}
                 crop="camp"
                 lighting="camp"

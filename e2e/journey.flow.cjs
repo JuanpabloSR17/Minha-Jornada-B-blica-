@@ -50,6 +50,7 @@ async function onboard(page, { name, user, skin, style }) {
   return (await db.query('select id from profiles where username = $1', [user])).rows[0].id;
 }
 const worn = async (userId) => (await db.query('select skin_id, style from user_skin_selection where user_id = $1', [userId])).rows[0];
+const wornVariant = async (userId) => (await db.query('select variant from user_skin_selection where user_id = $1', [userId])).rows[0].variant;
 const campAvatar = (page) => page.getByRole('img', { name: /^Seu personagem no acampamento/ });
 const finishHere = async (page) => {
   await page.getByRole('button', { name: 'Finalizar missão' }).click();
@@ -108,6 +109,20 @@ async function steady(locator) {
   assert.ok(sameLook(after, reopened), `após reabrir, o acampamento mostra a mesma skin (diferença ${(diffRatio(after, reopened) * 100).toFixed(2)}%)`);
   assert.deepEqual(await worn(rute), { skin_id: 'comum_peregrino_exodo', style: 2 });
   step('troca de skin no Vestiário aparece no acampamento e continua igual após reabrir o app');
+
+  // apresentação feminina pintada do mesmo traje (Peregrina do Êxodo), salva no servidor
+  await A.page.goto(`${APP}/vestiario`);
+  await A.page.getByTestId('vestiario-comum_peregrino_exodo').click();
+  await A.page.getByRole('radio', { name: 'Apresentação: Peregrina do Êxodo' }).click();
+  await A.page.getByTestId('vestiario-name').getByText('Peregrina do Êxodo').waitFor();
+  await A.page.getByRole('button', { name: 'Vestir o estilo 2' }).click();
+  await A.page.getByText('Pronto: você está vestindo Peregrina do Êxodo, estilo 2.').waitFor();
+  assert.equal(await wornVariant(rute), 'feminino');
+  await shot(A.page, 'j-vestiario-feminino-320');
+  await A.page.goto(`${APP}/home`);
+  assert.ok((await campAvatar(A.page).getAttribute('aria-label')).includes('Peregrina do Êxodo, estilo 2'), 'o acampamento mostra a Peregrina');
+  await shot(A.page, 'j-camp-feminino-320');
+  step('apresentação feminina pintada (Peregrina do Êxodo) escolhida no Vestiário, salva no servidor e mostrada no acampamento');
 
   // ================================================================ marco de Êxodo 25 (320 px)
   const page = A.page;

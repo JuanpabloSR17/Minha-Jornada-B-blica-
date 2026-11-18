@@ -29,6 +29,8 @@ export type AvatarRendererProps = {
    * da fogueira à direita; `neutral` (padrão) = luz neutra, para comparar peças no guarda-roupa.
    */
   lighting?: 'neutral' | 'camp';
+  /** pintura inteira da skin no quadro 1024×1536: substitui as camadas do corpo e das peças */
+  painted?: ImageSourcePropType;
   /** só a arte vetorial de referência (moldes de encaixe para a pintura), ignorando PNG/WebP registrados */
   vectorOnly?: boolean;
   accessibilityLabel?: string;
@@ -80,6 +82,7 @@ function AvatarRendererBase({
   style,
   lighting = 'neutral',
   vectorOnly = false,
+  painted,
 }: AvatarRendererProps) {
   const rawId = useId();
   const uid = useMemo(() => `av${rawId.replace(/[^a-zA-Z0-9]/g, '')}`, [rawId]);
@@ -140,7 +143,7 @@ function AvatarRendererBase({
     );
     if (lighting === 'camp') silhouette.push(...draw('#m'));
   };
-  for (const layer of layers) {
+  for (const layer of painted ? layers.filter((l) => l.slot === 'background') : layers) {
     const art = resolveArt(layer.assetKey, appearance.bodyId, armPose);
     if (!art) continue;
     if (art.type === 'vector') {
@@ -163,6 +166,12 @@ function AvatarRendererBase({
     });
   }
   flush();
+  if (painted) {
+    chunks.push(<Image key="painted" source={painted} resizeMode="stretch" style={[styles.abs, canvasStyle]} />);
+    if (lighting === 'camp') {
+      silhouette.push(<SvgImage key="painted#m" href={painted} x={0} y={0} width={CANVAS.width} height={CANVAS.height} preserveAspectRatio="none" />);
+    }
+  }
   // luz da cena por cima de tudo, recortada pela silhueta (vale para arte vetorial e pintada)
   if (lighting === 'camp' && silhouette.length) {
     chunks.push(

@@ -102,6 +102,7 @@ export function setEquipped(equipment: Equipment, slot: EquipmentSlot, itemId: s
 }
 
 export function looksEqual(a: AvatarLook, b: AvatarLook): boolean {
+  if ((a.painted ?? null) !== (b.painted ?? null)) return false;
   const ka = Object.keys(APPEARANCE_KEY_CATEGORY) as AppearanceKey[];
   if (ka.some((k) => a.appearance[k] !== b.appearance[k])) return false;
   return EQUIPMENT_SLOTS.every((s) => (a.equipment[s] ?? null) === (b.equipment[s] ?? null));

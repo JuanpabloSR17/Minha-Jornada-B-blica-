@@ -54,6 +54,7 @@ export function AvatarStage({
     <AvatarRenderer
       appearance={shot.look.appearance}
       equippedItems={shot.look.equipment}
+      painted={shot.look.painted}
       size={height - 4}
       crop={shot.camera}
       fillWidth={width ? width - 4 : undefined}

@@ -26,3 +26,29 @@ describe('catálogo de skins', () => {
     expect(SKINS.filter((s) => s.inShop).every((s) => ['common', 'rare', 'epic'].includes(s.rarity))).toBe(true);
   });
 });
+
+describe('pinturas entregues (art.generated)', () => {
+  const { SKIN_ART } = require('../art.generated');
+  const { skinLook, variantsOf, skinDisplayName, getSkin } = require('../catalog');
+  it('toda pintura pertence a uma skin do catálogo e traz os 3 estilos e o ícone', () => {
+    for (const [id, variants] of Object.entries(SKIN_ART) as [string, Record<string, { styles: unknown[]; icon: unknown }>][]) {
+      expect(getSkin(id)).toBeTruthy();
+      for (const art of Object.values(variants)) {
+        expect(art.styles).toHaveLength(3);
+        expect(art.icon).toBeTruthy();
+      }
+    }
+  });
+  it('o Lote A, Tecelã e Parteira estão pintados; as femininas têm nome próprio', () => {
+    for (const id of ['comum_peregrino_exodo', 'raro_levita', 'lendario_moises', 'comum_tecela', 'comum_parteira']) expect(SKIN_ART[id]?.padrao).toBeTruthy();
+    expect(variantsOf('comum_peregrino_exodo')).toEqual(['padrao', 'feminino']);
+    expect(variantsOf('comum_pastor')).toEqual(['padrao']);
+    expect(skinDisplayName(getSkin('comum_peregrino_exodo'), 'feminino')).toBe('Peregrina do Êxodo');
+  });
+  it('skinLook usa a pintura do estilo e da apresentação, e cai no desenho provisório sem pintura', () => {
+    const f2 = skinLook(null, { skinId: 'comum_peregrino_exodo', style: 2, variant: 'feminino' });
+    expect(f2.painted).toBe(SKIN_ART.comum_peregrino_exodo.feminino.styles[1]);
+    expect(f2.label).toBe('Peregrina do Êxodo, estilo 2');
+    expect(skinLook(null, { skinId: 'comum_pastor', style: 1, variant: 'feminino' }).painted).toBeUndefined();
+  });
+});

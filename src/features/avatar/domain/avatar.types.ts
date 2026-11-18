@@ -121,6 +121,10 @@ export type Representation = 'literal' | 'inspired' | 'metaphorical' | 'symbolic
 export type AvatarLook = {
   appearance: AvatarAppearance;
   equipment: Equipment;
+  /** pintura inteira da skin (1024×1536, mesmo quadro do canvas); substitui as camadas */
+  painted?: number | { uri: string };
+  /** descrição para leitores de tela quando o visual vem de uma skin */
+  label?: string;
 };
 
 /** Estado persistido no servidor. */

@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { SkinThumb } from '@/features/skins/SkinThumb';
 import { ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -14,8 +15,6 @@ import { goalLabel } from './goalLabel';
 import { useMyAvatar } from '@/features/avatar/hooks/useMyAvatar';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
 import { setPrivacyMode } from '@/features/avatar/services/wardrobe.service';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
 import { useMilestones } from '@/features/reading/useMilestones';
 import { milestoneSummary } from '@/features/reading/milestones';
 import { getWorldProgress, type WorldProgress } from '@/features/reading/mission/mission.service';
@@ -24,7 +23,7 @@ import { nextBookObjective, readingLevel } from '@/features/journey/progression'
 import { WORLDS } from '@/features/journey/worlds';
 import { worldIcons } from '@/features/journey/worldIcons';
 import { WORLD_THEMES, type WorldId } from '@/features/worlds/worldThemes';
-import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, styleLook } from '@/features/skins/catalog';
+import { SKINS, SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin } from '@/features/skins/catalog';
 import { getMySkins } from '@/features/skins/skins.service';
 
 const p = strings.profile;
@@ -233,7 +232,7 @@ function Profile() {
             <Pressable key={s.id} onPress={() => router.push('/vestiario')} accessibilityRole="button"
               accessibilityLabel={`${s.name}, ${SKIN_RARITY_LABEL[s.rarity]}`}
               style={[styles.skin, { borderColor: SKIN_RARITY_COLOR[s.rarity] }, selection?.skinId === s.id && styles.skinWorn]}>
-              <FirelightPortrait look={styleLook(s.styles[0]!)} wear={wearFrom(s.preview)} width={64} />
+              <SkinThumb skin={s} size={64} />
             </Pressable>
           ))}
           <Pressable onPress={() => router.push('/market')} accessibilityRole="button" accessibilityLabel={p.moreSkins} style={[styles.skin, styles.moreSkin]}>

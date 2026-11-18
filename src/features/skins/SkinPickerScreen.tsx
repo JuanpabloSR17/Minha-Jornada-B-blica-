@@ -9,11 +9,10 @@ import { errorMessage } from '@/lib/errors';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { AvatarStage } from '@/features/avatar/components/AvatarStage';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
 import { defaultLook } from '@/features/avatar/domain/avatar.rules';
 import { getMyAvatar, saveAvatar } from '@/features/avatar/services/avatar.service';
-import { SKINS, skinLook, skinToneColor, styleLook, type SkinSelection } from './catalog';
+import { SKINS, skinDisplayName, skinLook, skinToneColor, variantsOf, type SkinSelection, type SkinVariant } from './catalog';
+import { SkinThumb } from './SkinThumb';
 import { equipSkin } from './skins.service';
 
 const p = strings.skinPicker;
@@ -30,11 +29,13 @@ export function SkinPickerScreen({ mode, onFinished, onExit }: { mode: 'onboardi
 function Picker({ mode, onFinished, onExit }: { mode: 'onboarding' | 'guest'; onFinished?: () => void; onExit?: () => void }) {
   const router = useRouter();
   const { refreshProfile } = useAuth();
-  const [sel, setSel] = useState<SkinSelection>({ skinId: STARTERS[STARTERS.length - 1]!.id, style: 1 });
+  const [sel, setSel] = useState<SkinSelection>({ skinId: STARTERS[STARTERS.length - 1]!.id, style: 1, variant: 'padrao' });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const look = useMemo(() => skinLook(defaultLook(), sel), [sel]);
   const skin = STARTERS.find((s) => s.id === sel.skinId)!;
+  const variants = variantsOf(skin.id);
+  const variant: SkinVariant = sel.variant && variants.includes(sel.variant) ? sel.variant : 'padrao';
 
   const confirm = async () => {
     if (mode === 'guest') return router.push('/auth');
@@ -45,7 +46,7 @@ function Picker({ mode, onFinished, onExit }: { mode: 'onboarding' | 'guest'; on
       const base = defaultLook();
       // o avatar da conta guarda rosto, pele e cabelo do estilo escolhido; as peças iniciais ficam como estavam
       await saveAvatar({ appearance: { ...base.appearance, ...look.appearance }, equipment: current?.equipment ?? base.equipment }, current?.version ?? null);
-      await equipSkin(sel.skinId, sel.style);
+      await equipSkin(sel.skinId, sel.style, variant);
       await refreshProfile();
       onFinished?.();
     } catch (e) {
@@ -63,15 +64,15 @@ function Picker({ mode, onFinished, onExit }: { mode: 'onboarding' | 'guest'; on
       <View style={styles.stage}>
         <AvatarStage look={look} height={300} />
       </View>
-      <AppText style={styles.name} color="#F6ECD6" testID="picker-name">{skin.name}</AppText>
+      <AppText style={styles.name} color="#F6ECD6" testID="picker-name">{skinDisplayName(skin, variant)}</AppText>
 
       <View style={styles.row} accessibilityRole="radiogroup" accessibilityLabel={p.skinsLabel}>
         {STARTERS.map((s) => {
           const on = s.id === sel.skinId;
           return (
             <Pressable key={s.id} accessibilityRole="radio" aria-checked={on} accessibilityState={{ checked: on }} accessibilityLabel={s.name}
-              onPress={() => setSel({ skinId: s.id, style: sel.style })} style={[styles.card, on && styles.cardOn]}>
-              <View style={styles.cardArt}><FirelightPortrait look={styleLook(s.styles[sel.style - 1] ?? s.styles[0]!)} wear={wearFrom(s.preview)} width={120} /></View>
+              onPress={() => setSel({ skinId: s.id, style: sel.style, variant: 'padrao' })} style={[styles.card, on && styles.cardOn]}>
+              <View style={styles.cardArt}><SkinThumb skin={s} style={sel.style} size={104} /></View>
               <AppText style={styles.cardName} color={on ? '#FFE7A3' : '#F6ECD6'} numberOfLines={2}>{s.name}</AppText>
               {on ? <View style={styles.check}><Icon name="check" color="#120E1C" size={14} /></View> : null}
             </Pressable>
@@ -79,6 +80,20 @@ function Picker({ mode, onFinished, onExit }: { mode: 'onboarding' | 'guest'; on
         })}
       </View>
 
+      {variants.length > 1 ? (
+        <View style={styles.row} accessibilityRole="radiogroup" accessibilityLabel={strings.vestiario.variants}>
+          {variants.map((vr) => {
+            const on = vr === variant;
+            return (
+              <Pressable key={vr} accessibilityRole="radio" aria-checked={on} accessibilityState={{ checked: on }}
+                accessibilityLabel={fmt(strings.vestiario.variantLabel, { name: skinDisplayName(skin, vr) })}
+                onPress={() => setSel({ ...sel, variant: vr })} style={[styles.swatch, on && styles.swatchOn]}>
+                <AppText style={styles.swatchText} color={on ? '#FFE7A3' : '#C9BBA0'} numberOfLines={1}>{skinDisplayName(skin, vr)}</AppText>
+              </Pressable>
+            );
+          })}
+        </View>
+      ) : null}
       <AppText variant="label" color="#F6ECD6">{p.styleTitle}</AppText>
       <View style={styles.row} accessibilityRole="radiogroup" accessibilityLabel={p.stylesLabel}>
         {skin.styles.map((st, i) => {

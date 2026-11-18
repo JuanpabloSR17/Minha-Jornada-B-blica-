@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
+import { SkinThumb } from './SkinThumb';
 import { StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { fonts, radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Icon } from '@/ui';
 import { fmt, strings } from '@/i18n';
-import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
-import { wearFrom } from '@/features/avatar/styles/archetypes';
-import { SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin, styleLook } from './catalog';
+import { SKIN_RARITY_COLOR, SKIN_RARITY_LABEL, getSkin } from './catalog';
 import { equipSkin, getMySkins, seenReadingSkins } from './skins.service';
 
 const v = strings.vestiario;
@@ -40,7 +39,7 @@ export function NewSkinCelebration({ userId, refreshKey }: { userId: string | nu
         return (
           <View key={id} style={[styles.card, { borderColor: color }]} testID={`new-skin-${id}`} accessibilityRole="alert">
             <View style={[styles.art, { borderColor: color }]}>
-              <FirelightPortrait look={styleLook(skin.styles[0]!)} wear={wearFrom(skin.preview)} width={104} />
+              <SkinThumb skin={skin} size={104} />
             </View>
             <View style={styles.text}>
               <View style={styles.badge}>

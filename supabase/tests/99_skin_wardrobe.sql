@@ -5,10 +5,10 @@ select tests.mk_m('b9000000-0000-0000-0000-0000000000b9', 'vestiario_um', 0);
 select tests.mk_m('b9100000-0000-0000-0000-0000000000b9', 'vestiario_dois', 0);
 select set_config('request.jwt.claim.sub', 'b9000000-0000-0000-0000-0000000000b9', true);
 set local role authenticated;
-select tests.assert(public.get_my_skins() -> 'selected' = '{"skinId": "comum_peregrino_exodo", "style": 1}'::jsonb,
+select tests.assert(public.get_my_skins() -> 'selected' @> '{"skinId": "comum_peregrino_exodo", "style": 1}'::jsonb,
   'sem escolha, veste o Peregrino do Êxodo no estilo 1');
 select tests.assert(jsonb_array_length(public.get_my_skins() -> 'owned') = 2, 'conta nova tem as 2 skins iniciais');
-select tests.assert(public.equip_skin('comum_pastor', 3) = '{"skinId": "comum_pastor", "style": 3}'::jsonb, 'veste uma skin inicial no estilo 3');
+select tests.assert(public.equip_skin('comum_pastor', 3) @> '{"skinId": "comum_pastor", "style": 3}'::jsonb, 'veste uma skin inicial no estilo 3');
 select tests.assert(public.get_my_skins() #>> '{selected,skinId}' = 'comum_pastor', 'a escolha fica salva');
 select tests.assert_raises($$select public.equip_skin('lendario_moises', 1)$$, 'skin_not_owned', 'não veste skin que não tem');
 select tests.assert_raises($$select public.equip_skin('comum_pastor', 4)$$, 'invalid_style', 'só existem 3 estilos');
@@ -30,7 +30,7 @@ select tests.assert(public.get_public_avatar('vestiario_um') -> 'skin' is null, 
 reset role;
 update public.profiles set privacy_mode = 'public' where id = 'b9000000-0000-0000-0000-0000000000b9';
 set local role authenticated;
-select tests.assert(public.get_public_avatar('vestiario_um') -> 'skin' = '{"skinId": "raro_levita", "style": 2}'::jsonb,
+select tests.assert(public.get_public_avatar('vestiario_um') -> 'skin' @> '{"skinId": "raro_levita", "style": 2}'::jsonb,
   'perfil público mostra a skin vestida');
 reset role;
 -- se a skin sair de circulação, volta para a inicial sem quebrar o cartão
