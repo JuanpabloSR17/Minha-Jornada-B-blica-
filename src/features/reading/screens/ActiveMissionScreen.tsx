@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
-import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, ConfirmDialog, Notice, Screen } from '@/ui';
+import { fonts, radius, spacing } from '@/theme/tokens';
+import { AppText, Button, Card, ConfirmDialog, IconBadge, Notice, Screen } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { activeMs, formatClock, pauseMission, resumeMission } from '../mission/session';
@@ -75,6 +75,7 @@ function ActiveMission() {
       ) : null}
       <View style={[styles.timer, { borderColor: pending ? colors.danger : colors.primary, backgroundColor: colors.surface }]}
         accessible accessibilityRole="timer" accessibilityLabel={`${strings.mission.time}: ${clock}, ${statusLabel}`}>
+        <IconBadge name={pending ? 'cloudOff' : 'clock'} color={pending ? colors.danger : colors.primary} />
         <AppText style={[styles.clock, { color: colors.text }]}>{clock}</AppText>
         <AppText variant="label" color={pending ? colors.danger : session.status === 'running' ? colors.primary : colors.textMuted}>{statusLabel}</AppText>
       </View>
@@ -83,22 +84,22 @@ function ActiveMission() {
       {pending ? <Notice tone="info">{strings.mission.pendingBody}</Notice> : null}
 
       {pending || finishing ? (
-        <Button variant="gold" title={strings.mission.retry} loading={finishing} onPress={() => void doFinish()} />
+        <Button variant="gold" icon="cloud" title={strings.mission.retry} loading={finishing} onPress={() => void doFinish()} />
       ) : (
         <>
           {session.status === 'running' ? (
-            <Button variant="secondary" title={strings.mission.pause} onPress={() => void commit(pauseMission(session))} />
+            <Button variant="secondary" icon="pause" title={strings.mission.pause} onPress={() => void commit(pauseMission(session))} />
           ) : (
-            <Button variant="secondary" title={strings.mission.resumeTimer} onPress={() => void commit(resumeMission(session))} />
+            <Button variant="secondary" icon="play" title={strings.mission.resumeTimer} onPress={() => void commit(resumeMission(session))} />
           )}
-          <Button variant="gold" title={strings.mission.finish} onPress={() => setConfirm('finish')} />
+          <Button variant="gold" icon="check" title={strings.mission.finish} onPress={() => setConfirm('finish')} />
         </>
       )}
       {/* instruções da Bíblia física depois dos controles: cronômetro, pausa e finalização ficam no topo */}
       {session.mode === 'physical' ? (
         <Card>
           <AppText variant="heading">{strings.mission.readNow}</AppText>
-          <AppText variant="display" style={styles.ref}>{ref}</AppText>
+          <AppText variant="title">{ref}</AppText>
           <AppText muted>{fmt(strings.mission.physicalInstructions, { ref })}</AppText>
         </Card>
       ) : null}
@@ -128,7 +129,6 @@ function ActiveMission() {
 }
 
 const styles = StyleSheet.create({
-  ref: { fontSize: 28 },
-  timer: { borderWidth: 2, borderRadius: radius.lg, paddingVertical: spacing.xl, alignItems: 'center', gap: spacing.xs },
-  clock: { fontSize: 56, lineHeight: 68, fontWeight: '700', fontVariant: ['tabular-nums'], letterSpacing: 1 },
+  timer: { borderWidth: 2, borderRadius: radius.lg, padding: spacing.md, alignItems: 'center', gap: spacing.xs },
+  clock: { fontFamily: fonts.bold, fontSize: 56, lineHeight: 68, fontVariant: ['tabular-nums'], letterSpacing: 1 },
 });

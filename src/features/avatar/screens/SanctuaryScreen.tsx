@@ -4,7 +4,10 @@ import { useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { ExhibitionHall, counterText } from '@/features/journey/components/ExhibitionHall';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, Icon, IconBadge, Notice, Screen, TextField } from '@/ui';
+import { WORLDS } from '@/features/journey/worlds';
+import { worldIcons } from '@/features/journey/worldIcons';
+import { normalizeReference } from '@/features/reading/referenceSearch';
 import { useMilestones } from '@/features/reading/useMilestones';
 import { milestoneSummary } from '@/features/reading/milestones';
 import { fmt, strings } from '@/i18n';
@@ -36,6 +39,8 @@ function Sanctuary() {
   const router = useRouter();
   const [owned, setOwned] = useState<Set<string> | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [query, setQuery] = useState('');
+  const [world, setWorld] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -65,6 +70,13 @@ function Sanctuary() {
 
   const legendaryOwned = [...legendaryByBook.values()].filter((i) => owned.has(i.id)).length;
   const holy = getRarity('holy');
+  const selectedWorld = WORLDS.find((entry) => entry.id === world);
+  const bookFilter = normalizeReference(query);
+  const libraryBooks = (bible as Book[]).filter((book) => {
+    const title = legendaryByBook.get(book.code)?.name ?? '';
+    return (!selectedWorld || (selectedWorld.codes as readonly string[]).includes(book.code))
+      && [book.name, book.code, title].some((value) => normalizeReference(value).includes(bookFilter));
+  });
 
   return (
     <Screen>
@@ -76,6 +88,8 @@ function Sanctuary() {
         onOpenItem={open}
       />
       <Button compact variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
+      <Button icon="lamp" variant="gold" title="Explorar a trilha do Tabernáculo"
+        onPress={() => router.push({ pathname: '/reading/trail', params: { trail: 'tabernacle' } })} />
 
       <AppText muted>{strings.sanctuary.intro}</AppText>
       {holy ? (
@@ -126,17 +140,30 @@ function Sanctuary() {
 
       <Card style={{ borderColor: RARITY_COLOR.legendary }}>
         <View style={styles.head}>
+          <IconBadge name="book" color={RARITY_COLOR.legendary} />
           <View style={styles.flex}>
             <AppText variant="heading">{strings.sanctuary.libraryTitle}</AppText>
             <AppText variant="caption" muted>{strings.sanctuary.libraryBody}</AppText>
           </View>
           <AppText variant="label" color={RARITY_COLOR.legendary} testID="library-owned">{fmt(strings.sanctuary.libraryOwned, { owned: legendaryOwned, total: legendaryByBook.size })}</AppText>
         </View>
-        {(['AT', 'NT'] as const).map((t) => (
+        <TextField label="Buscar na Biblioteca" value={query} onChangeText={setQuery} placeholder="Nome do livro ou do item" />
+        <View style={styles.books} accessibilityRole="radiogroup" accessibilityLabel="Filtrar a Biblioteca por mundo">
+          {[{ id: null, name: 'Todos', icon: 'book' as const }, ...WORLDS.map((entry) => ({ id: entry.id, name: entry.name, icon: worldIcons[entry.id] }))].map((entry) => (
+            <Pressable key={entry.id ?? 'all'} accessibilityRole="radio" accessibilityState={{ checked: world === entry.id }}
+              onPress={() => setWorld(entry.id)}
+              style={[styles.filter, { borderColor: world === entry.id ? colors.selection : colors.border, backgroundColor: colors.surfaceRaised }]}>
+              <Icon name={entry.icon} size={15} color={world === entry.id ? colors.selection : colors.primary} />
+              <AppText variant="caption">{entry.name}</AppText>
+            </Pressable>
+          ))}
+        </View>
+        {!libraryBooks.length ? <Notice>Nenhum livro encontrado para essa busca.</Notice> : null}
+        {(['AT', 'NT'] as const).filter((t) => libraryBooks.some((book) => book.testament === t)).map((t) => (
           <View key={t} style={styles.testament}>
             <AppText variant="caption" muted>{t === 'AT' ? strings.sanctuary.oldTestament : strings.sanctuary.newTestament}</AppText>
             <View style={styles.books}>
-              {(bible as Book[]).filter((b) => b.testament === t).map((b) => {
+              {libraryBooks.filter((b) => b.testament === t).map((b) => {
                 const item = legendaryByBook.get(b.code);
                 const has = !!item && owned.has(item.id);
                 return (
@@ -171,6 +198,7 @@ const styles = StyleSheet.create({
   relicHint: { textAlign: 'center', fontSize: 10, lineHeight: 13 },
   testament: { gap: 6 },
   books: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  book: { width: 44, height: 36, borderRadius: radius.sm, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
+  book: { width: 44, minHeight: 44, borderRadius: radius.sm, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
+  filter: { flexDirection: 'row', alignItems: 'center', minHeight: 44, gap: 5, paddingHorizontal: 8, borderRadius: radius.pill, borderWidth: 1 },
   bookCode: { fontSize: 11, fontWeight: '700' },
 });

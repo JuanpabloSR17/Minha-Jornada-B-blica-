@@ -3,12 +3,13 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
-import { AppText, Button, Card, Icon, Notice, Screen } from '@/ui';
+import { AppText, Button, Card, Icon, IconBadge, Notice, Screen, TextField } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
 import { getMissionOverview, type MissionOverview } from '../mission/mission.service';
 import { startMission, type MissionMode } from '../mission/session';
 import { useMissionSession } from '../mission/useMissionSession';
+import { missionStorage } from '../mission/storage';
 import { DailyGoalCard } from '../components/DailyGoalCard';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { ActiveSessionCard } from '../components/ActiveSessionCard';
@@ -18,6 +19,9 @@ import { milestoneSummary } from '../milestones';
 export { bookName, refLabel } from '../refs';
 import { BOOKS, refLabel } from '../refs';
 import { WORLDS } from '@/features/journey/worlds';
+import { worldIcons } from '@/features/journey/worldIcons';
+import { FeaturedTrail } from '@/features/journey/components/FeaturedTrail';
+import { normalizeReference, parseReferenceSearch } from '../referenceSearch';
 
 /** Modo Missão (aba Ler): escolher livro, capítulo e modo de leitura, e iniciar a missão. */
 /** Aba Ler na identidade da jornada (índigo, bronze, dourado; seleção em neon violeta). */
@@ -35,11 +39,13 @@ function MissionHome() {
   const params = useLocalSearchParams<{ book?: string; chapter?: string; selection?: string }>();
   const { userId, session, loaded, commit } = useMissionSession();
   const [overview, setOverview] = useState<MissionOverview | null>(null);
+  const [lastResult, setLastResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [book, setBook] = useState<string | null>(null);
   const [chapter, setChapter] = useState<number | null>(null);
   const [mode] = useState<MissionMode>('physical');
   const [scrollKey, setScrollKey] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
   // marcos dos Santos: só o resumo aqui; a escolha do marco fica na tela do marco
   const { rows: milestoneRowsData } = useMilestones();
   const milestoneSum = milestoneRowsData ? milestoneSummary(milestoneRowsData) : null;
@@ -47,8 +53,13 @@ function MissionHome() {
 
   useFocusEffect(
     useCallback(() => {
+      let active = true;
       getMissionOverview().then((o) => { setOverview(o); setError(null); }, (e) => setError(errorMessage(e)));
-    }, []),
+      if (userId) void missionStorage.loadResult(userId).then((r) => {
+        if (active) setLastResult(r ? refLabel(r.book.code, r.chapter) : null);
+      });
+      return () => { active = false; };
+    }, [userId]),
   );
 
   // "Próximo capítulo" na tela de recompensa chega aqui já selecionado
@@ -56,6 +67,7 @@ function MissionHome() {
     const requested = BOOKS.find((b) => b.code === params.book);
     if (requested) {
       setBook(requested.code);
+      setSearch('');
       const ch = Number(params.chapter);
       setChapter(Number.isInteger(ch) && ch >= 1 && ch <= requested.chapters ? ch : null);
       setScrollKey(`${params.book}:${params.chapter}:${params.selection ?? ''}`);
@@ -66,6 +78,18 @@ function MissionHome() {
   // marcos Santos a cumprir neste capítulo: escolha explícita, separada da leitura comum
   const chapterMarcos = selectedBook && chapter ? (milestoneRowsData ?? []).filter((r) => !r.completed && r.book === selectedBook.code && r.chapter === chapter) : [];
   const done = useMemo(() => new Set(overview?.chaptersByBook[book ?? ''] ?? []), [overview, book]);
+  const lookup = parseReferenceSearch(search);
+  const matches = BOOKS.filter((candidate) => {
+    const byName = normalizeReference(candidate.name).includes(lookup.book);
+    const byCode = normalizeReference(candidate.code).startsWith(lookup.book);
+    return (byName || byCode) && (lookup.chapter === null || (lookup.chapter > 0 && lookup.chapter <= candidate.chapters));
+  });
+
+  const selectPassage = (code: string, number: number) => {
+    setBook(code);
+    setChapter(number);
+    setScrollKey(`${code}:${number}:${Date.now()}`);
+  };
 
   const start = async (milestone?: string) => {
     if (!userId || !book || !chapter || session) return;
@@ -81,7 +105,10 @@ function MissionHome() {
 
   return (
     <Screen edges={['top', 'left', 'right']} scrollToTopKey={scrollKey}>
-      <AppText variant="title">{strings.mission.title}</AppText>
+      <View style={styles.heading}>
+        <IconBadge name="book" size={42} />
+        <AppText variant="title" style={styles.flex}>{strings.mission.title}</AppText>
+      </View>
       <AppText muted>{strings.mission.intro}</AppText>
       {error ? <Notice tone="error">{error}</Notice> : null}
       <ActiveSessionCard />
@@ -90,19 +117,19 @@ function MissionHome() {
       {selectedBook && chapter ? (
         <Card style={{ borderColor: colors.primary }} testID="selected-passage">
           <AppText variant="caption" muted>{strings.mission.selectedPassage}</AppText>
-          <AppText variant="display" style={styles.ref}>{refLabel(selectedBook.code, chapter)}</AppText>
+          <AppText variant="title" style={styles.ref}>{refLabel(selectedBook.code, chapter)}</AppText>
           <AppText variant="caption" muted>
             {done.has(chapter) ? strings.mission.selectedReread : strings.mission.selectedNew} · {strings.mission.physical}
           </AppText>
           {session ? <Notice tone="info">{fmt(strings.mission.otherActive, { ref: refLabel(session.book, session.chapter) })}</Notice> : null}
-          <Button variant="gold"
+          <Button variant="gold" icon="play"
             title={`${strings.mission.start}: ${refLabel(selectedBook.code, chapter)}`}
             onPress={() => void start()} disabled={!!session || !loaded} />
           {chapterMarcos.map((mk) => (
             <View key={mk.id} style={[styles.marco, { borderColor: RARITY_COLOR.holy }]} testID="chapter-milestone-hint">
               <AppText variant="label">{fmt(strings.mission.chapterHasMilestone, { name: mk.name })}</AppText>
               <AppText variant="caption" muted>{strings.mission.ordinaryHasMilestoneBody}</AppText>
-              <Button compact variant="secondary" title={fmt(strings.mission.startByMilestone, { name: mk.name })}
+              <Button compact variant="secondary" icon="flag" title={fmt(strings.mission.startByMilestone, { name: mk.name })}
                 onPress={() => void start(mk.id)} disabled={!!session || !loaded} />
               <Button compact variant="ghost" title={strings.mission.openMilestone} onPress={() => router.push({ pathname: '/reading/milestone/[id]', params: { id: mk.id } })} />
             </View>
@@ -122,23 +149,33 @@ function MissionHome() {
       ) : null}
 
       <DailyGoalCard session={session} hideStart />
-
+      {!session && lastResult ? (
+        <Button compact variant="secondary" icon="bag" title={`Último resultado · ${lastResult}`}
+          onPress={() => router.navigate('/reading/completed')} />
+      ) : null}
+      <FeaturedTrail completed={overview ? (overview.chaptersByBook.RUT?.length ?? 0) : undefined} />
 
       {milestoneSum ? (
         <Card style={{ borderColor: RARITY_COLOR.holy }}>
-          <AppText variant="heading">{strings.mission.milestones}</AppText>
+          <View style={styles.heading}>
+            <IconBadge name="flag" color={RARITY_COLOR.holy} />
+            <AppText variant="heading" style={styles.flex}>{strings.mission.milestones}</AppText>
+          </View>
           <AppText variant="label">{fmt(strings.mission.milestonesDone, { done: milestoneSum.milestonesDone, total: milestoneSum.milestonesTotal })}</AppText>
           <AppText variant="caption" muted>{fmt(strings.mission.saintsOwned, { owned: milestoneSum.saintsOwned, total: milestoneSum.saintsTotal })}</AppText>
           {nextMilestone ? <AppText variant="caption" muted>{fmt(strings.mission.milestonesNext, { name: nextMilestone.name, ref: refLabel(nextMilestone.book, nextMilestone.chapter) })}</AppText> : null}
-          <Button variant="secondary" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
+          <Button variant="secondary" icon="flag" title={strings.mission.milestonesSeeAll} onPress={() => router.push('/reading/milestones')} />
         </Card>
       ) : null}
 
       {overview?.missions.some((m) => m.kind === 'mission') ? (
         <Card>
-          <AppText variant="heading">{strings.mission.curated}</AppText>
+          <View style={styles.heading}>
+            <IconBadge name="sparkle" />
+            <AppText variant="heading" style={styles.flex}>{strings.mission.curated}</AppText>
+          </View>
           {overview.missions.filter((m) => m.kind === 'mission').map((m) => (
-            <Pressable key={m.id} accessibilityRole="button" onPress={() => { setBook(m.book); setChapter(m.chapter); }} style={styles.missionRow}>
+            <Pressable key={m.id} accessibilityRole="button" onPress={() => selectPassage(m.book, m.chapter)} style={styles.missionRow}>
               <Icon name={m.completed ? 'check' : 'sparkle'} size={18} color={m.completed ? colors.success : colors.primary} />
               <View style={styles.flex}>
                 <AppText variant="label">{m.name}</AppText>
@@ -150,15 +187,23 @@ function MissionHome() {
       ) : null}
 
       <Card>
-        <AppText variant="heading">{strings.mission.chooseBook}</AppText>
-        {/* livros agrupados pelos sete mundos da Jornada, com o progresso de cada mundo */}
+        <View style={styles.heading}>
+          <IconBadge name="scroll" />
+          <AppText variant="heading" style={styles.flex}>{strings.mission.chooseBook}</AppText>
+        </View>
+        <TextField label="Buscar livro ou passagem" value={search} onChangeText={setSearch} placeholder="Ex.: Rute 2 ou Êxodo" />
+        {matches.length === 0 ? <Notice>Nenhuma passagem encontrada. Tente outro nome ou número de capítulo.</Notice> : null}
         {WORLDS.map((w) => {
-          const books = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
-          const total = books.reduce((acc, b) => acc + b.chapters, 0);
-          const read = books.reduce((acc, b) => acc + (overview?.chaptersByBook[b.code]?.length ?? 0), 0);
+          const worldBooks = BOOKS.filter((b) => (w.codes as readonly string[]).includes(b.code));
+          const books = matches.filter((b) => (w.codes as readonly string[]).includes(b.code));
+          if (!books.length) return null;
+          const total = worldBooks.reduce((acc, b) => acc + b.chapters, 0);
+          const read = worldBooks.reduce((acc, b) => acc + (overview?.chaptersByBook[b.code]?.length ?? 0), 0);
+          const activeBook = books.find((candidate) => candidate.code === book);
           return (
             <View key={w.id} style={styles.section} testID={`read-world-${w.id}`}>
               <View style={styles.worldHead}>
+                <Icon name={worldIcons[w.id]} size={18} color={colors.primary} />
                 <AppText variant="label" style={styles.flex}>{w.name}</AppText>
                 <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: read, total })}</AppText>
               </View>
@@ -171,52 +216,54 @@ function MissionHome() {
                   const sel = b.code === book;
                   return (
                     <Pressable key={b.code} accessibilityRole="radio" accessibilityState={{ checked: sel }} accessibilityLabel={`${b.name}, ${n} de ${b.chapters}`}
-                      onPress={() => { setBook(b.code); setChapter(null); }} style={chip(sel)}>
-                      <AppText variant="caption" style={styles.chipText}>{b.name}</AppText>
-                      <AppText variant="caption" muted style={styles.chipText}>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
+                      onPress={() => {
+                        if (lookup.chapter !== null) selectPassage(b.code, lookup.chapter);
+                        else { setBook(b.code); setChapter(null); }
+                      }} style={chip(sel)}>
+                      <AppText variant="label">{b.name}</AppText>
+                      <AppText variant="caption" muted>{fmt(strings.mission.bookProgress, { done: n, total: b.chapters })}</AppText>
                     </Pressable>
                   );
                 })}
               </View>
+              {activeBook ? (
+                <View style={styles.chapterPicker}>
+                  <AppText variant="heading">{fmt('{c}: {b}', { c: strings.mission.chooseChapter, b: activeBook.name })}</AppText>
+                  <View style={styles.wrap} accessibilityRole="radiogroup" accessibilityLabel={activeBook.name + ' · capítulos'}>
+                    {Array.from({ length: activeBook.chapters }, (_, index) => index + 1).map((n) => {
+                      const selected = n === chapter;
+                      const read = done.has(n);
+                      return (
+                        <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: selected }}
+                          accessibilityLabel={`${strings.mission.chooseChapter} ${n}${read ? `, ${strings.mission.chapterDone}` : ''}`}
+                          onPress={() => selectPassage(activeBook.code, n)}
+                          style={[styles.num, { borderColor: selected ? colors.selection : read ? colors.primary : colors.border, backgroundColor: selected ? colors.selection : colors.surface }]}>
+                          <AppText variant="label" color={selected ? colors.background : read ? colors.primary : colors.text}>{n}</AppText>
+                          {read && !selected ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                </View>
+              ) : null}
             </View>
           );
         })}
       </Card>
-
-      {selectedBook ? (
-        <Card>
-          <AppText variant="heading">{fmt('{c}: {b}', { c: strings.mission.chooseChapter, b: selectedBook.name })}</AppText>
-          <View style={styles.wrap} accessibilityRole="radiogroup">
-            {Array.from({ length: selectedBook.chapters }, (_, i) => i + 1).map((n) => {
-              const sel = n === chapter;
-              const isDone = done.has(n);
-              return (
-                <Pressable key={n} accessibilityRole="radio" accessibilityState={{ checked: sel }}
-                  accessibilityLabel={`${strings.mission.chooseChapter} ${n}${isDone ? `, ${strings.mission.chapterDone}` : ''}`}
-                  onPress={() => { setChapter(n); setScrollKey(`${book}:${n}:${Date.now()}`); }}
-                  style={[styles.num, { borderColor: sel ? colors.selection : isDone ? colors.primary : colors.border, backgroundColor: sel ? colors.selection : colors.surface }]}>
-                  <AppText variant="label" color={sel ? colors.background : isDone ? colors.primary : colors.text}>{n}</AppText>
-                  {isDone && !sel ? <View style={[styles.dot, { backgroundColor: colors.primary }]} /> : null}
-                </Pressable>
-              );
-            })}
-          </View>
-        </Card>
-      ) : null}
 
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1 },
+  flex: { flex: 1, minWidth: 0 },
+  heading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   section: { gap: spacing.xs, marginTop: spacing.sm },
+  chapterPicker: { gap: spacing.sm, marginVertical: spacing.sm },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
-  chip: { borderWidth: 1, borderRadius: radius.md, paddingVertical: 6, paddingHorizontal: 10 },
-  chipText: { fontSize: 12, lineHeight: 15 },
+  chip: { borderWidth: 1, borderRadius: radius.md, paddingVertical: 4, paddingHorizontal: 10, minHeight: 44 },
   num: { width: 44, height: 44, borderWidth: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   dot: { position: 'absolute', bottom: 4, width: 5, height: 5, borderRadius: 3 },
-  mode: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md },
   ref: { fontSize: 28 },
   worldHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   worldBar: { height: 5, borderRadius: radius.pill, overflow: 'hidden' },

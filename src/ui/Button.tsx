@@ -1,9 +1,9 @@
 import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
-import type { ReactNode } from 'react';
 import { useTheme } from '@/theme/ThemeProvider';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 import { fonts, radius, spacing } from '@/theme/tokens';
 import { AppText } from './AppText';
+import { Icon, type IconName } from './Icon';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'gold';
 
@@ -24,7 +24,7 @@ export function Button({
   variant?: Variant;
   disabled?: boolean;
   loading?: boolean;
-  icon?: ReactNode;
+  icon?: IconName;
   style?: StyleProp<ViewStyle>;
   accessibilityLabel?: string;
   accessibilityHint?: string;
@@ -61,8 +61,8 @@ export function Button({
       <>
       {gold ? <GoldBevel pressed={pressed} /> : null}
       <View style={styles.row}>
-        {loading ? <ActivityIndicator color={palette.fg} /> : icon}
-        <AppText variant="label" color={palette.fg} style={[styles.label, gold ? { fontFamily: fonts.display, fontSize: compact ? 15 : 17, fontWeight: "700" } : { fontSize: compact ? 14 : 16 }]} numberOfLines={2}>
+        {loading ? <ActivityIndicator color={palette.fg} /> : icon ? <Icon name={icon} color={palette.fg} size={18} /> : null}
+        <AppText variant="label" color={palette.fg} style={[styles.label, { fontSize: compact ? 15 : 17 }]}>
           {title}
         </AppText>
       </View>
@@ -101,5 +101,5 @@ const styles = StyleSheet.create({
   compact: { minHeight: 44, paddingHorizontal: spacing.md },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm, paddingVertical: 4 },
   /** rótulos longos quebram em duas linhas em vez de serem cortados (320 px) */
-  label: { textAlign: 'center', flexShrink: 1 },
+  label: { fontFamily: fonts.bold, textAlign: 'center', flexShrink: 1 },
 });

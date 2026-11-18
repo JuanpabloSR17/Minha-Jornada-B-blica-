@@ -4,6 +4,7 @@
 const { chromium } = require('playwright');
 const pg = require('pg');
 const assert = require('node:assert/strict');
+const { openReadingReceipt, dismissReadingRewards } = require('./reading-rewards.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR;
@@ -377,6 +378,7 @@ async function newPhone(browser, scheme = 'light') {
   await page.reload();
   await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
   await page.getByRole('button', { name: 'Tentar novamente' }).click();
+  await dismissReadingRewards(page);
   await page.getByText('Missão concluída').waitFor();
   await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
   await page.getByText('Você concluiu Rute!').waitFor();
@@ -446,7 +448,10 @@ async function newPhone(browser, scheme = 'light') {
   await page.getByRole('button', { name: 'Iniciar missão: Jonas 2' }).click();
   await page.getByRole('button', { name: 'Finalizar missão' }).click();
   await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-  await page.getByTestId('goal-celebration').waitFor();
+  const dailyReceipt = await openReadingReceipt(page);
+  await dailyReceipt.getByTestId('receipt-xp').getByText('+60 XP').waitFor();
+  await dailyReceipt.getByTestId('receipt-siclos').getByText('+40 Siclos').waitFor();
+  await dailyReceipt.getByRole('button', { name: 'Continuar', exact: true }).click();
   await page.getByText('Meta diária cumprida! +40 Siclos · +20 XP').waitFor();
   await page.getByText('Escolha um item Comum').first().waitFor();
   await page.waitForTimeout(900);
@@ -484,6 +489,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar missão: 1 Reis 19' }).click();
   await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
   await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Missão especial: o chamado de Eliseu — concluída').waitFor();
   await C.page.getByText('Manto do Profeta').waitFor();
   const biaId = (await db.query(`select id from profiles where username = 'bia_teste'`)).rows[0].id;
@@ -494,7 +500,6 @@ async function newPhone(browser, scheme = 'light') {
   // ============================================================ META DIÁRIA
   await C.page.getByText('Meta diária cumprida! +40 Siclos').waitFor();
   await C.page.getByText('fuso de leitura: America/Sao_Paulo', { exact: false }).waitFor();
-  await C.page.getByTestId('goal-celebration').waitFor();
   await C.page.getByText('Saldo: 40 Siclos').first().waitFor();
   assert.equal(await C.page.getByRole('radio').count(), 3, 'três Comuns oferecidos');
   await shot(C.page, 'm5-01-goal-achieved-dark');
@@ -536,6 +541,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.unroute('**/rest/v1/rpc/claim_daily_goal_item');
   await C.page.getByRole('button', { name: `Receber ${chosenName}` }).click();
   await C.page.getByRole('button', { name: 'Confirmar' }).click();
+  await dismissReadingRewards(C.page);
   await C.page.getByText(`${chosenName} foi adicionado ao seu inventário.`).waitFor();
   const goalNow = (await goalRow())[0];
   const owned = Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = any($2::text[])`, [biaId, goalNow.options])).rows[0].count);
@@ -554,6 +560,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 28' }).click();
   await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
   await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
   await C.page.getByText('Estola Sacerdotal', { exact: true }).waitFor();
   await C.page.getByText('Turbante do Sacerdote', { exact: true }).waitFor();
@@ -569,6 +576,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Iniciar missão: Gênesis 24' }).click();
   await C.page.getByRole('button', { name: 'Finalizar missão' }).click();
   await C.page.getByRole('button', { name: 'Concluí a leitura' }).click();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Missão especial: uma noiva para Isaque — concluída').waitFor();
   await C.page.getByText('Bracelete da Corte', { exact: true }).waitFor();
   await C.page.getByText('Jarro de Rebeca', { exact: true }).waitFor();
@@ -606,6 +614,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('radio', { name: 'Capítulo 16', exact: true }).click();
   await C.page.getByRole('button', { name: 'Iniciar missão: Êxodo 16' }).click();
   await finishHere();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Nenhum item novo nesta missão.').waitFor();
   // piloto: a leitura comum explica que o capítulo tem um marco e como cumpri-lo
   await C.page.getByTestId('ordinary-milestone-hint').filter({ visible: true }).getByText('Este capítulo também tem o “Marco: Maná do Deserto”.').waitFor();
@@ -637,6 +646,7 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.getByRole('button', { name: 'Continuar leitura' }).click();
   await C.page.getByRole('button', { name: 'Retomar' }).click();
   await finishHere();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Marco: Maná do Deserto — concluído').waitFor();
   await C.page.getByText('Maná do Deserto', { exact: true }).last().waitFor();
   step('lista com filtros; marco aberto com passagem e item; após reabrir o app, a aba Ler destaca a sessão vinculada e leva de volta a ela');
@@ -661,6 +671,7 @@ async function newPhone(browser, scheme = 'light') {
   await shot(C.page, 'm10-05-read-pending-320');
   await C.page.getByRole('button', { name: 'Verificar resultado' }).click();
   await C.page.getByRole('button', { name: 'Tentar novamente' }).click();
+  await dismissReadingRewards(C.page);
   await C.page.getByText('Marco: a mobília do Tabernáculo — concluído').waitFor();
   for (const n of ['Arca da Aliança (Representação)', 'Candelabro do Tabernáculo']) await C.page.getByText(n, { exact: true }).last().waitFor();
   assert.equal(await C.page.getByRole('button', { name: 'Equipar agora' }).count(), 0, 'relíquias não são equipáveis');

@@ -10,7 +10,9 @@ import { StepHeader } from '../components/StepHeader';
 import { AvatarStage } from '../components/AvatarStage';
 import { ItemIcon } from '../components/ItemIcon';
 import { RARITY_COLOR } from '../components/RarityBadge';
-import { collectionsOf, displayName, getItem, getRarity } from '../domain/catalog';
+import { CATALOG_MISSIONS, collectionsOf, displayName, getItem, getRarity, resolveItemId } from '../domain/catalog';
+import { getMissionOverview } from '@/features/reading/mission/mission.service';
+import { BOOKS } from '@/features/reading/refs';
 import bible from '../../reading/bible-books.json';
 
 const bookName = (code: string) => (bible as { code: string; name: string }[]).find((b) => b.code === code)?.name ?? code;
@@ -25,6 +27,8 @@ export function ItemDetailScreen({ id }: { id: string }) {
   const [w, setW] = useState<WardrobeState | null>(null);
   const [notice, setNotice] = useState<{ tone: 'error' | 'success'; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  const [preview, setPreview] = useState(true);
+  const [openingPassage, setOpeningPassage] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -52,7 +56,9 @@ export function ItemDetailScreen({ id }: { id: string }) {
   const family = variantFamily(item.id);
   const cols = collectionsOf(item.id);
   const category = item.slot === 'relic' ? strings.sanctuary.title : INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
-  const previewLook = w && active ? { appearance: w.appearance, equipment: item.slot === 'relic' ? active.equipment : { ...active.equipment, [item.slot]: item.id } } : null;
+  const previewLook = w && active ? { appearance: w.appearance, equipment: !preview || item.slot === 'relic' ? active.equipment : { ...active.equipment, [item.slot]: item.id } } : null;
+  const mission = CATALOG_MISSIONS.find((entry) => entry.rewardItems.some((reward) => resolveItemId(reward) === item.id));
+  const book = BOOKS.find((entry) => entry.code === item.book);
 
   const act = async (fn: () => Promise<WardrobeState>) => {
     setBusy(true);
@@ -65,6 +71,34 @@ export function ItemDetailScreen({ id }: { id: string }) {
     } finally {
       setBusy(false);
     }
+  };
+
+  const openPassage = async () => {
+    if (mission?.kind === 'milestone') {
+      router.push({ pathname: '/reading/milestone/[id]', params: { id: mission.id } });
+      return;
+    }
+    if (item.rarity === 'legendary' && item.book === 'RUT') {
+      router.push('/reading/trail');
+      return;
+    }
+    const code = mission?.book ?? book?.code;
+    if (!code) return;
+    let chapter = mission?.chapter;
+    if (!chapter && book) {
+      setOpeningPassage(true);
+      try {
+        const overview = await getMissionOverview();
+        const completed = new Set(overview.chaptersByBook[code] ?? []);
+        chapter = Array.from({ length: book.chapters }, (_, index) => index + 1).find((entry) => !completed.has(entry));
+      } catch (e) {
+        setNotice({ tone: 'error', text: errorMessage(e) });
+        return;
+      } finally {
+        setOpeningPassage(false);
+      }
+    }
+    router.push({ pathname: '/(tabs)/read', params: { book: code, ...(chapter ? { chapter: String(chapter) } : {}), selection: String(Date.now()) } });
   };
 
   const row = (label: string, value: string) => (
@@ -94,6 +128,11 @@ export function ItemDetailScreen({ id }: { id: string }) {
           </View>
         </View>
       )}
+      {item.slot !== 'relic' && previewLook && active?.equipment[item.slot] !== item.id ? (
+        <Button compact icon="outfit" variant="secondary"
+          title={preview ? 'Ver meu visual atual' : 'Ver com este item'}
+          onPress={() => setPreview((current) => !current)} />
+      ) : null}
       {item.slot !== 'relic' && view.art !== 'final' ? <Notice tone="info">{strings.wardrobe.avatarArtInfo}</Notice> : null}
       <Card>
         {row(strings.item.category, category)}
@@ -116,6 +155,11 @@ export function ItemDetailScreen({ id }: { id: string }) {
         ) : null}
         {isSpecial(item) ? <AppText variant="caption" muted>{strings.item.symbolicNote}</AppText> : null}
       </Card>
+      {mission || (book && item.rarity === 'legendary') ? (
+        <Button icon={mission?.kind === 'milestone' ? 'flag' : 'book'} variant="secondary" loading={openingPassage}
+          title={mission?.kind === 'milestone' ? 'Abrir marco da conquista' : item.book === 'RUT' && item.rarity === 'legendary' ? 'Abrir trilha de Rute' : 'Abrir passagem na aba Ler'}
+          onPress={() => void openPassage()} />
+      ) : null}
       {family.length > 1 ? (
         <Card>
           <AppText variant="heading">{strings.item.variants}</AppText>

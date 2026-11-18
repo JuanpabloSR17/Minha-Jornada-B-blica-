@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, Card, Notice, Screen } from '@/ui';
@@ -10,17 +10,20 @@ import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { displayName, displayNameOf, getCatalogMission, getItem, isEquippable } from '@/features/avatar/domain/catalog';
-import { RevealOverlay } from '@/features/journey/components/RevealOverlay';
+import { displayName, getCatalogMission, isEquippable } from '@/features/avatar/domain/catalog';
 import { equipItem, getWardrobe } from '@/features/avatar/services/wardrobe.service';
-import bible from '../bible-books.json';
+import { ChapterResultBanner } from '@/features/journey/components/ChapterResultBanner';
+import { GlassPanel, glassTones } from '@/features/journey/components/GlassPanel';
+import { ProgressMeter } from '@/features/journey/components/ProgressMeter';
 import { missionStorage } from '../mission/storage';
 import { useMilestones } from '../useMilestones';
-import type { MissionResult } from '../mission/mission.service';
-import { formatClock, nextChapter } from '../mission/session';
+import { getNextReading, type MissionResult, type NextReading } from '../mission/mission.service';
+import { formatClock } from '../mission/session';
+import { readingRewards } from '../mission/rewards';
 import { GoalChoice } from '../components/GoalChoice';
-import { GoalCelebration } from '../components/GoalCelebration';
-import { bookName, refLabel } from './MissionHomeScreen';
+import { RewardPouch } from '../components/RewardPouch';
+import { RelatedTrailReflection } from '../trails/TrailReflection';
+import { bookName, refLabel } from '../refs';
 
 /** Recompensa pós-leitura (B02): confirmação do servidor, progresso e itens concedidos de fato. */
 export function MissionCompletedScreen() {
@@ -36,13 +39,26 @@ function MissionCompleted() {
   const router = useRouter();
   const { userId } = useAuth();
   const [result, setResult] = useState<MissionResult | null | undefined>(undefined);
+  const [reading, setReading] = useState<NextReading | null>(null);
   const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string } | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const [reopenPouch, setReopenPouch] = useState(false);
   const { rows: milestones } = useMilestones();
 
+  useFocusEffect(useCallback(() => {
+    let active = true;
+    if (userId) void missionStorage.loadResult(userId).then((stored) => { if (active) setResult(stored); });
+    return () => { active = false; };
+  }, [userId]));
+
+  const sessionId = result?.sessionId;
   useEffect(() => {
-    if (userId) void missionStorage.loadResult(userId).then(setResult);
-  }, [userId]);
+    if (!sessionId) return;
+    let active = true;
+    setReading(null);
+    void getNextReading().then((next) => { if (active) setReading(next); }, () => undefined);
+    return () => { active = false; };
+  }, [sessionId]);
 
   if (result === undefined) {
     return (
@@ -61,19 +77,22 @@ function MissionCompleted() {
   }
 
   const ref = refLabel(result.book.code, result.chapter);
-  // revelação: só depois da confirmação do servidor (esta tela só abre com o resultado), só os Santos
-  // concedidos de fato e só uma vez por resultado
-  const holyGranted = result.milestone ? result.granted.filter((id) => getItem(id)?.rarity === 'holy') : [];
-  const marcoItems = getCatalogMission(result.milestone)?.rewardItems ?? [];
-  const showReveal = holyGranted.length > 0 && !result.revealed;
-  const closeReveal = (then?: () => void) => {
-    const next = { ...result, revealed: true };
-    setResult(next);
-    if (userId) void missionStorage.saveResult(userId, next);
+  const rewards = readingRewards(result);
+  const xp = rewards.find((r) => r.kind === 'xp')?.amount ?? 0;
+  const items = rewards.filter((r) => r.kind === 'item');
+  const hasHoly = items.some(({ item }) => item?.rarity === 'holy');
+  const alreadyOwned = hasHoly
+    ? getCatalogMission(result.milestone)?.rewardItems.filter((id) => !items.some((entry) => entry.id === id))
+    : undefined;
+  const showReveal = rewards.length > 0 && (reopenPouch || !result.revealed);
+  const closePouch = (then?: () => void) => {
+    setReopenPouch(false);
+    setResult({ ...result, revealed: true });
+    if (userId) void missionStorage.markRevealed(userId, result.sessionId);
     then?.();
   };
   const pendingMarcos = (milestones ?? []).filter((r) => !r.completed && r.book === result.book.code && r.chapter === result.chapter);
-  const next = nextChapter(bible as { code: string; chapters: number }[], result.book.code, result.chapter);
+  const next = reading?.next;
 
   const equip = async (itemId: string) => {
     setBusy(itemId);
@@ -98,25 +117,28 @@ function MissionCompleted() {
       {result.duplicate ? <Notice tone="info">{strings.mission.duplicateNote}</Notice> : null}
       {result.bookJustCompleted ? <Notice tone="success">{fmt(strings.mission.bookCompleted, { book: result.book.name })}</Notice> : null}
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
+      <ChapterResultBanner result={result} />
 
-      <Card>
+      <GlassPanel tone="reading">
         <View style={styles.stats}>
           <View style={styles.stat}>
             <AppText variant="caption" muted>{strings.mission.time}</AppText>
-            <AppText variant="heading">{formatClock(result.activeSeconds * 1000)}</AppText>
+            <AppText variant="heading" style={styles.numeric}>{formatClock(result.activeSeconds * 1000)}</AppText>
           </View>
           <View style={styles.stat}>
             <AppText variant="caption" muted>{strings.mission.xp}</AppText>
-            <AppText variant="heading" accessibilityLabel={`${result.xpAwarded} XP, total ${result.xpTotal}`}>+{result.xpAwarded} · {result.xpTotal}</AppText>
+            <AppText variant="heading" color={glassTones.xp.light} style={styles.numeric}
+              accessibilityLabel={`${xp} XP, total ${result.xpTotal}`}>+{xp} XP</AppText>
+            <AppText variant="caption" muted>{result.xpTotal.toLocaleString('pt-BR')} XP no total</AppText>
           </View>
         </View>
         <AppText>{fmt(strings.mission.bookLine, { book: result.book.name, done: result.book.completed, total: result.book.total })}</AppText>
-        <View style={[styles.bar, { backgroundColor: colors.backgroundAlt }]}>
-          <View style={[styles.barFill, { backgroundColor: colors.primary, width: `${Math.min(100, (result.book.completed / result.book.total) * 100)}%` }]} />
-        </View>
+        <ProgressMeter value={result.book.completed} total={result.book.total} label={`Capítulos lidos de ${result.book.name}`}
+          from={result.alreadyCompleted || result.duplicate || result.revealed ? undefined : result.book.completed - 1}
+          height={12} />
         <AppText muted>{fmt(strings.mission.bibleLine, { done: result.chaptersCompleted, total: result.totalChapters, percent: result.percent })}</AppText>
         <AppText variant="caption" muted>{strings.mission.xpNote}</AppText>
-      </Card>
+      </GlassPanel>
 
       {result.dailyGoal ? (() => {
         const dg = result.dailyGoal;
@@ -125,8 +147,9 @@ function MissionCompleted() {
           <Card style={{ borderColor: dg.achievedNow ? colors.primary : colors.border }}>
             <AppText variant="heading">{strings.mission.goalTitle}</AppText>
             {dg.achievedNow ? (
-              <GoalCelebration title={strings.mission.goalCelebrate}
-                subtitle={fmt(strings.mission.goalAchieved, { siclos: dg.siclosAwarded, xp: dg.xpBonus ?? 0 })} />
+              <Notice tone="success" title={strings.mission.goalCelebrate}>
+                {fmt(strings.mission.goalAchieved, { siclos: dg.siclosAwarded, xp: dg.xpBonus ?? 0 })}
+              </Notice>
             ) : dg.achievedToday ? (
               <AppText muted>{fmt(strings.mission.goalAlready, { n: dg.newChaptersToday })}</AppText>
             ) : dg.target == null ? (
@@ -139,13 +162,10 @@ function MissionCompleted() {
             {dg.achievedNow && goal ? (
               goal.options.length === 0 ? (
                 <AppText muted>{strings.mission.goalAllOwned}</AppText>
-              ) : goal.chosenItem ? (
-                <Notice tone="success">{fmt(strings.mission.goalChosen, { item: displayNameOf(goal.chosenItem) })}</Notice>
               ) : (
-                <GoalChoice goal={goal} onChange={(g) => {
-                  const next = { ...result, dailyGoal: { ...dg, goal: g } };
-                  if (userId) void missionStorage.saveResult(userId, next);
-                }} />
+                <GoalChoice goal={goal} onChange={(g) => setResult((current) =>
+                  current?.sessionId === result.sessionId ? { ...current, dailyGoal: { ...dg, goal: g } } : current,
+                )} />
               )
             ) : null}
             <AppText variant="caption" muted>{fmt(strings.mission.goalRule, { tz: goal?.timeZone ?? '—' })}</AppText>
@@ -168,9 +188,9 @@ function MissionCompleted() {
 
       <Card>
         <AppText variant="heading">{strings.mission.rewards}</AppText>
-        {result.granted.length === 0 ? <AppText muted>{strings.mission.noRewards}</AppText> : null}
-        {result.granted.map((id) => {
-          const item = getItem(id);
+        {rewards.length > 0 ? <Button variant="secondary" icon="bag" title="Rever recompensas" onPress={() => setReopenPouch(true)} /> : null}
+        {items.length === 0 ? <AppText muted>{strings.mission.noRewards}</AppText> : null}
+        {items.map(({ id, item }) => {
           if (!item) return null;
           return (
             <View key={id} style={[styles.reward, { borderColor: RARITY_COLOR[item.rarity] }]}>
@@ -191,23 +211,27 @@ function MissionCompleted() {
             </View>
           );
         })}
-        {result.granted.length ? <Button variant="secondary" title={strings.mission.seeInventory} onPress={() => router.push('/avatar/wardrobe')} /> : null}
-        {result.granted.some((id) => getItem(id)?.rarity === 'holy') ? <Button variant="secondary" title={strings.mission.seeSanctuary} onPress={() => router.push('/avatar/sanctuary')} /> : null}
+        {items.some(({ item }) => item && isEquippable(item)) ? <Button variant="secondary" title={strings.mission.seeInventory} onPress={() => router.push('/avatar/wardrobe')} /> : null}
+        {hasHoly ? <Button variant="secondary" title={strings.mission.seeSanctuary} onPress={() => router.push('/avatar/sanctuary')} /> : null}
       </Card>
+
+      <RelatedTrailReflection result={result} />
 
       {next ? (
         <Button title={`${strings.mission.nextChapter}: ${bookName(next.book)} ${next.chapter}`}
           onPress={() => router.replace({ pathname: '/(tabs)/read', params: { book: next.book, chapter: String(next.chapter) } })} />
       ) : null}
+      {reading?.allDone ? <Button icon="medal" variant="gold" title="Ver conquistas da Jornada" onPress={() => router.replace('/(tabs)/profile')} /> : null}
       <Button variant="secondary" title={strings.mission.backToMissions} onPress={() => router.replace('/(tabs)/read')} />
     </Screen>
     {showReveal ? (
-      <RevealOverlay
-        granted={holyGranted}
-        alreadyOwned={marcoItems.filter((id) => !holyGranted.includes(id))}
+      <RewardPouch
+        key={result.sessionId}
+        rewards={rewards}
         reference={ref}
-        onSanctuary={() => closeReveal(() => router.push('/avatar/sanctuary'))}
-        onClose={() => closeReveal()}
+        alreadyOwned={alreadyOwned}
+        onSanctuary={hasHoly ? () => closePouch(() => router.push('/avatar/sanctuary')) : undefined}
+        onClose={() => closePouch()}
       />
     ) : null}
     </View>
@@ -220,8 +244,7 @@ const styles = StyleSheet.create({
   ref: { fontSize: 28 },
   stats: { flexDirection: 'row', gap: spacing.lg },
   stat: { flex: 1 },
-  bar: { height: 8, borderRadius: radius.pill, overflow: 'hidden' },
-  barFill: { height: 8 },
+  numeric: { fontVariant: ['tabular-nums'] },
   reward: { flexDirection: 'row', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
   icon: { width: 76, height: 76, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
 });

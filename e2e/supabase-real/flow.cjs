@@ -3,6 +3,7 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const { db, loadState, ok, PASSWORD } = require('./lib.cjs');
+const { openReadingReceipt, dismissReadingRewards } = require('../reading-rewards.cjs');
 
 const APP = process.env.APP_URL ?? 'http://localhost:8081';
 const SHOTS = process.env.SHOTS_DIR;
@@ -57,7 +58,9 @@ async function login(page, email) {
     await page.waitForTimeout(1500);
     await page.getByRole('button', { name: 'Finalizar missão' }).click();
     await page.getByRole('button', { name: 'Concluí a leitura' }).click();
-    await page.getByTestId('goal-celebration').waitFor();
+    const dayReceipt = await openReadingReceipt(page);
+    await dayReceipt.getByTestId('receipt-siclos').getByText('+40 Siclos').waitFor();
+    await dayReceipt.getByRole('button', { name: 'Continuar', exact: true }).click();
     await page.getByText('Meta diária cumprida! +40 Siclos · +20 XP').waitFor();
     await page.getByText(`Saldo: ${start + 40} Siclos`).first().waitFor();
     assert.equal(await balance(), start + 40, 'crédito de 40 Siclos registrado no banco');
@@ -67,6 +70,7 @@ async function login(page, email) {
     await option.click();
     await page.getByRole('button', { name: `Receber ${optionName}` }).click();
     await page.getByRole('button', { name: 'Confirmar' }).click();
+    await dismissReadingRewards(page);
     await page.getByText(`${optionName} foi adicionado ao seu inventário.`).waitFor();
     const today = (await conn.query(`select siclos, xp_bonus, chosen_item from daily_goals where user_id = $1 and day = (now() at time zone 'America/Sao_Paulo')::date`, [uid])).rows[0];
     assert.equal(today.siclos, 40);
@@ -179,6 +183,7 @@ async function login(page, email) {
     await page.reload();
     await page.getByText('Finalização pendente').filter({ visible: true }).first().waitFor();
     await page.getByRole('button', { name: 'Tentar novamente' }).click();
+    await dismissReadingRewards(page);
     await page.getByText('Missão especial: as vestes do sumo sacerdote — concluída').waitFor();
     await page.getByText('Esta finalização já tinha sido registrada', { exact: false }).waitFor();
     await page.getByText('Estola Sacerdotal', { exact: true }).waitFor();
@@ -229,12 +234,10 @@ async function login(page, email) {
       (select count(*)::int from user_items where user_id = $1 and item_id = any($2)) i`, [uid, SANTOS])).rows[0];
     assert.deepEqual(mk, { s: 1, m: 1, r: 2, i: 3 }, 'uma sessão vinculada, um marco, duas recompensas (Arca e Candelabro), três Santos');
     // revelação (após a confirmação): só os dois Santos concedidos; pular e abrir o Santuário por ela
-    const reveal = page.getByTestId('reveal-overlay');
-    await reveal.waitFor();
-    await reveal.getByTestId('reveal-item-holy_arca_da_alianca_representacao').waitFor();
-    await reveal.getByTestId('reveal-item-holy_candelabro_do_tabernaculo').waitFor();
-    assert.equal(await reveal.getByTestId('reveal-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta');
-    await reveal.getByRole('button', { name: 'Pular animação' }).click();
+    const reveal = await openReadingReceipt(page);
+    await reveal.getByTestId('receipt-item-holy_arca_da_alianca_representacao').waitFor();
+    await reveal.getByTestId('receipt-item-holy_candelabro_do_tabernaculo').waitFor();
+    assert.equal(await reveal.getByTestId('receipt-item-holy_mesa_dos_paes_da_presenca').count(), 0, 'a Mesa já era da conta');
     await shot(page, 'real-08b-reveal');
     await reveal.getByRole('button', { name: 'Ver no Santuário' }).click();
     await page.getByText('Obras do Pai').waitFor();

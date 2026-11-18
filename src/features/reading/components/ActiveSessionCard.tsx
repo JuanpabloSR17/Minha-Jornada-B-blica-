@@ -1,6 +1,8 @@
 import { useRouter } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
 import { useTheme } from '@/theme/ThemeProvider';
-import { AppText, Button, Card } from '@/ui';
+import { spacing } from '@/theme/tokens';
+import { AppText, Button, Card, IconBadge } from '@/ui';
 import { fmt, strings } from '@/i18n';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { getCatalogMission } from '@/features/avatar/domain/catalog';
@@ -20,7 +22,10 @@ export function ActiveSessionCard() {
   const marco = getCatalogMission(session.milestone);
   return (
     <Card style={{ borderColor: pending ? colors.danger : colors.primary, borderWidth: 2 }}>
-      <AppText variant="heading">{pending ? m.pendingTitle : m.active}</AppText>
+      <View style={styles.header}>
+        <IconBadge name={pending ? 'cloudOff' : 'clock'} color={pending ? colors.danger : colors.primary} />
+        <AppText variant="heading" style={styles.title}>{pending ? m.pendingTitle : m.active}</AppText>
+      </View>
       <AppText>{refLabel(session.book, session.chapter)} · {session.mode === 'physical' ? m.physical : m.digital}</AppText>
       {marco ? <AppText variant="label" color={RARITY_COLOR.holy}>{fmt(m.milestoneBanner, { name: marco.name })}</AppText> : null}
       {pending ? <AppText muted>{m.sessionWaiting}</AppText> : (
@@ -28,7 +33,13 @@ export function ActiveSessionCard() {
           {formatClock(activeMs(session, now))} · {session.status === 'paused' ? m.paused : m.running}
         </AppText>
       )}
-      <Button title={pending ? m.sessionVerify : m.sessionContinue} onPress={() => router.push('/reading/mission')} />
+      <Button icon={pending ? 'cloud' : 'play'} title={pending ? m.sessionVerify : m.sessionContinue}
+        onPress={() => router.push('/reading/mission')} />
     </Card>
   );
 }
+
+const styles = StyleSheet.create({
+  header: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  title: { flex: 1, minWidth: 0 },
+});

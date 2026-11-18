@@ -2,6 +2,7 @@ import 'react-native-url-polyfill/auto';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { AppState, Platform } from 'react-native';
+import { demoFetch, isDemo } from './demo';
 
 const url = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
 const anonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
@@ -9,8 +10,8 @@ const anonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
 /** Só a chave pública (anon/publishable) vai para o app. Nunca a service role. */
 export const isSupabaseConfigured = /^https?:\/\//.test(url) && anonKey.length > 20 && !url.includes('SEU-PROJETO');
 
-export const supabase: SupabaseClient | null = isSupabaseConfigured
-  ? createClient(url, anonKey, {
+export const supabase: SupabaseClient | null = isSupabaseConfigured || isDemo
+  ? createClient(isDemo ? 'https://jornada-demo.invalid' : url, isDemo ? 'jornada-piloto-local' : anonKey, {
       auth: {
         storage: AsyncStorage,
         autoRefreshToken: true,
@@ -18,6 +19,7 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
         detectSessionInUrl: Platform.OS === 'web',
         flowType: 'pkce',
       },
+      ...(isDemo ? { global: { fetch: demoFetch } } : {}),
     })
   : null;
 

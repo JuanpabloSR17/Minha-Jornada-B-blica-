@@ -7,8 +7,8 @@ import { Icon, type IconName } from '@/ui';
 import { strings } from '@/i18n';
 
 const TABS: { name: string; title: string; icon: IconName }[] = [
-  { name: 'home', title: strings.tabs.home, icon: 'home' },
-  { name: 'journey', title: strings.tabs.journey, icon: 'map' },
+  { name: 'home', title: strings.tabs.home, icon: 'camp' },
+  { name: 'journey', title: strings.tabs.journey, icon: 'compass' },
   { name: 'read', title: strings.tabs.read, icon: 'book' },
   { name: 'friends', title: strings.tabs.friends, icon: 'friends' },
   { name: 'profile', title: strings.tabs.profile, icon: 'profile' },

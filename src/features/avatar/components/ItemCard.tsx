@@ -42,6 +42,11 @@ export const ItemCard = memo(function ItemCard({ view, selected, onPress, width 
       <AppText variant="caption" numberOfLines={2} style={styles.label} color={selected ? colors.text : colors.textMuted}>
         {displayName(item)}
       </AppText>
+      <View style={styles.state}>
+        <Icon name={view.locked ? 'lock' : view.equipped ? 'check' : 'chest'} size={12}
+          color={view.locked ? colors.textMuted : view.equipped ? colors.selection : colors.success} />
+        <AppText variant="caption" style={styles.stateText} muted>{status}</AppText>
+      </View>
       {isEquippable(item) && view.art !== 'final' ? (
         <AppText variant="caption" style={styles.artTagText} muted>
           {strings.wardrobe.avatarArtPending}
@@ -58,5 +63,7 @@ const styles = StyleSheet.create({
   br: { bottom: 4, right: 4 },
   tr: { top: 4, right: 4 },
   artTagText: { fontSize: 9, lineHeight: 12, textAlign: 'center' },
-  label: { textAlign: 'center', minHeight: 30, fontSize: 12, lineHeight: 15 },
+  label: { textAlign: 'center', minHeight: 32, fontSize: 13, lineHeight: 16 },
+  state: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 2, minHeight: 18 },
+  stateText: { fontSize: 11, lineHeight: 13, flexShrink: 1 },
 });

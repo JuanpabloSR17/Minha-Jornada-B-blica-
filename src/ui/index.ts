@@ -3,6 +3,7 @@ export { Button } from './Button';
 export { Card } from './Card';
 export { ConfirmDialog } from './ConfirmDialog';
 export { Icon, type IconName } from './Icon';
+export { IconBadge } from './IconBadge';
 export { Notice } from './Notice';
 export { Ornament } from './Ornament';
 export { Screen } from './Screen';

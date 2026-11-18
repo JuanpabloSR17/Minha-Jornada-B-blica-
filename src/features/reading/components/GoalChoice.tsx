@@ -4,11 +4,16 @@ import { useTheme } from '@/theme/ThemeProvider';
 import { radius, spacing } from '@/theme/tokens';
 import { AppText, Button, ConfirmDialog, Notice } from '@/ui';
 import { fmt, strings } from '@/i18n';
+import { useAuth } from '@/features/auth/AuthProvider';
 import { errorCode, errorMessage } from '@/lib/errors';
 import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
 import { displayName, displayNameOf, getItem } from '@/features/avatar/domain/catalog';
 import { claimDailyGoalItem, type DailyGoalState } from '../mission/mission.service';
+import { missionStorage } from '../mission/storage';
+import { itemReward } from '../mission/rewards';
+import { refLabel } from '../refs';
+import { RewardPouch } from './RewardPouch';
 
 /**
  * Escolha gratuita de um Comum da meta diária. As opções vêm do servidor; a escolha só vale depois
@@ -16,14 +21,22 @@ import { claimDailyGoalItem, type DailyGoalState } from '../mission/mission.serv
  */
 export function GoalChoice({ goal, onChange }: { goal: DailyGoalState; onChange?: (g: DailyGoalState) => void }) {
   const { colors } = useTheme();
+  const { userId } = useAuth();
   const [selected, setSelected] = useState<string | null>(null);
   const [confirming, setConfirming] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<string | null>(goal.chosenItem);
+  const [showReward, setShowReward] = useState(false);
 
   if (done) {
-    return <Notice tone="success">{fmt(strings.mission.goalClaimed, { item: displayNameOf(done) })}</Notice>;
+    return (
+      <>
+        <Notice tone="success">{fmt(strings.mission.goalClaimed, { item: displayNameOf(done) })}</Notice>
+        {showReward ? <RewardPouch rewards={[itemReward(done)]} reference={refLabel(goal.book, goal.chapter)}
+          onClose={() => setShowReward(false)} /> : null}
+      </>
+    );
   }
   if (!goal.choicePending) return null;
 
@@ -35,6 +48,8 @@ export function GoalChoice({ goal, onChange }: { goal: DailyGoalState; onChange?
     try {
       const r = await claimDailyGoalItem(goal.day, selected);
       setDone(r.itemId);
+      setShowReward(true);
+      if (userId) void missionStorage.saveGoalChoice(userId, r.goal);
       onChange?.(r.goal);
     } catch (e) {
       // a escolha continua na tela: basta tentar de novo (o servidor não concede duas vezes)

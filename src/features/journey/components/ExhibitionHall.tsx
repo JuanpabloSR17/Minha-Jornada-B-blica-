@@ -10,6 +10,7 @@ import { displayName, getItem, HOLY_ITEMS } from '@/features/avatar/domain/catal
 import { ArtifactArt, ARTIFACT_IDS, ARTIFACT_RATIO, type ArtifactId } from '../art/artifacts';
 import { Pedestal, SanctuaryHall } from '../art/scenes';
 import { useAmbient } from '../useAmbient';
+import { GlassPanel, glassTones } from './GlassPanel';
 
 const j = strings.journey;
 
@@ -60,8 +61,12 @@ export function ExhibitionHall({
         ) : null}
         {counters ? (
           <View style={[styles.counters, w && w < 340 ? styles.countersNarrow : null]}>
-            <View style={[styles.badge, w && w < 340 ? null : styles.badgeRow]}><AppText variant="caption" style={styles.badgeText} color="#F6ECD6" testID="counter-milestones">{counters.milestones}</AppText></View>
-            <View style={[styles.badge, w && w < 340 ? null : styles.badgeRow]}><AppText variant="caption" style={styles.badgeText} color="#F6ECD6" testID="counter-saints">{counters.saints}</AppText></View>
+            <GlassPanel tone="complete" overArt style={[styles.badge, w && w < 340 ? null : styles.badgeRow]}>
+              <AppText variant="caption" style={styles.badgeText} color={glassTones.complete.light} testID="counter-milestones">{counters.milestones}</AppText>
+            </GlassPanel>
+            <GlassPanel tone="gold" overArt style={[styles.badge, w && w < 340 ? null : styles.badgeRow]}>
+              <AppText variant="caption" style={styles.badgeText} color={glassTones.gold.light} testID="counter-saints">{counters.saints}</AppText>
+            </GlassPanel>
           </View>
         ) : null}
         {w ? ARTIFACT_IDS.map((id) => {
@@ -129,8 +134,8 @@ const styles = StyleSheet.create({
   counters: { flexDirection: 'row', gap: 8, padding: 10, justifyContent: 'center' },
   badgeRow: { flex: 1 },
   countersNarrow: { flexDirection: 'column', gap: 4, paddingBottom: 4 },
-  badge: { backgroundColor: 'rgba(16, 12, 24, 0.88)', borderColor: '#C9A24A', borderWidth: 1.2, borderRadius: 10, paddingVertical: 6, paddingHorizontal: 8 },
-  badgeText: { textAlign: 'center', fontWeight: '700', fontSize: 12, lineHeight: 16 },
+  badge: { borderRadius: 10, paddingVertical: 6, paddingHorizontal: 8 },
+  badgeText: { textAlign: 'center', fontFamily: fonts.bold, fontVariant: ['tabular-nums'], fontSize: 13, lineHeight: 17 },
   exhibit: { position: 'absolute', alignItems: 'center', borderRadius: 12 },
   selected: { backgroundColor: 'rgba(255, 215, 119, 0.12)' },
   lockHint: { fontSize: 10, lineHeight: 12 },

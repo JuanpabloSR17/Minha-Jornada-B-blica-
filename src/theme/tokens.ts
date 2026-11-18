@@ -120,6 +120,10 @@ export const fonts = {
   body: 'Atkinson_500Medium',
   bodySemibold: 'Atkinson_600SemiBold',
   bodyBold: 'Atkinson_700Bold',
+  // nomes usados nas telas do piloto: mesmos arquivos
+  medium: 'Atkinson_500Medium',
+  semibold: 'Atkinson_600SemiBold',
+  bold: 'Atkinson_700Bold',
 } as const;
 
 /** Família do texto corrido para um peso pedido (cada peso é um arquivo; não se sintetiza negrito). */
