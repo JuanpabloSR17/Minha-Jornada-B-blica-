@@ -63,12 +63,19 @@ const denied = (res) => !!res.error || (Array.isArray(res.data) && res.data.leng
   assert.deepEqual(profs.map((p) => p.id), [ana.uid], 'Ana só lê o próprio perfil');
   const reuse = await rpc(ana.c, 'purchase_market_item', { p_purchase_id: biaPurchaseId, p_item: biaItem.itemId });
   assert.equal(reuse.code, 'invalid_purchase', 'Ana não reaproveita a compra de Bia');
-  const biaGoal = (await conn.query(`select day::text as d, options from daily_goals where user_id = $1 and chosen_item is null order by day limit 1`, [bia.uid])).rows[0];
+  // a escolha de Bia num dia em que Ana não tem meta própria (se Ana tiver meta no mesmo dia, o
+  // resgate seria da meta da própria Ana, que é legítimo); Bia continua com a escolha pendente
   const anaDays = (await conn.query(`select day::text as d from daily_goals where user_id = $1`, [ana.uid])).rows.map((r) => r.d);
+  const biaGoals = (await conn.query(`select day::text as d, options from daily_goals where user_id = $1 and chosen_item is null order by day`, [bia.uid])).rows;
+  const biaGoal = biaGoals.find((g) => !anaDays.includes(g.d)) ?? biaGoals[0];
   const steal = await rpc(ana.c, 'claim_daily_goal_item', { p_day: biaGoal.d, p_item: biaGoal.options[0] });
-  assert.ok(steal.code && ['goal_not_found', 'invalid_goal_choice', 'goal_choice_already_made', 'item_already_owned'].includes(steal.code), `Ana não resgata a escolha de Bia (${steal.code})`);
+  if (!anaDays.includes(biaGoal.d)) {
+    assert.ok(steal.code && ['goal_not_found', 'invalid_goal_choice', 'goal_choice_already_made', 'item_already_owned'].includes(steal.code), `Ana não resgata a escolha de Bia (${steal.code})`);
+    assert.deepEqual(await totals(), before, 'tentativas entre contas não mudaram nada');
+  }
+  const biaAfter = (await conn.query(`select chosen_item from daily_goals where user_id = $1 and day = $2`, [bia.uid, biaGoal.d])).rows[0];
+  assert.equal(biaAfter.chosen_item, null, 'a escolha de Bia continua pendente e só dela');
   assert.ok(anaDays.length > 0);
-  assert.deepEqual(await totals(), before, 'tentativas entre contas não mudaram nada');
   ok('isolamento: Ana não lê saldo, itens, compras, metas, sessões, XP, preferências nem visuais de Bia, e não reaproveita a compra nem a escolha dela');
 
   // ---------------------------------------------------------------- visitante sem login
