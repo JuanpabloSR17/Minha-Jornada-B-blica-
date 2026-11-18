@@ -41,6 +41,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/comum_tecela/estilo-3/corpo.webp'),
     ] },
   },
+  epico_sumo_sacerdote: {
+    padrao: { icon: require('../../../assets/skins/epico_sumo_sacerdote/icone.webp'), styles: [
+      require('../../../assets/skins/epico_sumo_sacerdote/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_sumo_sacerdote/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_sumo_sacerdote/estilo-3/corpo.webp'),
+    ] },
+  },
   lendario_moises: {
     padrao: { icon: require('../../../assets/skins/lendario_moises/icone.webp'), styles: [
       require('../../../assets/skins/lendario_moises/estilo-1/corpo.webp'),
@@ -65,6 +72,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_bordador/feminino/estilo-3/corpo.webp'),
     ] },
   },
+  raro_filha_de_farao: {
+    padrao: { icon: require('../../../assets/skins/raro_filha_de_farao/icone.webp'), styles: [
+      require('../../../assets/skins/raro_filha_de_farao/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_filha_de_farao/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_filha_de_farao/estilo-3/corpo.webp'),
+    ] },
+  },
   raro_gravador: {
     padrao: { icon: require('../../../assets/skins/raro_gravador/icone.webp'), styles: [
       require('../../../assets/skins/raro_gravador/estilo-1/corpo.webp'),
@@ -75,6 +89,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_gravador/feminino/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_gravador/feminino/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_gravador/feminino/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_joquebede: {
+    padrao: { icon: require('../../../assets/skins/raro_joquebede/icone.webp'), styles: [
+      require('../../../assets/skins/raro_joquebede/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_joquebede/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_joquebede/estilo-3/corpo.webp'),
     ] },
   },
   raro_levita: {
@@ -99,6 +120,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_ourives/feminino/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_ourives/feminino/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_ourives/feminino/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_parteiras: {
+    padrao: { icon: require('../../../assets/skins/raro_parteiras/icone.webp'), styles: [
+      require('../../../assets/skins/raro_parteiras/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_parteiras/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_parteiras/estilo-3/corpo.webp'),
     ] },
   },
   raro_perfumista: {

@@ -41,7 +41,8 @@ describe('pinturas entregues (art.generated)', () => {
   });
   it('o Lote A, Tecelã e Parteira estão pintados; as femininas têm nome próprio', () => {
     for (const id of ['comum_peregrino_exodo', 'raro_levita', 'lendario_moises', 'comum_tecela', 'comum_parteira',
-      'comum_carpinteiro', 'raro_sacerdote', 'raro_bordador', 'raro_ourives', 'raro_gravador', 'raro_perfumista']) expect(SKIN_ART[id]?.padrao).toBeTruthy();
+      'comum_carpinteiro', 'raro_sacerdote', 'raro_bordador', 'raro_ourives', 'raro_gravador', 'raro_perfumista',
+      'epico_sumo_sacerdote', 'raro_joquebede', 'raro_filha_de_farao', 'raro_parteiras']) expect(SKIN_ART[id]?.padrao).toBeTruthy();
     expect(skinDisplayName(getSkin('comum_carpinteiro'), 'feminino')).toBe('Carpinteira de acácia');
     expect(variantsOf('raro_sacerdote')).toEqual(['padrao']);
     expect(variantsOf('comum_peregrino_exodo')).toEqual(['padrao', 'feminino']);

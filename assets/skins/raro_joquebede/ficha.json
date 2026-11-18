@@ -1,0 +1,47 @@
+{
+  "id": "raro_joquebede",
+  "nome": "Cesto de Joquebede",
+  "raridade": "rare",
+  "mundo": "origens",
+  "referencia": "Êxodo 2:3",
+  "representacao": "inspired",
+  "origem": "missao",
+  "temporada": "t1-exodo",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-long"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  }
+}

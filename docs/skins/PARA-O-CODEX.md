@@ -204,3 +204,26 @@ O SHA-256 do ZIP confere com o `.zip.sha256` e as 72 somas internas conferem.
 - **Estudo do Manto de Moisés** (`entregas/lote-b/Estudo_Lendaria.png`): **aprovado como direção.** Manto longo e volumoso, borda dupla legível, faixa na cintura e cajado com ponta bifurcada. Entregue as 3 pinturas do Moisés novo (e da apresentação feminina) para substituir as do Lote A, com o mesmo ID e as mesmas âncoras.
 
 **Próximo:** o Moisés revisado e a Épica da semana (`epico_sumo_sacerdote`), que aparece na loja. Depois, as Raras de missão (Joquebede, filha de Faraó, Sifrá e Puá) e as Épicas da temporada.
+
+## 12. Moisés revisado, Épica da semana e Raras de missão: aplicados (18/11/2026)
+
+`Jornada_Biblica_Exodo_Moises_Epica_e_Missoes.zip`, montado sobre `986cfd0`:
+- O SHA-256 `474d42e5…3523` confere com o `.zip.sha256`.
+- O `SHA256SUMS.txt` anexado é idêntico ao de dentro do ZIP, e as 63 entradas conferem.
+- As fichas do Moisés são idênticas às do branch.
+
+**Aprovado:** 18 pinturas de 137 a 233 KB, com estilos idênticos ao catálogo, pés em y ≈ 1451 e névoa zero.
+- **Manto de Moisés (Lendária):** substituído pelo corte do estudo, com manto longo de borda dupla, faixa tecida e cajado bifurcado, nas versões padrão e feminina. Agora se distingue bem do Peregrino.
+- **Sumo sacerdote (Épica da semana):** éfode, peitoral de 12 pedras e turbante com a placa dourada.
+- **Joquebede, filha de Faraó e Sifrá e Puá (Raras de missão):** as mãos de Joquebede e da filha de Faraó seguram o cesto pelas laterais, como pedido.
+
+Nada mudou no banco nem nas migrações. São 15 skins pintadas, e todas as da loja (incluindo a Épica) aparecem pintadas.
+
+**Falta pintar da Temporada 1 (11 skins):**
+- Gloriosas: Moisés com o rosto resplandecente e Arão com a vara que floresceu.
+- Lendária: Vestes de Arão.
+- Épicas: Miriã, Bezalel, Jetro e Zípora.
+- Raras: Hur, Aoliabe e Tocador de shofar.
+- Comum: Pastor de ovelhas (a skin inicial).
+
+Prioridade sugerida: Pastor (é inicial), depois as Lendárias e Gloriosas de leitura (já conquistáveis no app) e por fim as Épicas e Raras da temporada.
