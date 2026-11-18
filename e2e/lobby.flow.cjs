@@ -93,6 +93,21 @@ const inViewport = async (loc, label) => {
     step(label);
   };
   await go(() => page.getByTestId('lobby-siclos').filter({ visible: true }), () => page.getByText('Saldo: 120 Siclos').first().waitFor(), 'Siclos do HUD abrem o Mercado com o mesmo saldo');
+  // loja só de skins, em 412 e 320 px
+  for (const [w, h] of [[412, 915], [320, 640]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.goto(`${APP}/market`);
+    await page.getByText('Épica da semana').filter({ visible: true }).waitFor();
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(900);
+    await noOverflow(page, `loja ${w}`);
+    await page.screenshot({ path: `${SHOTS}/lb-05-loja-${w}.png` });
+    await page.getByText('Raras do dia').filter({ visible: true }).scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
+    await page.screenshot({ path: `${SHOTS}/lb-06-loja-raras-${w}.png` });
+  }
+  await page.setViewportSize({ width: 412, height: 915 });
+  step('loja só de skins em 412 e 320 px, sem rolagem lateral');
   await go(() => page.getByTestId('lobby-rail').filter({ visible: true }).getByRole('button', { name: 'Guarda-roupa', exact: true }), () => page.getByRole('button', { name: 'Salvar' }).waitFor(), 'Vestiário abre o guarda-roupa');
   await go(() => page.getByTestId('mode-map').filter({ visible: true }), () => page.getByTestId('journey-atlas').filter({ visible: true }).waitFor(), 'modo Mapa dos mundos abre a Jornada');
   await go(() => page.getByTestId('mode-mission').filter({ visible: true }), () => page.getByText('Modo Missão', { exact: true }).filter({ visible: true }).first().waitFor(), 'Modo Missão abre a aba Ler');

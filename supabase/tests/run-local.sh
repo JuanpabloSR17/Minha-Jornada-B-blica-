@@ -157,11 +157,26 @@ IFS=, read -r OWN WINNERS BAL PRICE <<< "$R"
 if [ "$OWN" != "1" ] || [ "$WINNERS" != "1" ] || [ "$BAL" != "$((540 - PRICE))" ]; then echo "✘ Mercado × escolha gratuita: posse,vencedores,saldo,preço=$R"; exit 1; fi
 echo "  ok  Mercado: saldo disputado gera 1 compra, reenvio em 2 aparelhos 1 débito, compra × escolha gratuita 1 item"
 
+echo "→ concorrência na loja de skins (dois aparelhos: mesma skin com IDs diferentes, mesmo saldo)"
+U4=d4100000-0000-0000-0000-0000000000d4
+"${PSQL[@]}" -d jb_test -v u=$U4 -v n=loja_dois_aparelhos -v s=500 <<< "$MK" >/dev/null
+SK=$("${PSQL[@]}" -d jb_test -At -c "select skin_id from private.skin_offers(private.market_rotation_day(now())) where section = 'rare' order by skin_id limit 1")
+SKT=(-o /dev/null -f "$ROOT/supabase/tests/concurrency_skin.sql")
+"${PSQL[@]}" -d jb_test -v uid=$U4 -v pid=d4100000-0000-4000-8000-000000000001 -v skin=$SK "${SKT[@]}" 2>/dev/null & P1=$!
+"${PSQL[@]}" -d jb_test -v uid=$U4 -v pid=d4100000-0000-4000-8000-000000000002 -v skin=$SK "${SKT[@]}" 2>/dev/null & P2=$!
+"${PSQL[@]}" -d jb_test -v uid=$U4 -v pid=d4100000-0000-4000-8000-000000000001 -v skin=$SK "${SKT[@]}" 2>/dev/null & P3=$!
+wait $P1; wait $P2; wait $P3
+R=$("${PSQL[@]}" -d jb_test -At -c "select (select count(*) from public.skin_purchases where user_id='$U4') || ',' ||
+  (select count(*) from public.user_skins where user_id='$U4') || ',' ||
+  (select sum(amount) from public.siclos_ledger where user_id='$U4')")
+if [ "$R" != "1,1,100" ]; then echo "✘ loja de skins (dois aparelhos): compras,skins,saldo=$R (esperado 1,1,100)"; exit 1; fi
+echo "  ok  loja de skins: a mesma skin disputada por dois aparelhos gera 1 compra e 1 débito"
+
 echo "→ reversão manual do Marco 2 (banco até o catálogo v3) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback" postgres
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261114*|20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback -f "$ROOT/supabase/rollbacks/20261113000100_marco2_wardrobe.down.sql"
@@ -176,7 +191,7 @@ echo "→ reversão manual das raridades (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback2" postgres
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261115*|20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback2 -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback2 -f "$ROOT/supabase/rollbacks/20261114000100_rarities_and_triggers.down.sql"
@@ -191,7 +206,7 @@ echo "→ reversão manual do catálogo oficial (banco completo) e reaplicação
 "${PSQL[@]}" -c "create database jb_rollback3" postgres
 "${PSQL[@]}" -d jb_rollback3 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261116*|20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback3 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback3 -At -c "select count(*) from public.cosmetic_items")
@@ -209,7 +224,7 @@ echo "→ reversão manual do Modo Missão (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback4" postgres
 "${PSQL[@]}" -d jb_rollback4 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261117*|20261118*|20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback4 -o /dev/null -f "$f"
 done
 BEFORE=$("${PSQL[@]}" -d jb_rollback4 -At -c "select count(*) from public.cosmetic_items")
@@ -227,7 +242,7 @@ echo "→ reversão manual da meta diária (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback5" postgres
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261118*|20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261118*|20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback5 -o /dev/null -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback5 -f "$ROOT/supabase/rollbacks/20261117000100_daily_goal.down.sql"
@@ -243,7 +258,7 @@ echo "→ reversão manual da meta diária v2 (banco completo) e reaplicação"
 "${PSQL[@]}" -c "create database jb_rollback6" postgres
 "${PSQL[@]}" -d jb_rollback6 -f "$ROOT/supabase/tests/00_supabase_shim.sql"
 for f in "$ROOT"/supabase/migrations/*.sql; do
-  case "$(basename "$f")" in 20261119*|20261120*|20261121*|20261122*|20261123*) continue ;; esac
+  case "$(basename "$f")" in 20261119*|20261120*|20261121*|20261122*|20261123*|20261124*) continue ;; esac
   "${PSQL[@]}" -d jb_rollback6 -o /dev/null -f "$f"
 done
 "${PSQL[@]}" -d jb_rollback6 -c "insert into auth.users (id) values ('f6666666-0000-0000-0000-000000000006');
@@ -266,6 +281,10 @@ for f in "$ROOT"/supabase/migrations/*.sql; do "${PSQL[@]}" -d jb_rollback7 -o /
   insert into public.siclos_ledger (user_id, event_type, source_event_id, amount) values ('f7777777-0000-0000-0000-000000000007', 'TEST_GRANT', 'x', 100);
   set role authenticated; select set_config('request.jwt.claim.sub', 'f7777777-0000-0000-0000-000000000007', false);
   select public.purchase_market_item('77777777-0000-4000-8000-000000000001', 'common_tunica_de_linho_cru');" >/dev/null
+"${PSQL[@]}" -d jb_rollback7 -f "$ROOT/supabase/rollbacks/20261124000100_skin_market.down.sql"
+SKINS=$("${PSQL[@]}" -d jb_rollback7 -At -c "select (select count(*) from pg_tables where tablename in ('skins','user_skins','skin_purchases')) || ',' ||
+  (select count(*) from market_purchases) || ',' || (select sum(amount) from public.siclos_ledger where user_id = 'f7777777-0000-0000-0000-000000000007')")
+if [ "$SKINS" != "0,1,20" ]; then echo "✘ reversão da loja de skins: tabelas,compras de peças,saldo=$SKINS"; exit 1; fi
 "${PSQL[@]}" -d jb_rollback7 -f "$ROOT/supabase/rollbacks/20261123000100_market_rotation.down.sql"
 ROTATION=$("${PSQL[@]}" -d jb_rollback7 -At -c "select (select count(*) from market_purchases) || ',' ||
   (select count(*) from pg_proc where proname = 'market_offers')")

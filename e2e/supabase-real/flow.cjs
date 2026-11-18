@@ -31,11 +31,13 @@ async function login(page, email) {
   const uid = s.ana.uid;
   const balance = async () => Number((await conn.query(`select coalesce(sum(amount),0) b from siclos_ledger where user_id = $1`, [uid])).rows[0].b);
   const owns = async (item) => Number((await conn.query(`select count(*) from user_items where user_id = $1 and item_id = $2`, [uid, item])).rows[0].count);
+  const ownsSkin = async (skin) => Number((await conn.query(`select count(*) from user_skins where user_id = $1 and skin_id = $2`, [uid, skin])).rows[0].count);
+  // skins da vitrine de hoje que a conta ainda não tem (Comuns e Raras; a Épica pode estar de presente)
   const unowned = async (max) => (await conn.query(
-    `select i.id, i.name, i.slot, i.shop_price_suggested::int price from cosmetic_items i
-     join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-     where i.shop_price_suggested <= $2
-       and not private.owns_canonical($1, i.id) order by i.shop_price_suggested desc, i.id`, [uid, max])).rows;
+    `select o.skin_id id, s.name, o.price from private.skin_offers(private.market_rotation_day(now())) o
+     join skins s on s.id = o.skin_id
+     where o.section in ('common', 'rare') and o.price <= $2
+       and not private.owns_skin($1, o.skin_id) order by o.price desc, o.skin_id`, [uid, max])).rows;
   const browser = await chromium.launch();
   try {
     const A = await phone(browser);
@@ -72,61 +74,55 @@ async function login(page, email) {
     assert.ok(today.chosen_item);
     ok(`meta do dia pelo app: Gênesis 7 → 40 Siclos (saldo ${start} → ${start + 40}), 20 XP de bônus e ${optionName} pela escolha gratuita`);
 
-    // ------------------------------------------------ compra e inventário
+    // ------------------------------------------------ loja de skins: compra
+    // saldo de teste para as três compras (no app os Siclos vêm só da meta diária)
+    await conn.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount) values ($1, 'TEST_GRANT', 'skins-real', 600)`, [uid]);
     await page.goto(`${APP}/home`);
     await page.getByRole('button', { name: 'Mercado dos Viajantes' }).click();
     const b1 = await balance();
     await page.getByText(`Saldo: ${b1} Siclos`).first().waitFor();
-    const x = (await unowned(b1)).at(-1); // o mais barato disponível
+    await page.getByTestId('market-fair').getByText('Comum = 4 dias de meta (160 Siclos)', { exact: false }).waitFor();
+    const x = (await unowned(b1)).at(-1); // a mais barata disponível
     await page.getByRole('button', { name: `Comprar ${x.name}` }).click();
     await page.getByText(`por ${x.price} Siclos. Saldo: ${b1} → ${b1 - x.price} Siclos.`, { exact: false }).waitFor();
     await page.getByRole('button', { name: `Pagar ${x.price} Siclos` }).click();
-    await page.getByText(`${x.name} foi adicionado ao seu inventário. Saldo: ${b1 - x.price} Siclos.`).waitFor();
+    await page.getByText(`A skin ${x.name} agora é sua, com os 3 estilos. Saldo: ${b1 - x.price} Siclos.`).waitFor();
     assert.equal(await balance(), b1 - x.price);
-    assert.equal(await owns(x.id), 1);
+    assert.equal(await ownsSkin(x.id), 1);
     await shot(page, 'real-03-bought');
-    await page.goto(`${APP}/avatar/wardrobe?category=${CATEGORY[x.slot] ?? x.slot}`);
-    await page.getByRole('radio', { name: new RegExp(`^${x.name},.*Obtido`) }).waitFor();
-    await shot(page, 'real-04-wardrobe');
-    ok(`compra: ${x.name} por ${x.price} → saldo ${b1 - x.price} (interface e banco) e item obtido no guarda-roupa`);
+    ok(`loja de skins: ${x.name} por ${x.price} → saldo ${b1 - x.price} (interface e banco) e skin na conta`);
 
     // ------------------------------------------------ resposta perdida
     const b2 = await balance();
     const y = (await unowned(b2)).at(-1);
     await page.goto(`${APP}/market`);
-    // pedido sem resposta: fica pendente, sobrevive a reabrir; a verificação automática com resposta
-    // perdida confirma pela vitrine, sem cobrança dupla nem estado "aguardando" + "Obtido"
-    await page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
+    await page.route('**/rest/v1/rpc/purchase_skin', (r) => r.abort('internetdisconnected'));
     await page.getByRole('button', { name: `Comprar ${y.name}` }).click();
     await page.getByRole('button', { name: `Pagar ${y.price} Siclos` }).click();
     await page.getByText('Compra aguardando confirmação').waitFor();
-    assert.equal(await owns(y.id), 0, 'o pedido não chegou ao servidor');
-    await page.unroute('**/rest/v1/rpc/purchase_market_item');
-    await page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+    assert.equal(await ownsSkin(y.id), 0, 'o pedido não chegou ao servidor');
+    await page.unroute('**/rest/v1/rpc/purchase_skin');
+    await page.route('**/rest/v1/rpc/purchase_skin', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
     await page.reload();
-    await page.getByText(`Compra confirmada: ${y.name} já está no seu inventário`, { exact: false }).waitFor();
+    await page.getByText(`Compra confirmada: a skin ${y.name} já é sua`, { exact: false }).waitFor();
     assert.equal(await page.getByText('Compra aguardando confirmação').count(), 0);
-    await page.unroute('**/rest/v1/rpc/purchase_market_item');
+    await page.unroute('**/rest/v1/rpc/purchase_skin');
     await page.getByText(`Saldo: ${b2 - y.price} Siclos`).first().waitFor();
-    const lost = (await conn.query(`select (select count(*)::int from market_purchases where user_id = $1 and item_id = $2) p,
-      (select count(*)::int from siclos_ledger where user_id = $1 and event_type = 'MARKET_PURCHASE' and source_event_id in (select 'purchase:' || id from market_purchases where user_id = $1 and item_id = $2)) d`, [uid, y.id])).rows[0];
+    const lost = (await conn.query(`select (select count(*)::int from skin_purchases where user_id = $1 and skin_id = $2) p,
+      (select count(*)::int from siclos_ledger where user_id = $1 and event_type = 'SKIN_PURCHASE' and source_event_id in (select 'skin:' || id from skin_purchases where user_id = $1 and skin_id = $2)) d`, [uid, y.id])).rows[0];
     assert.deepEqual(lost, { p: 1, d: 1 });
     assert.equal(await balance(), b2 - y.price);
     await shot(page, 'real-05-recovered');
-    ok(`compra sem resposta: pendente após reabrir; verificação automática com resposta perdida confirma ${y.name} uma vez (1 compra, 1 débito); saldo ${b2 - y.price}`);
+    ok(`skin sem resposta: pendente após reabrir; verificação automática com resposta perdida confirma ${y.name} uma vez (1 compra, 1 débito); saldo ${b2 - y.price}`);
 
     // ------------------------------------------------ duas compras disputando o saldo (dois aparelhos)
     const b3 = await balance();
-    // A seleção diária muda. Deixe exatamente o maior preço como saldo para
-    // que cada oferta caiba separadamente e as duas não caibam juntas.
-    const [highest] = await unowned(b3);
-    if (highest && b3 > highest.price) {
-      await conn.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount)
-        values ($1, 'TEST_ADJUST', 'market-race', $2)`, [uid, highest.price - b3]);
-    }
+    const [highest] = await unowned(Math.max(b3, 400));
+    await conn.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount)
+      values ($1, 'TEST_ADJUST', 'skins-race', $2)`, [uid, highest.price - b3]);
     const raceBalance = await balance();
     const [z, w] = await unowned(raceBalance);
-    assert.ok(z && w && z.price + w.price > raceBalance, `precisa de dois itens que não cabem juntos no saldo ${raceBalance}`);
+    assert.ok(z && w && z.price + w.price > raceBalance, `precisa de duas skins que não cabem juntas no saldo ${raceBalance}`);
     const B = await phone(browser);
     await login(B.page, s.ana.email);
     await page.goto(`${APP}/market`);
@@ -140,13 +136,12 @@ async function login(page, email) {
       B.page.getByRole('button', { name: `Pagar ${w.price} Siclos` }).click(),
     ]);
     const outcome = async (p, it) => {
-      const won = p.getByText(`${it.name} foi adicionado ao seu inventário`, { exact: false });
+      const won = p.getByText(`A skin ${it.name} agora é sua`, { exact: false });
       const lostMsg = p.getByText('Siclos insuficientes para esta compra.');
       await Promise.race([won.waitFor(), lostMsg.waitFor()]);
       return (await won.count()) > 0 ? 'comprou' : 'saldo insuficiente';
     };
     const [rz, rw] = [await outcome(page, z), await outcome(B.page, w)];
-    // nenhum aparelho mostra saldo negativo, nem durante a animação do diálogo
     for (const p of [page, B.page]) {
       for (let i = 0; i < 6; i++) {
         assert.equal(await p.getByText(/→ -\d+ Siclos/).count(), 0, 'saldo negativo exibido na tela');
@@ -156,8 +151,8 @@ async function login(page, email) {
     assert.deepEqual([rz, rw].sort(), ['comprou', 'saldo insuficiente']);
     const winner = rz === 'comprou' ? z : w;
     const loser = winner === z ? w : z;
-    assert.equal(await owns(winner.id), 1);
-    assert.equal(await owns(loser.id), 0);
+    assert.equal(await ownsSkin(winner.id), 1);
+    assert.equal(await ownsSkin(loser.id), 0);
     assert.equal(await balance(), raceBalance - winner.price);
     assert.ok((await balance()) >= 0);
     await shot(page, 'real-06-race-a');

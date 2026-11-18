@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, AppState, ImageBackground, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, AppState, ImageBackground, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { CinemaTheme, useTheme } from '@/theme/ThemeProvider';
 import { fonts, radius, spacing } from '@/theme/tokens';
@@ -8,16 +8,20 @@ import { fmt, strings } from '@/i18n';
 import { errorCode, errorMessage } from '@/lib/errors';
 import { useAuth } from '@/features/auth/AuthProvider';
 import { StepHeader } from '@/features/avatar/components/StepHeader';
-import { ItemIcon } from '@/features/avatar/components/ItemIcon';
 import { RARITY_COLOR } from '@/features/avatar/components/RarityBadge';
-import { displayName, displayNameOf, getItem } from '@/features/avatar/domain/catalog';
-import { INVENTORY_CATEGORIES } from '@/features/avatar/domain/wardrobe';
 import { uuidv4 } from '@/features/reading/mission/session';
-import { getMarket, pendingPurchaseStorage, purchaseItem, type MarketItem, type MarketState, type PendingPurchase } from './market.service';
+import { FirelightPortrait } from '@/features/avatar/styles/cinematic';
+import { wearFrom } from '@/features/avatar/styles/archetypes';
+import { getSkin, skinToneColor, styleLook } from '@/features/skins/catalog';
+import { getSkinMarket, pendingSkinStorage, purchaseSkin, type PendingSkinPurchase, type SkinMarketState, type SkinOffer } from './market.service';
 
 const m = strings.market;
 const marketArt = require('../../../assets/journey/market.webp');
-type Msg = { tone: 'success' | 'error' | 'info'; text: string; itemId?: string };
+const WEEKDAYS = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+type Msg = { tone: 'success' | 'error' | 'info'; text: string };
+const nameOf = (id: string) => getSkin(id)?.name ?? id;
+/** milhar com ponto, como no Brasil (1.000) */
+const n = (v: number) => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
 function RotationCountdown({ deadline }: { deadline: number }) {
   const [now, setNow] = useState(Date.now);
@@ -31,10 +35,26 @@ function RotationCountdown({ deadline }: { deadline: number }) {
   return <AppText variant="caption" testID="market-refresh">{minutes ? fmt(m.remaining, { time }) : m.updating}</AppText>;
 }
 
+/** Seletor dos 3 estilos da skin (cores, rosto e cabelo), pelo tom de pele de cada um. */
+function StylePicker({ skinId, value, onChange }: { skinId: string; value: number; onChange: (i: number) => void }) {
+  const skin = getSkin(skinId);
+  if (!skin) return null;
+  return (
+    <View style={styles.styles} accessibilityRole="radiogroup" accessibilityLabel={m.styles}>
+      {skin.styles.map((st, i) => (
+        <Pressable key={i} accessibilityRole="radio" accessibilityState={{ checked: i === value }} aria-checked={i === value}
+          accessibilityLabel={fmt(m.styleLabel, { n: i + 1, skin: skin.name })}
+          onPress={() => onChange(i)} hitSlop={8}
+          style={[styles.styleDot, { backgroundColor: skinToneColor(st), borderColor: i === value ? '#E9BA5B' : 'rgba(246,236,214,0.35)' }]} />
+      ))}
+    </View>
+  );
+}
+
 /**
- * Mercado dos Viajantes: itens que o catálogo marca para a loja, com preço em Siclos.
- * O servidor confere disponibilidade, preço, posse e saldo na hora da compra; a compra é
- * idempotente pelo ID gerado aqui, guardado até a resposta chegar.
+ * Mercado dos Viajantes, só com skins. Preço justo em dias de leitura (Comum 4, Rara 10, Épica 25
+ * dias de meta); a Épica da semana sai de graça no dia de presente. O servidor confere vitrine,
+ * preço, posse e saldo; a compra é idempotente pelo ID gerado aqui, guardado até a resposta chegar.
  */
 export function MarketScreen() {
   return <CinemaTheme><MarketContent /></CinemaTheme>;
@@ -44,22 +64,22 @@ function MarketContent() {
   const { colors } = useTheme();
   const router = useRouter();
   const { userId } = useAuth();
-  const [market, setMarket] = useState<MarketState | null>(null);
-  const [pending, setPending] = useState<PendingPurchase | null>(null);
-  const [confirm, setConfirm] = useState<MarketItem | null>(null);
-  // conteúdo do diálogo (item e saldo do momento em que foi aberto) continua igual durante a
-  // animação de fechar, mesmo que o saldo mude com a resposta do servidor
-  const [shown, setShown] = useState<{ item: MarketItem; balance: number; offerDay?: string } | null>(null);
+  const [market, setMarket] = useState<SkinMarketState | null>(null);
+  const [pending, setPending] = useState<PendingSkinPurchase | null>(null);
+  const [confirm, setConfirm] = useState<{ offer: SkinOffer; balance: number; offerDay: string } | null>(null);
+  const [shown, setShown] = useState<{ offer: SkinOffer; balance: number; offerDay: string } | null>(null);
+  const [style, setStyle] = useState<Record<string, number>>({});
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<Msg | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const requested = useRef(0);
   const purchasing = useRef(false);
+  const autoVerify = useRef<PendingSkinPurchase | null>(null);
 
   const refresh = useCallback(async () => {
     const request = ++requested.current;
     try {
-      const state = await getMarket();
+      const state = await getSkinMarket();
       if (request === requested.current) {
         setMarket(state);
         setLoadError(null);
@@ -73,7 +93,7 @@ function MarketContent() {
   const load = useCallback(async () => {
     try {
       await refresh();
-    } catch { /* Refresh keeps the last usable shop and shows the retry action. */ }
+    } catch { /* a última vitrine continua na tela com a opção de tentar de novo */ }
   }, [refresh]);
 
   useFocusEffect(
@@ -84,12 +104,11 @@ function MarketContent() {
         if (state === 'active') void load();
       });
       if (userId) {
-        void pendingPurchaseStorage.load(userId).then((p) => {
+        void pendingSkinStorage.load(userId).then((p) => {
           if (!active || purchasing.current) return;
+          // compra que ficou sem resposta: verifica sozinha ao abrir (mesmo ID, sem cobrança dupla)
           autoVerify.current = p;
           setPending(p);
-          // compra que ficou sem resposta: verifica sozinha ao abrir (mesmo ID, sem cobrança dupla),
-          // para a tela não mostrar "aguardando" e "Obtido" ao mesmo tempo
         });
       }
       return () => {
@@ -104,7 +123,6 @@ function MarketContent() {
     const timer = setTimeout(() => void load(), Math.max(250, deadline - Date.now() + 250));
     return () => clearTimeout(timer);
   }, [deadline, load]));
-  const autoVerify = useRef<PendingPurchase | null>(null);
   useEffect(() => {
     const p = autoVerify.current;
     if (p && pending?.purchaseId === p.purchaseId && !busy) {
@@ -113,47 +131,41 @@ function MarketContent() {
     }
   });
 
-  const name = displayNameOf;
-
   /** Envia (ou reenvia) a compra pendente e trata o resultado. */
-  const send = async (p: PendingPurchase) => {
+  const send = async (p: PendingSkinPurchase) => {
     if (purchasing.current) return;
     purchasing.current = true;
     setBusy(true);
     setMsg(null);
     try {
-      const r = await purchaseItem(p);
-      await pendingPurchaseStorage.clear(p.userId);
+      const r = await purchaseSkin(p);
+      await pendingSkinStorage.clear(p.userId);
       setPending(null);
-      setMsg({ tone: 'success', itemId: r.itemId, text: fmt(r.duplicate ? m.alreadyBought : m.bought, { item: name(r.itemId), balance: r.siclosBalance }) });
+      setMsg({ tone: 'success', text: fmt(r.duplicate ? m.alreadyBought : m.bought, { item: nameOf(r.skinId), balance: n(r.siclosBalance) }) });
     } catch (e) {
       const code = errorCode(e);
       if (code === 'offline') {
-        // a compra fica guardada: o jogador pode verificar depois sem risco de cobrança dupla
         setPending(p);
         setMsg({ tone: 'error', text: errorMessage(e) });
-        // a resposta se perdeu: o registro das compras da conta diz o estado real desta compra
+        // a resposta se perdeu: o registro de compras da conta diz o estado real desta compra
         try {
           const fresh = await refresh();
-          const record = fresh.purchases.find((x) => x.purchaseId === p.purchaseId);
-          if (record) {
-            // só confirma se ESTA compra (mesmo ID) foi registrada
-            await pendingPurchaseStorage.clear(p.userId);
+          if (fresh.purchases.some((x) => x.purchaseId === p.purchaseId)) {
+            await pendingSkinStorage.clear(p.userId);
             setPending(null);
-            setMsg({ tone: 'success', itemId: p.itemId, text: fmt(m.confirmedOffline, { item: name(p.itemId) }) });
-          } else if (fresh.items.find((x) => x.itemId === p.itemId)?.owned) {
-            // o item chegou por outra via (escolha gratuita, outro aparelho): esta compra não existe e nada foi cobrado
-            await pendingPurchaseStorage.clear(p.userId);
+            setMsg({ tone: 'success', text: fmt(m.confirmedOffline, { item: nameOf(p.skinId) }) });
+          } else if (fresh.owned.includes(p.skinId)) {
+            await pendingSkinStorage.clear(p.userId);
             setPending(null);
-            setMsg({ tone: 'info', itemId: p.itemId, text: fmt(m.ownedNotPurchased, { item: name(p.itemId) }) });
+            setMsg({ tone: 'info', text: fmt(m.ownedNotPurchased, { item: nameOf(p.skinId) }) });
           }
-        } catch {
-          /* sem conexão também para a vitrine: continua pendente */
-        }
+        } catch { /* sem conexão também para a vitrine: continua pendente */ }
       } else {
-        await pendingPurchaseStorage.clear(p.userId);
+        await pendingSkinStorage.clear(p.userId);
         setPending(null);
-        setMsg({ tone: code === 'item_already_owned' ? 'info' : 'error', text: code === 'item_already_owned' ? fmt(m.ownedNotPurchased, { item: name(p.itemId) }) : errorMessage(e) });
+        setMsg(code === 'skin_already_owned'
+          ? { tone: 'info', text: fmt(m.ownedNotPurchased, { item: nameOf(p.skinId) }) }
+          : { tone: 'error', text: errorMessage(e) });
       }
     } finally {
       purchasing.current = false;
@@ -162,39 +174,40 @@ function MarketContent() {
     }
   };
 
-  /** Antes de confirmar, atualiza a vitrine: o item pode ter sido obtido pela escolha gratuita. */
-  const ask = async (it: MarketItem) => {
+  /** Antes de confirmar, atualiza a vitrine: a skin pode ter chegado por outra via ou a oferta virado. */
+  const ask = async (offer: SkinOffer) => {
     setMsg(null);
     try {
       const fresh = await refresh();
-      const now = fresh.items.find((x) => x.itemId === it.itemId);
-      if (now?.owned) {
-        setMsg({ tone: 'info', text: fmt(m.alreadyOwned, { item: name(it.itemId) }) });
+      const now = fresh.offers.find((x) => x.skinId === offer.skinId);
+      if (fresh.owned.includes(offer.skinId) || now?.owned) {
+        setMsg({ tone: 'info', text: fmt(m.alreadyOwned, { item: nameOf(offer.skinId) }) });
         return;
       }
-      if (!now || now.status !== 'available' || now.price == null) {
-        setMsg({ tone: 'info', text: now ? m.pricePending : strings.errors.market_offer_expired });
+      if (!now) {
+        setMsg({ tone: 'info', text: strings.errors.market_offer_expired });
         return;
       }
       if (fresh.siclosBalance < now.price) {
         setMsg({ tone: 'info', text: strings.errors.insufficient_siclos });
         return;
       }
-      setShown({ item: now, balance: fresh.siclosBalance, offerDay: fresh.rotation?.day });
-      setConfirm(now);
+      const c = { offer: now, balance: fresh.siclosBalance, offerDay: fresh.rotation.day };
+      setShown(c);
+      setConfirm(c);
     } catch (e) {
       setMsg({ tone: 'error', text: errorMessage(e) });
     }
   };
 
   const buy = async () => {
-    const it = confirm;
+    const c = confirm;
     setConfirm(null);
-    if (!it || !userId || it.price == null || purchasing.current || pending) return;
-    const p: PendingPurchase = { purchaseId: uuidv4(), itemId: it.itemId, price: it.price, userId, offerDay: shown?.offerDay };
+    if (!c || !userId || purchasing.current || pending) return;
+    const p: PendingSkinPurchase = { purchaseId: uuidv4(), skinId: c.offer.skinId, price: c.offer.price, userId, offerDay: c.offerDay };
     purchasing.current = true;
     setBusy(true);
-    await pendingPurchaseStorage.save(p).catch(() => undefined);
+    await pendingSkinStorage.save(p).catch(() => undefined);
     setPending(p);
     purchasing.current = false;
     await send(p);
@@ -215,41 +228,58 @@ function MarketContent() {
   }
 
   const balance = market.siclosBalance;
-  const confirmItem = shown ? getItem(shown.item.itemId) : null;
-  const sections = market.rotation
-    ? [
-        { title: m.daily, items: market.items.filter((i) => i.section === 'daily') },
-        { title: m.essentials, items: market.items.filter((i) => i.section === 'essentials') },
-      ]
-    : [{ title: null, items: market.items }];
+  const epic = market.offers.find((o) => o.rarity === 'epic');
+  const rares = market.offers.filter((o) => o.rarity === 'rare');
+  const commons = market.offers.filter((o) => o.rarity === 'common');
 
-  function renderItem(it: MarketItem) {
-    const item = getItem(it.itemId);
-    if (!item) return null;
-    const category = INVENTORY_CATEGORIES.find((c) => c.slot === item.slot)?.label ?? item.category;
-    const short = it.price != null ? it.price - balance : 0;
+  function action(o: SkinOffer, name: string) {
+    if (o.owned) return <AppText variant="label" color={colors.success}>{m.owned}</AppText>;
+    const short = o.price - balance;
+    if (short > 0) return <AppText variant="caption" muted>{fmt(m.missing, { n: n(short) })}</AppText>;
     return (
-      <View key={it.itemId} style={[styles.row, { borderColor: RARITY_COLOR[item.rarity], backgroundColor: colors.surface }]}
-        accessible={false} testID={`market-${it.itemId}`}>
-        <View style={[styles.icon, { backgroundColor: colors.stage }]}>
-          <ItemIcon item={item} size={60} />
+      <Button compact variant="gold" title={o.gift ? m.claim : m.buy}
+        accessibilityLabel={`${o.gift ? m.claim : m.buy} ${name}`}
+        disabled={busy || !!pending} onPress={() => void ask(o)} />
+    );
+  }
+
+  function card(o: SkinOffer, big = false) {
+    const skin = getSkin(o.skinId);
+    if (!skin) return null;
+    const idx = style[o.skinId] ?? 0;
+    const look = styleLook(skin.styles[idx] ?? skin.styles[0]!);
+    const color = RARITY_COLOR[o.rarity];
+    const days = market!.days[o.rarity];
+    return (
+      <View key={o.skinId} testID={`market-${o.skinId}`} accessible={false}
+        style={[big ? styles.featured : styles.card, { borderColor: color, backgroundColor: colors.surface }]}>
+        <View style={[styles.portrait, { borderColor: color }]}>
+          <FirelightPortrait look={look} wear={wearFrom(skin.preview)} width={big ? 168 : 112} />
         </View>
         <View style={styles.info}>
-          <AppText variant="label">{displayName(item)}</AppText>
-          <AppText variant="caption" muted>{strings.rarity[item.rarity]} · {category}</AppText>
-          <AppText variant="label">{it.price != null ? fmt(m.price, { price: it.price }) : m.pricePending}</AppText>
-          {it.owned ? (
-            <AppText variant="caption" color={colors.success}>{m.owned}</AppText>
-          ) : it.status === 'available' ? (
-            short > 0 ? <AppText variant="caption" muted>{fmt(m.missing, { n: short })}</AppText> : (
-              <Button compact title={m.buy} accessibilityLabel={`${m.buy} ${item.name}`} variant="gold"
-                disabled={busy || !!pending} onPress={() => void ask(it)} />
-            )
-          ) : null}
+          <AppText variant="label" style={styles.name}>{skin.name}</AppText>
+          <AppText variant="caption" color={color} style={styles.rarity}>{strings.rarity[o.rarity]} · {skin.scriptureRef}</AppText>
+          <StylePicker skinId={o.skinId} value={idx} onChange={(i) => setStyle((s) => ({ ...s, [o.skinId]: i }))} />
+          <View style={styles.priceRow}>
+            {o.gift ? (
+              <>
+                <AppText variant="label" color={colors.primary}>{m.free}</AppText>
+                <AppText variant="caption" muted style={styles.strike}>{fmt(m.price, { price: n(market!.prices.epic) })}</AppText>
+              </>
+            ) : (
+              <>
+                <AppText variant="label" color={colors.primary}>{fmt(m.price, { price: n(o.price) })}</AppText>
+                <AppText variant="caption" muted>{fmt(m.days, { n: days })}</AppText>
+              </>
+            )}
+          </View>
+          {action(o, skin.name)}
         </View>
       </View>
     );
   }
+
+  const shownSkin = shown ? getSkin(shown.offer.skinId) : null;
 
   return (
     <Screen>
@@ -257,22 +287,31 @@ function MarketContent() {
       <ImageBackground source={marketArt} resizeMode="cover" testID="market-banner"
         style={[styles.banner, { borderColor: colors.borderStrong }]}>
         <View style={styles.bannerText}>
-          <AppText variant="heading" style={styles.balance} color={colors.primary}>{fmt(m.balance, { balance })}</AppText>
+          <AppText variant="heading" style={styles.balance} color={colors.primary}>{fmt(m.balance, { balance: n(balance) })}</AppText>
           <AppText variant="caption" muted>{m.intro}</AppText>
         </View>
       </ImageBackground>
+
+      <Card style={{ borderColor: colors.borderStrong }} testID="market-fair">
+        <AppText variant="heading">{m.fairTitle}</AppText>
+        <AppText variant="caption" muted>
+          {fmt(m.fairBody, {
+            perGoal: market.siclosPerGoal, common: market.days.common, rare: market.days.rare, epic: market.days.epic,
+            commonPrice: n(market.prices.common), rarePrice: n(market.prices.rare), epicPrice: n(market.prices.epic),
+          })}
+        </AppText>
+      </Card>
 
       {busy && pending ? <ActivityIndicator color={colors.primary} /> : null}
       {pending && !busy ? (
         <Card style={{ borderColor: colors.danger }}>
           <AppText variant="heading">{m.pendingTitle}</AppText>
-          <AppText muted>{fmt(m.pendingBody, { item: name(pending.itemId), price: pending.price })}</AppText>
+          <AppText muted>{fmt(m.pendingBody, { item: nameOf(pending.skinId), price: n(pending.price) })}</AppText>
           <Button title={m.pendingCheck} loading={busy} onPress={() => void send(pending)} />
           <Button variant="ghost" title={m.pendingDiscard} disabled={busy}
-            onPress={() => { void pendingPurchaseStorage.clear(pending.userId); setPending(null); void load(); }} />
+            onPress={() => { void pendingSkinStorage.clear(pending.userId); setPending(null); void load(); }} />
         </Card>
       ) : null}
-
       {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : null}
       {loadError ? (
         <Card>
@@ -280,29 +319,49 @@ function MarketContent() {
           <Button compact title={strings.common.retry} onPress={() => void load()} />
         </Card>
       ) : null}
-      {msg?.itemId ? <Button variant="secondary" title={m.seeItem} onPress={() => router.push({ pathname: '/avatar/item/[id]', params: { id: msg.itemId! } })} /> : null}
-      {market.items.length === 0 ? <Notice tone="info">{m.empty}</Notice> : null}
+      {market.offers.length === 0 ? <Notice tone="info">{m.empty}</Notice> : null}
 
-      {sections.filter((section) => section.items.length).map((section) => (
-        <View key={section.title ?? 'catalog'} style={styles.section}>
-          {section.title ? <AppText variant="heading" accessibilityRole="header">{section.title}</AppText> : null}
-          {section.title === m.daily ? (
-            <View style={styles.schedule}>
-              <AppText variant="caption" muted>{m.rotationTime}</AppText>
-              {deadline != null ? <RotationCountdown deadline={deadline} /> : null}
+      <View style={styles.schedule}>
+        <AppText variant="caption" muted>{m.rotationTime}</AppText>
+        {deadline != null ? <RotationCountdown deadline={deadline} /> : null}
+      </View>
+
+      {epic ? (
+        <View style={styles.section}>
+          <View style={styles.sectionHead}>
+            <AppText variant="heading" accessibilityRole="header">{m.weekly}</AppText>
+            <View style={[styles.badge, { backgroundColor: epic.gift ? colors.primary : 'transparent', borderColor: colors.primary }]}>
+              <AppText variant="caption" color={epic.gift ? '#241606' : colors.primary} style={styles.badgeText}>
+                {epic.gift ? m.gift : fmt(m.giftDay, { day: WEEKDAYS[market.giftWeekday] ?? '' })}
+              </AppText>
             </View>
-          ) : null}
-          {section.items.map(renderItem)}
+          </View>
+          {card(epic, true)}
         </View>
-      ))}
+      ) : null}
+      {rares.length ? (
+        <View style={styles.section}>
+          <AppText variant="heading" accessibilityRole="header">{m.rares}</AppText>
+          {rares.map((o) => card(o))}
+        </View>
+      ) : null}
+      {commons.length ? (
+        <View style={styles.section}>
+          <AppText variant="heading" accessibilityRole="header">{m.commons}</AppText>
+          {commons.map((o) => card(o))}
+        </View>
+      ) : null}
+      <AppText variant="caption" muted>{m.previewNote}</AppText>
 
       <ConfirmDialog
         visible={!!confirm}
-        title={m.confirmTitle}
-        body={shown && confirmItem && shown.item.price != null
-          ? fmt(m.confirmBody, { item: confirmItem.name, rarity: strings.rarity[confirmItem.rarity], price: shown.item.price, balance: shown.balance, after: shown.balance - shown.item.price })
+        title={shown?.offer.gift ? m.confirmGiftTitle : m.confirmTitle}
+        body={shown && shownSkin
+          ? shown.offer.gift
+            ? fmt(m.confirmGiftBody, { item: shownSkin.name, rarity: strings.rarity[shownSkin.rarity as 'epic'], balance: n(shown.balance) })
+            : fmt(m.confirmBody, { item: shownSkin.name, rarity: strings.rarity[shownSkin.rarity as 'epic'], price: n(shown.offer.price), balance: n(shown.balance), after: n(shown.balance - shown.offer.price) })
           : ''}
-        confirmLabel={fmt(m.confirm, { price: shown?.item.price ?? 0 })}
+        confirmLabel={shown?.offer.gift ? m.confirmGift : fmt(m.confirm, { price: n(shown?.offer.price ?? 0) })}
         onConfirm={() => void buy()}
         onCancel={() => setConfirm(null)}
       />
@@ -311,12 +370,22 @@ function MarketContent() {
 }
 
 const styles = StyleSheet.create({
-  banner: { minHeight: 180, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
+  banner: { minHeight: 160, justifyContent: 'flex-end', borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },
   bannerText: { backgroundColor: 'rgba(12, 10, 22, 0.9)', padding: spacing.md, gap: spacing.xs },
   balance: { fontFamily: fonts.display },
   section: { gap: spacing.sm },
+  sectionHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm, flexWrap: 'wrap' },
   schedule: { gap: 2 },
-  row: { flexDirection: 'row', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
-  icon: { width: 64, height: 64, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
-  info: { flex: 1, minWidth: 0, gap: 2 },
+  badge: { borderWidth: 1.5, borderRadius: radius.pill, paddingHorizontal: spacing.sm, paddingVertical: 2 },
+  badgeText: { fontWeight: '700' },
+  card: { flexDirection: 'row', gap: spacing.md, borderWidth: 1.5, borderRadius: radius.md, padding: spacing.sm, alignItems: 'center' },
+  featured: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.md, borderWidth: 2, borderRadius: radius.lg, padding: spacing.md, alignItems: 'center' },
+  portrait: { borderWidth: 1.5, borderRadius: 8, overflow: 'hidden' },
+  info: { flex: 1, minWidth: 140, gap: 4 },
+  name: { fontFamily: fonts.display, fontSize: 16, lineHeight: 21 },
+  rarity: { fontWeight: '700' },
+  styles: { flexDirection: 'row', gap: 10, paddingVertical: 4 },
+  styleDot: { width: 24, height: 24, borderRadius: 12, borderWidth: 3 },
+  priceRow: { flexDirection: 'row', alignItems: 'baseline', gap: spacing.sm, flexWrap: 'wrap' },
+  strike: { textDecorationLine: 'line-through' },
 });

@@ -158,62 +158,55 @@ const panel = (page) => page.getByTestId('home-action-panel');
 
   // ================================================================ 4) Mercado: confirmação só com o ID desta compra
   await db.query(`insert into siclos_ledger (user_id, event_type, source_event_id, amount) values ($1, 'TEST_GRANT', 'fix-market', 400)`, [ana.id]);
-  const row = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested <= 400
-      and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
-    order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
+  const nextSkin = async () => (await db.query(`select o.skin_id id, s.name, o.price from private.skin_offers(private.market_rotation_day(now())) o
+    join skins s on s.id = o.skin_id
+    where o.section in ('common', 'rare') and o.price <= 400
+      and not exists (select 1 from user_skins u where u.user_id = $1 and u.skin_id = o.skin_id)
+    order by o.price, o.skin_id limit 1`, [ana.id])).rows[0];
   const balance = async () => Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [ana.id])).rows[0].s);
   const before = await balance();
   page = B.page;
   await page.goto(`${APP}/market`);
   // a compra nem chega ao servidor
-  await page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
+  const row = await nextSkin();
+  await page.route('**/rest/v1/rpc/purchase_skin', (r) => r.abort('internetdisconnected'));
   await page.getByRole('button', { name: `Comprar ${row.name}` }).click();
   await page.getByRole('button', { name: `Pagar ${row.price} Siclos` }).click();
   await page.getByText('Compra aguardando confirmação').waitFor();
-  // o jogador obtém o mesmo item por outra via (ex.: outro aparelho / escolha gratuita)
-  await db.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, $2, 'test:outra-via')`, [ana.id, row.id]);
-  // ao reabrir, a verificação também perde a resposta: a vitrine mostra o item como seu, mas o registro não tem esta compra
+  // o jogador obtém a mesma skin por outra via (outro aparelho, trilha)
+  await db.query(`insert into user_skins (user_id, skin_id, source_event_id) values ($1, $2, 'test:outra-via')`, [ana.id, row.id]);
+  // ao reabrir, a verificação também perde a resposta: a vitrine mostra a skin como sua, mas o registro não tem esta compra
   await page.reload();
-  await page.getByText(`Você já possui ${row.name}, obtido por outra via`, { exact: false }).waitFor();
+  await page.getByText(`A skin ${row.name} já é sua, obtida por outra via`, { exact: false }).waitFor();
   await page.getByText('Esta compra não foi registrada e nenhum Siclo foi cobrado', { exact: false }).waitFor();
   assert.equal(await page.getByText('Compra confirmada', { exact: false }).count(), 0, 'não confirma compra sem o ID dela no registro');
   assert.equal(await page.getByText('Compra aguardando confirmação').count(), 0);
-  await page.unroute('**/rest/v1/rpc/purchase_market_item');
-  assert.equal(Number((await db.query(`select count(*) from market_purchases where user_id = $1`, [ana.id])).rows[0].count), 0);
+  await page.unroute('**/rest/v1/rpc/purchase_skin');
+  assert.equal(Number((await db.query(`select count(*) from skin_purchases where user_id = $1`, [ana.id])).rows[0].count), 0);
   assert.equal(await balance(), before, 'nada debitado');
   await shot(page, 'fx-06-mercado-posse-por-outra-via-412');
-  // com resposta: o servidor recusa (item já possuído) e a tela comunica o mesmo estado real
-  const row2 = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested <= 400
-      and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
-    order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
-  await page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
+  // com resposta: o servidor recusa (skin já possuída) e a tela comunica o mesmo estado real
+  const row2 = await nextSkin();
+  await page.route('**/rest/v1/rpc/purchase_skin', (r) => r.abort('internetdisconnected'));
   await page.getByRole('button', { name: `Comprar ${row2.name}` }).click();
   await page.getByRole('button', { name: `Pagar ${row2.price} Siclos` }).click();
   await page.getByText('Compra aguardando confirmação').waitFor();
-  await db.query(`insert into user_items (user_id, item_id, source_event_id) values ($1, $2, 'test:outra-via')`, [ana.id, row2.id]);
-  await page.unroute('**/rest/v1/rpc/purchase_market_item');
+  await db.query(`insert into user_skins (user_id, skin_id, source_event_id) values ($1, $2, 'test:outra-via')`, [ana.id, row2.id]);
+  await page.unroute('**/rest/v1/rpc/purchase_skin');
   await page.reload();
-  await page.getByText(`Você já possui ${row2.name}, obtido por outra via`, { exact: false }).waitFor();
+  await page.getByText(`A skin ${row2.name} já é sua, obtida por outra via`, { exact: false }).waitFor();
   assert.equal(await page.getByText('Compra confirmada', { exact: false }).count(), 0);
   assert.equal(await balance(), before);
   // e a compra de verdade continua confirmada só pelo próprio ID (a resposta se perde depois do registro)
-  const row3 = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested <= 400
-      and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
-    order by i.shop_price_suggested, i.id limit 1`, [ana.id])).rows[0];
-  await page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  const row3 = await nextSkin();
+  await page.route('**/rest/v1/rpc/purchase_skin', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
   await page.getByRole('button', { name: `Comprar ${row3.name}` }).click();
   await page.getByRole('button', { name: `Pagar ${row3.price} Siclos` }).click();
-  await page.getByText(`Compra confirmada: ${row3.name}`, { exact: false }).waitFor();
-  await page.unroute('**/rest/v1/rpc/purchase_market_item');
-  assert.equal(Number((await db.query(`select count(*) from market_purchases where user_id = $1 and item_id = $2`, [ana.id, row3.id])).rows[0].count), 1);
+  await page.getByText(`Compra confirmada: a skin ${row3.name}`, { exact: false }).waitFor();
+  await page.unroute('**/rest/v1/rpc/purchase_skin');
+  assert.equal(Number((await db.query(`select count(*) from skin_purchases where user_id = $1 and skin_id = $2`, [ana.id, row3.id])).rows[0].count), 1);
   assert.equal(await balance(), before - row3.price);
-  step('Mercado: posse por outra via comunicada (compra não registrada, nada cobrado), sem "Compra confirmada"; confirmação só com o ID da própria compra');
+  step('Mercado de skins: posse por outra via comunicada (compra não registrada, nada cobrado), sem "Compra confirmada"; confirmação só com o ID da própria compra');
 
   // ================================================================ identidade em Ler e Perfil (320 e 412 px)
   for (const [P, w] of [[A, 320], [B, 412]]) {

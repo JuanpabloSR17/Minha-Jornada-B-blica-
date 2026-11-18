@@ -1,0 +1,779 @@
+{
+ "season": "t1-exodo",
+ "name": "Temporada 1 — Êxodo",
+ "skins": [
+  {
+   "id": "glorioso_moises_rosto_resplandecente",
+   "name": "Moisés com o rosto resplandecente",
+   "rarity": "glorious",
+   "scriptureRef": "Êxodo 34:29",
+   "origin": "leitura",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho",
+    "back": "Manto do Profeta",
+    "hands": "Tábua da Visão"
+   }
+  },
+  {
+   "id": "glorioso_arao_vara_floresceu",
+   "name": "Arão e a vara que floresceu",
+   "rarity": "glorious",
+   "scriptureRef": "Números 17:8",
+   "origin": "leitura",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Estola Sacerdotal",
+    "chest": "Peitoral das Doze Pedras",
+    "head": "Turbante do Sacerdote",
+    "hands": "Vara de Moisés"
+   }
+  },
+  {
+   "id": "lendario_moises",
+   "name": "Manto de Moisés",
+   "rarity": "legendary",
+   "scriptureRef": "Êxodo 4:2",
+   "origin": "leitura",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho Cru",
+    "back": "Manto do Pastor",
+    "hands": "Vara de Moisés"
+   }
+  },
+  {
+   "id": "lendario_arao",
+   "name": "Vestes de Arão",
+   "rarity": "legendary",
+   "scriptureRef": "Êxodo 28",
+   "origin": "leitura",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Estola Sacerdotal",
+    "chest": "Peitoral das Doze Pedras",
+    "head": "Turbante do Sacerdote",
+    "hands": "Cálice de Bronze"
+   }
+  },
+  {
+   "id": "epico_miria",
+   "name": "Tamborim de Miriã",
+   "rarity": "epic",
+   "scriptureRef": "Êxodo 15:20",
+   "origin": "temporada-premium",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Romã",
+    "head": "Lenço de Cabeça",
+    "hands": "Instrumento de Cordas"
+   }
+  },
+  {
+   "id": "epico_bezalel",
+   "name": "Avental de Bezalel",
+   "rarity": "epic",
+   "scriptureRef": "Êxodo 31:2-5",
+   "origin": "temporada-gratis",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Trabalhador",
+    "head": "Faixa de Cabeça",
+    "hands": "Ferramenta do Reconstrutor"
+   }
+  },
+  {
+   "id": "epico_jetro",
+   "name": "Manto de Jetro",
+   "rarity": "epic",
+   "scriptureRef": "Êxodo 18:1",
+   "origin": "temporada-premium",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Ocre",
+    "back": "Manto de Lã",
+    "head": "Turbante de Areia",
+    "hands": "Bastão do Pastor"
+   }
+  },
+  {
+   "id": "epico_zipora",
+   "name": "Véu de Zípora",
+   "rarity": "epic",
+   "scriptureRef": "Êxodo 2:16-21",
+   "origin": "temporada-gratis",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Céu da Galileia",
+    "head": "Pano de Cabeça",
+    "hands": "Jarro de Rebeca"
+   }
+  },
+  {
+   "id": "epico_sumo_sacerdote",
+   "name": "Sumo sacerdote",
+   "rarity": "epic",
+   "scriptureRef": "Êxodo 28",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Cerimonial",
+    "chest": "Peitoral das Doze Pedras",
+    "head": "Turbante do Sacerdote"
+   }
+  },
+  {
+   "id": "raro_joquebede",
+   "name": "Cesto de Joquebede",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 2:3",
+   "origin": "missao",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Terracota",
+    "head": "Lenço de Cabeça",
+    "hands": "Cesto de Junco"
+   }
+  },
+  {
+   "id": "raro_filha_de_farao",
+   "name": "Linho da filha de Faraó",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 2:5-6",
+   "origin": "missao",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho",
+    "head": "Faixa de Cabeça",
+    "hands": "Cesto de Junco"
+   }
+  },
+  {
+   "id": "raro_parteiras",
+   "name": "Sifrá e Puá",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 1:15-17",
+   "origin": "missao",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Pedra",
+    "head": "Pano de Cabeça"
+   }
+  },
+  {
+   "id": "raro_hur",
+   "name": "Hur",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 17:12",
+   "origin": "temporada-gratis",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Oliveira",
+    "back": "Manto do Deserto"
+   }
+  },
+  {
+   "id": "raro_aoliabe",
+   "name": "Aoliabe, o bordador",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 31:6",
+   "origin": "temporada-premium",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Índigo",
+    "head": "Faixa de Cabeça"
+   }
+  },
+  {
+   "id": "raro_levita",
+   "name": "Levita",
+   "rarity": "rare",
+   "scriptureRef": "Números 3:5-8",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho",
+    "head": "Faixa de Cabeça",
+    "hands": "Madeira da Reconstrução"
+   }
+  },
+  {
+   "id": "raro_sacerdote",
+   "name": "Sacerdote",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 28:40-42",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho",
+    "head": "Turbante do Sacerdote"
+   }
+  },
+  {
+   "id": "raro_bordador",
+   "name": "Bordador",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 35:35",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Índigo",
+    "head": "Lenço de Cabeça"
+   }
+  },
+  {
+   "id": "raro_ourives",
+   "name": "Ourives",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 31:4",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Ocre",
+    "hands": "Cálice de Bronze"
+   }
+  },
+  {
+   "id": "raro_gravador",
+   "name": "Gravador de pedras",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 28:11",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Pedra",
+    "chest": "Peitoral das Doze Pedras"
+   }
+  },
+  {
+   "id": "raro_perfumista",
+   "name": "Perfumista",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 30:25",
+   "origin": "loja",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Romã",
+    "hands": "Ampola de Perfume de Maria"
+   }
+  },
+  {
+   "id": "raro_shofar",
+   "name": "Tocador de shofar",
+   "rarity": "rare",
+   "scriptureRef": "Êxodo 19:16",
+   "origin": "temporada-gratis",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho Cru",
+    "back": "Manto de Viagem",
+    "hands": "Trombeta do Atalaia"
+   }
+  },
+  {
+   "id": "comum_pastor",
+   "name": "Pastor de ovelhas",
+   "rarity": "common",
+   "scriptureRef": "Êxodo 3:1",
+   "origin": "inicio",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho Cru",
+    "back": "Manto de Lã do Pastor",
+    "hands": "Cajado de Pastor"
+   }
+  },
+  {
+   "id": "comum_carpinteiro",
+   "name": "Carpinteiro de acácia",
+   "rarity": "common",
+   "scriptureRef": "Êxodo 25:10",
+   "origin": "siclos",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Trabalhador",
+    "hands": "Madeira da Reconstrução"
+   }
+  },
+  {
+   "id": "comum_tecela",
+   "name": "Tecelã",
+   "rarity": "common",
+   "scriptureRef": "Êxodo 35:25",
+   "origin": "siclos",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Oliveira",
+    "head": "Pano de Cabeça"
+   }
+  },
+  {
+   "id": "comum_parteira",
+   "name": "Parteira",
+   "rarity": "common",
+   "scriptureRef": "Êxodo 1:15",
+   "origin": "siclos",
+   "inShop": true,
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica Terracota",
+    "head": "Lenço de Cabeça",
+    "hands": "Vaso de Barro"
+   }
+  },
+  {
+   "id": "comum_peregrino_exodo",
+   "name": "Peregrino do Êxodo",
+   "rarity": "common",
+   "scriptureRef": "Êxodo 12:11",
+   "origin": "inicio",
+   "inShop": false,
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {
+    "outfit": "Túnica de Linho",
+    "back": "Manto de Viagem",
+    "hands": "Cajado de Caminhada"
+   }
+  }
+ ]
+}

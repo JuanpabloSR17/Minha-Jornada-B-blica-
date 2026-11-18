@@ -685,17 +685,25 @@ async function newPhone(browser, scheme = 'light') {
   await C.page.setViewportSize({ width: 390, height: 844 });
   await C.page.goto(`${APP}/home`);
 
-  // ============================================================ MERCADO DOS VIAJANTES
+  // ============================================================ MERCADO DOS VIAJANTES (só skins)
   const biaBalance = async () => Number((await db.query(`select coalesce(sum(amount),0) s from siclos_ledger where user_id = $1`, [biaId])).rows[0].s);
   await C.page.getByRole('button', { name: 'Mercado dos Viajantes' }).click();
   await C.page.getByText('Saldo: 40 Siclos').first().waitFor();
-  // um item de 80 que a conta ainda não tem (a escolha gratuita varia com o ID da conta)
-  const cheap = (await db.query(`select i.id from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested = 80
-    and not private.owns_canonical($1, i.id) order by i.id limit 1`, [biaId])).rows[0].id;
-  await C.page.getByTestId(`market-${cheap}`).getByText('Faltam 40 Siclos').waitFor();
+  await C.page.getByTestId('market-fair').getByText('Comum = 4 dias de meta (160 Siclos), Rara = 10 dias (400), Épica = 25 dias (1.000)', { exact: false }).waitFor();
+  const offers = (await db.query(`select o.skin_id id, s.name, o.section, o.price, o.gift from private.skin_offers(private.market_rotation_day(now())) o
+    join skins s on s.id = o.skin_id order by o.section, o.skin_id`)).rows;
+  const commons = offers.filter((o) => o.section === 'common');
+  assert.equal(commons.length, 3);
+  assert.equal(offers.filter((o) => o.section === 'rare').length, 3);
+  assert.equal(offers.filter((o) => o.section === 'epic').length, 1);
+  await C.page.getByTestId(`market-${commons[0].id}`).getByText('Faltam 120 Siclos').waitFor();
+  await C.page.getByText('Épica da semana').waitFor();
+  await C.page.getByText(/^(Presente de hoje: grátis|Dia de presente: domingo)$/).first().waitFor();
+  const card0 = C.page.getByTestId(`market-${commons[0].id}`);
+  await card0.getByRole('radio', { name: `Estilo 3 de ${commons[0].name}` }).click();
+  await card0.getByRole('radio', { name: `Estilo 3 de ${commons[0].name}`, checked: true }).waitFor();
   await shot(C.page, 'm7-01-market-low-balance-dark');
+  step('loja só de skins: saldo das metas, preço justo em dias de leitura, 3 Comuns, 3 Raras, a Épica da semana e os 3 estilos de cada skin');
   // metas dos dias seguintes pelo mesmo caminho do servidor (relógio simulado): +40 Siclos por dia
   for (let k = 1; k <= 5; k++) {
     await db.query(`select private.complete_reading_mission_at($1, gen_random_uuid(), 'MAT', $2, 'physical', now() + make_interval(days => $2) - interval '5 minutes', 60, now() + make_interval(days => $2))`, [biaId, k]);
@@ -703,86 +711,63 @@ async function newPhone(browser, scheme = 'light') {
   assert.equal(await biaBalance(), 240);
   await C.page.reload();
   await C.page.getByText('Saldo: 240 Siclos').first().waitFor();
-  step('Mercado: saldo vindo das metas diárias, preços do catálogo e quanto falta para cada item');
 
-  // o item é obtido pela escolha gratuita (outro aparelho) com a confirmação da compra aberta
-  const nextGoal = (await db.query(`select g.day::text as d, o.item_id
-    from daily_goals g
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = any(g.options)
-    join cosmetic_items i on i.id = o.item_id
-    where g.user_id = $1 and g.chosen_item is null and i.shop_price_suggested <= 240
-      and not private.owns_canonical(g.user_id, o.item_id)
-    order by g.day, i.id limit 1`, [biaId])).rows[0];
-  const raceItem = nextGoal.item_id;
-  const raceName = (await db.query(`select name from cosmetic_items where id = $1`, [raceItem])).rows[0].name;
-  await C.page.getByRole('button', { name: `Comprar ${raceName}` }).click();
+  // a skin chega por outra via (trilha, outro aparelho) com a confirmação da compra aberta
+  const race = commons[1];
+  await C.page.getByRole('button', { name: `Comprar ${race.name}` }).click();
   await C.page.getByText('Confirmar compra').waitFor();
-  await C.page.getByText(`Você vai adquirir ${raceName}`, { exact: false }).waitFor();
-  await db.query('begin');
-  await db.query(`select set_config('request.jwt.claim.sub', $1, true)`, [biaId]);
-  await db.query(`select public.claim_daily_goal_item($1::date, $2)`, [nextGoal.d, raceItem]);
-  await db.query('commit');
-  await C.page.getByRole('button', { name: /^Pagar \d+ Siclos$/ }).click();
-  await C.page.getByText(`Você já possui ${raceName}`, { exact: false }).waitFor();
-  await C.page.getByTestId(`market-${raceItem}`).getByText('Obtido').waitFor();
+  await C.page.getByText(`Você vai adquirir a skin ${race.name}`, { exact: false }).waitFor();
+  await db.query(`insert into user_skins (user_id, skin_id, source_event_id) values ($1, $2, 'test:outra-via')`, [biaId, race.id]);
+  await C.page.getByRole('button', { name: 'Pagar 160 Siclos' }).click();
+  await C.page.getByText(`A skin ${race.name} já é sua, obtida por outra via`, { exact: false }).waitFor();
+  await C.page.getByTestId(`market-${race.id}`).getByText('Obtida').waitFor();
   assert.equal(await biaBalance(), 240, 'nada debitado');
-  assert.equal(Number((await db.query(`select count(*) from user_items where user_id = $1 and item_id = $2`, [biaId, raceItem])).rows[0].count), 1);
   await C.page.waitForTimeout(400);
-  await shot(C.page, 'm7-02-market-owned-by-free-choice-dark');
-  step('compra × escolha gratuita: o item resgatado antes da confirmação aparece como obtido, sem débito');
+  await shot(C.page, 'm7-02-market-owned-by-other-route-dark');
+  step('compra × skin obtida por outra via: aparece como obtida, sem débito');
 
-  // compra bem-sucedida até o inventário
-  const buyRow = (await db.query(`select i.id, i.name, i.slot, i.shop_price_suggested price from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested <= 240 and i.slot in ('outfit','back','feet','waist','hands')
-      and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
-    order by i.shop_price_suggested, i.id limit 1`, [biaId])).rows[0];
-  await C.page.getByRole('button', { name: `Comprar ${buyRow.name}` }).click();
-  await C.page.getByText(`por ${buyRow.price} Siclos. Saldo: 240 → ${240 - buyRow.price} Siclos.`, { exact: false }).waitFor();
+  // compra bem-sucedida
+  const buy = commons[0];
+  await C.page.getByRole('button', { name: `Comprar ${buy.name}` }).click();
+  await C.page.getByText('por 160 Siclos. Saldo: 240 → 80 Siclos.', { exact: false }).waitFor();
   await C.page.waitForTimeout(400);
   await shot(C.page, 'm7-03-market-confirm-dark');
-  await C.page.getByRole('button', { name: `Pagar ${buyRow.price} Siclos` }).click();
-  await C.page.getByText(`${buyRow.name} foi adicionado ao seu inventário`, { exact: false }).waitFor();
-  assert.equal(await biaBalance(), 240 - buyRow.price);
-  await C.page.getByRole('button', { name: 'Ver no inventário' }).click();
-  // a tela do Mercado continua montada por baixo: conferir só o que está visível
-  await C.page.getByText(buyRow.name).filter({ visible: true }).first().waitFor();
-  await C.page.getByText('Obtido').filter({ visible: true }).first().waitFor();
-  const cat = buyRow.slot;
-  await C.page.goto(`${APP}/avatar/wardrobe?category=${cat}`);
-  await C.page.getByRole('radio', { name: new RegExp(`^${buyRow.name},.*Obtido`) }).waitFor();
-  await shot(C.page, 'm7-04-market-item-in-wardrobe-dark');
-  step('compra confirmada: débito e item na mesma operação; o item aparece obtido no inventário');
+  await C.page.getByRole('button', { name: 'Pagar 160 Siclos' }).click();
+  await C.page.getByText(`A skin ${buy.name} agora é sua, com os 3 estilos`, { exact: false }).waitFor();
+  await C.page.getByTestId(`market-${buy.id}`).getByText('Obtida').waitFor();
+  assert.equal(await biaBalance(), 80);
+  assert.equal(Number((await db.query(`select count(*) from user_skins where user_id = $1 and skin_id = $2`, [biaId, buy.id])).rows[0].count), 1);
+  await shot(C.page, 'm7-04-market-skin-bought-dark');
+  step('compra confirmada: débito de 160 (4 dias de leitura) e a skin na conta, na mesma operação');
 
   // perda da resposta do servidor: recuperar o resultado sem cobrar duas vezes
-  const lostRow = (await db.query(`select i.id, i.name, i.shop_price_suggested price from cosmetic_items i
-    join private.market_offers(private.market_rotation_day(now())) o on o.item_id = i.id
-    where i.shop_price_suggested <= $2
-      and not exists (select 1 from user_items ui where ui.user_id = $1 and ui.item_id = i.id)
-    order by i.shop_price_suggested, i.id limit 1`, [biaId, 240 - buyRow.price])).rows[0];
+  for (let k = 6; k <= 10; k++) {
+    await db.query(`select private.complete_reading_mission_at($1, gen_random_uuid(), 'MAT', $2, 'physical', now() + make_interval(days => $2) - interval '5 minutes', 60, now() + make_interval(days => $2))`, [biaId, k]);
+  }
+  assert.equal(await biaBalance(), 280);
+  const lostSkin = commons[2];
   await C.page.goto(`${APP}/market`);
   // 1) o pedido nem chega ao servidor: a compra fica pendente e sobrevive a reabrir o app
-  await C.page.route('**/rest/v1/rpc/purchase_market_item', (r) => r.abort('internetdisconnected'));
-  await C.page.getByRole('button', { name: `Comprar ${lostRow.name}` }).click();
-  await C.page.getByRole('button', { name: `Pagar ${lostRow.price} Siclos` }).click();
+  await C.page.route('**/rest/v1/rpc/purchase_skin', (r) => r.abort('internetdisconnected'));
+  await C.page.getByRole('button', { name: `Comprar ${lostSkin.name}` }).click();
+  await C.page.getByRole('button', { name: 'Pagar 160 Siclos' }).click();
   await C.page.getByText('Sem conexão com o servidor', { exact: false }).waitFor();
   await C.page.getByText('Compra aguardando confirmação').waitFor();
-  assert.equal(Number((await db.query(`select count(*) from market_purchases where user_id = $1 and item_id = $2`, [biaId, lostRow.id])).rows[0].count), 0);
+  assert.equal(Number((await db.query(`select count(*) from skin_purchases where user_id = $1 and skin_id = $2`, [biaId, lostSkin.id])).rows[0].count), 0);
   await shot(C.page, 'm7-05-market-pending-dark');
   // 2) ao reabrir, a verificação automática reenvia o mesmo ID: o servidor registra, mas a resposta se perde
-  await C.page.unroute('**/rest/v1/rpc/purchase_market_item');
-  await C.page.route('**/rest/v1/rpc/purchase_market_item', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
+  await C.page.unroute('**/rest/v1/rpc/purchase_skin');
+  await C.page.route('**/rest/v1/rpc/purchase_skin', async (r) => { await r.fetch(); await r.abort('connectionreset'); });
   await C.page.reload();
-  // a vitrine já mostra o item como seu: a tela confirma a compra em vez de continuar "aguardando"
-  await C.page.getByText(`Compra confirmada: ${lostRow.name} já está no seu inventário`, { exact: false }).waitFor();
-  assert.equal(await C.page.getByText('Compra aguardando confirmação').count(), 0, 'não mostra pendente e obtido ao mesmo tempo');
-  await C.page.getByTestId(`market-${lostRow.id}`).getByText('Obtido').waitFor();
-  await C.page.unroute('**/rest/v1/rpc/purchase_market_item');
+  await C.page.getByText(`Compra confirmada: a skin ${lostSkin.name} já é sua`, { exact: false }).waitFor();
+  assert.equal(await C.page.getByText('Compra aguardando confirmação').count(), 0, 'não mostra pendente e obtida ao mesmo tempo');
+  await C.page.getByTestId(`market-${lostSkin.id}`).getByText('Obtida').waitFor();
+  await C.page.unroute('**/rest/v1/rpc/purchase_skin');
   await shot(C.page, 'p2-market-confirmed-after-lost-response-dark');
-  const lost = (await db.query(`select (select count(*) from market_purchases where user_id = $1 and item_id = $2)::int p,
-    (select count(*) from user_items where user_id = $1 and item_id = $2)::int i`, [biaId, lostRow.id])).rows[0];
+  const lost = (await db.query(`select (select count(*) from skin_purchases where user_id = $1 and skin_id = $2)::int p,
+    (select count(*) from user_skins where user_id = $1 and skin_id = $2)::int i`, [biaId, lostSkin.id])).rows[0];
   assert.deepEqual(lost, { p: 1, i: 1 });
-  assert.equal(await biaBalance(), 240 - buyRow.price - lostRow.price, 'um único débito');
+  assert.equal(await biaBalance(), 120, 'um único débito');
   step('compra pendente sobrevive a reabrir o app; verificação automática com resposta perdida confirma a compra sem débito duplo e sem estado contraditório');
   await C.page.goto(`${APP}/users/ana_teste`);
   await C.page.getByText('Ana Teste').waitFor();
