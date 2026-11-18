@@ -170,5 +170,7 @@ export const CROPS = {
   head: '382 150 260 260',
   /** acampamento: enquadramento mais próximo (cabeça até a canela), com espaço para o cajado */
   camp: '262 176 580 980',
+  /** acampamento com skin pintada: mais alto e largo, para caber o que a pintura tem acima da cabeça (aura, coroa) */
+  campPainted: '202 56 670 1132',
 } as const;
 export type AvatarCrop = keyof typeof CROPS;

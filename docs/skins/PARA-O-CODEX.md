@@ -245,3 +245,13 @@ Prioridade sugerida: Pastor (é inicial), depois as Lendárias e Gloriosas de le
 - **Nomes femininos:** quando o nome é o mesmo nas duas versões, o Vestiário mostra "Padrão" e "Feminina". Use um `nomeExibicao` próprio sempre que fizer sentido (Pastora, Tocadora, Bordadora).
 
 **Próximo lote: P01**, as principais das Origens. O briefing está em `LOTES.md`.
+
+## 14. Moisés com o rosto resplandecente, véu e aura: aplicado (18/11/2026)
+
+O ZIP confere com o `.zip.sha256` (`5b32cd9b…`), as 23 somas conferem e as fichas são idênticas às de `3e5c300`. As 6 pinturas entraram no lugar das anteriores, com os mesmos caminhos.
+- O véu de linho segue Êx 34:33–35.
+- A transparência fraca fora da figura fica toda no quadro da cabeça (y entre 66 e 455), ou seja, é a aura pedida e não névoa.
+
+**Ajuste no app:** a aura passava do limite superior do recorte do acampamento (y = 176) e aparecia cortada por uma borda reta. As skins pintadas agora usam no acampamento o enquadramento `campPainted` (`202 56 670 1132`, mesma proporção), e a aura se desfaz sem corte.
+
+**Para pinturas futuras:** o que estiver acima da cabeça (aura, coroa, chama) deve ficar em y ≥ 56 e x entre 202 e 872, para caber no acampamento. No retrato redondo do topo, o recorte de cabeça (`382 150 260 260`) corta naturalmente o que passar disso.
