@@ -49,8 +49,8 @@ Uma skin **entra no app quando a pintura é aprovada**, para que toda skin visí
   - os estilos exatamente como no briefing.
 - **As Lendárias e Gloriosas precisam se destacar das Comuns:** silhueta reconhecível no retrato, tecidos de mais presença e um objeto-assinatura com forma própria.
 - **Apresentação conforme o personagem (decisão do usuário, 18/11/2026):**
-  - **Personagens bíblicos principais** (todas as Lendárias e Gloriosas) têm **só a apresentação do sexo do personagem**, nos 3 estilos: Moisés e Elias masculinos, Rute e Ester femininas. **Não pinte a versão do outro sexo** dessas skins. O banco recusa (restrição `skins_principal_single_presentation`) e o app ignora a pasta `feminino/` delas.
-  - **Ofícios e personagens não principais** (Comuns, Raras e Épicas, como Pastor, Ourives, Bezalel e Aoliabe) continuam com a apresentação feminina na mesma rodada, quando o traje permitir.
+  - **Todo personagem bíblico com sexo definido na Bíblia**, seja principal ou secundário, com nome ou identificado (como a filha de Faraó), tem **só a apresentação do sexo do personagem**, nos 3 estilos. Moisés, Elias, Bezalel e Hur são masculinos; Rute, Ester, Miriã e Zípora são femininas. **Não pinte a versão do outro sexo** dessas skins: o banco recusa (restrição `skins_character_single_presentation`, coluna `character_sex`) e o app ignora a pasta `feminino/` delas. Vale para as Lendárias, Gloriosas e Épicas, e para as Raras que são personagens.
+  - **Ofícios e figuras genéricas**, que não são personagens (Pastor, Peregrino, Levita, Ourives, Tecelã, Tocador de shofar…), podem ter as versões masculina e feminina, na mesma rodada, quando o traje permitir.
 - **Nunca vira skin:** Deus, Jesus, o Espírito Santo, anjos, Satanás, vilões e ídolos. Sem nudez e sem violência.
 
 ## Ciclo de cada lote

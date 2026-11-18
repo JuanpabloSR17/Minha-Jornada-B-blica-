@@ -16,6 +16,8 @@ export type Skin = {
   scriptureRef: string;
   origin: SkinOrigin;
   inShop: boolean;
+  /** sexo do personagem bíblico (só para personagens; ofícios e figuras genéricas não têm) */
+  character?: 'masculino' | 'feminino';
   /** mundo da Bíblia onde a skin aparece (a Temporada 1 é toda das Origens) */
   world?: string;
   styles: SkinStyle[];
@@ -46,15 +48,16 @@ export const DEFAULT_SELECTION: SkinSelection = { skinId: 'comum_peregrino_exodo
 
 /** Apresentações pintadas da skin (a padrão sempre existe; a feminina, quando entregue). */
 export const variantsOf = (id: string): SkinVariant[] => {
-  if (isPrincipalCharacter(getSkin(id))) return ['padrao'];
+  if (isBiblicalCharacter(getSkin(id))) return ['padrao'];
   const art = SKIN_ART[id];
   return art?.feminino ? ['padrao', 'feminino'] : ['padrao'];
 };
 /**
- * Personagem bíblico principal (Lendárias e Gloriosas, pela enciclopédia): só a apresentação do
- * sexo do personagem, que é a padrão (Moisés e Elias masculinos, Rute e Ester femininas).
+ * Personagem bíblico com sexo definido na Bíblia (principal ou secundário): só a apresentação do
+ * sexo do personagem, que é a padrão (Moisés masculino, Miriã feminina). Ofícios e figuras genéricas
+ * podem ter a padrão e a feminina. Lendárias e Gloriosas são sempre personagens.
  */
-export const isPrincipalCharacter = (skin?: Skin) => !!skin && (skin.rarity === 'legendary' || skin.rarity === 'glorious');
+export const isBiblicalCharacter = (skin?: Skin) => !!skin && (!!skin.character || skin.rarity === 'legendary' || skin.rarity === 'glorious');
 /** Nome da skin na apresentação escolhida (ex.: "Peregrina do Êxodo"). */
 export const skinDisplayName = (skin: Skin, variant?: SkinVariant) => (variant && SKIN_ART[skin.id]?.[variant]?.name) || skin.name;
 /** Pintura do corpo inteiro (1024×1536) do estilo, se já entregue. */

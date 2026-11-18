@@ -240,7 +240,7 @@ Fonte: `src/features/worlds/worldThemes.ts` e `WorldScene.tsx`.
 - **Quando a pintura chegar** (`assets/skins/<id>/estilo-N/corpo.webp`, no contrato de `TEMPORADA-1-EXODO.md`), ela substitui esse desenho no palco do Vestiário, no acampamento, no Perfil, na loja e na celebração, nas mesmas coordenadas e âncoras.
 - **Estilo da pintura: o mesmo 2.5D pintado dos personagens já entregues** (§9.1).
 
-**Apresentações:** ofícios e personagens não principais podem ter apresentação feminina (escolha no Vestiário e no cadastro). Os personagens principais, que são as Lendárias e as Gloriosas, têm só a apresentação do sexo do personagem. Seleções antigas são normalizadas para a apresentação válida, com o mesmo estilo.
+**Apresentações:** só ofícios e figuras genéricas podem ter apresentação feminina e masculina (escolha no Vestiário e no cadastro). Todo personagem bíblico com sexo definido (principal ou secundário) tem só a apresentação do sexo do personagem. Seleções antigas são normalizadas para a apresentação válida, com o mesmo estilo.
 
 ## 7. Movimento e acessibilidade
 

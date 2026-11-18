@@ -30,7 +30,8 @@
     "outfit": "Túnica de Linho",
     "back": "Manto do Profeta",
     "hands": "Tábua da Visão"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "glorioso_arao_vara_floresceu",
@@ -61,7 +62,8 @@
     "chest": "Peitoral das Doze Pedras",
     "head": "Turbante do Sacerdote",
     "hands": "Vara de Moisés"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "lendario_moises",
@@ -91,7 +93,8 @@
     "outfit": "Túnica de Linho Cru",
     "back": "Manto do Pastor",
     "hands": "Vara de Moisés"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "lendario_arao",
@@ -122,7 +125,8 @@
     "chest": "Peitoral das Doze Pedras",
     "head": "Turbante do Sacerdote",
     "hands": "Cálice de Bronze"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "epico_miria",
@@ -152,7 +156,8 @@
     "outfit": "Túnica Romã",
     "head": "Lenço de Cabeça",
     "hands": "Instrumento de Cordas"
-   }
+   },
+   "character": "feminino"
   },
   {
    "id": "epico_bezalel",
@@ -182,7 +187,8 @@
     "outfit": "Túnica de Trabalhador",
     "head": "Faixa de Cabeça",
     "hands": "Ferramenta do Reconstrutor"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "epico_jetro",
@@ -213,7 +219,8 @@
     "back": "Manto de Lã",
     "head": "Turbante de Areia",
     "hands": "Bastão do Pastor"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "epico_zipora",
@@ -243,7 +250,8 @@
     "outfit": "Túnica Céu da Galileia",
     "head": "Pano de Cabeça",
     "hands": "Jarro de Rebeca"
-   }
+   },
+   "character": "feminino"
   },
   {
    "id": "epico_sumo_sacerdote",
@@ -303,7 +311,8 @@
     "outfit": "Túnica Terracota",
     "head": "Lenço de Cabeça",
     "hands": "Cesto de Junco"
-   }
+   },
+   "character": "feminino"
   },
   {
    "id": "raro_filha_de_farao",
@@ -333,7 +342,8 @@
     "outfit": "Túnica de Linho",
     "head": "Faixa de Cabeça",
     "hands": "Cesto de Junco"
-   }
+   },
+   "character": "feminino"
   },
   {
    "id": "raro_parteiras",
@@ -362,7 +372,8 @@
    "preview": {
     "outfit": "Túnica Pedra",
     "head": "Pano de Cabeça"
-   }
+   },
+   "character": "feminino"
   },
   {
    "id": "raro_hur",
@@ -391,7 +402,8 @@
    "preview": {
     "outfit": "Túnica Oliveira",
     "back": "Manto do Deserto"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "raro_aoliabe",
@@ -420,7 +432,8 @@
    "preview": {
     "outfit": "Túnica Índigo",
     "head": "Faixa de Cabeça"
-   }
+   },
+   "character": "masculino"
   },
   {
    "id": "raro_levita",

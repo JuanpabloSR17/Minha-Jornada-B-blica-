@@ -19,11 +19,15 @@ select tests.assert(public.get_public_avatar('apresentacao_um') -> 'skin' = '{"s
   'o cartão público mostra a apresentação escolhida');
 reset role;
 select tests.assert_raises($$update public.skins set variants = '{feminino}' where id = 'comum_pastor'$$, '%check%', 'toda skin mantém a apresentação padrão');
-select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 11,
-  'ofícios e personagens não principais: 11 skins com apresentação feminina pintada');
-select tests.assert(not exists (select 1 from public.skins where rarity in ('legendary', 'glorious') and variants <> '{padrao}'),
-  'personagens principais (Lendárias e Gloriosas): só a apresentação do sexo do personagem');
-select tests.assert_raises($$update public.skins set variants = '{padrao,feminino}' where id = 'lendario_moises'$$, '%skins_principal_single_presentation%',
+select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 9,
+  'ofícios e figuras genéricas: 9 skins com apresentação feminina pintada');
+select tests.assert(not exists (select 1 from public.skins where (character_sex is not null or rarity in ('legendary', 'glorious')) and variants <> '{padrao}'),
+  'personagens bíblicos (principais e secundários): só a apresentação do sexo do personagem');
+select tests.assert((select count(*) from public.skins where character_sex is not null) = 13, 'Temporada 1: 13 personagens bíblicos marcados com o sexo');
+select tests.assert_raises($$update public.skins set variants = '{padrao,feminino}' where id = 'epico_bezalel'$$, '%skins_character_single_presentation%',
+  'o banco recusa apresentação do outro sexo para personagem secundário (Bezalel)');
+select tests.assert((select variants from public.skins where id = 'raro_shofar') = '{padrao,feminino}'::text[], 'figura genérica (Tocador de shofar) mantém a feminina');
+select tests.assert_raises($$update public.skins set variants = '{padrao,feminino}' where id = 'lendario_moises'$$, '%skins_character_single_presentation%',
   'o banco recusa apresentação do outro sexo para personagem principal');
 select tests.assert((select variants from public.skins where id = 'raro_sacerdote') = '{padrao}'::text[], 'o Sacerdote segue só com a padrão');
 rollback;

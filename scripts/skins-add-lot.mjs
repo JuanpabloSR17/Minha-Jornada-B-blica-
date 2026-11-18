@@ -19,19 +19,19 @@ for (const id of lot.skins) {
   if (!s || known.has(id)) continue;
   const painted = [1, 2, 3].every((n) => existsSync(join('assets/skins', id, `estilo-${n}`, 'corpo.webp')));
   if (!painted) { console.warn(`pulando ${id}: pintura ainda não aplicada`); continue; }
-  // personagens principais (Lendárias e Gloriosas): só a apresentação do sexo do personagem
-  const fem = !['legendary', 'glorious'].includes(s.rarity) && [1, 2, 3].every((n) => existsSync(join('assets/skins', id, 'feminino', `estilo-${n}`, 'corpo.webp')));
+  // personagens bíblicos (sexo definido na Bíblia): só a apresentação do sexo do personagem
+  const fem = !s.character && !['legendary', 'glorious'].includes(s.rarity) && [1, 2, 3].every((n) => existsSync(join('assets/skins', id, 'feminino', `estilo-${n}`, 'corpo.webp')));
   add.push({ ...s, fem });
 }
 if (!add.length) { console.log('nada a acrescentar'); process.exit(0); }
 const order = 100 + cat.skins.length;
-cat.skins.push(...add.map((s) => ({ id: s.id, name: s.name, rarity: s.rarity, world: s.world, scriptureRef: s.scriptureRef, origin: 'leitura', inShop: false, styles: s.styles, preview: {} })));
+cat.skins.push(...add.map((s) => ({ id: s.id, name: s.name, rarity: s.rarity, world: s.world, scriptureRef: s.scriptureRef, origin: 'leitura', inShop: false, ...(s.character ? { character: s.character } : {}), styles: s.styles, preview: {} })));
 writeFileSync(catPath, JSON.stringify(cat, null, 1) + '\n');
 const file = `supabase/migrations/${day}000100_skins_${lotId.toLowerCase()}.sql`;
 writeFileSync(file, `-- Lote ${lot.id} (${lot.titulo}): skins principais conquistadas lendo. Aditiva, só dados.
 -- Gerada por scripts/skins-add-lot.mjs a partir de docs/skins/plano-lotes.json.
-insert into public.skins (id, name, rarity, origin, scripture_ref, season, in_shop, sort_order, variants) values
-${add.map((s, i) => `  (${q(s.id)}, ${q(s.name)}, ${q(s.rarity)}, 'leitura', ${q(s.scriptureRef)}, 'principais', false, ${order + i}, ${s.fem ? "'{padrao,feminino}'" : "'{padrao}'"})`).join(',\n')};
+insert into public.skins (id, name, rarity, origin, scripture_ref, season, in_shop, sort_order, variants, character_sex) values
+${add.map((s, i) => `  (${q(s.id)}, ${q(s.name)}, ${q(s.rarity)}, 'leitura', ${q(s.scriptureRef)}, 'principais', false, ${order + i}, ${s.fem ? "'{padrao,feminino}'" : "'{padrao}'"}, ${s.character ? q(s.character) : 'null'})`).join(',\n')};
 
 insert into public.skin_unlock_rules (skin_id, rule, label, sort_order) values
 ${add.map((s, i) => `  (${q(s.id)}, ${q(JSON.stringify(s.rule))}, ${q(s.howTo)}, ${order + i})`).join(',\n')};

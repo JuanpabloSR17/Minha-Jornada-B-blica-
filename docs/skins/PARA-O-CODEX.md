@@ -268,3 +268,16 @@ O ZIP confere com o `.zip.sha256` (`685975e8…`), as 17 somas conferem e a fich
 - **App:** `isPrincipalCharacter` no catálogo. Vestiário, cadastro, loja, acampamento, Perfil, Amigos e cartão público usam a mesma apresentação válida.
 - **Ferramentas:** `gen-skin-art.mjs` e `skins-add-lot.mjs` ignoram a apresentação feminina de skins principais. O `LOTES.md` traz a regra em cada skin.
 - **Ofícios e personagens não principais** (Pastor, Ourives, Bezalel, Aoliabe, Tocador de shofar…) continuam com a apresentação feminina.
+
+## 16. Regra ampliada: todo personagem bíblico só no próprio sexo (18/11/2026)
+
+**Decisão do usuário:** se o personagem tem o sexo definido na Bíblia, a skin tem **só** a apresentação desse sexo, seja ele principal ou secundário. Só o que não é personagem (ofícios e figuras genéricas) pode ter as versões masculina e feminina.
+
+- **Banco:** a migração `20261202000100_biblical_characters_presentation.sql` cria `skins.character_sex` e marca os 13 personagens da Temporada 1:
+  - 8 masculinos: os dois Moisés, os dois Arão, Bezalel, Jetro, Hur e Aoliabe;
+  - 5 femininos: Miriã, Zípora, Joquebede, a filha de Faraó e Sifrá e Puá.
+  
+  A restrição `skins_character_single_presentation` passa a valer para eles e para toda Lendária e Gloriosa. As seleções antigas de apresentação do outro sexo foram normalizadas, com a mesma skin, o mesmo estilo e a posse.
+- **Saíram do app** as pastas `feminino/` de `epico_bezalel` e `raro_aoliabe` (continuam no histórico do repositório).
+- **Mantêm a versão feminina**, por serem figuras genéricas: Pastor/Pastora, Peregrino/Peregrina, Levita, Carpinteiro/Carpinteira, Bordador/Bordadora, Ourives, Gravador/Gravadora, Perfumista e Tocador/Tocadora de shofar.
+- **Próximos lotes:** o `LOTES.md` indica em cada skin se ela é "personagem bíblico: só esta apresentação" ou "figura genérica: feminina adicional quando o traje permitir". O plano marca `character` em todas as principais.

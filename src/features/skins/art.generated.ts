@@ -59,11 +59,6 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_bezalel/estilo-2/corpo.webp'),
       require('../../../assets/skins/epico_bezalel/estilo-3/corpo.webp'),
     ] },
-    feminino: { name: "Avental de Bezalel", icon: require('../../../assets/skins/epico_bezalel/feminino/icone.webp'), styles: [
-      require('../../../assets/skins/epico_bezalel/feminino/estilo-1/corpo.webp'),
-      require('../../../assets/skins/epico_bezalel/feminino/estilo-2/corpo.webp'),
-      require('../../../assets/skins/epico_bezalel/feminino/estilo-3/corpo.webp'),
-    ] },
   },
   epico_jetro: {
     padrao: { icon: require('../../../assets/skins/epico_jetro/icone.webp'), styles: [
@@ -126,11 +121,6 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_aoliabe/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_aoliabe/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_aoliabe/estilo-3/corpo.webp'),
-    ] },
-    feminino: { name: "Bordado de Aoliabe", icon: require('../../../assets/skins/raro_aoliabe/feminino/icone.webp'), styles: [
-      require('../../../assets/skins/raro_aoliabe/feminino/estilo-1/corpo.webp'),
-      require('../../../assets/skins/raro_aoliabe/feminino/estilo-2/corpo.webp'),
-      require('../../../assets/skins/raro_aoliabe/feminino/estilo-3/corpo.webp'),
     ] },
   },
   raro_bordador: {

@@ -57,6 +57,14 @@ describe('pinturas entregues (art.generated)', () => {
     expect(variantsOf('lendario_moises')).toEqual(['padrao']);
     expect(variantsOf('glorioso_moises_rosto_resplandecente')).toEqual(['padrao']);
     expect(SKIN_ART.lendario_moises.feminino).toBeUndefined();
+    // personagens secundários também: Bezalel e Aoliabe só masculinos; figuras genéricas mantêm a feminina
+    expect(variantsOf('epico_bezalel')).toEqual(['padrao']);
+    expect(variantsOf('raro_aoliabe')).toEqual(['padrao']);
+    expect(variantsOf('raro_shofar')).toEqual(['padrao', 'feminino']);
+    expect(variantsOf('comum_pastor')).toEqual(['padrao', 'feminino']);
+    const chars = require('../season1.json').skins.filter((x: { character?: string }) => x.character).map((x: { id: string }) => x.id);
+    expect(chars).toHaveLength(13);
+    for (const id of chars) expect(variantsOf(id)).toEqual(['padrao']);
     expect(skinLook(null, { skinId: 'lendario_moises', style: 3, variant: 'feminino' }).painted).toBe(SKIN_ART.lendario_moises.padrao.styles[2]);
     expect(skinDisplayName(getSkin('comum_peregrino_exodo'), 'feminino')).toBe('Peregrina do Êxodo');
   });

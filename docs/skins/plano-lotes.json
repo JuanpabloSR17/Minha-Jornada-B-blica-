@@ -2,7 +2,8 @@
  "fonte": "Enciclopédia de Skins Bíblicas (288 skins), 18/11/2026",
  "regras": {
   "legendary": "concluir o livro do personagem",
-  "glorious": "concluir o mundo do momento marcante"
+  "glorious": "concluir o mundo do momento marcante",
+  "apresentacao": "personagem bíblico com sexo definido (principal ou secundário): só a apresentação do sexo do personagem; ofícios e figuras genéricas: padrão e feminina"
  },
  "lotes": [
   {
@@ -183,7 +184,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_abraao_sob_as_estrelas",
@@ -219,7 +221,8 @@
      "hairColor": "haircolor-gray",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_noe_e_o_arco_iris",
@@ -255,7 +258,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_adao",
@@ -306,7 +310,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_eva",
@@ -353,7 +358,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-braids"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_noe",
@@ -400,7 +406,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_abraao",
@@ -487,7 +494,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_sara",
@@ -566,7 +574,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_isaque",
@@ -629,7 +638,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_rebeca",
@@ -676,7 +686,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_jaco",
@@ -751,7 +762,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_jose",
@@ -838,7 +850,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_davi_diante_de_golias",
@@ -881,7 +894,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_elias_no_carro_de_fogo",
@@ -924,7 +938,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_ester_diante_do_rei",
@@ -967,7 +982,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "glorioso_josue_diante_das_muralhas",
@@ -1010,7 +1026,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_salomao_no_trono_de_marfim",
@@ -1053,7 +1070,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_josue",
@@ -1085,7 +1103,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_debora",
@@ -1124,7 +1143,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_gideao",
@@ -1167,7 +1187,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_sansao",
@@ -1214,7 +1235,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_rute",
@@ -1246,7 +1268,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_samuel",
@@ -1341,7 +1364,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_davi",
@@ -1436,7 +1460,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_salomao",
@@ -1511,7 +1536,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_elias",
@@ -1574,7 +1600,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_eliseu",
@@ -1653,7 +1680,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_esdras",
@@ -1685,7 +1713,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_neemias",
@@ -1717,7 +1746,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_ester",
@@ -1749,7 +1779,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "glorioso_daniel_na_cova_dos_leoes",
@@ -1797,7 +1828,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_isaias_e_a_brasa_do_altar",
@@ -1845,7 +1877,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_jonas_e_o_grande_peixe",
@@ -1893,7 +1926,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_ezequiel_no_vale_de_ossos",
@@ -1941,7 +1975,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_jo_restaurado",
@@ -1977,7 +2012,8 @@
      "hairColor": "haircolor-gray",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_jo",
@@ -2009,7 +2045,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_isaias",
@@ -2041,7 +2078,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_jeremias",
@@ -2073,7 +2111,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_ezequiel",
@@ -2105,7 +2144,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_daniel",
@@ -2137,7 +2177,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_jonas",
@@ -2169,7 +2210,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_pedro_sobre_as_aguas",
@@ -2204,7 +2246,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_joao_batista_no_jordao",
@@ -2239,7 +2282,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
@@ -2274,7 +2318,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-bun"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "glorioso_os_magos_e_a_estrela",
@@ -2309,7 +2354,8 @@
      "hairColor": "haircolor-gray",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_joao_batista",
@@ -2364,7 +2410,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_pedro",
@@ -2396,7 +2443,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_joao_o_apostolo",
@@ -2428,7 +2476,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_tiago_filho_de_zebedeu",
@@ -2460,7 +2509,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_andre",
@@ -2511,7 +2561,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_mateus",
@@ -2543,7 +2594,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_maria_mae_de_jesus",
@@ -2594,7 +2646,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_maria_madalena",
@@ -2645,7 +2698,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "character": "feminino"
   },
   {
    "id": "lendario_jose_de_nazare",
@@ -2688,7 +2742,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_paulo_no_caminho_de_damasco",
@@ -2741,7 +2796,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_pedro_no_pentecostes",
@@ -2794,7 +2850,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_estevao_com_rosto_de_anjo",
@@ -2847,7 +2904,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "glorioso_joao_em_patmos",
@@ -2879,7 +2937,8 @@
      "hairColor": "haircolor-gray",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "character": "masculino"
   },
   {
    "id": "lendario_paulo",
@@ -2990,7 +3049,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "character": "masculino"
   }
  ]
 }

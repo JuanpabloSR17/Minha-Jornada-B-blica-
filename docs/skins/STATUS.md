@@ -34,7 +34,7 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Vestes de Arão (`lendario_arao`) | Lendária | origens | ✔ | — | lendo: Ler os 3 capítulos da Trilha do Tabernáculo |
 | ✅ | Moisés com o rosto resplandecente (`glorioso_moises_rosto_resplandecente`) | Gloriosa | origens | ✔ | — | lendo: Concluir Êxodo e cumprir o Marco: Tábuas da Aliança |
 | ✅ | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | Gloriosa | origens | ✔ | — | lendo: Concluir a temporada: Êxodo, Levítico e Números |
-| ✅ | Avental de Bezalel (`epico_bezalel`) | Épica | origens | ✔ | ✔ | lendo: Ler a história de Bezalel (Êxodo 31 e 35–38) |
+| ✅ | Avental de Bezalel (`epico_bezalel`) | Épica | origens | ✔ | — | lendo: Ler a história de Bezalel (Êxodo 31 e 35–38) |
 | ✅ | Manto de Jetro (`epico_jetro`) | Épica | origens | ✔ | — | lendo: Ler a história de Jetro (Êxodo 2, 3 e 18) |
 
 ## T1-D · Temporada 1 · Épicas e Raras restantes (5/5)
@@ -43,7 +43,7 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 |---|---|---|---|---|---|---|
 | ✅ | Tamborim de Miriã (`epico_miria`) | Épica | origens | ✔ | — | lendo: Ler a história de Miriã (Êxodo 2 e 15, Números 12) |
 | ✅ | Véu de Zípora (`epico_zipora`) | Épica | origens | ✔ | — | lendo: Ler a história de Zípora (Êxodo 2, 4 e 18) |
-| ✅ | Aoliabe, o bordador (`raro_aoliabe`) | Rara | origens | ✔ | ✔ | lendo: Ler a história de Aoliabe (Êxodo 31, 35 e 36) |
+| ✅ | Aoliabe, o bordador (`raro_aoliabe`) | Rara | origens | ✔ | — | lendo: Ler a história de Aoliabe (Êxodo 31, 35 e 36) |
 | ✅ | Hur (`raro_hur`) | Rara | origens | ✔ | — | lendo: Ler a história de Hur (Êxodo 17 e 24) |
 | ✅ | Tocador de shofar (`raro_shofar`) | Rara | origens | ✔ | ✔ | lendo: Ler o Sinai ao som do shofar (Êxodo 19–20) |
 
