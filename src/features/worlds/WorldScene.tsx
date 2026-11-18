@@ -1,5 +1,5 @@
 import { memo, type ReactElement } from 'react';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { WORLD_THEMES, type WorldId } from './worldThemes';
 
@@ -251,8 +251,29 @@ const SCENES: Record<WorldId, () => ReactElement> = {
   evangelhos: Evangelhos, igreja: Igreja, 'nova-criacao': NovaCriacao,
 };
 
-/** Paisagem própria de cada mundo, desenhada em vetor (mesma luz e paleta da página do mundo). */
-export const WorldScene = memo(function WorldScene({ id }: { id: WorldId }) {
+/** Cenas pintadas em 2.5D (1600×960), entregues pelo Codex. Sem pintura, vale a cena vetorial. */
+export const WORLD_ART: Partial<Record<WorldId, number>> = {
+  origens: require('../../../assets/worlds/origens.webp'),
+  reinos: require('../../../assets/worlds/reinos.webp'),
+  sabedoria: require('../../../assets/worlds/sabedoria.webp'),
+  profetas: require('../../../assets/worlds/profetas.webp'),
+  evangelhos: require('../../../assets/worlds/evangelhos.webp'),
+  igreja: require('../../../assets/worlds/igreja.webp'),
+  'nova-criacao': require('../../../assets/worlds/nova-criacao.webp'),
+};
+
+/**
+ * Paisagem própria de cada mundo: a pintura 2.5D (assunto no alto e no centro, base calma para o
+ * painel), cortada pelas laterais em telas estreitas; sem pintura, a cena vetorial de mesma paleta.
+ */
+export const WorldScene = memo(function WorldScene({ id, vectorOnly = false }: { id: WorldId; vectorOnly?: boolean }) {
+  const art = vectorOnly ? undefined : WORLD_ART[id];
+  if (art) {
+    return (
+      <Image source={art} resizeMode="cover" style={[StyleSheet.absoluteFill, { width: '100%', height: '100%' }]} testID={`world-art-${id}`}
+        accessibilityElementsHidden importantForAccessibility="no-hide-descendants" />
+    );
+  }
   const theme = WORLD_THEMES[id];
   const Scene = SCENES[id];
   return (

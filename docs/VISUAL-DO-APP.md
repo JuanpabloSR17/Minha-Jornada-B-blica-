@@ -279,7 +279,11 @@ Fonte: `src/features/worlds/worldThemes.ts` e `WorldScene.tsx`.
 - Mesma luz neutra nas pinturas base.
 - Todas as pinturas devem parecer da mesma mão.
 
-### 9.2 Cenas pintadas dos 7 mundos (substituem as vetoriais)
+### 9.2 Cenas pintadas dos 7 mundos: entregues e aplicadas
+
+As 7 cenas chegaram no pacote `Jornada_Biblica_Arte_Lote_A_e_Mundos.zip` (SHA-256 `61765960…17d8ff`, conferido com o `.zip.sha256`). Elas estão em `assets/worlds/<id>.webp` e entram pelo `WORLD_ART` no `WorldScene`, no topo da página do mundo e em faixa nos cartões do mapa da Jornada. A cena vetorial fica como reserva. O texto abaixo continua valendo como contrato para cenas futuras.
+
+### 9.2.1 Contrato das cenas pintadas
 As cenas atuais são vetoriais e servem de **guia de composição**: elementos, paleta e posição estão na tabela de §5.4 e em `WorldScene.tsx`. Pinte uma por mundo **no mesmo 2.5D**, como as artes do acampamento (`assets/journey/camp-night.webp`) e do Mercado.
 
 - **Arquivo:** `assets/worlds/<id>.webp`, **1600 × 960**, WebP qualidade ≥ 85, até 350 KB.

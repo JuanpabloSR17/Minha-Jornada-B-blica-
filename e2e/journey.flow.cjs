@@ -203,6 +203,12 @@ async function steady(locator) {
     await noOverflow(B.page, `mundo ${id}`);
     await shot(B.page, `j-07-mundo-${id}-412`);
   }
+  for (const id of ['origens', 'nova-criacao']) {
+    await B.page.goto(`${APP}/world/${id}`);
+    await B.page.getByTestId(`world-art-${id}`).waitFor();
+  }
+  await B.page.goto(`${APP}/journey`);
+  await B.page.getByTestId('journey-art-sabedoria').waitFor();
   step('os sete mundos têm página própria (cena, livros, marcos e skins) sem rolagem lateral em 412 px');
 
   // ================================================================ leitura comum de Êxodo 25 (Davi)

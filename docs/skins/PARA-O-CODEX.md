@@ -188,3 +188,9 @@ Pacote `Jornada_Biblica_Exodo_Lote_A_Ampliado.zip` (SHA-256 `2c1e43ed54dcbee8828
 **Observação para os próximos lotes:** o Manto de Moisés (Lendário) ficou próximo do Peregrino (Comum): cajado, bolsa e manto parecidos. Reforce o que torna a Lendária reconhecível, como o manto de pastor de Midiã mais nobre e o cajado característico, sem fugir do 2.5D.
 
 **Próximo lote (B):** as demais Comuns e Raras, começando pelas que estão na loja (Carpinteiro, Sacerdote, Bordador, Ourives, Gravador e Perfumista). Inclua a apresentação feminina na mesma rodada quando fizer sentido para o traje. Para cada apresentação nova, a skin precisa constar em `skins.variants` no banco; eu faço essa migração ao aplicar o lote.
+
+## 10. Entrega "Arte Lote A e Mundos": aplicada (18/11/2026)
+
+O SHA-256 do ZIP confere com o `.zip.sha256` e as 72 somas internas conferem.
+- **Cenas dos 7 mundos:** aprovadas. Medem 1600 × 960 e pesam de 229 a 327 KB, com o assunto no alto e no centro e a base calma. Estão no topo de cada página de mundo e em faixa nos cartões do mapa da Jornada.
+- **Skins do Lote A:** as pinturas de corpo são idênticas às já aplicadas. Só os 6 ícones mudaram (moldura ajustada) e foram atualizados.

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, Animated, Easing, Platform, Pressable, StyleSheet, View } from 'react-native';
+import { WORLD_ART } from '@/features/worlds/WorldScene';
+import { ActivityIndicator, Animated, Easing, Image, Platform, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { fmt, strings } from '@/i18n';
 import { errorMessage } from '@/lib/errors';
@@ -156,6 +157,10 @@ function WorldCard({ world, completed, expanded, onToggle, onRead, onTrail }: {
       testID={`journey-world-${world.id}`}
       style={[styles.worldCard, { borderColor: expanded || completed ? tint : '#49405D' }]}
     >
+      {WORLD_ART[world.id] ? (
+        <Image source={WORLD_ART[world.id]!} resizeMode="cover" style={styles.worldBanner} testID={`journey-art-${world.id}`}
+          accessibilityElementsHidden importantForAccessibility="no-hide-descendants" />
+      ) : null}
       <Pressable accessibilityRole="button" accessibilityState={{ expanded }} onPress={onToggle}
         style={({ pressed }) => [styles.worldRow, { opacity: pressed ? 0.75 : 1 }]}>
         <IconBadge name={completed ? 'medal' : worldIcons[world.id]} color={tint} size={49} />
@@ -272,6 +277,7 @@ export function JourneyScreen() {
 }
 
 const styles = StyleSheet.create({
+  worldBanner: { height: 92, borderRadius: 12, marginBottom: 4, width: '100%' },
   stack: { gap: spacing.md },
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   grow: { flex: 1, minWidth: 0 },
