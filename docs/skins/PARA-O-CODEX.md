@@ -255,3 +255,16 @@ O ZIP confere com o `.zip.sha256` (`5b32cd9b…`), as 23 somas conferem e as fic
 **Ajuste no app:** a aura passava do limite superior do recorte do acampamento (y = 176) e aparecia cortada por uma borda reta. As skins pintadas agora usam no acampamento o enquadramento `campPainted` (`202 56 670 1132`, mesma proporção), e a aura se desfaz sem corte.
 
 **Para pinturas futuras:** o que estiver acima da cabeça (aura, coroa, chama) deve ficar em y ≥ 56 e x entre 202 e 872, para caber no acampamento. No retrato redondo do topo, o recorte de cabeça (`382 150 260 260`) corta naturalmente o que passar disso.
+
+## 15. Moisés com as tábuas da referência e a regra dos personagens principais: aplicados (18/11/2026)
+
+O ZIP confere com o `.zip.sha256` (`685975e8…`), as 17 somas conferem e a ficha é idêntica.
+- As 3 pinturas masculinas, com véu, aura e as tábuas da referência `tc3a1buas.gif`, entraram no lugar das anteriores. A aura foi preservada e cabe no `campPainted`.
+- **As inscrições foram conferidas letra por letra:** as abreviações tradicionais dos Dez Mandamentos em hebraico, lidas da direita para a esquerda, com os mandamentos 1 a 5 na tábua da direita de quem olha e 6 a 10 na da esquerda.
+
+**Regra dos personagens principais aplicada:**
+- **Banco:** a migração `20261201000100_principal_characters_presentation.sql` deixa as Lendárias e Gloriosas só com a apresentação padrão, que é a do sexo do personagem. Ela também normaliza as seleções antigas, mantendo a mesma skin, o mesmo estilo e a posse, e acrescenta a restrição `skins_principal_single_presentation`.
+- **Arte:** as pastas `feminino/` de `lendario_moises` e `glorioso_moises_rosto_resplandecente` saíram do app. Continuam no histórico do repositório.
+- **App:** `isPrincipalCharacter` no catálogo. Vestiário, cadastro, loja, acampamento, Perfil, Amigos e cartão público usam a mesma apresentação válida.
+- **Ferramentas:** `gen-skin-art.mjs` e `skins-add-lot.mjs` ignoram a apresentação feminina de skins principais. O `LOTES.md` traz a regra em cada skin.
+- **Ofícios e personagens não principais** (Pastor, Ourives, Bezalel, Aoliabe, Tocador de shofar…) continuam com a apresentação feminina.

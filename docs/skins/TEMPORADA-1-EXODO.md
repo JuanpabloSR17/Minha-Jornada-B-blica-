@@ -8,6 +8,7 @@ Decisões do usuário (18/11/2026) que valem para todas as skins:
 - **Nunca vira skin:** Deus, Jesus, Espírito Santo, anjos, Satanás, vilões (Faraó, Golias…) e ídolos. Sem nudez nem violência.
 - **Loja:** Comuns e Raras; algumas Épicas em ocasiões especiais, às vezes grátis num dia fixo da semana. Lendárias e Gloriosas só lendo.
 - Traços e roupas fiéis ao antigo Oriente Médio e à África; trajes discretos para homens e mulheres.
+- **Personagens principais (Lendárias e Gloriosas): só a apresentação do sexo do personagem** (decisão de 18/11/2026). Ofícios e personagens não principais podem ter a apresentação feminina.
 - **Estilo: o mesmo 2.5D pintado que o Codex já usa nos personagens** (pintura semirrealista de RPG, luz e volume pintados, materiais com textura, contorno suave e proporção adulta). Não usar vetor chapado, pixel art, anime, cartum, 3D renderizado nem os estilos de teste. Os 3 estilos e todas as skins devem parecer da mesma mão.
 
 ## 1. As 26 skins da temporada

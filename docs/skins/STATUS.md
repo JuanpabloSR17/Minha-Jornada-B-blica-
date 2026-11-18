@@ -10,7 +10,7 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ✅ | Manto de Moisés (`lendario_moises`) | Lendária | origens | ✔ | ✔ | lendo: Concluir o livro de Êxodo |
+| ✅ | Manto de Moisés (`lendario_moises`) | Lendária | origens | ✔ | — | lendo: Concluir o livro de Êxodo |
 | ✅ | Sumo sacerdote (`epico_sumo_sacerdote`) | Épica | origens | ✔ | — | loja |
 | ✅ | Cesto de Joquebede (`raro_joquebede`) | Rara | origens | ✔ | — | lendo: Ler a história de Joquebede (Êxodo 2) |
 | ✅ | Linho da filha de Faraó (`raro_filha_de_farao`) | Rara | origens | ✔ | — | lendo: Ler a história da filha de Faraó (Êxodo 2) |
@@ -32,7 +32,7 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 |---|---|---|---|---|---|---|
 | ✅ | Pastor de ovelhas (`comum_pastor`) | Comum | origens | ✔ | ✔ | inicial |
 | ✅ | Vestes de Arão (`lendario_arao`) | Lendária | origens | ✔ | — | lendo: Ler os 3 capítulos da Trilha do Tabernáculo |
-| ✅ | Moisés com o rosto resplandecente (`glorioso_moises_rosto_resplandecente`) | Gloriosa | origens | ✔ | ✔ | lendo: Concluir Êxodo e cumprir o Marco: Tábuas da Aliança |
+| ✅ | Moisés com o rosto resplandecente (`glorioso_moises_rosto_resplandecente`) | Gloriosa | origens | ✔ | — | lendo: Concluir Êxodo e cumprir o Marco: Tábuas da Aliança |
 | ✅ | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | Gloriosa | origens | ✔ | — | lendo: Concluir a temporada: Êxodo, Levítico e Números |
 | ✅ | Avental de Bezalel (`epico_bezalel`) | Épica | origens | ✔ | ✔ | lendo: Ler a história de Bezalel (Êxodo 31 e 35–38) |
 | ✅ | Manto de Jetro (`epico_jetro`) | Épica | origens | ✔ | — | lendo: Ler a história de Jetro (Êxodo 2, 3 e 18) |

@@ -48,9 +48,9 @@ Uma skin **entra no app quando a pintura é aprovada**, para que toda skin visí
   - pés em y = 1450, ícone de 256 × 256 e ficha;
   - os estilos exatamente como no briefing.
 - **As Lendárias e Gloriosas precisam se destacar das Comuns:** silhueta reconhecível no retrato, tecidos de mais presença e um objeto-assinatura com forma própria.
-- **Apresentação feminina:** junto no mesmo lote, sempre que o traje permitir.
-  - Nos personagens femininos (Eva, Sara, Rebeca, Débora, Rute, Ester, as Marias, Miriã e Zípora), a apresentação padrão já é feminina.
-  - Uma apresentação masculina para esses trajes exigiria uma nova opção no banco. Fica para depois.
+- **Apresentação conforme o personagem (decisão do usuário, 18/11/2026):**
+  - **Personagens bíblicos principais** (todas as Lendárias e Gloriosas) têm **só a apresentação do sexo do personagem**, nos 3 estilos: Moisés e Elias masculinos, Rute e Ester femininas. **Não pinte a versão do outro sexo** dessas skins. O banco recusa (restrição `skins_principal_single_presentation`) e o app ignora a pasta `feminino/` delas.
+  - **Ofícios e personagens não principais** (Comuns, Raras e Épicas, como Pastor, Ourives, Bezalel e Aoliabe) continuam com a apresentação feminina na mesma rodada, quando o traje permitir.
 - **Nunca vira skin:** Deus, Jesus, o Espírito Santo, anjos, Satanás, vilões e ídolos. Sem nudez e sem violência.
 
 ## Ciclo de cada lote

@@ -19,7 +19,8 @@ for (const id of lot.skins) {
   if (!s || known.has(id)) continue;
   const painted = [1, 2, 3].every((n) => existsSync(join('assets/skins', id, `estilo-${n}`, 'corpo.webp')));
   if (!painted) { console.warn(`pulando ${id}: pintura ainda não aplicada`); continue; }
-  const fem = [1, 2, 3].every((n) => existsSync(join('assets/skins', id, 'feminino', `estilo-${n}`, 'corpo.webp')));
+  // personagens principais (Lendárias e Gloriosas): só a apresentação do sexo do personagem
+  const fem = !['legendary', 'glorious'].includes(s.rarity) && [1, 2, 3].every((n) => existsSync(join('assets/skins', id, 'feminino', `estilo-${n}`, 'corpo.webp')));
   add.push({ ...s, fem });
 }
 if (!add.length) { console.log('nada a acrescentar'); process.exit(0); }

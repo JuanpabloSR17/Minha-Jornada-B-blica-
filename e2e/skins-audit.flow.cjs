@@ -141,9 +141,15 @@ async function expectPaint(loc, label) {
   await page.getByRole('radio', { name: 'Apresentação: Padrão' }).waitFor();
   await page.getByRole('radio', { name: 'Apresentação: Feminina' }).click();
   await page.getByTestId('vestiario-name').getByText('Ourives').waitFor();
+  // personagens principais: só a apresentação do sexo do personagem (sem botões de apresentação)
+  for (const id of ['lendario_moises', 'glorioso_moises_rosto_resplandecente']) {
+    await page.getByTestId(`vestiario-${id}`).click();
+    await page.getByTestId('vestiario-stage').waitFor();
+    assert.equal(await page.getByRole('radio', { name: /^Apresentação:/ }).count(), 0, `${id}: sem apresentação do outro sexo`);
+  }
   // toda a Temporada 1 aparece pintada no Vestiário
   for (const sk of season.skins) await page.getByTestId(`vestiario-${sk.id}`).getByTestId(`thumb-painted-${sk.id}`).waitFor();
-  step(`Vestiário: as ${season.skins.length} skins da Temporada 1 aparecem pintadas; apresentações de mesmo nome viram Padrão e Feminina`);
+  step(`Vestiário: as ${season.skins.length} skins da Temporada 1 aparecem pintadas; apresentações de mesmo nome viram Padrão e Feminina; Moisés (personagem principal) sem apresentação do outro sexo`);
 
   // trocar para a apresentação padrão reflete em todas as telas
   await page.goto(`${APP}/vestiario`);

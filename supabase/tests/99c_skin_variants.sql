@@ -19,7 +19,24 @@ select tests.assert(public.get_public_avatar('apresentacao_um') -> 'skin' = '{"s
   'o cartão público mostra a apresentação escolhida');
 reset role;
 select tests.assert_raises($$update public.skins set variants = '{feminino}' where id = 'comum_pastor'$$, '%check%', 'toda skin mantém a apresentação padrão');
-select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 13,
-  'Lotes A, B, T1-C e T1-D: 13 skins com apresentação feminina pintada');
+select tests.assert((select count(*) from public.skins where 'feminino' = any(variants)) = 11,
+  'ofícios e personagens não principais: 11 skins com apresentação feminina pintada');
+select tests.assert(not exists (select 1 from public.skins where rarity in ('legendary', 'glorious') and variants <> '{padrao}'),
+  'personagens principais (Lendárias e Gloriosas): só a apresentação do sexo do personagem');
+select tests.assert_raises($$update public.skins set variants = '{padrao,feminino}' where id = 'lendario_moises'$$, '%skins_principal_single_presentation%',
+  'o banco recusa apresentação do outro sexo para personagem principal');
 select tests.assert((select variants from public.skins where id = 'raro_sacerdote') = '{padrao}'::text[], 'o Sacerdote segue só com a padrão');
+rollback;
+
+-- seleção antiga de apresentação feminina de um personagem principal: vale a padrão, com o mesmo estilo
+begin;
+select tests.mk_m('be000000-0000-0000-0000-0000000000be', 'selecao_antiga', 0);
+insert into public.user_skins (user_id, skin_id, source_event_id) values ('be000000-0000-0000-0000-0000000000be', 'lendario_moises', 'skin-reading:lendario_moises');
+insert into public.user_skin_selection (user_id, skin_id, style, variant) values ('be000000-0000-0000-0000-0000000000be', 'lendario_moises', 3, 'feminino');
+select set_config('request.jwt.claim.sub', 'be000000-0000-0000-0000-0000000000be', true);
+set local role authenticated;
+select tests.assert(public.get_my_skins() -> 'selected' = '{"skinId": "lendario_moises", "style": 3, "variant": "padrao"}'::jsonb,
+  'seleção antiga do Manto de Moisés feminino vira a padrão, com a mesma skin e o estilo 3');
+select tests.assert_raises($$select public.equip_skin('lendario_moises', 2, 'feminino')$$, 'invalid_variant', 'não se veste mais a apresentação feminina de Moisés');
+select tests.assert(public.equip_skin('lendario_moises', 2) #>> '{variant}' = 'padrao', 'a padrão continua disponível nos 3 estilos');
 rollback;

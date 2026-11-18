@@ -53,6 +53,11 @@ describe('pinturas entregues (art.generated)', () => {
     for (const s of require('../season1.json').skins) expect(SKIN_ART[s.id]?.padrao).toBeTruthy();
     expect(variantsOf('comum_peregrino_exodo')).toEqual(['padrao', 'feminino']);
     expect(variantsOf('raro_hur')).toEqual(['padrao']);
+    // personagens principais: só a apresentação do sexo do personagem
+    expect(variantsOf('lendario_moises')).toEqual(['padrao']);
+    expect(variantsOf('glorioso_moises_rosto_resplandecente')).toEqual(['padrao']);
+    expect(SKIN_ART.lendario_moises.feminino).toBeUndefined();
+    expect(skinLook(null, { skinId: 'lendario_moises', style: 3, variant: 'feminino' }).painted).toBe(SKIN_ART.lendario_moises.padrao.styles[2]);
     expect(skinDisplayName(getSkin('comum_peregrino_exodo'), 'feminino')).toBe('Peregrina do Êxodo');
   });
   it('skinLook usa a pintura do estilo e da apresentação, e cai na apresentação padrão quando a pedida não existe', () => {

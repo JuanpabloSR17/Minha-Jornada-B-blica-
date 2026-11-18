@@ -106,11 +106,6 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/glorioso_moises_rosto_resplandecente/estilo-2/corpo.webp'),
       require('../../../assets/skins/glorioso_moises_rosto_resplandecente/estilo-3/corpo.webp'),
     ] },
-    feminino: { name: "Moisés com o rosto resplandecente", icon: require('../../../assets/skins/glorioso_moises_rosto_resplandecente/feminino/icone.webp'), styles: [
-      require('../../../assets/skins/glorioso_moises_rosto_resplandecente/feminino/estilo-1/corpo.webp'),
-      require('../../../assets/skins/glorioso_moises_rosto_resplandecente/feminino/estilo-2/corpo.webp'),
-      require('../../../assets/skins/glorioso_moises_rosto_resplandecente/feminino/estilo-3/corpo.webp'),
-    ] },
   },
   lendario_arao: {
     padrao: { icon: require('../../../assets/skins/lendario_arao/icone.webp'), styles: [
@@ -124,11 +119,6 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/lendario_moises/estilo-1/corpo.webp'),
       require('../../../assets/skins/lendario_moises/estilo-2/corpo.webp'),
       require('../../../assets/skins/lendario_moises/estilo-3/corpo.webp'),
-    ] },
-    feminino: { name: "Manto de Moisés", icon: require('../../../assets/skins/lendario_moises/feminino/icone.webp'), styles: [
-      require('../../../assets/skins/lendario_moises/feminino/estilo-1/corpo.webp'),
-      require('../../../assets/skins/lendario_moises/feminino/estilo-2/corpo.webp'),
-      require('../../../assets/skins/lendario_moises/feminino/estilo-3/corpo.webp'),
     ] },
   },
   raro_aoliabe: {

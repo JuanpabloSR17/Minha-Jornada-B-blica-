@@ -7,9 +7,12 @@ const root = 'assets/skins';
 const out = 'src/features/skins/art.generated.ts';
 const rel = (p) => `../../../${p}`;
 const lines = [];
+const principal = new Set([...JSON.parse(readFileSync('src/features/skins/season1.json', 'utf8')).skins,
+  ...JSON.parse(readFileSync('src/features/skins/principais.json', 'utf8')).skins].filter((s) => ['legendary', 'glorious'].includes(s.rarity)).map((s) => s.id));
 for (const id of readdirSync(root).sort()) {
   const variants = [];
-  for (const [variant, dir] of [['padrao', join(root, id)], ['feminino', join(root, id, 'feminino')]]) {
+  // personagens principais (Lendárias e Gloriosas) têm só a apresentação do sexo do personagem
+  for (const [variant, dir] of principal.has(id) ? [['padrao', join(root, id)]] : [['padrao', join(root, id)], ['feminino', join(root, id, 'feminino')]]) {
     const bodies = [1, 2, 3].map((n) => join(dir, `estilo-${n}`, 'corpo.webp'));
     if (!bodies.every(existsSync) || !existsSync(join(dir, 'icone.webp'))) continue;
     const ficha = existsSync(join(dir, 'ficha.json')) ? JSON.parse(readFileSync(join(dir, 'ficha.json'), 'utf8')) : {};
