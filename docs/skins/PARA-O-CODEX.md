@@ -295,3 +295,21 @@ As migrações `20261202000200_skins_p01.sql` e `20261202000300_skins_p02.sql` a
 - As 3 Gloriosas se ganham ao concluir o mundo das Origens.
 
 **Próximo: P03 e P04** (principais de Terra e Reinos), conforme o `LOTES.md`.
+
+## 18. Lotes P03 e P04 (principais de Terra e Reinos): aplicados (19/11/2026)
+
+- **P03:** o ZIP confere com o `.zip.sha256` (`518e7a3f…`) e as 65 somas conferem.
+- **P04:** o ZIP confere com o `.zip.sha256` (`8a9ca300…`) e as 65 somas conferem.
+- **Aprovado:** 36 pinturas de 156 a 271 KB, sem névoa, estilos iguais ao plano e personagens só no próprio sexo (Débora e Rute femininas).
+- **P03:** Vestes de Josué, Débora, Gideão, Sansão, Rute e Samuel.
+- **P04:** Vestes de Davi, Salomão, Elias, Eliseu, Esdras e Neemias. O manto dobrado de Eliseu usa o tecido do manto de Elias.
+
+**Sansão: decisão do usuário aplicada.** As sete tranças aparecem nos três estilos (Jz 16:13), com as cores e os tons do plano. No catálogo e no plano, o penteado dos três estilos passou a `hair-braids`, com a nota "sete tranças". A ficha guarda os IDs originais e o `penteadoVisual`, para rastrear a mudança.
+
+As migrações `20261202000400_skins_p03.sql` e `20261202000500_skins_p04.sql` trazem as 12 skins com as regras de leitura. Exemplos:
+- Vestes de Sansão: Juízes 13–16.
+- Vestes de Davi: 1 Samuel 16–31.
+- Vestes de Elias: 1 Reis 17 a 2 Reis 2.
+- Vestes de Rute: concluir Rute.
+
+**Próximo: P05 e P06**, com as últimas principais de Terra e Reinos (Ester e as 5 Gloriosas) e as de Sabedoria e Profetas.

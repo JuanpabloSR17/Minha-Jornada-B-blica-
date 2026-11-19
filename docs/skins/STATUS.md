@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 38 de 289 skins prontas no app.
+**Progresso:** 50 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -69,27 +69,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Abraão sob as estrelas (`glorioso_abraao_sob_as_estrelas`) | Gloriosa | origens | ✔ | — | lendo: Concluir o mundo Origens e Aliança (5 livros) |
 | ✅ | Noé e o arco-íris (`glorioso_noe_e_o_arco_iris`) | Gloriosa | origens | ✔ | — | lendo: Concluir o mundo Origens e Aliança (5 livros) |
 
-## P03 · Principais · Terra e Reinos (0/6)
+## P03 · Principais · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Josué (`lendario_josue`) | Lendária | reinos | — | — | Concluir o livro de Josué |
-| ⬜ | Vestes de Débora (`lendario_debora`) | Lendária | reinos | — | — | Ler a história de Débora (Juízes 4–5) |
-| ⬜ | Vestes de Gideão (`lendario_gideao`) | Lendária | reinos | — | — | Ler a história de Gideão (Juízes 6–8) |
-| ⬜ | Vestes de Sansão (`lendario_sansao`) | Lendária | reinos | — | — | Ler a história de Sansão (Juízes 13–16) |
-| ⬜ | Vestes de Rute (`lendario_rute`) | Lendária | reinos | — | — | Concluir o livro de Rute |
-| ⬜ | Vestes de Samuel (`lendario_samuel`) | Lendária | reinos | — | — | Ler a história de Samuel (1 Samuel 1–16) |
+| ✅ | Vestes de Josué (`lendario_josue`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Josué |
+| ✅ | Vestes de Débora (`lendario_debora`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Débora (Juízes 4–5) |
+| ✅ | Vestes de Gideão (`lendario_gideao`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Gideão (Juízes 6–8) |
+| ✅ | Vestes de Sansão (`lendario_sansao`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Sansão (Juízes 13–16) |
+| ✅ | Vestes de Rute (`lendario_rute`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Rute |
+| ✅ | Vestes de Samuel (`lendario_samuel`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Samuel (1 Samuel 1–16) |
 
-## P04 · Principais · Terra e Reinos (0/6)
+## P04 · Principais · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Davi (`lendario_davi`) | Lendária | reinos | — | — | Ler a história de Davi (1 Samuel 16–31) |
-| ⬜ | Vestes de Salomão (`lendario_salomao`) | Lendária | reinos | — | — | Ler a história de Salomão (1 Reis 1–11) |
-| ⬜ | Vestes de Elias (`lendario_elias`) | Lendária | reinos | — | — | Ler a história de Elias (1 Reis 17 a 2 Reis 2) |
-| ⬜ | Vestes de Eliseu (`lendario_eliseu`) | Lendária | reinos | — | — | Ler a história de Eliseu (2 Reis 2–13) |
-| ⬜ | Vestes de Esdras (`lendario_esdras`) | Lendária | reinos | — | — | Concluir o livro de Esdras |
-| ⬜ | Vestes de Neemias (`lendario_neemias`) | Lendária | reinos | — | — | Concluir o livro de Neemias |
+| ✅ | Vestes de Davi (`lendario_davi`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Davi (1 Samuel 16–31) |
+| ✅ | Vestes de Salomão (`lendario_salomao`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Salomão (1 Reis 1–11) |
+| ✅ | Vestes de Elias (`lendario_elias`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Elias (1 Reis 17 a 2 Reis 2) |
+| ✅ | Vestes de Eliseu (`lendario_eliseu`) | Lendária | reinos | ✔ | — | lendo: Ler a história de Eliseu (2 Reis 2–13) |
+| ✅ | Vestes de Esdras (`lendario_esdras`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Esdras |
+| ✅ | Vestes de Neemias (`lendario_neemias`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Neemias |
 
 ## P05 · Principais · Terra e Reinos (0/6)
 

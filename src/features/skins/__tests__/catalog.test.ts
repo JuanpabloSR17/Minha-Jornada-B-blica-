@@ -95,5 +95,9 @@ describe('skins da enciclopédia (lotes aplicados)', () => {
       if (s.character || ['legendary', 'glorious'].includes(s.rarity)) expect(variantsOf(s.id)).toEqual(['padrao']);
     }
   });
+  it('Sansão mantém as sete tranças nos três estilos (decisão do usuário), com as cores do plano', () => {
+    const sansao = principais.find((s) => s.id === 'lendario_sansao') as unknown as { styles: { hairStyle: string; hairColor: string }[] };
+    expect(sansao.styles.map((st) => st.hairStyle)).toEqual(['hair-braids', 'hair-braids', 'hair-braids']);
+    expect(sansao.styles.map((st) => st.hairColor)).toEqual(['haircolor-honey', 'haircolor-darkbrown', 'haircolor-auburn']);
+  });
 });
-

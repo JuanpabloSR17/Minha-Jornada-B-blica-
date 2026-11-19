@@ -1,0 +1,390 @@
+{
+  "commit": "522e944",
+  "id": "P04",
+  "titulo": "Principais · Terra e Reinos",
+  "skins": [
+    {
+      "id": "lendario_davi",
+      "name": "Vestes de Davi",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "1 Sm 16:11-13",
+      "idea": "Pastor com harpa e cajado",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            16
+          ],
+          [
+            "1SA",
+            17
+          ],
+          [
+            "1SA",
+            18
+          ],
+          [
+            "1SA",
+            19
+          ],
+          [
+            "1SA",
+            20
+          ],
+          [
+            "1SA",
+            21
+          ],
+          [
+            "1SA",
+            22
+          ],
+          [
+            "1SA",
+            23
+          ],
+          [
+            "1SA",
+            24
+          ],
+          [
+            "1SA",
+            25
+          ],
+          [
+            "1SA",
+            26
+          ],
+          [
+            "1SA",
+            27
+          ],
+          [
+            "1SA",
+            28
+          ],
+          [
+            "1SA",
+            29
+          ],
+          [
+            "1SA",
+            30
+          ],
+          [
+            "1SA",
+            31
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Davi (1 Samuel 16–31)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_salomao",
+      "name": "Vestes de Salomão",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "1 Rs 3:9-12",
+      "idea": "Jovem rei com rolo de provérbios",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "1KI",
+            1
+          ],
+          [
+            "1KI",
+            2
+          ],
+          [
+            "1KI",
+            3
+          ],
+          [
+            "1KI",
+            4
+          ],
+          [
+            "1KI",
+            5
+          ],
+          [
+            "1KI",
+            6
+          ],
+          [
+            "1KI",
+            7
+          ],
+          [
+            "1KI",
+            8
+          ],
+          [
+            "1KI",
+            9
+          ],
+          [
+            "1KI",
+            10
+          ],
+          [
+            "1KI",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Salomão (1 Reis 1–11)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_elias",
+      "name": "Vestes de Elias",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "1 Rs 19:13; 2 Rs 1:8",
+      "idea": "Manto de pelos, cinto de couro",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "1KI",
+            17
+          ],
+          [
+            "1KI",
+            18
+          ],
+          [
+            "1KI",
+            19
+          ],
+          [
+            "1KI",
+            20
+          ],
+          [
+            "1KI",
+            21
+          ],
+          [
+            "1KI",
+            22
+          ],
+          [
+            "2KI",
+            1
+          ],
+          [
+            "2KI",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Elias (1 Reis 17 a 2 Reis 2)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_eliseu",
+      "name": "Vestes de Eliseu",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "2 Rs 2:13-14",
+      "idea": "Manto de Elias dobrado nas mãos",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            2
+          ],
+          [
+            "2KI",
+            3
+          ],
+          [
+            "2KI",
+            4
+          ],
+          [
+            "2KI",
+            5
+          ],
+          [
+            "2KI",
+            6
+          ],
+          [
+            "2KI",
+            7
+          ],
+          [
+            "2KI",
+            8
+          ],
+          [
+            "2KI",
+            9
+          ],
+          [
+            "2KI",
+            10
+          ],
+          [
+            "2KI",
+            11
+          ],
+          [
+            "2KI",
+            12
+          ],
+          [
+            "2KI",
+            13
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Eliseu (2 Reis 2–13)",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_esdras",
+      "name": "Vestes de Esdras",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Ne 8:4-5",
+      "idea": "Escriba no púlpito de madeira, rolo aberto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "EZR"
+        ]
+      },
+      "howTo": "Concluir o livro de Esdras",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_neemias",
+      "name": "Vestes de Neemias",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Ne 1:11; 4:17",
+      "idea": "Copeiro do rei com planta dos muros",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "NEH"
+        ]
+      },
+      "howTo": "Concluir o livro de Neemias",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "decisoesUsuario": []
+}

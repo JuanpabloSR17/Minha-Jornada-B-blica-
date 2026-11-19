@@ -1,0 +1,308 @@
+{
+  "commit": "522e944",
+  "id": "P03",
+  "titulo": "Principais · Terra e Reinos",
+  "skins": [
+    {
+      "id": "lendario_josue",
+      "name": "Vestes de Josué",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Js 1:1-9",
+      "idea": "Comandante com espada e manto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOS"
+        ]
+      },
+      "howTo": "Concluir o livro de Josué",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_debora",
+      "name": "Vestes de Débora",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Jz 4:4-5",
+      "idea": "Juíza sob a palmeira, manto de profetisa",
+      "presentation": "feminina",
+      "rule": {
+        "chapters": [
+          [
+            "JDG",
+            4
+          ],
+          [
+            "JDG",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Débora (Juízes 4–5)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "lendario_gideao",
+      "name": "Vestes de Gideão",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Jz 7:20",
+      "idea": "Trombeta, cântaro e tocha",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "JDG",
+            6
+          ],
+          [
+            "JDG",
+            7
+          ],
+          [
+            "JDG",
+            8
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Gideão (Juízes 6–8)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_sansao",
+      "name": "Vestes de Sansão",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Jz 16:13, 17",
+      "idea": "Nazireu com sete tranças",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "JDG",
+            13
+          ],
+          [
+            "JDG",
+            14
+          ],
+          [
+            "JDG",
+            15
+          ],
+          [
+            "JDG",
+            16
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Sansão (Juízes 13–16)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_rute",
+      "name": "Vestes de Rute",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Rt 2:2-3",
+      "idea": "Respigadeira com feixe de cevada",
+      "presentation": "feminina",
+      "rule": {
+        "books": [
+          "RUT"
+        ]
+      },
+      "howTo": "Concluir o livro de Rute",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "lendario_samuel",
+      "name": "Vestes de Samuel",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "1 Sm 2:18-19",
+      "idea": "Éfode de linho, manto pequeno feito pela mãe, chifre de óleo",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            1
+          ],
+          [
+            "1SA",
+            2
+          ],
+          [
+            "1SA",
+            3
+          ],
+          [
+            "1SA",
+            4
+          ],
+          [
+            "1SA",
+            5
+          ],
+          [
+            "1SA",
+            6
+          ],
+          [
+            "1SA",
+            7
+          ],
+          [
+            "1SA",
+            8
+          ],
+          [
+            "1SA",
+            9
+          ],
+          [
+            "1SA",
+            10
+          ],
+          [
+            "1SA",
+            11
+          ],
+          [
+            "1SA",
+            12
+          ],
+          [
+            "1SA",
+            13
+          ],
+          [
+            "1SA",
+            14
+          ],
+          [
+            "1SA",
+            15
+          ],
+          [
+            "1SA",
+            16
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Samuel (1 Samuel 1–16)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "decisoesUsuario": [
+    {
+      "skin": "lendario_sansao",
+      "approval": "Preservar as sete tranças nos três estilos",
+      "detail": "Decisão expressa do usuário nesta entrega. Preservar tons e cores do plano e variar textura e disposição das sete tranças. Os IDs de penteado do plano ficam registrados como origem; o desenho e o rótulo visual mostram sete tranças nos três estilos."
+    }
+  ]
+}

@@ -2,36 +2,6 @@
 
 Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de `TEMPORADA-1-EXODO.md` §2.
 
-## P03 · Principais · Terra e Reinos
-
-- **Vestes de Josué** (`lendario_josue`), Lendária, Js 1:1-9. Traje: Comandante com espada e manto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-honey, hair-afro · estilo-2: skin-5, haircolor-darkbrown, hair-side-part · estilo-3: skin-6, haircolor-auburn, hair-wavy
-- **Vestes de Débora** (`lendario_debora`), Lendária, Jz 4:4-5. Traje: Juíza sob a palmeira, manto de profetisa. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-copper, hair-long · estilo-2: skin-3, haircolor-black, hair-bun · estilo-3: skin-5, haircolor-brown, hair-ponytail
-- **Vestes de Gideão** (`lendario_gideao`), Lendária, Jz 7:20. Traje: Trombeta, cântaro e tocha. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-honey, hair-afro · estilo-2: skin-2, haircolor-darkbrown, hair-side-part · estilo-3: skin-6, haircolor-auburn, hair-wavy
-- **Vestes de Sansão** (`lendario_sansao`), Lendária, Jz 16:13, 17. Traje: Nazireu com sete tranças. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-honey, hair-short · estilo-2: skin-3, haircolor-darkbrown, hair-curly · estilo-3: skin-5, haircolor-auburn, hair-afro
-- **Vestes de Rute** (`lendario_rute`), Lendária, Rt 2:2-3. Traje: Respigadeira com feixe de cevada. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-brown, hair-long · estilo-2: skin-4, haircolor-copper, hair-bun · estilo-3: skin-6, haircolor-black, hair-ponytail
-- **Vestes de Samuel** (`lendario_samuel`), Lendária, 1 Sm 2:18-19. Traje: Éfode de linho, manto pequeno feito pela mãe, chifre de óleo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-darkbrown, hair-wavy · estilo-2: skin-2, haircolor-auburn, hair-locs · estilo-3: skin-6, haircolor-honey, hair-short
-
-## P04 · Principais · Terra e Reinos
-
-- **Vestes de Davi** (`lendario_davi`), Lendária, 1 Sm 16:11-13. Traje: Pastor com harpa e cajado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-wavy · estilo-2: skin-4, haircolor-brown, hair-locs · estilo-3: skin-6, haircolor-copper, hair-short
-- **Vestes de Salomão** (`lendario_salomao`), Lendária, 1 Rs 3:9-12. Traje: Jovem rei com rolo de provérbios. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-darkbrown, hair-side-part · estilo-2: skin-2, haircolor-auburn, hair-wavy · estilo-3: skin-6, haircolor-honey, hair-locs
-- **Vestes de Elias** (`lendario_elias`), Lendária, 1 Rs 19:13; 2 Rs 1:8. Traje: Manto de pelos, cinto de couro. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-black, hair-afro · estilo-2: skin-3, haircolor-brown, hair-side-part · estilo-3: skin-5, haircolor-copper, hair-wavy
-- **Vestes de Eliseu** (`lendario_eliseu`), Lendária, 2 Rs 2:13-14. Traje: Manto de Elias dobrado nas mãos. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-black, hair-short · estilo-2: skin-5, haircolor-brown, hair-curly · estilo-3: skin-6, haircolor-copper, hair-afro
-- **Vestes de Esdras** (`lendario_esdras`), Lendária, Ne 8:4-5. Traje: Escriba no púlpito de madeira, rolo aberto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-honey, hair-wavy · estilo-2: skin-3, haircolor-darkbrown, hair-locs · estilo-3: skin-5, haircolor-auburn, hair-short
-- **Vestes de Neemias** (`lendario_neemias`), Lendária, Ne 1:11; 4:17. Traje: Copeiro do rei com planta dos muros. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-copper, hair-afro · estilo-2: skin-3, haircolor-black, hair-side-part · estilo-3: skin-5, haircolor-brown, hair-wavy
-
 ## P05 · Principais · Terra e Reinos
 
 - **Vestes de Ester** (`lendario_ester`), Lendária, Et 2:17. Traje: Rainha com coroa real. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).

@@ -1,0 +1,405 @@
+{
+  "lot": "P03",
+  "sourceCommit": "522e944",
+  "skins": 6,
+  "paintings": 18,
+  "bodyWebps": 36,
+  "reports": [
+    {
+      "id": "lendario_josue",
+      "style": "estilo-1",
+      "bytes": 243580,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          515,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_josue",
+      "style": "estilo-2",
+      "bytes": 219290,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          513,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_josue",
+      "style": "estilo-3",
+      "bytes": 237236,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          310
+        ],
+        [
+          516,
+          393
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_debora",
+      "style": "estilo-1",
+      "bytes": 190510,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_debora",
+      "style": "estilo-2",
+      "bytes": 191832,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_debora",
+      "style": "estilo-3",
+      "bytes": 198144,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          514,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_gideao",
+      "style": "estilo-1",
+      "bytes": 214670,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          515,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_gideao",
+      "style": "estilo-2",
+      "bytes": 200380,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          515,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_gideao",
+      "style": "estilo-3",
+      "bytes": 218630,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_sansao",
+      "style": "estilo-1",
+      "bytes": 179830,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_sansao",
+      "style": "estilo-2",
+      "bytes": 186086,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_sansao",
+      "style": "estilo-3",
+      "bytes": 170678,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_rute",
+      "style": "estilo-1",
+      "bytes": 205348,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_rute",
+      "style": "estilo-2",
+      "bytes": 217386,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          515,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_rute",
+      "style": "estilo-3",
+      "bytes": 203818,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_samuel",
+      "style": "estilo-1",
+      "bytes": 164246,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_samuel",
+      "style": "estilo-2",
+      "bytes": 160168,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_samuel",
+      "style": "estilo-3",
+      "bytes": 162152,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    }
+  ]
+}

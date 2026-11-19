@@ -1612,7 +1612,7 @@
    "rarity": "legendary",
    "world": "reinos",
    "scriptureRef": "Jz 16:13, 17",
-   "idea": "Nazireu com sete tranças",
+   "idea": "Nazireu com sete tranças nos três estilos",
    "presentation": "masculina",
    "rule": {
     "chapters": [
@@ -1639,20 +1639,21 @@
     {
      "skinTone": "skin-2",
      "hairColor": "haircolor-honey",
-     "hairStyle": "hair-short"
+     "hairStyle": "hair-braids"
     },
     {
      "skinTone": "skin-3",
      "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-curly"
+     "hairStyle": "hair-braids"
     },
     {
      "skinTone": "skin-5",
      "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-afro"
+     "hairStyle": "hair-braids"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "hairNote": "Sete tranças nos três estilos (Jz 16:13), decisão do usuário; cores e tons do plano"
   },
   {
    "id": "lendario_rute",
