@@ -356,7 +356,7 @@ As 24 Lendárias e Gloriosas de P01 a P04 (de Adão a Neemias) foram pintadas an
   - O conjunto de 3 estilos nunca se repete entre skins, e o estilo 1 não se repete entre skins do mesmo sexo.
   - Louro só em pele clara, mel em pele clara ou média.
   - O `LOTES.md` já traz os estilos novos. **Use sempre os estilos do `LOTES.md` atual.**
-- **As skins já pintadas não mudam.** João Batista, Tiago e Jonas entram na revisão final **RF05**, com estilos novos (`stylesRevisao`) e rostos mais distintos.
+- **As skins já pintadas mantêm seus estilos.** Atualização: o Codex vai diferenciar **agora** os rostos de Vestes de Jonas e de Tiago nos três estilos, mudando só a anatomia facial e a barba (mesmos tons, penteados, trajes, objetos e IDs), em **P07_v2 e P08_v2**. João Batista fica como referência. Os três saem da RF05 e o `stylesRevisao` foi removido do plano.
 
 **RF05 também inclui** as Lendárias e Gloriosas da Temporada 1 (Vestes de Moisés, Vestes de Arão e Arão e a vara que floresceu), anteriores à regra do rosto. Moisés com o rosto resplandecente fica de fora, porque o véu cobre o rosto.
 

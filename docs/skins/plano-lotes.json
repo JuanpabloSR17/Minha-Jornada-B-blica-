@@ -7,7 +7,7 @@
   "epic_rare_personagem": "ler os capítulos da história do personagem (referências da enciclopédia)",
   "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana",
   "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins",
-  "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras; inclui as Lendárias e Gloriosas da Temporada 1 (menos Moisés com véu, de rosto coberto) e João Batista, Tiago e Jonas, que receberam estilos iguais no plano e ganham estilos novos (stylesRevisao). A revisão conta como feita quando a ficha traz revisaoRosto"
+  "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras; inclui as Lendárias e Gloriosas da Temporada 1 (menos Moisés com véu, de rosto coberto). Vestes de Jonas e de Tiago são diferenciadas de João Batista já em P07_v2/P08_v2 (anatomia facial e barba, mesmos estilos), e João Batista fica como referência. A revisão conta como feita quando a ficha traz revisaoRosto"
  },
  "lotes": [
   {
@@ -620,15 +620,12 @@
   },
   {
    "id": "RF05",
-   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1 e rostos parecidos de P07–P08",
+   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1",
    "tipo": "revisao-rosto",
    "skins": [
     "lendario_moises",
     "lendario_arao",
-    "glorioso_arao_vara_floresceu",
-    "lendario_joao_batista",
-    "lendario_tiago_filho_de_zebedeu",
-    "lendario_jonas"
+    "glorioso_arao_vara_floresceu"
    ]
   }
  ],
@@ -2712,24 +2709,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto de meia-idade; rosto pentagonal, têmporas estreitas, maçãs angulosas e queixo curto, nariz comprido de ponta bulbosa, olhos fundos de pálpebras grossas, bigode marcado e barba curta separada.",
-   "stylesRevisao": [
-    {
-     "skinTone": "skin-4",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-wavy"
-    },
-    {
-     "skinTone": "skin-1",
-     "hairColor": "haircolor-black",
-     "hairStyle": "hair-long"
-    },
-    {
-     "skinTone": "skin-5",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-curly"
-    }
-   ]
+   "identidadeFacial": "Adulto de meia-idade; rosto pentagonal, têmporas estreitas, maçãs angulosas e queixo curto, nariz comprido de ponta bulbosa, olhos fundos de pálpebras grossas, bigode marcado e barba curta separada."
   },
   {
    "id": "glorioso_pedro_sobre_as_aguas",
@@ -2930,24 +2910,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto; rosto estreito em cunha, testa plana com sobrancelhas muito arqueadas, nariz grande de ponta voltada para baixo, boca larga e barba áspera bifurcada.",
-   "stylesRevisao": [
-    {
-     "skinTone": "skin-5",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-wavy"
-    },
-    {
-     "skinTone": "skin-2",
-     "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-shaved"
-    },
-    {
-     "skinTone": "skin-4",
-     "hairColor": "haircolor-black",
-     "hairStyle": "hair-curly"
-    }
-   ]
+   "identidadeFacial": "Adulto; rosto estreito em cunha, testa plana com sobrancelhas muito arqueadas, nariz grande de ponta voltada para baixo, boca larga e barba áspera bifurcada."
   },
   {
    "id": "lendario_pedro",
@@ -3049,24 +3012,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada.",
-   "stylesRevisao": [
-    {
-     "skinTone": "skin-6",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-afro"
-    },
-    {
-     "skinTone": "skin-3",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-short"
-    },
-    {
-     "skinTone": "skin-1",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-wavy"
-    }
-   ]
+   "identidadeFacial": "Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada."
   },
   {
    "id": "lendario_andre",

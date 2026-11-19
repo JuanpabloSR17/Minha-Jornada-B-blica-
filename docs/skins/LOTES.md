@@ -587,13 +587,10 @@ Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin co
 - Vestes de Esdras (`lendario_esdras`)
 - Vestes de Neemias (`lendario_neemias`)
 
-## RF05 · Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1 e rostos parecidos de P07–P08
+## RF05 · Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1
 
 Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` e com `"revisaoRosto": "<lote>"` na ficha. Manter IDs, estilos (tons e penteados, salvo os indicados como novos), sexo do personagem, traje, objetos, âncoras e caminhos.
 
 - Manto de Moisés (`lendario_moises`)
 - Vestes de Arão (`lendario_arao`)
 - Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`)
-- Vestes de João Batista (`lendario_joao_batista`) — **estilos novos** (o plano tinha os mesmos de outra skin): estilo-1: skin-5, haircolor-copper, hair-wavy · estilo-2: skin-2, haircolor-darkbrown, hair-shaved · estilo-3: skin-4, haircolor-black, hair-curly
-- Vestes de Tiago, filho de Zebedeu (`lendario_tiago_filho_de_zebedeu`) — **estilos novos** (o plano tinha os mesmos de outra skin): estilo-1: skin-6, haircolor-copper, hair-afro · estilo-2: skin-3, haircolor-auburn, hair-short · estilo-3: skin-1, haircolor-brown, hair-wavy
-- Vestes de Jonas (`lendario_jonas`) — **estilos novos** (o plano tinha os mesmos de outra skin): estilo-1: skin-4, haircolor-copper, hair-wavy · estilo-2: skin-1, haircolor-black, hair-long · estilo-3: skin-5, haircolor-brown, hair-curly

@@ -587,7 +587,7 @@ Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos
 | ⬜ | Vestes de Esdras (`lendario_esdras`) | a refazer no final |
 | ⬜ | Vestes de Neemias (`lendario_neemias`) | a refazer no final |
 
-## RF05 · Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1 e rostos parecidos de P07–P08 (0/6 revisadas)
+## RF05 · Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1 (0/3 revisadas)
 
 Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
 
@@ -596,6 +596,3 @@ Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos
 | ⬜ | Manto de Moisés (`lendario_moises`) | a refazer no final |
 | ⬜ | Vestes de Arão (`lendario_arao`) | a refazer no final |
 | ⬜ | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | a refazer no final |
-| ⬜ | Vestes de João Batista (`lendario_joao_batista`) | a refazer no final |
-| ⬜ | Vestes de Tiago, filho de Zebedeu (`lendario_tiago_filho_de_zebedeu`) | a refazer no final |
-| ⬜ | Vestes de Jonas (`lendario_jonas`) | a refazer no final |
