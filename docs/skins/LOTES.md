@@ -23,7 +23,7 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 - **Traje de Ismael** (`epico_ismael`), Épica, Gn 21:20. Traje: Arqueiro do deserto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-6, haircolor-brown, hair-long · estilo-2: skin-2, haircolor-darkbrown, hair-afro · estilo-3: skin-3, haircolor-auburn, hair-curly
-- **Traje de Esaú** (`epico_esau`), Épica, Gn 25:25-27. Traje: Caçador ruivo, manto peludo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
+- **Traje de Esaú** (`epico_esau`), Épica, Gn 25:25-27. Traje: Caçador do campo, manto peludo ruivo cor de ferrugem (Gn 25:25 descreve o recém-nascido avermelhado e peludo; a cor do cabelo segue os estilos). Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-1, haircolor-brown, hair-curly · estilo-2: skin-6, haircolor-darkbrown, hair-afro · estilo-3: skin-4, haircolor-black, hair-short
 - **Traje de Judá** (`epico_juda`), Épica, Gn 38:18; 49:9. Traje: Selo, cordão e cajado, leão no bordado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-6, haircolor-auburn, hair-shaved · estilo-2: skin-4, haircolor-black, hair-long · estilo-3: skin-1, haircolor-brown, hair-short
