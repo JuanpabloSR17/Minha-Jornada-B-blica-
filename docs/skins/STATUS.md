@@ -534,3 +534,55 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ⬜ | Traje dos jovens da linhagem real (`raro_jovens_da_linhagem_real`) | Rara | profetas | — | — | Ler a história de Jovens da linhagem real (Dn 1:3-4) |
 | ⬜ | Traje de corte do príncipe (`raro_principe`) | Rara | profetas | — | — | loja (Siclos) |
 | ⬜ | Traje de corte da princesa (`raro_princesa`) | Rara | sabedoria | — | — | loja (Siclos) |
+
+## RF01 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04 (0/6 revisadas)
+
+Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
+
+| | Skin | Rosto próprio |
+|---|---|---|
+| ⬜ | Vestes de Adão (`lendario_adao`) | a refazer no final |
+| ⬜ | Vestes de Eva (`lendario_eva`) | a refazer no final |
+| ⬜ | Vestes de Noé (`lendario_noe`) | a refazer no final |
+| ⬜ | Vestes de Abraão (`lendario_abraao`) | a refazer no final |
+| ⬜ | Vestes de Sara (`lendario_sara`) | a refazer no final |
+| ⬜ | Vestes de Isaque (`lendario_isaque`) | a refazer no final |
+
+## RF02 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04 (0/6 revisadas)
+
+Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
+
+| | Skin | Rosto próprio |
+|---|---|---|
+| ⬜ | Vestes de Rebeca (`lendario_rebeca`) | a refazer no final |
+| ⬜ | Vestes de Jacó (`lendario_jaco`) | a refazer no final |
+| ⬜ | Vestes de José (`lendario_jose`) | a refazer no final |
+| ⬜ | José, governador do Egito (`glorioso_jose_governador_do_egito`) | a refazer no final |
+| ⬜ | Abraão sob as estrelas (`glorioso_abraao_sob_as_estrelas`) | a refazer no final |
+| ⬜ | Noé e o arco-íris (`glorioso_noe_e_o_arco_iris`) | a refazer no final |
+
+## RF03 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04 (0/6 revisadas)
+
+Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
+
+| | Skin | Rosto próprio |
+|---|---|---|
+| ⬜ | Vestes de Josué (`lendario_josue`) | a refazer no final |
+| ⬜ | Vestes de Débora (`lendario_debora`) | a refazer no final |
+| ⬜ | Vestes de Gideão (`lendario_gideao`) | a refazer no final |
+| ⬜ | Vestes de Sansão (`lendario_sansao`) | a refazer no final |
+| ⬜ | Vestes de Rute (`lendario_rute`) | a refazer no final |
+| ⬜ | Vestes de Samuel (`lendario_samuel`) | a refazer no final |
+
+## RF04 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04 (0/6 revisadas)
+
+Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
+
+| | Skin | Rosto próprio |
+|---|---|---|
+| ⬜ | Vestes de Davi (`lendario_davi`) | a refazer no final |
+| ⬜ | Vestes de Salomão (`lendario_salomao`) | a refazer no final |
+| ⬜ | Vestes de Elias (`lendario_elias`) | a refazer no final |
+| ⬜ | Vestes de Eliseu (`lendario_eliseu`) | a refazer no final |
+| ⬜ | Vestes de Esdras (`lendario_esdras`) | a refazer no final |
+| ⬜ | Vestes de Neemias (`lendario_neemias`) | a refazer no final |

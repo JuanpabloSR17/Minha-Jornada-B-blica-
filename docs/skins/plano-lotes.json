@@ -6,7 +6,8 @@
   "apresentacao": "personagem bíblico com sexo definido (principal ou secundário): só a apresentação do sexo do personagem; ofícios e figuras genéricas: padrão e feminina",
   "epic_rare_personagem": "ler os capítulos da história do personagem (referências da enciclopédia)",
   "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana",
-  "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins"
+  "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins",
+  "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras"
  },
  "lotes": [
   {
@@ -563,6 +564,58 @@
     "raro_jovens_da_linhagem_real",
     "raro_principe",
     "raro_princesa"
+   ]
+  },
+  {
+   "id": "RF01",
+   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04",
+   "tipo": "revisao-rosto",
+   "skins": [
+    "lendario_adao",
+    "lendario_eva",
+    "lendario_noe",
+    "lendario_abraao",
+    "lendario_sara",
+    "lendario_isaque"
+   ]
+  },
+  {
+   "id": "RF02",
+   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04",
+   "tipo": "revisao-rosto",
+   "skins": [
+    "lendario_rebeca",
+    "lendario_jaco",
+    "lendario_jose",
+    "glorioso_jose_governador_do_egito",
+    "glorioso_abraao_sob_as_estrelas",
+    "glorioso_noe_e_o_arco_iris"
+   ]
+  },
+  {
+   "id": "RF03",
+   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04",
+   "tipo": "revisao-rosto",
+   "skins": [
+    "lendario_josue",
+    "lendario_debora",
+    "lendario_gideao",
+    "lendario_sansao",
+    "lendario_rute",
+    "lendario_samuel"
+   ]
+  },
+  {
+   "id": "RF04",
+   "titulo": "Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04",
+   "tipo": "revisao-rosto",
+   "skins": [
+    "lendario_davi",
+    "lendario_salomao",
+    "lendario_elias",
+    "lendario_eliseu",
+    "lendario_esdras",
+    "lendario_neemias"
    ]
   }
  ],

@@ -23,9 +23,11 @@
 | Ofícios | O01–O08 | Os ofícios da Bíblia que ainda faltam (pescador, oleiro, escriba, médico, centurião…), para a loja | 47 |
 | Realeza | R01–R02 | Rainha Candace, reis Asa, Uzias e Jotão, filhas de Jó e os trajes de corte (rei, rainha, príncipe, princesa) | 10 |
 
+| Revisão de rosto (no final) | RF01–RF04 | Refazer os rostos das 24 Lendárias e Gloriosas de P01–P04 com rosto próprio, mantendo IDs, estilos e regras | 24 revisões |
+
 São **47 lotes** a produzir, com 263 skins novas e cerca de 790 pinturas, mais as versões femininas das 54 figuras genéricas. O briefing exato de cada lote está em [`LOTES.md`](./LOTES.md).
 
-**Ritmo sugerido:** até 2 lotes por entrega (12 skins, cerca de 36 pinturas), em ZIPs de até 30 MB. Antes do lançamento, o painel `STATUS.md` precisa mostrar 289 de 289.
+**Ritmo sugerido:** até 2 lotes por entrega (12 skins, cerca de 36 pinturas), em ZIPs de até 30 MB. Antes do lançamento, o painel `STATUS.md` precisa mostrar 289 de 289 e os lotes RF01–RF04 revisados (decisão do usuário: revisar os rostos no final de tudo).
 
 ## Como se conquista (regras no servidor)
 

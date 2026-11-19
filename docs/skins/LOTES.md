@@ -572,3 +572,47 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
   estilo-1: skin-2, haircolor-honey, hair-wavy · estilo-2: skin-3, haircolor-darkbrown, hair-locs · estilo-3: skin-5, haircolor-auburn, hair-short
 - **Traje de corte da princesa** (`raro_princesa`), Rara, Sl 45:13-14. Vai para a loja (Siclos). Traje: Vestido bordado a ouro, véu e diadema. Apresentação feminina (figura genérica: feminina adicional quando o traje permitir).
   estilo-1: skin-2, haircolor-brown, hair-long · estilo-2: skin-4, haircolor-copper, hair-bun · estilo-3: skin-6, haircolor-black, hair-ponytail
+
+## RF01 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04
+
+Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.
+
+- Vestes de Adão (`lendario_adao`)
+- Vestes de Eva (`lendario_eva`)
+- Vestes de Noé (`lendario_noe`)
+- Vestes de Abraão (`lendario_abraao`)
+- Vestes de Sara (`lendario_sara`)
+- Vestes de Isaque (`lendario_isaque`)
+
+## RF02 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04
+
+Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.
+
+- Vestes de Rebeca (`lendario_rebeca`)
+- Vestes de Jacó (`lendario_jaco`)
+- Vestes de José (`lendario_jose`)
+- José, governador do Egito (`glorioso_jose_governador_do_egito`)
+- Abraão sob as estrelas (`glorioso_abraao_sob_as_estrelas`)
+- Noé e o arco-íris (`glorioso_noe_e_o_arco_iris`)
+
+## RF03 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04
+
+Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.
+
+- Vestes de Josué (`lendario_josue`)
+- Vestes de Débora (`lendario_debora`)
+- Vestes de Gideão (`lendario_gideao`)
+- Vestes de Sansão (`lendario_sansao`)
+- Vestes de Rute (`lendario_rute`)
+- Vestes de Samuel (`lendario_samuel`)
+
+## RF04 · Revisão de rosto (no final) · Lendárias e Gloriosas de P01–P04
+
+Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.
+
+- Vestes de Davi (`lendario_davi`)
+- Vestes de Salomão (`lendario_salomao`)
+- Vestes de Elias (`lendario_elias`)
+- Vestes de Eliseu (`lendario_eliseu`)
+- Vestes de Esdras (`lendario_esdras`)
+- Vestes de Neemias (`lendario_neemias`)

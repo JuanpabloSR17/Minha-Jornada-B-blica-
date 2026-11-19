@@ -331,3 +331,11 @@ As migrações `20261202000400_skins_p03.sql` e `20261202000500_skins_p04.sql` t
 As migrações `20261202000600_skins_p05.sql` e `20261202000700_skins_p06.sql` trazem as 12 skins com as regras de leitura. As Gloriosas de Terra e Reinos pedem o mundo inteiro; Jó restaurado pede o mundo de Poesia e Sabedoria.
 
 **Próximo: P07 e P08**: Jonas, as Gloriosas dos Profetas e as primeiras principais dos Evangelhos.
+
+## 20. Revisão dos rostos de P01–P04: no final de tudo (decisão do usuário, 19/11/2026)
+
+As 24 Lendárias e Gloriosas de P01 a P04 (de Adão a Neemias) foram pintadas antes da regra do rosto próprio. Elas serão refeitas **no final de todos os lotes novos**, nos lotes **RF01–RF04** do plano.
+- **O que muda:** só o rosto. Cada uma ganha formato, nariz, olhos, maxilar, idade aparente e expressão únicos, registrados em `identidadeFacial` na ficha.
+- **O que se mantém:** IDs, estilos (tons e penteados, incluindo as sete tranças de Sansão), sexo do personagem, traje, objetos, âncoras e caminhos.
+- **Integração:** como as skins já estão no app, a revisão só troca as pinturas (`gen-skin-art.mjs`). Não há migração nova.
+- O briefing está em `LOTES.md`, e o painel `STATUS.md` mostra o andamento ("0/6 revisadas").

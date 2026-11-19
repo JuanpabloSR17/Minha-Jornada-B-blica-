@@ -27,7 +27,15 @@ const status = (id) => {
 // Temporada 1 já no catálogo, mais os lotes do plano
 const t1 = season.skins.map((s) => s.id);
 const lots = [{ id: 'T1-A/B', titulo: 'Temporada 1 · já aplicados', skins: t1.filter((id) => !plan.lotes.some((l) => l.skins.includes(id))) }, ...plan.lotes];
+const hasFace = (id) => { try { return !!JSON.parse(readFileSync(join('assets/skins', id, 'ficha.json'), 'utf8')).identidadeFacial; } catch { return false; } };
 for (const lot of lots) {
+  if (lot.tipo === 'revisao-rosto') {
+    const okFace = lot.skins.filter(hasFace).length;
+    lines.push(`## ${lot.id} · ${lot.titulo} (${okFace}/${lot.skins.length} revisadas)`, '', 'Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.', '', '| | Skin | Rosto próprio |', '|---|---|---|');
+    for (const id of lot.skins) lines.push(`| ${hasFace(id) ? '✅' : '⬜'} | ${(inApp.get(id) ?? planned.get(id) ?? {}).name ?? id} (\`${id}\`) | ${hasFace(id) ? '✔' : 'a refazer no final'} |`);
+    lines.push('');
+    continue;
+  }
   const st = lot.skins.map((id) => ({ id, ...status(id) }));
   const ok = st.filter((s) => s.icon === '✅').length;
   done += ok; total += st.length;
@@ -46,6 +54,14 @@ console.log(`${done}/${total} skins prontas → docs/skins/STATUS.md`);
 // Briefing de produção por lote (para o Codex): só os lotes com skins ainda sem pintura.
 const brief = ['# Briefing dos lotes de skins', '', `Gerado por \`node scripts/skin-status.mjs\`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de \`TEMPORADA-1-EXODO.md\` §2.`, ''];
 for (const lot of plan.lotes) {
+  if (lot.tipo === 'revisao-rosto') {
+    const todo = lot.skins.filter((id) => !hasFace(id));
+    if (!todo.length) continue;
+    brief.push(`## ${lot.id} · ${lot.titulo}`, '', 'Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.', '');
+    for (const id of todo) brief.push(`- ${(inApp.get(id) ?? planned.get(id) ?? {}).name ?? id} (\`${id}\`)`);
+    brief.push('');
+    continue;
+  }
   const pending = lot.skins.filter((id) => !painted(id, 'padrao'));
   if (!pending.length) continue;
   brief.push(`## ${lot.id} · ${lot.titulo}`, '');
