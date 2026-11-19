@@ -1,0 +1,495 @@
+{
+  "lot": "P07",
+  "sourceCommit": "593028f",
+  "skins": 6,
+  "paintings": 18,
+  "bodyWebps": 36,
+  "reports": [
+    {
+      "id": "lendario_jonas",
+      "style": "estilo-1",
+      "bytes": 245894,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jonas",
+      "style": "estilo-2",
+      "bytes": 231398,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jonas",
+      "style": "estilo-3",
+      "bytes": 237884,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_daniel_na_cova_dos_leoes",
+      "style": "estilo-1",
+      "bytes": 314554,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_daniel_na_cova_dos_leoes",
+      "style": "estilo-2",
+      "bytes": 289618,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_daniel_na_cova_dos_leoes",
+      "style": "estilo-3",
+      "bytes": 296860,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_isaias_e_a_brasa_do_altar",
+      "style": "estilo-1",
+      "bytes": 301688,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_isaias_e_a_brasa_do_altar",
+      "style": "estilo-2",
+      "bytes": 303050,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_isaias_e_a_brasa_do_altar",
+      "style": "estilo-3",
+      "bytes": 281490,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jonas_e_o_grande_peixe",
+      "style": "estilo-1",
+      "bytes": 324302,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          519,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jonas_e_o_grande_peixe",
+      "style": "estilo-2",
+      "bytes": 286546,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          519,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jonas_e_o_grande_peixe",
+      "style": "estilo-3",
+      "bytes": 292096,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          519,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_ezequiel_no_vale_de_ossos",
+      "style": "estilo-1",
+      "bytes": 317126,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          519,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_ezequiel_no_vale_de_ossos",
+      "style": "estilo-2",
+      "bytes": 296488,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          519,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_ezequiel_no_vale_de_ossos",
+      "style": "estilo-3",
+      "bytes": 297822,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          520,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_batista",
+      "style": "estilo-1",
+      "bytes": 259300,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_batista",
+      "style": "estilo-2",
+      "bytes": 216350,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_batista",
+      "style": "estilo-3",
+      "bytes": 231704,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    }
+  ]
+}

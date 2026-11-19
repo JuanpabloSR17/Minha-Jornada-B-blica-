@@ -1,0 +1,270 @@
+{
+  "commit": "593028f",
+  "id": "P08",
+  "titulo": "Principais · Vida e Ensino de Jesus",
+  "skins": [
+    {
+      "id": "lendario_pedro",
+      "name": "Vestes de Pedro",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 4:18; 16:18",
+      "idea": "Pescador com rede e chave no cinto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT"
+        ]
+      },
+      "howTo": "Concluir o livro de Mateus",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "name": "Vestes de João, o apóstolo",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Jo 13:23; 19:27",
+      "idea": "Jovem discípulo com rolo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o livro de João",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "name": "Vestes de Tiago, filho de Zebedeu",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mc 1:19; 3:17",
+      "idea": "Pescador, \"filho do trovão\"",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MRK"
+        ]
+      },
+      "howTo": "Concluir o livro de Marcos",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_andre",
+      "name": "Vestes de André",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Jo 1:40-42",
+      "idea": "Pescador que leva o irmão a Jesus",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            1
+          ],
+          [
+            "JHN",
+            6
+          ],
+          [
+            "JHN",
+            12
+          ],
+          [
+            "MRK",
+            1
+          ],
+          [
+            "MRK",
+            13
+          ]
+        ]
+      },
+      "howTo": "Ler a história de André (Jo 1, 6 e 12, Mc 1 e 13)",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_mateus",
+      "name": "Vestes de Mateus",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 9:9",
+      "idea": "Publicano que deixa a coletoria, rolo de contas",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT"
+        ]
+      },
+      "howTo": "Concluir o livro de Mateus",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_maria_mae_de_jesus",
+      "name": "Manto de Maria, mãe de Jesus",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Lc 1:38; 2:19",
+      "idea": "Manto azul, véu simples (ver Perguntas)",
+      "presentation": "feminina",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            1
+          ],
+          [
+            "LUK",
+            2
+          ],
+          [
+            "JHN",
+            2
+          ],
+          [
+            "JHN",
+            19
+          ],
+          [
+            "ACT",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Maria (Lc 1–2, Jo 2 e 19, At 1)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "character": "feminino"
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_pedro",
+      "identidadeFacial": "Adulto maduro; cabeça larga arredondada, maxilar pesado de cantos redondos, nariz curto largo de ponta bulbosa, sobrancelhas grossas baixas, olhos pequenos francos e barba curta cheia."
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "identidadeFacial": "Jovem adulto; testa larga e rosto curto em coração, queixo pequeno, nariz pequeno arredondado, olhos amendoados grandes afastados e lábio superior fino; sem barba."
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "identidadeFacial": "Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada."
+    },
+    {
+      "id": "lendario_andre",
+      "identidadeFacial": "Adulto; rosto oval comprido com têmporas estreitas, testa alta arredondada, nariz largo de ponta comprida, olhos baixos acolhedores, boca larga e barba média arredondada."
+    },
+    {
+      "id": "lendario_mateus",
+      "identidadeFacial": "Adulto; rosto retangular fino de maçãs planas, nariz comprido de ponte curva, olhos pequenos atentos, uma sobrancelha elevada, lábios estreitos e barba muito curta bem aparada."
+    },
+    {
+      "id": "lendario_maria_mae_de_jesus",
+      "identidadeFacial": "Adulta jovem; rosto alongado em pera, testa estreita, bochechas baixas suaves, nariz de base larga e ponta redonda, olhos baixos de pálpebras suaves e sorriso discreto."
+    }
+  ],
+  "pedidoUsuario": "Cada Lendária e Gloriosa tem rosto próprio, diferente das demais e preservado nos três estilos."
+}

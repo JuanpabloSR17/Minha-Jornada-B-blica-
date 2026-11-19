@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 62 de 289 skins prontas no app.
+**Progresso:** 74 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -113,27 +113,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Vestes de Ezequiel (`lendario_ezequiel`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Ezequiel |
 | ✅ | Vestes de Daniel (`lendario_daniel`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Daniel |
 
-## P07 · Principais · Voz dos Profetas e Vida e Ensino de Jesus (0/6)
+## P07 · Principais · Voz dos Profetas e Vida e Ensino de Jesus (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Jonas (`lendario_jonas`) | Lendária | profetas | — | — | Concluir o livro de Jonas |
-| ⬜ | Daniel na cova dos leões (`glorioso_daniel_na_cova_dos_leoes`) | Gloriosa | profetas | — | — | Concluir o mundo Voz dos Profetas (17 livros) |
-| ⬜ | Isaías e a brasa do altar (`glorioso_isaias_e_a_brasa_do_altar`) | Gloriosa | profetas | — | — | Concluir o mundo Voz dos Profetas (17 livros) |
-| ⬜ | Jonas e o grande peixe (`glorioso_jonas_e_o_grande_peixe`) | Gloriosa | profetas | — | — | Concluir o mundo Voz dos Profetas (17 livros) |
-| ⬜ | Ezequiel no vale de ossos (`glorioso_ezequiel_no_vale_de_ossos`) | Gloriosa | profetas | — | — | Concluir o mundo Voz dos Profetas (17 livros) |
-| ⬜ | Vestes de João Batista (`lendario_joao_batista`) | Lendária | evangelhos | — | — | Ler a história de João Batista (Lc 1 e 3, Mt 3, 11 e 14, Jo 1) |
+| ✅ | Vestes de Jonas (`lendario_jonas`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Jonas |
+| ✅ | Daniel na cova dos leões (`glorioso_daniel_na_cova_dos_leoes`) | Gloriosa | profetas | ✔ | — | lendo: Concluir o mundo Voz dos Profetas (17 livros) |
+| ✅ | Isaías e a brasa do altar (`glorioso_isaias_e_a_brasa_do_altar`) | Gloriosa | profetas | ✔ | — | lendo: Concluir o mundo Voz dos Profetas (17 livros) |
+| ✅ | Jonas e o grande peixe (`glorioso_jonas_e_o_grande_peixe`) | Gloriosa | profetas | ✔ | — | lendo: Concluir o mundo Voz dos Profetas (17 livros) |
+| ✅ | Ezequiel no vale de ossos (`glorioso_ezequiel_no_vale_de_ossos`) | Gloriosa | profetas | ✔ | — | lendo: Concluir o mundo Voz dos Profetas (17 livros) |
+| ✅ | Vestes de João Batista (`lendario_joao_batista`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de João Batista (Lc 1 e 3, Mt 3, 11 e 14, Jo 1) |
 
-## P08 · Principais · Vida e Ensino de Jesus (0/6)
+## P08 · Principais · Vida e Ensino de Jesus (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Pedro (`lendario_pedro`) | Lendária | evangelhos | — | — | Concluir o livro de Mateus |
-| ⬜ | Vestes de João, o apóstolo (`lendario_joao_o_apostolo`) | Lendária | evangelhos | — | — | Concluir o livro de João |
-| ⬜ | Vestes de Tiago, filho de Zebedeu (`lendario_tiago_filho_de_zebedeu`) | Lendária | evangelhos | — | — | Concluir o livro de Marcos |
-| ⬜ | Vestes de André (`lendario_andre`) | Lendária | evangelhos | — | — | Ler a história de André (Jo 1, 6 e 12, Mc 1 e 13) |
-| ⬜ | Vestes de Mateus (`lendario_mateus`) | Lendária | evangelhos | — | — | Concluir o livro de Mateus |
-| ⬜ | Manto de Maria, mãe de Jesus (`lendario_maria_mae_de_jesus`) | Lendária | evangelhos | — | — | Ler a história de Maria (Lc 1–2, Jo 2 e 19, At 1) |
+| ✅ | Vestes de Pedro (`lendario_pedro`) | Lendária | evangelhos | ✔ | — | lendo: Concluir o livro de Mateus |
+| ✅ | Vestes de João, o apóstolo (`lendario_joao_o_apostolo`) | Lendária | evangelhos | ✔ | — | lendo: Concluir o livro de João |
+| ✅ | Vestes de Tiago, filho de Zebedeu (`lendario_tiago_filho_de_zebedeu`) | Lendária | evangelhos | ✔ | — | lendo: Concluir o livro de Marcos |
+| ✅ | Vestes de André (`lendario_andre`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de André (Jo 1, 6 e 12, Mc 1 e 13) |
+| ✅ | Vestes de Mateus (`lendario_mateus`) | Lendária | evangelhos | ✔ | — | lendo: Concluir o livro de Mateus |
+| ✅ | Manto de Maria, mãe de Jesus (`lendario_maria_mae_de_jesus`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de Maria (Lc 1–2, Jo 2 e 19, At 1) |
 
 ## P09 · Principais · Vida e Ensino de Jesus (0/6)
 
@@ -586,3 +586,16 @@ Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos
 | ⬜ | Vestes de Eliseu (`lendario_eliseu`) | a refazer no final |
 | ⬜ | Vestes de Esdras (`lendario_esdras`) | a refazer no final |
 | ⬜ | Vestes de Neemias (`lendario_neemias`) | a refazer no final |
+
+## RF05 · Revisão de rosto (no final) · Lendárias e Gloriosas da Temporada 1 e rostos parecidos de P07–P08 (0/6 revisadas)
+
+Skins já no app; a revisão troca só o rosto (identidadeFacial), com os mesmos IDs, estilos, sexo e regras.
+
+| | Skin | Rosto próprio |
+|---|---|---|
+| ⬜ | Manto de Moisés (`lendario_moises`) | a refazer no final |
+| ⬜ | Vestes de Arão (`lendario_arao`) | a refazer no final |
+| ⬜ | Arão e a vara que floresceu (`glorioso_arao_vara_floresceu`) | a refazer no final |
+| ⬜ | Vestes de João Batista (`lendario_joao_batista`) | a refazer no final |
+| ⬜ | Vestes de Tiago, filho de Zebedeu (`lendario_tiago_filho_de_zebedeu`) | a refazer no final |
+| ⬜ | Vestes de Jonas (`lendario_jonas`) | a refazer no final |

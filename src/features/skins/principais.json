@@ -1008,6 +1008,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "lendario_jonas",
+   "name": "Vestes de Jonas",
+   "rarity": "legendary",
+   "world": "profetas",
+   "scriptureRef": "Jn 1:3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_daniel_na_cova_dos_leoes",
+   "name": "Daniel na cova dos leões",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Dn 6:22",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_isaias_e_a_brasa_do_altar",
+   "name": "Isaías e a brasa do altar",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Is 6:6-8",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_jonas_e_o_grande_peixe",
+   "name": "Jonas e o grande peixe",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Jn 2:10",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_ezequiel_no_vale_de_ossos",
+   "name": "Ezequiel no vale de ossos",
+   "rarity": "glorious",
+   "world": "profetas",
+   "scriptureRef": "Ez 37:1-10",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_joao_batista",
+   "name": "Vestes de João Batista",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 3:4",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_pedro",
+   "name": "Vestes de Pedro",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 4:18; 16:18",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_joao_o_apostolo",
+   "name": "Vestes de João, o apóstolo",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 13:23; 19:27",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_tiago_filho_de_zebedeu",
+   "name": "Vestes de Tiago, filho de Zebedeu",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 1:19; 3:17",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_andre",
+   "name": "Vestes de André",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 1:40-42",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_mateus",
+   "name": "Vestes de Mateus",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 9:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_maria_mae_de_jesus",
+   "name": "Manto de Maria, mãe de Jesus",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 1:38; 2:19",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

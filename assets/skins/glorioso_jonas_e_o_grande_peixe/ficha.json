@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_jonas_e_o_grande_peixe",
+  "nome": "Jonas e o grande peixe",
+  "raridade": "glorious",
+  "mundo": "profetas",
+  "referencia": "Jn 2:10",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto oval largo, maxilar arredondado pesado, nariz curto arrebitado, orelhas arredondadas, olhos grandes afastados e barba curta encaracolada; expressão de alívio."
+}

@@ -1,0 +1,3 @@
+-- Reversão manual do lote P07: tira as regras e desativa as skins (as já conquistadas ficam registradas).
+delete from public.skin_unlock_rules where skin_id in ('lendario_jonas', 'glorioso_daniel_na_cova_dos_leoes', 'glorioso_isaias_e_a_brasa_do_altar', 'glorioso_jonas_e_o_grande_peixe', 'glorioso_ezequiel_no_vale_de_ossos', 'lendario_joao_batista');
+update public.skins set is_active = false where id in ('lendario_jonas', 'glorioso_daniel_na_cova_dos_leoes', 'glorioso_isaias_e_a_brasa_do_altar', 'glorioso_jonas_e_o_grande_peixe', 'glorioso_ezequiel_no_vale_de_ossos', 'lendario_joao_batista');

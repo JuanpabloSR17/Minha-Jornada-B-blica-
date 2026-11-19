@@ -26,8 +26,10 @@ const status = (id) => {
 };
 // Temporada 1 já no catálogo, mais os lotes do plano
 const t1 = season.skins.map((s) => s.id);
-const lots = [{ id: 'T1-A/B', titulo: 'Temporada 1 · já aplicados', skins: t1.filter((id) => !plan.lotes.some((l) => l.skins.includes(id))) }, ...plan.lotes];
-const hasFace = (id) => { try { return !!JSON.parse(readFileSync(join('assets/skins', id, 'ficha.json'), 'utf8')).identidadeFacial; } catch { return false; } };
+const lots = [{ id: 'T1-A/B', titulo: 'Temporada 1 · já aplicados', skins: t1.filter((id) => !plan.lotes.some((l) => l.tipo !== 'revisao-rosto' && l.skins.includes(id))) }, ...plan.lotes];
+const ficha = (id) => { try { return JSON.parse(readFileSync(join('assets/skins', id, 'ficha.json'), 'utf8')); } catch { return {}; } };
+// revisão de rosto concluída: a ficha nova traz revisaoRosto (o lote RF)
+const hasFace = (id) => !!ficha(id).revisaoRosto;
 for (const lot of lots) {
   if (lot.tipo === 'revisao-rosto') {
     const okFace = lot.skins.filter(hasFace).length;
@@ -57,8 +59,11 @@ for (const lot of plan.lotes) {
   if (lot.tipo === 'revisao-rosto') {
     const todo = lot.skins.filter((id) => !hasFace(id));
     if (!todo.length) continue;
-    brief.push(`## ${lot.id} · ${lot.titulo}`, '', 'Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` na ficha. Manter IDs, estilos (tons e penteados), sexo do personagem, traje, objetos, âncoras e caminhos.', '');
-    for (const id of todo) brief.push(`- ${(inApp.get(id) ?? planned.get(id) ?? {}).name ?? id} (\`${id}\`)`);
+    brief.push(`## ${lot.id} · ${lot.titulo}`, '', 'Fazer **depois de todos os lotes novos**. Repintar as 3 pinturas de cada skin com **rosto próprio** (formato, nariz, olhos, maxilar, idade aparente e expressão únicos), registrado em `identidadeFacial` e com `\"revisaoRosto\": \"<lote>\"` na ficha. Manter IDs, estilos (tons e penteados, salvo os indicados como novos), sexo do personagem, traje, objetos, âncoras e caminhos.', '');
+    for (const id of todo) {
+      const nv = planned.get(id)?.stylesRevisao;
+      brief.push(`- ${(inApp.get(id) ?? planned.get(id) ?? {}).name ?? id} (\`${id}\`)${nv ? ` — **estilos novos** (o plano tinha os mesmos de outra skin): ${nv.map((st, i) => `estilo-${i + 1}: ${st.skinTone}, ${st.hairColor}, ${st.hairStyle}`).join(' · ')}` : ''}`);
+    }
     brief.push('');
     continue;
   }

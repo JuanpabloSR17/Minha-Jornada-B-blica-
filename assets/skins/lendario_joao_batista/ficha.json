@@ -1,0 +1,49 @@
+{
+  "id": "lendario_joao_batista",
+  "nome": "Vestes de João Batista",
+  "raridade": "legendary",
+  "mundo": "evangelhos",
+  "referencia": "Mt 3:4",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto estreito em cunha, testa plana com sobrancelhas muito arqueadas, nariz grande de ponta voltada para baixo, boca larga e barba áspera bifurcada."
+}

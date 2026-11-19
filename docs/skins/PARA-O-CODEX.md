@@ -339,3 +339,29 @@ As 24 Lendárias e Gloriosas de P01 a P04 (de Adão a Neemias) foram pintadas an
 - **O que se mantém:** IDs, estilos (tons e penteados, incluindo as sete tranças de Sansão), sexo do personagem, traje, objetos, âncoras e caminhos.
 - **Integração:** como as skins já estão no app, a revisão só troca as pinturas (`gen-skin-art.mjs`). Não há migração nova.
 - O briefing está em `LOTES.md`, e o painel `STATUS.md` mostra o andamento ("0/6 revisadas").
+
+## 21. Lotes P07 e P08: aplicados (19/11/2026), estilos do plano corrigidos
+
+- **P07:** o ZIP confere com o `.zip.sha256` (`bbb57e92…`) e as 66 somas conferem.
+- **P08:** o ZIP confere com o `.zip.sha256` (`b4cf1384…`) e as 66 somas conferem.
+- **Aprovado:** 36 pinturas de 152 a 316 KB, sem névoa, estilos iguais ao plano, Maria feminina e os demais masculinos, todas com `identidadeFacial`.
+- **P07:** Vestes de Jonas e de João Batista, e as Gloriosas Daniel na cova dos leões, Isaías e a brasa do altar, Jonas e o grande peixe e Ezequiel no vale de ossos.
+- **P08:** Vestes de Pedro, João, Tiago, André e Mateus, e o Manto de Maria, mãe de Jesus.
+- As adaptações do LEIA-ME foram aceitas: Isaías segurando a tenaz como símbolo, Jonas numa costa genérica e as cenas dentro do recorte. O Daniel idoso é coerente com Daniel 6, no tempo de Dario, quando ele tinha cerca de 80 anos.
+
+**Erro do plano, já corrigido:** o gerador de estilos do `plano-lotes.json` tinha poucas combinações.
+- **Efeito:** João Batista e Tiago receberam os 3 estilos idênticos, e Jonas quase idênticos. Com pele e cabelo iguais, os rostos ficaram parecidos, mesmo com `identidadeFacial` diferente. No plano inteiro, 146 skins compartilhavam estilos com outra.
+- **Correção:** as 215 skins ainda não pintadas ganharam estilos novos.
+  - Cada skin tem um tom claro, um médio e um escuro, com cores e penteados variados.
+  - O conjunto de 3 estilos nunca se repete entre skins, e o estilo 1 não se repete entre skins do mesmo sexo.
+  - Louro só em pele clara, mel em pele clara ou média.
+  - O `LOTES.md` já traz os estilos novos. **Use sempre os estilos do `LOTES.md` atual.**
+- **As skins já pintadas não mudam.** João Batista, Tiago e Jonas entram na revisão final **RF05**, com estilos novos (`stylesRevisao`) e rostos mais distintos.
+
+**RF05 também inclui** as Lendárias e Gloriosas da Temporada 1 (Vestes de Moisés, Vestes de Arão e Arão e a vara que floresceu), anteriores à regra do rosto. Moisés com o rosto resplandecente fica de fora, porque o véu cobre o rosto.
+
+A revisão de cada skin conta como feita quando a ficha nova traz `"revisaoRosto": "<lote>"`.
+
+As migrações `20261202000800_skins_p07.sql` e `20261202000900_skins_p08.sql` trazem as 12 skins com as regras de leitura.
+
+**Próximo: P09 e P10**, o fim das principais.

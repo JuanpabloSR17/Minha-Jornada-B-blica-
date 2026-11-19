@@ -1,0 +1,49 @@
+{
+  "id": "lendario_jonas",
+  "nome": "Vestes de Jonas",
+  "raridade": "legendary",
+  "mundo": "profetas",
+  "referencia": "Jn 1:3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto de meia-idade; rosto pentagonal, têmporas estreitas, maçãs angulosas e queixo curto, nariz comprido de ponta bulbosa, olhos fundos de pálpebras grossas, bigode marcado e barba curta separada."
+}
