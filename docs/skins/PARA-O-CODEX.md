@@ -281,3 +281,17 @@ O ZIP confere com o `.zip.sha256` (`685975e8…`), as 17 somas conferem e a fich
 - **Saíram do app** as pastas `feminino/` de `epico_bezalel` e `raro_aoliabe` (continuam no histórico do repositório).
 - **Mantêm a versão feminina**, por serem figuras genéricas: Pastor/Pastora, Peregrino/Peregrina, Levita, Carpinteiro/Carpinteira, Bordador/Bordadora, Ourives, Gravador/Gravadora, Perfumista e Tocador/Tocadora de shofar.
 - **Próximos lotes:** o `LOTES.md` indica em cada skin se ela é "personagem bíblico: só esta apresentação" ou "figura genérica: feminina adicional quando o traje permitir". O plano marca `character` em todas as principais.
+
+## 17. Lotes P01 e P02 (principais das Origens): aplicados (19/11/2026)
+
+- **P01:** o ZIP confere com o `.zip.sha256` (`e5ab3cb6…`) e as 65 somas conferem.
+- **P02:** o ZIP confere com o `.zip.sha256` (`d4f27ca7…`) e as 65 somas conferem.
+- **Aprovado:** 36 pinturas de 165 a 313 KB, estilos idênticos ao plano, sem névoa e sem pasta `feminino/`, porque são personagens e ficam só no próprio sexo.
+- **P01:** Vestes de Adão, Eva, Noé, Abraão, Sara e Isaque.
+- **P02:** Vestes de Rebeca, Jacó e José, e as Gloriosas José, governador do Egito, Abraão sob as estrelas e Noé e o arco-íris. As Gloriosas agora se distinguem bem das Lendárias.
+
+As migrações `20261202000200_skins_p01.sql` e `20261202000300_skins_p02.sql` acrescentam as 12 skins, com as regras de leitura e o sexo de cada personagem.
+- As Lendárias se ganham pela história do personagem (José: Gênesis 37–50).
+- As 3 Gloriosas se ganham ao concluir o mundo das Origens.
+
+**Próximo: P03 e P04** (principais de Terra e Reinos), conforme o `LOTES.md`.

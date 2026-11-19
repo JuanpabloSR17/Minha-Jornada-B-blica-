@@ -88,11 +88,25 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_zipora/estilo-3/corpo.webp'),
     ] },
   },
+  glorioso_abraao_sob_as_estrelas: {
+    padrao: { icon: require('../../../assets/skins/glorioso_abraao_sob_as_estrelas/icone.webp'), styles: [
+      require('../../../assets/skins/glorioso_abraao_sob_as_estrelas/estilo-1/corpo.webp'),
+      require('../../../assets/skins/glorioso_abraao_sob_as_estrelas/estilo-2/corpo.webp'),
+      require('../../../assets/skins/glorioso_abraao_sob_as_estrelas/estilo-3/corpo.webp'),
+    ] },
+  },
   glorioso_arao_vara_floresceu: {
     padrao: { icon: require('../../../assets/skins/glorioso_arao_vara_floresceu/icone.webp'), styles: [
       require('../../../assets/skins/glorioso_arao_vara_floresceu/estilo-1/corpo.webp'),
       require('../../../assets/skins/glorioso_arao_vara_floresceu/estilo-2/corpo.webp'),
       require('../../../assets/skins/glorioso_arao_vara_floresceu/estilo-3/corpo.webp'),
+    ] },
+  },
+  glorioso_jose_governador_do_egito: {
+    padrao: { icon: require('../../../assets/skins/glorioso_jose_governador_do_egito/icone.webp'), styles: [
+      require('../../../assets/skins/glorioso_jose_governador_do_egito/estilo-1/corpo.webp'),
+      require('../../../assets/skins/glorioso_jose_governador_do_egito/estilo-2/corpo.webp'),
+      require('../../../assets/skins/glorioso_jose_governador_do_egito/estilo-3/corpo.webp'),
     ] },
   },
   glorioso_moises_rosto_resplandecente: {
@@ -102,6 +116,27 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/glorioso_moises_rosto_resplandecente/estilo-3/corpo.webp'),
     ] },
   },
+  glorioso_noe_e_o_arco_iris: {
+    padrao: { icon: require('../../../assets/skins/glorioso_noe_e_o_arco_iris/icone.webp'), styles: [
+      require('../../../assets/skins/glorioso_noe_e_o_arco_iris/estilo-1/corpo.webp'),
+      require('../../../assets/skins/glorioso_noe_e_o_arco_iris/estilo-2/corpo.webp'),
+      require('../../../assets/skins/glorioso_noe_e_o_arco_iris/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_abraao: {
+    padrao: { icon: require('../../../assets/skins/lendario_abraao/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_abraao/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_abraao/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_abraao/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_adao: {
+    padrao: { icon: require('../../../assets/skins/lendario_adao/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_adao/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_adao/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_adao/estilo-3/corpo.webp'),
+    ] },
+  },
   lendario_arao: {
     padrao: { icon: require('../../../assets/skins/lendario_arao/icone.webp'), styles: [
       require('../../../assets/skins/lendario_arao/estilo-1/corpo.webp'),
@@ -109,11 +144,60 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/lendario_arao/estilo-3/corpo.webp'),
     ] },
   },
+  lendario_eva: {
+    padrao: { icon: require('../../../assets/skins/lendario_eva/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_eva/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_eva/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_eva/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_isaque: {
+    padrao: { icon: require('../../../assets/skins/lendario_isaque/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_isaque/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_isaque/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_isaque/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_jaco: {
+    padrao: { icon: require('../../../assets/skins/lendario_jaco/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_jaco/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_jaco/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_jaco/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_jose: {
+    padrao: { icon: require('../../../assets/skins/lendario_jose/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_jose/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_jose/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_jose/estilo-3/corpo.webp'),
+    ] },
+  },
   lendario_moises: {
     padrao: { icon: require('../../../assets/skins/lendario_moises/icone.webp'), styles: [
       require('../../../assets/skins/lendario_moises/estilo-1/corpo.webp'),
       require('../../../assets/skins/lendario_moises/estilo-2/corpo.webp'),
       require('../../../assets/skins/lendario_moises/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_noe: {
+    padrao: { icon: require('../../../assets/skins/lendario_noe/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_noe/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_noe/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_noe/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_rebeca: {
+    padrao: { icon: require('../../../assets/skins/lendario_rebeca/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_rebeca/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_rebeca/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_rebeca/estilo-3/corpo.webp'),
+    ] },
+  },
+  lendario_sara: {
+    padrao: { icon: require('../../../assets/skins/lendario_sara/icone.webp'), styles: [
+      require('../../../assets/skins/lendario_sara/estilo-1/corpo.webp'),
+      require('../../../assets/skins/lendario_sara/estilo-2/corpo.webp'),
+      require('../../../assets/skins/lendario_sara/estilo-3/corpo.webp'),
     ] },
   },
   raro_aoliabe: {

@@ -4,7 +4,11 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const [lotId, day = new Date().toISOString().slice(0, 10).replace(/-/g, '')] = process.argv.slice(2);
+const [lotId, dayArg] = process.argv.slice(2);
+// a migração precisa vir depois de todas as existentes (a tabela de skins é criada em 20261124)
+const lastDay = readdirSync('supabase/migrations').filter((f) => /^\d{14}_/.test(f)).map((f) => f.slice(0, 8)).sort().at(-1) ?? '00000000';
+const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+const day = [dayArg ?? today, lastDay].sort().at(-1);
 const plan = JSON.parse(readFileSync('docs/skins/plano-lotes.json', 'utf8'));
 const lot = plan.lotes.find((l) => l.id === lotId);
 if (!lot) throw new Error(`lote ${lotId} não está no plano`);

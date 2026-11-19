@@ -1,1 +1,341 @@
-{ "fase": "principais", "skins": [] }
+{
+ "fase": "principais",
+ "skins": [
+  {
+   "id": "lendario_adao",
+   "name": "Vestes de Adão",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 2:15; 3:21",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_eva",
+   "name": "Vestes de Eva",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 3:20-21",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_noe",
+   "name": "Vestes de Noé",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 6:14",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_abraao",
+   "name": "Vestes de Abraão",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 12:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_sara",
+   "name": "Vestes de Sara",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 18:6",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_isaque",
+   "name": "Vestes de Isaque",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 26:18",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_rebeca",
+   "name": "Vestes de Rebeca",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 24:15-16",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_jaco",
+   "name": "Vestes de Jacó",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 32:28",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_jose",
+   "name": "Vestes de José",
+   "rarity": "legendary",
+   "world": "origens",
+   "scriptureRef": "Gn 37:3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_jose_governador_do_egito",
+   "name": "José, governador do Egito",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 41:42",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_abraao_sob_as_estrelas",
+   "name": "Abraão sob as estrelas",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 15:5",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_noe_e_o_arco_iris",
+   "name": "Noé e o arco-íris",
+   "rarity": "glorious",
+   "world": "origens",
+   "scriptureRef": "Gn 9:13",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  }
+ ]
+}

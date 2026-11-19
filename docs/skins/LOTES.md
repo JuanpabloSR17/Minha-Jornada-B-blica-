@@ -2,36 +2,6 @@
 
 Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de `TEMPORADA-1-EXODO.md` §2.
 
-## P01 · Principais · Origens e Aliança
-
-- **Vestes de Adão** (`lendario_adao`), Lendária, Gn 2:15; 3:21. Traje: Túnica de peles, ferramenta de lavrar o jardim. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-copper, hair-short · estilo-2: skin-4, haircolor-black, hair-curly · estilo-3: skin-6, haircolor-brown, hair-afro
-- **Vestes de Eva** (`lendario_eva`), Lendária, Gn 3:20-21. Traje: Túnica de peles, ramos do jardim. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-copper, hair-locs · estilo-2: skin-2, haircolor-black, hair-long-wavy · estilo-3: skin-6, haircolor-brown, hair-braids
-- **Vestes de Noé** (`lendario_noe`), Lendária, Gn 6:14. Traje: Avental de construtor, madeira de cipreste. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-copper, hair-short · estilo-2: skin-3, haircolor-black, hair-curly · estilo-3: skin-5, haircolor-brown, hair-afro
-- **Vestes de Abraão** (`lendario_abraao`), Lendária, Gn 12:1. Traje: Manto de viagem, cajado, tenda. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-afro · estilo-2: skin-3, haircolor-brown, hair-side-part · estilo-3: skin-5, haircolor-copper, hair-wavy
-- **Vestes de Sara** (`lendario_sara`), Lendária, Gn 18:6. Traje: Véu de tenda, pães de farinha fina. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-black, hair-ponytail · estilo-2: skin-4, haircolor-brown, hair-locs · estilo-3: skin-6, haircolor-copper, hair-long-wavy
-- **Vestes de Isaque** (`lendario_isaque`), Lendária, Gn 26:18. Traje: Pastor de poços, corda e balde. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-black, hair-curly · estilo-2: skin-3, haircolor-brown, hair-afro · estilo-3: skin-5, haircolor-copper, hair-side-part
-
-## P02 · Principais · Origens e Aliança
-
-- **Vestes de Rebeca** (`lendario_rebeca`), Lendária, Gn 24:15-16. Traje: Cântaro, bracelete e pendente de ouro (Gn 24:22). Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-honey, hair-long · estilo-2: skin-2, haircolor-darkbrown, hair-bun · estilo-3: skin-6, haircolor-auburn, hair-ponytail
-- **Vestes de Jacó** (`lendario_jaco`), Lendária, Gn 32:28. Traje: Cajado, faixa no quadril (Gn 32:31). Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-honey, hair-wavy · estilo-2: skin-2, haircolor-darkbrown, hair-locs · estilo-3: skin-6, haircolor-auburn, hair-short
-- **Vestes de José** (`lendario_jose`), Lendária, Gn 37:3. Traje: Túnica de muitas cores. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-black, hair-locs · estilo-2: skin-4, haircolor-brown, hair-short · estilo-3: skin-6, haircolor-copper, hair-curly
-- **José, governador do Egito** (`glorioso_jose_governador_do_egito`), Gloriosa, Gn 41:42. Traje: Linho fino, colar de ouro, anel de selo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-copper, hair-curly · estilo-2: skin-3, haircolor-black, hair-afro · estilo-3: skin-5, haircolor-brown, hair-side-part
-- **Abraão sob as estrelas** (`glorioso_abraao_sob_as_estrelas`), Gloriosa, Gn 15:5. Traje: Manto noturno, céu estrelado no tecido. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-auburn, hair-side-part · estilo-2: skin-3, haircolor-honey, hair-wavy · estilo-3: skin-5, haircolor-gray, hair-locs
-- **Noé e o arco-íris** (`glorioso_noe_e_o_arco_iris`), Gloriosa, Gn 9:13. Traje: Manto molhado, pomba com ramo, arco nas cores da faixa. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-darkbrown, hair-side-part · estilo-2: skin-5, haircolor-auburn, hair-wavy · estilo-3: skin-6, haircolor-honey, hair-locs
-
 ## P03 · Principais · Terra e Reinos
 
 - **Vestes de Josué** (`lendario_josue`), Lendária, Js 1:1-9. Traje: Comandante com espada e manto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

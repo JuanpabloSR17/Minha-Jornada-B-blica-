@@ -1,8 +1,8 @@
 # Status da produção de skins
 
-Gerado por `node scripts/skin-status.mjs` em 2026-11-18. Fonte do plano: `docs/skins/plano-lotes.json`.
+Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 26 de 289 skins prontas no app.
+**Progresso:** 38 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -47,27 +47,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Hur (`raro_hur`) | Rara | origens | ✔ | — | lendo: Ler a história de Hur (Êxodo 17 e 24) |
 | ✅ | Tocador de shofar (`raro_shofar`) | Rara | origens | ✔ | ✔ | lendo: Ler o Sinai ao som do shofar (Êxodo 19–20) |
 
-## P01 · Principais · Origens e Aliança (0/6)
+## P01 · Principais · Origens e Aliança (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Adão (`lendario_adao`) | Lendária | origens | — | — | Ler a história de Adão (Gênesis 1–5) |
-| ⬜ | Vestes de Eva (`lendario_eva`) | Lendária | origens | — | — | Ler a história de Eva (Gênesis 1–4) |
-| ⬜ | Vestes de Noé (`lendario_noe`) | Lendária | origens | — | — | Ler a história de Noé (Gênesis 6–9) |
-| ⬜ | Vestes de Abraão (`lendario_abraao`) | Lendária | origens | — | — | Ler a história de Abraão (Gênesis 12–25) |
-| ⬜ | Vestes de Sara (`lendario_sara`) | Lendária | origens | — | — | Ler a história de Sara (Gênesis 12–23) |
-| ⬜ | Vestes de Isaque (`lendario_isaque`) | Lendária | origens | — | — | Ler a história de Isaque (Gênesis 21–28) |
+| ✅ | Vestes de Adão (`lendario_adao`) | Lendária | origens | ✔ | — | lendo: Ler a história de Adão (Gênesis 1–5) |
+| ✅ | Vestes de Eva (`lendario_eva`) | Lendária | origens | ✔ | — | lendo: Ler a história de Eva (Gênesis 1–4) |
+| ✅ | Vestes de Noé (`lendario_noe`) | Lendária | origens | ✔ | — | lendo: Ler a história de Noé (Gênesis 6–9) |
+| ✅ | Vestes de Abraão (`lendario_abraao`) | Lendária | origens | ✔ | — | lendo: Ler a história de Abraão (Gênesis 12–25) |
+| ✅ | Vestes de Sara (`lendario_sara`) | Lendária | origens | ✔ | — | lendo: Ler a história de Sara (Gênesis 12–23) |
+| ✅ | Vestes de Isaque (`lendario_isaque`) | Lendária | origens | ✔ | — | lendo: Ler a história de Isaque (Gênesis 21–28) |
 
-## P02 · Principais · Origens e Aliança (0/6)
+## P02 · Principais · Origens e Aliança (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Rebeca (`lendario_rebeca`) | Lendária | origens | — | — | Ler a história de Rebeca (Gênesis 24–27) |
-| ⬜ | Vestes de Jacó (`lendario_jaco`) | Lendária | origens | — | — | Ler a história de Jacó (Gênesis 25–35) |
-| ⬜ | Vestes de José (`lendario_jose`) | Lendária | origens | — | — | Ler a história de José (Gênesis 37–50) |
-| ⬜ | José, governador do Egito (`glorioso_jose_governador_do_egito`) | Gloriosa | origens | — | — | Concluir o mundo Origens e Aliança (5 livros) |
-| ⬜ | Abraão sob as estrelas (`glorioso_abraao_sob_as_estrelas`) | Gloriosa | origens | — | — | Concluir o mundo Origens e Aliança (5 livros) |
-| ⬜ | Noé e o arco-íris (`glorioso_noe_e_o_arco_iris`) | Gloriosa | origens | — | — | Concluir o mundo Origens e Aliança (5 livros) |
+| ✅ | Vestes de Rebeca (`lendario_rebeca`) | Lendária | origens | ✔ | — | lendo: Ler a história de Rebeca (Gênesis 24–27) |
+| ✅ | Vestes de Jacó (`lendario_jaco`) | Lendária | origens | ✔ | — | lendo: Ler a história de Jacó (Gênesis 25–35) |
+| ✅ | Vestes de José (`lendario_jose`) | Lendária | origens | ✔ | — | lendo: Ler a história de José (Gênesis 37–50) |
+| ✅ | José, governador do Egito (`glorioso_jose_governador_do_egito`) | Gloriosa | origens | ✔ | — | lendo: Concluir o mundo Origens e Aliança (5 livros) |
+| ✅ | Abraão sob as estrelas (`glorioso_abraao_sob_as_estrelas`) | Gloriosa | origens | ✔ | — | lendo: Concluir o mundo Origens e Aliança (5 livros) |
+| ✅ | Noé e o arco-íris (`glorioso_noe_e_o_arco_iris`) | Gloriosa | origens | ✔ | — | lendo: Concluir o mundo Origens e Aliança (5 livros) |
 
 ## P03 · Principais · Terra e Reinos (0/6)
 

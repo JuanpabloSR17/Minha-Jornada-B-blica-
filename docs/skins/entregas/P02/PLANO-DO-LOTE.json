@@ -1,0 +1,330 @@
+{
+  "sourceCommit": "433c2a1",
+  "lote": "P02",
+  "titulo": "Principais · Origens e Aliança",
+  "skins": [
+    {
+      "id": "lendario_rebeca",
+      "name": "Vestes de Rebeca",
+      "rarity": "legendary",
+      "world": "origens",
+      "scriptureRef": "Gn 24:15-16",
+      "idea": "Cântaro, bracelete e pendente de ouro (Gn 24:22)",
+      "presentation": "feminina",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            24
+          ],
+          [
+            "GEN",
+            25
+          ],
+          [
+            "GEN",
+            26
+          ],
+          [
+            "GEN",
+            27
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Rebeca (Gênesis 24–27)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "lendario_jaco",
+      "name": "Vestes de Jacó",
+      "rarity": "legendary",
+      "world": "origens",
+      "scriptureRef": "Gn 32:28",
+      "idea": "Cajado, faixa no quadril (Gn 32:31)",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            25
+          ],
+          [
+            "GEN",
+            26
+          ],
+          [
+            "GEN",
+            27
+          ],
+          [
+            "GEN",
+            28
+          ],
+          [
+            "GEN",
+            29
+          ],
+          [
+            "GEN",
+            30
+          ],
+          [
+            "GEN",
+            31
+          ],
+          [
+            "GEN",
+            32
+          ],
+          [
+            "GEN",
+            33
+          ],
+          [
+            "GEN",
+            34
+          ],
+          [
+            "GEN",
+            35
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Jacó (Gênesis 25–35)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_jose",
+      "name": "Vestes de José",
+      "rarity": "legendary",
+      "world": "origens",
+      "scriptureRef": "Gn 37:3",
+      "idea": "Túnica de muitas cores",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            37
+          ],
+          [
+            "GEN",
+            38
+          ],
+          [
+            "GEN",
+            39
+          ],
+          [
+            "GEN",
+            40
+          ],
+          [
+            "GEN",
+            41
+          ],
+          [
+            "GEN",
+            42
+          ],
+          [
+            "GEN",
+            43
+          ],
+          [
+            "GEN",
+            44
+          ],
+          [
+            "GEN",
+            45
+          ],
+          [
+            "GEN",
+            46
+          ],
+          [
+            "GEN",
+            47
+          ],
+          [
+            "GEN",
+            48
+          ],
+          [
+            "GEN",
+            49
+          ],
+          [
+            "GEN",
+            50
+          ]
+        ]
+      },
+      "howTo": "Ler a história de José (Gênesis 37–50)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_jose_governador_do_egito",
+      "name": "José, governador do Egito",
+      "rarity": "glorious",
+      "world": "origens",
+      "scriptureRef": "Gn 41:42",
+      "idea": "Linho fino, colar de ouro, anel de selo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "GEN",
+          "EXO",
+          "LEV",
+          "NUM",
+          "DEU"
+        ]
+      },
+      "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_abraao_sob_as_estrelas",
+      "name": "Abraão sob as estrelas",
+      "rarity": "glorious",
+      "world": "origens",
+      "scriptureRef": "Gn 15:5",
+      "idea": "Manto noturno, céu estrelado no tecido",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "GEN",
+          "EXO",
+          "LEV",
+          "NUM",
+          "DEU"
+        ]
+      },
+      "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-gray",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_noe_e_o_arco_iris",
+      "name": "Noé e o arco-íris",
+      "rarity": "glorious",
+      "world": "origens",
+      "scriptureRef": "Gn 9:13",
+      "idea": "Manto molhado, pomba com ramo, arco nas cores da faixa",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "GEN",
+          "EXO",
+          "LEV",
+          "NUM",
+          "DEU"
+        ]
+      },
+      "howTo": "Concluir o mundo Origens e Aliança (5 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    }
+  ]
+}

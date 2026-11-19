@@ -12,7 +12,8 @@ const SHOTS = process.env.SHOTS_DIR ?? `${__dirname}/screenshots`;
 const db = new pg.Client({ host: process.env.PGHOST, port: Number(process.env.PGPORT), user: 'postgres', database: 'jb_test' });
 const step = (msg) => console.log(`  ✔ ${msg}`);
 const PAINT = 'skins/comum_peregrino_exodo/feminino/estilo-3/corpo';
-const season = require('../src/features/skins/season1.json');
+const season1 = require('../src/features/skins/season1.json');
+const season = { skins: [...season1.skins, ...require('../src/features/skins/principais.json').skins] };
 const painted = new Set(fs.readdirSync(`${__dirname}/../assets/skins`).filter((id) => fs.existsSync(`${__dirname}/../assets/skins/${id}/estilo-1/corpo.webp`)));
 
 /** URLs de imagem (background-image e <img>) dentro do elemento */
@@ -142,7 +143,7 @@ async function expectPaint(loc, label) {
   await page.getByRole('radio', { name: 'Apresentação: Feminina' }).click();
   await page.getByTestId('vestiario-name').getByText('Ourives').waitFor();
   // personagens principais: só a apresentação do sexo do personagem (sem botões de apresentação)
-  for (const id of season.skins.filter((x) => x.character).map((x) => x.id)) {
+  for (const id of season.skins.filter((x) => x.character || ['legendary', 'glorious'].includes(x.rarity)).map((x) => x.id)) {
     await page.getByTestId(`vestiario-${id}`).click();
     await page.getByTestId('vestiario-stage').waitFor();
     assert.equal(await page.getByRole('radio', { name: /^Apresentação:/ }).count(), 0, `${id}: sem apresentação do outro sexo`);
@@ -151,7 +152,7 @@ async function expectPaint(loc, label) {
   await page.getByRole('radio', { name: 'Apresentação: Tocadora de shofar' }).waitFor();
   // toda a Temporada 1 aparece pintada no Vestiário
   for (const sk of season.skins) await page.getByTestId(`vestiario-${sk.id}`).getByTestId(`thumb-painted-${sk.id}`).waitFor();
-  step(`Vestiário: as ${season.skins.length} skins da Temporada 1 aparecem pintadas; apresentações de mesmo nome viram Padrão e Feminina; os 13 personagens bíblicos sem apresentação do outro sexo; figuras genéricas com as duas`);
+  step(`Vestiário: as ${season.skins.length} skins do catálogo aparecem pintadas; apresentações de mesmo nome viram Padrão e Feminina; os personagens bíblicos sem apresentação do outro sexo; figuras genéricas com as duas`);
 
   // trocar para a apresentação padrão reflete em todas as telas
   await page.goto(`${APP}/vestiario`);

@@ -1,0 +1,405 @@
+{
+  "lot": "P02",
+  "sourceCommit": "433c2a1",
+  "skins": 6,
+  "paintings": 18,
+  "bodyWebps": 36,
+  "reports": [
+    {
+      "id": "lendario_rebeca",
+      "style": "estilo-1",
+      "bytes": 181956,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          518,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_rebeca",
+      "style": "estilo-2",
+      "bytes": 169076,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          518,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_rebeca",
+      "style": "estilo-3",
+      "bytes": 205136,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          522,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jaco",
+      "style": "estilo-1",
+      "bytes": 248400,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          518,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jaco",
+      "style": "estilo-2",
+      "bytes": 242166,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          518,
+          398
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jaco",
+      "style": "estilo-3",
+      "bytes": 230052,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          308
+        ],
+        [
+          518,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jose",
+      "style": "estilo-1",
+      "bytes": 247804,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          308
+        ],
+        [
+          518,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jose",
+      "style": "estilo-2",
+      "bytes": 210482,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          302
+        ],
+        [
+          518,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_jose",
+      "style": "estilo-3",
+      "bytes": 230030,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          518,
+          393
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jose_governador_do_egito",
+      "style": "estilo-1",
+      "bytes": 232884,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          302
+        ],
+        [
+          517,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jose_governador_do_egito",
+      "style": "estilo-2",
+      "bytes": 234134,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          396
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_jose_governador_do_egito",
+      "style": "estilo-3",
+      "bytes": 218562,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          301
+        ],
+        [
+          517,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_abraao_sob_as_estrelas",
+      "style": "estilo-1",
+      "bytes": 320932,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          521,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_abraao_sob_as_estrelas",
+      "style": "estilo-2",
+      "bytes": 307248,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          521,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_abraao_sob_as_estrelas",
+      "style": "estilo-3",
+      "bytes": 293734,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          521,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_noe_e_o_arco_iris",
+      "style": "estilo-1",
+      "bytes": 292234,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          304
+        ],
+        [
+          518,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_noe_e_o_arco_iris",
+      "style": "estilo-2",
+      "bytes": 255100,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          306
+        ],
+        [
+          518,
+          394
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "glorioso_noe_e_o_arco_iris",
+      "style": "estilo-3",
+      "bytes": 287952,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "anchors": [
+        [
+          512,
+          295
+        ],
+        [
+          518,
+          398
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    }
+  ]
+}
