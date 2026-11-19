@@ -409,3 +409,8 @@ A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lot
 - João em Patmos pertence a outra fase e fica idoso, com cabelo grisalho nos três estilos.
 
 **Próximo: P09 e P10.**
+
+**Complemento (19/11/2026)**
+- Cabelos escuros e a ausência de grisalho valem para os adultos jovens na fase do ministério e para Pedro no Pentecostes.
+- **João em Patmos** é muito posterior e deve aparecer como ancião, com cabelo e barba grisalhos. A proibição de grisalho não vale para ele.
+- Nenhuma faixa de idade aparente aparece no app como idade bíblica comprovada. As faixas ficam só nas fichas e na pesquisa, que o app não exibe.
