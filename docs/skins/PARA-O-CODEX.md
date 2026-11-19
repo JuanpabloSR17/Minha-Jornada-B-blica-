@@ -405,7 +405,7 @@ A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lot
 **Orientação para os próximos apóstolos** (`regras.apostolos` no plano, repetida no topo do LOTES.md)
 - Adultos jovens com idades aparentes variadas. As faixas de idade são direção artística, não fato para ensinar no app.
 - Cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, e rosto próprio para cada um.
-- No plano, já recebem estilos assim: Filipe, Natanael, Tomé, Tiago de Alfeu, Tadeu, Simão o zelote, Matias e Pedro no Pentecostes, que não deve parecer décadas mais velho que nas Vestes de Pedro.
+- No plano, já recebem estilos assim: Pedro sobre as águas, Paulo, Paulo no caminho de Damasco, Filipe, Natanael, Tomé, Tiago de Alfeu, Tadeu, Simão o zelote, Matias e Pedro no Pentecostes, que não deve parecer décadas mais velho que nas Vestes de Pedro.
 - João em Patmos pertence a outra fase e fica idoso, com cabelo grisalho nos três estilos.
 
 **Próximo: P09 e P10.**
