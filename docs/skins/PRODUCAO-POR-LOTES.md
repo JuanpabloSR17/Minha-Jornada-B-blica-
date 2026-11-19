@@ -46,6 +46,7 @@ Uma skin **entra no app quando a pintura é aprovada**, para que toda skin visí
   - pés em y = 1450, ícone de 256 × 256 e ficha;
   - os estilos exatamente como no briefing.
 - **As Lendárias e Gloriosas precisam se destacar das Comuns:** silhueta reconhecível no retrato, tecidos de mais presença e um objeto-assinatura com forma própria.
+- **Rosto próprio (decisão do usuário, 19/11/2026):** toda Lendária e Gloriosa tem um rosto especial, diferente das demais skins: formato do rosto, nariz, olhos, maxilar, idade aparente e expressão. Os 3 estilos preservam esse perfil (variam tom de pele, cabelo e cores). O perfil fica em `identidadeFacial` na ficha e no plano. Não reaproveite o rosto de outra skin.
 - **Apresentação conforme o personagem (decisão do usuário, 18/11/2026):**
   - **Todo personagem bíblico com sexo definido na Bíblia**, seja principal ou secundário, com nome ou identificado (como a filha de Faraó), tem **só a apresentação do sexo do personagem**, nos 3 estilos. Moisés, Elias, Bezalel e Hur são masculinos; Rute, Ester, Miriã e Zípora são femininas. **Não pinte a versão do outro sexo** dessas skins: o banco recusa (restrição `skins_character_single_presentation`, coluna `character_sex`) e o app ignora a pasta `feminino/` delas. Vale para as Lendárias, Gloriosas e Épicas, e para as Raras que são personagens.
   - **Ofícios e figuras genéricas**, que não são personagens (Pastor, Peregrino, Levita, Ourives, Tecelã, Tocador de shofar…), podem ter as versões masculina e feminina, na mesma rodada, quando o traje permitir.

@@ -313,3 +313,21 @@ As migrações `20261202000400_skins_p03.sql` e `20261202000500_skins_p04.sql` t
 - Vestes de Rute: concluir Rute.
 
 **Próximo: P05 e P06**, com as últimas principais de Terra e Reinos (Ester e as 5 Gloriosas) e as de Sabedoria e Profetas.
+
+## 19. Lotes P05 e P06: aplicados (19/11/2026)
+
+- **P05:** o ZIP confere com o `.zip.sha256` (`d2ce4c8a…`) e as 66 somas conferem.
+- **P06:** o ZIP confere com o `.zip.sha256` (`9768c5e8…`) e as 66 somas conferem.
+- **Aprovado:** 36 pinturas de 175 a 350 KB, sem névoa, estilos iguais ao plano e personagens só no próprio sexo (as duas Ester são femininas).
+- **P05:** Vestes de Ester e as Gloriosas Davi diante de Golias, Elias no carro de fogo, Ester diante do rei, Josué diante das muralhas e Salomão no trono de marfim.
+- **P06:** Vestes de Jó, Isaías, Jeremias, Ezequiel e Daniel, e a Gloriosa Jó restaurado.
+- As adaptações do LEIA-ME foram aceitas: Salomão de pé junto ao trono, as ovelhas de Jó como símbolo da restauração, a canga de Jeremias e o rolo de Ezequiel.
+
+**Rosto próprio, regra nova do usuário:** toda Lendária e Gloriosa tem rosto especial e diferente das demais skins, preservado nos 3 estilos.
+- O perfil (`identidadeFacial`) das 12 skins foi copiado das fichas para o `plano-lotes.json`.
+- A regra entrou em `regras.rosto` no plano, na seção Estilo do `PRODUCAO-POR-LOTES.md` e no briefing de cada Lendária e Gloriosa do `LOTES.md`.
+- **Vale também para as Lendárias e Gloriosas dos lotes anteriores (P01 a P04)?** Fica para o usuário decidir se quer revisar os rostos delas.
+
+As migrações `20261202000600_skins_p05.sql` e `20261202000700_skins_p06.sql` trazem as 12 skins com as regras de leitura. As Gloriosas de Terra e Reinos pedem o mundo inteiro; Jó restaurado pede o mundo de Poesia e Sabedoria.
+
+**Próximo: P07 e P08**: Jonas, as Gloriosas dos Profetas e as primeiras principais dos Evangelhos.

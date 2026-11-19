@@ -1,0 +1,3 @@
+-- Reversão manual do lote P05: tira as regras e desativa as skins (as já conquistadas ficam registradas).
+delete from public.skin_unlock_rules where skin_id in ('lendario_ester', 'glorioso_davi_diante_de_golias', 'glorioso_elias_no_carro_de_fogo', 'glorioso_ester_diante_do_rei', 'glorioso_josue_diante_das_muralhas', 'glorioso_salomao_no_trono_de_marfim');
+update public.skins set is_active = false where id in ('lendario_ester', 'glorioso_davi_diante_de_golias', 'glorioso_elias_no_carro_de_fogo', 'glorioso_ester_diante_do_rei', 'glorioso_josue_diante_das_muralhas', 'glorioso_salomao_no_trono_de_marfim');

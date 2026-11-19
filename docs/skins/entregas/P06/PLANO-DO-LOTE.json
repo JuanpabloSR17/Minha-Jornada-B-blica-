@@ -1,0 +1,236 @@
+{
+  "commit": "97b4be6",
+  "id": "P06",
+  "titulo": "Principais · Poesia e Sabedoria e Voz dos Profetas",
+  "skins": [
+    {
+      "id": "lendario_jo",
+      "name": "Vestes de Jó",
+      "rarity": "legendary",
+      "world": "sabedoria",
+      "scriptureRef": "Jó 1:1; 2:8",
+      "idea": "Manto rasgado, cinzas, olhar firme",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOB"
+        ]
+      },
+      "howTo": "Concluir o livro de Jó",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_jo_restaurado",
+      "name": "Jó restaurado",
+      "rarity": "glorious",
+      "world": "sabedoria",
+      "scriptureRef": "Jó 42:10-12",
+      "idea": "Manto rico, rebanhos dobrados ao fundo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOB",
+          "PSA",
+          "PRO",
+          "ECC",
+          "SNG"
+        ]
+      },
+      "howTo": "Concluir o mundo Poesia e Sabedoria (5 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-gray",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_isaias",
+      "name": "Vestes de Isaías",
+      "rarity": "legendary",
+      "world": "profetas",
+      "scriptureRef": "Is 6:1",
+      "idea": "Profeta da corte com rolo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "ISA"
+        ]
+      },
+      "howTo": "Concluir o livro de Isaías",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_jeremias",
+      "name": "Vestes de Jeremias",
+      "rarity": "legendary",
+      "world": "profetas",
+      "scriptureRef": "Jr 13:1; 27:2",
+      "idea": "Cinto de linho, canga de madeira no pescoço",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JER"
+        ]
+      },
+      "howTo": "Concluir o livro de Jeremias",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_ezequiel",
+      "name": "Vestes de Ezequiel",
+      "rarity": "legendary",
+      "world": "profetas",
+      "scriptureRef": "Ez 2:9-3:3",
+      "idea": "Rolo escrito dos dois lados",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "EZK"
+        ]
+      },
+      "howTo": "Concluir o livro de Ezequiel",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "lendario_daniel",
+      "name": "Vestes de Daniel",
+      "rarity": "legendary",
+      "world": "profetas",
+      "scriptureRef": "Dn 1:8-17",
+      "idea": "Jovem sábio na corte da Babilônia",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "DAN"
+        ]
+      },
+      "howTo": "Concluir o livro de Daniel",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_jo",
+      "perfil": "Maduro; rosto retangular cavado, maçãs baixas, nariz largo de ponta caída, pálpebras pesadas, boca fina e linhas fundas de expressão."
+    },
+    {
+      "id": "glorioso_jo_restaurado",
+      "perfil": "Maduro; rosto redondo largo, bochechas cheias, nariz curto largo, olhos sorridentes, queixo arredondado e barba cheia arredondada."
+    },
+    {
+      "id": "lendario_isaias",
+      "perfil": "Maduro; rosto em losango, maçãs largas e salientes, queixo fino, nariz muito reto e estreito, olhos pequenos e sobrancelhas arqueadas finas."
+    },
+    {
+      "id": "lendario_jeremias",
+      "perfil": "Adulto; rosto em pera, testa estreita, maxilar amplo com covinha discreta, nariz suavemente côncavo, olhos grandes de cantos baixos e barba curta."
+    },
+    {
+      "id": "lendario_ezequiel",
+      "perfil": "Adulto; rosto quadrado compacto, maçãs e queixo fortes, nariz de ponte alta larga, olhos bem espaçados, orelhas visíveis e barba densa de base reta."
+    },
+    {
+      "id": "lendario_daniel",
+      "perfil": "Jovem adulto; rosto oval suave, bochechas cheias, nariz pequeno reto, olhos redondos fundos, lábio inferior cheio, queixo suave e sem barba."
+    }
+  ],
+  "pedidoUsuario": "Cada skin Lendária e Gloriosa deve ter o seu rosto específico, diferente das demais."
+}

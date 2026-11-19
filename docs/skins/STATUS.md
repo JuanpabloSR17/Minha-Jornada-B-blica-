@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 50 de 289 skins prontas no app.
+**Progresso:** 62 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -91,27 +91,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Vestes de Esdras (`lendario_esdras`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Esdras |
 | ✅ | Vestes de Neemias (`lendario_neemias`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Neemias |
 
-## P05 · Principais · Terra e Reinos (0/6)
+## P05 · Principais · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Ester (`lendario_ester`) | Lendária | reinos | — | — | Concluir o livro de Ester |
-| ⬜ | Davi diante de Golias (`glorioso_davi_diante_de_golias`) | Gloriosa | reinos | — | — | Concluir o mundo Terra e Reinos (12 livros) |
-| ⬜ | Elias no carro de fogo (`glorioso_elias_no_carro_de_fogo`) | Gloriosa | reinos | — | — | Concluir o mundo Terra e Reinos (12 livros) |
-| ⬜ | Ester diante do rei (`glorioso_ester_diante_do_rei`) | Gloriosa | reinos | — | — | Concluir o mundo Terra e Reinos (12 livros) |
-| ⬜ | Josué diante das muralhas (`glorioso_josue_diante_das_muralhas`) | Gloriosa | reinos | — | — | Concluir o mundo Terra e Reinos (12 livros) |
-| ⬜ | Salomão no trono de marfim (`glorioso_salomao_no_trono_de_marfim`) | Gloriosa | reinos | — | — | Concluir o mundo Terra e Reinos (12 livros) |
+| ✅ | Vestes de Ester (`lendario_ester`) | Lendária | reinos | ✔ | — | lendo: Concluir o livro de Ester |
+| ✅ | Davi diante de Golias (`glorioso_davi_diante_de_golias`) | Gloriosa | reinos | ✔ | — | lendo: Concluir o mundo Terra e Reinos (12 livros) |
+| ✅ | Elias no carro de fogo (`glorioso_elias_no_carro_de_fogo`) | Gloriosa | reinos | ✔ | — | lendo: Concluir o mundo Terra e Reinos (12 livros) |
+| ✅ | Ester diante do rei (`glorioso_ester_diante_do_rei`) | Gloriosa | reinos | ✔ | — | lendo: Concluir o mundo Terra e Reinos (12 livros) |
+| ✅ | Josué diante das muralhas (`glorioso_josue_diante_das_muralhas`) | Gloriosa | reinos | ✔ | — | lendo: Concluir o mundo Terra e Reinos (12 livros) |
+| ✅ | Salomão no trono de marfim (`glorioso_salomao_no_trono_de_marfim`) | Gloriosa | reinos | ✔ | — | lendo: Concluir o mundo Terra e Reinos (12 livros) |
 
-## P06 · Principais · Poesia e Sabedoria e Voz dos Profetas (0/6)
+## P06 · Principais · Poesia e Sabedoria e Voz dos Profetas (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Jó (`lendario_jo`) | Lendária | sabedoria | — | — | Concluir o livro de Jó |
-| ⬜ | Jó restaurado (`glorioso_jo_restaurado`) | Gloriosa | sabedoria | — | — | Concluir o mundo Poesia e Sabedoria (5 livros) |
-| ⬜ | Vestes de Isaías (`lendario_isaias`) | Lendária | profetas | — | — | Concluir o livro de Isaías |
-| ⬜ | Vestes de Jeremias (`lendario_jeremias`) | Lendária | profetas | — | — | Concluir o livro de Jeremias |
-| ⬜ | Vestes de Ezequiel (`lendario_ezequiel`) | Lendária | profetas | — | — | Concluir o livro de Ezequiel |
-| ⬜ | Vestes de Daniel (`lendario_daniel`) | Lendária | profetas | — | — | Concluir o livro de Daniel |
+| ✅ | Vestes de Jó (`lendario_jo`) | Lendária | sabedoria | ✔ | — | lendo: Concluir o livro de Jó |
+| ✅ | Jó restaurado (`glorioso_jo_restaurado`) | Gloriosa | sabedoria | ✔ | — | lendo: Concluir o mundo Poesia e Sabedoria (5 livros) |
+| ✅ | Vestes de Isaías (`lendario_isaias`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Isaías |
+| ✅ | Vestes de Jeremias (`lendario_jeremias`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Jeremias |
+| ✅ | Vestes de Ezequiel (`lendario_ezequiel`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Ezequiel |
+| ✅ | Vestes de Daniel (`lendario_daniel`) | Lendária | profetas | ✔ | — | lendo: Concluir o livro de Daniel |
 
 ## P07 · Principais · Voz dos Profetas e Vida e Ensino de Jesus (0/6)
 

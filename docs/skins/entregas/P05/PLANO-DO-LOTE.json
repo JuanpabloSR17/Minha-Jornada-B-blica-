@@ -1,0 +1,287 @@
+{
+  "commit": "97b4be6",
+  "id": "P05",
+  "titulo": "Principais · Terra e Reinos",
+  "skins": [
+    {
+      "id": "lendario_ester",
+      "name": "Vestes de Ester",
+      "rarity": "legendary",
+      "world": "reinos",
+      "scriptureRef": "Et 2:17",
+      "idea": "Rainha com coroa real",
+      "presentation": "feminina",
+      "rule": {
+        "books": [
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o livro de Ester",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "glorioso_davi_diante_de_golias",
+      "name": "Davi diante de Golias",
+      "rarity": "glorious",
+      "world": "reinos",
+      "scriptureRef": "1 Sm 17:40",
+      "idea": "Pastor jovem, funda e cinco pedras lisas",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOS",
+          "JDG",
+          "RUT",
+          "1SA",
+          "2SA",
+          "1KI",
+          "2KI",
+          "1CH",
+          "2CH",
+          "EZR",
+          "NEH",
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_elias_no_carro_de_fogo",
+      "name": "Elias no carro de fogo",
+      "rarity": "glorious",
+      "world": "reinos",
+      "scriptureRef": "2 Rs 2:11",
+      "idea": "Manto ao vento, brilho de fogo ao redor",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOS",
+          "JDG",
+          "RUT",
+          "1SA",
+          "2SA",
+          "1KI",
+          "2KI",
+          "1CH",
+          "2CH",
+          "EZR",
+          "NEH",
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_ester_diante_do_rei",
+      "name": "Ester diante do rei",
+      "rarity": "glorious",
+      "world": "reinos",
+      "scriptureRef": "Et 5:1-2",
+      "idea": "Vestes reais, tocando o cetro de ouro",
+      "presentation": "feminina",
+      "rule": {
+        "books": [
+          "JOS",
+          "JDG",
+          "RUT",
+          "1SA",
+          "2SA",
+          "1KI",
+          "2KI",
+          "1CH",
+          "2CH",
+          "EZR",
+          "NEH",
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "glorioso_josue_diante_das_muralhas",
+      "name": "Josué diante das muralhas",
+      "rarity": "glorious",
+      "world": "reinos",
+      "scriptureRef": "Js 6:20",
+      "idea": "Armadura simples, trombetas e muralha caindo ao fundo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOS",
+          "JDG",
+          "RUT",
+          "1SA",
+          "2SA",
+          "1KI",
+          "2KI",
+          "1CH",
+          "2CH",
+          "EZR",
+          "NEH",
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_salomao_no_trono_de_marfim",
+      "name": "Salomão no trono de marfim",
+      "rarity": "glorious",
+      "world": "reinos",
+      "scriptureRef": "1 Rs 10:18-20",
+      "idea": "Vestes reais, leões nos degraus do trono",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JOS",
+          "JDG",
+          "RUT",
+          "1SA",
+          "2SA",
+          "1KI",
+          "2KI",
+          "1CH",
+          "2CH",
+          "EZR",
+          "NEH",
+          "EST"
+        ]
+      },
+      "howTo": "Concluir o mundo Terra e Reinos (12 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_ester",
+      "perfil": "Jovem adulta; rosto em coração, testa ampla, maçãs altas, queixo pequeno arredondado, nariz curto de ponta arredondada, olhos amendoados abertos e sorriso contido."
+    },
+    {
+      "id": "glorioso_davi_diante_de_golias",
+      "perfil": "Jovem adulto; rosto triangular estreito, sobrancelhas retas baixas, nariz largo de ponta levemente elevada, orelhas discretamente salientes, boca pequena e olhar determinado."
+    },
+    {
+      "id": "glorioso_elias_no_carro_de_fogo",
+      "perfil": "Adulto maduro; rosto longo e magro, testa alta marcada, nariz convexo proeminente, olhos fundos semicerrados e barba longa estreita."
+    },
+    {
+      "id": "glorioso_ester_diante_do_rei",
+      "perfil": "Adulta; rosto oval alongado, maxilar definido, nariz longo reto, olhos alongados de cantos elevados, sobrancelhas espessas e expressão resoluta."
+    },
+    {
+      "id": "glorioso_josue_diante_das_muralhas",
+      "perfil": "Adulto; rosto trapezoidal largo, maxilar pesado, nariz largo de ponte baixa, olhos próximos e sobrancelhas retas espessas."
+    },
+    {
+      "id": "glorioso_salomao_no_trono_de_marfim",
+      "perfil": "Adulto; rosto estreito oblongo, testa larga e queixo afilado, nariz fino comprido, sobrancelhas altas, olhos estreitos e barba curta em ponta."
+    }
+  ],
+  "pedidoUsuario": "Cada skin Lendária e Gloriosa deve ter o seu rosto específico, diferente das demais."
+}

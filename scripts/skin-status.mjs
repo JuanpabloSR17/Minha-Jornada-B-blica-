@@ -53,7 +53,8 @@ for (const lot of plan.lotes) {
     const p = planned.get(id); const app = inApp.get(id);
     const name = p?.name ?? app?.name ?? id; const ref = p?.scriptureRef ?? app?.scriptureRef ?? '';
     const sty = (p?.styles ?? app?.styles ?? []).map((st, i) => `estilo-${i + 1}: ${st.skinTone}, ${st.hairColor}, ${st.hairStyle}`).join(' · ');
-    const extra = p?.pair ? ` Casal: apresentação padrão masculina (Áquila) e feminina (${p.pair}), com o nome de cada um no \`nomeExibicao\`.` : p?.inShop ? ' Vai para a loja (Siclos).' : '';
+    const face = ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity) ? ' **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha.' : '';
+    const extra = (face) + (p?.pair ? ` Casal: apresentação padrão masculina (Áquila) e feminina (${p.pair}), com o nome de cada um no \`nomeExibicao\`.` : p?.inShop ? ' Vai para a loja (Siclos).' : '');
     brief.push(`- **${name}** (\`${id}\`), ${RAR[p?.rarity ?? app?.rarity] ?? ''}, ${ref}.${extra} ${p?.idea ? `Traje: ${p.idea}.` : 'Traje: ver a tabela de `TEMPORADA-1-EXODO.md`.'} Apresentação ${p?.presentation ?? (/(miria|zipora)/.test(id) ? 'feminina' : 'masculina')}${p?.pair ? '' : (p?.character || app?.character || ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity)) ? ' (personagem bíblico: só esta apresentação, sem a do outro sexo)' : ' (figura genérica: feminina adicional quando o traje permitir)'}.`, `  ${sty}`);
   }
   brief.push('');

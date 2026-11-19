@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_davi_diante_de_golias",
+  "nome": "Davi diante de Golias",
+  "raridade": "glorious",
+  "mundo": "reinos",
+  "referencia": "1 Sm 17:40",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Jovem adulto; rosto triangular estreito, sobrancelhas retas baixas, nariz largo de ponta levemente elevada, orelhas discretamente salientes, boca pequena e olhar determinado."
+}

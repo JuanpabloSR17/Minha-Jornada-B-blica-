@@ -5,7 +5,8 @@
   "glorious": "concluir o mundo do momento marcante",
   "apresentacao": "personagem bíblico com sexo definido (principal ou secundário): só a apresentação do sexo do personagem; ofícios e figuras genéricas: padrão e feminina",
   "epic_rare_personagem": "ler os capítulos da história do personagem (referências da enciclopédia)",
-  "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana"
+  "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana",
+  "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins"
  },
  "lotes": [
   {
@@ -1311,7 +1312,8 @@
      "hairStyle": "hair-wavy"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Jovem adulto; rosto triangular estreito, sobrancelhas retas baixas, nariz largo de ponta levemente elevada, orelhas discretamente salientes, boca pequena e olhar determinado."
   },
   {
    "id": "glorioso_elias_no_carro_de_fogo",
@@ -1355,7 +1357,8 @@
      "hairStyle": "hair-locs"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Adulto maduro; rosto longo e magro, testa alta marcada, nariz convexo proeminente, olhos fundos semicerrados e barba longa estreita."
   },
   {
    "id": "glorioso_ester_diante_do_rei",
@@ -1399,7 +1402,8 @@
      "hairStyle": "hair-long-wavy"
     }
    ],
-   "character": "feminino"
+   "character": "feminino",
+   "identidadeFacial": "Adulta; rosto oval alongado, maxilar definido, nariz longo reto, olhos alongados de cantos elevados, sobrancelhas espessas e expressão resoluta."
   },
   {
    "id": "glorioso_josue_diante_das_muralhas",
@@ -1443,7 +1447,8 @@
      "hairStyle": "hair-wavy"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Adulto; rosto trapezoidal largo, maxilar pesado, nariz largo de ponte baixa, olhos próximos e sobrancelhas retas espessas."
   },
   {
    "id": "glorioso_salomao_no_trono_de_marfim",
@@ -1487,7 +1492,8 @@
      "hairStyle": "hair-curly"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Adulto; rosto estreito oblongo, testa larga e queixo afilado, nariz fino comprido, sobrancelhas altas, olhos estreitos e barba curta em ponta."
   },
   {
    "id": "lendario_josue",
@@ -2197,7 +2203,8 @@
      "hairStyle": "hair-ponytail"
     }
    ],
-   "character": "feminino"
+   "character": "feminino",
+   "identidadeFacial": "Jovem adulta; rosto em coração, testa ampla, maçãs altas, queixo pequeno arredondado, nariz curto de ponta arredondada, olhos amendoados abertos e sorriso contido."
   },
   {
    "id": "glorioso_daniel_na_cova_dos_leoes",
@@ -2430,7 +2437,8 @@
      "hairStyle": "hair-curly"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Maduro; rosto redondo largo, bochechas cheias, nariz curto largo, olhos sorridentes, queixo arredondado e barba cheia arredondada."
   },
   {
    "id": "lendario_jo",
@@ -2463,7 +2471,8 @@
      "hairStyle": "hair-locs"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Maduro; rosto retangular cavado, maçãs baixas, nariz largo de ponta caída, pálpebras pesadas, boca fina e linhas fundas de expressão."
   },
   {
    "id": "lendario_isaias",
@@ -2496,7 +2505,8 @@
      "hairStyle": "hair-locs"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Maduro; rosto em losango, maçãs largas e salientes, queixo fino, nariz muito reto e estreito, olhos pequenos e sobrancelhas arqueadas finas."
   },
   {
    "id": "lendario_jeremias",
@@ -2529,7 +2539,8 @@
      "hairStyle": "hair-short"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Adulto; rosto em pera, testa estreita, maxilar amplo com covinha discreta, nariz suavemente côncavo, olhos grandes de cantos baixos e barba curta."
   },
   {
    "id": "lendario_ezequiel",
@@ -2562,7 +2573,8 @@
      "hairStyle": "hair-side-part"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Adulto; rosto quadrado compacto, maçãs e queixo fortes, nariz de ponte alta larga, olhos bem espaçados, orelhas visíveis e barba densa de base reta."
   },
   {
    "id": "lendario_daniel",
@@ -2595,7 +2607,8 @@
      "hairStyle": "hair-locs"
     }
    ],
-   "character": "masculino"
+   "character": "masculino",
+   "identidadeFacial": "Jovem adulto; rosto oval suave, bochechas cheias, nariz pequeno reto, olhos redondos fundos, lábio inferior cheio, queixo suave e sem barba."
   },
   {
    "id": "lendario_jonas",

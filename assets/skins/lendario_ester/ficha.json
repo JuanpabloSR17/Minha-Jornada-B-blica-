@@ -1,0 +1,49 @@
+{
+  "id": "lendario_ester",
+  "nome": "Vestes de Ester",
+  "raridade": "legendary",
+  "mundo": "reinos",
+  "referencia": "Et 2:17",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-ponytail"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Jovem adulta; rosto em coração, testa ampla, maçãs altas, queixo pequeno arredondado, nariz curto de ponta arredondada, olhos amendoados abertos e sorriso contido."
+}
