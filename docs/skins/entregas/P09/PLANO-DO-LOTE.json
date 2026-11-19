@@ -1,0 +1,274 @@
+{
+  "commit": "0aa1068",
+  "id": "P09",
+  "titulo": "Principais · Vida e Ensino de Jesus",
+  "skins": [
+    {
+      "id": "lendario_maria_madalena",
+      "name": "Manto de Maria Madalena",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Lc 8:2; Mc 16:1",
+      "idea": "Discípula com frasco de perfume",
+      "presentation": "feminina",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            8
+          ],
+          [
+            "MRK",
+            15
+          ],
+          [
+            "MRK",
+            16
+          ],
+          [
+            "JHN",
+            19
+          ],
+          [
+            "JHN",
+            20
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Maria Madalena (Lc 8, Mc 15–16, Jo 19–20)",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "lendario_jose_de_nazare",
+      "name": "Vestes de José de Nazaré",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 1:24; 13:55",
+      "idea": "Carpinteiro com ferramentas e manto de viagem",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "MAT",
+            1
+          ],
+          [
+            "MAT",
+            2
+          ],
+          [
+            "LUK",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de José de Nazaré (Mt 1–2, Lc 2)",
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_pedro_sobre_as_aguas",
+      "name": "Pedro sobre as águas",
+      "rarity": "glorious",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 14:29",
+      "idea": "Pescador de manto encharcado, ondas sob os pés",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT",
+          "MRK",
+          "LUK",
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_joao_batista_no_jordao",
+      "name": "João Batista no Jordão",
+      "rarity": "glorious",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 3:13-16",
+      "idea": "Veste de pelos de camelo na água, pomba no alto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT",
+          "MRK",
+          "LUK",
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+      "name": "Maria Madalena na manhã da ressurreição",
+      "rarity": "glorious",
+      "world": "evangelhos",
+      "scriptureRef": "Jo 20:16",
+      "idea": "Manto ao amanhecer, perfumes, jardim",
+      "presentation": "feminina",
+      "rule": {
+        "books": [
+          "MAT",
+          "MRK",
+          "LUK",
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "character": "feminino"
+    },
+    {
+      "id": "glorioso_os_magos_e_a_estrela",
+      "name": "Os magos e a estrela",
+      "rarity": "glorious",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 2:9-11",
+      "idea": "Três presentes (ouro, incenso e mirra), estrela no alto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT",
+          "MRK",
+          "LUK",
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o mundo Vida e Ensino de Jesus (4 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_maria_madalena",
+      "identidadeFacial": "Adulta jovem; rosto em losango de maçãs altas arredondadas e queixo curto, nariz reto estreito de ponta redonda, olhos fundos grandes, sobrancelhas diagonais e lábios cheios; expressão firme acolhedora."
+    },
+    {
+      "id": "lendario_jose_de_nazare",
+      "identidadeFacial": "Adulto; rosto oblongo de maxilar largo em U, testa alta, nariz de ponte alta e ponta voltada para baixo, olhos horizontais pequenos, sobrancelhas retas separadas e barba curta de contorno quadrado."
+    },
+    {
+      "id": "glorioso_pedro_sobre_as_aguas",
+      "identidadeFacial": "Adulto jovem; rosto hexagonal de têmporas largas e queixo estreito arredondado, nariz convexo com ponta curta, olhos grandes elevados, sobrancelhas oblíquas e barba curta escura afilada; surpresa e confiança."
+    },
+    {
+      "id": "glorioso_joao_batista_no_jordao",
+      "identidadeFacial": "Adulto; rosto trapezoidal com testa estreita e maxilar largo, nariz largo de ponte baixa, olhos próximos retos e sobrancelhas baixas; barba média arredondada sem bifurcação; expressão concentrada serena."
+    },
+    {
+      "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+      "identidadeFacial": "Adulta jovem; rosto oval curto de bochechas inferiores cheias, nariz curto de base larga, olhos amendoados afastados de pálpebras suaves, sobrancelhas arqueadas finas e boca larga; alívio e alegria contida."
+    },
+    {
+      "id": "glorioso_os_magos_e_a_estrela",
+      "identidadeFacial": "Adulto maduro; rosto largo em escudo, testa abaulada, nariz comprido de base estreita, olhos pequenos amendoados sob sobrancelhas curvas, lábio superior estreito e barba densa curta com base reta; expressão contemplativa."
+    }
+  ],
+  "pedidoUsuario": "Rosto próprio por Lendária/Gloriosa; três estilos; só sexo do personagem; apóstolos jovens e João em Patmos ancião; aguardar revisão do Claude antes de avançar."
+}

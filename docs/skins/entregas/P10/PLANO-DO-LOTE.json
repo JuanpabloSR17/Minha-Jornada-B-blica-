@@ -1,0 +1,337 @@
+{
+  "commit": "0aa1068",
+  "id": "P10",
+  "titulo": "Principais · Caminhos da Igreja e Visão da Nova Criação",
+  "skins": [
+    {
+      "id": "lendario_paulo",
+      "name": "Vestes de Paulo",
+      "rarity": "legendary",
+      "world": "igreja",
+      "scriptureRef": "At 9:15; 2 Tm 4:13",
+      "idea": "Capa de viagem, pergaminhos e cartas",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "ACT",
+            9
+          ],
+          [
+            "ACT",
+            10
+          ],
+          [
+            "ACT",
+            11
+          ],
+          [
+            "ACT",
+            12
+          ],
+          [
+            "ACT",
+            13
+          ],
+          [
+            "ACT",
+            14
+          ],
+          [
+            "ACT",
+            15
+          ],
+          [
+            "ACT",
+            16
+          ],
+          [
+            "ACT",
+            17
+          ],
+          [
+            "ACT",
+            18
+          ],
+          [
+            "ACT",
+            19
+          ],
+          [
+            "ACT",
+            20
+          ],
+          [
+            "ACT",
+            21
+          ],
+          [
+            "ACT",
+            22
+          ],
+          [
+            "ACT",
+            23
+          ],
+          [
+            "ACT",
+            24
+          ],
+          [
+            "ACT",
+            25
+          ],
+          [
+            "ACT",
+            26
+          ],
+          [
+            "ACT",
+            27
+          ],
+          [
+            "ACT",
+            28
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Paulo (Atos 9–28)",
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_paulo_no_caminho_de_damasco",
+      "name": "Paulo no caminho de Damasco",
+      "rarity": "glorious",
+      "world": "igreja",
+      "scriptureRef": "At 9:3-4",
+      "idea": "Viajante envolto em luz, manto ao chão",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "ACT",
+          "ROM",
+          "1CO",
+          "2CO",
+          "GAL",
+          "EPH",
+          "PHP",
+          "COL",
+          "1TH",
+          "2TH",
+          "1TI",
+          "2TI",
+          "TIT",
+          "PHM",
+          "HEB",
+          "JAS",
+          "1PE",
+          "2PE",
+          "1JN",
+          "2JN",
+          "3JN",
+          "JUD"
+        ]
+      },
+      "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_pedro_no_pentecostes",
+      "name": "Pedro no Pentecostes",
+      "rarity": "glorious",
+      "world": "igreja",
+      "scriptureRef": "At 2:3, 14",
+      "idea": "Pescador pregando, línguas de fogo no alto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "ACT",
+          "ROM",
+          "1CO",
+          "2CO",
+          "GAL",
+          "EPH",
+          "PHP",
+          "COL",
+          "1TH",
+          "2TH",
+          "1TI",
+          "2TI",
+          "TIT",
+          "PHM",
+          "HEB",
+          "JAS",
+          "1PE",
+          "2PE",
+          "1JN",
+          "2JN",
+          "3JN",
+          "JUD"
+        ]
+      },
+      "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_estevao_com_rosto_de_anjo",
+      "name": "Estêvão com rosto de anjo",
+      "rarity": "glorious",
+      "world": "igreja",
+      "scriptureRef": "At 6:15; 7:56",
+      "idea": "Diácono de manto claro, rosto iluminado",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "ACT",
+          "ROM",
+          "1CO",
+          "2CO",
+          "GAL",
+          "EPH",
+          "PHP",
+          "COL",
+          "1TH",
+          "2TH",
+          "1TI",
+          "2TI",
+          "TIT",
+          "PHM",
+          "HEB",
+          "JAS",
+          "1PE",
+          "2PE",
+          "1JN",
+          "2JN",
+          "3JN",
+          "JUD"
+        ]
+      },
+      "howTo": "Concluir o mundo Caminhos da Igreja (22 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    },
+    {
+      "id": "glorioso_joao_em_patmos",
+      "name": "João em Patmos",
+      "rarity": "glorious",
+      "world": "nova-criacao",
+      "scriptureRef": "Ap 1:9-11",
+      "idea": "Ancião com rolo, mar e sete candelabros",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "REV"
+        ]
+      },
+      "howTo": "Concluir o mundo Visão da Nova Criação (1 livros)",
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-gray",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-gray",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-gray",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino"
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_paulo",
+      "identidadeFacial": "Adulto jovem; rosto em pera de testa estreita e mandíbula suavemente larga, nariz longo reto de ponta pequena, olhos atentos próximos, sobrancelhas curvas assimétricas e barba curta rente com bigode fino; expressão reflexiva."
+    },
+    {
+      "id": "glorioso_paulo_no_caminho_de_damasco",
+      "identidadeFacial": "Adulto jovem; rosto em triângulo invertido com testa larga e queixo pequeno quadrado, nariz curto de ponta levemente elevada, olhos grandes redondos, sobrancelhas arqueadas espessas e rosto sem barba; espanto reverente."
+    },
+    {
+      "id": "glorioso_pedro_no_pentecostes",
+      "identidadeFacial": "Adulto jovem; rosto retangular baixo de maxilar reto, testa larga baixa, nariz largo de ponta achatada, olhos longos estreitos, sobrancelhas espessas altas e bigode curto com barba rala no queixo; fala confiante."
+    },
+    {
+      "id": "glorioso_estevao_com_rosto_de_anjo",
+      "identidadeFacial": "Adulto jovem; rosto triangular curto de maçãs cheias, nariz fino reto, olhos afastados grandes, sobrancelhas suaves e queixo pequeno arredondado com barba muito rala; expressão tranquila admirada."
+    },
+    {
+      "id": "glorioso_joao_em_patmos",
+      "identidadeFacial": "Ancião; rosto longo em pentágono, testa estreita alta com linhas finas, nariz de ponte reta longa e ponta larga, olhos pequenos fundos assimétricos e barba grisalha longa afilada; expressão lúcida serena."
+    }
+  ],
+  "pedidoUsuario": "Rosto próprio por Lendária/Gloriosa; três estilos; só sexo do personagem; apóstolos jovens e João em Patmos ancião; aguardar revisão do Claude antes de avançar."
+}

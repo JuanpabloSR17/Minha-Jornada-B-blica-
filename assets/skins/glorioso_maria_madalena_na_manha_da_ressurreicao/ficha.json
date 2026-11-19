@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+  "nome": "Maria Madalena na manhã da ressurreição",
+  "raridade": "glorious",
+  "mundo": "evangelhos",
+  "referencia": "Jo 20:16",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-bun"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Adulta jovem; rosto oval curto de bochechas inferiores cheias, nariz curto de base larga, olhos amendoados afastados de pálpebras suaves, sobrancelhas arqueadas finas e boca larga; alívio e alegria contida."
+}

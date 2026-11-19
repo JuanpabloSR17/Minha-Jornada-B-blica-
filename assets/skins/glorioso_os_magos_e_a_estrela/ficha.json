@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_os_magos_e_a_estrela",
+  "nome": "Os magos e a estrela",
+  "raridade": "glorious",
+  "mundo": "evangelhos",
+  "referencia": "Mt 2:9-11",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto maduro; rosto largo em escudo, testa abaulada, nariz comprido de base estreita, olhos pequenos amendoados sob sobrancelhas curvas, lábio superior estreito e barba densa curta com base reta; expressão contemplativa."
+}

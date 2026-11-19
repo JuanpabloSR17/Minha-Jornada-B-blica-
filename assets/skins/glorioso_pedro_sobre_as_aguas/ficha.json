@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_pedro_sobre_as_aguas",
+  "nome": "Pedro sobre as águas",
+  "raridade": "glorious",
+  "mundo": "evangelhos",
+  "referencia": "Mt 14:29",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto hexagonal de têmporas largas e queixo estreito arredondado, nariz convexo com ponta curta, olhos grandes elevados, sobrancelhas oblíquas e barba curta escura afilada; surpresa e confiança."
+}

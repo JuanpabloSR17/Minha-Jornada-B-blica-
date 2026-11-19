@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_estevao_com_rosto_de_anjo",
+  "nome": "Estêvão com rosto de anjo",
+  "raridade": "glorious",
+  "mundo": "igreja",
+  "referencia": "At 6:15; 7:56",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto triangular curto de maçãs cheias, nariz fino reto, olhos afastados grandes, sobrancelhas suaves e queixo pequeno arredondado com barba muito rala; expressão tranquila admirada."
+}

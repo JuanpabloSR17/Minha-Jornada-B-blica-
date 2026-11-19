@@ -1344,6 +1344,314 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "lendario_maria_madalena",
+   "name": "Manto de Maria Madalena",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 8:2; Mc 16:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_jose_de_nazare",
+   "name": "Vestes de José de Nazaré",
+   "rarity": "legendary",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 1:24; 13:55",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_pedro_sobre_as_aguas",
+   "name": "Pedro sobre as águas",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 14:29",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_joao_batista_no_jordao",
+   "name": "João Batista no Jordão",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 3:13-16",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+   "name": "Maria Madalena na manhã da ressurreição",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 20:16",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-bun"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_os_magos_e_a_estrela",
+   "name": "Os magos e a estrela",
+   "rarity": "glorious",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 2:9-11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "lendario_paulo",
+   "name": "Vestes de Paulo",
+   "rarity": "legendary",
+   "world": "igreja",
+   "scriptureRef": "At 9:15; 2 Tm 4:13",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_paulo_no_caminho_de_damasco",
+   "name": "Paulo no caminho de Damasco",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 9:3-4",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_pedro_no_pentecostes",
+   "name": "Pedro no Pentecostes",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 2:3, 14",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_estevao_com_rosto_de_anjo",
+   "name": "Estêvão com rosto de anjo",
+   "rarity": "glorious",
+   "world": "igreja",
+   "scriptureRef": "At 6:15; 7:56",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "glorioso_joao_em_patmos",
+   "name": "João em Patmos",
+   "rarity": "glorious",
+   "world": "nova-criacao",
+   "scriptureRef": "Ap 1:9-11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

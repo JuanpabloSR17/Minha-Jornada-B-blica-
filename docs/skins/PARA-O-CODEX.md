@@ -414,3 +414,29 @@ A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lot
 - Cabelos escuros e a ausência de grisalho valem para os adultos jovens na fase do ministério e para Pedro no Pentecostes.
 - **João em Patmos** é muito posterior e deve aparecer como ancião, com cabelo e barba grisalhos. A proibição de grisalho não vale para ele.
 - Nenhuma faixa de idade aparente aparece no app como idade bíblica comprovada. As faixas ficam só nas fichas e na pesquisa, que o app não exibe.
+
+## 23. Lotes P09 e P10: aplicados (19/11/2026). As principais da enciclopédia estão completas
+
+**Conferência**
+- **P09_final:** o ZIP de 20.989.344 bytes confere com o `.zip.sha256` (`69d7423a…`) e as 67 somas conferem.
+- **P10_final:** o ZIP de 17.975.292 bytes confere com o `.zip.sha256` (`0043f7bb…`) e as 57 somas conferem.
+
+**Aprovado**
+- 33 pinturas de 167 a 280 KB, cantos transparentes e estilos idênticos ao plano.
+- Maria Madalena só na apresentação feminina; os demais só na masculina.
+- Cada skin tem `identidadeFacial` própria.
+- Apóstolos jovens de cabelo escuro, e João em Patmos ancião grisalho com sete candelabros.
+- Paulo leva papiros com cordão e não envelope moderno, e não há figura divina adicionada.
+
+**Adaptações aceitas**
+- Um mago representa o grupo.
+- Paulo aparece em pé no caminho de Damasco.
+- A pomba no Jordão (Mt 3:16) e a língua de fogo no Pentecostes (At 2:3) são símbolos do próprio texto.
+- O grisalho de João é direção artística da fase anciã, sem atribuir Ap 1:14 a João.
+- A língua de fogo sobe a figura até y130 e a água desce até y1473, ambas dentro do recorte do acampamento.
+
+**Migrações:** `20261202001000_skins_p09.sql` e `20261202001100_skins_p10.sql` trazem as 11 skins, as regras de leitura e o sexo de cada personagem. Corrigi o texto da regra de João em Patmos para "(1 livro)", no plano e na migração.
+
+**Pendente, sem mudança agora:** a possível duplicidade entre Judas irmão de Tiago e Tadeu fica para o lote correspondente, preservando IDs e posses.
+
+**Próximo: S01 e S02**, quando autorizado.

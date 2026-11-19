@@ -1,0 +1,3 @@
+-- Reversão manual do lote P09: tira as regras e desativa as skins (as já conquistadas ficam registradas).
+delete from public.skin_unlock_rules where skin_id in ('lendario_maria_madalena', 'lendario_jose_de_nazare', 'glorioso_pedro_sobre_as_aguas', 'glorioso_joao_batista_no_jordao', 'glorioso_maria_madalena_na_manha_da_ressurreicao', 'glorioso_os_magos_e_a_estrela');
+update public.skins set is_active = false where id in ('lendario_maria_madalena', 'lendario_jose_de_nazare', 'glorioso_pedro_sobre_as_aguas', 'glorioso_joao_batista_no_jordao', 'glorioso_maria_madalena_na_manha_da_ressurreicao', 'glorioso_os_magos_e_a_estrela');

@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 74 de 289 skins prontas no app.
+**Progresso:** 85 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -135,26 +135,26 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Vestes de Mateus (`lendario_mateus`) | Lendária | evangelhos | ✔ | — | lendo: Concluir o livro de Mateus |
 | ✅ | Manto de Maria, mãe de Jesus (`lendario_maria_mae_de_jesus`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de Maria (Lc 1–2, Jo 2 e 19, At 1) |
 
-## P09 · Principais · Vida e Ensino de Jesus (0/6)
+## P09 · Principais · Vida e Ensino de Jesus (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Manto de Maria Madalena (`lendario_maria_madalena`) | Lendária | evangelhos | — | — | Ler a história de Maria Madalena (Lc 8, Mc 15–16, Jo 19–20) |
-| ⬜ | Vestes de José de Nazaré (`lendario_jose_de_nazare`) | Lendária | evangelhos | — | — | Ler a história de José de Nazaré (Mt 1–2, Lc 2) |
-| ⬜ | Pedro sobre as águas (`glorioso_pedro_sobre_as_aguas`) | Gloriosa | evangelhos | — | — | Concluir o mundo Vida e Ensino de Jesus (4 livros) |
-| ⬜ | João Batista no Jordão (`glorioso_joao_batista_no_jordao`) | Gloriosa | evangelhos | — | — | Concluir o mundo Vida e Ensino de Jesus (4 livros) |
-| ⬜ | Maria Madalena na manhã da ressurreição (`glorioso_maria_madalena_na_manha_da_ressurreicao`) | Gloriosa | evangelhos | — | — | Concluir o mundo Vida e Ensino de Jesus (4 livros) |
-| ⬜ | Os magos e a estrela (`glorioso_os_magos_e_a_estrela`) | Gloriosa | evangelhos | — | — | Concluir o mundo Vida e Ensino de Jesus (4 livros) |
+| ✅ | Manto de Maria Madalena (`lendario_maria_madalena`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de Maria Madalena (Lc 8, Mc 15–16, Jo 19–20) |
+| ✅ | Vestes de José de Nazaré (`lendario_jose_de_nazare`) | Lendária | evangelhos | ✔ | — | lendo: Ler a história de José de Nazaré (Mt 1–2, Lc 2) |
+| ✅ | Pedro sobre as águas (`glorioso_pedro_sobre_as_aguas`) | Gloriosa | evangelhos | ✔ | — | lendo: Concluir o mundo Vida e Ensino de Jesus (4 livros) |
+| ✅ | João Batista no Jordão (`glorioso_joao_batista_no_jordao`) | Gloriosa | evangelhos | ✔ | — | lendo: Concluir o mundo Vida e Ensino de Jesus (4 livros) |
+| ✅ | Maria Madalena na manhã da ressurreição (`glorioso_maria_madalena_na_manha_da_ressurreicao`) | Gloriosa | evangelhos | ✔ | — | lendo: Concluir o mundo Vida e Ensino de Jesus (4 livros) |
+| ✅ | Os magos e a estrela (`glorioso_os_magos_e_a_estrela`) | Gloriosa | evangelhos | ✔ | — | lendo: Concluir o mundo Vida e Ensino de Jesus (4 livros) |
 
-## P10 · Principais · Caminhos da Igreja e Visão da Nova Criação (0/5)
+## P10 · Principais · Caminhos da Igreja e Visão da Nova Criação (5/5)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Vestes de Paulo (`lendario_paulo`) | Lendária | igreja | — | — | Ler a história de Paulo (Atos 9–28) |
-| ⬜ | Paulo no caminho de Damasco (`glorioso_paulo_no_caminho_de_damasco`) | Gloriosa | igreja | — | — | Concluir o mundo Caminhos da Igreja (22 livros) |
-| ⬜ | Pedro no Pentecostes (`glorioso_pedro_no_pentecostes`) | Gloriosa | igreja | — | — | Concluir o mundo Caminhos da Igreja (22 livros) |
-| ⬜ | Estêvão com rosto de anjo (`glorioso_estevao_com_rosto_de_anjo`) | Gloriosa | igreja | — | — | Concluir o mundo Caminhos da Igreja (22 livros) |
-| ⬜ | João em Patmos (`glorioso_joao_em_patmos`) | Gloriosa | nova-criacao | — | — | Concluir o mundo Visão da Nova Criação (1 livros) |
+| ✅ | Vestes de Paulo (`lendario_paulo`) | Lendária | igreja | ✔ | — | lendo: Ler a história de Paulo (Atos 9–28) |
+| ✅ | Paulo no caminho de Damasco (`glorioso_paulo_no_caminho_de_damasco`) | Gloriosa | igreja | ✔ | — | lendo: Concluir o mundo Caminhos da Igreja (22 livros) |
+| ✅ | Pedro no Pentecostes (`glorioso_pedro_no_pentecostes`) | Gloriosa | igreja | ✔ | — | lendo: Concluir o mundo Caminhos da Igreja (22 livros) |
+| ✅ | Estêvão com rosto de anjo (`glorioso_estevao_com_rosto_de_anjo`) | Gloriosa | igreja | ✔ | — | lendo: Concluir o mundo Caminhos da Igreja (22 livros) |
+| ✅ | João em Patmos (`glorioso_joao_em_patmos`) | Gloriosa | nova-criacao | ✔ | — | lendo: Concluir o mundo Visão da Nova Criação (1 livro) |
 
 ## S01 · Personagens · Origens (0/6)
 

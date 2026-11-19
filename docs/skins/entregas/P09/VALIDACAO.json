@@ -1,0 +1,591 @@
+{
+  "lot": "P09",
+  "sourceCommit": "0aa1068",
+  "skins": 6,
+  "paintings": 18,
+  "bodyWebps": 36,
+  "alfaResidual": {
+    "limiarVisivel": 3,
+    "microAlfaMaximo": 2,
+    "escala": 255,
+    "observacao": "Microrresíduos de até 2/255 são quantificados separadamente; não são névoa de opacidade visível."
+  },
+  "reports": [
+    {
+      "id": "lendario_maria_madalena",
+      "style": "estilo-1",
+      "bytes": 175266,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          384
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "lendario_maria_madalena",
+      "style": "estilo-2",
+      "bytes": 175214,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          518,
+          384
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "lendario_maria_madalena",
+      "style": "estilo-3",
+      "bytes": 171246,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "lendario_jose_de_nazare",
+      "style": "estilo-1",
+      "bytes": 203602,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "lendario_jose_de_nazare",
+      "style": "estilo-2",
+      "bytes": 196354,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "lendario_jose_de_nazare",
+      "style": "estilo-3",
+      "bytes": 192592,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_pedro_sobre_as_aguas",
+      "style": "estilo-1",
+      "bytes": 253912,
+      "floor": 1470,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 1,
+      "largestMicroAlpha": 2,
+      "zoom": {
+        "floor": 2941,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 9,
+        "largestMicroAlpha": 2
+      },
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          514,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_pedro_sobre_as_aguas",
+      "style": "estilo-2",
+      "bytes": 232500,
+      "floor": 1471,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2943,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          513,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_pedro_sobre_as_aguas",
+      "style": "estilo-3",
+      "bytes": 245678,
+      "floor": 1469,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2940,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          514,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_joao_batista_no_jordao",
+      "style": "estilo-1",
+      "bytes": 254016,
+      "floor": 1466,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2934,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          308
+        ],
+        [
+          514,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_joao_batista_no_jordao",
+      "style": "estilo-2",
+      "bytes": 238926,
+      "floor": 1468,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2937,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          514,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_joao_batista_no_jordao",
+      "style": "estilo-3",
+      "bytes": 228690,
+      "floor": 1466,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2933,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          515,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Âncora da sola anotada visualmente; a borda da água/espuma pode ficar até 40 px abaixo, dentro do canvas."
+    },
+    {
+      "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+      "style": "estilo-1",
+      "bytes": 248142,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+      "style": "estilo-2",
+      "bytes": 222740,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_maria_madalena_na_manha_da_ressurreicao",
+      "style": "estilo-3",
+      "bytes": 227368,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_os_magos_e_a_estrela",
+      "style": "estilo-1",
+      "bytes": 254240,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_os_magos_e_a_estrela",
+      "style": "estilo-2",
+      "bytes": 231242,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "glorioso_os_magos_e_a_estrela",
+      "style": "estilo-3",
+      "bytes": 240546,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          516,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "lendario_paulo",
+  "nome": "Vestes de Paulo",
+  "raridade": "legendary",
+  "mundo": "igreja",
+  "referencia": "At 9:15; 2 Tm 4:13",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto em pera de testa estreita e mandíbula suavemente larga, nariz longo reto de ponta pequena, olhos atentos próximos, sobrancelhas curvas assimétricas e barba curta rente com bigode fino; expressão reflexiva."
+}

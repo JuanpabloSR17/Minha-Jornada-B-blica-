@@ -1,0 +1,49 @@
+{
+  "id": "glorioso_joao_batista_no_jordao",
+  "nome": "João Batista no Jordão",
+  "raridade": "glorious",
+  "mundo": "evangelhos",
+  "referencia": "Mt 3:13-16",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto trapezoidal com testa estreita e maxilar largo, nariz largo de ponte baixa, olhos próximos retos e sobrancelhas baixas; barba média arredondada sem bifurcação; expressão concentrada serena."
+}
