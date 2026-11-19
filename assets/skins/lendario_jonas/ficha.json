@@ -45,5 +45,12 @@
     ]
   },
   "sexoDoPersonagem": "masculino",
-  "identidadeFacial": "Adulto de meia-idade; rosto pentagonal, têmporas estreitas, maçãs angulosas e queixo curto, nariz comprido de ponta bulbosa, olhos fundos de pálpebras grossas, bigode marcado e barba curta separada."
+  "identidadeFacial": "Adulto de meia-idade; rosto compacto largo de bochechas cheias, nariz curto largo de ponte baixa, olhos pequenos de pálpebras pesadas, queixo arredondado liso e bigode cheio aparado; sem barba nas faces nem no queixo.",
+  "revisaoRosto": "P07_v2",
+  "detalhesDaRevisao": {
+    "versao": 2,
+    "criterio": "Identidade facial própria, diferenciada de João Batista e das outras skins da entrega.",
+    "preservaEstilos": true,
+    "preservaTraje": true
+  }
 }

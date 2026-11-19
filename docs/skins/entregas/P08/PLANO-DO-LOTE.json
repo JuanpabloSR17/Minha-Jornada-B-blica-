@@ -251,7 +251,7 @@
     },
     {
       "id": "lendario_tiago_filho_de_zebedeu",
-      "identidadeFacial": "Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada."
+      "identidadeFacial": "Adulto maduro; rosto retangular comprido sem barba ou bigode, testa marcada por linhas horizontais, olhos estreitos sob sobrancelhas retas baixas, nariz largo de ponta achatada, queixo com covinha e orelhas discretamente salientes."
     },
     {
       "id": "lendario_andre",
@@ -266,5 +266,23 @@
       "identidadeFacial": "Adulta jovem; rosto alongado em pera, testa estreita, bochechas baixas suaves, nariz de base larga e ponta redonda, olhos baixos de pálpebras suaves e sorriso discreto."
     }
   ],
-  "pedidoUsuario": "Cada Lendária e Gloriosa tem rosto próprio, diferente das demais e preservado nos três estilos."
+  "pedidoUsuario": "Cada Lendária e Gloriosa tem rosto próprio, diferente das demais e preservado nos três estilos.",
+  "revisaoDaEntrega": {
+    "versao": 2,
+    "motivo": "Diferenciar os rostos de Vestes de Jonas e Tiago, preservando os estilos e os trajes.",
+    "alteracoes": [
+      {
+        "id": "lendario_tiago_filho_de_zebedeu",
+        "estilo": 1
+      },
+      {
+        "id": "lendario_tiago_filho_de_zebedeu",
+        "estilo": 2
+      },
+      {
+        "id": "lendario_tiago_filho_de_zebedeu",
+        "estilo": 3
+      }
+    ]
+  }
 }

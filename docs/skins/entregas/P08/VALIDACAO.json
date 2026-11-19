@@ -170,61 +170,7 @@
     {
       "id": "lendario_tiago_filho_de_zebedeu",
       "style": "estilo-1",
-      "bytes": 240946,
-      "floor": 1450,
-      "farAlpha": 0,
-      "largestFarAlpha": 0,
-      "zoom": {
-        "floor": 2900,
-        "farAlpha": 0,
-        "largestFarAlpha": 0
-      },
-      "anchors": [
-        [
-          512,
-          311
-        ],
-        [
-          517,
-          385
-        ],
-        [
-          512,
-          1450
-        ]
-      ]
-    },
-    {
-      "id": "lendario_tiago_filho_de_zebedeu",
-      "style": "estilo-2",
-      "bytes": 206184,
-      "floor": 1450,
-      "farAlpha": 0,
-      "largestFarAlpha": 0,
-      "zoom": {
-        "floor": 2900,
-        "farAlpha": 0,
-        "largestFarAlpha": 0
-      },
-      "anchors": [
-        [
-          512,
-          311
-        ],
-        [
-          517,
-          385
-        ],
-        [
-          512,
-          1450
-        ]
-      ]
-    },
-    {
-      "id": "lendario_tiago_filho_de_zebedeu",
-      "style": "estilo-3",
-      "bytes": 216550,
+      "bytes": 200474,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -240,7 +186,61 @@
         ],
         [
           517,
-          385
+          383
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "style": "estilo-2",
+      "bytes": 193830,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          383
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "style": "estilo-3",
+      "bytes": 209276,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          517,
+          383
         ],
         [
           512,

@@ -8,12 +8,12 @@
     {
       "id": "lendario_jonas",
       "style": "estilo-1",
-      "bytes": 245894,
+      "bytes": 215604,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "zoom": {
-        "floor": 2901,
+        "floor": 2900,
         "farAlpha": 0,
         "largestFarAlpha": 0
       },
@@ -24,7 +24,7 @@
         ],
         [
           516,
-          388
+          385
         ],
         [
           512,
@@ -35,7 +35,7 @@
     {
       "id": "lendario_jonas",
       "style": "estilo-2",
-      "bytes": 231398,
+      "bytes": 214208,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -51,7 +51,7 @@
         ],
         [
           516,
-          388
+          386
         ],
         [
           512,
@@ -62,12 +62,12 @@
     {
       "id": "lendario_jonas",
       "style": "estilo-3",
-      "bytes": 237884,
+      "bytes": 221508,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "zoom": {
-        "floor": 2901,
+        "floor": 2900,
         "farAlpha": 0,
         "largestFarAlpha": 0
       },
@@ -78,7 +78,7 @@
         ],
         [
           517,
-          389
+          386
         ],
         [
           512,

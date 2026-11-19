@@ -1,5 +1,9 @@
 # Jornada Bíblica · P08
 
+## Revisão da entrega · versão 2
+
+Tiago, filho de Zebedeu recebeu rosto maduro retangular, nariz de ponta achatada, queixo com covinha e apresentação sem barba ou bigode. A alteração foi feita nos três estilos após a comparação conjunta apontar semelhança com João Batista. Tons, penteados, cores, trajes, objetos, IDs e regras de leitura foram preservados. A ficha registra `revisaoRosto`. Este pacote completo substitui o ZIP inicial do mesmo lote; não cadastra skins novas. As demais cinco skins do lote permanecem iguais. A folha `capturas/Comparacao_Rostos_P08.png` mostra os três estilos de João Batista e o antes/depois da skin corrigida.
+
 Produção conforme o branch `claude/kind-bell-fuk4e4`, commit `593028f`, o `LOTES.md`, o `PRODUCAO-POR-LOTES.md` e o contrato de `TEMPORADA-1-EXODO.md` §2.
 
 **6 skins completas, de corpo inteiro, em 3 estilos: 18 pinturas 2.5D.** São 6 Lendárias e 0 Gloriosas. Cada personagem tem somente a apresentação do próprio sexo.
@@ -13,7 +17,7 @@ Cada skin tem formato de rosto, nariz, olhos, maxilar, idade aparente e express�
 - **Vestes de João, o apóstolo** — `lendario_joao_o_apostolo` — Jo 13:23; 19:27
   Identidade facial: Jovem adulto; testa larga e rosto curto em coração, queixo pequeno, nariz pequeno arredondado, olhos amendoados grandes afastados e lábio superior fino; sem barba.
 - **Vestes de Tiago, filho de Zebedeu** — `lendario_tiago_filho_de_zebedeu` — Mc 1:19; 3:17
-  Identidade facial: Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada.
+  Identidade facial: Adulto maduro; rosto retangular comprido sem barba ou bigode, testa marcada por linhas horizontais, olhos estreitos sob sobrancelhas retas baixas, nariz largo de ponta achatada, queixo com covinha e orelhas discretamente salientes.
 - **Vestes de André** — `lendario_andre` — Jo 1:40-42
   Identidade facial: Adulto; rosto oval comprido com têmporas estreitas, testa alta arredondada, nariz largo de ponta comprida, olhos baixos acolhedores, boca larga e barba média arredondada.
 - **Vestes de Mateus** — `lendario_mateus` — Mt 9:9

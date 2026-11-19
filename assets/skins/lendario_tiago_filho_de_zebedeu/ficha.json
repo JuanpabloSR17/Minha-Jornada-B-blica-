@@ -45,5 +45,12 @@
     ]
   },
   "sexoDoPersonagem": "masculino",
-  "identidadeFacial": "Adulto; rosto triangular comprido, maçãs altas inclinadas, nariz convexo forte, sobrancelhas diagonais, olhos estreitos intensos e bigode volumoso sobre barba curta afilada."
+  "identidadeFacial": "Adulto maduro; rosto retangular comprido sem barba ou bigode, testa marcada por linhas horizontais, olhos estreitos sob sobrancelhas retas baixas, nariz largo de ponta achatada, queixo com covinha e orelhas discretamente salientes.",
+  "revisaoRosto": "P08_v2",
+  "detalhesDaRevisao": {
+    "versao": 2,
+    "criterio": "Identidade facial própria, diferenciada de João Batista e das outras skins da entrega.",
+    "preservaEstilos": true,
+    "preservaTraje": true
+  }
 }

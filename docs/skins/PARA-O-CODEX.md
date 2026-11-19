@@ -365,3 +365,17 @@ A revisão de cada skin conta como feita quando a ficha nova traz `"revisaoRosto
 As migrações `20261202000800_skins_p07.sql` e `20261202000900_skins_p08.sql` trazem as 12 skins com as regras de leitura.
 
 **Próximo: P09 e P10**, o fim das principais.
+
+### 21.1 P07_v2 e P08_v2: rostos de Jonas e Tiago corrigidos (19/11/2026)
+
+- **P07_v2_final:** o ZIP confere com o `.zip.sha256` (`44f4d5d3…`) e as 67 somas conferem.
+- **P08_v2_final:** o ZIP confere com o `.zip.sha256` (`79ee4283…`) e as 67 somas conferem.
+- Mudaram só os 8 arquivos de cada skin corrigida: 6 pinturas, ícone e ficha. Os outros 80 arquivos de assets são idênticos aos já integrados.
+- As fichas mudaram só em `identidadeFacial`, `revisaoRosto` e `detalhesDaRevisao`. Medidas e âncoras conferem.
+- **Vestes de Jonas:** rosto compacto e largo, nariz curto e bigode, sem barba.
+- **Vestes de Tiago:** rosto retangular maduro, nariz achatado e queixo com covinha, sem barba nem bigode.
+- As comparações confirmam que os dois agora se distinguem de João Batista nos três estilos, com os mesmos tons, penteados e trajes.
+- Aprovado e integrado **sem migração nova**. O plano recebeu a nova `identidadeFacial`.
+- A Gloriosa "Jonas e o grande peixe" fica como foi enviada, com rosto próprio. Segue a regra de um rosto por skin, como nas duas Ester e nas duas skins de Jó.
+
+**Próximo: P09 e P10.**

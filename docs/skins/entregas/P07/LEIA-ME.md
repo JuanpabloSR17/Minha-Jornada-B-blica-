@@ -1,5 +1,9 @@
 # Jornada Bíblica · P07
 
+## Revisão da entrega · versão 2
+
+Vestes de Jonas recebeu rosto compacto mais largo, nariz curto de ponte baixa e bigode sem barba no queixo ou nas faces. A alteração foi feita nos três estilos após a comparação conjunta apontar semelhança com João Batista. Tons, penteados, cores, trajes, objetos, IDs e regras de leitura foram preservados. A ficha registra `revisaoRosto`. Este pacote completo substitui o ZIP inicial do mesmo lote; não cadastra skins novas. As demais cinco skins do lote permanecem iguais. A Gloriosa Jonas e o grande peixe conserva o seu rosto próprio já distinto, como nas duas Ester e nas duas skins de Jó da entrega anterior; a identidade é definida por skin, conforme o pedido e o padrão aprovado. A folha `capturas/Comparacao_Rostos_P07.png` mostra os três estilos de João Batista e o antes/depois da skin corrigida.
+
 Produção conforme o branch `claude/kind-bell-fuk4e4`, commit `593028f`, o `LOTES.md`, o `PRODUCAO-POR-LOTES.md` e o contrato de `TEMPORADA-1-EXODO.md` §2.
 
 **6 skins completas, de corpo inteiro, em 3 estilos: 18 pinturas 2.5D.** São 2 Lendárias e 4 Gloriosas. Cada personagem tem somente a apresentação do próprio sexo.
@@ -9,7 +13,7 @@ Produção conforme o branch `claude/kind-bell-fuk4e4`, commit `593028f`, o `LOT
 Cada skin tem formato de rosto, nariz, olhos, maxilar, idade aparente e expressão próprios, registrados em `identidadeFacial` na ficha e no plano. Os três estilos preservam esse perfil e usam os tons, cores e penteados do briefing. Referência de materiais sem rostos para evitar reaproveitar retratos. A prancha `capturas/Rostos_P07.png` mostra as 18 apresentações; `Galeria_P07.png` mostra as pinturas completas. Os rostos são criações artísticas, sem pretensão de retrato histórico.
 
 - **Vestes de Jonas** — `lendario_jonas` — Jn 1:3
-  Identidade facial: Adulto de meia-idade; rosto pentagonal, têmporas estreitas, maçãs angulosas e queixo curto, nariz comprido de ponta bulbosa, olhos fundos de pálpebras grossas, bigode marcado e barba curta separada.
+  Identidade facial: Adulto de meia-idade; rosto compacto largo de bochechas cheias, nariz curto largo de ponte baixa, olhos pequenos de pálpebras pesadas, queixo arredondado liso e bigode cheio aparado; sem barba nas faces nem no queixo.
 - **Daniel na cova dos leões** — `glorioso_daniel_na_cova_dos_leoes` — Dn 6:22
   Identidade facial: Ancião; testa alta com linhas horizontais, rosto comprido de maçãs cheias, nariz aquilino estreito, olhos pequenos serenos e barba longa de base retangular.
 - **Isaías e a brasa do altar** — `glorioso_isaias_e_a_brasa_do_altar` — Is 6:6-8
