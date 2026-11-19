@@ -379,3 +379,33 @@ As migrações `20261202000800_skins_p07.sql` e `20261202000900_skins_p08.sql` t
 - A Gloriosa "Jonas e o grande peixe" fica como foi enviada, com rosto próprio. Segue a regra de um rosto por skin, como nas duas Ester e nas duas skins de Jó.
 
 **Próximo: P09 e P10.**
+
+## 22. P08H: apóstolos mais jovens, com idades diferentes e cabelos naturais escuros (19/11/2026)
+
+A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lote novo.
+
+**Conferência**
+- O ZIP de 15.277.146 bytes confere com o `.zip.sha256` (`ebfdf641…`) e as 59 somas internas conferem.
+- Mudaram só os 8 arquivos de cada uma das 5 skins: Pedro, João o apóstolo, Tiago filho de Zebedeu, André e Mateus. Maria e o P07 não mudam.
+
+**Aprovado**
+- Rostos próprios com idades aparentes diferentes: João 18–22, Tiago 22–26, André 24–29, Mateus 25–30 e Pedro 28–34.
+- Cabelos castanho-escuros ou pretos, sem locs, louro ou grisalho.
+- Tons de pele, trajes, objetos, mãos, âncoras e medidas corretos.
+- As fichas trazem `revisaoRosto: "P08H"`.
+
+**Integração**
+- Pinturas, ícones e fichas substituídos.
+- Os `styles` exatos de `AJUSTES-CATALOGO.json` foram aplicados em `src/features/skins/principais.json` (Vestiário e loja) e no plano. O banco não guarda estilos, então não há migração nova. Posse, regras e desbloqueios não mudaram.
+- A pesquisa ficou em `docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md`, e os documentos da entrega em `docs/skins/entregas/P08H/`.
+- **Efeitos no plano:**
+  - O estilo 1 de duas skins ainda não pintadas, Os magos e a estrela e Timóteo, mudou para não repetir o estilo 1 de João e de André.
+  - O estilo 1 de Tiago, de cabelo castanho-escuro ondulado, agora repete o de Samuel, que já está pintada. Isso foi aceito, porque rosto e traje são diferentes.
+
+**Orientação para os próximos apóstolos** (`regras.apostolos` no plano, repetida no topo do LOTES.md)
+- Adultos jovens com idades aparentes variadas. As faixas de idade são direção artística, não fato para ensinar no app.
+- Cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, e rosto próprio para cada um.
+- No plano, já recebem estilos assim: Filipe, Natanael, Tomé, Tiago de Alfeu, Tadeu, Simão o zelote, Matias e Pedro no Pentecostes, que não deve parecer décadas mais velho que nas Vestes de Pedro.
+- João em Patmos pertence a outra fase e fica idoso, com cabelo grisalho nos três estilos.
+
+**Próximo: P09 e P10.**

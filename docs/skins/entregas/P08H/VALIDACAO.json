@@ -1,0 +1,414 @@
+{
+  "lot": "P08H",
+  "sourceCommit": "aa982bc",
+  "skins": 5,
+  "paintings": 15,
+  "bodyWebps": 30,
+  "reports": [
+    {
+      "id": "lendario_pedro",
+      "style": "estilo-1",
+      "bytes": 168880,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          302
+        ],
+        [
+          512,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_pedro",
+      "style": "estilo-2",
+      "bytes": 174576,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          305
+        ],
+        [
+          512,
+          393
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_pedro",
+      "style": "estilo-3",
+      "bytes": 174238,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2902,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          301
+        ],
+        [
+          512,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "style": "estilo-1",
+      "bytes": 138130,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "style": "estilo-2",
+      "bytes": 141852,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "style": "estilo-3",
+      "bytes": 140940,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "style": "estilo-1",
+      "bytes": 174934,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2902,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          517,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "style": "estilo-2",
+      "bytes": 164820,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          305
+        ],
+        [
+          517,
+          385
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "style": "estilo-3",
+      "bytes": 175910,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2902,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          516,
+          388
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_andre",
+      "style": "estilo-1",
+      "bytes": 174800,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          297
+        ],
+        [
+          516,
+          394
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_andre",
+      "style": "estilo-2",
+      "bytes": 173882,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          296
+        ],
+        [
+          516,
+          392
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_andre",
+      "style": "estilo-3",
+      "bytes": 186758,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          300
+        ],
+        [
+          516,
+          397
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_mateus",
+      "style": "estilo-1",
+      "bytes": 147336,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          307
+        ],
+        [
+          517,
+          390
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_mateus",
+      "style": "estilo-2",
+      "bytes": 147578,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2902,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          308
+        ],
+        [
+          517,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "lendario_mateus",
+      "style": "estilo-3",
+      "bytes": 151296,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0
+      },
+      "anchors": [
+        [
+          512,
+          308
+        ],
+        [
+          517,
+          391
+        ],
+        [
+          512,
+          1450
+        ]
+      ]
+    }
+  ]
+}

@@ -54,7 +54,7 @@ writeFileSync('docs/skins/STATUS.md', lines.join('\n'));
 console.log(`${done}/${total} skins prontas → docs/skins/STATUS.md`);
 
 // Briefing de produção por lote (para o Codex): só os lotes com skins ainda sem pintura.
-const brief = ['# Briefing dos lotes de skins', '', `Gerado por \`node scripts/skin-status.mjs\`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de \`TEMPORADA-1-EXODO.md\` §2.`, ''];
+const brief = ['# Briefing dos lotes de skins', '', `Gerado por \`node scripts/skin-status.mjs\`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de \`TEMPORADA-1-EXODO.md\` §2.`, '', ...(plan.regras.apostolos ? [`**Apóstolos:** ${plan.regras.apostolos}`, ''] : [])];
 for (const lot of plan.lotes) {
   if (lot.tipo === 'revisao-rosto') {
     const todo = lot.skins.filter((id) => !hasFace(id));

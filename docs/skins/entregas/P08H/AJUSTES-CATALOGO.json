@@ -1,0 +1,221 @@
+{
+  "commitBase": "aa982bc",
+  "motivo": "Pedido do usuário: apóstolos mais jovens e substituir dreads loiros; novo direcionamento histórico prevalece sobre cabelos anteriores.",
+  "skins": [
+    {
+      "id": "lendario_pedro",
+      "estilosAnteriores": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "identidadeFacial": "Adulto jovem de aparência entre 28 e 34 anos (faixa artística, não idade documentada); cabeça larga arredondada, maxilar forte de cantos redondos, nariz curto largo, sobrancelhas baixas espessas, olhos pequenos francos e barba curta cheia escura, sem grisalho nem rugas profundas.",
+      "faixaAparenteArtistica": [
+        28,
+        34
+      ],
+      "idadeHistoricaExataConhecida": false
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "estilosAnteriores": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "identidadeFacial": "Jovem adulto de aparência entre 18 e 22 anos (faixa artística); rosto curto em coração, testa larga, queixo pequeno arredondado, nariz pequeno de ponta redonda, olhos amendoados grandes afastados e rosto sem barba.",
+      "faixaAparenteArtistica": [
+        18,
+        22
+      ],
+      "idadeHistoricaExataConhecida": false
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "estilosAnteriores": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "identidadeFacial": "Jovem adulto de aparência entre 22 e 26 anos (faixa artística); rosto retangular comprido, testa lisa sem linhas marcadas, olhos estreitos intensos, nariz largo de ponta achatada e queixo com covinha; sem barba e sem bigode.",
+      "faixaAparenteArtistica": [
+        22,
+        26
+      ],
+      "idadeHistoricaExataConhecida": false
+    },
+    {
+      "id": "lendario_andre",
+      "estilosAnteriores": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "identidadeFacial": "Adulto jovem de aparência entre 24 e 29 anos (faixa artística); rosto oval comprido com têmporas estreitas, testa arredondada, nariz largo de ponta alongada, olhos acolhedores, boca larga e barba curta escura arredondada, sem grisalho.",
+      "faixaAparenteArtistica": [
+        24,
+        29
+      ],
+      "idadeHistoricaExataConhecida": false
+    },
+    {
+      "id": "lendario_mateus",
+      "estilosAnteriores": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "identidadeFacial": "Adulto jovem de aparência entre 25 e 30 anos (faixa artística); rosto retangular estreito, nariz comprido de ponte curva suave, olhos atentos, sobrancelha sutilmente elevada, lábios estreitos e barba muito curta escura, sem sulcos profundos.",
+      "faixaAparenteArtistica": [
+        25,
+        30
+      ],
+      "idadeHistoricaExataConhecida": false
+    }
+  ]
+}

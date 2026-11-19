@@ -2,6 +2,8 @@
 
 Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de `TEMPORADA-1-EXODO.md` §2.
 
+**Apóstolos:** Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério são adultos jovens de idades aparentes diferentes (faixas artísticas, não idades documentadas), com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho; cada um com rosto próprio. Cenas de outra fase (João em Patmos) podem mostrar idade avançada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.
+
 ## P09 · Principais · Vida e Ensino de Jesus
 
 - **Manto de Maria Madalena** (`lendario_maria_madalena`), Lendária, Lc 8:2; Mc 16:1. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Discípula com frasco de perfume. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
@@ -15,7 +17,7 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 - **Maria Madalena na manhã da ressurreição** (`glorioso_maria_madalena_na_manha_da_ressurreicao`), Gloriosa, Jo 20:16. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Manto ao amanhecer, perfumes, jardim. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-2, haircolor-blond, hair-braids · estilo-2: skin-3, haircolor-black, hair-long · estilo-3: skin-6, haircolor-darkbrown, hair-bun
 - **Os magos e a estrela** (`glorioso_os_magos_e_a_estrela`), Gloriosa, Mt 2:9-11. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Três presentes (ouro, incenso e mirra), estrela no alto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-darkbrown, hair-curly · estilo-2: skin-3, haircolor-copper, hair-wavy · estilo-3: skin-5, haircolor-black, hair-afro
+  estilo-1: skin-2, haircolor-darkbrown, hair-side-part · estilo-2: skin-3, haircolor-copper, hair-wavy · estilo-3: skin-5, haircolor-black, hair-afro
 
 ## P10 · Principais · Caminhos da Igreja e Visão da Nova Criação
 
@@ -24,11 +26,11 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 - **Paulo no caminho de Damasco** (`glorioso_paulo_no_caminho_de_damasco`), Gloriosa, At 9:3-4. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Viajante envolto em luz, manto ao chão. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-1, haircolor-black, hair-long · estilo-2: skin-3, haircolor-copper, hair-curly · estilo-3: skin-5, haircolor-brown, hair-shaved
 - **Pedro no Pentecostes** (`glorioso_pedro_no_pentecostes`), Gloriosa, At 2:3, 14. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Pescador pregando, línguas de fogo no alto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-side-part · estilo-2: skin-3, haircolor-honey, hair-shaved · estilo-3: skin-5, haircolor-darkbrown, hair-curly
+  estilo-1: skin-2, haircolor-black, hair-side-part · estilo-2: skin-3, haircolor-black, hair-wavy · estilo-3: skin-5, haircolor-darkbrown, hair-afro
 - **Estêvão com rosto de anjo** (`glorioso_estevao_com_rosto_de_anjo`), Gloriosa, At 6:15; 7:56. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Diácono de manto claro, rosto iluminado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-5, haircolor-auburn, hair-long · estilo-2: skin-4, haircolor-copper, hair-curly · estilo-3: skin-2, haircolor-honey, hair-side-part
 - **João em Patmos** (`glorioso_joao_em_patmos`), Gloriosa, Ap 1:9-11. **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha. Traje: Ancião com rolo, mar e sete candelabros. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-honey, hair-short · estilo-2: skin-2, haircolor-darkbrown, hair-long · estilo-3: skin-5, haircolor-auburn, hair-locs
+  estilo-1: skin-4, haircolor-gray, hair-long-wavy · estilo-2: skin-2, haircolor-gray, hair-wavy · estilo-3: skin-5, haircolor-gray, hair-side-part
 
 ## S01 · Personagens · Origens
 
@@ -277,20 +279,20 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 - **Traje de Bartimeu** (`epico_bartimeu`), Épica, Mc 10:46-50. Traje: Mendigo que lança o manto e se levanta. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-6, haircolor-brown, hair-short · estilo-2: skin-4, haircolor-darkbrown, hair-shaved · estilo-3: skin-1, haircolor-auburn, hair-afro
 - **Traje de Filipe** (`raro_filipe`), Rara, Jo 1:43-46. Traje: Discípulo de Betsaida. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-blond, hair-short · estilo-2: skin-4, haircolor-copper, hair-side-part · estilo-3: skin-6, haircolor-darkbrown, hair-afro
+  estilo-1: skin-1, haircolor-black, hair-short · estilo-2: skin-4, haircolor-darkbrown, hair-wavy · estilo-3: skin-6, haircolor-darkbrown, hair-curly
 - **Traje de Natanael** (`raro_natanael`), Rara, Jo 1:48. Traje: Debaixo da figueira. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-auburn, hair-short · estilo-2: skin-4, haircolor-brown, hair-afro · estilo-3: skin-2, haircolor-copper, hair-shaved
+  estilo-1: skin-5, haircolor-darkbrown, hair-afro · estilo-2: skin-4, haircolor-darkbrown, hair-short · estilo-3: skin-2, haircolor-black, hair-wavy
 - **Traje de Tomé** (`raro_tome`), Rara, Jo 20:27-28. Traje: Discípulo que passa da dúvida à fé. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-brown, hair-afro · estilo-2: skin-1, haircolor-darkbrown, hair-shaved · estilo-3: skin-3, haircolor-auburn, hair-short
+  estilo-1: skin-5, haircolor-darkbrown, hair-side-part · estilo-2: skin-1, haircolor-black, hair-afro · estilo-3: skin-3, haircolor-darkbrown, hair-wavy
 - **Traje de Tiago, filho de Alfeu** (`raro_tiago_filho_de_alfeu`), Rara, Mc 3:18. Traje: Apóstolo de manto simples. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-brown, hair-afro · estilo-2: skin-6, haircolor-auburn, hair-long · estilo-3: skin-2, haircolor-black, hair-locs
+  estilo-1: skin-4, haircolor-black, hair-curly · estilo-2: skin-6, haircolor-darkbrown, hair-afro · estilo-3: skin-2, haircolor-black, hair-short
 
 ## S18 · Personagens · Evangelhos
 
 - **Traje de Tadeu** (`raro_tadeu`), Rara, Lc 6:16; Jo 14:22. Traje: Apóstolo de manto simples. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-auburn, hair-curly · estilo-2: skin-5, haircolor-copper, hair-long · estilo-3: skin-2, haircolor-brown, hair-locs
+  estilo-1: skin-3, haircolor-black, hair-side-part · estilo-2: skin-5, haircolor-darkbrown, hair-afro · estilo-3: skin-2, haircolor-darkbrown, hair-short
 - **Traje de Simão, o zelote** (`raro_simao_o_zelote`), Rara, Lc 6:15. Traje: Apóstolo de faixa vermelha. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-copper, hair-short · estilo-2: skin-1, haircolor-black, hair-side-part · estilo-3: skin-5, haircolor-darkbrown, hair-afro
+  estilo-1: skin-3, haircolor-black, hair-wavy · estilo-2: skin-1, haircolor-darkbrown, hair-side-part · estilo-3: skin-5, haircolor-black, hair-afro
 - **Os pastores de Belém** (`raro_os_pastores_de_belem`), Rara, Lc 2:8-16. Traje: Pastores com lanternas à noite. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-3, haircolor-black, hair-long · estilo-2: skin-6, haircolor-darkbrown, hair-wavy · estilo-3: skin-2, haircolor-auburn, hair-shaved
 - **O menino dos pães e peixes** (`raro_o_menino_dos_paes_e_peixes`), Rara, Jo 6:9. Traje: Cesto com cinco pães e dois peixes. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
@@ -333,7 +335,7 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 ## S21 · Personagens · Igreja
 
 - **Traje de Timóteo** (`epico_timoteo`), Épica, 1 Tm 4:12; 2 Tm 1:5. Traje: Jovem pastor com cartas de Paulo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-darkbrown, hair-wavy · estilo-2: skin-1, haircolor-blond, hair-curly · estilo-3: skin-5, haircolor-brown, hair-short
+  estilo-1: skin-3, haircolor-darkbrown, hair-short · estilo-2: skin-1, haircolor-blond, hair-curly · estilo-3: skin-5, haircolor-brown, hair-short
 - **Traje de Silas** (`epico_silas`), Épica, At 16:25. Traje: Cantando na prisão à meia-noite. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-6, haircolor-brown, hair-wavy · estilo-2: skin-1, haircolor-black, hair-curly · estilo-3: skin-3, haircolor-honey, hair-afro
 - **Traje de Priscila e Áquila** (`epico_priscila_e_aquila`), Épica, At 18:2-3, 26. Casal: apresentação padrão masculina (Áquila) e feminina (Priscila), com o nome de cada um no `nomeExibicao`. Traje: Fazedores de tendas com agulha e lona. Apresentação masculina.
@@ -382,7 +384,7 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 - **Traje de João Marcos** (`raro_joao_marcos`), Rara, At 12:25; 2 Tm 4:11. Traje: Jovem companheiro de viagem. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-4, haircolor-copper, hair-locs · estilo-2: skin-5, haircolor-darkbrown, hair-short · estilo-3: skin-1, haircolor-black, hair-side-part
 - **Traje de Matias** (`raro_matias`), Rara, At 1:26. Traje: Apóstolo escolhido por sorte. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-auburn, hair-wavy · estilo-2: skin-2, haircolor-black, hair-side-part · estilo-3: skin-5, haircolor-brown, hair-locs
+  estilo-1: skin-4, haircolor-black, hair-afro · estilo-2: skin-2, haircolor-black, hair-curly · estilo-3: skin-5, haircolor-darkbrown, hair-short
 - **Traje de Ágabo** (`raro_agabo`), Rara, At 21:11. Traje: Profeta com o cinto de Paulo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
   estilo-1: skin-3, haircolor-darkbrown, hair-curly · estilo-2: skin-5, haircolor-copper, hair-long · estilo-3: skin-1, haircolor-auburn, hair-locs
 - **Traje de Judas, irmão de Tiago** (`raro_judas_irmao_de_tiago`), Rara, Jd 1:1. Traje: Autor da carta, manto simples. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

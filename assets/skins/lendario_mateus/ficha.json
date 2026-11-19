@@ -19,14 +19,14 @@
       "id": "estilo-2",
       "rotulo": "Estilo 2",
       "tomDePele": "skin-5",
-      "cabelo": "haircolor-brown",
+      "cabelo": "haircolor-darkbrown",
       "penteado": "hair-side-part"
     },
     {
       "id": "estilo-3",
       "rotulo": "Estilo 3",
       "tomDePele": "skin-6",
-      "cabelo": "haircolor-copper",
+      "cabelo": "haircolor-black",
       "penteado": "hair-wavy"
     }
   ],
@@ -45,5 +45,36 @@
     ]
   },
   "sexoDoPersonagem": "masculino",
-  "identidadeFacial": "Adulto; rosto retangular fino de maçãs planas, nariz comprido de ponte curva, olhos pequenos atentos, uma sobrancelha elevada, lábios estreitos e barba muito curta bem aparada."
+  "identidadeFacial": "Adulto jovem de aparência entre 25 e 30 anos (faixa artística); rosto retangular estreito, nariz comprido de ponte curva suave, olhos atentos, sobrancelha sutilmente elevada, lábios estreitos e barba muito curta escura, sem sulcos profundos.",
+  "revisaoRosto": "P08H",
+  "idadeAparente": {
+    "faixa": [
+      25,
+      30
+    ],
+    "unidade": "anos",
+    "natureza": "direcao-artistica",
+    "idadeHistoricaDocumentada": false
+  },
+  "revisaoHistorica": {
+    "fontes": "PESQUISA-HISTORICA.md",
+    "descricao": "Rejuvenescimento com rostos próprios; cabelos naturais escuros sem locs nem grisalho. As faixas de idade são escolhas artísticas, não idades bíblicas comprovadas.",
+    "estilosOriginais": [
+      {
+        "skinTone": "skin-3",
+        "hairColor": "haircolor-black",
+        "hairStyle": "hair-afro"
+      },
+      {
+        "skinTone": "skin-5",
+        "hairColor": "haircolor-brown",
+        "hairStyle": "hair-side-part"
+      },
+      {
+        "skinTone": "skin-6",
+        "hairColor": "haircolor-copper",
+        "hairStyle": "hair-wavy"
+      }
+    ]
+  }
 }

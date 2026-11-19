@@ -1,0 +1,304 @@
+{
+  "commitBase": "aa982bc",
+  "id": "P08H",
+  "escopo": "Revisão dos cinco apóstolos de P08; não inclui Maria nem P07.",
+  "skins": [
+    {
+      "id": "lendario_pedro",
+      "name": "Vestes de Pedro",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 4:18; 16:18",
+      "idea": "Pescador com rede e chave no cinto",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT"
+        ]
+      },
+      "howTo": "Concluir o livro de Mateus",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "character": "masculino",
+      "identidadeFacial": "Adulto maduro; cabeça larga arredondada, maxilar pesado de cantos redondos, nariz curto largo de ponta bulbosa, sobrancelhas grossas baixas, olhos pequenos francos e barba curta cheia.",
+      "stylesOriginais": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ]
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "name": "Vestes de João, o apóstolo",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Jo 13:23; 19:27",
+      "idea": "Jovem discípulo com rolo",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "JHN"
+        ]
+      },
+      "howTo": "Concluir o livro de João",
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "character": "masculino",
+      "identidadeFacial": "Jovem adulto; testa larga e rosto curto em coração, queixo pequeno, nariz pequeno arredondado, olhos amendoados grandes afastados e lábio superior fino; sem barba.",
+      "stylesOriginais": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ]
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "name": "Vestes de Tiago, filho de Zebedeu",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mc 1:19; 3:17",
+      "idea": "Pescador, \"filho do trovão\"",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MRK"
+        ]
+      },
+      "howTo": "Concluir o livro de Marcos",
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino",
+      "identidadeFacial": "Adulto maduro; rosto retangular comprido sem barba ou bigode, testa marcada por linhas horizontais, olhos estreitos sob sobrancelhas retas baixas, nariz largo de ponta achatada, queixo com covinha e orelhas discretamente salientes.",
+      "stylesOriginais": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "lendario_andre",
+      "name": "Vestes de André",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Jo 1:40-42",
+      "idea": "Pescador que leva o irmão a Jesus",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            1
+          ],
+          [
+            "JHN",
+            6
+          ],
+          [
+            "JHN",
+            12
+          ],
+          [
+            "MRK",
+            1
+          ],
+          [
+            "MRK",
+            13
+          ]
+        ]
+      },
+      "howTo": "Ler a história de André (Jo 1, 6 e 12, Mc 1 e 13)",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "character": "masculino",
+      "identidadeFacial": "Adulto; rosto oval comprido com têmporas estreitas, testa alta arredondada, nariz largo de ponta comprida, olhos baixos acolhedores, boca larga e barba média arredondada.",
+      "stylesOriginais": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "lendario_mateus",
+      "name": "Vestes de Mateus",
+      "rarity": "legendary",
+      "world": "evangelhos",
+      "scriptureRef": "Mt 9:9",
+      "idea": "Publicano que deixa a coletoria, rolo de contas",
+      "presentation": "masculina",
+      "rule": {
+        "books": [
+          "MAT"
+        ]
+      },
+      "howTo": "Concluir o livro de Mateus",
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "character": "masculino",
+      "identidadeFacial": "Adulto; rosto retangular fino de maçãs planas, nariz comprido de ponte curva, olhos pequenos atentos, uma sobrancelha elevada, lábios estreitos e barba muito curta bem aparada.",
+      "stylesOriginais": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "lendario_pedro",
+      "identidadeFacial": "Adulto jovem de aparência entre 28 e 34 anos (faixa artística, não idade documentada); cabeça larga arredondada, maxilar forte de cantos redondos, nariz curto largo, sobrancelhas baixas espessas, olhos pequenos francos e barba curta cheia escura, sem grisalho nem rugas profundas."
+    },
+    {
+      "id": "lendario_joao_o_apostolo",
+      "identidadeFacial": "Jovem adulto de aparência entre 18 e 22 anos (faixa artística); rosto curto em coração, testa larga, queixo pequeno arredondado, nariz pequeno de ponta redonda, olhos amendoados grandes afastados e rosto sem barba."
+    },
+    {
+      "id": "lendario_tiago_filho_de_zebedeu",
+      "identidadeFacial": "Jovem adulto de aparência entre 22 e 26 anos (faixa artística); rosto retangular comprido, testa lisa sem linhas marcadas, olhos estreitos intensos, nariz largo de ponta achatada e queixo com covinha; sem barba e sem bigode."
+    },
+    {
+      "id": "lendario_andre",
+      "identidadeFacial": "Adulto jovem de aparência entre 24 e 29 anos (faixa artística); rosto oval comprido com têmporas estreitas, testa arredondada, nariz largo de ponta alongada, olhos acolhedores, boca larga e barba curta escura arredondada, sem grisalho."
+    },
+    {
+      "id": "lendario_mateus",
+      "identidadeFacial": "Adulto jovem de aparência entre 25 e 30 anos (faixa artística); rosto retangular estreito, nariz comprido de ponte curva suave, olhos atentos, sobrancelha sutilmente elevada, lábios estreitos e barba muito curta escura, sem sulcos profundos."
+    }
+  ],
+  "substitui": "Somente as cinco skins listadas, nos mesmos IDs e caminhos; substitui suas pinturas de P08/P08_v2."
+}

@@ -1189,13 +1189,13 @@
    "styles": [
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-brown",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-6",
@@ -1217,12 +1217,12 @@
    "styles": [
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-auburn",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-honey",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-afro"
     },
     {
@@ -1245,17 +1245,17 @@
    "styles": [
     {
      "skinTone": "skin-1",
-     "hairColor": "haircolor-honey",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-darkbrown",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-auburn",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     }
    ],
@@ -1273,12 +1273,12 @@
    "styles": [
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-copper",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     },
     {
@@ -1306,12 +1306,12 @@
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-brown",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-6",
-     "hairColor": "haircolor-copper",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-wavy"
     }
    ],

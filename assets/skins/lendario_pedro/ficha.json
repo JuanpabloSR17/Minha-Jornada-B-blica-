@@ -12,15 +12,15 @@
       "id": "estilo-1",
       "rotulo": "Estilo 1",
       "tomDePele": "skin-2",
-      "cabelo": "haircolor-brown",
+      "cabelo": "haircolor-darkbrown",
       "penteado": "hair-wavy"
     },
     {
       "id": "estilo-2",
       "rotulo": "Estilo 2",
       "tomDePele": "skin-4",
-      "cabelo": "haircolor-copper",
-      "penteado": "hair-locs"
+      "cabelo": "haircolor-black",
+      "penteado": "hair-curly"
     },
     {
       "id": "estilo-3",
@@ -45,5 +45,36 @@
     ]
   },
   "sexoDoPersonagem": "masculino",
-  "identidadeFacial": "Adulto maduro; cabeça larga arredondada, maxilar pesado de cantos redondos, nariz curto largo de ponta bulbosa, sobrancelhas grossas baixas, olhos pequenos francos e barba curta cheia."
+  "identidadeFacial": "Adulto jovem de aparência entre 28 e 34 anos (faixa artística, não idade documentada); cabeça larga arredondada, maxilar forte de cantos redondos, nariz curto largo, sobrancelhas baixas espessas, olhos pequenos francos e barba curta cheia escura, sem grisalho nem rugas profundas.",
+  "revisaoRosto": "P08H",
+  "idadeAparente": {
+    "faixa": [
+      28,
+      34
+    ],
+    "unidade": "anos",
+    "natureza": "direcao-artistica",
+    "idadeHistoricaDocumentada": false
+  },
+  "revisaoHistorica": {
+    "fontes": "PESQUISA-HISTORICA.md",
+    "descricao": "Rejuvenescimento com rostos próprios; cabelos naturais escuros sem locs nem grisalho. As faixas de idade são escolhas artísticas, não idades bíblicas comprovadas.",
+    "estilosOriginais": [
+      {
+        "skinTone": "skin-2",
+        "hairColor": "haircolor-brown",
+        "hairStyle": "hair-wavy"
+      },
+      {
+        "skinTone": "skin-4",
+        "hairColor": "haircolor-copper",
+        "hairStyle": "hair-locs"
+      },
+      {
+        "skinTone": "skin-6",
+        "hairColor": "haircolor-black",
+        "hairStyle": "hair-short"
+      }
+    ]
+  }
 }

@@ -7,7 +7,8 @@
   "epic_rare_personagem": "ler os capítulos da história do personagem (referências da enciclopédia)",
   "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana",
   "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins",
-  "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras; inclui as Lendárias e Gloriosas da Temporada 1 (menos Moisés com véu, de rosto coberto). Vestes de Jonas e de Tiago são diferenciadas de João Batista já em P07_v2/P08_v2 (anatomia facial e barba, mesmos estilos), e João Batista fica como referência. A revisão conta como feita quando a ficha traz revisaoRosto"
+  "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras; inclui as Lendárias e Gloriosas da Temporada 1 (menos Moisés com véu, de rosto coberto). Vestes de Jonas e de Tiago são diferenciadas de João Batista já em P07_v2/P08_v2 (anatomia facial e barba, mesmos estilos), e João Batista fica como referência. A revisão conta como feita quando a ficha traz revisaoRosto",
+  "apostolos": "Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério são adultos jovens de idades aparentes diferentes (faixas artísticas, não idades documentadas), com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho; cada um com rosto próprio. Cenas de outra fase (João em Patmos) podem mostrar idade avançada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística."
  },
  "lotes": [
   {
@@ -2840,7 +2841,7 @@
     {
      "skinTone": "skin-2",
      "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-curly"
+     "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-3",
@@ -2929,13 +2930,13 @@
    "styles": [
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-brown",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-6",
@@ -2944,7 +2945,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto maduro; cabeça larga arredondada, maxilar pesado de cantos redondos, nariz curto largo de ponta bulbosa, sobrancelhas grossas baixas, olhos pequenos francos e barba curta cheia."
+   "identidadeFacial": "Adulto jovem de aparência entre 28 e 34 anos (faixa artística, não idade documentada); cabeça larga arredondada, maxilar forte de cantos redondos, nariz curto largo, sobrancelhas baixas espessas, olhos pequenos francos e barba curta cheia escura, sem grisalho nem rugas profundas."
   },
   {
    "id": "lendario_joao_o_apostolo",
@@ -2963,12 +2964,12 @@
    "styles": [
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-auburn",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-honey",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-afro"
     },
     {
@@ -2978,7 +2979,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Jovem adulto; testa larga e rosto curto em coração, queixo pequeno, nariz pequeno arredondado, olhos amendoados grandes afastados e lábio superior fino; sem barba."
+   "identidadeFacial": "Jovem adulto de aparência entre 18 e 22 anos (faixa artística); rosto curto em coração, testa larga, queixo pequeno arredondado, nariz pequeno de ponta redonda, olhos amendoados grandes afastados e rosto sem barba."
   },
   {
    "id": "lendario_tiago_filho_de_zebedeu",
@@ -2997,22 +2998,22 @@
    "styles": [
     {
      "skinTone": "skin-1",
-     "hairColor": "haircolor-honey",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-darkbrown",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-auburn",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto maduro; rosto retangular comprido sem barba ou bigode, testa marcada por linhas horizontais, olhos estreitos sob sobrancelhas retas baixas, nariz largo de ponta achatada, queixo com covinha e orelhas discretamente salientes."
+   "identidadeFacial": "Jovem adulto de aparência entre 22 e 26 anos (faixa artística); rosto retangular comprido, testa lisa sem linhas marcadas, olhos estreitos intensos, nariz largo de ponta achatada e queixo com covinha; sem barba e sem bigode."
   },
   {
    "id": "lendario_andre",
@@ -3050,12 +3051,12 @@
    "styles": [
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-copper",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     },
     {
@@ -3065,7 +3066,7 @@
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto; rosto oval comprido com têmporas estreitas, testa alta arredondada, nariz largo de ponta comprida, olhos baixos acolhedores, boca larga e barba média arredondada."
+   "identidadeFacial": "Adulto jovem de aparência entre 24 e 29 anos (faixa artística); rosto oval comprido com têmporas estreitas, testa arredondada, nariz largo de ponta alongada, olhos acolhedores, boca larga e barba curta escura arredondada, sem grisalho."
   },
   {
    "id": "lendario_mateus",
@@ -3089,17 +3090,17 @@
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-brown",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-6",
-     "hairColor": "haircolor-copper",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-wavy"
     }
    ],
    "character": "masculino",
-   "identidadeFacial": "Adulto; rosto retangular fino de maçãs planas, nariz comprido de ponte curva, olhos pequenos atentos, uma sobrancelha elevada, lábios estreitos e barba muito curta bem aparada."
+   "identidadeFacial": "Adulto jovem de aparência entre 25 e 30 anos (faixa artística); rosto retangular estreito, nariz comprido de ponte curva suave, olhos atentos, sobrancelha sutilmente elevada, lábios estreitos e barba muito curta escura, sem sulcos profundos."
   },
   {
    "id": "lendario_maria_mae_de_jesus",
@@ -3347,13 +3348,13 @@
     },
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-honey",
-     "hairStyle": "hair-shaved"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-5",
      "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-curly"
+     "hairStyle": "hair-afro"
     }
    ],
    "character": "masculino"
@@ -3429,18 +3430,18 @@
    "styles": [
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-honey",
-     "hairStyle": "hair-short"
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-long-wavy"
     },
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-long"
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-gray",
+     "hairStyle": "hair-side-part"
     }
    ],
    "character": "masculino"
@@ -8766,18 +8767,18 @@
    "styles": [
     {
      "skinTone": "skin-1",
-     "hairColor": "haircolor-blond",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     },
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-side-part"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-6",
      "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-afro"
+     "hairStyle": "hair-curly"
     }
    ]
   },
@@ -8804,18 +8805,18 @@
    "styles": [
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-short"
-    },
-    {
-     "skinTone": "skin-4",
-     "hairColor": "haircolor-brown",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-afro"
     },
     {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-shaved"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
     }
    ]
   },
@@ -8842,18 +8843,18 @@
    "styles": [
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-afro"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-1",
-     "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-shaved"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
     },
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-short"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
     }
    ]
   },
@@ -8880,18 +8881,18 @@
    "styles": [
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-afro"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-6",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-long"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
     },
     {
      "skinTone": "skin-2",
      "hairColor": "haircolor-black",
-     "hairStyle": "hair-locs"
+     "hairStyle": "hair-short"
     }
    ]
   },
@@ -8922,18 +8923,18 @@
    "styles": [
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-curly"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-long"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
     },
     {
      "skinTone": "skin-2",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
     }
    ]
   },
@@ -8960,17 +8961,17 @@
    "styles": [
     {
      "skinTone": "skin-3",
-     "hairColor": "haircolor-copper",
-     "hairStyle": "hair-short"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
     },
     {
      "skinTone": "skin-1",
-     "hairColor": "haircolor-black",
+     "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-side-part"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-darkbrown",
+     "hairColor": "haircolor-black",
      "hairStyle": "hair-afro"
     }
    ]
@@ -9622,7 +9623,7 @@
     {
      "skinTone": "skin-3",
      "hairColor": "haircolor-darkbrown",
-     "hairStyle": "hair-wavy"
+     "hairStyle": "hair-short"
     },
     {
      "skinTone": "skin-1",
@@ -10464,18 +10465,18 @@
    "styles": [
     {
      "skinTone": "skin-4",
-     "hairColor": "haircolor-auburn",
-     "hairStyle": "hair-wavy"
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
     },
     {
      "skinTone": "skin-2",
      "hairColor": "haircolor-black",
-     "hairStyle": "hair-side-part"
+     "hairStyle": "hair-curly"
     },
     {
      "skinTone": "skin-5",
-     "hairColor": "haircolor-brown",
-     "hairStyle": "hair-locs"
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
     }
    ]
   },
