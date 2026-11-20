@@ -2324,6 +2324,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "epico_abigail",
+   "name": "Traje de Abigail",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 25:18",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_nata",
+   "name": "Traje de Natã",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 12:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_rainha_de_saba",
+   "name": "Traje de Rainha de Sabá",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 10:1-2",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-bun"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_naama",
+   "name": "Traje de Naamã",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 5:14",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_ezequias",
+   "name": "Traje de Ezequias",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 18:5; 20:5",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_josias",
+   "name": "Traje de Josias",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 22:11; 23:2",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_mardoqueu",
+   "name": "Traje de Mardoqueu",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "Et 8:15",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_zorobabel",
+   "name": "Traje de Zorobabel",
+   "rarity": "epic",
+   "world": "reinos",
+   "scriptureRef": "Ed 3:8; Ag 2:23",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_baraque",
+   "name": "Traje de Baraque",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "Jz 4:14",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_eli",
+   "name": "Traje de Eli",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 1:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_mical",
+   "name": "Traje de Mical",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 19:12",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_joabe",
+   "name": "Traje de Joabe",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 2:13",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

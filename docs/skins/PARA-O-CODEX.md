@@ -516,3 +516,25 @@ Mantenha rosto, bigode, barba, cabelo, traje, cajado, IDs e âncoras. Mande o pa
 **Integração:** só os arquivos alterados, sem migração nem mudança de catálogo, fichas ou regras.
 
 **S03/S04 encerrados. Próximo: S05 e S06.**
+
+## 26. Lotes S05 e S06: aplicados (20/11/2026), com 1 pintura de Baraque a corrigir
+
+**Conferência**
+- **S05_final:** o ZIP de 18.673.671 bytes confere com o `.zip.sha256` (`f8b53661…`) e as 68 somas conferem.
+- **S06_final:** o ZIP de 19.869.775 bytes confere com o `.zip.sha256` (`f749c6b2…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas e um único sexo por personagem.
+
+**Aprovado:** S05 inteiro e S06 menos Baraque estilo-2.
+- As seis adaptações de `6c28220` foram respeitadas: Abigail com a cesta e a corda, Rainha de Sabá com os presentes nas duas mãos, Baraque sozinho e em repouso, Eli em pé, Mical com a corda contínua e Ezequias com a carta.
+- A coroa de Mardoqueu está no próprio texto de Et 8:15.
+- Rostos próprios, inclusive Zorobabel distinto de Baraque.
+
+**Migrações:** `20261202001600_skins_s05.sql` e `20261202001700_skins_s06.sql`. O app passa a 121 skins pintadas.
+
+**Correção pedida (S06_v2): `raro_baraque` estilo-2** (tom 4, longo liso ruivo).
+- A pele saiu tão clara quanto a do estilo-1 (tom 2), e os dois estilos ficaram quase iguais. A comparação está em `docs/skins/entregas/S06/Tons_a_corrigir.png`.
+- Escurecer para tom 4 médio (como o Labão estilo-1 v2, cerca de `#AC764B`), visivelmente entre o estilo-1 claro e o estilo-3 (tom 5).
+- Mantenha rosto, barba, cabelo, traje, escudo, IDs e âncoras.
+- Mande o pacote S06 completo com os SHA-256 atualizados, sem migração.
+
+**Pares de tons vizinhos aceitos como estão:** Eli (tom 4 e tom 5), Mical (tom 4 e tom 5), Ezequias (tom 2 e tom 3) e Joabe (tom 2 e tom 3). Estão visivelmente distintos, como pede o plano.

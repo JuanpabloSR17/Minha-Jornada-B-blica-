@@ -4,36 +4,6 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 **Apóstolos:** Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.
 
-## S05 · Personagens · Terra e Reinos
-
-- **Traje de Abigail** (`epico_abigail`), Épica, 1 Sm 25:18. Traje: Mulher adulta com pães e figos numa cesta ou trouxa sustentada pelas duas mãos e corda de condução presa ao cinto. **Adaptação:** Sem jumento em miniatura, caravana ou outra pessoa presa ao avatar. A ficha explica que a carga de 1 Sm 25:18 foi reduzida a uma cesta ou trouxa no avatar. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-copper, hair-bun · estilo-2: skin-3, haircolor-darkbrown, hair-long-wavy · estilo-3: skin-1, haircolor-brown, hair-ponytail
-- **Traje de Natã** (`epico_nata`), Épica, 2 Sm 12:1. Traje: Profeta da corte com rolo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-auburn, hair-shaved · estilo-2: skin-5, haircolor-brown, hair-long · estilo-3: skin-4, haircolor-copper, hair-short
-- **Traje de Rainha de Sabá** (`epico_rainha_de_saba`), Épica, 1 Rs 10:1-2. Traje: Rainha em traje e ornamentos régios com presente de especiarias e pequenas peças de ouro e pedras num recipiente apoiado pelas duas mãos. **Adaptação:** Sem caravana nem animal preso ao corpo. Os presentes representam a comitiva de 1 Rs 10:1-2. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-darkbrown, hair-ponytail · estilo-2: skin-4, haircolor-brown, hair-long-wavy · estilo-3: skin-2, haircolor-blond, hair-bun
-- **Traje de Naamã** (`epico_naama`), Épica, 2 Rs 5:14. Traje: General arameu, pele restaurada. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-black, hair-locs · estilo-2: skin-3, haircolor-darkbrown, hair-curly · estilo-3: skin-1, haircolor-honey, hair-shaved
-- **Traje de Ezequias** (`epico_ezequias`), Épica, 2 Rs 18:5; 20:5. Traje: Rei em atitude de oração com a carta sustentada pelas mãos. **Adaptação:** Sem templo preso ao avatar. As notas distinguem os episódios: o gesto da carta é de 2 Rs 19:14-19; 2 Rs 18:5 e 20:5 continuam como referência e regra do catálogo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-curly · estilo-2: skin-3, haircolor-copper, hair-long · estilo-3: skin-5, haircolor-brown, hair-short
-- **Traje de Josias** (`epico_josias`), Épica, 2 Rs 22:11; 23:2. Traje: Jovem rei com o Livro da Lei. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-black, hair-shaved · estilo-2: skin-3, haircolor-honey, hair-side-part · estilo-3: skin-1, haircolor-brown, hair-locs
-
-## S06 · Personagens · Terra e Reinos
-
-- **Traje de Mardoqueu** (`epico_mardoqueu`), Épica, Et 8:15. Traje: Veste real azul e branca, manto de púrpura. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-auburn, hair-shaved · estilo-2: skin-1, haircolor-black, hair-short · estilo-3: skin-5, haircolor-darkbrown, hair-wavy
-- **Traje de Zorobabel** (`epico_zorobabel`), Épica, Ed 3:8; Ag 2:23. Traje: Líder do retorno com anel de selo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-copper, hair-wavy · estilo-2: skin-6, haircolor-black, hair-side-part · estilo-3: skin-1, haircolor-blond, hair-shaved
-- **Traje de Baraque** (`raro_baraque`), Rara, Jz 4:14. Traje: Comandante em postura de repouso. **Adaptação:** Um único comandante, sem Débora nem combate desenhados. A ficha registra o contexto de Jz 4 com Débora, sem transformá-la em acessório. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-brown, hair-curly · estilo-2: skin-4, haircolor-copper, hair-long · estilo-3: skin-5, haircolor-black, hair-shaved
-- **Traje de Eli** (`raro_eli`), Rara, 1 Sm 1:9. Traje: Sacerdote idoso em pé. **Adaptação:** Sem assento, porta ou cenário. A ficha diz que 1 Sm 1:9 o descreve sentado e que ficar em pé é adaptação do avatar, não reprodução literal da cena. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-black, hair-shaved · estilo-2: skin-5, haircolor-copper, hair-locs · estilo-3: skin-2, haircolor-honey, hair-short
-- **Traje de Mical** (`raro_mical`), Rara, 1 Sm 19:12. Traje: Princesa em pé segurando uma corda de resgate contínua, com mãos naturais. **Adaptação:** Sem moldura de janela nem segundo personagem: a corda é o motivo de 1 Sm 19:12, sem a cena inteira presa ao avatar. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-copper, hair-long-wavy · estilo-2: skin-2, haircolor-honey, hair-bun · estilo-3: skin-4, haircolor-black, hair-ponytail
-- **Traje de Joabe** (`raro_joabe`), Rara, 2 Sm 2:13. Traje: Comandante do exército de Davi. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-black, hair-long · estilo-2: skin-2, haircolor-copper, hair-wavy · estilo-3: skin-3, haircolor-brown, hair-short
-
 ## S07 · Personagens · Terra e Reinos
 
 - **Traje de Mefibosete** (`raro_mefibosete`), Rara, 2 Sm 9:7. Traje: À mesa do rei. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

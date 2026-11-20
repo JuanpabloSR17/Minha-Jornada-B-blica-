@@ -1,0 +1,50 @@
+{
+  "id": "raro_eli",
+  "nome": "Traje de Eli",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "1 Sm 1:9",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Idoso; rosto pentagonal muito largo, testa curta, bochechas volumosas, queixo pequeno recuado, nariz largo curto, olhos pequenos caídos e sobrancelhas finas baixas; barba longa larga arredondada, expressão cansada gentil, porte corpulento.",
+  "adaptacao": "Sem assento, porta ou cenário. A ficha diz que 1 Sm 1:9 o descreve sentado e que ficar em pé é adaptação do avatar, não reprodução literal da cena."
+}

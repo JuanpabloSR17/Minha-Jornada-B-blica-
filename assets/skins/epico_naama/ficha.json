@@ -1,0 +1,49 @@
+{
+  "id": "epico_naama",
+  "nome": "Traje de Naamã",
+  "raridade": "epic",
+  "mundo": "reinos",
+  "referencia": "2 Rs 5:14",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto maduro vigoroso; rosto retangular largo, testa baixa, maxilar quadrado, nariz longo convexo de ponta achatada, olhos próximos fundos e sobrancelhas baixas espessas; barba curta arredondada, expressão aliviada e serena."
+}

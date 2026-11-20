@@ -1,0 +1,269 @@
+{
+  "commit": "6c28220",
+  "id": "S06",
+  "titulo": "Personagens · Terra e Reinos",
+  "skins": [
+    {
+      "id": "epico_mardoqueu",
+      "name": "Traje de Mardoqueu",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Et 8:15",
+      "idea": "Veste real azul e branca, manto de púrpura",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "EST",
+            8
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Mardoqueu (Et 8:15)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        }
+      ]
+    },
+    {
+      "id": "epico_zorobabel",
+      "name": "Traje de Zorobabel",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Ed 3:8; Ag 2:23",
+      "idea": "Líder do retorno com anel de selo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "EZR",
+            3
+          ],
+          [
+            "HAG",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Zorobabel (Ed 3:8; Ag 2:23)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "raro_baraque",
+      "name": "Traje de Baraque",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Jz 4:14",
+      "idea": "Comandante em postura de repouso",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JDG",
+            4
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Baraque (Jz 4:14)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Um único comandante, sem Débora nem combate desenhados. A ficha registra o contexto de Jz 4 com Débora, sem transformá-la em acessório."
+    },
+    {
+      "id": "raro_eli",
+      "name": "Traje de Eli",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 1:9",
+      "idea": "Sacerdote idoso em pé",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Eli (1 Sm 1:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Sem assento, porta ou cenário. A ficha diz que 1 Sm 1:9 o descreve sentado e que ficar em pé é adaptação do avatar, não reprodução literal da cena."
+    },
+    {
+      "id": "raro_mical",
+      "name": "Traje de Mical",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 19:12",
+      "idea": "Princesa em pé segurando uma corda de resgate contínua, com mãos naturais",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            19
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Mical (1 Sm 19:12)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "adaptacao": "Sem moldura de janela nem segundo personagem: a corda é o motivo de 1 Sm 19:12, sem a cena inteira presa ao avatar."
+    },
+    {
+      "id": "raro_joabe",
+      "name": "Traje de Joabe",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 2:13",
+      "idea": "Comandante do exército de Davi",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Joabe (2 Sm 2:13)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_mardoqueu",
+      "identidadeFacial": "Adulto maduro; rosto quadrado amplo de testa baixa, bochechas cheias, queixo largo com sulco, nariz curto levemente arrebitado, olhos pequenos afastados e sobrancelhas altas espessas; barba média com duas pontas e expressão digna afável."
+    },
+    {
+      "id": "epico_zorobabel",
+      "identidadeFacial": "Adulto; rosto em pera invertida de têmporas estreitas e maxilar largo, testa média, nariz pequeno convexo, olhos redondos afastados, sobrancelhas descendentes e orelhas salientes; barba curta de base reta, expressão resoluta tranquila."
+    },
+    {
+      "id": "raro_baraque",
+      "identidadeFacial": "Adulto maduro; rosto retangular comprido e magro, testa estreita, queixo largo arredondado, nariz longo reto, olhos estreitos próximos e sobrancelhas baixas horizontais; barba cheia arredondada e expressão vigilante serena."
+    },
+    {
+      "id": "raro_eli",
+      "identidadeFacial": "Idoso; rosto pentagonal muito largo, testa curta, bochechas volumosas, queixo pequeno recuado, nariz largo curto, olhos pequenos caídos e sobrancelhas finas baixas; barba longa larga arredondada, expressão cansada gentil, porte corpulento."
+    },
+    {
+      "id": "raro_mical",
+      "identidadeFacial": "Adulta jovem; rosto oval de maxilar largo anguloso e testa estreita, queixo pequeno firme, nariz curto de ponta elevada, olhos amendoados longos próximos e sobrancelhas grossas retas; lábios finos, expressão alerta corajosa."
+    },
+    {
+      "id": "raro_joabe",
+      "identidadeFacial": "Adulto maduro; rosto curto em diamante, testa larga baixa, maçãs grandes, maxilar curto forte, nariz curto de ponte irregular, olhos pequenos afastados e sobrancelhas grossas oblíquas; barba curta quadrada e expressão séria contida."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

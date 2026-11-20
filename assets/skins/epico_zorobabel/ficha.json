@@ -1,0 +1,49 @@
+{
+  "id": "epico_zorobabel",
+  "nome": "Traje de Zorobabel",
+  "raridade": "epic",
+  "mundo": "reinos",
+  "referencia": "Ed 3:8; Ag 2:23",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto em pera invertida de têmporas estreitas e maxilar largo, testa média, nariz pequeno convexo, olhos redondos afastados, sobrancelhas descendentes e orelhas salientes; barba curta de base reta, expressão resoluta tranquila."
+}

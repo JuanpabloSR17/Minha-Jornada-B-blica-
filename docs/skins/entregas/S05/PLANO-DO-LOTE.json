@@ -1,0 +1,273 @@
+{
+  "commit": "6c28220",
+  "id": "S05",
+  "titulo": "Personagens · Terra e Reinos",
+  "skins": [
+    {
+      "id": "epico_abigail",
+      "name": "Traje de Abigail",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 25:18",
+      "idea": "Mulher adulta com pães e figos numa cesta ou trouxa sustentada pelas duas mãos e corda de condução presa ao cinto",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            25
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Abigail (1 Sm 25:18)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "adaptacao": "Sem jumento em miniatura, caravana ou outra pessoa presa ao avatar. A ficha explica que a carga de 1 Sm 25:18 foi reduzida a uma cesta ou trouxa no avatar."
+    },
+    {
+      "id": "epico_nata",
+      "name": "Traje de Natã",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 12:1",
+      "idea": "Profeta da corte com rolo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            12
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Natã (2 Sm 12:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        }
+      ]
+    },
+    {
+      "id": "epico_rainha_de_saba",
+      "name": "Traje de Rainha de Sabá",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Rs 10:1-2",
+      "idea": "Rainha em traje e ornamentos régios com presente de especiarias e pequenas peças de ouro e pedras num recipiente apoiado pelas duas mãos",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "1KI",
+            10
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Rainha de Sabá (1 Rs 10:1-2)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "adaptacao": "Sem caravana nem animal preso ao corpo. Os presentes representam a comitiva de 1 Rs 10:1-2."
+    },
+    {
+      "id": "epico_naama",
+      "name": "Traje de Naamã",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 5:14",
+      "idea": "General arameu, pele restaurada",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Naamã (2 Rs 5:14)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "epico_ezequias",
+      "name": "Traje de Ezequias",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 18:5; 20:5",
+      "idea": "Rei em atitude de oração com a carta sustentada pelas mãos",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            18
+          ],
+          [
+            "2KI",
+            20
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ezequias (2 Rs 18:5; 20:5)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Sem templo preso ao avatar. As notas distinguem os episódios: o gesto da carta é de 2 Rs 19:14-19; 2 Rs 18:5 e 20:5 continuam como referência e regra do catálogo."
+    },
+    {
+      "id": "epico_josias",
+      "name": "Traje de Josias",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 22:11; 23:2",
+      "idea": "Jovem rei com o Livro da Lei",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            22
+          ],
+          [
+            "2KI",
+            23
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Josias (2 Rs 22:11; 23:2)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_abigail",
+      "identidadeFacial": "Adulta madura; rosto curto em losango, testa baixa arredondada, maçãs largas, queixo fino curto, nariz longo de ponta redonda, olhos grandes próximos e sobrancelhas altas em arco; boca larga, expressão sensata acolhedora."
+    },
+    {
+      "id": "epico_nata",
+      "identidadeFacial": "Adulto maduro; rosto angular muito estreito de testa alta, queixo longo pontudo, nariz curto de ponte alta, olhos pequenos afastados e sobrancelhas grossas inclinadas; barba curta bifurcada e bigode estreito, expressão firme ponderada."
+    },
+    {
+      "id": "epico_rainha_de_saba",
+      "identidadeFacial": "Adulta; rosto oval muito alongado, testa alta larga, maçãs salientes e maxilar estreito, nariz largo reto, olhos horizontais afastados sob sobrancelhas finas baixas; lábios cheios bem desenhados, expressão régia curiosa."
+    },
+    {
+      "id": "epico_naama",
+      "identidadeFacial": "Adulto maduro vigoroso; rosto retangular largo, testa baixa, maxilar quadrado, nariz longo convexo de ponta achatada, olhos próximos fundos e sobrancelhas baixas espessas; barba curta arredondada, expressão aliviada e serena."
+    },
+    {
+      "id": "epico_ezequias",
+      "identidadeFacial": "Adulto maduro; rosto oval estreito de testa muito alta, maxilar delicado e queixo comprido, nariz aquilino fino, olhos grandes fundos próximos e sobrancelhas retas quebradas; barba média afilada, expressão de oração concentrada."
+    },
+    {
+      "id": "epico_josias",
+      "identidadeFacial": "Adulto jovem; rosto retangular curto de testa larga, queixo comprido com covinha central, nariz curto reto de base fina, olhos amendoados inclinados e sobrancelhas grossas altas; rosto sem barba nem bigode, expressão atenta reverente."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

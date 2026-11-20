@@ -1,0 +1,50 @@
+{
+  "id": "raro_mical",
+  "nome": "Traje de Mical",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "1 Sm 19:12",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-ponytail"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Adulta jovem; rosto oval de maxilar largo anguloso e testa estreita, queixo pequeno firme, nariz curto de ponta elevada, olhos amendoados longos próximos e sobrancelhas grossas retas; lábios finos, expressão alerta corajosa.",
+  "adaptacao": "Sem moldura de janela nem segundo personagem: a corda é o motivo de 1 Sm 19:12, sem a cena inteira presa ao avatar."
+}

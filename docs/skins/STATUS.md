@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-20. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 109 de 289 skins prontas no app.
+**Progresso:** 121 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -200,27 +200,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Ana (`epico_ana`) | Épica | reinos | ✔ | — | lendo: Ler a história de Ana (1 Sm 1:10-11; 2:19) |
 | ✅ | Traje de Jônatas (`epico_jonatas`) | Épica | reinos | ✔ | — | lendo: Ler a história de Jônatas (1 Sm 18:4) |
 
-## S05 · Personagens · Terra e Reinos (0/6)
+## S05 · Personagens · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Abigail (`epico_abigail`) | Épica | reinos | — | — | Ler a história de Abigail (1 Sm 25:18) |
-| ⬜ | Traje de Natã (`epico_nata`) | Épica | reinos | — | — | Ler a história de Natã (2 Sm 12:1) |
-| ⬜ | Traje de Rainha de Sabá (`epico_rainha_de_saba`) | Épica | reinos | — | — | Ler a história de Rainha de Sabá (1 Rs 10:1-2) |
-| ⬜ | Traje de Naamã (`epico_naama`) | Épica | reinos | — | — | Ler a história de Naamã (2 Rs 5:14) |
-| ⬜ | Traje de Ezequias (`epico_ezequias`) | Épica | reinos | — | — | Ler a história de Ezequias (2 Rs 18:5; 20:5) |
-| ⬜ | Traje de Josias (`epico_josias`) | Épica | reinos | — | — | Ler a história de Josias (2 Rs 22:11; 23:2) |
+| ✅ | Traje de Abigail (`epico_abigail`) | Épica | reinos | ✔ | — | lendo: Ler a história de Abigail (1 Sm 25:18) |
+| ✅ | Traje de Natã (`epico_nata`) | Épica | reinos | ✔ | — | lendo: Ler a história de Natã (2 Sm 12:1) |
+| ✅ | Traje de Rainha de Sabá (`epico_rainha_de_saba`) | Épica | reinos | ✔ | — | lendo: Ler a história de Rainha de Sabá (1 Rs 10:1-2) |
+| ✅ | Traje de Naamã (`epico_naama`) | Épica | reinos | ✔ | — | lendo: Ler a história de Naamã (2 Rs 5:14) |
+| ✅ | Traje de Ezequias (`epico_ezequias`) | Épica | reinos | ✔ | — | lendo: Ler a história de Ezequias (2 Rs 18:5; 20:5) |
+| ✅ | Traje de Josias (`epico_josias`) | Épica | reinos | ✔ | — | lendo: Ler a história de Josias (2 Rs 22:11; 23:2) |
 
-## S06 · Personagens · Terra e Reinos (0/6)
+## S06 · Personagens · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Mardoqueu (`epico_mardoqueu`) | Épica | reinos | — | — | Ler a história de Mardoqueu (Et 8:15) |
-| ⬜ | Traje de Zorobabel (`epico_zorobabel`) | Épica | reinos | — | — | Ler a história de Zorobabel (Ed 3:8; Ag 2:23) |
-| ⬜ | Traje de Baraque (`raro_baraque`) | Rara | reinos | — | — | Ler a história de Baraque (Jz 4:14) |
-| ⬜ | Traje de Eli (`raro_eli`) | Rara | reinos | — | — | Ler a história de Eli (1 Sm 1:9) |
-| ⬜ | Traje de Mical (`raro_mical`) | Rara | reinos | — | — | Ler a história de Mical (1 Sm 19:12) |
-| ⬜ | Traje de Joabe (`raro_joabe`) | Rara | reinos | — | — | Ler a história de Joabe (2 Sm 2:13) |
+| ✅ | Traje de Mardoqueu (`epico_mardoqueu`) | Épica | reinos | ✔ | — | lendo: Ler a história de Mardoqueu (Et 8:15) |
+| ✅ | Traje de Zorobabel (`epico_zorobabel`) | Épica | reinos | ✔ | — | lendo: Ler a história de Zorobabel (Ed 3:8; Ag 2:23) |
+| ✅ | Traje de Baraque (`raro_baraque`) | Rara | reinos | ✔ | — | lendo: Ler a história de Baraque (Jz 4:14) |
+| ✅ | Traje de Eli (`raro_eli`) | Rara | reinos | ✔ | — | lendo: Ler a história de Eli (1 Sm 1:9) |
+| ✅ | Traje de Mical (`raro_mical`) | Rara | reinos | ✔ | — | lendo: Ler a história de Mical (1 Sm 19:12) |
+| ✅ | Traje de Joabe (`raro_joabe`) | Rara | reinos | ✔ | — | lendo: Ler a história de Joabe (2 Sm 2:13) |
 
 ## S07 · Personagens · Terra e Reinos (0/6)
 
