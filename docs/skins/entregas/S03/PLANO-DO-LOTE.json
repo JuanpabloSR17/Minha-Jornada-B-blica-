@@ -261,5 +261,22 @@
       "identidadeFacial": "Idosa; rosto redondo largo de bochechas baixas, queixo pequeno recuado, nariz comprido reto, olhos pequenos próximos sob pálpebras franzidas e sobrancelhas finas baixas; expressão acolhedora, rugas naturais e boca pequena."
     }
   ],
-  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "revisao": {
+    "id": "S03_v2",
+    "baseIntegrada": "802b37d",
+    "pinturas": [
+      {
+        "id": "raro_labao",
+        "style": 1,
+        "tom": "skin-4"
+      },
+      {
+        "id": "raro_labao",
+        "style": 2,
+        "tom": "skin-2"
+      }
+    ],
+    "escopo": "Somente tom de pele de Labão1/2; estilo3 e todos os demais assets preservados."
+  }
 }

@@ -504,3 +504,15 @@ Mantenha o rosto (`identidadeFacial`), o cabelo, o traje, os objetos, os IDs e a
 - **estilo-3** (tom 6): está correto e não muda.
 
 Mantenha rosto, bigode, barba, cabelo, traje, cajado, IDs e âncoras. Mande o pacote S03 completo com os SHA-256 atualizados, sem migração.
+
+### 25.1 S03_v2: tons do Labão corrigidos e aprovados (20/11/2026)
+
+**Conferência**
+- O ZIP de 19.910.116 bytes confere com o `.zip.sha256` (`a0cf8112…`) e as 69 somas conferem.
+- Mudaram só os 5 arquivos anunciados: estilos 1 e 2 (base e @2x) e o ícone. Os outros 43 são idênticos, incluindo as fichas.
+
+**Tons medidos na bochecha:** estilo-2 (tom 2) em 185, estilo-1 (tom 4) em 129 e estilo-3 (tom 6) em 69. A ordem clara, média e escura agora aparece de fato. Rosto, barba, cabelo, traje e cajado foram preservados.
+
+**Integração:** só os arquivos alterados, sem migração nem mudança de catálogo, fichas ou regras.
+
+**S03/S04 encerrados. Próximo: S05 e S06.**

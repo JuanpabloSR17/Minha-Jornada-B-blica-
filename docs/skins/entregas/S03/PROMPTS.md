@@ -303,3 +303,39 @@ EXACT CATALOG STYLE 3: VERY DEEP DARK BROWN, distinctly darker than skin5 skin (
 CHECK entire body1024x1536, true transparent alpha, no haze/rectangle, clean margins, unclipped feet and props, normal two hands, weight-supported objects. No invented biblical lettering, divine person or claim of exact historical likeness.
 Extra framing check: BOTH whole sandal soles must remain inside the canvas with at least40px clear transparent bottom margin; leave40px above the complete hair. Never crop toes, crown or a prop.
 ```
+
+# Revisão de tons · S03_v2
+
+Três edições ImageGen integrado para duas pinturas finais; a primeira tentativa do estilo2 ficou sutil e foi refinada. Image1 é alvo; outras imagens são somente referências de cor.
+
+## raro_labao · estilo1 · skin-4 · pintura final selecionada
+
+```text
+Use case: identity-preserve / precise-object-edit. EDIT TARGET Image1 ONLY is the exact full-body LABAN (raro_labao) STYLE1 painting. Change ONLY exposed SKIN COMPLEXION of this SAME character. Image2 is the APPROVED LIGHT TONE2 COLOR reference (Eliezer style1); DO NOT borrow its face, age, bald scalp, hair, pose, clothes, bag or props. Image3 is LABAN STYLE3 DEEP TONE6 COLOR reference only, which stays unchanged. Image4 is the technical palette: swatches LEFT to RIGHT tone1 #F5D6BF,2 #E8BC95,3 #CF9A6C,4 #AC764B,5 #865233,6 #5A3721. Do not paint a palette.
+
+MANDATORY TONE4: a clearly MEDIUM BROWN base pigment #AC764B, visible INTERMEDIATE between LIGHT tone2 Image2 and the DEEP DARK tone6 Image3. Repaint the entire exposed skin to this middle brown, moderately lighter than the current compressed dark look. Natural neutral warm brown shading, no orange color cast, no deep espresso substitute. When the three styles are compared this one must be a clear middle step, not nearly as pale as2 or as deep as3.
+
+Repaint ALL exposed skin consistently: forehead, ears, eyelids, cheeks, nose, neck, both forearms, BOTH hands/fingers, lower legs and feet. Preserve his exact BROAD TRAPEZOID face, short forehead, long broad low-bridge nose, large wide-set eyes, thick curved brows, long curved moustache and broad-bottom beard; same facial bone anatomy, gaze and apparent age. NO change to scalp hairstyle: same DARK BROWN voluminous rounded afro. Same exact beard/moustache COLOR and outline. No bleaching hair while lightening skin.
+
+STRICT INVARIANTS: same full-body pose, anatomy, TWO connected hands and natural staff grip, shepherd crook and pouch, ochre tunic, walnut mantle, teal/cream geometric trim, all folds/colors/cloth detail, sandals and complete framing. Keep fine PAINTED2.5D materials and warm upper-left light, but no orange skin grade. Do not sharpen into faceted polygons, do not add new textures or jewelry. RGBA1024x1536 with every foot/prop inside margins. TRUE TRANSPARENT alpha-zero background: no haze, bloom, ground shadow rectangle, text, UI or swatches. ONLY skin pigment changes; no new face, costume, hairstyle or accessory.
+```
+
+## raro_labao · estilo2 · skin-2 · primeira tentativa de contraste, não selecionada
+
+```text
+Use case: identity-preserve / precise-object-edit. EDIT TARGET Image1 ONLY is the exact full-body LABAN (raro_labao) STYLE2 painting. Change ONLY exposed SKIN COMPLEXION of this SAME character. Image2 is the APPROVED LIGHT TONE2 COLOR reference (Eliezer style1); DO NOT borrow its face, age, bald scalp, hair, pose, clothes, bag or props. Image3 is LABAN STYLE3 DEEP TONE6 COLOR reference only, which stays unchanged. Image4 is the technical palette: swatches LEFT to RIGHT tone1 #F5D6BF,2 #E8BC95,3 #CF9A6C,4 #AC764B,5 #865233,6 #5A3721. Do not paint a palette.
+
+MANDATORY TONE2: make a SUBSTANTIAL VISIBLE correction to genuinely LIGHT WARM PEACH-BEIGE skin, base pigment #E8BC95, like the LIGHT complexion family of Image2 (approved Eliezer style1). Image1 currently looks medium tan and was rejected for that. Make face AND hands/feet clearly lighter, with pale peach highlights and restrained soft rose-beige shadows, not caramel/orange/bronze suntan. This is LIGHT tone2, not medium tone3/4 and not darker than Image2. Preserve natural painted volume, not chalk-white flat paint.
+
+Repaint ALL exposed skin consistently: forehead, ears, eyelids, cheeks, nose, neck, both forearms, BOTH hands/fingers, lower legs and feet. Preserve his exact BROAD TRAPEZOID face, short forehead, long broad low-bridge nose, large wide-set eyes, thick curved brows, long curved moustache and broad-bottom beard; same facial bone anatomy, gaze and apparent age. NO change to scalp hairstyle: same BLACK LONG hair. Same exact beard/moustache COLOR and outline. No bleaching hair while lightening skin.
+
+STRICT INVARIANTS: same full-body pose, anatomy, TWO connected hands and natural staff grip, shepherd crook and pouch, ochre tunic, walnut mantle, teal/cream geometric trim, all folds/colors/cloth detail, sandals and complete framing. Keep fine PAINTED2.5D materials and warm upper-left light, but no orange skin grade. Do not sharpen into faceted polygons, do not add new textures or jewelry. RGBA1024x1536 with every foot/prop inside margins. TRUE TRANSPARENT alpha-zero background: no haze, bloom, ground shadow rectangle, text, UI or swatches. ONLY skin pigment changes; no new face, costume, hairstyle or accessory.
+```
+
+## raro_labao · estilo2 · skin-2 · pintura final selecionada
+
+```text
+Use case: precise-object-edit / identity-preserve. Image1 is the EXACT Laban STYLE2 painting to correct. Make his exposed skin VISIBLY and SUBSTANTIALLY LIGHTER to LIGHT IVORY PEACH-BEIGE catalog TONE2 #E8BC95 (RGB232,188,149 base pigment). The prior correction was far too subtle: the face remains sun-tanned orange-brown. DO NOT preserve that orange facial pigment. This needs a distinct LIGHT complexion, with soft pale peach/rose-beige highlights and subtle beige shadows rather than bronze/brown shadows. Image2 is APPROVED TONE2 COLOR ONLY, the light complexion of the representative Zelophehad daughter style1; match that LIGHT complexion family. Do NOT copy her female face, hair, clothing or pose. Image3 is six technical swatches LEFT to RIGHT tones1..6; use the SECOND swatch, not the third/fourth. Do not paint palette/swatches.
+Repaint ALL exposed skin consistently, particularly the FOREHEAD, CHEEKS, NOSE, EYELIDS, EARS and NECK, plus BOTH hands, fingers, legs and feet. His face must be as light as the pale hands, not a brown face over pale hands. Retain organic painterly shading, do not make a flat white mask. Garment lighting can remain warm; neutralize orange cast ONLY on skin.
+Keep EXACT same masculine unique BROAD TRAPEZOID face, wide-set brown eyes, big broad nose, brows, short forehead, long curved BLACK moustache and dense BLACK beard outline/color, same BLACK LONG hair, age and expression. NO changing facial geometry, eyes, sex, hairstyle, hair/beard color, pose or anatomy. All ochre/walnut/teal/cream garments, folds, materials, crook, pouch, hand grips, sandals, jewelry and entire framing remain unchanged. Premium PAINTED2.5D, no new facets, sharpening or costume textures. ONE entire1024x1536 figure. TRUE TRANSPARENT alpha0 background, no haze, glow, floor shadow, rectangle, UI or text. ONLY exposed skin pigment changes; make this a clearly LIGHT style2 compared with the medium style1 and deep style3.
+```

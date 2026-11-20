@@ -1,4 +1,4 @@
-# Jornada Bíblica · S03
+# Jornada Bíblica · S03_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit f2bbdd0. Briefing: LOTES.md; contrato: TEMPORADA-1-EXODO.md §2.
 
@@ -38,3 +38,15 @@ Cada personagem tem somente a apresentação do próprio sexo, na raiz do seu ID
 Conferir ZIP e .zip.sha256 de cada lote, somas, arte, diferenças de pele, rostos, mãos e objetos. Aplicar pelo fluxo oficial scripts/skins-add-lot.mjs S03 e scripts/gen-skin-art.mjs. Rodar unitários, SQL, skins-audit, marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch com commit e resultado completo.
 
 O Codex alterou somente arte e arquivos de entrega locais, sem migração ou banco. A integração oficial fica com o Claude. O usuário autorizou envio direto, aguardar revisão, corrigir apontamentos e avançar automaticamente após o fechamento do ciclo. Até dois lotes nesta entrega: S03/S04.
+
+## Correção de tons · S03_v2
+
+Revisão solicitada no §25 de PARA-O-CODEX, base integrada802b37d. Não é lote novo e não requer migração. Corrigidas somente duas pinturas de raro_labao:
+
+- estilo2: tom2 claro(#E8BC95), na família clara de Eliézer estilo1.
+- estilo1: tom4 médio(#AC764B), visivelmente intermediário entre o2claro e o3escuro.
+- estilo3(tom6): preservado byte a byte.
+
+Rosto, bigode/barba, penteados/cores, idade aparente, traje, cajado/bolsa, mãos, IDs, estilos e âncoras preservados. Os outros43assets, incluindo as seis fichas, são byte a byte idênticos ao S03_final. Mudaram4 WebPs de corpo(2bases+2ampliações) e1 ícone(Labão,estilo1). As capturas de Labão e as duas galerias foram atualizadas. Comparacao_Tons_S03_v2.png mostra antes/depois; VALIDACAO.json traz hashes antigos/novos dos5assets alterados.
+
+Enviar este S03_v2 completo e seu .zip.sha256. Conferir, aprovar os dois tons e aplicar apenas os5assets alterados. Preservar banco, catálogo, fichas e regras. Confirmar também o fechamento do ciclo oficial de S03/S04 e a auditoria com109skins antes de seguir automaticamente para S05/S06. S04 permanece aprovado, sem reenvio.

@@ -1,6 +1,6 @@
 {
   "lot": "S03",
-  "sourceCommit": "f2bbdd0",
+  "sourceCommit": "802b37d",
   "skins": 6,
   "paintings": 18,
   "bodyWebps": 36,
@@ -110,7 +110,7 @@
     {
       "id": "raro_labao",
       "style": "estilo-1",
-      "bytes": 265056,
+      "bytes": 244066,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -142,14 +142,14 @@
     {
       "id": "raro_labao",
       "style": "estilo-2",
-      "bytes": 252852,
-      "floor": 1450,
+      "bytes": 230988,
+      "floor": 1449,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2901,
+        "floor": 2900,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -587,5 +587,50 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S03_v2",
+    "baseIntegrada": "802b37d",
+    "escopo": "Somente tons de pele de Labão1/2; fichas e demais assets preservados.",
+    "pinturas": [
+      {
+        "id": "raro_labao",
+        "estilo": 1,
+        "tom": "skin-4"
+      },
+      {
+        "id": "raro_labao",
+        "estilo": 2,
+        "tom": "skin-2"
+      }
+    ],
+    "assetsAlterados": [
+      {
+        "arquivo": "raro_labao/icone.webp",
+        "antes": "a844cf9e507fa775f129ee9d39ea7bd51ce81589dbead0f195265a3ee995a979",
+        "depois": "cca5bc81312ecedd3d05c5e030288aff56894f8ee953b5982b450335cef37dfc"
+      },
+      {
+        "arquivo": "raro_labao/estilo-1/corpo.webp",
+        "antes": "68930acd3a03e64f8b8b2c865a4fa52f546b1f55bfaf57012a779d68829bdad2",
+        "depois": "c71835df36f7c9e603c417f7d598788fec1eeb32a96e5fbbc9a77656d6d7b173"
+      },
+      {
+        "arquivo": "raro_labao/estilo-1/corpo@2x.webp",
+        "antes": "d8ad67acf04fd4319cfab0cd1c1154ab74418db559cdfd4df72fb80de2136445",
+        "depois": "3e7bedf2cf1faf4364968cdef9151aad1c94abd2176f632ba44da5119db5874c"
+      },
+      {
+        "arquivo": "raro_labao/estilo-2/corpo.webp",
+        "antes": "4d698e62955d014c7794089e3166f2d787ee8a131e23fe1204a01b8185e19de7",
+        "depois": "3a8a3d7909a58445cca6b0dd448df1804788a5ec404ba8886b06d0ebe5672394"
+      },
+      {
+        "arquivo": "raro_labao/estilo-2/corpo@2x.webp",
+        "antes": "a30a745443b0ad820ce21a7b4bdff90bd43e92e3e8378ee665db600246232f1c",
+        "depois": "483c42b881ff1104892ffa2fd580531dd2c942b055c684369be3046bbb746b97"
+      }
+    ],
+    "assetsIdenticos": 43
+  }
 }
