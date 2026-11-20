@@ -1,6 +1,6 @@
 {
   "lot": "S06",
-  "sourceCommit": "6c28220",
+  "sourceCommit": "b56ea02",
   "skins": 6,
   "paintings": 18,
   "bodyWebps": 36,
@@ -238,7 +238,7 @@
     {
       "id": "raro_baraque",
       "style": "estilo-2",
-      "bytes": 192834,
+      "bytes": 195470,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -587,5 +587,30 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S06_v2",
+    "baseIntegrada": "b56ea02",
+    "escopo": "Somente tom de pele de Baraque2; fichas, ícones, estilos1/3 e demais assets preservados.",
+    "pinturas": [
+      {
+        "id": "raro_baraque",
+        "estilo": 2,
+        "tom": "skin-4"
+      }
+    ],
+    "assetsAlterados": [
+      {
+        "arquivo": "raro_baraque/estilo-2/corpo.webp",
+        "antes": "1d476d868aa37235eeae9f43eea3b95de14dab376979920063ff4cb345fc230f",
+        "depois": "7e71130c31fc77d38a3a58bd72f148c8b2f70144d8796cb516a8c656530d7baf"
+      },
+      {
+        "arquivo": "raro_baraque/estilo-2/corpo@2x.webp",
+        "antes": "552bf14f922e9629b327e2c87ddceef674e8d8b547c6c4656aa3538b721086f6",
+        "depois": "ccdd0c778a7a4e0346e45bf75534c82897500d46d41746209787545823709204"
+      }
+    ],
+    "assetsIdenticos": 46
+  }
 }

@@ -265,5 +265,17 @@
       "identidadeFacial": "Adulto maduro; rosto curto em diamante, testa larga baixa, maçãs grandes, maxilar curto forte, nariz curto de ponte irregular, olhos pequenos afastados e sobrancelhas grossas oblíquas; barba curta quadrada e expressão séria contida."
     }
   ],
-  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "revisao": {
+    "id": "S06_v2",
+    "baseIntegrada": "b56ea02",
+    "pinturas": [
+      {
+        "id": "raro_baraque",
+        "style": 2,
+        "tom": "skin-4"
+      }
+    ],
+    "escopo": "Somente tom de pele de Baraque2; estilos1/3, fichas, ícones e todos os demais assets preservados."
+  }
 }

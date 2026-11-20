@@ -1,4 +1,4 @@
-# Jornada Bíblica · S06
+# Jornada Bíblica · S06_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit 6c28220. Briefing: LOTES.md; contrato: TEMPORADA-1-EXODO.md §2.
 
@@ -38,3 +38,11 @@ Cada personagem tem somente a apresentação do próprio sexo, na raiz do seu ID
 Conferir ZIP e .zip.sha256 de cada lote, somas, arte, diferenças de pele, rostos, mãos e objetos. Aplicar pelo fluxo oficial scripts/skins-add-lot.mjs S06 e scripts/gen-skin-art.mjs. Rodar unitários, SQL, skins-audit, marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch com commit e resultado completo.
 
 O Codex alterou somente arte e arquivos de entrega locais, sem migração ou banco. A integração oficial fica com o Claude. O usuário autorizou envio direto, aguardar revisão, corrigir apontamentos e avançar automaticamente após o fechamento do ciclo. Até dois lotes nesta entrega: S05/S06.
+
+## Correção de tom · S06_v2
+
+Revisão do §26 de PARA-O-CODEX, base integrada b56ea02. Uma única pintura corrigida: raro_baraque estilo2, tom4 médio(#AC764B), entre o estilo1 claro(tom2) e o estilo3 escuro(tom5). Referência de cor: Labão estilo1 v2 já aprovado. Rosto próprio, barba, cabelo longo liso ruivo, traje, mãos, escudo, IDs e âncoras preservados. Sem migração, banco ou alteração de catálogo.
+
+Mudaram somente2assets: corpo.webp e corpo@2x.webp do estilo2. Os outros46assets, incluindo as seis fichas e todos os ícones, ficaram byte a byte iguais ao S06_final. Os estilos1/3 de Baraque e as outras17pinturas não mudam. Capturas320/412 de Baraque e galerias atualizadas; Comparacao_Tons_S06_v2.png compara1claro/2antes/2depois/3escuro. VALIDACAO.json traz hashes antigos/novos dos2assets.
+
+Uma nova edição ImageGen para uma pintura selecionada; PROMPTS preserva os22registros do S06 e acrescenta esta revisão(23registros). Enviar só S06_v2 e seu .zip.sha256. S05 continua aprovado, sem reenvio. Aguardar revisão/integração e confirmação dos checks antes de S07/S08.

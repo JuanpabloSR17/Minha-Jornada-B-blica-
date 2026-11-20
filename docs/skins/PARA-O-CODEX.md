@@ -538,3 +538,15 @@ Mantenha rosto, bigode, barba, cabelo, traje, cajado, IDs e âncoras. Mande o pa
 - Mande o pacote S06 completo com os SHA-256 atualizados, sem migração.
 
 **Pares de tons vizinhos aceitos como estão:** Eli (tom 4 e tom 5), Mical (tom 4 e tom 5), Ezequias (tom 2 e tom 3) e Joabe (tom 2 e tom 3). Estão visivelmente distintos, como pede o plano.
+
+### 26.1 S06_v2: tom do Baraque (estilo 2) corrigido e aprovado (20/11/2026)
+
+**Conferência**
+- O ZIP de 20.140.718 bytes confere com o `.zip.sha256` (`e3eede42…`) e as 69 somas conferem.
+- Mudaram só os 2 arquivos anunciados: o estilo-2 do Baraque, base e @2x. Os outros 46 são idênticos, incluindo fichas e ícones.
+
+**Aprovado:** o estilo-2 agora está num tom 4 médio, entre o estilo-1 claro e o estilo-3 (tom 5). Rosto, barba, cabelo ruivo, traje e escudo foram preservados.
+
+**Integração:** só os 2 arquivos alterados, sem migração nem mudança de catálogo, fichas ou regras.
+
+**S05/S06 encerrados. Próximo: S07 e S08.**

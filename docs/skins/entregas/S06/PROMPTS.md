@@ -349,3 +349,19 @@ CHECK entire body1024x1536, true transparent alpha, COMPACT OPAQUE hair contours
 
 Image2 is a TECHNICAL SKIN COLOR SWATCH REFERENCE ONLY: its six swatches run left to right skin1,skin2,skin3,skin4,skin5,skin6. Repaint exposed human skin in the neutral-light family of this exact requested swatch, preserving natural dimensional shadows and highlights. A skin1/2 must actually read LIGHT, a skin3/4 MEDIUM, a skin5/6 DARK; never let orange lighting collapse these tones. Do NOT draw any board or swatches. Keep the specified figure and true transparent canvas.
 ```
+
+# Revisão de tom · S06_v2
+
+Uma edição integrada para uma pintura. Image1 é alvo; Image2 é referência de tom4; Images3/4 são os estilos1/3 preservados; Image5 é a paleta técnica.
+
+## raro_baraque · estilo2 · skin-4 · pintura final corrigida
+
+```text
+Use case: identity-preserve / precise-object-edit. Image1 is the TARGET exact full-body BARAK skin (raro_baraque) STYLE2 with LONG STRAIGHT COPPER hair. This target was rejected because its skin is nearly as LIGHT as style1. Make a SUBSTANTIAL SKIN-PIGMENT correction ONLY, not a subtle color-grade. Repaint ALL exposed skin to catalog MEDIUM BROWN TONE4, base#AC764B, about20-25percent DARKER in the skin midtones than this current light target. Image2 is the APPROVED MEDIUM TONE4 COLOR REFERENCE (Laban style1 v2): borrow ONLY its complexion family, not its face, age, afro, moustache, clothes or staff. Image3 is BARAK STYLE1 LIGHT TONE2, which stays unchanged. Image4 is BARAK STYLE3 DEEP TONE5, which stays unchanged. The corrected style2 MUST read as a clear MIDDLE BROWN step between Image3 light and Image4 deep, like the neutral medium family in Image2. Image5 is the technical palette, swatches left-to-right skin1..6; FOURTH swatch is the target. No palette drawn.
+
+Repaint forehead, eyelids, nose, cheeks, ears, neck, BOTH forearms, BOTH hands/fingers, exposed knees, lower legs and feet consistently. Natural painted highlights and shadows, but NOT the current pale peach/caramel skin. No orange light wash, gray skin or deep espresso substitution.
+
+STRICTLY PRESERVE this target own LONG LEAN RECTANGULAR face, narrow forehead, long straight nose, narrow close-set eyes, low horizontal brows, full rounded beard and expression. SAME COPPER LONG STRAIGHT scalp hair, same COPPER beard/moustache shape and color, same eyes and apparent age. No new face or hairstyle. Preserve exactly the gray-olive tunic, plain brown leather torso protection, mustard mantle, slate-blue woven edging, cream sash, sandals/leg wraps, sheathed sword, round wooden SHIELD, two connected arms/hands and coherent grip, pose, folds, materials and framing. Do not add flowers, brocade pattern, new ornament, weapon or cloth detail.
+
+Same premium PAINTED2.5D brushwork and neutral upper-left light, not CGI/faceted/plastic. Single full-body RGBA1024x1536, soles and all props intact inside canvas. TRUE TRANSPARENT exterior alpha0, compact clean hair edges, no disconnected wisps, haze, bloom, shadow rectangle, text, divine figure or extra person. Only SKIN pigmentation changes, strongly and visibly.
+```
