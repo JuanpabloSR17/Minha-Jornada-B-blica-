@@ -4,36 +4,6 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 **Apóstolos:** Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.
 
-## S01 · Personagens · Origens
-
-- **Traje de Raquel** (`epico_raquel`), Épica, Gn 29:9. Traje: Pastora com cajado, lenço de cabeça. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-darkbrown, hair-ponytail · estilo-2: skin-4, haircolor-black, hair-long-wavy · estilo-3: skin-5, haircolor-copper, hair-braids
-- **Traje de Lia** (`epico_lia`), Épica, Gn 29:16-17. Traje: Véu, vestes de casa. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-brown, hair-bun · estilo-2: skin-6, haircolor-black, hair-long-wavy · estilo-3: skin-2, haircolor-auburn, hair-ponytail
-- **Traje de Abel** (`epico_abel`), Épica, Gn 4:2-4. Traje: Pastor com cordeiro primogênito. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-honey, hair-shaved · estilo-2: skin-3, haircolor-black, hair-wavy · estilo-3: skin-5, haircolor-brown, hair-locs
-- **Traje de Enoque** (`epico_enoque`), Épica, Gn 5:24. Traje: Manto claro, olhar para o alto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-auburn, hair-long · estilo-2: skin-1, haircolor-blond, hair-short · estilo-3: skin-5, haircolor-copper, hair-shaved
-- **Traje de Melquisedeque** (`epico_melquisedeque`), Épica, Gn 14:18. Traje: Rei e sacerdote: pão e vinho. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-locs · estilo-2: skin-3, haircolor-darkbrown, hair-shaved · estilo-3: skin-6, haircolor-brown, hair-short
-- **Traje de Agar** (`epico_agar`), Épica, Gn 21:19. Traje: Odre de água, manto do deserto. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-darkbrown, hair-long-wavy · estilo-2: skin-5, haircolor-auburn, hair-ponytail · estilo-3: skin-2, haircolor-black, hair-braids
-
-## S02 · Personagens · Origens
-
-- **Traje de Ismael** (`epico_ismael`), Épica, Gn 21:20. Traje: Arqueiro do deserto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-brown, hair-long · estilo-2: skin-2, haircolor-darkbrown, hair-afro · estilo-3: skin-3, haircolor-auburn, hair-curly
-- **Traje de Esaú** (`epico_esau`), Épica, Gn 25:25-27. Traje: Caçador do campo, manto peludo ruivo cor de ferrugem (Gn 25:25 descreve o recém-nascido avermelhado e peludo; a cor do cabelo segue os estilos). Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-brown, hair-curly · estilo-2: skin-6, haircolor-darkbrown, hair-afro · estilo-3: skin-4, haircolor-black, hair-short
-- **Traje de Judá** (`epico_juda`), Épica, Gn 38:18; 49:9. Traje: Selo, cordão e cajado, leão no bordado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-auburn, hair-shaved · estilo-2: skin-4, haircolor-black, hair-long · estilo-3: skin-1, haircolor-brown, hair-short
-- **Traje de Benjamim** (`epico_benjamim`), Épica, Gn 44:12. Traje: Saco de cereal com a taça de prata. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-auburn, hair-shaved · estilo-2: skin-1, haircolor-honey, hair-curly · estilo-3: skin-4, haircolor-black, hair-locs
-- **Traje de Calebe** (`epico_calebe`), Épica, Nm 13:30; Js 14:11. Traje: Guerreiro idoso e forte, cacho de uvas de Escol. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-copper, hair-afro · estilo-2: skin-5, haircolor-darkbrown, hair-shaved · estilo-3: skin-3, haircolor-brown, hair-curly
-- **Traje de Eleazar** (`epico_eleazar`), Épica, Nm 20:28. Traje: Vestes sacerdotais herdadas de Arão. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-blond, hair-curly · estilo-2: skin-5, haircolor-auburn, hair-afro · estilo-3: skin-3, haircolor-brown, hair-short
-
 ## S03 · Personagens · Origens
 
 - **Traje de Finéias** (`epico_fineias`), Épica, Nm 25:11. Traje: Sacerdote com lança. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

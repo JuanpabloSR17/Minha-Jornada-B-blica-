@@ -440,3 +440,27 @@ A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lot
 **Pendente, sem mudança agora:** a possível duplicidade entre Judas irmão de Tiago e Tadeu fica para o lote correspondente, preservando IDs e posses.
 
 **Próximo: S01 e S02**, quando autorizado.
+
+## 24. Lotes S01 e S02: aplicados (20/11/2026), com 4 pinturas de S02 a corrigir
+
+**Conferência**
+- **S01_final:** o ZIP de 18.996.357 bytes confere com o `.zip.sha256` (`acafc64d…`) e as 67 somas conferem.
+- **S02_final:** o ZIP de 20.502.340 bytes confere com o `.zip.sha256` (`74292b8c…`) e as 67 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas, e um único sexo por personagem.
+
+**Aprovado:** S01 inteiro e S02 menos as pinturas abaixo.
+- Raquel, Lia e Agar aparecem só como femininas.
+- Abel segura o cordeiro com dois braços.
+- Enoque não tem figura divina.
+- Esaú tem o manto ferrugem e Calebe aparece maduro.
+- Eleazar tem 12 pedras e Benjamim aparece com trigo e sem cena de roubo.
+- As mãos e os objetos estão corretos.
+
+**Migrações:** `20261202001200_skins_s01.sql` e `20261202001300_skins_s02.sql`, com as regras de leitura de cada personagem.
+
+**Correção pedida (S02_v2): o tom 1, a pele mais clara, não aparece.** A comparação está em `docs/skins/entregas/S02/Tons_a_corrigir.png`.
+- `epico_esau` **estilo-1** (tom 1, cacheado castanho) tem a pele igual à do estilo-3 (tom 4). Clarear para o tom 1, como o Benjamim estilo-2 ou o Paulo estilo-3.
+- `epico_calebe` **estilo-1** (tom 1, crespo cobre) e **estilo-3** (tom 3, cacheado castanho) estão com a mesma pele. O estilo-1 deve ficar claramente tom 1 e o estilo-3 tom 3, um meio-termo visível entre o 1 e o 5 do estilo-2.
+- `epico_juda` **estilo-3** (tom 1, curto) parece tom 3 ou 4. Clarear para o tom 1.
+
+Mantenha o rosto (`identidadeFacial`), o cabelo, o traje, os objetos, os IDs e as âncoras. Troque só as pinturas, o `corpo@2x` e, se mudar, o ícone dessas skins. Mande o pacote completo de S02 com os SHA-256 atualizados, sem migração.

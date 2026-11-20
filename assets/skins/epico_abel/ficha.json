@@ -1,0 +1,49 @@
+{
+  "id": "epico_abel",
+  "nome": "Traje de Abel",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Gn 4:2-4",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-locs"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto trapezoidal curto de mandíbula larga, testa baixa, nariz pequeno arrebitado, olhos redondos próximos e sobrancelhas retas espessas; barba curta só no queixo e bigode delicado, expressão gentil."
+}

@@ -1,8 +1,8 @@
 # Status da produção de skins
 
-Gerado por `node scripts/skin-status.mjs` em 2026-11-19. Fonte do plano: `docs/skins/plano-lotes.json`.
+Gerado por `node scripts/skin-status.mjs` em 2026-11-20. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 85 de 289 skins prontas no app.
+**Progresso:** 97 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -156,27 +156,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Estêvão com rosto de anjo (`glorioso_estevao_com_rosto_de_anjo`) | Gloriosa | igreja | ✔ | — | lendo: Concluir o mundo Caminhos da Igreja (22 livros) |
 | ✅ | João em Patmos (`glorioso_joao_em_patmos`) | Gloriosa | nova-criacao | ✔ | — | lendo: Concluir o mundo Visão da Nova Criação (1 livro) |
 
-## S01 · Personagens · Origens (0/6)
+## S01 · Personagens · Origens (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Raquel (`epico_raquel`) | Épica | origens | — | — | Ler a história de Raquel (Gn 29:9) |
-| ⬜ | Traje de Lia (`epico_lia`) | Épica | origens | — | — | Ler a história de Lia (Gn 29:16-17) |
-| ⬜ | Traje de Abel (`epico_abel`) | Épica | origens | — | — | Ler a história de Abel (Gn 4:2-4) |
-| ⬜ | Traje de Enoque (`epico_enoque`) | Épica | origens | — | — | Ler a história de Enoque (Gn 5:24) |
-| ⬜ | Traje de Melquisedeque (`epico_melquisedeque`) | Épica | origens | — | — | Ler a história de Melquisedeque (Gn 14:18) |
-| ⬜ | Traje de Agar (`epico_agar`) | Épica | origens | — | — | Ler a história de Agar (Gn 21:19) |
+| ✅ | Traje de Raquel (`epico_raquel`) | Épica | origens | ✔ | — | lendo: Ler a história de Raquel (Gn 29:9) |
+| ✅ | Traje de Lia (`epico_lia`) | Épica | origens | ✔ | — | lendo: Ler a história de Lia (Gn 29:16-17) |
+| ✅ | Traje de Abel (`epico_abel`) | Épica | origens | ✔ | — | lendo: Ler a história de Abel (Gn 4:2-4) |
+| ✅ | Traje de Enoque (`epico_enoque`) | Épica | origens | ✔ | — | lendo: Ler a história de Enoque (Gn 5:24) |
+| ✅ | Traje de Melquisedeque (`epico_melquisedeque`) | Épica | origens | ✔ | — | lendo: Ler a história de Melquisedeque (Gn 14:18) |
+| ✅ | Traje de Agar (`epico_agar`) | Épica | origens | ✔ | — | lendo: Ler a história de Agar (Gn 21:19) |
 
-## S02 · Personagens · Origens (0/6)
+## S02 · Personagens · Origens (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Ismael (`epico_ismael`) | Épica | origens | — | — | Ler a história de Ismael (Gn 21:20) |
-| ⬜ | Traje de Esaú (`epico_esau`) | Épica | origens | — | — | Ler a história de Esaú (Gn 25:25-27) |
-| ⬜ | Traje de Judá (`epico_juda`) | Épica | origens | — | — | Ler a história de Judá (Gn 38:18; 49:9) |
-| ⬜ | Traje de Benjamim (`epico_benjamim`) | Épica | origens | — | — | Ler a história de Benjamim (Gn 44:12) |
-| ⬜ | Traje de Calebe (`epico_calebe`) | Épica | origens | — | — | Ler a história de Calebe (Nm 13:30; Js 14:11) |
-| ⬜ | Traje de Eleazar (`epico_eleazar`) | Épica | origens | — | — | Ler a história de Eleazar (Nm 20:28) |
+| ✅ | Traje de Ismael (`epico_ismael`) | Épica | origens | ✔ | — | lendo: Ler a história de Ismael (Gn 21:20) |
+| ✅ | Traje de Esaú (`epico_esau`) | Épica | origens | ✔ | — | lendo: Ler a história de Esaú (Gn 25:25-27) |
+| ✅ | Traje de Judá (`epico_juda`) | Épica | origens | ✔ | — | lendo: Ler a história de Judá (Gn 38:18; 49:9) |
+| ✅ | Traje de Benjamim (`epico_benjamim`) | Épica | origens | ✔ | — | lendo: Ler a história de Benjamim (Gn 44:12) |
+| ✅ | Traje de Calebe (`epico_calebe`) | Épica | origens | ✔ | — | lendo: Ler a história de Calebe (Nm 13:30; Js 14:11) |
+| ✅ | Traje de Eleazar (`epico_eleazar`) | Épica | origens | ✔ | — | lendo: Ler a história de Eleazar (Nm 20:28) |
 
 ## S03 · Personagens · Origens (0/6)
 

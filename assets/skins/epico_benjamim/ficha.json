@@ -1,0 +1,49 @@
+{
+  "id": "epico_benjamim",
+  "nome": "Traje de Benjamim",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Gn 44:12",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-locs"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto quadrado suave de bochechas redondas, queixo curto com covinha, nariz curto de ponta redonda, olhos grandes bem afastados e sobrancelhas finas retas; bigode discreto sem barba, expressão levemente surpresa."
+}

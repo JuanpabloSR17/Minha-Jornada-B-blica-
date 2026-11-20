@@ -1,0 +1,49 @@
+{
+  "id": "epico_eleazar",
+  "nome": "Traje de Eleazar",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Nm 20:28",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto maduro; rosto oblongo de maçãs largas, maxilar estreito e queixo plano, nariz reto de base curta, olhos horizontais afastados, sobrancelhas finas elevadas e barba curta redonda; expressão concentrada tranquila."
+}

@@ -1652,6 +1652,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "epico_raquel",
+   "name": "Traje de Raquel",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 29:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-braids"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_lia",
+   "name": "Traje de Lia",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 29:16-17",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_abel",
+   "name": "Traje de Abel",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 4:2-4",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_enoque",
+   "name": "Traje de Enoque",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 5:24",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_melquisedeque",
+   "name": "Traje de Melquisedeque",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 14:18",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_agar",
+   "name": "Traje de Agar",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 21:19",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_ismael",
+   "name": "Traje de Ismael",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 21:20",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_esau",
+   "name": "Traje de Esaú",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 25:25-27",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_juda",
+   "name": "Traje de Judá",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 38:18; 49:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_benjamim",
+   "name": "Traje de Benjamim",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Gn 44:12",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_calebe",
+   "name": "Traje de Calebe",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Nm 13:30; Js 14:11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_eleazar",
+   "name": "Traje de Eleazar",
+   "rarity": "epic",
+   "world": "origens",
+   "scriptureRef": "Nm 20:28",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

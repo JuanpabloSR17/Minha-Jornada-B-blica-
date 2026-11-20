@@ -1,0 +1,49 @@
+{
+  "id": "epico_enoque",
+  "nome": "Traje de Enoque",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Gn 5:24",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto maduro; rosto oval muito estreito e comprido, maçãs altas, nariz aquilino fino e comprido, olhos fundos estreitos, sobrancelhas finas elevadas e barba média afilada única; expressão contemplativa."
+}

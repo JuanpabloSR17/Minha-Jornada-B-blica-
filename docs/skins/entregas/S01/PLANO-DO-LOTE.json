@@ -1,0 +1,262 @@
+{
+  "commit": "bb88762",
+  "id": "S01",
+  "titulo": "Personagens · Origens",
+  "skins": [
+    {
+      "id": "epico_raquel",
+      "name": "Traje de Raquel",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 29:9",
+      "idea": "Pastora com cajado, lenço de cabeça",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            29
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Raquel (Gn 29:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-braids"
+        }
+      ]
+    },
+    {
+      "id": "epico_lia",
+      "name": "Traje de Lia",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 29:16-17",
+      "idea": "Véu, vestes de casa",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            29
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Lia (Gn 29:16-17)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-ponytail"
+        }
+      ]
+    },
+    {
+      "id": "epico_abel",
+      "name": "Traje de Abel",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 4:2-4",
+      "idea": "Pastor com cordeiro primogênito",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            4
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Abel (Gn 4:2-4)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        }
+      ]
+    },
+    {
+      "id": "epico_enoque",
+      "name": "Traje de Enoque",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 5:24",
+      "idea": "Manto claro, olhar para o alto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Enoque (Gn 5:24)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "epico_melquisedeque",
+      "name": "Traje de Melquisedeque",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 14:18",
+      "idea": "Rei e sacerdote: pão e vinho",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            14
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Melquisedeque (Gn 14:18)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        }
+      ]
+    },
+    {
+      "id": "epico_agar",
+      "name": "Traje de Agar",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 21:19",
+      "idea": "Odre de água, manto do deserto",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            21
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Agar (Gn 21:19)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_raquel",
+      "identidadeFacial": "Adulta jovem; rosto alongado em coração, testa ampla, queixo estreito arredondado, nariz longo reto de ponta fina, olhos amendoados afastados e sobrancelhas cheias arqueadas; expressão atenta acolhedora."
+    },
+    {
+      "id": "epico_lia",
+      "identidadeFacial": "Adulta; rosto arredondado em pera, bochechas inferiores cheias, queixo amplo curto, nariz curto de base larga, olhos próximos suaves e sobrancelhas baixas curvas; expressão serena digna."
+    },
+    {
+      "id": "epico_abel",
+      "identidadeFacial": "Adulto jovem; rosto trapezoidal curto de mandíbula larga, testa baixa, nariz pequeno arrebitado, olhos redondos próximos e sobrancelhas retas espessas; barba curta só no queixo e bigode delicado, expressão gentil."
+    },
+    {
+      "id": "epico_enoque",
+      "identidadeFacial": "Adulto maduro; rosto oval muito estreito e comprido, maçãs altas, nariz aquilino fino e comprido, olhos fundos estreitos, sobrancelhas finas elevadas e barba média afilada única; expressão contemplativa."
+    },
+    {
+      "id": "epico_melquisedeque",
+      "identidadeFacial": "Adulto maduro; rosto quadrado largo, testa curta, nariz largo de ponte baixa, olhos horizontais pequenos, sobrancelhas curvas separadas e barba densa de base angulada; expressão hospitaleira firme."
+    },
+    {
+      "id": "epico_agar",
+      "identidadeFacial": "Adulta; rosto angular em escudo, testa alta estreita, maçãs salientes e queixo largo arredondado, nariz comprido de base ampla, olhos grandes oblíquos e sobrancelhas assimétricas arqueadas; expressão resiliente aliviada."
+    }
+  ],
+  "pedidoUsuario": "Mesmo 2.5D, 3 estilos exatos, personagens só no próprio sexo, rosto próprio preservado por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

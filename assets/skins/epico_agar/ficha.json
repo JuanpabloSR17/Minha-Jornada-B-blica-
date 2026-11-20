@@ -1,0 +1,49 @@
+{
+  "id": "epico_agar",
+  "nome": "Traje de Agar",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Gn 21:19",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-ponytail"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-braids"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Adulta; rosto angular em escudo, testa alta estreita, maçãs salientes e queixo largo arredondado, nariz comprido de base ampla, olhos grandes oblíquos e sobrancelhas assimétricas arqueadas; expressão resiliente aliviada."
+}

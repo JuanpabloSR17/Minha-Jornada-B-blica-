@@ -1,0 +1,12 @@
+# Notas de adaptação · S02
+
+Skins completas inspiradas no briefing da enciclopédia, com rostos próprios e três estilos exatos do catálogo. Os detalhes visuais são escolhas artísticas; não são retratos autenticados nem cenas completas.
+
+- **Ismael:** adulto arqueiro do deserto, com arco em repouso e aljava. Gn 21:20 associa o personagem crescido à vida no deserto e ao arco. Não há ataque ou alvo humano. [Gênesis 21](https://bible.usccb.org/bible/genesis/21).
+- **Esaú:** alinhamento com o Claude registrado em **bb88762**. O manto peludo é ruivo/ferrugem; os cabelos continuam castanho, castanho-escuro e preto, conforme os três estilos. Gn 25:25 descreve o recém-nascido avermelhado e peludo; a skin não ensina uma cor exata de cabelo adulto como fato. A lança de caça em repouso é acessório artístico, sem violência. [Gênesis 25](https://bible.usccb.org/bible/genesis/25).
+- **Judá:** selo cilíndrico com cordão e cajado remetem a Gn 38:18. O pequeno leão bordado é referência simbólica à linguagem de Gn 49:9, não um animal presente na cena nem vestimenta literal documentada. [Gênesis 38](https://bible.usccb.org/bible/genesis/38), [Gênesis 49](https://bible.usccb.org/bible/genesis/49).
+- **Benjamim:** a taça aparece no saco de cereal. Gn 44:1–2 informa que ela foi colocada ali por ordem de José; a pintura não apresenta Benjamim como ladrão. O saco é apoiado por duas mãos, e a taça repousa no cereal. [Gênesis 44](https://bible.usccb.org/bible/genesis/44).
+- **Calebe:** idoso e forte, conforme o briefing e a fase de Js 14:10–11. As cores do catálogo permanecem; idade se expressa na anatomia facial e nas mãos. O cacho de Escol é um motivo reduzido para um único avatar. Nm 13:23 descreve dois carregadores; a skin não afirma que Calebe idoso carregou sozinho o cacho literal, nem junta os dois episódios como um só. Essa adaptação foi confirmada pelo Claude junto do alinhamento de Esaú. [Números 13](https://bible.usccb.org/bible/numbers/13), [Josué 14](https://bible.usccb.org/bible/joshua/14).
+- **Eleazar:** vestes sacerdotais herdadas de Arão remetem a Nm 20:28. O peitoral tem doze pedras, em quatro fileiras de três, inspirado em Êx 28:17–21. Materiais, cores das pedras e bordados são direção de arte; a identificação mineral varia nas traduções. A placa frontal não inclui escrita inventada. [Números 20](https://bible.usccb.org/bible/numbers/20), [Êxodo 28](https://bible.usccb.org/bible/exodus/28).
+
+Não há figura divina, anjo, nudez, sangue ou cena de agressão. Todos os personagens são adultos e têm apenas a apresentação do próprio sexo.

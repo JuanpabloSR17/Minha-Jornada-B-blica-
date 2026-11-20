@@ -1,0 +1,270 @@
+{
+  "commit": "bb88762",
+  "id": "S02",
+  "titulo": "Personagens · Origens",
+  "skins": [
+    {
+      "id": "epico_ismael",
+      "name": "Traje de Ismael",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 21:20",
+      "idea": "Arqueiro do deserto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            21
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ismael (Gn 21:20)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "epico_esau",
+      "name": "Traje de Esaú",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 25:25-27",
+      "idea": "Caçador do campo, manto peludo ruivo cor de ferrugem (Gn 25:25 descreve o recém-nascido avermelhado e peludo; a cor do cabelo segue os estilos)",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            25
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Esaú (Gn 25:25-27)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ]
+    },
+    {
+      "id": "epico_juda",
+      "name": "Traje de Judá",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 38:18; 49:9",
+      "idea": "Selo, cordão e cajado, leão no bordado",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            38
+          ],
+          [
+            "GEN",
+            49
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Judá (Gn 38:18; 49:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        }
+      ]
+    },
+    {
+      "id": "epico_benjamim",
+      "name": "Traje de Benjamim",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 44:12",
+      "idea": "Saco de cereal com a taça de prata",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            44
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Benjamim (Gn 44:12)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        }
+      ]
+    },
+    {
+      "id": "epico_calebe",
+      "name": "Traje de Calebe",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Nm 13:30; Js 14:11",
+      "idea": "Guerreiro idoso e forte, cacho de uvas de Escol",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "NUM",
+            13
+          ],
+          [
+            "JOS",
+            14
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Calebe (Nm 13:30; Js 14:11)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "epico_eleazar",
+      "name": "Traje de Eleazar",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Nm 20:28",
+      "idea": "Vestes sacerdotais herdadas de Arão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "NUM",
+            20
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Eleazar (Nm 20:28)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_ismael",
+      "identidadeFacial": "Adulto; rosto oval horizontal de maxilar curto forte, nariz reto de ponte larga, olhos estreitos afastados, sobrancelhas altas angulosas e barba curta rente bem desenhada; expressão vigilante calma."
+    },
+    {
+      "id": "epico_esau",
+      "identidadeFacial": "Adulto robusto; rosto retangular baixo muito largo, sobrancelhas salientes, nariz grande arredondado, olhos fundos pequenos, mandíbula quadrada e barba cheia arredondada; expressão resoluta."
+    },
+    {
+      "id": "epico_juda",
+      "identidadeFacial": "Adulto maduro; rosto longo em losango de têmporas estreitas, maçãs marcadas, nariz convexo comprido, olhos caídos afastados, sobrancelhas espessas oblíquas e barba em cunha; expressão ponderada."
+    },
+    {
+      "id": "epico_benjamim",
+      "identidadeFacial": "Adulto jovem; rosto quadrado suave de bochechas redondas, queixo curto com covinha, nariz curto de ponta redonda, olhos grandes bem afastados e sobrancelhas finas retas; bigode discreto sem barba, expressão levemente surpresa."
+    },
+    {
+      "id": "epico_calebe",
+      "identidadeFacial": "Idoso vigoroso; rosto largo em pentágono, testa alta vincada, nariz comprido de dorso achatado e ponta larga, olhos amendoados sob pálpebras pesadas, sobrancelhas baixas retas e barba curta triangular; expressão corajosa."
+    },
+    {
+      "id": "epico_eleazar",
+      "identidadeFacial": "Adulto maduro; rosto oblongo de maçãs largas, maxilar estreito e queixo plano, nariz reto de base curta, olhos horizontais afastados, sobrancelhas finas elevadas e barba curta redonda; expressão concentrada tranquila."
+    }
+  ],
+  "pedidoUsuario": "Mesmo 2.5D, 3 estilos exatos, personagens só no próprio sexo, rosto próprio preservado por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}
