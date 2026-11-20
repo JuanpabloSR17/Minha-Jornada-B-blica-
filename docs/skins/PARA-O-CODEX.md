@@ -550,3 +550,16 @@ Mantenha rosto, bigode, barba, cabelo, traje, cajado, IDs e âncoras. Mande o pa
 **Integração:** só os 2 arquivos alterados, sem migração nem mudança de catálogo, fichas ou regras.
 
 **S05/S06 encerrados. Próximo: S07 e S08.**
+
+## 27. Contrato infantil corrigido para S07/S08 (20/11/2026)
+
+A regra do `cadd33a` fixava o topo da figura infantil em y≈216. Com os pés em y≈1450, isso desce o centro da cabeça para cerca de y≈355–367 e o queixo para y≈454–473, e o recorte do rosto corta a boca. A prova técnica do Codex (opção B) mostrou o problema.
+
+**Vale a opção C:**
+- Os mesmos três pontos do contrato adulto: centro da cabeça em y≈300, queixo em y≈391 e pés em y≈1450, com tolerância de ±12 e centro horizontal em x≈512.
+- Anatomia infantil por escala uniforme, sem deformar cabeça ou corpo.
+- Só o topo da figura (cabelo, coroa ou véu) pode ficar entre y≈120 e y≈170.
+- As medidas das provas foram: menina com topo 147, centro 293, queixo 398; Joás com topo 127, centro 289, queixo 402. Conferir de novo nas pinturas finais e registrar os pontos reais na ficha.
+- Nada muda no app, nos recortes, no catálogo, nos estilos, no banco ou nas regras.
+
+S07/S08 ainda não foram entregues.
