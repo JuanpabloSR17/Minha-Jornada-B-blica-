@@ -1,6 +1,6 @@
 {
   "lot": "S02",
-  "sourceCommit": "bb88762",
+  "sourceCommit": "08262be",
   "skins": 6,
   "paintings": 18,
   "bodyWebps": 36,
@@ -110,7 +110,7 @@
     {
       "id": "epico_esau",
       "style": "estilo-1",
-      "bytes": 243058,
+      "bytes": 219816,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -270,7 +270,7 @@
     {
       "id": "epico_juda",
       "style": "estilo-3",
-      "bytes": 197706,
+      "bytes": 189852,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -398,7 +398,7 @@
     {
       "id": "epico_calebe",
       "style": "estilo-1",
-      "bytes": 217552,
+      "bytes": 208704,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -462,14 +462,14 @@
     {
       "id": "epico_calebe",
       "style": "estilo-3",
-      "bytes": 206212,
-      "floor": 1450,
+      "bytes": 206574,
+      "floor": 1449,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2901,
+        "floor": 2900,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -587,5 +587,85 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S02_v2",
+    "baseIntegrada": "08262be",
+    "escopo": "Somente tons de pele de quatro pinturas; fichas e demais assets preservados.",
+    "pinturas": [
+      {
+        "id": "epico_esau",
+        "estilo": 1,
+        "tom": "skin-1"
+      },
+      {
+        "id": "epico_calebe",
+        "estilo": 1,
+        "tom": "skin-1"
+      },
+      {
+        "id": "epico_calebe",
+        "estilo": 3,
+        "tom": "skin-3"
+      },
+      {
+        "id": "epico_juda",
+        "estilo": 3,
+        "tom": "skin-1"
+      }
+    ],
+    "assetsAlterados": [
+      {
+        "arquivo": "epico_calebe/icone.webp",
+        "antes": "560c99629988b91f6f9ace514ab58d61a0514454d0bcd8f3e03d26dd83f0b1de",
+        "depois": "4012903072ec7944596eb4ac2237d3c7ba0546f972d4c8ff7d3c2307979c5034"
+      },
+      {
+        "arquivo": "epico_esau/icone.webp",
+        "antes": "b893f389f55f676eee7b87233025cc6de601810c5ffc28f88a8f69c3711bb1fd",
+        "depois": "c438f13c4c84c2a3f3a6f4447b8b1c888c91ce9217050dcd341d5b6d6d66129a"
+      },
+      {
+        "arquivo": "epico_calebe/estilo-1/corpo.webp",
+        "antes": "37fe274302c17a307613433c8f1a13b5c11ebfc5513e06bfa3ec52b4e21050da",
+        "depois": "e354c091a3af0b56ebfdb8dec5192a2e4abed3ff8e31a8c77d2c6c502d6a4ead"
+      },
+      {
+        "arquivo": "epico_calebe/estilo-1/corpo@2x.webp",
+        "antes": "bea8185aad1e2e6e6511ca4744c43943d13858cc0007358c1c25eda0ca92f59f",
+        "depois": "d005b5dd61768e7034a0a389fdc934674e7fa94b17424e4d048093454235cdba"
+      },
+      {
+        "arquivo": "epico_calebe/estilo-3/corpo.webp",
+        "antes": "bfb319f0862da6e401391db41d6875723dc36e2281feb0cad0a42f3bcba73d6f",
+        "depois": "cc63ac645438000077a7eef45df98a62a0c0087c4f70fdca0d5a321885330da2"
+      },
+      {
+        "arquivo": "epico_calebe/estilo-3/corpo@2x.webp",
+        "antes": "f00aec51f75483d833456b13c2cf93a56e0356cb9ee066e940e8242081abf487",
+        "depois": "1bb6c10c029b994529c0261cc075a6974cdc8e1495f4d634fb9272882ef95f0c"
+      },
+      {
+        "arquivo": "epico_esau/estilo-1/corpo.webp",
+        "antes": "dcf4b725cad8164a05f81988b7daa3f63d007e183221694f19ec3327ef17bdc1",
+        "depois": "00b9e5cbbac74e690478db70601f14a35cc9c1f992557708af65babfca70414b"
+      },
+      {
+        "arquivo": "epico_esau/estilo-1/corpo@2x.webp",
+        "antes": "8bc875ac718ee399ab873d12c01fe3151141ad65df23c436e5f6b2178cda3c32",
+        "depois": "98426cc19660338c5c251b81d86d8d50245471d352d8e8ac6a17fd01f3db503e"
+      },
+      {
+        "arquivo": "epico_juda/estilo-3/corpo.webp",
+        "antes": "23504e985731cf9d472eb6f4657b2ea52f7d32c419238850a2db3d6e9ddc5fb6",
+        "depois": "2c796a61f4d175d13570d45664639a12cc96d8b81c965e02fd9506be0417a975"
+      },
+      {
+        "arquivo": "epico_juda/estilo-3/corpo@2x.webp",
+        "antes": "fc026cef7a38346789c9b928333a95dd04dbbc4aa44c66c54905cbf6feecaa26",
+        "depois": "ff81a4c56260c06dc2ac63293daf87fa5e46fb8c2809f274f47354f51254c7a0"
+      }
+    ],
+    "assetsIdenticos": 38
+  }
 }

@@ -135,10 +135,25 @@ async function login(page, email) {
     await login(B.page, s.ana.email);
     await page.goto(`${APP}/market`);
     await B.page.goto(`${APP}/market`);
+    // os dois aparelhos precisam mostrar o saldo ajustado antes de abrir as confirmações
+    const fmtN = (v) => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    for (const p of [page, B.page]) await p.getByText(`Saldo: ${fmtN(raceBalance)} Siclos`).first().waitFor();
+    // se a confirmação não abrir, mostra no log o aviso que o app exibiu (oferta virou, saldo, erro)
+    const openConfirm = async (p, it) => {
+      const pay = p.getByRole('button', { name: `Pagar ${fmtN(it.price)} Siclos` });
+      try { await pay.waitFor({ timeout: 30000 }); } catch (e) {
+        const known = ['Essa oferta terminou', 'Siclos insuficientes', 'já é sua', 'Compra aguardando confirmação'];
+        const notes = [];
+        for (const t of known) if (await p.getByText(t, { exact: false }).count()) notes.push(t);
+        notes.push(...(await p.getByRole('alert').allInnerTexts().catch(() => [])));
+        const day = (await conn.query(`select private.market_rotation_day(now())::text d`)).rows[0].d;
+        throw new Error(`confirmação de ${it.name} (${it.price}) não abriu; avisos na tela: ${JSON.stringify(notes)}; dia da vitrine no servidor: ${day}`);
+      }
+    };
     await page.getByRole('button', { name: `Comprar ${z.name}` }).click();
     await B.page.getByRole('button', { name: `Comprar ${w.name}` }).click();
-    await page.getByRole('button', { name: `Pagar ${z.price} Siclos` }).waitFor();
-    await B.page.getByRole('button', { name: `Pagar ${w.price} Siclos` }).waitFor();
+    await openConfirm(page, z);
+    await openConfirm(B.page, w);
     await Promise.all([
       page.getByRole('button', { name: `Pagar ${z.price} Siclos` }).click(),
       B.page.getByRole('button', { name: `Pagar ${w.price} Siclos` }).click(),

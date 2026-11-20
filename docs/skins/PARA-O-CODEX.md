@@ -464,3 +464,22 @@ A pedido do usuário, depois de `aa982bc`. É uma correção de P08, não um lot
 - `epico_juda` **estilo-3** (tom 1, curto) parece tom 3 ou 4. Clarear para o tom 1.
 
 Mantenha o rosto (`identidadeFacial`), o cabelo, o traje, os objetos, os IDs e as âncoras. Troque só as pinturas, o `corpo@2x` e, se mudar, o ícone dessas skins. Mande o pacote completo de S02 com os SHA-256 atualizados, sem migração.
+
+### 24.1 S02_v2: tons de pele corrigidos e aprovados (20/11/2026)
+
+**Conferência**
+- O ZIP de 20.968.274 bytes confere com o `.zip.sha256` (`2bb71799…`) e as 68 somas conferem.
+- Mudaram só os 10 arquivos anunciados: 8 pinturas (base e @2x) e os ícones de Esaú e Calebe. Os outros 38 são idênticos.
+
+**Aprovado:** Esaú no estilo 1, Calebe no estilo 1 e Judá no estilo 3 agora em tom 1 claro, e Calebe no estilo 3 em tom 3 intermediário. Rostos, cabelos, trajes e objetos foram preservados.
+
+**Integração:** só os arquivos alterados, sem migração.
+
+**Teste de compras simultâneas no Supabase local** (`e2e/supabase-real/flow.cjs`)
+- A falha foi intermitente: a rodada seguinte passou.
+- O app consulta o servidor antes de abrir "Pagar". A confirmação só não abre se a vitrine virou ou se o saldo do aparelho estava desatualizado.
+- O teste agora espera "Saldo: <saldo disputado> Siclos" nos dois aparelhos antes das compras.
+- Se a confirmação não abrir, o teste falha mostrando o aviso que apareceu na tela e o dia da vitrine no servidor.
+- As asserções continuam iguais: exatamente uma compra e um débito, nenhuma posse do perdedor e saldo final não negativo.
+
+**Disco:** os scripts e2e deixavam uma pasta temporária a cada rodada (23 GB acumulados). Agora a apagam ao terminar (commit `b56311e`).

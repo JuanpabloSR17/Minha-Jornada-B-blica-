@@ -1,4 +1,4 @@
-# Jornada Bíblica · S02
+# Jornada Bíblica · S02_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit bb88762. Briefing: LOTES.md; contrato técnico: TEMPORADA-1-EXODO.md §2.
 
@@ -37,3 +37,16 @@ Cada personagem tem só a apresentação do próprio sexo, na raiz do seu ID. Ra
 Conferir quatro anexos (ZIP e .zip.sha256 de cada lote), hashes internos/externos, arte, rostos, mãos e objetos. Aplicar a arte e as fichas pelo fluxo oficial de scripts/skins-add-lot.mjs S02 e scripts/gen-skin-art.mjs. Executar unitários, SQL, skins-audit, fluxos marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch, informando commit e resultado completo.
 
 Somente arte e entrega local foram alteradas pelo Codex, sem migração ou banco. O usuário autorizou envio direto ao Claude, aguardar a revisão, corrigir apontamentos e seguir automaticamente apenas após o fechamento do ciclo. Até dois lotes nesta entrega: S01/S02.
+
+## Correção de tons · S02_v2
+
+Revisão solicitada no §24 de PARA-O-CODEX, base integrada08262be. Não é lote novo e não requer migração. Corrigidas somente quatro pinturas:
+
+- `epico_esau` · estilo1 · skin-1 (#F5D6BF), claramente claro.
+- `epico_calebe` · estilo1 · skin-1 (#F5D6BF), claramente claro.
+- `epico_calebe` · estilo3 · skin-3 (#CF9A6C), intermediário entre os tons1 e5.
+- `epico_juda` · estilo3 · skin-1 (#F5D6BF), claramente claro.
+
+Rostos, cabelos/barbas, idade aparente, trajes, objetos, mãos, IDs, estilos, regras e âncoras foram preservados. As seis fichas e os outros38 assets são byte a byte iguais ao S02_final. Mudaram8 WebPs de corpo (4 bases+4 ampliações) e2 ícones (Esaú e Calebe, que usam o estilo1). Judá mantém o ícone do estilo1. As capturas/galerias das três skins corrigidas foram atualizadas; os demais não mudaram. Comparacao_Tons_S02_v2.png mostra antes/depois. VALIDACAO.json inclui a lista de hashes antigos/novos dos10 assets alterados.
+
+Enviar este pacote completo de S02_v2 com o .zip.sha256; conferir os hashes, aprovar os quatro tons e aplicar apenas os assets alterados. Preservar o banco, as fichas e o catálogo já integrados. Depois, confirmar o resultado do ciclo oficial de S01/S02 e a auditoria visual atualizada. Não avançar a S03/S04 antes do fechamento desta revisão.

@@ -307,3 +307,55 @@ EXACT STYLE 3: MEDIUM warm tan skin (#CF9A6C), consistent across face/neck/hands
 CHECK: entire body1024x1536, true transparent alpha, clean margins, no clipped feet or props, normal two hands, physically supported objects. No invented biblical lettering or claim of exact historical likeness.
 PRIEST INVARIANT: Exactly TWELVE separate breastplate stones: FOUR rows, THREE stones each. Preserve each row and all twelve. Keep the priestly turban but redraw visible side/temple hair so the requested afro or short hairstyle/color is clear.
 ```
+
+# Revisão de tons · S02_v2
+
+Quatro edições com ImageGen integrado; Image1 é alvo, as demais imagens são referências somente de cor de pele.
+
+## epico_esau · estilo1 · skin-1
+
+```text
+Use case: precise-object-edit / identity-preserve. EDIT TARGET is Image1 ONLY: the exact complete epico_esau style1 painting. The ONLY requested change is the skin complexion of this SAME character. Image2 is SKIN COLOR REFERENCE ONLY; do not borrow its face, age, hair, expression, pose, clothes or props.
+
+MANDATORY SKIN TONE1: genuinely FAIR LIGHT IVORY/PEACH skin, pale rosy beige with base color reference #F5D6BF. Make a SUBSTANTIAL visible correction lighter than Image1's currently tanned bronze skin, on EVERY exposed area. Match the LIGHT complexion family of Image2 (Benjamin style2), without borrowing his face. No suntan, orange-brown cast, caramel skin, dark complexion or bright orange highlights. Preserve realistic soft peach/rose shading and pores, not chalk-white or flat paint.
+
+Repaint skin consistently across forehead, ears, eyelids, nose, cheeks, lips surroundings, neck, ALL exposed arms/forearms, both hands and fingers, lower legs and feet. Keep believable facial shading and all OLD AGE LINES if present. Facial structure/identity and apparent age MUST remain EXACTLY Image1. Preserve every visible hand and the existing normal two-arm anatomy.
+
+STRICT INVARIANTS: same face bone shape, eyes and eye color, brows, mouth and expression, hairstyle silhouette and exact hair/beard color, age, body proportions, pose, every cloth fold and color, material brushwork, decorative motifs, all held objects, their counts and grips, same sandals, feet and ground baseline, complete full-body framing1024x1536. Do NOT add/change jewelry, spear, staff, seal, cord, grapes, bag or costume. Do not brighten or recolor the garments while changing skin. Same premium PAINTED2.5D style and soft upper-left illumination, with pale skin retaining its actual light palette. TRUE TRANSPARENT RGBA background; no opaque wash, bloom cloud, aura, new shadow/floor rectangle, UI or text. Change only exposed skin tone, not another person or new costume.
+```
+
+## epico_calebe · estilo1 · skin-1
+
+```text
+Use case: precise-object-edit / identity-preserve. EDIT TARGET is Image1 ONLY: the exact complete epico_calebe style1 painting. The ONLY requested change is the skin complexion of this SAME character. Image2 is SKIN COLOR REFERENCE ONLY; do not borrow its face, age, hair, expression, pose, clothes or props.
+
+MANDATORY SKIN TONE1: genuinely FAIR LIGHT IVORY/PEACH skin, pale rosy beige with base color reference #F5D6BF. Make a SUBSTANTIAL visible correction lighter than Image1's currently tanned bronze skin, on EVERY exposed area. Match the LIGHT complexion family of Image2 (Benjamin style2), without borrowing his face. No suntan, orange-brown cast, caramel skin, dark complexion or bright orange highlights. Preserve realistic soft peach/rose shading and pores, not chalk-white or flat paint.
+
+Repaint skin consistently across forehead, ears, eyelids, nose, cheeks, lips surroundings, neck, ALL exposed arms/forearms, both hands and fingers, lower legs and feet. Keep believable facial shading and all OLD AGE LINES if present. Facial structure/identity and apparent age MUST remain EXACTLY Image1. Preserve every visible hand and the existing normal two-arm anatomy.
+
+STRICT INVARIANTS: same face bone shape, eyes and eye color, brows, mouth and expression, hairstyle silhouette and exact hair/beard color, age, body proportions, pose, every cloth fold and color, material brushwork, decorative motifs, all held objects, their counts and grips, same sandals, feet and ground baseline, complete full-body framing1024x1536. Do NOT add/change jewelry, spear, staff, seal, cord, grapes, bag or costume. Do not brighten or recolor the garments while changing skin. Same premium PAINTED2.5D style and soft upper-left illumination, with pale skin retaining its actual light palette. TRUE TRANSPARENT RGBA background; no opaque wash, bloom cloud, aura, new shadow/floor rectangle, UI or text. Change only exposed skin tone, not another person or new costume.
+```
+
+## epico_calebe · estilo3 · skin-3
+
+```text
+Use case: precise-object-edit / identity-preserve. EDIT TARGET is Image1 ONLY: the exact complete epico_calebe style3 painting. The ONLY requested change is the skin complexion of this SAME character. Image2 is SKIN COLOR REFERENCE ONLY; do not borrow its face, age, hair, expression, pose, clothes or props. Image3 is the DARK TONE5 color reference only; do not copy its bald hair or complexion.
+
+MANDATORY SKIN TONE3: a clear MEDIUM WARM TAN complexion, base palette #CF9A6C, on EVERY exposed area. It must be visibly INTERMEDIATE: darker/more tan than the LIGHT IVORY TONE1 reference Image2, and lighter than the DEEP BROWN TONE5 reference Image3. The current painting was too close to Caleb style1; define this medium tan as a distinct middle style. No gray/ash cast, no orange glow or deep brown substitution.
+
+Repaint skin consistently across forehead, ears, eyelids, nose, cheeks, lips surroundings, neck, ALL exposed arms/forearms, both hands and fingers, lower legs and feet. Keep believable facial shading and all OLD AGE LINES if present. Facial structure/identity and apparent age MUST remain EXACTLY Image1. Preserve every visible hand and the existing normal two-arm anatomy.
+
+STRICT INVARIANTS: same face bone shape, eyes and eye color, brows, mouth and expression, hairstyle silhouette and exact hair/beard color, age, body proportions, pose, every cloth fold and color, material brushwork, decorative motifs, all held objects, their counts and grips, same sandals, feet and ground baseline, complete full-body framing1024x1536. Do NOT add/change jewelry, spear, staff, seal, cord, grapes, bag or costume. Do not brighten or recolor the garments while changing skin. Same premium PAINTED2.5D style and soft upper-left illumination, with pale skin retaining its actual light palette. TRUE TRANSPARENT RGBA background; no opaque wash, bloom cloud, aura, new shadow/floor rectangle, UI or text. Change only exposed skin tone, not another person or new costume.
+```
+
+## epico_juda · estilo3 · skin-1
+
+```text
+Use case: precise-object-edit / identity-preserve. EDIT TARGET is Image1 ONLY: the exact complete epico_juda style3 painting. The ONLY requested change is the skin complexion of this SAME character. Image2 is SKIN COLOR REFERENCE ONLY; do not borrow its face, age, hair, expression, pose, clothes or props.
+
+MANDATORY SKIN TONE1: genuinely FAIR LIGHT IVORY/PEACH skin, pale rosy beige with base color reference #F5D6BF. Make a SUBSTANTIAL visible correction lighter than Image1's currently tanned bronze skin, on EVERY exposed area. Match the LIGHT complexion family of Image2 (Benjamin style2), without borrowing his face. No suntan, orange-brown cast, caramel skin, dark complexion or bright orange highlights. Preserve realistic soft peach/rose shading and pores, not chalk-white or flat paint.
+
+Repaint skin consistently across forehead, ears, eyelids, nose, cheeks, lips surroundings, neck, ALL exposed arms/forearms, both hands and fingers, lower legs and feet. Keep believable facial shading and all OLD AGE LINES if present. Facial structure/identity and apparent age MUST remain EXACTLY Image1. Preserve every visible hand and the existing normal two-arm anatomy.
+
+STRICT INVARIANTS: same face bone shape, eyes and eye color, brows, mouth and expression, hairstyle silhouette and exact hair/beard color, age, body proportions, pose, every cloth fold and color, material brushwork, decorative motifs, all held objects, their counts and grips, same sandals, feet and ground baseline, complete full-body framing1024x1536. Do NOT add/change jewelry, spear, staff, seal, cord, grapes, bag or costume. Do not brighten or recolor the garments while changing skin. Same premium PAINTED2.5D style and soft upper-left illumination, with pale skin retaining its actual light palette. TRUE TRANSPARENT RGBA background; no opaque wash, bloom cloud, aura, new shadow/floor rectangle, UI or text. Change only exposed skin tone, not another person or new costume.
+```

@@ -266,5 +266,32 @@
       "identidadeFacial": "Adulto maduro; rosto oblongo de maçãs largas, maxilar estreito e queixo plano, nariz reto de base curta, olhos horizontais afastados, sobrancelhas finas elevadas e barba curta redonda; expressão concentrada tranquila."
     }
   ],
-  "pedidoUsuario": "Mesmo 2.5D, 3 estilos exatos, personagens só no próprio sexo, rosto próprio preservado por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+  "pedidoUsuario": "Mesmo 2.5D, 3 estilos exatos, personagens só no próprio sexo, rosto próprio preservado por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "revisao": {
+    "id": "S02_v2",
+    "baseIntegrada": "08262be",
+    "pinturas": [
+      {
+        "id": "epico_esau",
+        "style": 1,
+        "tom": "skin-1"
+      },
+      {
+        "id": "epico_calebe",
+        "style": 1,
+        "tom": "skin-1"
+      },
+      {
+        "id": "epico_calebe",
+        "style": 3,
+        "tom": "skin-3"
+      },
+      {
+        "id": "epico_juda",
+        "style": 3,
+        "tom": "skin-1"
+      }
+    ],
+    "escopo": "Somente tom de pele; estilos, rostos, trajes, objetos, IDs, regras e âncoras preservados."
+  }
 }
