@@ -11,6 +11,7 @@ PIDS=()
 cleanup() {
   for p in "${PIDS[@]:-}"; do kill "$p" 2>/dev/null || true; done
   "${RUNAS[@]}" "$PGBIN/pg_ctl" -D "$WORK/data" -m immediate stop >/dev/null 2>&1 || true
+  rm -rf "${WORK:?}"   # o build web e o banco de cada rodada ocupam ~280 MB
 }
 trap cleanup EXIT
 RUNAS=()

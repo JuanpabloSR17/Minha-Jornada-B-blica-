@@ -24,7 +24,7 @@ if [ ${#MISSING[@]} -gt 0 ]; then echo "✘ faltam variáveis: ${MISSING[*]} (ve
 [ "$JB_TEST_PROJECT" = "1" ] || { echo "✘ JB_TEST_PROJECT=1 é obrigatório (projeto de testes)"; exit 2; }
 SB=(npx --yes supabase@3.1.0)
 WORK="$(mktemp -d)"; SERVER=""
-trap '[ -n "$SERVER" ] && kill "$SERVER" 2>/dev/null || true' EXIT
+trap '[ -n "$SERVER" ] && kill "$SERVER" 2>/dev/null; rm -rf "${WORK:?}"' EXIT
 cd "$ROOT"
 
 echo "→ 1. migrações pendentes, na ordem do repositório"

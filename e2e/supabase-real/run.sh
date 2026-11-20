@@ -25,6 +25,8 @@ SERVER=""
 restore() {
   for b in "${LATER[@]}"; do [ -f "$WORK/$b" ] && mv "$WORK/$b" "$ROOT/supabase/migrations/"; done
   [ -n "$SERVER" ] && kill "$SERVER" 2>/dev/null || true
+  # só apaga a pasta temporária se todas as migrações voltaram para supabase/migrations
+  compgen -G "$WORK/*.sql" >/dev/null || rm -rf "${WORK:?}"
 }
 trap restore EXIT
 cd "$ROOT"
