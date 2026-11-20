@@ -6380,7 +6380,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Sm 9:7",
-   "idea": "À mesa do rei",
+   "idea": "Adulto digno em pé, apoiado em uma muleta simples sob um braço, com a mão na empunhadura; a outra mão segura um pequeno pão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6409,7 +6409,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "O pão é o motivo da mesa do rei de 2 Sm 9:7, sem mesa, banquete ou outra pessoa. A ficha preserva a deficiência nos dois pés (2 Sm 9:3, 13), sem sugerir cura nem inventar diagnóstico. A muleta e a pose são direção artística, não objeto citado no capítulo. Apoio e postura fisicamente coerentes, sem caricaturar nem esconder a deficiência."
   },
   {
    "id": "raro_urias",
@@ -6532,7 +6533,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Rs 5:2-3",
-   "idea": "Menina israelita que indicou o profeta",
+   "idea": "Menina em vestes simples e modestas, com gesto de indicar ou orientar",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -6561,7 +6562,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-bun"
     }
-   ]
+   ],
+   "adaptacao": "Figura infantil feminina, sem corpo nem maquiagem de adulta, sem correntes, cena de cativeiro, outra pessoa ou profeta em miniatura. O texto (2 Rs 5:2-3) não informa a idade: a aparência infantil é direção artística. Contrato infantil: mesma ocupação do quadro dos adultos (pés em y≈1450, centro x≈512, topo perto de y≈216), com proporções de criança (cabeça maior, cerca de 5 cabeças de altura), para ícone, recorte do acampamento e rosto funcionarem sem mudança no app. A validação aceita o topo nessa faixa."
   },
   {
    "id": "raro_sunamita",
@@ -6570,7 +6572,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Rs 4:8-10",
-   "idea": "Senhora com o quarto do profeta",
+   "idea": "Senhora adulta com roupa de cama dobrada apoiada num antebraço e uma pequena lamparina na outra mão",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -6599,7 +6601,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-braids"
     }
-   ]
+   ],
+   "adaptacao": "Motivos da hospitalidade e do quarto de 2 Rs 4:8-10 (o texto cita cama, mesa, cadeira e candeeiro), sem quarto, cama, mesa ou profeta em miniatura. A nota distingue os motivos do avatar dos itens literalmente descritos."
   },
   {
    "id": "raro_jeosafa",
@@ -6608,7 +6611,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Cr 20:21",
-   "idea": "Rei com cantores à frente do exército",
+   "idea": "Rei em atitude de louvor e oração",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6637,7 +6640,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Um único rei, sem cantores em miniatura nem exército. As notas explicam que 2 Cr 20:21 fala da designação dos cantores; não dar ao rei um instrumento musical que o texto não descreve."
   },
   {
    "id": "raro_joas_menino_rei",
@@ -6646,7 +6650,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Rs 11:12",
-   "idea": "Criança coroada com o testemunho",
+   "idea": "Menino de cerca de 7 anos, coroado, segurando com as duas mãos um pequeno rolo do testemunho sem escrita",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6675,7 +6679,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Criança da fase da coroação (2 Rs 11:12; a idade de 7 anos está em 2 Rs 11:21 e 2 Cr 24:1), sem barba nem corpo de adulto. Contrato infantil: mesma ocupação do quadro dos adultos (pés em y≈1450, centro x≈512, topo perto de y≈216), com proporções de criança (cabeça maior, cerca de 5 cabeças de altura), para ícone, recorte do acampamento e rosto funcionarem sem mudança no app. A validação aceita o topo nessa faixa."
   },
   {
    "id": "raro_hulda_profetisa",
@@ -6722,7 +6727,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "1 Rs 1:39",
-   "idea": "Sacerdote com o chifre de azeite",
+   "idea": "Sacerdote segurando o chifre usado como recipiente de azeite",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6751,7 +6756,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "O chifre é um recipiente de azeite (1 Rs 1:39), segurado com contato físico correto, não um shofar tocado como instrumento. Sem Salomão em miniatura nem cena de unção."
   },
   {
    "id": "raro_benaia",
@@ -6760,7 +6766,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Sm 23:20",
-   "idea": "Valente que venceu o leão num dia de neve",
+   "idea": "Guerreiro em repouso com manto espesso de inverno e arma em repouso",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6789,7 +6795,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Sem leão, carcaça ou pele de troféu, sem cena de ataque nem sangue, sem neve no chão nem partículas fora do corpo no alfa. A nota liga o motivo invernal ao dia de neve de 2 Sm 23:20, sem fingir reconstituir a cena."
   },
   {
    "id": "raro_os_valentes_de_davi",
@@ -6798,7 +6805,7 @@
    "world": "reinos",
    "group": "reinos",
    "scriptureRef": "2 Sm 23:8-39",
-   "idea": "Guerreiros com armas variadas",
+   "idea": "Um guerreiro adulto com armas em repouso, representando o grupo",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -6827,7 +6834,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Um único guerreiro representa os valentes de 2 Sm 23:8-39, com a mesma identidade, traje e conjunto de armas nos 3 estilos. Não são três homens nomeados nem o grupo inteiro; nenhum estilo recebe o nome de um valente."
   },
   {
    "id": "raro_asafe",
