@@ -1,0 +1,12 @@
+# Notas de adaptação · S04
+
+Skins completas inspiradas no briefing, com rostos próprios e três estilos exatos do catálogo. Cores, penteados e idades aparentes são direção artística e não retratos autenticados. As cores registradas do cabelo permanecem mesmo nos idosos; idade se expressa no rosto e nas mãos.
+
+- **Matusalém:** o rosto de idade avançada remete à longevidade de Gn5:27. A barba muito longa é direção do traje, não uma descrição bíblica comprovada. Cajado e tecidos simples compõem o avatar humano, sem aparência de mago ou poderes. [Gênesis5](https://bible.usccb.org/bible/genesis/5).
+- **Noemi:** viúva viajante, com manto escuro e saco apoiado pelo corpo. Rt1:20–22 fundamenta a fase do retorno e do pesar; a bolsa, as cores e os detalhes do traje são artísticos. Não há outra personagem adicionada nem cena de morte. [Rute1](https://bible.usccb.org/bible/ruth/1).
+- **Boaz:** senhor da colheita, com manto de idoso e um feixe reduzido de cevada como motivo do avatar. Rt2:4 e a colheita do capítulo são a referência; a pintura não afirma que esse feixe reproduz literalmente as medidas entregues em Rt3:15 nem representa a cena inteira com Rute. [Rute2](https://bible.usccb.org/bible/ruth/2), [Rute3](https://bible.usccb.org/bible/ruth/3).
+- **Raabe:** o cordão escarlate remete a Js2:18–21. Ele é segurado pelas duas mãos, sem uma janela, parede ou miniatura de casa presa ao corpo. Trata-se da adaptação do motivo da janela para um avatar único, não da reconstituição integral do episódio. Vestes modestas e expressão digna, sem estereótipo sexualizado. [Josué2](https://bible.usccb.org/bible/joshua/2).
+- **Ana:** expressão de oração e pequena túnica vazia nas duas mãos, conforme o briefing. A oração de 1Sm1:10–11 e a confecção anual da pequena veste em 1Sm2:19 pertencem a momentos distintos. A skin reúne motivos da história e não afirma que os dois ocorreram no mesmo instante. Não há criança dentro da túnica nem mãos adicionais. [1Samuel1](https://bible.usccb.org/bible/1samuel/1), [1Samuel2](https://bible.usccb.org/bible/1samuel/2).
+- **Jônatas:** arco em repouso e manto retirado dos ombros, apoiado no antebraço, remetem à entrega de 1Sm18:4. Um único adulto, sem Davi recebendo a peça e sem cena de ataque. Aparência jovem é escolha artística, sem ensinar idade exata. Arco e manto têm contatos físicos naturais com as duas mãos. [1Samuel18](https://bible.usccb.org/bible/1samuel/18).
+
+Não há figura divina, anjo, nudez, sangue ou ação de agressão. Todos são adultos e só têm a apresentação do próprio sexo.

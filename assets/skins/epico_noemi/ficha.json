@@ -1,0 +1,49 @@
+{
+  "id": "epico_noemi",
+  "nome": "Traje de Noemi",
+  "raridade": "epic",
+  "mundo": "reinos",
+  "referencia": "Rt 1:20-22",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-ponytail"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-braids"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Idosa; rosto retangular comprido de têmporas estreitas, mandíbula larga arredondada, nariz reto amplo, olhos horizontais sob pálpebras pesadas e sobrancelhas cheias baixas; lábios cheios, sulcos profundos e expressão de pesar contido."
+}

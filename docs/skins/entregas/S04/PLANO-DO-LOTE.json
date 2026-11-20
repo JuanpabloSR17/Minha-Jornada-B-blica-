@@ -1,0 +1,270 @@
+{
+  "commit": "f2bbdd0",
+  "id": "S04",
+  "titulo": "Personagens · Origens e Terra e Reinos",
+  "skins": [
+    {
+      "id": "raro_matusalem",
+      "name": "Traje de Matusalém",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 5:27",
+      "idea": "Ancião de barba muito longa",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Matusalém (Gn 5:27)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "epico_noemi",
+      "name": "Traje de Noemi",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Rt 1:20-22",
+      "idea": "Viúva de manto escuro, saco de viagem",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "RUT",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Noemi (Rt 1:20-22)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        }
+      ]
+    },
+    {
+      "id": "epico_boaz",
+      "name": "Traje de Boaz",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Rt 2:4; 3:15",
+      "idea": "Senhor da colheita, manto de ancião",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "RUT",
+            2
+          ],
+          [
+            "RUT",
+            3
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Boaz (Rt 2:4; 3:15)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "epico_raabe",
+      "name": "Traje de Raabe",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "Js 2:18",
+      "idea": "Cordão vermelho na janela",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "JOS",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Raabe (Js 2:18)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long-wavy"
+        }
+      ]
+    },
+    {
+      "id": "epico_ana",
+      "name": "Traje de Ana",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 1:10-11; 2:19",
+      "idea": "Mulher em oração, túnica pequena nas mãos",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            1
+          ],
+          [
+            "1SA",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ana (1 Sm 1:10-11; 2:19)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        }
+      ]
+    },
+    {
+      "id": "epico_jonatas",
+      "name": "Traje de Jônatas",
+      "rarity": "epic",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 18:4",
+      "idea": "Príncipe com arco, entregando o manto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            18
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Jônatas (1 Sm 18:4)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_matusalem",
+      "identidadeFacial": "Ancião de idade muito avançada; rosto extremamente alongado e magro, testa alta estreita, maçãs fundas, nariz comprido curvo, olhos pequenos afastados e sobrancelhas finas elevadas; barba muito longa afilada até o ventre, expressão tranquila."
+    },
+    {
+      "id": "epico_noemi",
+      "identidadeFacial": "Idosa; rosto retangular comprido de têmporas estreitas, mandíbula larga arredondada, nariz reto amplo, olhos horizontais sob pálpebras pesadas e sobrancelhas cheias baixas; lábios cheios, sulcos profundos e expressão de pesar contido."
+    },
+    {
+      "id": "epico_boaz",
+      "identidadeFacial": "Idoso vigoroso; rosto largo em pera, testa baixa, maxilar robusto, nariz médio convexo de ponta achatada, olhos oblíquos próximos e sobrancelhas altas arredondadas; bigode espesso e barba curta de base plana, expressão generosa firme."
+    },
+    {
+      "id": "epico_raabe",
+      "identidadeFacial": "Adulta; rosto em losango de têmporas largas, queixo alto estreito, nariz curto achatado de ponta redonda, olhos grandes afastados e sobrancelhas altas arqueadas; lábio superior marcado e expressão alerta confiante."
+    },
+    {
+      "id": "epico_ana",
+      "identidadeFacial": "Adulta; rosto oval largo de testa estreita e bochechas cheias, queixo pequeno redondo, nariz curto levemente arrebitado, olhos redondos próximos e sobrancelhas suaves curvas; expressão de oração íntima e esperançosa."
+    },
+    {
+      "id": "epico_jonatas",
+      "identidadeFacial": "Adulto jovem; rosto alongado em coração de testa larga, maxilar estreito e queixo proeminente com covinha, nariz longo reto de ponta fina, olhos horizontais pequenos e sobrancelhas grossas separadas; bigode discreto e barba muito curta, expressão leal aberta."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

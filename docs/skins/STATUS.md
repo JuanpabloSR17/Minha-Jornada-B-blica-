@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-20. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 97 de 289 skins prontas no app.
+**Progresso:** 109 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -178,27 +178,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Calebe (`epico_calebe`) | Épica | origens | ✔ | — | lendo: Ler a história de Calebe (Nm 13:30; Js 14:11) |
 | ✅ | Traje de Eleazar (`epico_eleazar`) | Épica | origens | ✔ | — | lendo: Ler a história de Eleazar (Nm 20:28) |
 
-## S03 · Personagens · Origens (0/6)
+## S03 · Personagens · Origens (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Finéias (`epico_fineias`) | Épica | origens | — | — | Ler a história de Finéias (Nm 25:11) |
-| ⬜ | Traje de Labão (`raro_labao`) | Rara | origens | — | — | Ler a história de Labão (Gn 29:13) |
-| ⬜ | Traje de Rúben (`raro_ruben`) | Rara | origens | — | — | Ler a história de Rúben (Gn 37:22) |
-| ⬜ | Traje de Eliézer, servo de Abraão (`raro_eliezer_servo_de_abraao`) | Rara | origens | — | — | Ler a história de Eliézer, servo de Abraão (Gn 24:2-10) |
-| ⬜ | Traje das filhas de Zelofeade (`raro_filhas_de_zelofeade`) | Rara | origens | — | — | Ler a história das filhas de Zelofeade (Nm 27:1-7) |
-| ⬜ | Traje de Débora, ama de Rebeca (`raro_debora_ama_de_rebeca`) | Rara | origens | — | — | Ler a história de Débora, ama de Rebeca (Gn 35:8) |
+| ✅ | Traje de Finéias (`epico_fineias`) | Épica | origens | ✔ | — | lendo: Ler a história de Finéias (Nm 25:11) |
+| ✅ | Traje de Labão (`raro_labao`) | Rara | origens | ✔ | — | lendo: Ler a história de Labão (Gn 29:13) |
+| ✅ | Traje de Rúben (`raro_ruben`) | Rara | origens | ✔ | — | lendo: Ler a história de Rúben (Gn 37:22) |
+| ✅ | Traje de Eliézer, servo de Abraão (`raro_eliezer_servo_de_abraao`) | Rara | origens | ✔ | — | lendo: Ler a história de Eliézer, servo de Abraão (Gn 24:2-10) |
+| ✅ | Traje das filhas de Zelofeade (`raro_filhas_de_zelofeade`) | Rara | origens | ✔ | — | lendo: Ler a história das filhas de Zelofeade (Nm 27:1-7) |
+| ✅ | Traje de Débora, ama de Rebeca (`raro_debora_ama_de_rebeca`) | Rara | origens | ✔ | — | lendo: Ler a história de Débora, ama de Rebeca (Gn 35:8) |
 
-## S04 · Personagens · Origens e Terra e Reinos (0/6)
+## S04 · Personagens · Origens e Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Matusalém (`raro_matusalem`) | Rara | origens | — | — | Ler a história de Matusalém (Gn 5:27) |
-| ⬜ | Traje de Noemi (`epico_noemi`) | Épica | reinos | — | — | Ler a história de Noemi (Rt 1:20-22) |
-| ⬜ | Traje de Boaz (`epico_boaz`) | Épica | reinos | — | — | Ler a história de Boaz (Rt 2:4; 3:15) |
-| ⬜ | Traje de Raabe (`epico_raabe`) | Épica | reinos | — | — | Ler a história de Raabe (Js 2:18) |
-| ⬜ | Traje de Ana (`epico_ana`) | Épica | reinos | — | — | Ler a história de Ana (1 Sm 1:10-11; 2:19) |
-| ⬜ | Traje de Jônatas (`epico_jonatas`) | Épica | reinos | — | — | Ler a história de Jônatas (1 Sm 18:4) |
+| ✅ | Traje de Matusalém (`raro_matusalem`) | Rara | origens | ✔ | — | lendo: Ler a história de Matusalém (Gn 5:27) |
+| ✅ | Traje de Noemi (`epico_noemi`) | Épica | reinos | ✔ | — | lendo: Ler a história de Noemi (Rt 1:20-22) |
+| ✅ | Traje de Boaz (`epico_boaz`) | Épica | reinos | ✔ | — | lendo: Ler a história de Boaz (Rt 2:4; 3:15) |
+| ✅ | Traje de Raabe (`epico_raabe`) | Épica | reinos | ✔ | — | lendo: Ler a história de Raabe (Js 2:18) |
+| ✅ | Traje de Ana (`epico_ana`) | Épica | reinos | ✔ | — | lendo: Ler a história de Ana (1 Sm 1:10-11; 2:19) |
+| ✅ | Traje de Jônatas (`epico_jonatas`) | Épica | reinos | ✔ | — | lendo: Ler a história de Jônatas (1 Sm 18:4) |
 
 ## S05 · Personagens · Terra e Reinos (0/6)
 

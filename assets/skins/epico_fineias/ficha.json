@@ -1,0 +1,50 @@
+{
+  "id": "epico_fineias",
+  "nome": "Traje de Finéias",
+  "raridade": "epic",
+  "mundo": "origens",
+  "referencia": "Nm 25:11",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto curto em diamante, maçãs altas, mandíbula estreita, queixo arredondado, nariz fino reto com ponta descendente, olhos pequenos afastados e sobrancelhas horizontais; barba curta rente e bigode fino, expressão vigilante serena.",
+  "adaptacao": "Lança em repouso, sem cena violenta nem vítimas."
+}

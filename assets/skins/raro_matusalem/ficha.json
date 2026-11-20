@@ -1,0 +1,49 @@
+{
+  "id": "raro_matusalem",
+  "nome": "Traje de Matusalém",
+  "raridade": "rare",
+  "mundo": "origens",
+  "referencia": "Gn 5:27",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Ancião de idade muito avançada; rosto extremamente alongado e magro, testa alta estreita, maçãs fundas, nariz comprido curvo, olhos pequenos afastados e sobrancelhas finas elevadas; barba muito longa afilada até o ventre, expressão tranquila."
+}

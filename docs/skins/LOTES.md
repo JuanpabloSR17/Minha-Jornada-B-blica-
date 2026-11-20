@@ -4,36 +4,6 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 **Apóstolos:** Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.
 
-## S03 · Personagens · Origens
-
-- **Traje de Finéias** (`epico_fineias`), Épica, Nm 25:11. Traje: Sacerdote com lança em repouso. **Adaptação:** Lança em repouso, sem cena violenta nem vítimas. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-auburn, hair-side-part · estilo-2: skin-4, haircolor-darkbrown, hair-shaved · estilo-3: skin-5, haircolor-black, hair-curly
-- **Traje de Labão** (`raro_labao`), Rara, Gn 29:13. Traje: Rico pastor arameu. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-darkbrown, hair-afro · estilo-2: skin-2, haircolor-black, hair-long · estilo-3: skin-6, haircolor-brown, hair-shaved
-- **Traje de Rúben** (`raro_ruben`), Rara, Gn 37:22. Traje: Primogênito com manto rasgado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-brown, hair-long · estilo-2: skin-1, haircolor-copper, hair-shaved · estilo-3: skin-6, haircolor-auburn, hair-side-part
-- **Traje de Eliézer, servo de Abraão** (`raro_eliezer_servo_de_abraao`), Rara, Gn 24:2-10. Traje: Servo de caravana com os presentes da noiva (joias numa bolsa ou trouxa aberta) e corda de caravana. **Adaptação:** Gn 24 chama a figura de "servo mais antigo" de Abraão sem dar nome; a associação com Eliézer (Gn 15:2) é tradicional, não identificação explícita do capítulo. Manter ID e nome do plano e registrar isso na ficha e nas notas. Corda de caravana só como motivo, sem camelo em miniatura nem animal preso ao avatar. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-shaved · estilo-2: skin-5, haircolor-darkbrown, hair-afro · estilo-3: skin-3, haircolor-brown, hair-wavy
-- **Traje das filhas de Zelofeade** (`raro_filhas_de_zelofeade`), Rara, Nm 27:1-7. Traje: Mulher adulta em vestes dignas, com gesto de petição, representando as cinco irmãs. **Adaptação:** Uma única mulher adulta representa as cinco irmãs (Macla, Noa, Hogla, Milca e Tirza), no mesmo contrato de avatar do mago que representa o grupo dos magos: sem cinco pessoas e sem tenda ou cenário preso ao corpo. Nenhum estilo recebe o nome de uma irmã. Registrar essa representação na ficha e nas notas bíblicas. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-honey, hair-long-wavy · estilo-2: skin-6, haircolor-auburn, hair-bun · estilo-3: skin-3, haircolor-brown, hair-ponytail
-- **Traje de Débora, ama de Rebeca** (`raro_debora_ama_de_rebeca`), Rara, Gn 35:8. Traje: Ama idosa, manto simples. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-brown, hair-long-wavy · estilo-2: skin-1, haircolor-auburn, hair-ponytail · estilo-3: skin-6, haircolor-darkbrown, hair-braids
-
-## S04 · Personagens · Origens e Terra e Reinos
-
-- **Traje de Matusalém** (`raro_matusalem`), Rara, Gn 5:27. Traje: Ancião de barba muito longa. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-copper, hair-side-part · estilo-2: skin-2, haircolor-darkbrown, hair-shaved · estilo-3: skin-6, haircolor-auburn, hair-curly
-- **Traje de Noemi** (`epico_noemi`), Épica, Rt 1:20-22. Traje: Viúva de manto escuro, saco de viagem. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-darkbrown, hair-bun · estilo-2: skin-3, haircolor-copper, hair-ponytail · estilo-3: skin-1, haircolor-black, hair-braids
-- **Traje de Boaz** (`epico_boaz`), Épica, Rt 2:4; 3:15. Traje: Senhor da colheita, manto de ancião. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-brown, hair-wavy · estilo-2: skin-1, haircolor-blond, hair-side-part · estilo-3: skin-6, haircolor-black, hair-shaved
-- **Traje de Raabe** (`epico_raabe`), Épica, Js 2:18. Traje: Cordão vermelho na janela. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-black, hair-braids · estilo-2: skin-1, haircolor-darkbrown, hair-bun · estilo-3: skin-4, haircolor-honey, hair-long-wavy
-- **Traje de Ana** (`epico_ana`), Épica, 1 Sm 1:10-11; 2:19. Traje: Mulher em oração, túnica pequena nas mãos. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-brown, hair-bun · estilo-2: skin-1, haircolor-blond, hair-ponytail · estilo-3: skin-3, haircolor-copper, hair-long-wavy
-- **Traje de Jônatas** (`epico_jonatas`), Épica, 1 Sm 18:4. Traje: Príncipe com arco, entregando o manto. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-black, hair-wavy · estilo-2: skin-3, haircolor-brown, hair-long · estilo-3: skin-1, haircolor-darkbrown, hair-curly
-
 ## S05 · Personagens · Terra e Reinos
 
 - **Traje de Abigail** (`epico_abigail`), Épica, 1 Sm 25:18. Traje: Jumento carregado de pães e figos. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).

@@ -1,0 +1,50 @@
+{
+  "id": "raro_eliezer_servo_de_abraao",
+  "nome": "Traje de Eliézer, servo de Abraão",
+  "raridade": "rare",
+  "mundo": "origens",
+  "referencia": "Gn 24:2-10",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Idoso; rosto em pera de testa larga e maxilar estreito, nariz curto largo de ponta caída, olhos horizontais com pálpebras pesadas, sobrancelhas finas arqueadas e barba longa arredondada; expressão confiável e experiente.",
+  "adaptacao": "Gn 24 chama a figura de \"servo mais antigo\" de Abraão sem dar nome; a associação com Eliézer (Gn 15:2) é tradicional, não identificação explícita do capítulo. Manter ID e nome do plano e registrar isso na ficha e nas notas. Corda de caravana só como motivo, sem camelo em miniatura nem animal preso ao avatar."
+}

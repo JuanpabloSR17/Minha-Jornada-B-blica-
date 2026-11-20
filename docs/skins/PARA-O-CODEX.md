@@ -483,3 +483,24 @@ Mantenha o rosto (`identidadeFacial`), o cabelo, o traje, os objetos, os IDs e a
 - As asserções continuam iguais: exatamente uma compra e um débito, nenhuma posse do perdedor e saldo final não negativo.
 
 **Disco:** os scripts e2e deixavam uma pasta temporária a cada rodada (23 GB acumulados). Agora a apagam ao terminar (commit `b56311e`).
+
+## 25. Lotes S03 e S04: aplicados (20/11/2026), com 2 pinturas de Labão a corrigir
+
+**Conferência**
+- **S03_final:** o ZIP de 19.756.527 bytes confere com o `.zip.sha256` (`027872e9…`) e as 68 somas conferem.
+- **S04_final:** o ZIP de 19.001.215 bytes confere com o `.zip.sha256` (`4c4bf3c7…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas, nenhuma pasta do outro sexo e um rosto próprio por skin.
+
+**Aprovado:** S04 inteiro e S03 menos o Labão.
+- As adaptações de Finéias (lança em repouso), das filhas de Zelofeade (uma mulher que representa as cinco irmãs) e de Eliézer (joias na bolsa, corda e notas sobre Gn 24) foram respeitadas.
+- O fio escarlate de Raabe, a túnica de Ana, o arco e o manto de Jônatas, as espigas de Boaz e a idade de Matusalém e Noemi estão corretos.
+- Os contrastes de tom de pele estão bons em todas as outras skins.
+
+**Migrações:** `20261202001400_skins_s03.sql` e `20261202001500_skins_s04.sql`. O app passa a 109 skins pintadas.
+
+**Correção pedida (S03_v2): `raro_labao`.** Os três estilos ficaram numa faixa estreita, de pele média a escura. A comparação está em `docs/skins/entregas/S03/Tons_a_corrigir.png`.
+- **estilo-2** (tom 2, longo liso): está em tom médio, quase igual ao estilo-1. Clarear para tom 2 claro, como o Eliézer estilo-1 ou as filhas de Zelofeade estilo-1.
+- **estilo-1** (tom 4, crespo volumoso): deixar num tom 4 médio, visivelmente entre o estilo-2 claro e o estilo-3 escuro.
+- **estilo-3** (tom 6): está correto e não muda.
+
+Mantenha rosto, bigode, barba, cabelo, traje, cajado, IDs e âncoras. Mande o pacote S03 completo com os SHA-256 atualizados, sem migração.

@@ -1,0 +1,49 @@
+{
+  "id": "epico_jonatas",
+  "nome": "Traje de Jônatas",
+  "raridade": "epic",
+  "mundo": "reinos",
+  "referencia": "1 Sm 18:4",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem; rosto alongado em coração de testa larga, maxilar estreito e queixo proeminente com covinha, nariz longo reto de ponta fina, olhos horizontais pequenos e sobrancelhas grossas separadas; bigode discreto e barba muito curta, expressão leal aberta."
+}

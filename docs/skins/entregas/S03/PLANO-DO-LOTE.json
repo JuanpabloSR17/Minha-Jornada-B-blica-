@@ -1,0 +1,265 @@
+{
+  "commit": "f2bbdd0",
+  "id": "S03",
+  "titulo": "Personagens · Origens",
+  "skins": [
+    {
+      "id": "epico_fineias",
+      "name": "Traje de Finéias",
+      "rarity": "epic",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Nm 25:11",
+      "idea": "Sacerdote com lança em repouso",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "NUM",
+            25
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Finéias (Nm 25:11)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Lança em repouso, sem cena violenta nem vítimas."
+    },
+    {
+      "id": "raro_labao",
+      "name": "Traje de Labão",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 29:13",
+      "idea": "Rico pastor arameu",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            29
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Labão (Gn 29:13)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "raro_ruben",
+      "name": "Traje de Rúben",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 37:22",
+      "idea": "Primogênito com manto rasgado",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            37
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Rúben (Gn 37:22)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        }
+      ]
+    },
+    {
+      "id": "raro_eliezer_servo_de_abraao",
+      "name": "Traje de Eliézer, servo de Abraão",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 24:2-10",
+      "idea": "Servo de caravana com os presentes da noiva (joias numa bolsa ou trouxa aberta) e corda de caravana",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            24
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Eliézer, servo de Abraão (Gn 24:2-10)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "adaptacao": "Gn 24 chama a figura de \"servo mais antigo\" de Abraão sem dar nome; a associação com Eliézer (Gn 15:2) é tradicional, não identificação explícita do capítulo. Manter ID e nome do plano e registrar isso na ficha e nas notas. Corda de caravana só como motivo, sem camelo em miniatura nem animal preso ao avatar."
+    },
+    {
+      "id": "raro_filhas_de_zelofeade",
+      "name": "Traje das filhas de Zelofeade",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Nm 27:1-7",
+      "idea": "Mulher adulta em vestes dignas, com gesto de petição, representando as cinco irmãs",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "NUM",
+            27
+          ]
+        ]
+      },
+      "howTo": "Ler a história das filhas de Zelofeade (Nm 27:1-7)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "adaptacao": "Uma única mulher adulta representa as cinco irmãs (Macla, Noa, Hogla, Milca e Tirza), no mesmo contrato de avatar do mago que representa o grupo dos magos: sem cinco pessoas e sem tenda ou cenário preso ao corpo. Nenhum estilo recebe o nome de uma irmã. Registrar essa representação na ficha e nas notas bíblicas."
+    },
+    {
+      "id": "raro_debora_ama_de_rebeca",
+      "name": "Traje de Débora, ama de Rebeca",
+      "rarity": "rare",
+      "world": "origens",
+      "group": "origens",
+      "scriptureRef": "Gn 35:8",
+      "idea": "Ama idosa, manto simples",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "GEN",
+            35
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Débora, ama de Rebeca (Gn 35:8)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-braids"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_fineias",
+      "identidadeFacial": "Adulto; rosto curto em diamante, maçãs altas, mandíbula estreita, queixo arredondado, nariz fino reto com ponta descendente, olhos pequenos afastados e sobrancelhas horizontais; barba curta rente e bigode fino, expressão vigilante serena."
+    },
+    {
+      "id": "raro_labao",
+      "identidadeFacial": "Adulto maduro; rosto trapezoidal largo de testa curta e maxilar forte, nariz largo comprido de ponte baixa, olhos grandes afastados, sobrancelhas curvas espessas e bigode longo sobre barba média de base larga; expressão hospitaleira reservada."
+    },
+    {
+      "id": "raro_ruben",
+      "identidadeFacial": "Adulto maduro; rosto oval comprido, testa estreita, nariz aquilino pronunciado, olhos próximos profundos e sobrancelhas baixas oblíquas, boca larga e barba cheia de base quadrada; expressão preocupada e protetora."
+    },
+    {
+      "id": "raro_eliezer_servo_de_abraao",
+      "identidadeFacial": "Idoso; rosto em pera de testa larga e maxilar estreito, nariz curto largo de ponta caída, olhos horizontais com pálpebras pesadas, sobrancelhas finas arqueadas e barba longa arredondada; expressão confiável e experiente."
+    },
+    {
+      "id": "raro_filhas_de_zelofeade",
+      "identidadeFacial": "Adulta; rosto largo em coração, testa alta arredondada, maçãs firmes, queixo triangular curto, nariz curto de base ampla, olhos amendoados próximos e sobrancelhas retas assimétricas; expressão decidida e respeitosa."
+    },
+    {
+      "id": "raro_debora_ama_de_rebeca",
+      "identidadeFacial": "Idosa; rosto redondo largo de bochechas baixas, queixo pequeno recuado, nariz comprido reto, olhos pequenos próximos sob pálpebras franzidas e sobrancelhas finas baixas; expressão acolhedora, rugas naturais e boca pequena."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}
