@@ -5439,7 +5439,7 @@
    "world": "origens",
    "group": "origens",
    "scriptureRef": "Nm 25:11",
-   "idea": "Sacerdote com lança",
+   "idea": "Sacerdote com lança em repouso",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -5468,7 +5468,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Lança em repouso, sem cena violenta nem vítimas."
   },
   {
    "id": "raro_labao",
@@ -5553,7 +5554,7 @@
    "world": "origens",
    "group": "origens",
    "scriptureRef": "Gn 24:2-10",
-   "idea": "Camelos e presentes para a noiva",
+   "idea": "Servo de caravana com os presentes da noiva (joias numa bolsa ou trouxa aberta) e corda de caravana",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -5582,7 +5583,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Gn 24 chama a figura de \"servo mais antigo\" de Abraão sem dar nome; a associação com Eliézer (Gn 15:2) é tradicional, não identificação explícita do capítulo. Manter ID e nome do plano e registrar isso na ficha e nas notas. Corda de caravana só como motivo, sem camelo em miniatura nem animal preso ao avatar."
   },
   {
    "id": "raro_filhas_de_zelofeade",
@@ -5591,7 +5593,7 @@
    "world": "origens",
    "group": "origens",
    "scriptureRef": "Nm 27:1-7",
-   "idea": "Cinco irmãs diante da porta da tenda",
+   "idea": "Mulher adulta em vestes dignas, com gesto de petição, representando as cinco irmãs",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -5620,7 +5622,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "adaptacao": "Uma única mulher adulta representa as cinco irmãs (Macla, Noa, Hogla, Milca e Tirza), no mesmo contrato de avatar do mago que representa o grupo dos magos: sem cinco pessoas e sem tenda ou cenário preso ao corpo. Nenhum estilo recebe o nome de uma irmã. Registrar essa representação na ficha e nas notas bíblicas."
   },
   {
    "id": "raro_debora_ama_de_rebeca",
