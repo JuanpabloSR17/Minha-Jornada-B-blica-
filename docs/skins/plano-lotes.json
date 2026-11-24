@@ -7199,7 +7199,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Dn 3:21-27",
-   "idea": "Três amigos com mantos e turbantes intactos no fogo",
+   "idea": "Um homem adulto com manto e turbante intactos, expressão de confiança e mãos livres em gesto discreto, representando os três amigos",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7228,7 +7228,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Um único representante da skin coletiva, com o mesmo rosto e traje nos 3 estilos; nenhum estilo corresponde a um dos amigos. Turbante nos 3 estilos, com a linha do cabelo legível quando houver cabelo e sem cabelo no estilo raspado. Sem fornalha, fogo, brasas ou fumaça fora do corpo, sem queimaduras, cordas, quarta figura, anjo ou figura divina. A nota preserva o contexto de Dn 3:21-27 (as roupas e o cabelo intactos) sem fingir retratar a cena."
   },
   {
    "id": "epico_oseias",
@@ -7237,7 +7238,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Os 1:1; 14:5",
-   "idea": "Profeta com ramo de lírio e orvalho",
+   "idea": "Profeta segurando um ramo de lírio com poucas gotas de orvalho pintadas nas folhas",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7270,7 +7271,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "adaptacao": "Flor e orvalho são motivos da metáfora de Os 14:5, não objetos que o texto põe na mão do profeta. Sem chuva, halo ou névoa fora da silhueta; não representar Deus."
   },
   {
    "id": "epico_joel",
@@ -7279,7 +7281,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Jl 2:28",
-   "idea": "Profeta com chifre e a chuva temporã",
+   "idea": "Profeta com um shofar natural em repouso na cintura e bordado discreto de chuva no manto",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7308,7 +7310,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "A nota explica que a trombeta vem de Jl 2:1, 15 e a chuva de Jl 2:23, enquanto a referência mantida (Jl 2:28) trata do derramamento do Espírito. Sem partículas, cenário ou chuva fora do corpo; sem personificar nem desenhar o Espírito Santo."
   },
   {
    "id": "epico_amos",
@@ -7317,7 +7320,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Am 7:14-15",
-   "idea": "Boiadeiro e cultivador de sicômoros",
+   "idea": "Boiadeiro com cajado apoiado no chão numa mão e um pequeno ramo de sicômoro com folhas e poucos figos na outra",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7346,7 +7349,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Motivos das ocupações de Am 7:14-15, sem afirmar que o texto descreve esses objetos nas mãos dele. Sem boi, rebanho, árvore ou campo em miniatura."
   },
   {
    "id": "epico_miqueias",
@@ -7355,7 +7359,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Mq 6:8",
-   "idea": "Profeta do campo de Moresete",
+   "idea": "Profeta em roupa rural de Moresete, em postura de caminhada, com cajado simples e gesto discreto junto ao peito",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7384,7 +7388,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Cajado e roupa são direção artística ligada ao \"andar humildemente\" de Mq 6:8, não objetos descritos no verso. Sem campo, povoado ou tribunal em miniatura, nem balança da justiça."
   },
   {
    "id": "epico_habacuque",
@@ -7393,7 +7398,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Hc 2:1-2",
-   "idea": "Vigia na torre com tábuas para escrever",
+   "idea": "Vigia em pé, de olhar atento, com duas pequenas tábuas lisas de escrita no antebraço e um cálamo na outra mão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7422,7 +7427,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "A nota liga a postura de vigia e as tábuas a Hc 2:1-2 e identifica material e tamanho das tábuas como artísticos. Sem torre, pedestal, maquete ou cena da visão; sem escrita inventada."
   },
   {
    "id": "epico_ageu",
@@ -7431,7 +7437,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Ag 1:8",
-   "idea": "Profeta com madeira para reconstruir o templo",
+   "idea": "Profeta com duas peças de madeira de tamanho e peso plausíveis, apoiadas no antebraço e na mão, evocando a reconstrução",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7460,7 +7466,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "adaptacao": "A nota distingue a ordem de trazer madeira (Ag 1:8) de uma afirmação de que o texto mostra Ageu carregando-a. Sem viga gigante, templo em miniatura nem ferramentas modernas."
   },
   {
    "id": "epico_zacarias",
@@ -7469,7 +7476,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Zc 4:2-3",
-   "idea": "Profeta com o candelabro e as duas oliveiras",
+   "idea": "Profeta com um pequeno lampadário de ouro com reservatório e sete lâmpadas de óleo numa mão e dois ramos de oliveira juntos na outra",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7498,7 +7505,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "adaptacao": "Motivos da visão de Zc 4:2-3, adaptados: os ramos interpretam as duas oliveiras, e o texto não diz que o profeta carrega esses objetos nem se pretende réplica exata do mecanismo. Não trocar por candelabro de nove braços. Sem árvores, templo, anjo, figura divina, óleo mágico ou brilho fora do alfa."
   },
   {
    "id": "epico_baruque",
@@ -7840,7 +7848,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não atribuir a Lemuel uma identidade histórica que o texto (Pv 31:1) não dá."
   },
   {
    "id": "raro_filhos_de_cora",
@@ -7849,7 +7858,7 @@
    "world": "sabedoria",
    "group": "sabedoria",
    "scriptureRef": "Sl 42 (título)",
-   "idea": "Cantores do templo com liras",
+   "idea": "Um cantor adulto com uma lira portátil, representando o grupo",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7878,7 +7887,8 @@
      "hairColor": "haircolor-blond",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Um único cantor representa os filhos de Corá (Sl 42, título), com o mesmo rosto e instrumento nos 3 estilos e sem nome individual por estilo. Sem templo, coral ou outras pessoas em miniatura."
   },
   {
    "id": "raro_eta_o_ezraita",
@@ -7916,7 +7926,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-locs"
     }
-   ]
+   ],
+   "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não inventar uma identidade histórica além do título do Sl 89."
   },
   {
    "id": "raro_dario_o_medo",
@@ -8158,7 +8169,7 @@
    "world": "sabedoria",
    "group": "sabedoria",
    "scriptureRef": "Jó 32:2-6",
-   "idea": "O jovem que fala depois dos anciãos",
+   "idea": "Adulto jovem, visivelmente mais novo que os sábios",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8187,7 +8198,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "Sem corpo infantil nem barba longa de ancião. Jó 32:2-6 permite afirmar só a juventude relativa, não uma idade numérica."
   },
   {
    "id": "epico_marta",

@@ -638,3 +638,20 @@ Mantenha rosto, traje, objetos, IDs e âncoras. Mande os pacotes S09 e S10 compl
 Os outros 46 arquivos de cada pacote são idênticos aos anteriores, incluindo fichas e ícones. Integração sem migração nem mudança de catálogo, fichas ou regras.
 
 **S09/S10 encerrados. Próximo: S11 e S12.**
+
+## 30. Adaptações de S11/S12 registradas antes da produção (24/11/2026)
+
+Registradas no plano e na linha **Adaptação** do LOTES.md, sem mudar IDs, nomes, sexo, estilos, referências ou regras:
+- **Filhos de Corá:** um único cantor com lira.
+- **Sadraque, Mesaque e Abede-Nego:** um único representante, com manto e turbante intactos, sem fogo, cordas nem figura divina.
+- **Oseias:** lírio com orvalho pintado dentro da silhueta.
+- **Joel:** shofar em repouso e chuva em bordado discreto.
+- **Amós:** cajado e ramo de sicômoro com figos.
+- **Miqueias:** roupa rural e cajado, sem balança.
+- **Habacuque:** tábuas lisas e cálamo, sem torre.
+- **Ageu:** duas peças de madeira plausíveis.
+- **Zacarias:** lampadário com sete lâmpadas e dois ramos de oliveira, sem candelabro de nove braços.
+- **Lemuel e Etã:** rolo simples, sem escrita nem identidade inventada.
+- **Eliú:** adulto jovem, nem criança nem ancião.
+
+Os estilos continuam exatos, inclusive os locs de personagens que não são apóstolos, com pele clara, média e escura visivelmente distintas. S11/S12 ainda não foram pintados.
