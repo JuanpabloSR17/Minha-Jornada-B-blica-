@@ -264,5 +264,24 @@
       "identidadeFacial": "Profeta maduro de rosto oval comprido de maçãs altas, testa lisa larga e queixo dividido, nariz estreito aquilino de ponta pequena, olhos redondos próximos de pálpebra superior marcada e sobrancelhas finas altas quase retas; barba longa em duas pontas e expressão contemplativa desperta."
     }
   ],
-  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "revisao": {
+    "id": "S12_v2",
+    "base": "fba0605417b13b397bb2cb47041ae596c87b1dde",
+    "escopo": "Somente Habacuque estilo3 (base e @2x) foi alterado. Os outros46assets, inclusive todas as6fichas e6ícones, são byte a byte iguais à primeira entrega.",
+    "correcao": "Habacuque3: pele clara tom2, usando Ageu1 como referência de pigmento; rosto, crespo volumoso castanho, barba, traje, tábuas e cálamo preservados. Os estilos1 e2 permanecem idênticos.",
+    "assetsAlterados": [
+      {
+        "arquivo": "epico_habacuque/estilo-3/corpo.webp",
+        "antes": "b403fa4d736b15d1b6349c51d40220500f893801537cb890cbdcdff9ca60a747",
+        "depois": "3fa66c01ccbecfb9ba71aee9937f1a41e7722dd8901566150db1ff5a3141aef5"
+      },
+      {
+        "arquivo": "epico_habacuque/estilo-3/corpo@2x.webp",
+        "antes": "b97414d39dfeaf045c70acd85ee778a41055242abbbfc35174ac3b3b35a6c6e5",
+        "depois": "b942aac0b76d3ab87d86881a5a4f3ed9d66d16e79e18f9131b5be2fc659cc9e9"
+      }
+    ],
+    "assetsIdenticos": 46
+  }
 }

@@ -295,3 +295,31 @@ KEEP this exact unique facial bone structure, apparent age, expression, body, po
 
 Image3 is ONLY an APPROVED skin-4 SKIN-PIGMENT COLOR REFERENCE. Borrow that complexion family and its neutral highlights/shadows on ALL exposed skin, never its face, age, sex, hairstyle, clothes, pose or props. Image1 remains the SOLE identity and outfit target. This must be a real visible pigment change, not a slight global tint.
 ```
+
+# Revisão S11_v2
+
+2 edições da ferramenta integrada, uma por pintura. Image1: alvo exato; Image2: referência de pigmento aprovada (Ageu1 para tom2, Corá1 para tom5), sem copiar rosto ou roupa; Image3: estilo médio preservado da mesma skin para comparação.
+
+## raro_eta_o_ezraita · estilo1 · tom de pele corrigido
+
+~~~text
+Use case: identity-preserve / EXACT SKIN PIGMENT CORRECTION. EDIT ONLY Image1, the exact full-body painted2.5D raro_eta_o_ezraita STYLE1 game sprite. Image1 is the SOLE target for face, anatomy, hair, beard, clothes, pose, props and framing. This is a color-family correction approved by the art reviewer, NOT a new character.
+
+MANDATORY CHANGE: Repaint ALL EXPOSED SKIN genuinely LIGHT FAIR WARM PEACH-BEIGE, catalog skin2 (#E8BC95). The current skin is too tanned and too similar to the medium style. Match Image2's approved FAIR complexion (Haggai style1): pale peach-beige midtones, warm ivory highlights, softly warm light-brown shadows. NO medium tan, bronze, copper/orange wash or dark olive. Make it unambiguously LIGHTER than Image3's medium complexion, even in the face thumbnail.
+
+Image2 is ONLY the approved skin2 complexion/color reference, NEVER its face, age, sex, hair, beard, pose, costume or object. Image3 is ONLY the same skin's unchanged MEDIUM STYLE shown for a STRONG CONTRAST comparison. The corrected target must be CLEARLY LIGHT/FAIR, much lighter than Image3. Do not recolor the whole canvas. Apply the pigment consistently on forehead, cheeks, nose, ears, neck, arms, both hands, legs and feet while keeping painted neutral upper-left light.
+
+STRICT INVARIANTS: Keep Image1's EXACT UNIQUE facial bone structure, apparent age, expression, eye shape, nose, mouth, beard length and outline, exact HAIR COLOR and HAIRSTYLE; no gray. Keep the HONEY GOLDEN-BROWN loose CURLY hair and matching forked beard. Keep the olive robe, rust mantle with cream/teal woven border, closed scroll held in one hand and other hand on chest. Same full costume textures and colors, SAME TWO CONNECTED ARMS and TWO natural five-finger hands with identical prop contacts. Same whole-body pose, complete feet and1024x1536 portrait framing. Preserve true RGBA transparent background, all background alpha0, compact opaque hair edges, no detached wisps or halos/haze. No background, text, UI, extra objects or extra figure. Repaint only the requested skin pigment, not facial identity, hair or clothing.
+~~~
+
+## raro_eta_o_ezraita · estilo2 · tom de pele corrigido
+
+~~~text
+Use case: identity-preserve / EXACT SKIN PIGMENT CORRECTION. EDIT ONLY Image1, the exact full-body painted2.5D raro_eta_o_ezraita STYLE2 game sprite. Image1 is the SOLE target for face, anatomy, hair, beard, clothes, pose, props and framing. This is a color-family correction approved by the art reviewer, NOT a new character.
+
+MANDATORY CHANGE: Repaint ALL EXPOSED SKIN genuinely DEEP WARM BROWN, catalog skin5 (#865233). The current skin is too light and too similar to the medium style. Match Image2's approved DARK BROWN complexion (Sons of Korah style1): deep brown midtones, softly warm brown highlights that never bleach the base skin pigment. NO copper-orange medium tan, suntan or global tint. Make it unambiguously DARKER than Image3's medium complexion, even in the face thumbnail.
+
+Image2 is ONLY the approved skin5 complexion/color reference, NEVER its face, age, sex, hair, beard, pose, costume or object. Image3 is ONLY the same skin's unchanged MEDIUM STYLE shown for a STRONG CONTRAST comparison. The corrected target must be CLEARLY DEEP/DARK BROWN, much darker than Image3. Do not recolor the whole canvas. Apply the pigment consistently on forehead, cheeks, nose, ears, neck, arms, both hands, legs and feet while keeping painted neutral upper-left light.
+
+STRICT INVARIANTS: Keep Image1's EXACT UNIQUE facial bone structure, apparent age, expression, eye shape, nose, mouth, beard length and outline, exact HAIR COLOR and HAIRSTYLE; no gray. Keep the COPPER volumetric rounded AFRO and matching forked beard. Keep the olive robe, rust mantle with cream/teal woven border, closed scroll held in one hand and other hand on chest. Same full costume textures and colors, SAME TWO CONNECTED ARMS and TWO natural five-finger hands with identical prop contacts. Same whole-body pose, complete feet and1024x1536 portrait framing. Preserve true RGBA transparent background, all background alpha0, compact opaque hair edges, no detached wisps or halos/haze. No background, text, UI, extra objects or extra figure. Repaint only the requested skin pigment, not facial identity, hair or clothing.
+~~~

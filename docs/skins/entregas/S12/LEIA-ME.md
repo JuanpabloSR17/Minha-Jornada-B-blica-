@@ -1,4 +1,4 @@
-# Jornada Bíblica · S12
+# Jornada Bíblica · S12_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit c041fae. Briefing: LOTES.md; contrato: TEMPORADA-1-EXODO.md §2.
 
@@ -38,3 +38,11 @@ Cada personagem tem somente a apresentação do próprio sexo, na raiz do seu ID
 Conferir ZIP e .zip.sha256 de cada lote, somas, arte, diferenças de pele, rostos, mãos e objetos. Aplicar pelo fluxo oficial scripts/skins-add-lot.mjs S12 e scripts/gen-skin-art.mjs. Rodar unitários, SQL, skins-audit, marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch com commit e resultado completo.
 
 O Codex alterou somente arte e arquivos de entrega locais, sem migração ou banco. A integração oficial fica com o Claude. O usuário autorizou S11/S12 em 24/11/2026. As 12 adaptações foram aprovadas e registradas no commit c041fae antes da produção. Revisão, integração e testes oficiais com o Claude continuam necessários. Até dois lotes nesta entrega: S11/S12.
+
+## Revisão solicitada no §31, commit fba0605 (24/11/2026)
+
+Habacuque3: pele clara tom2, usando Ageu1 como referência de pigmento; rosto, crespo volumoso castanho, barba, traje, tábuas e cálamo preservados. Os estilos1 e2 permanecem idênticos.
+
+Somente Habacuque estilo3 (base e @2x) foi alterado. Os outros46assets, inclusive todas as6fichas e6ícones, são byte a byte iguais à primeira entrega.
+
+Sem mudança de IDs, catálogo, sexo, estilos, regras, app, âncoras ou banco. As capturas320/412 da skin corrigida e as duas galerias foram atualizadas; capturas das outras5skins são idênticas. Comparacao_S12_v2.png mostra antes/depois no mesmo recorte. As novas correções foram geradas pela ferramenta integrada ImageGen; PROMPTS.md registra o texto exato. VALIDACAO.json traz os hashes dos assets alterados e a contagem dos preservados. ZIP original mantido imutável. Enviar somente este pacote completo v2 e seu .zip.sha256.

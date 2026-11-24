@@ -206,8 +206,8 @@
     {
       "id": "raro_eta_o_ezraita",
       "style": "estilo-1",
-      "bytes": 179544,
-      "floor": 1450,
+      "bytes": 168302,
+      "floor": 1449,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
@@ -222,11 +222,11 @@
       "anchors": [
         [
           512,
-          308
+          309
         ],
         [
           524,
-          386
+          387
         ],
         [
           512,
@@ -238,14 +238,14 @@
     {
       "id": "raro_eta_o_ezraita",
       "style": "estilo-2",
-      "bytes": 171944,
+      "bytes": 170084,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2900,
+        "floor": 2901,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -587,5 +587,39 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S11_v2",
+    "base": "fba0605417b13b397bb2cb47041ae596c87b1dde",
+    "escopo": "Somente Etã estilos1 e2 (base e @2x) e o ícone do estilo1 foram alterados. Os outros43assets, inclusive todas as6fichas e os5outros ícones, são byte a byte iguais à primeira entrega.",
+    "correcao": "Etã1: pele clara tom2, com cabelo cacheado e barba em mel preservados. Etã2: pele escura tom5, com crespo volumoso e barba cobre preservados. Etã3 tom4 permanece idêntico.",
+    "assetsAlterados": [
+      {
+        "arquivo": "raro_eta_o_ezraita/icone.webp",
+        "antes": "691b79a286d87b3e5b01ca337fa0045e21b4e7115432a8cdac42df70beb40e8c",
+        "depois": "c563f349a8e7f75603f5ac67cc203ed63f0a54196a2cf017f3714d1633620f7a"
+      },
+      {
+        "arquivo": "raro_eta_o_ezraita/estilo-1/corpo.webp",
+        "antes": "d98c70a196ace7b27201b26d0a6284965327e87c7811042802fe6372fbd0380f",
+        "depois": "6cf692646277a09729b701c79d32d2becd8af3e6cc8f428b38e340cdd1227b15"
+      },
+      {
+        "arquivo": "raro_eta_o_ezraita/estilo-1/corpo@2x.webp",
+        "antes": "0d7f98125b38d7f27fbbca4320eb7508d1bb56248ca0c6e0d3f168c7410178de",
+        "depois": "7b74b4f2c009eed1999d608ebaebfe4b3376a0c36c62c77b1539a939be28ac01"
+      },
+      {
+        "arquivo": "raro_eta_o_ezraita/estilo-2/corpo.webp",
+        "antes": "8d822221ed9fa5b03f0435183656621362d09742c54e33b03a0a9c5fd1f133be",
+        "depois": "e72317bae55ce5e114c46adf28ae7a1e19a495e2ef79bd2109a5dcd82cba5562"
+      },
+      {
+        "arquivo": "raro_eta_o_ezraita/estilo-2/corpo@2x.webp",
+        "antes": "b01cc49c3a87784939df65a41ebbcc8b6610bb7ec2d4b4208c0a27742c272dd8",
+        "depois": "4e4513633094582c535a7e9b826578b2e2cabbf1d16d6d91400b9afa02d0116c"
+      }
+    ],
+    "assetsIdenticos": 43
+  }
 }

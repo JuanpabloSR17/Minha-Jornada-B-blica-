@@ -687,3 +687,23 @@ Os estilos continuam exatos, inclusive os locs de personagens que não são apó
 - **S12_v2, `epico_habacuque` estilo-3** (tom 2, crespo volumoso): saiu mais escuro que o estilo-1 (tom 3), com a ordem invertida. Clarear para tom 2 claro, como o Ageu estilo-1 ou o Amós estilo-2. Comparação em `docs/skins/entregas/S12/Tons_a_corrigir.png`.
 
 Mantenha rosto, barba, cabelo, traje, objetos, IDs e âncoras. Mande os pacotes S11 e S12 completos com os SHA-256 atualizados, sem migração.
+
+### 31.1 S11_v2 e S12_v2: correções aprovadas (24/11/2026)
+
+**Ciclo base de S11/S12 fechado e verde (`fba0605`):**
+- 138 testes unitários, 592 verificações SQL e auditoria com as 157 skins pintadas.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local, incluindo as compras simultâneas com saldo final 0.
+
+**S11_v2**
+- O ZIP de 19.176.176 bytes confere com o `.zip.sha256` (`f849b615…`) e as 69 somas conferem.
+- Mudaram só os 5 arquivos anunciados: estilos 1 e 2 de Etã (base e @2x) e o ícone.
+- Tons medidos na testa: estilo-1 (tom 2) em 205, estilo-3 (tom 4) em 151 e estilo-2 (tom 5) em 112. A ordem clara, média e escura está certa.
+
+**S12_v2**
+- O ZIP de 21.921.745 bytes confere com o `.zip.sha256` (`04dc1735…`) e as 69 somas conferem.
+- Mudou só o estilo-3 de Habacuque (base e @2x), agora em tom 2 claro, mais claro que o estilo-1 (tom 3).
+
+Os demais arquivos são idênticos, incluindo as 12 fichas. Integração sem migração nem mudança de catálogo, fichas ou regras.
+
+**S11/S12 encerrados. Próximo: S13 e S14.**
