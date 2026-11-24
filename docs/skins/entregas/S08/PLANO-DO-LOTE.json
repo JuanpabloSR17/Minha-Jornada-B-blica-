@@ -1,0 +1,267 @@
+{
+  "commit": "59e7861",
+  "id": "S08",
+  "titulo": "Personagens · Terra e Reinos",
+  "skins": [
+    {
+      "id": "raro_jeosafa",
+      "name": "Traje de Jeosafá",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Cr 20:21",
+      "idea": "Rei em atitude de louvor e oração",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2CH",
+            20
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Jeosafá (2 Cr 20:21)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Um único rei, sem cantores em miniatura nem exército. As notas explicam que 2 Cr 20:21 fala da designação dos cantores; não dar ao rei um instrumento musical que o texto não descreve."
+    },
+    {
+      "id": "raro_joas_menino_rei",
+      "name": "Traje de Joás, menino rei",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 11:12",
+      "idea": "Menino de cerca de 7 anos, coroado, segurando com as duas mãos um pequeno rolo do testemunho sem escrita",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Joás, menino rei (2 Rs 11:12)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Criança da fase da coroação (2 Rs 11:12; a idade de 7 anos está em 2 Rs 11:21 e 2 Cr 24:1), sem barba nem corpo de adulto. Contrato infantil (opção C aprovada): os mesmos três pontos do adulto, ou seja, centro da cabeça em y≈300, queixo em y≈391 e pés em y≈1450, com tolerância de ±12 e centro horizontal em x≈512, e anatomia infantil por escala uniforme, sem deformar cabeça ou corpo. Só o topo da figura (cabelo, coroa ou véu) pode ficar entre y≈120 e y≈170, em vez de y≈216. O retrato corta apenas o alto do cabelo ou do tecido e preserva o rosto inteiro. Sem mudança no app, nos recortes, no catálogo ou no banco. Registrar na ficha os pontos reais medidos."
+    },
+    {
+      "id": "raro_hulda_profetisa",
+      "name": "Traje de Hulda, profetisa",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 22:14",
+      "idea": "Profetisa de Jerusalém",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            22
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Hulda, profetisa (2 Rs 22:14)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ]
+    },
+    {
+      "id": "raro_zadoque",
+      "name": "Traje de Zadoque",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Rs 1:39",
+      "idea": "Sacerdote segurando o chifre usado como recipiente de azeite",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "1KI",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Zadoque (1 Rs 1:39)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "O chifre é um recipiente de azeite (1 Rs 1:39), segurado com contato físico correto, não um shofar tocado como instrumento. Sem Salomão em miniatura nem cena de unção."
+    },
+    {
+      "id": "raro_benaia",
+      "name": "Traje de Benaia",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 23:20",
+      "idea": "Guerreiro em repouso com manto espesso de inverno e arma em repouso",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            23
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Benaia (2 Sm 23:20)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Sem leão, carcaça ou pele de troféu, sem cena de ataque nem sangue, sem neve no chão nem partículas fora do corpo no alfa. A nota liga o motivo invernal ao dia de neve de 2 Sm 23:20, sem fingir reconstituir a cena."
+    },
+    {
+      "id": "raro_os_valentes_de_davi",
+      "name": "Os valentes de Davi",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 23:8-39",
+      "idea": "Um guerreiro adulto com armas em repouso, representando o grupo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            23
+          ]
+        ]
+      },
+      "howTo": "Ler a história dos valentes de Davi (2 Sm 23:8-39)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Um único guerreiro representa os valentes de 2 Sm 23:8-39, com a mesma identidade, traje e conjunto de armas nos 3 estilos. Não são três homens nomeados nem o grupo inteiro; nenhum estilo recebe o nome de um valente."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_jeosafa",
+      "identidadeFacial": "Adulto maduro; rosto retangular alto de testa estreita e maxilar largo, queixo quadrado saliente, nariz muito largo de ponte baixa, olhos pequenos afastados e sobrancelhas grossas elevadas; barba média retangular, expressão serena de louvor."
+    },
+    {
+      "id": "raro_joas_menino_rei",
+      "identidadeFacial": "Menino de cerca de sete anos; rosto quadrado curto de bochechas cheias e testa arredondada, nariz pequeno reto de base larga, olhos redondos afastados e sobrancelhas finas curvas; boca pequena, expressão curiosa solene, sem barba."
+    },
+    {
+      "id": "raro_hulda_profetisa",
+      "identidadeFacial": "Idosa; rosto redondo horizontal de testa larga e queixo curto, nariz largo achatado de ponta arredondada, olhos grandes horizontais próximos e sobrancelhas grossas muito baixas; lábio inferior cheio, expressão firme acolhedora, rugas naturais."
+    },
+    {
+      "id": "raro_zadoque",
+      "identidadeFacial": "Idoso vigoroso; rosto estreito em diamante de maçãs altas e queixo comprido, nariz longo curvo de ponta fina, olhos pequenos próximos e sobrancelhas altas retas; barba curta triangular e bigode espesso, expressão respeitosa concentrada."
+    },
+    {
+      "id": "raro_benaia",
+      "identidadeFacial": "Adulto; rosto oval curto muito largo de testa baixa, maxilar arredondado pesado e queixo pequeno, nariz curto largo de ponta elevada, olhos amendoados afastados e sobrancelhas finas baixas; barba densa curta arredondada, expressão firme tranquila."
+    },
+    {
+      "id": "raro_os_valentes_de_davi",
+      "identidadeFacial": "Adulto; rosto hexagonal comprido de testa alta estreita e maxilar largo, nariz largo reto, olhos grandes próximos e sobrancelhas espessas curvas assimétricas; barba média de base plana e bigode estreito, expressão decidida leal."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

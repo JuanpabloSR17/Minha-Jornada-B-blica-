@@ -563,3 +563,27 @@ A regra do `cadd33a` fixava o topo da figura infantil em y≈216. Com os pés em
 - Nada muda no app, nos recortes, no catálogo, nos estilos, no banco ou nas regras.
 
 S07/S08 ainda não foram entregues.
+
+## 28. Lotes S07 e S08: aplicados e aprovados por inteiro (24/11/2026)
+
+**Conferência**
+- **S07_final:** o ZIP de 18.889.195 bytes confere com o `.zip.sha256` (`44eba6f3…`) e as 68 somas conferem.
+- **S08_final:** o ZIP de 20.401.279 bytes confere com o `.zip.sha256` (`a419df9e…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas e um único sexo por personagem.
+
+**Contrato infantil:** a menina tem topo em 146, 142 e 159; Joás em 125, 125 e 161, todos dentro da faixa de 120 a 170. Pés em y≈1452. Os rostos inteiros cabem no recorte.
+
+**Aprovado:** as oito adaptações de `cadd33a` e `59e7861`.
+- Mefibosete com a muleta funcional e o pão, sem cura.
+- Sunamita com a roupa de cama e a lamparina.
+- Menina e Joás com anatomia infantil convincente.
+- Jeosafá sozinho em louvor.
+- Benaia em repouso, com manto de inverno.
+- Valentes de Davi com um único representante.
+- Zadoque com o chifre de azeite.
+
+**Tons de pele:** a ordem clara, média e escura está certa nas 12 skins. Nos valentes de Davi, a barba ruiva enganou a medida automática, mas na comparação visual o tom 1 está claro.
+
+**Migrações:** `20261202001800_skins_s07.sql` e `20261202001900_skins_s08.sql`. O app passa a 133 skins pintadas.
+
+**Próximo: S09 e S10.**

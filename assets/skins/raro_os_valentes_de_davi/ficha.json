@@ -1,0 +1,50 @@
+{
+  "id": "raro_os_valentes_de_davi",
+  "nome": "Os valentes de Davi",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "2 Sm 23:8-39",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto hexagonal comprido de testa alta estreita e maxilar largo, nariz largo reto, olhos grandes próximos e sobrancelhas espessas curvas assimétricas; barba média de base plana e bigode estreito, expressão decidida leal.",
+  "adaptacao": "Um único guerreiro representa os valentes de 2 Sm 23:8-39, com a mesma identidade, traje e conjunto de armas nos 3 estilos. Não são três homens nomeados nem o grupo inteiro; nenhum estilo recebe o nome de um valente."
+}

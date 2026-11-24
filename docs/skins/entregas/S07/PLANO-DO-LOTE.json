@@ -1,0 +1,265 @@
+{
+  "commit": "59e7861",
+  "id": "S07",
+  "titulo": "Personagens · Terra e Reinos",
+  "skins": [
+    {
+      "id": "raro_mefibosete",
+      "name": "Traje de Mefibosete",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 9:7",
+      "idea": "Adulto digno em pé, apoiado em uma muleta simples sob um braço, com a mão na empunhadura; a outra mão segura um pequeno pão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            9
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Mefibosete (2 Sm 9:7)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "O pão é o motivo da mesa do rei de 2 Sm 9:7, sem mesa, banquete ou outra pessoa. A ficha preserva a deficiência nos dois pés (2 Sm 9:3, 13), sem sugerir cura nem inventar diagnóstico. A muleta e a pose são direção artística, não objeto citado no capítulo. Apoio e postura fisicamente coerentes, sem caricaturar nem esconder a deficiência."
+    },
+    {
+      "id": "raro_urias",
+      "name": "Traje de Urias",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Sm 11:11",
+      "idea": "Soldado fiel com escudo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2SA",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Urias (2 Sm 11:11)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        }
+      ]
+    },
+    {
+      "id": "raro_isai",
+      "name": "Traje de Isaí",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 16:10-11",
+      "idea": "Pai pastor de Belém",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            16
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Isaí (1 Sm 16:10-11)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        }
+      ]
+    },
+    {
+      "id": "raro_viuva_de_sarepta",
+      "name": "Traje de Viúva de Sarepta",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Rs 17:12-16",
+      "idea": "Jarra de farinha e botija de azeite",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "1KI",
+            17
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Viúva de Sarepta (1 Rs 17:12-16)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        }
+      ]
+    },
+    {
+      "id": "raro_menina_serva_de_naama",
+      "name": "Traje de Menina serva de Naamã",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 5:2-3",
+      "idea": "Menina em vestes simples e modestas, com gesto de indicar ou orientar",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Menina serva de Naamã (2 Rs 5:2-3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "adaptacao": "Figura infantil feminina, sem corpo nem maquiagem de adulta, sem correntes, cena de cativeiro, outra pessoa ou profeta em miniatura. O texto (2 Rs 5:2-3) não informa a idade: a aparência infantil é direção artística. Contrato infantil (opção C aprovada): os mesmos três pontos do adulto, ou seja, centro da cabeça em y≈300, queixo em y≈391 e pés em y≈1450, com tolerância de ±12 e centro horizontal em x≈512, e anatomia infantil por escala uniforme, sem deformar cabeça ou corpo. Só o topo da figura (cabelo, coroa ou véu) pode ficar entre y≈120 e y≈170, em vez de y≈216. O retrato corta apenas o alto do cabelo ou do tecido e preserva o rosto inteiro. Sem mudança no app, nos recortes, no catálogo ou no banco. Registrar na ficha os pontos reais medidos."
+    },
+    {
+      "id": "raro_sunamita",
+      "name": "Traje de Sunamita",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Rs 4:8-10",
+      "idea": "Senhora adulta com roupa de cama dobrada apoiada num antebraço e uma pequena lamparina na outra mão",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "2KI",
+            4
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Sunamita (2 Rs 4:8-10)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-braids"
+        }
+      ],
+      "adaptacao": "Motivos da hospitalidade e do quarto de 2 Rs 4:8-10 (o texto cita cama, mesa, cadeira e candeeiro), sem quarto, cama, mesa ou profeta em miniatura. A nota distingue os motivos do avatar dos itens literalmente descritos."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_mefibosete",
+      "identidadeFacial": "Adulto; rosto triangular de testa larga e maxilar muito estreito, queixo comprido arredondado, nariz curto largo, olhos pequenos afastados e sobrancelhas curvas finas; barba curta rente, expressão reservada acolhida, postura apoiada."
+    },
+    {
+      "id": "raro_urias",
+      "identidadeFacial": "Adulto; rosto hexagonal muito largo de têmporas fortes e queixo curto quadrado, nariz aquilino largo, olhos horizontais próximos sob sobrancelhas espessas baixas; bigode curto e barba rala de maxilar, expressão disciplinada tranquila."
+    },
+    {
+      "id": "raro_isai",
+      "identidadeFacial": "Idoso; rosto oval largo de testa alta, maçãs baixas e maxilar arredondado, nariz médio curvo de ponta bulbosa, olhos grandes fundos afastados e sobrancelhas altas finas; barba longa dividida ao centro, expressão paternal atenta."
+    },
+    {
+      "id": "raro_viuva_de_sarepta",
+      "identidadeFacial": "Adulta madura; rosto oval muito fino, testa estreita e bochechas fundas, queixo pequeno, nariz comprido reto, olhos amendoados afastados e sobrancelhas retas baixas; lábios finos, expressão cansada mas esperançosa."
+    },
+    {
+      "id": "raro_menina_serva_de_naama",
+      "identidadeFacial": "Menina em idade escolar, aparência infantil sem idade bíblica exata; rosto redondo de testa alta, bochechas suaves, queixo pequeno, nariz curto arrebitado, olhos grandes próximos e sobrancelhas retas cheias; expressão atenta gentil, sem maquiagem."
+    },
+    {
+      "id": "raro_sunamita",
+      "identidadeFacial": "Adulta madura; rosto pentagonal largo de testa média e maxilar forte, nariz curto convexo de base larga, olhos redondos afastados e sobrancelhas grossas arqueadas; boca larga, expressão segura hospitaleira, porte robusto."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

@@ -2660,6 +2660,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "raro_mefibosete",
+   "name": "Traje de Mefibosete",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 9:7",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_urias",
+   "name": "Traje de Urias",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 11:11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_isai",
+   "name": "Traje de Isaí",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 16:10-11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_viuva_de_sarepta",
+   "name": "Traje de Viúva de Sarepta",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 17:12-16",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_menina_serva_de_naama",
+   "name": "Traje de Menina serva de Naamã",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 5:2-3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-bun"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_sunamita",
+   "name": "Traje de Sunamita",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 4:8-10",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_jeosafa",
+   "name": "Traje de Jeosafá",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Cr 20:21",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_joas_menino_rei",
+   "name": "Traje de Joás, menino rei",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 11:12",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_hulda_profetisa",
+   "name": "Traje de Hulda, profetisa",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Rs 22:14",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_zadoque",
+   "name": "Traje de Zadoque",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Rs 1:39",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_benaia",
+   "name": "Traje de Benaia",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 23:20",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_os_valentes_de_davi",
+   "name": "Os valentes de Davi",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 23:8-39",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

@@ -1,8 +1,8 @@
 # Status da produção de skins
 
-Gerado por `node scripts/skin-status.mjs` em 2026-11-20. Fonte do plano: `docs/skins/plano-lotes.json`.
+Gerado por `node scripts/skin-status.mjs` em 2026-11-24. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 121 de 289 skins prontas no app.
+**Progresso:** 133 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -222,27 +222,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Mical (`raro_mical`) | Rara | reinos | ✔ | — | lendo: Ler a história de Mical (1 Sm 19:12) |
 | ✅ | Traje de Joabe (`raro_joabe`) | Rara | reinos | ✔ | — | lendo: Ler a história de Joabe (2 Sm 2:13) |
 
-## S07 · Personagens · Terra e Reinos (0/6)
+## S07 · Personagens · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Mefibosete (`raro_mefibosete`) | Rara | reinos | — | — | Ler a história de Mefibosete (2 Sm 9:7) |
-| ⬜ | Traje de Urias (`raro_urias`) | Rara | reinos | — | — | Ler a história de Urias (2 Sm 11:11) |
-| ⬜ | Traje de Isaí (`raro_isai`) | Rara | reinos | — | — | Ler a história de Isaí (1 Sm 16:10-11) |
-| ⬜ | Traje de Viúva de Sarepta (`raro_viuva_de_sarepta`) | Rara | reinos | — | — | Ler a história de Viúva de Sarepta (1 Rs 17:12-16) |
-| ⬜ | Traje de Menina serva de Naamã (`raro_menina_serva_de_naama`) | Rara | reinos | — | — | Ler a história de Menina serva de Naamã (2 Rs 5:2-3) |
-| ⬜ | Traje de Sunamita (`raro_sunamita`) | Rara | reinos | — | — | Ler a história de Sunamita (2 Rs 4:8-10) |
+| ✅ | Traje de Mefibosete (`raro_mefibosete`) | Rara | reinos | ✔ | — | lendo: Ler a história de Mefibosete (2 Sm 9:7) |
+| ✅ | Traje de Urias (`raro_urias`) | Rara | reinos | ✔ | — | lendo: Ler a história de Urias (2 Sm 11:11) |
+| ✅ | Traje de Isaí (`raro_isai`) | Rara | reinos | ✔ | — | lendo: Ler a história de Isaí (1 Sm 16:10-11) |
+| ✅ | Traje de Viúva de Sarepta (`raro_viuva_de_sarepta`) | Rara | reinos | ✔ | — | lendo: Ler a história de Viúva de Sarepta (1 Rs 17:12-16) |
+| ✅ | Traje de Menina serva de Naamã (`raro_menina_serva_de_naama`) | Rara | reinos | ✔ | — | lendo: Ler a história de Menina serva de Naamã (2 Rs 5:2-3) |
+| ✅ | Traje de Sunamita (`raro_sunamita`) | Rara | reinos | ✔ | — | lendo: Ler a história de Sunamita (2 Rs 4:8-10) |
 
-## S08 · Personagens · Terra e Reinos (0/6)
+## S08 · Personagens · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Jeosafá (`raro_jeosafa`) | Rara | reinos | — | — | Ler a história de Jeosafá (2 Cr 20:21) |
-| ⬜ | Traje de Joás, menino rei (`raro_joas_menino_rei`) | Rara | reinos | — | — | Ler a história de Joás, menino rei (2 Rs 11:12) |
-| ⬜ | Traje de Hulda, profetisa (`raro_hulda_profetisa`) | Rara | reinos | — | — | Ler a história de Hulda, profetisa (2 Rs 22:14) |
-| ⬜ | Traje de Zadoque (`raro_zadoque`) | Rara | reinos | — | — | Ler a história de Zadoque (1 Rs 1:39) |
-| ⬜ | Traje de Benaia (`raro_benaia`) | Rara | reinos | — | — | Ler a história de Benaia (2 Sm 23:20) |
-| ⬜ | Os valentes de Davi (`raro_os_valentes_de_davi`) | Rara | reinos | — | — | Ler a história dos valentes de Davi (2 Sm 23:8-39) |
+| ✅ | Traje de Jeosafá (`raro_jeosafa`) | Rara | reinos | ✔ | — | lendo: Ler a história de Jeosafá (2 Cr 20:21) |
+| ✅ | Traje de Joás, menino rei (`raro_joas_menino_rei`) | Rara | reinos | ✔ | — | lendo: Ler a história de Joás, menino rei (2 Rs 11:12) |
+| ✅ | Traje de Hulda, profetisa (`raro_hulda_profetisa`) | Rara | reinos | ✔ | — | lendo: Ler a história de Hulda, profetisa (2 Rs 22:14) |
+| ✅ | Traje de Zadoque (`raro_zadoque`) | Rara | reinos | ✔ | — | lendo: Ler a história de Zadoque (1 Rs 1:39) |
+| ✅ | Traje de Benaia (`raro_benaia`) | Rara | reinos | ✔ | — | lendo: Ler a história de Benaia (2 Sm 23:20) |
+| ✅ | Os valentes de Davi (`raro_os_valentes_de_davi`) | Rara | reinos | ✔ | — | lendo: Ler a história dos valentes de Davi (2 Sm 23:8-39) |
 
 ## S09 · Personagens · Terra e Reinos (0/6)
 

@@ -1,0 +1,50 @@
+{
+  "id": "raro_zadoque",
+  "nome": "Traje de Zadoque",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "1 Rs 1:39",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Idoso vigoroso; rosto estreito em diamante de maçãs altas e queixo comprido, nariz longo curvo de ponta fina, olhos pequenos próximos e sobrancelhas altas retas; barba curta triangular e bigode espesso, expressão respeitosa concentrada.",
+  "adaptacao": "O chifre é um recipiente de azeite (1 Rs 1:39), segurado com contato físico correto, não um shofar tocado como instrumento. Sem Salomão em miniatura nem cena de unção."
+}

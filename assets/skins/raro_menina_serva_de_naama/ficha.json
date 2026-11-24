@@ -1,0 +1,109 @@
+{
+  "id": "raro_menina_serva_de_naama",
+  "nome": "Traje de Menina serva de Naamã",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "2 Rs 5:2-3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-bun"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Menina em idade escolar, aparência infantil sem idade bíblica exata; rosto redondo de testa alta, bochechas suaves, queixo pequeno, nariz curto arrebitado, olhos grandes próximos e sobrancelhas retas cheias; expressão atenta gentil, sem maquiagem.",
+  "adaptacao": "Figura infantil feminina, sem corpo nem maquiagem de adulta, sem correntes, cena de cativeiro, outra pessoa ou profeta em miniatura. O texto (2 Rs 5:2-3) não informa a idade: a aparência infantil é direção artística. Contrato infantil (opção C aprovada): os mesmos três pontos do adulto, ou seja, centro da cabeça em y≈300, queixo em y≈391 e pés em y≈1450, com tolerância de ±12 e centro horizontal em x≈512, e anatomia infantil por escala uniforme, sem deformar cabeça ou corpo. Só o topo da figura (cabelo, coroa ou véu) pode ficar entre y≈120 e y≈170, em vez de y≈216. O retrato corta apenas o alto do cabelo ou do tecido e preserva o rosto inteiro. Sem mudança no app, nos recortes, no catálogo ou no banco. Registrar na ficha os pontos reais medidos.",
+  "encaixeInfantil": {
+    "briefingAprovado": "59e7861",
+    "metodo": "Escala uniforme e translação; sem cisalhamento nem deformação da anatomia infantil.",
+    "topoPermitido": [
+      120,
+      170
+    ],
+    "toleranciaDosTresPontos": 12,
+    "medidasReais": [
+      {
+        "estilo": "estilo-1",
+        "topo": 147,
+        "cabecaCentro": [
+          521,
+          293
+        ],
+        "queixo": [
+          522,
+          398
+        ],
+        "pes": [
+          503,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-2",
+        "topo": 143,
+        "cabecaCentro": [
+          522,
+          291
+        ],
+        "queixo": [
+          523,
+          400
+        ],
+        "pes": [
+          502,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-3",
+        "topo": 160,
+        "cabecaCentro": [
+          520,
+          293
+        ],
+        "queixo": [
+          523,
+          398
+        ],
+        "pes": [
+          504,
+          1450
+        ]
+      }
+    ]
+  }
+}

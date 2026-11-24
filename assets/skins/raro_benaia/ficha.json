@@ -1,0 +1,50 @@
+{
+  "id": "raro_benaia",
+  "nome": "Traje de Benaia",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "2 Sm 23:20",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto; rosto oval curto muito largo de testa baixa, maxilar arredondado pesado e queixo pequeno, nariz curto largo de ponta elevada, olhos amendoados afastados e sobrancelhas finas baixas; barba densa curta arredondada, expressão firme tranquila.",
+  "adaptacao": "Sem leão, carcaça ou pele de troféu, sem cena de ataque nem sangue, sem neve no chão nem partículas fora do corpo no alfa. A nota liga o motivo invernal ao dia de neve de 2 Sm 23:20, sem fingir reconstituir a cena."
+}
