@@ -707,3 +707,25 @@ Mantenha rosto, barba, cabelo, traje, objetos, IDs e âncoras. Mande os pacotes 
 Os demais arquivos são idênticos, incluindo as 12 fichas. Integração sem migração nem mudança de catálogo, fichas ou regras.
 
 **S11/S12 encerrados. Próximo: S13 e S14.**
+
+## 32. Adaptações de S13/S14 registradas antes da produção (25/11/2026)
+
+As 12 propostas foram confirmadas sem ajustes e registradas no plano e na linha **Adaptação** do LOTES.md. IDs, nomes, sexo, estilos, referências e regras não mudaram.
+
+**S13**
+- **Baruque:** rolo sem letras, cálamo e tinteiro na cintura.
+- **Obadias:** rolo selado sem inscrição.
+- **Naum:** arauto com manto de montes, sem pedestal.
+- **Sofonias:** alegria serena, sem representar o Senhor.
+- **Malaquias:** rolo aberto sem escrita.
+- **Ebede-Meleque:** corda e trapos; oficial etíope na nota; estilos exatos.
+
+**S14**
+- **Recabitas:** um único representante com tecido de tenda e odre de água.
+- **Dario, o medo:** diadema baixo e decreto sem escrita.
+- **Hananias, Misael e Azarias:** um único adulto jovem com rolo de estudo.
+- **Aspenaz:** rolo fechado e gesto acolhedor.
+- **Gemarias:** gesto de escuta, com a nota precisa sobre Jr 36:10-12.
+- **Marta:** avental e jarra, penteado visível e só apresentação feminina.
+
+S13/S14 ainda não foram pintados.

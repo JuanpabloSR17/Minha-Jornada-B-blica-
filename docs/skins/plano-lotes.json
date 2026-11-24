@@ -7515,7 +7515,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Jr 36:4",
-   "idea": "Escriba com rolo e tinta",
+   "idea": "Escriba em pé com rolo compacto aberto, sem letras, no antebraço, cálamo na outra mão e pequeno tinteiro fechado preso à cintura",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7544,7 +7544,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "Motivo da escrita de Jr 36:4; a tinta é citada em Jr 36:18. O tinteiro fica na cintura para não exigir terceira mão. Sem Jeremias, mesa ou cena em miniatura."
   },
   {
    "id": "raro_obadias",
@@ -7553,7 +7554,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Ob 1:1",
-   "idea": "Mensageiro com rolo selado",
+   "idea": "Profeta mensageiro com um rolo fechado, preso por cordão e selo simples sem inscrições",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7582,7 +7583,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "O selo é direção artística, não objeto descrito em Ob 1:1. Sem guerra, outro mensageiro, nem ligar sua identidade a outro Obadias que o texto não demonstra."
   },
   {
    "id": "raro_naum",
@@ -7591,7 +7593,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Na 1:15",
-   "idea": "Arauto sobre os montes com boas novas",
+   "idea": "Arauto em pé, com gesto discreto de anúncio e manto de viagem com motivo geométrico de montes na borda",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7620,7 +7622,8 @@
      "hairColor": "haircolor-blond",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "O mensageiro de paz de Na 1:15 inspira o traje, sem afirmar que o verso retrata Naum nessa postura. Pés no chão do avatar; sem pedestal, montanha, cidade, guerra, rocha ou cenário."
   },
   {
    "id": "raro_sofonias",
@@ -7629,7 +7632,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Sf 3:17",
-   "idea": "Profeta com o cântico de alegria",
+   "idea": "Profeta em pé com alegria serena, uma mão junto ao peito e a outra aberta, sem objeto",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7658,7 +7661,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "adaptacao": "A expressão interpreta uma resposta humana de alegria; em Sf 3:17 quem se alegra e canta é o Senhor, que não é desenhado nem personificado. Sem halo, figura divina, notas musicais flutuantes ou cena."
   },
   {
    "id": "raro_malaquias",
@@ -7667,7 +7671,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Ml 3:16",
-   "idea": "Profeta com o livro da memória",
+   "idea": "Profeta com um rolo aberto sem escrita sustentado pelas duas mãos",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7696,7 +7700,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "Motivo artístico do livro da memória de Ml 3:16, sem afirmar que o texto mostra Malaquias carregando esse livro. Sem códice moderno nem mãos ou figura de Deus."
   },
   {
    "id": "raro_ebede_meleque",
@@ -7705,7 +7710,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Jr 38:7-13",
-   "idea": "Oficial etíope com cordas e trapos para o resgate",
+   "idea": "Oficial em pé com uma corda de resgate enrolada num braço e trapos antigos dobrados na outra mão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7734,7 +7739,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "adaptacao": "Conforme Jr 38:7-13. Sem poço, Jeremias, outra pessoa ou ação violenta. A nota preserva a identificação do texto como oficial etíope (cuxita). Os três estilos seguem exatos, inclusive o estilo-1 claro e louro: são alternativas do Viajante com traje inspirado, não retratos que mudem a origem do personagem."
   },
   {
    "id": "raro_os_recabitas",
@@ -7743,7 +7749,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Jr 35:6-7",
-   "idea": "Família de tenda que não bebe vinho",
+   "idea": "Um homem adulto em traje simples de tenda, com tecido de tenda enrolado num antebraço e pequeno odre de água fechado na cintura, representando o grupo",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7772,7 +7778,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos. Sem família extra, tenda, maquete, vinho ou taça. A nota distingue os motivos visuais das palavras de Jr 35:6-7."
   },
   {
    "id": "raro_agur",
@@ -7936,7 +7943,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Dn 6:25-26",
-   "idea": "Rei com o decreto que honra o Deus de Daniel",
+   "idea": "Rei maduro em pé, com diadema baixo que deixe o penteado visível e o rolo do decreto, sem escrita, nas mãos",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -7965,7 +7972,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "Mantém a referência Dn 6:25-26, sem identificá-lo arbitrariamente com outro Dario histórico. Sem trono, leões, Daniel ou figura divina."
   },
   {
    "id": "raro_hananias_misael_e_azarias",
@@ -7974,7 +7982,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Dn 1:6-7",
-   "idea": "Os três amigos ainda estudantes na corte",
+   "idea": "Um adulto jovem em traje simples de estudante da corte, com um rolo de estudo compacto sem escrita, representando os três amigos",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8003,7 +8011,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos; nenhum estilo recebe o nome de um dos amigos. Nem ancião nem criança; juventude aparente sem idade numérica. Sem três figuras, escola, palácio, ídolos ou rei."
   },
   {
    "id": "raro_aspenaz",
@@ -8012,7 +8021,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Dn 1:9",
-   "idea": "Chefe dos oficiais da corte",
+   "idea": "Oficial da corte em pé com um rolo administrativo fechado, sem inscrições, e gesto de acolhimento na outra mão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8041,7 +8050,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Referência à benevolência de Dn 1:9. Sem rei, corte em miniatura ou estereótipos físicos inventados."
   },
   {
    "id": "raro_gemarias",
@@ -8050,7 +8060,7 @@
    "world": "profetas",
    "group": "profetas",
    "scriptureRef": "Jr 36:10-12",
-   "idea": "Oficial que ouviu o rolo",
+   "idea": "Oficial em pé com gesto de escuta e um rolo fechado sem escrita na outra mão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8079,7 +8089,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "Nota precisa: Jr 36:10 situa a leitura de Baruque na sala de Gemarias, o v. 11 diz que Micaías ouviu e o v. 12 inclui Gemarias entre os oficiais; o texto não o descreve segurando o rolo nem ouvindo na sala. Sem segunda pessoa, sala ou templo em miniatura e sem confundi-lo com Micaías."
   },
   {
    "id": "raro_ido_o_vidente",
@@ -8208,7 +8219,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 10:40; Jo 11:20-27",
-   "idea": "Avental de casa, jarra",
+   "idea": "Mulher em roupa de casa discreta, com avental e uma jarra de barro à cintura, uma mão sob a base e a outra na alça",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -8241,7 +8252,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Só apresentação feminina, com dois braços completos e penteado visível nos 3 estilos (tranças, coque, longo ondulado), sem cobertura que o esconda. Jarra e avental são motivos do serviço de Lc 10:40, não objetos descritos no verso; a nota também preserva a confissão de fé de Jo 11:20-27. Sem cozinha, mesa ou outra figura."
   },
   {
    "id": "epico_maria_de_betania",
