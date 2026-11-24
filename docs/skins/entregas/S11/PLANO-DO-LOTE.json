@@ -1,0 +1,272 @@
+{
+  "commit": "c041fae",
+  "id": "S11",
+  "titulo": "Personagens · Sabedoria e Profetas",
+  "skins": [
+    {
+      "id": "raro_lemuel",
+      "name": "Traje de Lemuel",
+      "rarity": "rare",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Pv 31:1",
+      "idea": "Rei que guarda as palavras da mãe",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "PRO",
+            31
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Lemuel (Pv 31:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não atribuir a Lemuel uma identidade histórica que o texto (Pv 31:1) não dá."
+    },
+    {
+      "id": "raro_filhos_de_cora",
+      "name": "Traje dos filhos de Corá",
+      "rarity": "rare",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Sl 42 (título)",
+      "idea": "Um cantor adulto com uma lira portátil, representando o grupo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "PSA",
+            42
+          ]
+        ]
+      },
+      "howTo": "Ler a história dos filhos de Corá (Sl 42, título)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Um único cantor representa os filhos de Corá (Sl 42, título), com o mesmo rosto e instrumento nos 3 estilos e sem nome individual por estilo. Sem templo, coral ou outras pessoas em miniatura."
+    },
+    {
+      "id": "raro_eta_o_ezraita",
+      "name": "Traje de Etã, o ezraíta",
+      "rarity": "rare",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Sl 89 (título)",
+      "idea": "Salmista sábio",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "PSA",
+            89
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Etã, o ezraíta (Sl 89, título)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não inventar uma identidade histórica além do título do Sl 89."
+    },
+    {
+      "id": "raro_eliu",
+      "name": "Traje de Eliú",
+      "rarity": "rare",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Jó 32:2-6",
+      "idea": "Adulto jovem, visivelmente mais novo que os sábios",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JOB",
+            32
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Eliú (Jó 32:2-6)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "Sem corpo infantil nem barba longa de ancião. Jó 32:2-6 permite afirmar só a juventude relativa, não uma idade numérica."
+    },
+    {
+      "id": "epico_sadraque_mesaque_e_abede_nego",
+      "name": "Traje de Sadraque, Mesaque e Abede-Nego",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Dn 3:21-27",
+      "idea": "Um homem adulto com manto e turbante intactos, expressão de confiança e mãos livres em gesto discreto, representando os três amigos",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "DAN",
+            3
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Sadraque, Mesaque e Abede-Nego (Dn 3:21-27)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Um único representante da skin coletiva, com o mesmo rosto e traje nos 3 estilos; nenhum estilo corresponde a um dos amigos. Turbante nos 3 estilos, com a linha do cabelo legível quando houver cabelo e sem cabelo no estilo raspado. Sem fornalha, fogo, brasas ou fumaça fora do corpo, sem queimaduras, cordas, quarta figura, anjo ou figura divina. A nota preserva o contexto de Dn 3:21-27 (as roupas e o cabelo intactos) sem fingir retratar a cena."
+    },
+    {
+      "id": "epico_oseias",
+      "name": "Traje de Oseias",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Os 1:1; 14:5",
+      "idea": "Profeta segurando um ramo de lírio com poucas gotas de orvalho pintadas nas folhas",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "HOS",
+            1
+          ],
+          [
+            "HOS",
+            14
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Oseias (Os 1:1; 14:5)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "adaptacao": "Flor e orvalho são motivos da metáfora de Os 14:5, não objetos que o texto põe na mão do profeta. Sem chuva, halo ou névoa fora da silhueta; não representar Deus."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_lemuel",
+      "identidadeFacial": "Rei adulto maduro de rosto em coração, testa alta e larga, maçãs elevadas e queixo pequeno firme; nariz largo de ponta arredondada dividida, olhos redondos afastados de pálpebras pesadas, sobrancelhas finas retas; barba curta quadrada e expressão atenta de quem acolhe conselho."
+    },
+    {
+      "id": "raro_filhos_de_cora",
+      "identidadeFacial": "Cantor adulto de rosto retangular comprido, têmporas estreitas e maxilar longo; nariz de ponte côncava e ponta ampla, olhos pequenos fundos afastados e sobrancelhas baixas horizontais; bigode longo curvo e barba média arredondada. Um único representante coletivo, mesma identidade nos três estilos."
+    },
+    {
+      "id": "raro_eta_o_ezraita",
+      "identidadeFacial": "Salmista idoso de rosto triangular estreito, têmporas recuadas e maçãs angulosas, nariz comprido fortemente convexo de ponta descendente, olhos horizontais próximos de pálpebras baixas e sobrancelhas curvas discretas; barba média afilada em duas pontas e expressão contemplativa."
+    },
+    {
+      "id": "raro_eliu",
+      "identidadeFacial": "Homem adulto jovem de rosto pentagonal largo, testa reta, queixo arredondado e covinhas discretas; nariz curto levemente arrebitado de base larga, olhos grandes afastados, sobrancelhas espessas quase retas e lábios cheios. Sem barba longa: rosto jovem com apenas sombra curta de barba, expressão séria e ansiosa para falar."
+    },
+    {
+      "id": "epico_sadraque_mesaque_e_abede_nego",
+      "identidadeFacial": "Representante coletivo masculino adulto, de rosto oval largo e arredondado, maçãs cheias, maxilar curvo e queixo largo; nariz largo reto, olhos amendoados grandes afastados e sobrancelhas arqueadas espessas; barba curta densa de contorno nítido, expressão confiante tranquila. Mesmo rosto nos três estilos, sem atribuir um amigo a cada estilo."
+    },
+    {
+      "id": "epico_oseias",
+      "identidadeFacial": "Profeta adulto maduro de rosto oblongo, testa alta, nariz comprido de ponta inclinada, olhos amendoados muito afastados com cantos externos baixos e sobrancelhas longas curvas; boca larga de lábio superior fino, barba média bifurcada, expressão compassiva com tristeza contida."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

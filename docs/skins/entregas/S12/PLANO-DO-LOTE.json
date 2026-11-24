@@ -1,0 +1,268 @@
+{
+  "commit": "c041fae",
+  "id": "S12",
+  "titulo": "Personagens · Profetas",
+  "skins": [
+    {
+      "id": "epico_joel",
+      "name": "Traje de Joel",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Jl 2:28",
+      "idea": "Profeta com um shofar natural em repouso na cintura e bordado discreto de chuva no manto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JOL",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Joel (Jl 2:28)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "A nota explica que a trombeta vem de Jl 2:1, 15 e a chuva de Jl 2:23, enquanto a referência mantida (Jl 2:28) trata do derramamento do Espírito. Sem partículas, cenário ou chuva fora do corpo; sem personificar nem desenhar o Espírito Santo."
+    },
+    {
+      "id": "epico_amos",
+      "name": "Traje de Amós",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Am 7:14-15",
+      "idea": "Boiadeiro com cajado apoiado no chão numa mão e um pequeno ramo de sicômoro com folhas e poucos figos na outra",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "AMO",
+            7
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Amós (Am 7:14-15)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Motivos das ocupações de Am 7:14-15, sem afirmar que o texto descreve esses objetos nas mãos dele. Sem boi, rebanho, árvore ou campo em miniatura."
+    },
+    {
+      "id": "epico_miqueias",
+      "name": "Traje de Miqueias",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Mq 6:8",
+      "idea": "Profeta em roupa rural de Moresete, em postura de caminhada, com cajado simples e gesto discreto junto ao peito",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MIC",
+            6
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Miqueias (Mq 6:8)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Cajado e roupa são direção artística ligada ao \"andar humildemente\" de Mq 6:8, não objetos descritos no verso. Sem campo, povoado ou tribunal em miniatura, nem balança da justiça."
+    },
+    {
+      "id": "epico_habacuque",
+      "name": "Traje de Habacuque",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Hc 2:1-2",
+      "idea": "Vigia em pé, de olhar atento, com duas pequenas tábuas lisas de escrita no antebraço e um cálamo na outra mão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "HAB",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Habacuque (Hc 2:1-2)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "A nota liga a postura de vigia e as tábuas a Hc 2:1-2 e identifica material e tamanho das tábuas como artísticos. Sem torre, pedestal, maquete ou cena da visão; sem escrita inventada."
+    },
+    {
+      "id": "epico_ageu",
+      "name": "Traje de Ageu",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Ag 1:8",
+      "idea": "Profeta com duas peças de madeira de tamanho e peso plausíveis, apoiadas no antebraço e na mão, evocando a reconstrução",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "HAG",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ageu (Ag 1:8)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "adaptacao": "A nota distingue a ordem de trazer madeira (Ag 1:8) de uma afirmação de que o texto mostra Ageu carregando-a. Sem viga gigante, templo em miniatura nem ferramentas modernas."
+    },
+    {
+      "id": "epico_zacarias",
+      "name": "Traje de Zacarias",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Zc 4:2-3",
+      "idea": "Profeta com um pequeno lampadário de ouro com reservatório e sete lâmpadas de óleo numa mão e dois ramos de oliveira juntos na outra",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ZEC",
+            4
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Zacarias (Zc 4:2-3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        }
+      ],
+      "adaptacao": "Motivos da visão de Zc 4:2-3, adaptados: os ramos interpretam as duas oliveiras, e o texto não diz que o profeta carrega esses objetos nem se pretende réplica exata do mecanismo. Não trocar por candelabro de nove braços. Sem árvores, templo, anjo, figura divina, óleo mágico ou brilho fora do alfa."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_joel",
+      "identidadeFacial": "Profeta maduro de rosto losangular largo, maçãs altas angulosas e queixo retangular longo; nariz curto largo de ponta arredondada, olhos estreitos levemente ascendentes e sobrancelhas grossas arqueadas; barba média quadrada e expressão solene de convocação."
+    },
+    {
+      "id": "epico_amos",
+      "identidadeFacial": "Trabalhador adulto robusto de rosto quadrado baixo, queixo largo rombo e maçãs fortes; nariz largo de narinas abertas, olhos pequenos afastados de pálpebras fundas e sobrancelhas retas espessas; bigode espesso e barba curta cheia, expressão franca firme."
+    },
+    {
+      "id": "epico_miqueias",
+      "identidadeFacial": "Profeta adulto de rosto trapezoidal alto, testa estreita e maxilar largo, bochechas alongadas, nariz comprido estreito reto de ponta pequena; olhos pequenos próximos, sobrancelhas altas arqueadas e barba média estreita de contorno alongado. Expressão humilde determinada."
+    },
+    {
+      "id": "epico_habacuque",
+      "identidadeFacial": "Vigia adulto maduro de rosto hexagonal comprido, testa ampla de planos angulares, maxilar cortado e nariz reto de ponte larga e ponta redonda; olhos ovais horizontais bem afastados e sobrancelhas longas baixas; barba média em cunha, expressão vigilante concentrada."
+    },
+    {
+      "id": "epico_ageu",
+      "identidadeFacial": "Profeta idoso de rosto oval curto e cheio, maçãs pesadas e queixo largo arredondado; nariz pequeno côncavo de base larga, olhos grandes afastados de pálpebras elevadas e sobrancelhas curvas altas suaves; barba curta espessa arredondada e expressão encorajadora de trabalhador experiente."
+    },
+    {
+      "id": "epico_zacarias",
+      "identidadeFacial": "Profeta maduro de rosto oval comprido de maçãs altas, testa lisa larga e queixo dividido, nariz estreito aquilino de ponta pequena, olhos redondos próximos de pálpebra superior marcada e sobrancelhas finas altas quase retas; barba longa em duas pontas e expressão contemplativa desperta."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-24. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 145 de 289 skins prontas no app.
+**Progresso:** 157 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -266,27 +266,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | A amada de Cânticos (`epico_a_amada_de_canticos`) | Épica | sabedoria | ✔ | — | lendo: Ler a história da amada de Cânticos (Ct 1:5-6) |
 | ✅ | Traje de Agur (`raro_agur`) | Rara | sabedoria | ✔ | — | lendo: Ler a história de Agur (Pv 30:1) |
 
-## S11 · Personagens · Sabedoria e Profetas (0/6)
+## S11 · Personagens · Sabedoria e Profetas (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Lemuel (`raro_lemuel`) | Rara | sabedoria | — | — | Ler a história de Lemuel (Pv 31:1) |
-| ⬜ | Traje dos filhos de Corá (`raro_filhos_de_cora`) | Rara | sabedoria | — | — | Ler a história dos filhos de Corá (Sl 42, título) |
-| ⬜ | Traje de Etã, o ezraíta (`raro_eta_o_ezraita`) | Rara | sabedoria | — | — | Ler a história de Etã, o ezraíta (Sl 89, título) |
-| ⬜ | Traje de Eliú (`raro_eliu`) | Rara | sabedoria | — | — | Ler a história de Eliú (Jó 32:2-6) |
-| ⬜ | Traje de Sadraque, Mesaque e Abede-Nego (`epico_sadraque_mesaque_e_abede_nego`) | Épica | profetas | — | — | Ler a história de Sadraque, Mesaque e Abede-Nego (Dn 3:21-27) |
-| ⬜ | Traje de Oseias (`epico_oseias`) | Épica | profetas | — | — | Ler a história de Oseias (Os 1:1; 14:5) |
+| ✅ | Traje de Lemuel (`raro_lemuel`) | Rara | sabedoria | ✔ | — | lendo: Ler a história de Lemuel (Pv 31:1) |
+| ✅ | Traje dos filhos de Corá (`raro_filhos_de_cora`) | Rara | sabedoria | ✔ | — | lendo: Ler a história dos filhos de Corá (Sl 42, título) |
+| ✅ | Traje de Etã, o ezraíta (`raro_eta_o_ezraita`) | Rara | sabedoria | ✔ | — | lendo: Ler a história de Etã, o ezraíta (Sl 89, título) |
+| ✅ | Traje de Eliú (`raro_eliu`) | Rara | sabedoria | ✔ | — | lendo: Ler a história de Eliú (Jó 32:2-6) |
+| ✅ | Traje de Sadraque, Mesaque e Abede-Nego (`epico_sadraque_mesaque_e_abede_nego`) | Épica | profetas | ✔ | — | lendo: Ler a história de Sadraque, Mesaque e Abede-Nego (Dn 3:21-27) |
+| ✅ | Traje de Oseias (`epico_oseias`) | Épica | profetas | ✔ | — | lendo: Ler a história de Oseias (Os 1:1; 14:5) |
 
-## S12 · Personagens · Profetas (0/6)
+## S12 · Personagens · Profetas (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Joel (`epico_joel`) | Épica | profetas | — | — | Ler a história de Joel (Jl 2:28) |
-| ⬜ | Traje de Amós (`epico_amos`) | Épica | profetas | — | — | Ler a história de Amós (Am 7:14-15) |
-| ⬜ | Traje de Miqueias (`epico_miqueias`) | Épica | profetas | — | — | Ler a história de Miqueias (Mq 6:8) |
-| ⬜ | Traje de Habacuque (`epico_habacuque`) | Épica | profetas | — | — | Ler a história de Habacuque (Hc 2:1-2) |
-| ⬜ | Traje de Ageu (`epico_ageu`) | Épica | profetas | — | — | Ler a história de Ageu (Ag 1:8) |
-| ⬜ | Traje de Zacarias (`epico_zacarias`) | Épica | profetas | — | — | Ler a história de Zacarias (Zc 4:2-3) |
+| ✅ | Traje de Joel (`epico_joel`) | Épica | profetas | ✔ | — | lendo: Ler a história de Joel (Jl 2:28) |
+| ✅ | Traje de Amós (`epico_amos`) | Épica | profetas | ✔ | — | lendo: Ler a história de Amós (Am 7:14-15) |
+| ✅ | Traje de Miqueias (`epico_miqueias`) | Épica | profetas | ✔ | — | lendo: Ler a história de Miqueias (Mq 6:8) |
+| ✅ | Traje de Habacuque (`epico_habacuque`) | Épica | profetas | ✔ | — | lendo: Ler a história de Habacuque (Hc 2:1-2) |
+| ✅ | Traje de Ageu (`epico_ageu`) | Épica | profetas | ✔ | — | lendo: Ler a história de Ageu (Ag 1:8) |
+| ✅ | Traje de Zacarias (`epico_zacarias`) | Épica | profetas | ✔ | — | lendo: Ler a história de Zacarias (Zc 4:2-3) |
 
 ## S13 · Personagens · Profetas (0/6)
 

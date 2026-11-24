@@ -1,0 +1,50 @@
+{
+  "id": "epico_miqueias",
+  "nome": "Traje de Miqueias",
+  "raridade": "epic",
+  "mundo": "profetas",
+  "referencia": "Mq 6:8",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Profeta adulto de rosto trapezoidal alto, testa estreita e maxilar largo, bochechas alongadas, nariz comprido estreito reto de ponta pequena; olhos pequenos próximos, sobrancelhas altas arqueadas e barba média estreita de contorno alongado. Expressão humilde determinada.",
+  "adaptacao": "Cajado e roupa são direção artística ligada ao \"andar humildemente\" de Mq 6:8, não objetos descritos no verso. Sem campo, povoado ou tribunal em miniatura, nem balança da justiça."
+}

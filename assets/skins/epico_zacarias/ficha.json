@@ -1,0 +1,50 @@
+{
+  "id": "epico_zacarias",
+  "nome": "Traje de Zacarias",
+  "raridade": "epic",
+  "mundo": "profetas",
+  "referencia": "Zc 4:2-3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-locs"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Profeta maduro de rosto oval comprido de maçãs altas, testa lisa larga e queixo dividido, nariz estreito aquilino de ponta pequena, olhos redondos próximos de pálpebra superior marcada e sobrancelhas finas altas quase retas; barba longa em duas pontas e expressão contemplativa desperta.",
+  "adaptacao": "Motivos da visão de Zc 4:2-3, adaptados: os ramos interpretam as duas oliveiras, e o texto não diz que o profeta carrega esses objetos nem se pretende réplica exata do mecanismo. Não trocar por candelabro de nove braços. Sem árvores, templo, anjo, figura divina, óleo mágico ou brilho fora do alfa."
+}

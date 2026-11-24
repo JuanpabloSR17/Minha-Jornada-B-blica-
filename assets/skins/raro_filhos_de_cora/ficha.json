@@ -1,0 +1,50 @@
+{
+  "id": "raro_filhos_de_cora",
+  "nome": "Traje dos filhos de Corá",
+  "raridade": "rare",
+  "mundo": "sabedoria",
+  "referencia": "Sl 42 (título)",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Cantor adulto de rosto retangular comprido, têmporas estreitas e maxilar longo; nariz de ponte côncava e ponta ampla, olhos pequenos fundos afastados e sobrancelhas baixas horizontais; bigode longo curvo e barba média arredondada. Um único representante coletivo, mesma identidade nos três estilos.",
+  "adaptacao": "Um único cantor representa os filhos de Corá (Sl 42, título), com o mesmo rosto e instrumento nos 3 estilos e sem nome individual por estilo. Sem templo, coral ou outras pessoas em miniatura."
+}

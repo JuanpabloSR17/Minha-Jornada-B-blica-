@@ -655,3 +655,35 @@ Registradas no plano e na linha **Adaptação** do LOTES.md, sem mudar IDs, nome
 - **Eliú:** adulto jovem, nem criança nem ancião.
 
 Os estilos continuam exatos, inclusive os locs de personagens que não são apóstolos, com pele clara, média e escura visivelmente distintas. S11/S12 ainda não foram pintados.
+
+## 31. Lotes S11 e S12: aplicados (24/11/2026), com 3 pinturas a corrigir
+
+**Conferência**
+- **S11_final:** o ZIP de 18.577.088 bytes confere com o `.zip.sha256` (`7ebe5285…`) e as 68 somas conferem.
+- **S12_final:** o ZIP de 21.215.477 bytes confere com o `.zip.sha256` (`bee61395…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas e são todas masculinas.
+
+**Adaptações do §30 respeitadas:**
+- Corá: um único cantor com lira.
+- Os três amigos: um único representante, com turbante nos 3 estilos e sem fogo.
+- Oseias: lírio.
+- Joel: shofar.
+- Amós: cajado e sicômoro com figos.
+- Miqueias: cajado.
+- Habacuque: tábuas e cálamo.
+- Ageu: madeira plausível.
+- Zacarias: lampadário com as sete lâmpadas e dois ramos de oliveira.
+- Eliú: adulto jovem.
+
+**Aprovado:** 10 das 12 skins. Em Joel e Corá os tons aparecem distintos a olho.
+
+**Migrações:** `20261202002200_skins_s11.sql` e `20261202002300_skins_s12.sql`. O app passa a 157 skins pintadas.
+
+**Correções pedidas:**
+- **S11_v2, `raro_eta_o_ezraita`:** os três estilos ficaram numa faixa média estreita. Comparação em `docs/skins/entregas/S11/Tons_a_corrigir.png`.
+  - **estilo-1** (tom 2, cacheado): clarear para tom 2 claro.
+  - **estilo-2** (tom 5, crespo volumoso ruivo): escurecer para tom 5 escuro.
+  - **estilo-3** (tom 4) fica como está.
+- **S12_v2, `epico_habacuque` estilo-3** (tom 2, crespo volumoso): saiu mais escuro que o estilo-1 (tom 3), com a ordem invertida. Clarear para tom 2 claro, como o Ageu estilo-1 ou o Amós estilo-2. Comparação em `docs/skins/entregas/S12/Tons_a_corrigir.png`.
+
+Mantenha rosto, barba, cabelo, traje, objetos, IDs e âncoras. Mande os pacotes S11 e S12 completos com os SHA-256 atualizados, sem migração.

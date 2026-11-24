@@ -1,0 +1,50 @@
+{
+  "id": "raro_eta_o_ezraita",
+  "nome": "Traje de Etã, o ezraíta",
+  "raridade": "rare",
+  "mundo": "sabedoria",
+  "referencia": "Sl 89 (título)",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-locs"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Salmista idoso de rosto triangular estreito, têmporas recuadas e maçãs angulosas, nariz comprido fortemente convexo de ponta descendente, olhos horizontais próximos de pálpebras baixas e sobrancelhas curvas discretas; barba média afilada em duas pontas e expressão contemplativa.",
+  "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não inventar uma identidade histórica além do título do Sl 89."
+}

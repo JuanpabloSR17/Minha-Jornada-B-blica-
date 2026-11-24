@@ -1,0 +1,50 @@
+{
+  "id": "raro_lemuel",
+  "nome": "Traje de Lemuel",
+  "raridade": "rare",
+  "mundo": "sabedoria",
+  "referencia": "Pv 31:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Rei adulto maduro de rosto em coração, testa alta e larga, maçãs elevadas e queixo pequeno firme; nariz largo de ponta arredondada dividida, olhos redondos afastados de pálpebras pesadas, sobrancelhas finas retas; barba curta quadrada e expressão atenta de quem acolhe conselho.",
+  "adaptacao": "O rolo simples é direção artística, sem escrita inventada; não atribuir a Lemuel uma identidade histórica que o texto (Pv 31:1) não dá."
+}
