@@ -293,3 +293,13 @@ Repaint ALL exposed skin consistently, including ears, neck, both hands, arms an
 
 KEEP this exact unique facial bone structure, apparent age, expression, body, pose, complete costume colors/design, prop counts, hand contacts, garment texture and premium painted2.5D brushwork. Same person; only skin pigment, hair color and hairstyle change. One complete1024x1536 portrait figure, feet/hands/props unclipped, true RGBA transparent background. No sheet, extra figure, haze, vignette, ground, text or watermark. Compact connected opaque hair edges. Do not add a scene or change the costume.
 ```
+
+# Revisão S09_v2
+
+Uma edição integrada para uma pintura. Image1: alvo exato da primeira entrega; Image2: referência de cor skin3 já aprovada(filhas de Zelofeade2), sem copiar rosto ou roupa.
+
+## raro_obede_edom · estilo2 · pintura corrigida
+
+```text
+Use case: identity-preserve / precise-object-edit. Image1 is the EXACT sprite to edit. Make a SUBSTANTIAL complexion correction, not a subtle tint: this pale-looking peach skin was REJECTED as almost identical to his very fair style1. Repaint ALL exposed skin as a clearly MEDIUM WARM TAN skin3 (#CF9A6C pigment family), about25percent deeper in actual skin midtones. Image2 is an APPROVED skin3 COLOR REFERENCE ONLY: borrow ONLY its warm medium-brown tan complexion family, not her face, sex, veil or outfit. The result should be a CLEAR medium step between very fair skin1 and deep skin6. Skin must look tanned brown, not fair pink/peach or bleached honey. Preserve this exact friendly short square face, long STRAIGHT HONEY scalp hair and honey beard, bronze key and open palm. Do not shorten the hair or change its color. ALL exposed skin including face, ears, neck, two hands and feet must have the same new medium-tan pigment. Preserve the exact unique identity, age, eyes, face proportions, posture, physical objects, two connected hands/arms, garments, colors and every outfit detail. Preserve the premium PAINTED 2.5D style and neutral upper-left lighting. Full 1024x1536 complete-body transparent RGBA cutout, all feet and props intact. Exterior alpha ZERO; no backdrop, scenery, glow, bloom, haze, ground rectangle, writing, added person, third hand or disconnected wisps. Change skin pigment, never use an orange lighting wash or globally darken the clothes.
+```

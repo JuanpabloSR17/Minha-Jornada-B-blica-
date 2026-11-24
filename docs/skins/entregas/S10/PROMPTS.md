@@ -292,3 +292,13 @@ Repaint ALL exposed skin consistently, including ears, neck, both hands, arms an
 
 KEEP this exact unique facial bone structure, apparent age, expression, body, pose, complete costume colors/design, prop counts, hand contacts, garment texture and premium painted2.5D brushwork. Same person; only skin pigment, hair color and hairstyle change. One complete1024x1536 portrait figure, feet/hands/props unclipped, true RGBA transparent background. No sheet, extra figure, haze, vignette, ground, text or watermark. Compact connected opaque hair edges. Do not add a scene or change the costume.
 ```
+
+# Revisão S10_v2
+
+Uma edição integrada para uma pintura. Image1: alvo exato da primeira entrega; Image2: referência de cor skin3 já aprovada(filhas de Zelofeade2), sem copiar rosto ou roupa.
+
+## epico_o_pregador · estilo3 · pintura corrigida
+
+```text
+Use case: identity-preserve / precise-object-edit. Image1 is the EXACT sprite to edit. Correct TWO catalog mismatches in STYLE3 only. 1) Repaint exposed skin to clearly MEDIUM WARM TAN skin3 (#CF9A6C family), about20-25percent deeper than the current light skin2-like complexion. Image2 is the APPROVED skin3 COLOR REFERENCE ONLY, never her face, sex, veil or clothes. 2) Replace the current dense rounded AFRO scalp silhouette with distinct LOOSE DEFINED CURLS in HONEY color: medium-length hanging soft spiral ringlets separated into larger locks, naturally framing the temples and reaching the upper neck, clearly NOT the tightly coiled voluminous circular afro of style1. Haircolor HONEY, a natural richer golden-brown honey, not pale straw blond. The long beard and moustache must be the SAME honey golden-brown family, retain their length and physical shape. Preserve his own elderly triangular face, wide forehead, close-set deep-set eyes, wrinkles and reflective expression. Preserve the solid supported hourglass, two tied scrolls, exactly two hands, camel mantle, indigo robe, plum sash and full pose. ALL exposed skin including face, ears, neck, two hands and feet must have the same new medium-tan pigment. Preserve the exact unique identity, age, eyes, face proportions, posture, physical objects, two connected hands/arms, garments, colors and every outfit detail. Preserve the premium PAINTED 2.5D style and neutral upper-left lighting. Full 1024x1536 complete-body transparent RGBA cutout, all feet and props intact. Exterior alpha ZERO; no backdrop, scenery, glow, bloom, haze, ground rectangle, writing, added person, third hand or disconnected wisps. Change skin pigment, never use an orange lighting wash or globally darken the clothes.
+```

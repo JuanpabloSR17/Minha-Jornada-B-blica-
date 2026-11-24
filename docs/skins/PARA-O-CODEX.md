@@ -619,3 +619,22 @@ S07/S08 ainda não foram entregues.
 - **S10_v2, `epico_o_pregador` estilo-3** (tom 3, cacheado mel): está quase idêntico ao estilo-1 (tom 2, crespo louro), com a mesma pele e o mesmo volume afro. Pintar a pele em tom 3 visivelmente médio e o cabelo com cachos definidos e soltos, não crespo volumoso, em mel, com a barba da mesma cor. Comparação em `docs/skins/entregas/S10/Tons_a_corrigir.png`.
 
 Mantenha rosto, traje, objetos, IDs e âncoras. Mande os pacotes S09 e S10 completos com os SHA-256 atualizados, sem migração.
+
+### 29.1 S09_v2 e S10_v2: correções aprovadas (24/11/2026)
+
+**Ciclo base de S09/S10 fechado e verde (`dcdd3a5`):**
+- 138 testes unitários, 592 verificações SQL e auditoria com as 145 skins pintadas.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local, incluindo as compras simultâneas com saldo final 0.
+
+**S09_v2**
+- O ZIP de 19.929.927 bytes confere com o `.zip.sha256` (`b3072d85…`) e as 69 somas conferem.
+- Mudou só o estilo-2 de Obede-Edom (base e @2x), agora em tom 3 médio, entre o estilo-1 claro e o estilo-3 escuro.
+
+**S10_v2**
+- O ZIP de 19.455.304 bytes confere com o `.zip.sha256` (`aac1e7e3…`) e as 69 somas conferem.
+- Mudou só o estilo-3 do Pregador (base e @2x): pele em tom 3, cachos soltos e definidos em mel, já distinto do crespo louro do estilo-1.
+
+Os outros 46 arquivos de cada pacote são idênticos aos anteriores, incluindo fichas e ícones. Integração sem migração nem mudança de catálogo, fichas ou regras.
+
+**S09/S10 encerrados. Próximo: S11 e S12.**

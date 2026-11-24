@@ -366,14 +366,14 @@
     {
       "id": "epico_o_pregador",
       "style": "estilo-3",
-      "bytes": 201768,
+      "bytes": 200326,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2900,
+        "floor": 2901,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -587,5 +587,23 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S10_v2",
+    "escopo": "Somente epico_o_pregador estilo3. Os outros46assets, incluindo6fichas e6ícones, permanecem byte a byte iguais à primeira entrega. Demais17pinturas preservadas.",
+    "correcao": "Pregador3: tom3 médio, cachos definidos e soltos, sem volume afro; cabelo e barba na mesma família mel.",
+    "assetsAlterados": [
+      {
+        "arquivo": "epico_o_pregador/estilo-3/corpo.webp",
+        "antes": "fe44c8c137ca757d89ef63dad639c036096147dce06ff061388c7977b371fb5f",
+        "depois": "a48f94436bdabe138561fc5430ba57c2c76c79bb77f6f112ec84c71ca0daa42c"
+      },
+      {
+        "arquivo": "epico_o_pregador/estilo-3/corpo@2x.webp",
+        "antes": "403c1eb944164c7288be3525cecc421df36efae775735339b85179906dcadebc",
+        "depois": "048a0b3990bc4c5db6f487b513c6e1552b3295c3b060247a81e0b63824de9273"
+      }
+    ],
+    "assetsIdenticos": 46
+  }
 }

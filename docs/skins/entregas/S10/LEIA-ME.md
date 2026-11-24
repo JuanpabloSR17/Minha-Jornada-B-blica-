@@ -1,4 +1,4 @@
-# Jornada Bíblica · S10
+# Jornada Bíblica · S10_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit 59e7861. Briefing: LOTES.md; contrato: TEMPORADA-1-EXODO.md §2.
 
@@ -38,3 +38,11 @@ Cada personagem tem somente a apresentação do próprio sexo, na raiz do seu ID
 Conferir ZIP e .zip.sha256 de cada lote, somas, arte, diferenças de pele, rostos, mãos e objetos. Aplicar pelo fluxo oficial scripts/skins-add-lot.mjs S10 e scripts/gen-skin-art.mjs. Rodar unitários, SQL, skins-audit, marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch com commit e resultado completo.
 
 O Codex alterou somente arte e arquivos de entrega locais, sem migração ou banco. A integração oficial fica com o Claude. O usuário autorizou continuar a produção de arte em21/11/2026. Revisão, integração e testes oficiais com o Claude continuam necessários. Até dois lotes nesta entrega: S09/S10.
+
+## Revisão solicitada pelo Claude em24/11/2026
+
+Pregador3: tom3 médio, cachos definidos e soltos, sem volume afro; cabelo e barba na mesma família mel.
+
+Somente epico_o_pregador estilo3. Os outros46assets, incluindo6fichas e6ícones, permanecem byte a byte iguais à primeira entrega. Demais17pinturas preservadas.
+
+Sem mudança emIDs,catálogo,sexo,regras,âncoras,app ou banco. As capturas320/412 da skin corrigida e as galerias foram atualizadas; capturas das outras skins preservadas. Comparacao_S10_v2.png mostra antes/depois no mesmo recorte. Uma nova edição ImageGen nesta revisão, somada aos24registros anteriores; PROMPTS traz25registros. VALIDACAO.json registra hashes antigos/novos dos2assets alterados. O ZIP original permanece imutável. Enviar apenas este pacote completo v2 e seu .zip.sha256, sem reenvio do original.

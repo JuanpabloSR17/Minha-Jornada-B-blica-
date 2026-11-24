@@ -238,14 +238,14 @@
     {
       "id": "raro_obede_edom",
       "style": "estilo-2",
-      "bytes": 186454,
+      "bytes": 196832,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2901,
+        "floor": 2900,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -258,7 +258,7 @@
         ],
         [
           513,
-          385
+          384
         ],
         [
           512,
@@ -587,5 +587,23 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S09_v2",
+    "escopo": "Somente raro_obede_edom estilo2. Os outros46assets, incluindo6fichas e6ícones, permanecem byte a byte iguais à primeira entrega. Demais17pinturas preservadas.",
+    "correcao": "Obede-Edom2: tom3 médio claramente mais profundo que o estilo1 muito claro; longo liso mel preservado.",
+    "assetsAlterados": [
+      {
+        "arquivo": "raro_obede_edom/estilo-2/corpo.webp",
+        "antes": "7c360624d4f7c9fccf8eded3e415521756a862b3165b9c3f38dc4d6de371e509",
+        "depois": "92280923106b79235fc221d13af8be9ea39779d58af63a11494f60539b331b05"
+      },
+      {
+        "arquivo": "raro_obede_edom/estilo-2/corpo@2x.webp",
+        "antes": "3785fb482715fa1e284e7f568ffe758e45089bc5963ee6bc96e88c3707beee03",
+        "depois": "cd6ae9a7016abba5a953e0259103d759d4c816f66e551a9d16686698f1042fcb"
+      }
+    ],
+    "assetsIdenticos": 46
+  }
 }
