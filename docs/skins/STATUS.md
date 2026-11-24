@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-24. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 133 de 289 skins prontas no app.
+**Progresso:** 145 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -244,27 +244,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Benaia (`raro_benaia`) | Rara | reinos | ✔ | — | lendo: Ler a história de Benaia (2 Sm 23:20) |
 | ✅ | Os valentes de Davi (`raro_os_valentes_de_davi`) | Rara | reinos | ✔ | — | lendo: Ler a história dos valentes de Davi (2 Sm 23:8-39) |
 
-## S09 · Personagens · Terra e Reinos (0/6)
+## S09 · Personagens · Terra e Reinos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Asafe (`raro_asafe`) | Rara | reinos | — | — | Ler a história de Asafe (1 Cr 16:5) |
-| ⬜ | Traje de Hemã e Jedutum (`raro_hema_e_jedutum`) | Rara | reinos | — | — | Ler a história de Hemã e Jedutum (1 Cr 25:1) |
-| ⬜ | Traje de Obede-Edom (`raro_obede_edom`) | Rara | reinos | — | — | Ler a história de Obede-Edom (2 Sm 6:11) |
-| ⬜ | Traje de Ciro (`raro_ciro`) | Rara | reinos | — | — | Ler a história de Ciro (Ed 1:1-3) |
-| ⬜ | Traje de Josué, o sumo sacerdote (`raro_josue_o_sumo_sacerdote`) | Rara | reinos | — | — | Ler a história de Josué, o sumo sacerdote (Ed 3:2; Zc 3:5) |
-| ⬜ | Traje de Elcana (`raro_elcana`) | Rara | reinos | — | — | Ler a história de Elcana (1 Sm 1:1-3) |
+| ✅ | Traje de Asafe (`raro_asafe`) | Rara | reinos | ✔ | — | lendo: Ler a história de Asafe (1 Cr 16:5) |
+| ✅ | Traje de Hemã e Jedutum (`raro_hema_e_jedutum`) | Rara | reinos | ✔ | — | lendo: Ler a história de Hemã e Jedutum (1 Cr 25:1) |
+| ✅ | Traje de Obede-Edom (`raro_obede_edom`) | Rara | reinos | ✔ | — | lendo: Ler a história de Obede-Edom (2 Sm 6:11) |
+| ✅ | Traje de Ciro (`raro_ciro`) | Rara | reinos | ✔ | — | lendo: Ler a história de Ciro (Ed 1:1-3) |
+| ✅ | Traje de Josué, o sumo sacerdote (`raro_josue_o_sumo_sacerdote`) | Rara | reinos | ✔ | — | lendo: Ler a história de Josué, o sumo sacerdote (Ed 3:2; Zc 3:5) |
+| ✅ | Traje de Elcana (`raro_elcana`) | Rara | reinos | ✔ | — | lendo: Ler a história de Elcana (1 Sm 1:1-3) |
 
-## S10 · Personagens · Terra e Reinos e Sabedoria (0/6)
+## S10 · Personagens · Terra e Reinos e Sabedoria (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Ido, o vidente (`raro_ido_o_vidente`) | Rara | reinos | — | — | Ler a história de Ido, o vidente (2 Cr 9:29; Zc 1:1) |
-| ⬜ | Traje de Profeta Gade (`raro_profeta_gade`) | Rara | reinos | — | — | Ler a história de Profeta Gade (1 Sm 22:5) |
-| ⬜ | Traje de Mulher virtuosa (`epico_mulher_virtuosa`) | Épica | sabedoria | — | — | Ler a história de Mulher virtuosa (Pv 31:10-31) |
-| ⬜ | O Pregador (`epico_o_pregador`) | Épica | sabedoria | — | — | Ler a história do Pregador (Ec 1:1; 12:9) |
-| ⬜ | A amada de Cânticos (`epico_a_amada_de_canticos`) | Épica | sabedoria | — | — | Ler a história da amada de Cânticos (Ct 1:5-6) |
-| ⬜ | Traje de Agur (`raro_agur`) | Rara | sabedoria | — | — | Ler a história de Agur (Pv 30:1) |
+| ✅ | Traje de Ido, o vidente (`raro_ido_o_vidente`) | Rara | reinos | ✔ | — | lendo: Ler a história de Ido, o vidente (2 Cr 9:29; Zc 1:1) |
+| ✅ | Traje de Profeta Gade (`raro_profeta_gade`) | Rara | reinos | ✔ | — | lendo: Ler a história de Profeta Gade (1 Sm 22:5) |
+| ✅ | Traje de Mulher virtuosa (`epico_mulher_virtuosa`) | Épica | sabedoria | ✔ | — | lendo: Ler a história de Mulher virtuosa (Pv 31:10-31) |
+| ✅ | O Pregador (`epico_o_pregador`) | Épica | sabedoria | ✔ | — | lendo: Ler a história do Pregador (Ec 1:1; 12:9) |
+| ✅ | A amada de Cânticos (`epico_a_amada_de_canticos`) | Épica | sabedoria | ✔ | — | lendo: Ler a história da amada de Cânticos (Ct 1:5-6) |
+| ✅ | Traje de Agur (`raro_agur`) | Rara | sabedoria | ✔ | — | lendo: Ler a história de Agur (Pv 30:1) |
 
 ## S11 · Personagens · Sabedoria e Profetas (0/6)
 

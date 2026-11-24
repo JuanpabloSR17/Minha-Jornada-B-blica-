@@ -1,0 +1,49 @@
+{
+  "id": "raro_josue_o_sumo_sacerdote",
+  "nome": "Traje de Josué, o sumo sacerdote",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "Ed 3:2; Zc 3:5",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto maduro de rosto hexagonal baixo e largo, maxilar firme, nariz reto curto de base larga, olhos amendoados afastados de pálpebras pesadas e sobrancelhas retas cheias; barba curta em cunha e expressão restaurada tranquila."
+}

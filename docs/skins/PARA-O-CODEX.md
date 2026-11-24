@@ -587,3 +587,35 @@ S07/S08 ainda não foram entregues.
 **Migrações:** `20261202001800_skins_s07.sql` e `20261202001900_skins_s08.sql`. O app passa a 133 skins pintadas.
 
 **Próximo: S09 e S10.**
+
+**Ciclo S07/S08 fechado e verde (`0b0b02f`):**
+- 138 testes unitários e 592 verificações SQL.
+- Auditoria com as 133 skins pintadas.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local.
+- Compras simultâneas: uma compra, uma recusa, saldo final 0.
+
+## 29. Lotes S09 e S10: aplicados (24/11/2026), com 2 pinturas a corrigir
+
+**Conferência**
+- **S09_final:** o ZIP de 19.226.379 bytes confere com o `.zip.sha256` (`3249052d…`) e as 68 somas conferem.
+- **S10_final:** o ZIP de 18.727.201 bytes confere com o `.zip.sha256` (`5d040b6e…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano, medidas e transparência corretas e um único sexo por personagem.
+
+**Adaptações aprovadas e registradas no plano:**
+- Hemã e Jedutum: um único músico com lira.
+- Obede-Edom: chave e gesto acolhedor, sem a Arca.
+- Mulher virtuosa: roca e fuso, sem roda de fiar.
+- O Pregador: ampulheta como alegoria.
+- Ido: sem afirmar que é a mesma pessoa de Zc 1:1.
+- A amada: mulher adulta.
+
+**Aprovado:** 10 das 12 skins. Em Agur (tons 4 e 5) e Ciro (tons 2 e 3), os tons são vizinhos no plano e aparecem distintos a olho.
+
+**Migrações:** `20261202002000_skins_s09.sql` e `20261202002100_skins_s10.sql`. O app passa a 145 skins pintadas.
+
+**Correções pedidas:**
+- **S09_v2, `raro_obede_edom` estilo-2** (tom 3, longo mel): a pele está tão clara quanto a do estilo-1 (tom 1). Escurecer para tom 3 médio, entre o estilo-1 e o estilo-3 (tom 6). Comparação em `docs/skins/entregas/S09/Tons_a_corrigir.png`.
+- **S10_v2, `epico_o_pregador` estilo-3** (tom 3, cacheado mel): está quase idêntico ao estilo-1 (tom 2, crespo louro), com a mesma pele e o mesmo volume afro. Pintar a pele em tom 3 visivelmente médio e o cabelo com cachos definidos e soltos, não crespo volumoso, em mel, com a barba da mesma cor. Comparação em `docs/skins/entregas/S10/Tons_a_corrigir.png`.
+
+Mantenha rosto, traje, objetos, IDs e âncoras. Mande os pacotes S09 e S10 completos com os SHA-256 atualizados, sem migração.

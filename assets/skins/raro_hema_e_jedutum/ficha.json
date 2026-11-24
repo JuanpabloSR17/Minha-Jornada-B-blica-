@@ -1,0 +1,49 @@
+{
+  "id": "raro_hema_e_jedutum",
+  "nome": "Traje de Hemã e Jedutum",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "1 Cr 25:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Representante coletivo masculino maduro, com rosto piriforme de testa curta e maxilar largo, nariz largo arredondado, olhos pequenos afastados e sobrancelhas espessas baixas; barba curta arredondada e expressão musical serena. Mesmo rosto nos três estilos, sem atribuir um estilo a cada homem."
+}

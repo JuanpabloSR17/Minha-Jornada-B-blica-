@@ -1,0 +1,270 @@
+{
+  "commit": "59e7861",
+  "id": "S10",
+  "titulo": "Personagens · Terra e Reinos e Sabedoria",
+  "skins": [
+    {
+      "id": "raro_ido_o_vidente",
+      "name": "Traje de Ido, o vidente",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "2 Cr 9:29; Zc 1:1",
+      "idea": "Vidente com crônicas",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "2CH",
+            9
+          ],
+          [
+            "ZEC",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ido, o vidente (2 Cr 9:29; Zc 1:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        }
+      ]
+    },
+    {
+      "id": "raro_profeta_gade",
+      "name": "Traje de Profeta Gade",
+      "rarity": "rare",
+      "world": "reinos",
+      "group": "reinos",
+      "scriptureRef": "1 Sm 22:5",
+      "idea": "Vidente de Davi",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "1SA",
+            22
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Profeta Gade (1 Sm 22:5)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        }
+      ]
+    },
+    {
+      "id": "epico_mulher_virtuosa",
+      "name": "Traje de Mulher virtuosa",
+      "rarity": "epic",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Pv 31:10-31",
+      "idea": "Roca e fuso, lã escarlate, campo comprado",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "PRO",
+            31
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Mulher virtuosa (Pv 31:10-31)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-braids"
+        }
+      ]
+    },
+    {
+      "id": "epico_o_pregador",
+      "name": "O Pregador",
+      "rarity": "epic",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Ec 1:1; 12:9",
+      "idea": "Sábio de Jerusalém com rolos e ampulheta de areia",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ECC",
+            1
+          ],
+          [
+            "ECC",
+            12
+          ]
+        ]
+      },
+      "howTo": "Ler a história do Pregador (Ec 1:1; 12:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-curly"
+        }
+      ]
+    },
+    {
+      "id": "epico_a_amada_de_canticos",
+      "name": "A amada de Cânticos",
+      "rarity": "epic",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Ct 1:5-6",
+      "idea": "Guardadora de vinhas, flores do campo (traje discreto)",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "SNG",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história da amada de Cânticos (Ct 1:5-6)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-ponytail"
+        }
+      ]
+    },
+    {
+      "id": "raro_agur",
+      "name": "Traje de Agur",
+      "rarity": "rare",
+      "world": "sabedoria",
+      "group": "sabedoria",
+      "scriptureRef": "Pv 30:1",
+      "idea": "Sábio humilde com perguntas sobre a natureza",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "PRO",
+            30
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Agur (Pv 30:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        }
+      ]
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_ido_o_vidente",
+      "identidadeFacial": "Ancião de rosto retangular largo com testa elevada, queixo arredondado, nariz muito largo e baixo, olhos pequenos afastados e sobrancelhas finas altas; barba média quadrada e expressão investigativa tranquila."
+    },
+    {
+      "id": "raro_profeta_gade",
+      "identidadeFacial": "Adulto maduro de rosto oblongo de maçãs altas e queixo fino, nariz aquilino estreito, olhos amendoados próximos e sobrancelhas baixas de pontas descendentes; barba longa afilada e expressão firme de orientação."
+    },
+    {
+      "id": "epico_mulher_virtuosa",
+      "identidadeFacial": "Mulher adulta madura de rosto retangular alongado de maxilar forte, testa alta, nariz largo reto, olhos horizontais afastados e sobrancelhas espessas arqueadas; boca larga de lábios cheios, expressão competente acolhedora e linhas naturais de maturidade."
+    },
+    {
+      "id": "epico_o_pregador",
+      "identidadeFacial": "Sábio ancião de rosto triangular invertido com testa larga e queixo pequeno arredondado, nariz comprido reto de ponta larga, olhos fundos horizontais próximos e sobrancelhas muito espessas curvas; barba longa estreita e expressão reflexiva austera."
+    },
+    {
+      "id": "epico_a_amada_de_canticos",
+      "identidadeFacial": "Mulher adulta jovem de rosto em coração largo de maçãs cheias e queixo pequeno, nariz curto de ponta arredondada e base larga, olhos grandes afastados e sobrancelhas finas suaves; expressão alegre serena, sem maquiagem e com marcas naturais do trabalho ao ar livre."
+    },
+    {
+      "id": "raro_agur",
+      "identidadeFacial": "Sábio adulto de rosto oval largo com queixo levemente assimétrico, nariz curto de ponte convexa e ponta arredondada, olhos pequenos fundos próximos e uma sobrancelha mais elevada; barba curta repartida e expressão curiosa humilde."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

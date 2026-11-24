@@ -6911,7 +6911,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "Um único músico com lira representa a skin coletiva, com a mesma identidade nos 3 estilos e sem dar a cada estilo o nome de um dos músicos."
   },
   {
    "id": "raro_obede_edom",
@@ -6949,7 +6950,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "A chave e o gesto acolhedor são motivos da casa que guardou a Arca (2 Sm 6:11), não objetos citados no texto. Sem Arca em miniatura."
   },
   {
    "id": "raro_ciro",
@@ -7105,7 +7107,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-braids"
     }
-   ]
+   ],
+   "adaptacao": "Roca manual, fuso sustentado pelo fio e lã escarlate (Pv 31:19, 21), sem campo em miniatura nem roda de fiar."
   },
   {
    "id": "epico_o_pregador",
@@ -7147,7 +7150,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "A ampulheta é só alegoria do tempo, não artefato comprovado do período; a nota separa isso do texto de Ec 1:1 e 12:9."
   },
   {
    "id": "epico_a_amada_de_canticos",
@@ -7185,7 +7189,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-ponytail"
     }
-   ]
+   ],
+   "adaptacao": "Mulher adulta em roupa de trabalho no campo, discreta; cesta, uvas e flores interpretam motivos do livro. Rosto e idade aparente são direção artística."
   },
   {
    "id": "epico_sadraque_mesaque_e_abede_nego",
@@ -8105,7 +8110,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "As duas referências do catálogo ficam, mas sem ensinar como certo que o vidente de Crônicas e o antepassado de Zacarias (Zc 1:1) sejam a mesma pessoa."
   },
   {
    "id": "raro_profeta_gade",

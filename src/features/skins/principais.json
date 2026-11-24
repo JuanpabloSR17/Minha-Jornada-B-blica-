@@ -2996,6 +2996,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "raro_asafe",
+   "name": "Traje de Asafe",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Cr 16:5",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_hema_e_jedutum",
+   "name": "Traje de Hemã e Jedutum",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Cr 25:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_obede_edom",
+   "name": "Traje de Obede-Edom",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Sm 6:11",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_ciro",
+   "name": "Traje de Ciro",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "Ed 1:1-3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_josue_o_sumo_sacerdote",
+   "name": "Traje de Josué, o sumo sacerdote",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "Ed 3:2; Zc 3:5",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_elcana",
+   "name": "Traje de Elcana",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 1:1-3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_ido_o_vidente",
+   "name": "Traje de Ido, o vidente",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "2 Cr 9:29; Zc 1:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_profeta_gade",
+   "name": "Traje de Profeta Gade",
+   "rarity": "rare",
+   "world": "reinos",
+   "scriptureRef": "1 Sm 22:5",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_mulher_virtuosa",
+   "name": "Traje de Mulher virtuosa",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "scriptureRef": "Pv 31:10-31",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-braids"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_o_pregador",
+   "name": "O Pregador",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "scriptureRef": "Ec 1:1; 12:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_a_amada_de_canticos",
+   "name": "A amada de Cânticos",
+   "rarity": "epic",
+   "world": "sabedoria",
+   "scriptureRef": "Ct 1:5-6",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_agur",
+   "name": "Traje de Agur",
+   "rarity": "rare",
+   "world": "sabedoria",
+   "scriptureRef": "Pv 30:1",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

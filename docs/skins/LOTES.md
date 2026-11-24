@@ -4,36 +4,6 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 **Apóstolos:** Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.
 
-## S09 · Personagens · Terra e Reinos
-
-- **Traje de Asafe** (`raro_asafe`), Rara, 1 Cr 16:5. Traje: Chefe dos cantores com címbalos. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-auburn, hair-locs · estilo-2: skin-6, haircolor-darkbrown, hair-wavy · estilo-3: skin-1, haircolor-black, hair-long
-- **Traje de Hemã e Jedutum** (`raro_hema_e_jedutum`), Rara, 1 Cr 25:1. Traje: Músicos com harpas e liras. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-brown, hair-wavy · estilo-2: skin-3, haircolor-auburn, hair-long · estilo-3: skin-2, haircolor-black, hair-short
-- **Traje de Obede-Edom** (`raro_obede_edom`), Rara, 2 Sm 6:11. Traje: Casa abençoada pela arca. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-blond, hair-wavy · estilo-2: skin-3, haircolor-honey, hair-long · estilo-3: skin-6, haircolor-darkbrown, hair-curly
-- **Traje de Ciro** (`raro_ciro`), Rara, Ed 1:1-3. Traje: Rei persa com o decreto do retorno. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-black, hair-long · estilo-2: skin-6, haircolor-brown, hair-curly · estilo-3: skin-3, haircolor-honey, hair-short
-- **Traje de Josué, o sumo sacerdote** (`raro_josue_o_sumo_sacerdote`), Rara, Ed 3:2; Zc 3:5. Traje: Mitra limpa e vestes novas. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-brown, hair-shaved · estilo-2: skin-4, haircolor-auburn, hair-short · estilo-3: skin-1, haircolor-copper, hair-side-part
-- **Traje de Elcana** (`raro_elcana`), Rara, 1 Sm 1:1-3. Traje: Peregrino anual a Siló. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-brown, hair-long · estilo-2: skin-6, haircolor-auburn, hair-afro · estilo-3: skin-2, haircolor-honey, hair-wavy
-
-## S10 · Personagens · Terra e Reinos e Sabedoria
-
-- **Traje de Ido, o vidente** (`raro_ido_o_vidente`), Rara, 2 Cr 9:29; Zc 1:1. Traje: Vidente com crônicas. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-darkbrown, hair-short · estilo-2: skin-2, haircolor-black, hair-side-part · estilo-3: skin-4, haircolor-copper, hair-afro
-- **Traje de Profeta Gade** (`raro_profeta_gade`), Rara, 1 Sm 22:5. Traje: Vidente de Davi. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-copper, hair-curly · estilo-2: skin-1, haircolor-blond, hair-locs · estilo-3: skin-5, haircolor-auburn, hair-shaved
-- **Traje de Mulher virtuosa** (`epico_mulher_virtuosa`), Épica, Pv 31:10-31. Traje: Roca e fuso, lã escarlate, campo comprado. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-auburn, hair-bun · estilo-2: skin-3, haircolor-black, hair-ponytail · estilo-3: skin-5, haircolor-darkbrown, hair-braids
-- **O Pregador** (`epico_o_pregador`), Épica, Ec 1:1; 12:9. Traje: Sábio de Jerusalém com rolos e ampulheta de areia. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-blond, hair-afro · estilo-2: skin-5, haircolor-auburn, hair-long · estilo-3: skin-3, haircolor-honey, hair-curly
-- **A amada de Cânticos** (`epico_a_amada_de_canticos`), Épica, Ct 1:5-6. Traje: Guardadora de vinhas, flores do campo (traje discreto). Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-brown, hair-bun · estilo-2: skin-1, haircolor-copper, hair-long-wavy · estilo-3: skin-4, haircolor-darkbrown, hair-ponytail
-- **Traje de Agur** (`raro_agur`), Rara, Pv 30:1. Traje: Sábio humilde com perguntas sobre a natureza. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-honey, hair-long · estilo-2: skin-1, haircolor-blond, hair-shaved · estilo-3: skin-5, haircolor-darkbrown, hair-short
-
 ## S11 · Personagens · Sabedoria e Profetas
 
 - **Traje de Lemuel** (`raro_lemuel`), Rara, Pv 31:1. Traje: Rei que guarda as palavras da mãe. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

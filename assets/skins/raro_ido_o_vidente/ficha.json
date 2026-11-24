@@ -1,0 +1,49 @@
+{
+  "id": "raro_ido_o_vidente",
+  "nome": "Traje de Ido, o vidente",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "2 Cr 9:29; Zc 1:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Ancião de rosto retangular largo com testa elevada, queixo arredondado, nariz muito largo e baixo, olhos pequenos afastados e sobrancelhas finas altas; barba média quadrada e expressão investigativa tranquila."
+}

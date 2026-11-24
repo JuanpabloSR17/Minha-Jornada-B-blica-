@@ -1,0 +1,49 @@
+{
+  "id": "raro_obede_edom",
+  "nome": "Traje de Obede-Edom",
+  "raridade": "rare",
+  "mundo": "reinos",
+  "referencia": "2 Sm 6:11",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto acolhedor de rosto quadrado curto, testa ampla, nariz curto côncavo e largo, olhos redondos afastados e sobrancelhas suaves arqueadas; bigode espesso e barba curta com covinha no queixo, expressão calorosa."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "raro_agur",
+  "nome": "Traje de Agur",
+  "raridade": "rare",
+  "mundo": "sabedoria",
+  "referencia": "Pv 30:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Sábio adulto de rosto oval largo com queixo levemente assimétrico, nariz curto de ponte convexa e ponta arredondada, olhos pequenos fundos próximos e uma sobrancelha mais elevada; barba curta repartida e expressão curiosa humilde."
+}
