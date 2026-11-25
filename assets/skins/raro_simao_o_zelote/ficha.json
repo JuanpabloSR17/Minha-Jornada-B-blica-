@@ -1,0 +1,51 @@
+{
+  "id": "raro_simao_o_zelote",
+  "nome": "Traje de Simão, o zelote",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Lc 6:15",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem de rosto trapezoidal alongado, maxilar forte afilado, testa larga lisa, sobrancelhas baixas inclinadas, olhos estreitos intensos, nariz reto largo com ponta quadrada e boca de lábio inferior cheio. Barba escura curta de contorno reto, expressão firme e atenta sem agressividade.",
+  "adaptacao": "Em pé, com as mãos vazias em atitude de escuta: uma na faixa e a outra aberta. A faixa vermelha vem da direção do catálogo, não de uniforme comprovado; Lc 6:15 não define participação em movimento posterior. Sem punhal, espada, punhos de combate ou alegação política histórica.",
+  "figurino": "Galileia ou Judeia romana: túnica reta de linho cinza-quente até meia canela, de mangas curtas; manto pequeno de lã crua dobrado para trás de um ombro, com linhas escuras tecidas na bainha; faixa vermelha larga com nó lateral. Sandálias robustas e desgaste de viagem discreto, sem ouro nem armadura."
+}

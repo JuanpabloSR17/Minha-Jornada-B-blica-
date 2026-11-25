@@ -1,0 +1,51 @@
+{
+  "id": "raro_tiago_filho_de_alfeu",
+  "nome": "Traje de Tiago, filho de Alfeu",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mc 3:18",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem de rosto redondo curto, testa ampla lisa, sobrancelhas finas arqueadas, olhos redondos atentos, nariz curto de ponta larga suave, boca larga de lábios finos e queixo curto arredondado. Sem barba nem bigode, expressão calma e reservada; adulto, sem aparência infantil.",
+  "adaptacao": "Apóstolo em pé e sozinho, com a mão direita na lapela do próprio manto e a esquerda vazia e relaxada. Mc 3:18 só o cita na lista: sem profissão, martírio, ferramenta, irmão ou cena inventados. Adulto jovem com rosto próprio, sem confundi-lo com Tiago, filho de Zebedeu, e sem idade ensinada como fato.",
+  "figurino": "Galileia ou Judeia romana: túnica de linho cru de corte reto até meia canela, com pequena gola quadrada de borda tecida azul-escura; manto retangular de lã oliva-terra cruzado na frente e preso por cordão, de trama grosseira com losangos discretos; cinto têxtil estreito castanho e sandálias de couro simples. Assinatura: a gola quadrada e o manto oliva de trama visível, sem ouro nem objeto extra."
+}

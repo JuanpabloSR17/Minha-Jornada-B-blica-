@@ -924,3 +924,31 @@ As 12 propostas foram confirmadas sem ajustes. Os campos `adaptacao` e `figurino
 - Estudo do depósito de malha de Bonn: famílias de malha.
 
 S17/S18 ainda não foram pintados.
+
+## 38. Lotes S17 e S18: aplicados e aprovados por inteiro (25/11/2026)
+
+**Conferência**
+- **S17_final:** o ZIP de 15.129.658 bytes confere com o `.zip.sha256` (`0fbf40c9…`) e as 68 somas conferem.
+- **S18_final:** o ZIP de 16.554.403 bytes confere com o `.zip.sha256` (`2823639e…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano e medidas e transparência corretas.
+- Ana e a viúva aparecem só como femininas; os demais, só como masculinos.
+
+**Contrato infantil do menino:** topos em 124, 136 e 119, dentro da faixa de 120 a 170 com 1 px de tolerância. Pés em y≈1452. O rosto inteiro cabe no recorte.
+
+**Aprovado sem correções**
+- Os figurinos do §37 variam de fato entre as skins, com tecidos, cortes e cores próprios e sem ouro repetido.
+- As adaptações foram respeitadas:
+  - Ana de mãos vazias, sem templo.
+  - Bartimeu com o manto no braço, sem cena de cura.
+  - Natanael com o ramo de três folhas.
+  - Tomé sem Jesus nem feridas.
+  - Tiago, filho de Alfeu, jovem e sem barba.
+  - O pastor com cajado e lamparina, sem anjos nem ovelhas.
+  - O menino com exatamente 5 pães e 2 peixes.
+  - A viúva com exatamente 2 moedas de cobre.
+  - O centurião de cabeça descoberta, com o capacete no braço e sem arma.
+- Tons claro, médio e escuro distintos em todas as 12 skins.
+
+**Migrações:** `20261202002800_skins_s17.sql` e `20261202002900_skins_s18.sql`. O app passa a 193 skins pintadas.
+
+**Próximo: S19 e S20**, com as adaptações e os figurinos enviados antes das bases.

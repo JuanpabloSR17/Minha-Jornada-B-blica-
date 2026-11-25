@@ -1,0 +1,51 @@
+{
+  "id": "raro_tome",
+  "nome": "Traje de Tomé",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Jo 20:27-28",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem de rosto angular em losango, testa alta e estreita, sobrancelhas retas separadas, olhos fundos de pálpebras pesadas, nariz largo na ponte e fino na ponta, lábios cheios de boca curta e maxilar de cantos marcados. Barba escura curta bem aparada, expressão de surpresa reverente e convicção.",
+  "adaptacao": "Em pé, no reconhecimento de Jo 20:27-28, com as duas mãos vazias: uma no peito e a outra discretamente aberta. A fé fica no gesto e na expressão. Sem Jesus, feridas, mão alheia, dedo tocando corpo invisível, lança de tradição posterior ou cruz.",
+  "figurino": "Judeia romana: túnica longa de linho marfim fino, de gola em V simples e mangas largas com punhos estreitos; manto retangular de lã ameixa-ardósia passado por um ombro, preso por faixa têxtil escura alta na cintura. Dobras verticais alongadas, bordas lisas sem ouro e sandálias de tiras largas. Assinatura: o contraste claro e ardósia e as mãos vazias de reconhecimento."
+}

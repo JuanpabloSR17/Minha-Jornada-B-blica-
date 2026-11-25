@@ -1,0 +1,278 @@
+{
+  "commit": "afc0f6f",
+  "id": "S18",
+  "titulo": "Personagens · Evangelhos",
+  "skins": [
+    {
+      "id": "raro_tadeu",
+      "name": "Traje de Tadeu",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 6:16; Jo 14:22",
+      "idea": "Apóstolo de manto simples",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            6
+          ],
+          [
+            "JHN",
+            14
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Tadeu (Lc 6:16; Jo 14:22)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Em pé, no gesto de pergunta respeitosa de Jo 14:22, com as duas mãos vazias: uma palma aberta na cintura e a outra perto do peito. Usa a identificação convencional do catálogo (Tadeu, Judas não o Iscariotes) sem resolver genealogia ou idade como certeza. A possível duplicidade com raro_judas_irmao_de_tiago (S24) será resolvida naquele lote. Sem carta, porrete, medalhão, Jesus ou outra pessoa.",
+      "figurino": "Galileia ou Judeia romana: túnica longa de linho ferrugem-vermelho com punhos estreitos tecidos; manto de lã fina azul-neblina alongado num ombro, com pequeno fecho liso de bronze; faixa fina ocre-claro na cintura. Costuras e caimento leves, sem ouro nem luxo. Assinatura: o contraste ferrugem e azul e o gesto vazio de pergunta."
+    },
+    {
+      "id": "raro_simao_o_zelote",
+      "name": "Traje de Simão, o zelote",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 6:15",
+      "idea": "Apóstolo de faixa vermelha",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            6
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Simão, o zelote (Lc 6:15)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Em pé, com as mãos vazias em atitude de escuta: uma na faixa e a outra aberta. A faixa vermelha vem da direção do catálogo, não de uniforme comprovado; Lc 6:15 não define participação em movimento posterior. Sem punhal, espada, punhos de combate ou alegação política histórica.",
+      "figurino": "Galileia ou Judeia romana: túnica reta de linho cinza-quente até meia canela, de mangas curtas; manto pequeno de lã crua dobrado para trás de um ombro, com linhas escuras tecidas na bainha; faixa vermelha larga com nó lateral. Sandálias robustas e desgaste de viagem discreto, sem ouro nem armadura."
+    },
+    {
+      "id": "raro_os_pastores_de_belem",
+      "name": "Os pastores de Belém",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 2:8-16",
+      "idea": "Pastor com cajado e lamparina, representando o grupo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história dos pastores de Belém (Lc 2:8-16)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Um pastor representando o grupo de Lc 2:8-16, em pé, com cajado simples numa mão e pequena lamparina de terracota num prato raso na outra; pavio longe dos dedos e chama mínima só no pavio. A lamparina evoca a noite como interpretação; o texto não descreve lanternas. Cabeça descoberta. Sem anjos, bebê, Jesus, ovelhas, estábulo ou cenário.",
+      "figurino": "Belém romana: túnica longa de linho verde-oliva ou areia; manto curto e grosso de lã crua com duas faixas castanhas naturais, preso por amarração simples, sem capuz; odre fechado no cinto e sandálias práticas de couro usado. Assinatura: a lã rústica curta, o cajado de madeira de topo levemente bifurcado e a lamparina de cerâmica, sem ouro."
+    },
+    {
+      "id": "raro_o_menino_dos_paes_e_peixes",
+      "name": "O menino dos pães e peixes",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 6:9",
+      "idea": "Cesto com cinco pães e dois peixes",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            6
+          ]
+        ]
+      },
+      "howTo": "Ler a história do menino dos pães e peixes (Jo 6:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Um só menino em pé, oferecendo com as duas mãos um cesto raso na cintura com exatamente cinco pães de cevada e dois peixes distintos, todos visíveis e apoiados. Cesto e apresentação são adaptação visual de Jo 6:9; idade escolar é direção artística. Contrato infantil (§27, opção C): centro da cabeça em y≈300, queixo em y≈391 e pés em y≈1450, com ±12, x≈512 e topo entre y≈120 e y≈170; escala uniforme e anatomia infantil, com cabeça, boca e cabelo dentro dos três recortes. Sem multidão, Jesus, peixe vivo ou comida flutuante.",
+      "figurino": "Galileia romana: túnica infantil de linho creme abaixo dos joelhos, de mangas até os cotovelos, com duas linhas verde-sálvia tecidas na barra; cinto de cordão terracota; pequeno xale de lã azul-acinzentada dobrado sobre um ombro sem tapar os braços; sandálias simples. Acabamento doméstico sem luxo. Assinatura: proporções infantis e o cesto com cinco pães e dois peixes."
+    },
+    {
+      "id": "raro_a_viuva_pobre",
+      "name": "A viúva pobre",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 12:42-44",
+      "idea": "Duas moedinhas na mão",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            12
+          ]
+        ]
+      },
+      "howTo": "Ler a história da viúva pobre (Mc 12:42-44)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "adaptacao": "Uma só mulher em pé, com a mão direita aberta na cintura mostrando exatamente duas pequenas moedas de cobre separadas na palma, e a esquerda segurando de leve o punho da própria manga. Mc 12:42-44 apoia as duas moedas, não o desenho delas, o gesto ou a idade. Cabeça descoberta, com os cabelos exatos. Sem cofre, templo, joias, moedas douradas gigantes ou outra pessoa.",
+      "figurino": "Jerusalém romana: vestido longo de linho grosseiro rosa-argila dessaturado, de mangas retas com cerzido discreto; xale estreito de lã castanho-carvão cruzado num ombro; faixa de cordão natural na cintura. Bainha cuidada e gasta e sandálias simples, sem ouro nem traje moderno de luto. Assinatura: as duas moedas pequenas na palma e a roupa modesta bem cuidada."
+    },
+    {
+      "id": "raro_o_centuriao_de_cafarnaum",
+      "name": "O centurião de Cafarnaum",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mt 8:5-10",
+      "idea": "Oficial romano de fé",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MAT",
+            8
+          ]
+        ]
+      },
+      "howTo": "Ler a história do centurião de Cafarnaum (Mt 8:5-10)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "adaptacao": "Um só oficial em pé, em atitude respeitosa (Mt 8:5-10), com a mão direita vazia junto ao peito e a esquerda segurando pelo aro um capacete simples no antebraço; cabeça descoberta nos 3 estilos. O equipamento é de uma família romana plausível, não a unidade ou o traje autenticado desse centurião. Sem Jesus, servo doente, cena militar, arma desembainhada, saudação de braço estendido ou insígnias religiosas.",
+      "figurino": "Galileia do início do século I: túnica de linho vermelho-tijolo até os joelhos, sob uma cota de malha de ferro sem mangas, com proteções dobradas nos ombros e fechos simples de bronze; manto militar curto de lã castanho-avermelhada preso num ombro por fíbula lisa; cinturão de couro com pequenas placas metálicas e sandálias práticas; capacete simples de ferro com proteção de nuca e de face, sem máscara, pluma gigante ou ídolo. A malha se baseia em famílias de achados (como o depósito de Bonn, posterior), sem provar o equipamento de Cafarnaum. Sem elmo grego clássico, máscara de cavalaria, armadura medieval ou ouro espalhado."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_tadeu",
+      "identidadeFacial": "Adulto jovem de rosto retangular curto e largo nas maçãs, testa média lisa, sobrancelhas grossas horizontais, olhos pequenos de cantos elevados, nariz curto de ponte reta e ponta bifurcada suave, boca larga com covinha lateral e maxilar largo. Barba escura curta compacta, expressão curiosa e cordial."
+    },
+    {
+      "id": "raro_simao_o_zelote",
+      "identidadeFacial": "Adulto jovem de rosto trapezoidal alongado, maxilar forte afilado, testa larga lisa, sobrancelhas baixas inclinadas, olhos estreitos intensos, nariz reto largo com ponta quadrada e boca de lábio inferior cheio. Barba escura curta de contorno reto, expressão firme e atenta sem agressividade."
+    },
+    {
+      "id": "raro_os_pastores_de_belem",
+      "identidadeFacial": "Homem adulto de rosto largo hexagonal, testa baixa, maçãs fortes arredondadas, sobrancelhas grossas arqueadas, olhos grandes de cantos baixos, nariz largo achatado de ponta arredondada e boca larga entre barba cheia curta. Expressão maravilhada e acolhedora, diferente do Pastor inicial."
+    },
+    {
+      "id": "raro_o_menino_dos_paes_e_peixes",
+      "identidadeFacial": "Menino de idade escolar com rosto oval curto e bochechas cheias, testa ampla suave, sobrancelhas finas curvas, olhos grandes redondos, nariz pequeno de ponta arredondada e lábios macios com sorriso tímido. Queixo curto, pescoço e ombros infantis, sem barba, bigode ou musculatura adulta."
+    },
+    {
+      "id": "raro_a_viuva_pobre",
+      "identidadeFacial": "Mulher de meia-idade de rosto quadrado estreito, maçãs marcadas e bochechas um pouco fundas, testa média com linhas suaves, sobrancelhas retas baixas, olhos alongados de cantos elevados, nariz longo de ponta larga e boca pequena de lábios cheios. Queixo quadrado, expressão firme e generosa, diferente da idosa Ana."
+    },
+    {
+      "id": "raro_o_centuriao_de_cafarnaum",
+      "identidadeFacial": "Homem adulto de rosto retangular comprido, testa média lisa com um sulco de atenção, maxilar muito marcado, sobrancelhas espessas baixas, olhos pequenos fundos, nariz reto largo e comprido, boca de lábios finos e queixo largo com covinha vertical. Sem barba, com expressão respeitosa e confiante, pescoço forte, sem agressividade."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

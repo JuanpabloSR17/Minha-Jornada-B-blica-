@@ -1,0 +1,51 @@
+{
+  "id": "raro_os_pastores_de_belem",
+  "nome": "Os pastores de Belém",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Lc 2:8-16",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de rosto largo hexagonal, testa baixa, maçãs fortes arredondadas, sobrancelhas grossas arqueadas, olhos grandes de cantos baixos, nariz largo achatado de ponta arredondada e boca larga entre barba cheia curta. Expressão maravilhada e acolhedora, diferente do Pastor inicial.",
+  "adaptacao": "Um pastor representando o grupo de Lc 2:8-16, em pé, com cajado simples numa mão e pequena lamparina de terracota num prato raso na outra; pavio longe dos dedos e chama mínima só no pavio. A lamparina evoca a noite como interpretação; o texto não descreve lanternas. Cabeça descoberta. Sem anjos, bebê, Jesus, ovelhas, estábulo ou cenário.",
+  "figurino": "Belém romana: túnica longa de linho verde-oliva ou areia; manto curto e grosso de lã crua com duas faixas castanhas naturais, preso por amarração simples, sem capuz; odre fechado no cinto e sandálias práticas de couro usado. Assinatura: a lã rústica curta, o cajado de madeira de topo levemente bifurcado e a lamparina de cerâmica, sem ouro."
+}

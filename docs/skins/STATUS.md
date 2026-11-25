@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-25. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 181 de 289 skins prontas no app.
+**Progresso:** 193 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -332,27 +332,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Isabel (`epico_isabel`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Isabel (Lc 1:41-42) |
 | ✅ | Traje de Simeão (`epico_simeao`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Simeão (Lc 2:28) |
 
-## S17 · Personagens · Evangelhos (0/6)
+## S17 · Personagens · Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Ana, a profetisa (`epico_ana_a_profetisa`) | Épica | evangelhos | — | — | Ler a história de Ana, a profetisa (Lc 2:36-38) |
-| ⬜ | Traje de Bartimeu (`epico_bartimeu`) | Épica | evangelhos | — | — | Ler a história de Bartimeu (Mc 10:46-50) |
-| ⬜ | Traje de Filipe (`raro_filipe`) | Rara | evangelhos | — | — | Ler a história de Filipe (Jo 1:43-46) |
-| ⬜ | Traje de Natanael (`raro_natanael`) | Rara | evangelhos | — | — | Ler a história de Natanael (Jo 1:48) |
-| ⬜ | Traje de Tomé (`raro_tome`) | Rara | evangelhos | — | — | Ler a história de Tomé (Jo 20:27-28) |
-| ⬜ | Traje de Tiago, filho de Alfeu (`raro_tiago_filho_de_alfeu`) | Rara | evangelhos | — | — | Ler a história de Tiago, filho de Alfeu (Mc 3:18) |
+| ✅ | Traje de Ana, a profetisa (`epico_ana_a_profetisa`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Ana, a profetisa (Lc 2:36-38) |
+| ✅ | Traje de Bartimeu (`epico_bartimeu`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Bartimeu (Mc 10:46-50) |
+| ✅ | Traje de Filipe (`raro_filipe`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Filipe (Jo 1:43-46) |
+| ✅ | Traje de Natanael (`raro_natanael`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Natanael (Jo 1:48) |
+| ✅ | Traje de Tomé (`raro_tome`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Tomé (Jo 20:27-28) |
+| ✅ | Traje de Tiago, filho de Alfeu (`raro_tiago_filho_de_alfeu`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Tiago, filho de Alfeu (Mc 3:18) |
 
-## S18 · Personagens · Evangelhos (0/6)
+## S18 · Personagens · Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Tadeu (`raro_tadeu`) | Rara | evangelhos | — | — | Ler a história de Tadeu (Lc 6:16; Jo 14:22) |
-| ⬜ | Traje de Simão, o zelote (`raro_simao_o_zelote`) | Rara | evangelhos | — | — | Ler a história de Simão, o zelote (Lc 6:15) |
-| ⬜ | Os pastores de Belém (`raro_os_pastores_de_belem`) | Rara | evangelhos | — | — | Ler a história dos pastores de Belém (Lc 2:8-16) |
-| ⬜ | O menino dos pães e peixes (`raro_o_menino_dos_paes_e_peixes`) | Rara | evangelhos | — | — | Ler a história do menino dos pães e peixes (Jo 6:9) |
-| ⬜ | A viúva pobre (`raro_a_viuva_pobre`) | Rara | evangelhos | — | — | Ler a história da viúva pobre (Mc 12:42-44) |
-| ⬜ | O centurião de Cafarnaum (`raro_o_centuriao_de_cafarnaum`) | Rara | evangelhos | — | — | Ler a história do centurião de Cafarnaum (Mt 8:5-10) |
+| ✅ | Traje de Tadeu (`raro_tadeu`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Tadeu (Lc 6:16; Jo 14:22) |
+| ✅ | Traje de Simão, o zelote (`raro_simao_o_zelote`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Simão, o zelote (Lc 6:15) |
+| ✅ | Os pastores de Belém (`raro_os_pastores_de_belem`) | Rara | evangelhos | ✔ | — | lendo: Ler a história dos pastores de Belém (Lc 2:8-16) |
+| ✅ | O menino dos pães e peixes (`raro_o_menino_dos_paes_e_peixes`) | Rara | evangelhos | ✔ | — | lendo: Ler a história do menino dos pães e peixes (Jo 6:9) |
+| ✅ | A viúva pobre (`raro_a_viuva_pobre`) | Rara | evangelhos | ✔ | — | lendo: Ler a história da viúva pobre (Mc 12:42-44) |
+| ✅ | O centurião de Cafarnaum (`raro_o_centuriao_de_cafarnaum`) | Rara | evangelhos | ✔ | — | lendo: Ler a história do centurião de Cafarnaum (Mt 8:5-10) |
 
 ## S19 · Personagens · Evangelhos (0/6)
 

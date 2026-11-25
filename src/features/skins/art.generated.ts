@@ -116,6 +116,20 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_ana/estilo-3/corpo.webp'),
     ] },
   },
+  epico_ana_a_profetisa: {
+    padrao: { icon: require('../../../assets/skins/epico_ana_a_profetisa/icone.webp'), styles: [
+      require('../../../assets/skins/epico_ana_a_profetisa/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_ana_a_profetisa/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_ana_a_profetisa/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_bartimeu: {
+    padrao: { icon: require('../../../assets/skins/epico_bartimeu/icone.webp'), styles: [
+      require('../../../assets/skins/epico_bartimeu/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_bartimeu/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_bartimeu/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_baruque: {
     padrao: { icon: require('../../../assets/skins/epico_baruque/icone.webp'), styles: [
       require('../../../assets/skins/epico_baruque/estilo-1/corpo.webp'),
@@ -886,6 +900,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/lendario_tiago_filho_de_zebedeu/estilo-3/corpo.webp'),
     ] },
   },
+  raro_a_viuva_pobre: {
+    padrao: { icon: require('../../../assets/skins/raro_a_viuva_pobre/icone.webp'), styles: [
+      require('../../../assets/skins/raro_a_viuva_pobre/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_a_viuva_pobre/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_a_viuva_pobre/estilo-3/corpo.webp'),
+    ] },
+  },
   raro_agur: {
     padrao: { icon: require('../../../assets/skins/raro_agur/icone.webp'), styles: [
       require('../../../assets/skins/raro_agur/estilo-1/corpo.webp'),
@@ -1022,6 +1043,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_filhos_de_cora/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_filhos_de_cora/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_filhos_de_cora/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_filipe: {
+    padrao: { icon: require('../../../assets/skins/raro_filipe/icone.webp'), styles: [
+      require('../../../assets/skins/raro_filipe/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_filipe/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_filipe/estilo-3/corpo.webp'),
     ] },
   },
   raro_gemarias: {
@@ -1181,11 +1209,32 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_mical/estilo-3/corpo.webp'),
     ] },
   },
+  raro_natanael: {
+    padrao: { icon: require('../../../assets/skins/raro_natanael/icone.webp'), styles: [
+      require('../../../assets/skins/raro_natanael/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_natanael/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_natanael/estilo-3/corpo.webp'),
+    ] },
+  },
   raro_naum: {
     padrao: { icon: require('../../../assets/skins/raro_naum/icone.webp'), styles: [
       require('../../../assets/skins/raro_naum/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_naum/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_naum/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_o_centuriao_de_cafarnaum: {
+    padrao: { icon: require('../../../assets/skins/raro_o_centuriao_de_cafarnaum/icone.webp'), styles: [
+      require('../../../assets/skins/raro_o_centuriao_de_cafarnaum/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_o_centuriao_de_cafarnaum/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_o_centuriao_de_cafarnaum/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_o_menino_dos_paes_e_peixes: {
+    padrao: { icon: require('../../../assets/skins/raro_o_menino_dos_paes_e_peixes/icone.webp'), styles: [
+      require('../../../assets/skins/raro_o_menino_dos_paes_e_peixes/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_o_menino_dos_paes_e_peixes/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_o_menino_dos_paes_e_peixes/estilo-3/corpo.webp'),
     ] },
   },
   raro_obadias: {
@@ -1200,6 +1249,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_obede_edom/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_obede_edom/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_obede_edom/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_os_pastores_de_belem: {
+    padrao: { icon: require('../../../assets/skins/raro_os_pastores_de_belem/icone.webp'), styles: [
+      require('../../../assets/skins/raro_os_pastores_de_belem/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_os_pastores_de_belem/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_os_pastores_de_belem/estilo-3/corpo.webp'),
     ] },
   },
   raro_os_recabitas: {
@@ -1280,6 +1336,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_shofar/feminino/estilo-3/corpo.webp'),
     ] },
   },
+  raro_simao_o_zelote: {
+    padrao: { icon: require('../../../assets/skins/raro_simao_o_zelote/icone.webp'), styles: [
+      require('../../../assets/skins/raro_simao_o_zelote/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_simao_o_zelote/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_simao_o_zelote/estilo-3/corpo.webp'),
+    ] },
+  },
   raro_sofonias: {
     padrao: { icon: require('../../../assets/skins/raro_sofonias/icone.webp'), styles: [
       require('../../../assets/skins/raro_sofonias/estilo-1/corpo.webp'),
@@ -1292,6 +1355,27 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/raro_sunamita/estilo-1/corpo.webp'),
       require('../../../assets/skins/raro_sunamita/estilo-2/corpo.webp'),
       require('../../../assets/skins/raro_sunamita/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_tadeu: {
+    padrao: { icon: require('../../../assets/skins/raro_tadeu/icone.webp'), styles: [
+      require('../../../assets/skins/raro_tadeu/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_tadeu/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_tadeu/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_tiago_filho_de_alfeu: {
+    padrao: { icon: require('../../../assets/skins/raro_tiago_filho_de_alfeu/icone.webp'), styles: [
+      require('../../../assets/skins/raro_tiago_filho_de_alfeu/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_tiago_filho_de_alfeu/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_tiago_filho_de_alfeu/estilo-3/corpo.webp'),
+    ] },
+  },
+  raro_tome: {
+    padrao: { icon: require('../../../assets/skins/raro_tome/icone.webp'), styles: [
+      require('../../../assets/skins/raro_tome/estilo-1/corpo.webp'),
+      require('../../../assets/skins/raro_tome/estilo-2/corpo.webp'),
+      require('../../../assets/skins/raro_tome/estilo-3/corpo.webp'),
     ] },
   },
   raro_urias: {

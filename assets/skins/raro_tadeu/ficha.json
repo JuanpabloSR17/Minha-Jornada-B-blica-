@@ -1,0 +1,51 @@
+{
+  "id": "raro_tadeu",
+  "nome": "Traje de Tadeu",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Lc 6:16; Jo 14:22",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem de rosto retangular curto e largo nas maçãs, testa média lisa, sobrancelhas grossas horizontais, olhos pequenos de cantos elevados, nariz curto de ponte reta e ponta bifurcada suave, boca larga com covinha lateral e maxilar largo. Barba escura curta compacta, expressão curiosa e cordial.",
+  "adaptacao": "Em pé, no gesto de pergunta respeitosa de Jo 14:22, com as duas mãos vazias: uma palma aberta na cintura e a outra perto do peito. Usa a identificação convencional do catálogo (Tadeu, Judas não o Iscariotes) sem resolver genealogia ou idade como certeza. A possível duplicidade com raro_judas_irmao_de_tiago (S24) será resolvida naquele lote. Sem carta, porrete, medalhão, Jesus ou outra pessoa.",
+  "figurino": "Galileia ou Judeia romana: túnica longa de linho ferrugem-vermelho com punhos estreitos tecidos; manto de lã fina azul-neblina alongado num ombro, com pequeno fecho liso de bronze; faixa fina ocre-claro na cintura. Costuras e caimento leves, sem ouro nem luxo. Assinatura: o contraste ferrugem e azul e o gesto vazio de pergunta."
+}

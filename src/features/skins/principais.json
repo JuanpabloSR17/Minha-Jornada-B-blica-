@@ -4340,6 +4340,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "epico_ana_a_profetisa",
+   "name": "Traje de Ana, a profetisa",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 2:36-38",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-ponytail"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_bartimeu",
+   "name": "Traje de Bartimeu",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 10:46-50",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_filipe",
+   "name": "Traje de Filipe",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 1:43-46",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_natanael",
+   "name": "Traje de Natanael",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 1:48",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_tome",
+   "name": "Traje de Tomé",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 20:27-28",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_tiago_filho_de_alfeu",
+   "name": "Traje de Tiago, filho de Alfeu",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 3:18",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_tadeu",
+   "name": "Traje de Tadeu",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 6:16; Jo 14:22",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_simao_o_zelote",
+   "name": "Traje de Simão, o zelote",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 6:15",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_os_pastores_de_belem",
+   "name": "Os pastores de Belém",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 2:8-16",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-shaved"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_o_menino_dos_paes_e_peixes",
+   "name": "O menino dos pães e peixes",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 6:9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_a_viuva_pobre",
+   "name": "A viúva pobre",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 12:42-44",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "raro_o_centuriao_de_cafarnaum",
+   "name": "O centurião de Cafarnaum",
+   "rarity": "rare",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 8:5-10",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

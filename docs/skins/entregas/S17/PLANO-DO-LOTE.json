@@ -1,0 +1,274 @@
+{
+  "commit": "afc0f6f",
+  "id": "S17",
+  "titulo": "Personagens · Evangelhos",
+  "skins": [
+    {
+      "id": "epico_ana_a_profetisa",
+      "name": "Traje de Ana, a profetisa",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 2:36-38",
+      "idea": "Viúva idosa em oração no templo",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ana, a profetisa (Lc 2:36-38)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-ponytail"
+        }
+      ],
+      "adaptacao": "Uma só viúva muito idosa, em pé, em oração e ação de graças, com as duas mãos vazias abertas perto do peito. Lc 2:36-38 apoia idade avançada, oração e testemunho; não fixar como fato a interpretação dos 84 anos. Cabeça descoberta, com os penteados exatos e sem grisalho automático. Sem templo, bebê, Jesus ou outra figura.",
+      "figurino": "Judeia romana: vestido longo reto de linho índigo dessaturado, de mangas estreitas; xale retangular de lã fina cinza-pomba claro, cruzado alto no peito; faixa estreita ameixa no quadril. Trama visível, bainhas lisas tecidas e desgaste suave, sem ouro, joias ou veste sacerdotal. Assinatura: silhueta longa e magra, com as mãos vazias em oração."
+    },
+    {
+      "id": "epico_bartimeu",
+      "name": "Traje de Bartimeu",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 10:46-50",
+      "idea": "Mendigo que lança o manto e se levanta",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            10
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Bartimeu (Mc 10:46-50)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Em pé, respondendo ao chamado (Mc 10:49-50): manto retirado dos ombros e reunido sobre o antebraço esquerdo, com a mão visível; a mão direita vazia estendida para o chamado. Não encena nem afirma a cura do v. 52. Olhos naturais, sem caricatura de cegueira. Sem manto voando, cajado, multidão ou Jesus.",
+      "figurino": "Jericó romana: túnica de linho grosseiro bege-acinzentado abaixo dos joelhos, de mangas simples, com cinto de corda; manto de lã castanho-duna gasto, apoiado no braço. Cerzido discreto, bainha usada e sandálias antigas completas, sem rasgos que exponham o corpo nem luxo. Assinatura: o manto removido e o gesto de resposta."
+    },
+    {
+      "id": "raro_filipe",
+      "name": "Traje de Filipe",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 1:43-46",
+      "idea": "Discípulo de Betsaida",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Filipe (Jo 1:43-46)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Em pé, com gesto convidativo (Jo 1:43-46): mão direita vazia aberta e a esquerda segurando só a borda do próprio manto. Sem afirmar profissão de pescador, sem rede, livro moderno, Natanael ou Jesus. Adulto jovem, sem idade ensinada como fato.",
+      "figurino": "Galileia romana: túnica de linho azul-acinzentado até meia canela, de mangas estreitas; manto curto de lã ocre-claro num ombro, de borda dobrada e pequeno fecho de madeira; cinto fino de couro liso. Acabamento limpo sem luxo, bainhas tecidas e sandálias de tiras finas. Assinatura: o gesto de convite e a silhueta assimétrica do manto curto, sem ouro."
+    },
+    {
+      "id": "raro_natanael",
+      "name": "Traje de Natanael",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 1:48",
+      "idea": "Debaixo da figueira",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Natanael (Jo 1:48)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "adaptacao": "Em pé e sozinho, com uma pequena ramagem de figueira de três folhas na mão direita, alusão artística à árvore de Jo 1:48, não objeto descrito na mão; a esquerda vazia no peito. Sem árvore, chão em miniatura, coroa de folhas, figos ou outra pessoa. Não ensinar como certa a identificação tradicional com Bartolomeu.",
+      "figurino": "Galileia romana: túnica de linho cru com duas linhas castanhas estreitas tecidas, até meia canela; manto curto de lã terracota envolto no lado esquerdo e preso por amarração têxtil; faixa areia na cintura. Textura seca e bainhas simples, sem ouro. Assinatura: a ramagem de três folhas e o manto curto lateral."
+    },
+    {
+      "id": "raro_tome",
+      "name": "Traje de Tomé",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 20:27-28",
+      "idea": "Discípulo que passa da dúvida à fé",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            20
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Tomé (Jo 20:27-28)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "adaptacao": "Em pé, no reconhecimento de Jo 20:27-28, com as duas mãos vazias: uma no peito e a outra discretamente aberta. A fé fica no gesto e na expressão. Sem Jesus, feridas, mão alheia, dedo tocando corpo invisível, lança de tradição posterior ou cruz.",
+      "figurino": "Judeia romana: túnica longa de linho marfim fino, de gola em V simples e mangas largas com punhos estreitos; manto retangular de lã ameixa-ardósia passado por um ombro, preso por faixa têxtil escura alta na cintura. Dobras verticais alongadas, bordas lisas sem ouro e sandálias de tiras largas. Assinatura: o contraste claro e ardósia e as mãos vazias de reconhecimento."
+    },
+    {
+      "id": "raro_tiago_filho_de_alfeu",
+      "name": "Traje de Tiago, filho de Alfeu",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 3:18",
+      "idea": "Apóstolo de manto simples",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            3
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Tiago, filho de Alfeu (Mc 3:18)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Apóstolo em pé e sozinho, com a mão direita na lapela do próprio manto e a esquerda vazia e relaxada. Mc 3:18 só o cita na lista: sem profissão, martírio, ferramenta, irmão ou cena inventados. Adulto jovem com rosto próprio, sem confundi-lo com Tiago, filho de Zebedeu, e sem idade ensinada como fato.",
+      "figurino": "Galileia ou Judeia romana: túnica de linho cru de corte reto até meia canela, com pequena gola quadrada de borda tecida azul-escura; manto retangular de lã oliva-terra cruzado na frente e preso por cordão, de trama grosseira com losangos discretos; cinto têxtil estreito castanho e sandálias de couro simples. Assinatura: a gola quadrada e o manto oliva de trama visível, sem ouro nem objeto extra."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_ana_a_profetisa",
+      "identidadeFacial": "Anciã de rosto comprido e muito fino, maçãs ósseas, têmporas fundas, testa alta sulcada, sobrancelhas finas retas, olhos pequenos de pálpebras pesadas, nariz longo fino ligeiramente curvo, boca fina de cantos elevados e queixo estreito. Idade avançada e expressão de gratidão serena, diferente de Isabel."
+    },
+    {
+      "id": "epico_bartimeu",
+      "identidadeFacial": "Homem maduro de rosto trapezoidal largo no maxilar, testa baixa com sulco central, maçãs largas e gastas pelo sol, sobrancelhas espessas assimétricas, olhos naturais de foco impreciso, nariz largo de ponta caída e boca grande entreaberta ao chamar. Barba curta irregular de contorno arredondado; expressão esperançosa e decidida."
+    },
+    {
+      "id": "raro_filipe",
+      "identidadeFacial": "Adulto jovem de rosto oval comprido, testa média lisa, sobrancelhas baixas retilíneas, olhos grandes afastados de cantos suaves, nariz reto comprido de ponta pequena e boca de lábio superior fino com sorriso acolhedor. Queixo alongado, barba muito curta escura uniforme. Idade aparente de adulto jovem, sem sulcos de ancião."
+    },
+    {
+      "id": "raro_natanael",
+      "identidadeFacial": "Adulto jovem de rosto em coração comprido, testa larga, maçãs altas afiladas, sobrancelhas espessas que sobem junto à ponte do nariz, olhos amendoados profundos, nariz curvo proeminente de ponta fina e lábios de arco central marcado. Barba curta de queixo estreito, expressão contemplativa que se abre em confiança."
+    },
+    {
+      "id": "raro_tome",
+      "identidadeFacial": "Adulto jovem de rosto angular em losango, testa alta e estreita, sobrancelhas retas separadas, olhos fundos de pálpebras pesadas, nariz largo na ponte e fino na ponta, lábios cheios de boca curta e maxilar de cantos marcados. Barba escura curta bem aparada, expressão de surpresa reverente e convicção."
+    },
+    {
+      "id": "raro_tiago_filho_de_alfeu",
+      "identidadeFacial": "Adulto jovem de rosto redondo curto, testa ampla lisa, sobrancelhas finas arqueadas, olhos redondos atentos, nariz curto de ponta larga suave, boca larga de lábios finos e queixo curto arredondado. Sem barba nem bigode, expressão calma e reservada; adulto, sem aparência infantil."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

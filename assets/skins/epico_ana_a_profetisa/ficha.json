@@ -1,0 +1,51 @@
+{
+  "id": "epico_ana_a_profetisa",
+  "nome": "Traje de Ana, a profetisa",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Lc 2:36-38",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-ponytail"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Anciã de rosto comprido e muito fino, maçãs ósseas, têmporas fundas, testa alta sulcada, sobrancelhas finas retas, olhos pequenos de pálpebras pesadas, nariz longo fino ligeiramente curvo, boca fina de cantos elevados e queixo estreito. Idade avançada e expressão de gratidão serena, diferente de Isabel.",
+  "adaptacao": "Uma só viúva muito idosa, em pé, em oração e ação de graças, com as duas mãos vazias abertas perto do peito. Lc 2:36-38 apoia idade avançada, oração e testemunho; não fixar como fato a interpretação dos 84 anos. Cabeça descoberta, com os penteados exatos e sem grisalho automático. Sem templo, bebê, Jesus ou outra figura.",
+  "figurino": "Judeia romana: vestido longo reto de linho índigo dessaturado, de mangas estreitas; xale retangular de lã fina cinza-pomba claro, cruzado alto no peito; faixa estreita ameixa no quadril. Trama visível, bainhas lisas tecidas e desgaste suave, sem ouro, joias ou veste sacerdotal. Assinatura: silhueta longa e magra, com as mãos vazias em oração."
+}

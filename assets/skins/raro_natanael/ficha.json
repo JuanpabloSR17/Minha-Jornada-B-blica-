@@ -1,0 +1,51 @@
+{
+  "id": "raro_natanael",
+  "nome": "Traje de Natanael",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Jo 1:48",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Adulto jovem de rosto em coração comprido, testa larga, maçãs altas afiladas, sobrancelhas espessas que sobem junto à ponte do nariz, olhos amendoados profundos, nariz curvo proeminente de ponta fina e lábios de arco central marcado. Barba curta de queixo estreito, expressão contemplativa que se abre em confiança.",
+  "adaptacao": "Em pé e sozinho, com uma pequena ramagem de figueira de três folhas na mão direita, alusão artística à árvore de Jo 1:48, não objeto descrito na mão; a esquerda vazia no peito. Sem árvore, chão em miniatura, coroa de folhas, figos ou outra pessoa. Não ensinar como certa a identificação tradicional com Bartolomeu.",
+  "figurino": "Galileia romana: túnica de linho cru com duas linhas castanhas estreitas tecidas, até meia canela; manto curto de lã terracota envolto no lado esquerdo e preso por amarração têxtil; faixa areia na cintura. Textura seca e bainhas simples, sem ouro. Assinatura: a ramagem de três folhas e o manto curto lateral."
+}

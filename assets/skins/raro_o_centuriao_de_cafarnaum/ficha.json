@@ -1,0 +1,51 @@
+{
+  "id": "raro_o_centuriao_de_cafarnaum",
+  "nome": "O centurião de Cafarnaum",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mt 8:5-10",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de rosto retangular comprido, testa média lisa com um sulco de atenção, maxilar muito marcado, sobrancelhas espessas baixas, olhos pequenos fundos, nariz reto largo e comprido, boca de lábios finos e queixo largo com covinha vertical. Sem barba, com expressão respeitosa e confiante, pescoço forte, sem agressividade.",
+  "adaptacao": "Um só oficial em pé, em atitude respeitosa (Mt 8:5-10), com a mão direita vazia junto ao peito e a esquerda segurando pelo aro um capacete simples no antebraço; cabeça descoberta nos 3 estilos. O equipamento é de uma família romana plausível, não a unidade ou o traje autenticado desse centurião. Sem Jesus, servo doente, cena militar, arma desembainhada, saudação de braço estendido ou insígnias religiosas.",
+  "figurino": "Galileia do início do século I: túnica de linho vermelho-tijolo até os joelhos, sob uma cota de malha de ferro sem mangas, com proteções dobradas nos ombros e fechos simples de bronze; manto militar curto de lã castanho-avermelhada preso num ombro por fíbula lisa; cinturão de couro com pequenas placas metálicas e sandálias práticas; capacete simples de ferro com proteção de nuca e de face, sem máscara, pluma gigante ou ídolo. A malha se baseia em famílias de achados (como o depósito de Bonn, posterior), sem provar o equipamento de Cafarnaum. Sem elmo grego clássico, máscara de cavalaria, armadura medieval ou ouro espalhado."
+}
