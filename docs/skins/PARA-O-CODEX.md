@@ -808,3 +808,30 @@ As 12 propostas foram confirmadas sem ajustes e registradas no plano e na linha 
 - Isabel: idosa em louvor, com gravidez discreta.
 
 S15/S16 ainda não foram pintados.
+
+## 35. Direção de figurino: complemento do §34 (25/11/2026)
+
+**Pedido do usuário:** variar tecidos, cortes, cores e acabamentos conforme a época, a região e a função de cada personagem. O exemplo dado foi Nicodemos, um fariseu que deve ter visual próprio. Não basta trocar o pigmento do mesmo manto bordado.
+
+**Regra geral** (`regras.figurino` no plano, mostrada no topo do LOTES.md):
+- Antes das bases de cada lote, pesquisar época, região e função de cada skin.
+- Registrar para cada uma: corte e silhueta, fibra e trama, forma de prender, paleta, acabamento e desgaste, e um objeto próprio.
+- Raridade não significa ouro obrigatório.
+- Os 3 estilos de uma skin mantêm a mesma identidade e o mesmo traje, com tons e cabelos exatos do catálogo. A variedade de figurino vem sobretudo de uma skin para outra.
+- Lendárias e Gloriosas continuam especiais, sem misturar épocas nem copiar o mesmo rosto ou manto.
+- Cores e cortes são direção artística. As fontes apoiam famílias de material e estrutura, não cada figurino em particular.
+- Para a Judeia romana, a referência é o relatório da IAA sobre Nahal Arugot (linho de trama simples, lã e faixas tecidas). Não usar peças coptas de séculos posteriores.
+
+**Figurinos registrados** (campo `figurino` no plano, linha **Figurino** no LOTES.md):
+- **Nicodemos:** túnica de linho azul-tinta lisa, manto retangular de lã crua com faixas índigo e franjas nos cantos (Nm 15:38-39; Dt 22:12), faixa simples e cabeça descoberta.
+  - É uma interpretação plausível, não uma farda farisaica: Mt 23:5 cita franjas, mas não define uniforme.
+  - Sem tallit, quipá ou roupa rabínica moderna, sem estrela de Davi e sem peitoral.
+  - Refazer só o figurino. Rosto, idade, os 3 estilos, pose, lâmpada, recipiente e âncoras ficam como estão.
+- **Mulher do perfume:** linho âmbar ou ocre de pregas estreitas e xale ameixa em diagonal, sem ouro e sem o manto em U de Maria.
+- **Bom samaritano:** túnica de linho cru até os joelhos e manto de lã grossa ferrugem e areia, preso num ombro. Couro funcional, marcas de uso e cerzido, sem bordado dourado.
+- **Filho pródigo:** túnica clara com faixas púrpura estreitas e manto de lã fina vinho, com caimento assimétrico. O valor está na qualidade e no caimento, não em ouro.
+- **Zacarias, o sacerdote:** linho marfim de pregas retas, faixa azul, púrpura e carmesim e turbante baixo. Sem manto extra nem ouro que lembre o sumo sacerdote.
+- **Isabel:** linho rosa antigo dessaturado, xale de lã verde-musgo gasto e remendo sutil, sem luxo.
+- **Simeão:** lã areia ou cinza-quente, manto castanho-oliva envelhecido com franjas curtas, sem ouro.
+
+Nada muda em app, banco, IDs, estilos ou regras de concessão.

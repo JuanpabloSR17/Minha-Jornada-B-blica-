@@ -54,7 +54,7 @@ writeFileSync('docs/skins/STATUS.md', lines.join('\n'));
 console.log(`${done}/${total} skins prontas → docs/skins/STATUS.md`);
 
 // Briefing de produção por lote (para o Codex): só os lotes com skins ainda sem pintura.
-const brief = ['# Briefing dos lotes de skins', '', `Gerado por \`node scripts/skin-status.mjs\`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de \`TEMPORADA-1-EXODO.md\` §2.`, '', ...(plan.regras.apostolos ? [`**Apóstolos:** ${plan.regras.apostolos}`, ''] : [])];
+const brief = ['# Briefing dos lotes de skins', '', `Gerado por \`node scripts/skin-status.mjs\`. Cada skin: 3 estilos (tom de pele, cor e penteado do cabelo abaixo), no 2.5D pintado dos lotes já aprovados, com o contrato de \`TEMPORADA-1-EXODO.md\` §2.`, '', ...(plan.regras.apostolos ? [`**Apóstolos:** ${plan.regras.apostolos}`, ''] : []), ...(plan.regras.figurino ? [`**Figurino:** ${plan.regras.figurino}`, ''] : [])];
 for (const lot of plan.lotes) {
   if (lot.tipo === 'revisao-rosto') {
     const todo = lot.skins.filter((id) => !hasFace(id));
@@ -76,7 +76,7 @@ for (const lot of plan.lotes) {
     const sty = (p?.styles ?? app?.styles ?? []).map((st, i) => `estilo-${i + 1}: ${st.skinTone}, ${st.hairColor}, ${st.hairStyle}`).join(' · ');
     const face = ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity) ? ' **Rosto próprio**, diferente das demais skins (formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e registrado em `identidadeFacial` na ficha.' : '';
     const extra = (face) + (p?.pair ? ` Casal: apresentação padrão masculina (Áquila) e feminina (${p.pair}), com o nome de cada um no \`nomeExibicao\`.` : p?.inShop ? ' Vai para a loja (Siclos).' : '');
-    brief.push(`- **${name}** (\`${id}\`), ${RAR[p?.rarity ?? app?.rarity] ?? ''}, ${ref}.${extra} ${p?.idea ? `Traje: ${p.idea}.` : 'Traje: ver a tabela de `TEMPORADA-1-EXODO.md`.'}${p?.adaptacao ? ` **Adaptação:** ${p.adaptacao}` : ''} Apresentação ${p?.presentation ?? (/(miria|zipora)/.test(id) ? 'feminina' : 'masculina')}${p?.pair ? '' : (p?.character || app?.character || ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity)) ? ' (personagem bíblico: só esta apresentação, sem a do outro sexo)' : ' (figura genérica: feminina adicional quando o traje permitir)'}.`, `  ${sty}`);
+    brief.push(`- **${name}** (\`${id}\`), ${RAR[p?.rarity ?? app?.rarity] ?? ''}, ${ref}.${extra} ${p?.idea ? `Traje: ${p.idea}.` : 'Traje: ver a tabela de `TEMPORADA-1-EXODO.md`.'}${p?.adaptacao ? ` **Adaptação:** ${p.adaptacao}` : ''}${p?.figurino ? ` **Figurino:** ${p.figurino}` : ''} Apresentação ${p?.presentation ?? (/(miria|zipora)/.test(id) ? 'feminina' : 'masculina')}${p?.pair ? '' : (p?.character || app?.character || ['legendary', 'glorious'].includes(p?.rarity ?? app?.rarity)) ? ' (personagem bíblico: só esta apresentação, sem a do outro sexo)' : ' (figura genérica: feminina adicional quando o traje permitir)'}.`, `  ${sty}`);
   }
   brief.push('');
 }

@@ -8,7 +8,8 @@
   "oficios_e_corte": "Mercado dos Viajantes (Siclos): Comuns e Raros na vitrine do dia; Épicos na Épica da semana",
   "rosto": "Lendárias e Gloriosas: rosto próprio (identidadeFacial: formato, nariz, olhos, maxilar, idade aparente e expressão), preservado nos 3 estilos e diferente das demais skins",
   "revisao_rosto": "Decisão do usuário (19/11/2026): no final de todos os lotes, refazer os rostos das Lendárias e Gloriosas de P01–P04 com rosto próprio (identidadeFacial), mesmos IDs, estilos, sexo e regras; inclui as Lendárias e Gloriosas da Temporada 1 (menos Moisés com véu, de rosto coberto). Vestes de Jonas e de Tiago são diferenciadas de João Batista já em P07_v2/P08_v2 (anatomia facial e barba, mesmos estilos), e João Batista fica como referência. A revisão conta como feita quando a ficha traz revisaoRosto",
-  "apostolos": "Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística."
+  "apostolos": "Revisão P08H (pedido do usuário, 19/11/2026): os apóstolos na fase do ministério, e Pedro no Pentecostes, são adultos jovens de idades aparentes diferentes, com cabelos naturais castanho-escuros ou pretos, curtos, ondulados ou cacheados, sem locs, louro, cobre ou grisalho, cada um com rosto próprio. João em Patmos é muito posterior: ancião, com cabelo e barba grisalhos permitidos (a proibição de grisalho não vale para ele). As faixas de idade aparente são só direção artística: nunca ensinar no app como idade bíblica comprovada. Ver docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md, que separa evidência de escolha artística.",
+  "figurino": "Pedido do usuário (25/11/2026): variar tecidos, cortes, cores e acabamentos conforme época, região e função; não basta trocar o pigmento do mesmo manto bordado. Antes das bases de cada lote, pesquisar época, região e função e registrar para cada skin: corte e silhueta, fibra e trama, forma de prender, paleta, acabamento e desgaste, e objeto próprio. Raridade não significa ouro obrigatório. Os 3 estilos de uma skin preservam a mesma identidade e o mesmo traje, com tons e cabelos exatos do catálogo; a variedade de figurino é sobretudo entre skins. Lendárias e Gloriosas continuam especiais, sem misturar épocas nem copiar o mesmo rosto ou manto. Cores e cortes são direção artística: as fontes apoiam famílias de material e estrutura, não cada figurino. Para a época romana na Judeia, linho de trama simples, lã e faixas tecidas (IAA, Nahal Arugot); não extrapolar peças coptas de séculos posteriores nem usar o mesmo traje para todas as eras bíblicas."
  },
  "lotes": [
   {
@@ -8374,7 +8375,8 @@
      "hairStyle": "hair-side-part"
     }
    ],
-   "adaptacao": "A lâmpada é símbolo artístico da visita noturna, não objeto citado em Jo 3:1-2; o recipiente evoca a mirra e o aloés de Jo 19:39, sem representar a grande quantidade narrada. Chama pequena só no pavio, sem halo, fumaça ou fundo noturno. Cabeça descoberta para mostrar os penteados exatos, inclusive o raspado do estilo 1."
+   "adaptacao": "A lâmpada é símbolo artístico da visita noturna, não objeto citado em Jo 3:1-2; o recipiente evoca a mirra e o aloés de Jo 19:39, sem representar a grande quantidade narrada. Chama pequena só no pavio, sem halo, fumaça ou fundo noturno. Cabeça descoberta para mostrar os penteados exatos, inclusive o raspado do estilo 1.",
+   "figurino": "Túnica longa de linho azul-tinta lisa, sem ramagens douradas; manto retangular de lã natural cru ou creme, de quatro cantos, com duas faixas estreitas índigo tecidas e cordões ou franjas visíveis nos cantos (Nm 15:38-39; Dt 22:12); cinto de faixa têxtil simples e caimento sóbrio. Cabeça descoberta, sem filactério. Não é uniforme farisaico nem roupa documentada de Nicodemos (Mt 23:5 cita franjas e filactérios, mas não define farda): é interpretação plausível. Sem tallit moderno preto e branco, quipá moderno, estrela de Davi, roupa rabínica moderna ou peitoral sacerdotal."
   },
   {
    "id": "epico_jose_de_arimateia",
@@ -8530,7 +8532,8 @@
      "hairStyle": "hair-long-wavy"
     }
    ],
-   "adaptacao": "A quebra no gargalo é solução artística para o vaso quebrado de Mc 14:3, não detalhe do texto. Rosto próprio, diferente de Maria de Betânia; não fundir sua identidade com Maria de Betânia nem com a mulher de Lc 7. Sem cacos flutuantes, cortes ou derramamento sobre outra pessoa."
+   "adaptacao": "A quebra no gargalo é solução artística para o vaso quebrado de Mc 14:3, não detalhe do texto. Rosto próprio, diferente de Maria de Betânia; não fundir sua identidade com Maria de Betânia nem com a mulher de Lc 7. Sem cacos flutuantes, cortes ou derramamento sobre outra pessoa.",
+   "figurino": "Vestido de linho fino âmbar ou ocre, de pregas estreitas e mangas retas; xale leve ameixa envolto em diagonal; faixa de cintura estreita sem ouro. Sem ramagens douradas, franjas pesadas nem o mesmo manto em U de Maria de Betânia."
   },
   {
    "id": "epico_o_bom_samaritano",
@@ -8569,7 +8572,8 @@
      "hairStyle": "hair-wavy"
     }
    ],
-   "adaptacao": "Representante da parábola (Lc 10:33-35), identificado como tal. O jumento fica só na nota narrativa, evocado pela correia de viagem, sem animal inteiro, cortado ou em miniatura. Sem o homem ferido, violência ou outra pessoa."
+   "adaptacao": "Representante da parábola (Lc 10:33-35), identificado como tal. O jumento fica só na nota narrativa, evocado pela correia de viagem, sem animal inteiro, cortado ou em miniatura. Sem o homem ferido, violência ou outra pessoa.",
+   "figurino": "Túnica de linho cru até os joelhos, de mangas práticas curtas ou dobradas; manto de lã mais grossa ferrugem e areia, com xadrez simples discreto, preso em um ombro; correia de couro funcional e sandálias robustas. Marcas moderadas de uso e cerzido discreto, sem bordado dourado."
   },
   {
    "id": "epico_o_filho_prodigo",
@@ -8608,7 +8612,8 @@
      "hairStyle": "hair-afro"
     }
    ],
-   "adaptacao": "Personagem da parábola de Lc 15:22, identificado como tal, sem idade numérica. Sem pai, criado, banquete ou outra pessoa."
+   "adaptacao": "Personagem da parábola de Lc 15:22, identificado como tal, sem idade numérica. Sem pai, criado, banquete ou outra pessoa.",
+   "figurino": "Roupa nova e fina de festa: túnica clara com duas faixas verticais estreitas em púrpura discreta e manto de lã fina vinho ou ameixa, de grande caimento assimétrico; faixa de cintura trançada fina. O valor aparece na qualidade, limpeza, ajuste e caimento, sem armadura, joias ou ramagem dourada."
   },
   {
    "id": "epico_zacarias_o_sacerdote",
@@ -8647,7 +8652,8 @@
      "hairStyle": "hair-curly"
     }
    ],
-   "adaptacao": "O incensário portátil, sem fumaça, adapta o altar fixo de Lc 1:8-9. O turbante baixo deixa à vista na frente, nas têmporas e na nuca os penteados exatos (locs louros, ondulado médio castanho, cacheado castanho-escuro). Sem peitoral de sumo sacerdote, altar ou templo em miniatura, anjo ou letras inventadas."
+   "adaptacao": "O incensário portátil, sem fumaça, adapta o altar fixo de Lc 1:8-9. O turbante baixo deixa à vista na frente, nas têmporas e na nuca os penteados exatos (locs louros, ondulado médio castanho, cacheado castanho-escuro). Sem peitoral de sumo sacerdote, altar ou templo em miniatura, anjo ou letras inventadas.",
+   "figurino": "Linho cerimonial marfim limpo, de trama fina e pregas verticais retas, com mangas de túnica; faixa sacerdotal azul, púrpura e carmesim; turbante baixo. Sem manto de ombros extra nem bordados de ouro que lembrem o sumo sacerdote."
   },
   {
    "id": "epico_isabel",
@@ -8686,7 +8692,8 @@
      "hairStyle": "hair-long-wavy"
     }
    ],
-   "adaptacao": "Idade em Lc 1:7 e gravidez coerente com Lc 1:41-42. Envelhecimento no rosto, sem trocar cores e penteados por grisalho. Sem Maria, bebê visível, pomba, halo ou representação do Espírito."
+   "adaptacao": "Idade em Lc 1:7 e gravidez coerente com Lc 1:41-42. Envelhecimento no rosto, sem trocar cores e penteados por grisalho. Sem Maria, bebê visível, pomba, halo ou representação do Espírito.",
+   "figurino": "Vestido de linho rosa antigo dessaturado, de textura macia e pregas amplas sobre a gravidez discreta; xale leve de lã verde-musgo gasto, de caimento lateral; mangas estreitas, amarração simples no quadril e remendo ou cerzido sutil. Sem luxo, ouro ou franjas vistosas."
   },
   {
    "id": "epico_simeao",
@@ -8725,7 +8732,8 @@
      "hairStyle": "hair-side-part"
     }
    ],
-   "adaptacao": "Lc 2:28 fala de Jesus nos braços de Simeão; pela regra do produto, Jesus não é desenhado, nem como bebê, pacote, esfera ou outra figura, e a pose não sugere embalar alguém invisível. A nota distingue o evento bíblico da postura adaptada. Sem templo em miniatura, halo ou outra pessoa; cores e penteados exatos."
+   "adaptacao": "Lc 2:28 fala de Jesus nos braços de Simeão; pela regra do produto, Jesus não é desenhado, nem como bebê, pacote, esfera ou outra figura, e a pose não sugere embalar alguém invisível. A nota distingue o evento bíblico da postura adaptada. Sem templo em miniatura, halo ou outra pessoa; cores e penteados exatos.",
+   "figurino": "Túnica de lã fina areia ou cinza-quente, de corte reto, com faixa azul dessaturada discreta; manto retangular de lã castanho-oliva envelhecido, de borda tecida lisa e poucas franjas curtas naturais, sem ouro. Silhueta longa e sóbria de ancião."
   },
   {
    "id": "epico_ana_a_profetisa",
