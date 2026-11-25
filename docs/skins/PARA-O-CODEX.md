@@ -896,3 +896,31 @@ Os outros 91 arquivos são idênticos, incluindo todas as fichas. Integração s
 - O fluxo fixes passou nas 7 etapas.
 - O Codex conferiu os 96 arquivos publicados por SHA-256, e todos batem com os manifestos v2.
 - Sem pendências.
+
+## 37. Adaptações e figurinos de S17/S18 registrados antes da produção (25/11/2026)
+
+As 12 propostas foram confirmadas sem ajustes. Os campos `adaptacao` e `figurino` estão no plano e aparecem nas linhas **Adaptação** e **Figurino** do LOTES.md. IDs, estilos, apresentações (10 masculinas e 2 femininas) e regras não mudaram.
+
+**Resumo**
+- **Ana, a profetisa:** viúva muito idosa em oração, de linho índigo e xale cinza-pomba, sem fixar os 84 anos.
+- **Bartimeu:** manto retirado no braço e mão estendida, sem encenar a cura.
+- **Apóstolos:** cada um com rosto próprio, de adulto jovem, cabelo do catálogo e figurino distinto, sem ouro.
+  - Filipe: azul-acinzentado com manto ocre curto, em gesto de convite.
+  - Natanael: ramagem de figueira e manto terracota, sem afirmar que é Bartolomeu.
+  - Tomé: marfim e ardósia, mãos vazias, sem Jesus nem feridas.
+  - Tiago, filho de Alfeu: gola quadrada e manto oliva.
+  - Tadeu: ferrugem e azul-neblina, em gesto de pergunta.
+  - Simão, o zelote: faixa vermelha do catálogo, sem armas nem alegação política.
+- **Pastores de Belém:** um pastor com cajado e lamparina de terracota, sem anjos nem ovelhas.
+- **Menino dos pães e peixes:** cesto com exatamente 5 pães e 2 peixes, no contrato infantil do §27, opção C.
+- **Viúva pobre:** exatamente 2 moedas pequenas de cobre na palma.
+- **Centurião de Cafarnaum:** cota de malha sem mangas, manto curto e capacete simples no braço, com a cabeça descoberta. É uma família de equipamento romano plausível, não um traje autenticado.
+
+**Ponto em aberto:** Tadeu usa Jo 14:22, "Judas, não o Iscariotes", que é a mesma pessoa de `raro_judas_irmao_de_tiago` (S24). A duplicidade fica para ser resolvida no S24, preservando IDs e posses.
+
+**Fontes:** as de materiais e estrutura apoiam famílias, não figurinos individuais.
+- IAA, Nahal Arugot: linho, lã e faixas tecidas.
+- Guia do Terra Sancta Museum: lamparinas de cerâmica.
+- Estudo do depósito de malha de Bonn: famílias de malha.
+
+S17/S18 ainda não foram pintados.
