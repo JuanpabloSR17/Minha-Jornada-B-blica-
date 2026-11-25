@@ -1,0 +1,50 @@
+{
+  "id": "raro_aspenaz",
+  "nome": "Traje de Aspenaz",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Dn 1:9",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Oficial maduro de rosto losangular largo, maçãs muito altas e queixo estreito bem definido; nariz curto de ponte estreita reta e ponta arredondada, olhos estreitos ascendentes afastados, sobrancelhas altas finas arqueadas e lábio inferior cheio. Rosto sem barba, apenas bigode fino reto; expressão acolhedora comedida.",
+  "adaptacao": "Referência à benevolência de Dn 1:9. Sem rei, corte em miniatura ou estereótipos físicos inventados."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "epico_baruque",
+  "nome": "Traje de Baruque",
+  "raridade": "epic",
+  "mundo": "profetas",
+  "referencia": "Jr 36:4",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Escriba adulto de rosto oval anguloso comprido, testa alta abaulada, queixo longo achatado e maxilar estreito; nariz comprido fino reto, olhos pequenos próximos com cantos externos baixos, sobrancelhas finas arqueadas e lábio inferior cheio; barba curta pontuda bem cuidada e bigode fino. Expressão concentrada e gentil.",
+  "adaptacao": "Motivo da escrita de Jr 36:4; a tinta é citada em Jr 36:18. O tinteiro fica na cintura para não exigir terceira mão. Sem Jeremias, mesa ou cena em miniatura."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "raro_hananias_misael_e_azarias",
+  "nome": "Traje de Hananias, Misael e Azarias",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Dn 1:6-7",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Representante coletivo masculino adulto jovem de rosto oval comprido suave, testa alta arredondada, mandíbula estreita e queixo curto rombo; nariz longo fino de ponta levemente elevada, olhos amendoados grandes próximos, sobrancelhas finas quase retas e lábio superior cheio. Sem barba nem bigode; expressão estudiosa confiante, distinta do representante adulto de Daniel 3.",
+  "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos; nenhum estilo recebe o nome de um dos amigos. Nem ancião nem criança; juventude aparente sem idade numérica. Sem três figuras, escola, palácio, ídolos ou rei."
+}

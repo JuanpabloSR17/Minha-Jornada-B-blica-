@@ -729,3 +729,30 @@ As 12 propostas foram confirmadas sem ajustes e registradas no plano e na linha 
 - **Marta:** avental e jarra, penteado visível e só apresentação feminina.
 
 S13/S14 ainda não foram pintados.
+
+## 33. Lotes S13 e S14: aplicados (25/11/2026), com 3 pinturas a corrigir
+
+**Conferência**
+- **S13_final:** o ZIP de 18.278.064 bytes confere com o `.zip.sha256` (`2f76c31c…`) e as 68 somas conferem.
+- **S14_final:** o ZIP de 17.501.017 bytes confere com o `.zip.sha256` (`5f7767a9…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano e medidas e transparência corretas. Marta aparece só feminina e os demais só masculinos.
+
+**Adaptações do §32 respeitadas:**
+- Baruque: tinteiro na cintura.
+- Naum: montes só na borda do manto.
+- Sofonias: alegria humana, sem representar o Senhor.
+- Ebede-Meleque: corda e trapos.
+- Recabitas e Hananias, Misael e Azarias: um único representante cada.
+- Dario: diadema baixo.
+- Gemarias: nota precisa sobre Jr 36:10-12.
+- Marta: jarra com duas mãos e penteado visível.
+
+**Aprovado:** 9 das 12 skins.
+
+**Migrações:** `20261202002400_skins_s13.sql` e `20261202002500_skins_s14.sql`. O app passa a 169 skins pintadas.
+
+**Correções pedidas:**
+- **S13_v2, `raro_malaquias` estilo-3** (tom 1, curto ruivo): está quase igual ao estilo-2 (tom 3), com a mesma pele rosada média. Clarear para tom 1, como o Jônatas estilo-3. Comparação em `docs/skins/entregas/S13/Tons_a_corrigir.png`.
+- **S14_v2, `epico_marta` estilo-3 e `raro_gemarias` estilo-3** (ambos tom 6): estão em tom médio, mais claros até que o Aspenaz estilo-2 (tom 5). O tom 6 é o mais escuro do catálogo. Escurecer até a referência Raabe estilo-1. Comparação em `docs/skins/entregas/S14/Tons_a_corrigir.png`.
+
+Mantenha rosto, cabelo, barba, traje, objetos, IDs e âncoras. Mande os pacotes S13 e S14 completos com os SHA-256 atualizados, sem migração.

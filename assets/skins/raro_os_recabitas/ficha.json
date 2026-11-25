@@ -1,0 +1,50 @@
+{
+  "id": "raro_os_recabitas",
+  "nome": "Os recabitas",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Jr 35:6-7",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Representante coletivo adulto de rosto pentagonal largo, testa baixa reta, bochechas planas e queixo longo largo; nariz médio convexo de ponta romba, olhos pequenos próximos, sobrancelhas finas baixas e boca estreita; bigode comprido discreto e sombra curta de barba. Expressão tranquila resoluta; mesma pessoa nos três estilos.",
+  "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos. Sem família extra, tenda, maquete, vinho ou taça. A nota distingue os motivos visuais das palavras de Jr 35:6-7."
+}

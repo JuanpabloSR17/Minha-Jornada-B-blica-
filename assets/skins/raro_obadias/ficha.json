@@ -1,0 +1,50 @@
+{
+  "id": "raro_obadias",
+  "nome": "Traje de Obadias",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Ob 1:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Mensageiro adulto de rosto largo arredondado, testa ampla, mandíbula curta larga e queixo rombo; nariz curto levemente arrebitado de base larga, olhos amendoados afastados, sobrancelhas curvas com discreta assimetria e lábios médios; barba curta cheia em meia-lua e expressão atenta firme.",
+  "adaptacao": "O selo é direção artística, não objeto descrito em Ob 1:1. Sem guerra, outro mensageiro, nem ligar sua identidade a outro Obadias que o texto não demonstra."
+}

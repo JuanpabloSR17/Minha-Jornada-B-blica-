@@ -1,0 +1,272 @@
+{
+  "commit": "693f4ef",
+  "id": "S14",
+  "titulo": "Personagens · Profetas e Evangelhos",
+  "skins": [
+    {
+      "id": "raro_os_recabitas",
+      "name": "Os recabitas",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Jr 35:6-7",
+      "idea": "Um homem adulto em traje simples de tenda, com tecido de tenda enrolado num antebraço e pequeno odre de água fechado na cintura, representando o grupo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JER",
+            35
+          ]
+        ]
+      },
+      "howTo": "Ler a história dos recabitas (Jr 35:6-7)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos. Sem família extra, tenda, maquete, vinho ou taça. A nota distingue os motivos visuais das palavras de Jr 35:6-7."
+    },
+    {
+      "id": "raro_dario_o_medo",
+      "name": "Traje de Dario, o medo",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Dn 6:25-26",
+      "idea": "Rei maduro em pé, com diadema baixo que deixe o penteado visível e o rolo do decreto, sem escrita, nas mãos",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "DAN",
+            6
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Dario, o medo (Dn 6:25-26)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "Mantém a referência Dn 6:25-26, sem identificá-lo arbitrariamente com outro Dario histórico. Sem trono, leões, Daniel ou figura divina."
+    },
+    {
+      "id": "raro_hananias_misael_e_azarias",
+      "name": "Traje de Hananias, Misael e Azarias",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Dn 1:6-7",
+      "idea": "Um adulto jovem em traje simples de estudante da corte, com um rolo de estudo compacto sem escrita, representando os três amigos",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "DAN",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Hananias, Misael e Azarias (Dn 1:6-7)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Um único representante, com o mesmo rosto nos 3 estilos; nenhum estilo recebe o nome de um dos amigos. Nem ancião nem criança; juventude aparente sem idade numérica. Sem três figuras, escola, palácio, ídolos ou rei."
+    },
+    {
+      "id": "raro_aspenaz",
+      "name": "Traje de Aspenaz",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Dn 1:9",
+      "idea": "Oficial da corte em pé com um rolo administrativo fechado, sem inscrições, e gesto de acolhimento na outra mão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "DAN",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Aspenaz (Dn 1:9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Referência à benevolência de Dn 1:9. Sem rei, corte em miniatura ou estereótipos físicos inventados."
+    },
+    {
+      "id": "raro_gemarias",
+      "name": "Traje de Gemarias",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Jr 36:10-12",
+      "idea": "Oficial em pé com gesto de escuta e um rolo fechado sem escrita na outra mão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JER",
+            36
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Gemarias (Jr 36:10-12)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "Nota precisa: Jr 36:10 situa a leitura de Baruque na sala de Gemarias, o v. 11 diz que Micaías ouviu e o v. 12 inclui Gemarias entre os oficiais; o texto não o descreve segurando o rolo nem ouvindo na sala. Sem segunda pessoa, sala ou templo em miniatura e sem confundi-lo com Micaías."
+    },
+    {
+      "id": "epico_marta",
+      "name": "Traje de Marta",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 10:40; Jo 11:20-27",
+      "idea": "Mulher em roupa de casa discreta, com avental e uma jarra de barro à cintura, uma mão sob a base e a outra na alça",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            10
+          ],
+          [
+            "JHN",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Marta (Lc 10:40; Jo 11:20-27)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "adaptacao": "Só apresentação feminina, com dois braços completos e penteado visível nos 3 estilos (tranças, coque, longo ondulado), sem cobertura que o esconda. Jarra e avental são motivos do serviço de Lc 10:40, não objetos descritos no verso; a nota também preserva a confissão de fé de Jo 11:20-27. Sem cozinha, mesa ou outra figura."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "raro_os_recabitas",
+      "identidadeFacial": "Representante coletivo adulto de rosto pentagonal largo, testa baixa reta, bochechas planas e queixo longo largo; nariz médio convexo de ponta romba, olhos pequenos próximos, sobrancelhas finas baixas e boca estreita; bigode comprido discreto e sombra curta de barba. Expressão tranquila resoluta; mesma pessoa nos três estilos."
+    },
+    {
+      "id": "raro_dario_o_medo",
+      "identidadeFacial": "Rei idoso de rosto retangular largo e pesado, testa ampla, maxilar forte com queixo duplo discreto; nariz longo reto de ponta aquilina, olhos pequenos próximos fundos e sobrancelhas longas retas; barba média curta em leque de base quase reta, bigode paralelo e sulcos naturais de idade. Expressão régia grave sem dureza caricata."
+    },
+    {
+      "id": "raro_hananias_misael_e_azarias",
+      "identidadeFacial": "Representante coletivo masculino adulto jovem de rosto oval comprido suave, testa alta arredondada, mandíbula estreita e queixo curto rombo; nariz longo fino de ponta levemente elevada, olhos amendoados grandes próximos, sobrancelhas finas quase retas e lábio superior cheio. Sem barba nem bigode; expressão estudiosa confiante, distinta do representante adulto de Daniel 3."
+    },
+    {
+      "id": "raro_aspenaz",
+      "identidadeFacial": "Oficial maduro de rosto losangular largo, maçãs muito altas e queixo estreito bem definido; nariz curto de ponte estreita reta e ponta arredondada, olhos estreitos ascendentes afastados, sobrancelhas altas finas arqueadas e lábio inferior cheio. Rosto sem barba, apenas bigode fino reto; expressão acolhedora comedida."
+    },
+    {
+      "id": "raro_gemarias",
+      "identidadeFacial": "Oficial maduro de rosto quadrado curto, testa ampla plana e queixo pequeno em bloco com fenda discreta; nariz grande aquilino de raiz larga, olhos redondos próximos profundos com pálpebras baixas e sobrancelhas grossas retas; bigode curto curvo e pequeno cavanhaque, bochechas sem barba. Expressão de escuta cuidadosa."
+    },
+    {
+      "id": "epico_marta",
+      "identidadeFacial": "Mulher adulta de rosto hexagonal largo suave, bochechas cheias com leve assimetria e queixo largo arredondado; nariz curto reto de base larga e ponta redonda, olhos amendoados grandes afastados com cantos externos baixos, sobrancelhas grossas de arco suave e lábios cheios. Sorriso discreto pensativo e uma covinha tênue; identidade própria, sem copiar rostos femininos anteriores."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

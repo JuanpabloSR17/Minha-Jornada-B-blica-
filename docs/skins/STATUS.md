@@ -1,8 +1,8 @@
 # Status da produção de skins
 
-Gerado por `node scripts/skin-status.mjs` em 2026-11-24. Fonte do plano: `docs/skins/plano-lotes.json`.
+Gerado por `node scripts/skin-status.mjs` em 2026-11-25. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 157 de 289 skins prontas no app.
+**Progresso:** 169 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -288,27 +288,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Ageu (`epico_ageu`) | Épica | profetas | ✔ | — | lendo: Ler a história de Ageu (Ag 1:8) |
 | ✅ | Traje de Zacarias (`epico_zacarias`) | Épica | profetas | ✔ | — | lendo: Ler a história de Zacarias (Zc 4:2-3) |
 
-## S13 · Personagens · Profetas (0/6)
+## S13 · Personagens · Profetas (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Baruque (`epico_baruque`) | Épica | profetas | — | — | Ler a história de Baruque (Jr 36:4) |
-| ⬜ | Traje de Obadias (`raro_obadias`) | Rara | profetas | — | — | Ler a história de Obadias (Ob 1:1) |
-| ⬜ | Traje de Naum (`raro_naum`) | Rara | profetas | — | — | Ler a história de Naum (Na 1:15) |
-| ⬜ | Traje de Sofonias (`raro_sofonias`) | Rara | profetas | — | — | Ler a história de Sofonias (Sf 3:17) |
-| ⬜ | Traje de Malaquias (`raro_malaquias`) | Rara | profetas | — | — | Ler a história de Malaquias (Ml 3:16) |
-| ⬜ | Traje de Ebede-Meleque (`raro_ebede_meleque`) | Rara | profetas | — | — | Ler a história de Ebede-Meleque (Jr 38:7-13) |
+| ✅ | Traje de Baruque (`epico_baruque`) | Épica | profetas | ✔ | — | lendo: Ler a história de Baruque (Jr 36:4) |
+| ✅ | Traje de Obadias (`raro_obadias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Obadias (Ob 1:1) |
+| ✅ | Traje de Naum (`raro_naum`) | Rara | profetas | ✔ | — | lendo: Ler a história de Naum (Na 1:15) |
+| ✅ | Traje de Sofonias (`raro_sofonias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Sofonias (Sf 3:17) |
+| ✅ | Traje de Malaquias (`raro_malaquias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Malaquias (Ml 3:16) |
+| ✅ | Traje de Ebede-Meleque (`raro_ebede_meleque`) | Rara | profetas | ✔ | — | lendo: Ler a história de Ebede-Meleque (Jr 38:7-13) |
 
-## S14 · Personagens · Profetas e Evangelhos (0/6)
+## S14 · Personagens · Profetas e Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Os recabitas (`raro_os_recabitas`) | Rara | profetas | — | — | Ler a história dos recabitas (Jr 35:6-7) |
-| ⬜ | Traje de Dario, o medo (`raro_dario_o_medo`) | Rara | profetas | — | — | Ler a história de Dario, o medo (Dn 6:25-26) |
-| ⬜ | Traje de Hananias, Misael e Azarias (`raro_hananias_misael_e_azarias`) | Rara | profetas | — | — | Ler a história de Hananias, Misael e Azarias (Dn 1:6-7) |
-| ⬜ | Traje de Aspenaz (`raro_aspenaz`) | Rara | profetas | — | — | Ler a história de Aspenaz (Dn 1:9) |
-| ⬜ | Traje de Gemarias (`raro_gemarias`) | Rara | profetas | — | — | Ler a história de Gemarias (Jr 36:10-12) |
-| ⬜ | Traje de Marta (`epico_marta`) | Épica | evangelhos | — | — | Ler a história de Marta (Lc 10:40; Jo 11:20-27) |
+| ✅ | Os recabitas (`raro_os_recabitas`) | Rara | profetas | ✔ | — | lendo: Ler a história dos recabitas (Jr 35:6-7) |
+| ✅ | Traje de Dario, o medo (`raro_dario_o_medo`) | Rara | profetas | ✔ | — | lendo: Ler a história de Dario, o medo (Dn 6:25-26) |
+| ✅ | Traje de Hananias, Misael e Azarias (`raro_hananias_misael_e_azarias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Hananias, Misael e Azarias (Dn 1:6-7) |
+| ✅ | Traje de Aspenaz (`raro_aspenaz`) | Rara | profetas | ✔ | — | lendo: Ler a história de Aspenaz (Dn 1:9) |
+| ✅ | Traje de Gemarias (`raro_gemarias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Gemarias (Jr 36:10-12) |
+| ✅ | Traje de Marta (`epico_marta`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Marta (Lc 10:40; Jo 11:20-27) |
 
 ## S15 · Personagens · Evangelhos (0/6)
 

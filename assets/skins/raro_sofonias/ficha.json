@@ -1,0 +1,50 @@
+{
+  "id": "raro_sofonias",
+  "nome": "Traje de Sofonias",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Sf 3:17",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Profeta adulto de rosto largo em coração, bochechas altas cheias, testa aberta e queixo arredondado pequeno; nariz curto de ponta redonda, olhos grandes redondos afastados, sobrancelhas suaves arqueadas e boca larga de lábios cheios; sem barba nem bigode, sorriso sereno com covinhas discretas.",
+  "adaptacao": "A expressão interpreta uma resposta humana de alegria; em Sf 3:17 quem se alegra e canta é o Senhor, que não é desenhado nem personificado. Sem halo, figura divina, notas musicais flutuantes ou cena."
+}

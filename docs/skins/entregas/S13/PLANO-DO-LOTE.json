@@ -1,0 +1,268 @@
+{
+  "commit": "693f4ef",
+  "id": "S13",
+  "titulo": "Personagens · Profetas",
+  "skins": [
+    {
+      "id": "epico_baruque",
+      "name": "Traje de Baruque",
+      "rarity": "epic",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Jr 36:4",
+      "idea": "Escriba em pé com rolo compacto aberto, sem letras, no antebraço, cálamo na outra mão e pequeno tinteiro fechado preso à cintura",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JER",
+            36
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Baruque (Jr 36:4)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Motivo da escrita de Jr 36:4; a tinta é citada em Jr 36:18. O tinteiro fica na cintura para não exigir terceira mão. Sem Jeremias, mesa ou cena em miniatura."
+    },
+    {
+      "id": "raro_obadias",
+      "name": "Traje de Obadias",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Ob 1:1",
+      "idea": "Profeta mensageiro com um rolo fechado, preso por cordão e selo simples sem inscrições",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "OBA",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Obadias (Ob 1:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "O selo é direção artística, não objeto descrito em Ob 1:1. Sem guerra, outro mensageiro, nem ligar sua identidade a outro Obadias que o texto não demonstra."
+    },
+    {
+      "id": "raro_naum",
+      "name": "Traje de Naum",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Na 1:15",
+      "idea": "Arauto em pé, com gesto discreto de anúncio e manto de viagem com motivo geométrico de montes na borda",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "NAM",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Naum (Na 1:15)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "O mensageiro de paz de Na 1:15 inspira o traje, sem afirmar que o verso retrata Naum nessa postura. Pés no chão do avatar; sem pedestal, montanha, cidade, guerra, rocha ou cenário."
+    },
+    {
+      "id": "raro_sofonias",
+      "name": "Traje de Sofonias",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Sf 3:17",
+      "idea": "Profeta em pé com alegria serena, uma mão junto ao peito e a outra aberta, sem objeto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ZEP",
+            3
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Sofonias (Sf 3:17)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "adaptacao": "A expressão interpreta uma resposta humana de alegria; em Sf 3:17 quem se alegra e canta é o Senhor, que não é desenhado nem personificado. Sem halo, figura divina, notas musicais flutuantes ou cena."
+    },
+    {
+      "id": "raro_malaquias",
+      "name": "Traje de Malaquias",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Ml 3:16",
+      "idea": "Profeta com um rolo aberto sem escrita sustentado pelas duas mãos",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MAL",
+            3
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Malaquias (Ml 3:16)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Motivo artístico do livro da memória de Ml 3:16, sem afirmar que o texto mostra Malaquias carregando esse livro. Sem códice moderno nem mãos ou figura de Deus."
+    },
+    {
+      "id": "raro_ebede_meleque",
+      "name": "Traje de Ebede-Meleque",
+      "rarity": "rare",
+      "world": "profetas",
+      "group": "profetas",
+      "scriptureRef": "Jr 38:7-13",
+      "idea": "Oficial em pé com uma corda de resgate enrolada num braço e trapos antigos dobrados na outra mão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JER",
+            38
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Ebede-Meleque (Jr 38:7-13)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "adaptacao": "Conforme Jr 38:7-13. Sem poço, Jeremias, outra pessoa ou ação violenta. A nota preserva a identificação do texto como oficial etíope (cuxita). Os três estilos seguem exatos, inclusive o estilo-1 claro e louro: são alternativas do Viajante com traje inspirado, não retratos que mudem a origem do personagem."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_baruque",
+      "identidadeFacial": "Escriba adulto de rosto oval anguloso comprido, testa alta abaulada, queixo longo achatado e maxilar estreito; nariz comprido fino reto, olhos pequenos próximos com cantos externos baixos, sobrancelhas finas arqueadas e lábio inferior cheio; barba curta pontuda bem cuidada e bigode fino. Expressão concentrada e gentil."
+    },
+    {
+      "id": "raro_obadias",
+      "identidadeFacial": "Mensageiro adulto de rosto largo arredondado, testa ampla, mandíbula curta larga e queixo rombo; nariz curto levemente arrebitado de base larga, olhos amendoados afastados, sobrancelhas curvas com discreta assimetria e lábios médios; barba curta cheia em meia-lua e expressão atenta firme."
+    },
+    {
+      "id": "raro_naum",
+      "identidadeFacial": "Arauto maduro de rosto longo ósseo, testa quadrada larga, maçãs altas marcadas e queixo estreito rombo; nariz longo largo convexo, olhos pequenos próximos profundos e sobrancelhas espessas retas com vinco vertical entre elas; bigode espesso e barba média larga de base reta. Expressão de anúncio confiante, sem grito."
+    },
+    {
+      "id": "raro_sofonias",
+      "identidadeFacial": "Profeta adulto de rosto largo em coração, bochechas altas cheias, testa aberta e queixo arredondado pequeno; nariz curto de ponta redonda, olhos grandes redondos afastados, sobrancelhas suaves arqueadas e boca larga de lábios cheios; sem barba nem bigode, sorriso sereno com covinhas discretas."
+    },
+    {
+      "id": "raro_malaquias",
+      "identidadeFacial": "Profeta idoso de rosto trapezoidal comprido, testa estreita, maxilar inferior largo pesado e queixo quadrado saliente; nariz curto largo de ponta quadrada, olhos pequenos muito afastados com pálpebras pesadas, sobrancelhas grossas horizontais e lábios finos; barba média retangular e expressão sóbria reflexiva."
+    },
+    {
+      "id": "raro_ebede_meleque",
+      "identidadeFacial": "Oficial adulto robusto de rosto oval comprido, testa larga, têmporas recuadas, maçãs inclinadas e queixo projetado arredondado; nariz de ponte baixa e base larga, olhos grandes bem afastados de pálpebras marcadas, sobrancelhas curvas altas e lábio inferior cheio; bigode espesso e barba curta arredondada. Expressão compassiva decidida."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par."
+}

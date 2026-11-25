@@ -1,0 +1,50 @@
+{
+  "id": "raro_ebede_meleque",
+  "nome": "Traje de Ebede-Meleque",
+  "raridade": "rare",
+  "mundo": "profetas",
+  "referencia": "Jr 38:7-13",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Oficial adulto robusto de rosto oval comprido, testa larga, têmporas recuadas, maçãs inclinadas e queixo projetado arredondado; nariz de ponte baixa e base larga, olhos grandes bem afastados de pálpebras marcadas, sobrancelhas curvas altas e lábio inferior cheio; bigode espesso e barba curta arredondada. Expressão compassiva decidida.",
+  "adaptacao": "Conforme Jr 38:7-13. Sem poço, Jeremias, outra pessoa ou ação violenta. A nota preserva a identificação do texto como oficial etíope (cuxita). Os três estilos seguem exatos, inclusive o estilo-1 claro e louro: são alternativas do Viajante com traje inspirado, não retratos que mudem a origem do personagem."
+}
