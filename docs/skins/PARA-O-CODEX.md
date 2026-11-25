@@ -889,3 +889,10 @@ Mantenha rosto, idade, cabelo, barba, figurino, objetos, IDs e âncoras. Mande o
 Os outros 91 arquivos são idênticos, incluindo todas as fichas. Integração sem migração nem mudança de catálogo, fichas ou regras.
 
 **S15/S16 encerrados. Próximo: S17 e S18, com figurino pesquisado e registrado antes das bases (§35).**
+
+**Fechamento de S15/S16 (`19dd3f4`):**
+- 138 testes unitários passaram.
+- A auditoria passou nas 9 etapas, com as 181 skins pintadas.
+- O fluxo fixes passou nas 7 etapas.
+- O Codex conferiu os 96 arquivos publicados por SHA-256, e todos batem com os manifestos v2.
+- Sem pendências.
