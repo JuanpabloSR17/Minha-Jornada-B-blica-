@@ -1,0 +1,51 @@
+{
+  "id": "epico_a_mulher_do_perfume",
+  "nome": "A mulher do perfume",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Mc 14:3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-ponytail"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-long-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Mulher adulta de rosto oblongo, maçãs largas e mandíbula afilada, testa alta, sobrancelhas finas suavemente inclinadas, olhos arredondados de pálpebras bem marcadas, nariz comprido de ponte reta, boca pequena de lábios finos e queixo firme. Expressão concentrada e generosa, distinta de Maria de Betânia.",
+  "adaptacao": "A quebra no gargalo é solução artística para o vaso quebrado de Mc 14:3, não detalhe do texto. Rosto próprio, diferente de Maria de Betânia; não fundir sua identidade com Maria de Betânia nem com a mulher de Lc 7. Sem cacos flutuantes, cortes ou derramamento sobre outra pessoa.",
+  "figurino": "Vestido de linho fino âmbar ou ocre, de pregas estreitas e mangas retas; xale leve ameixa envolto em diagonal; faixa de cintura estreita sem ouro. Sem ramagens douradas, franjas pesadas nem o mesmo manto em U de Maria de Betânia."
+}

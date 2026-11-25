@@ -1,0 +1,275 @@
+{
+  "commit": "d376644",
+  "id": "S15",
+  "titulo": "Personagens · Evangelhos",
+  "skins": [
+    {
+      "id": "epico_maria_de_betania",
+      "name": "Traje de Maria de Betânia",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 12:3",
+      "idea": "Mulher adulta em roupa doméstica elegante, com um pequeno frasco de nardo intacto e fechado nas duas mãos, à altura da cintura",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            12
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Maria de Betânia (Jo 12:3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long"
+        }
+      ],
+      "adaptacao": "Jo 12:3 nomeia o perfume e a ação, não o desenho do frasco: a forma é interpretação artística. Rosto e frasco próprios, distintos da mulher do perfume (S16). Sem Jesus, pés de outra pessoa ou cena de unção."
+    },
+    {
+      "id": "epico_lazaro",
+      "name": "Traje de Lázaro",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 11:44",
+      "idea": "Homem em pé, de túnica completa e modesta, com poucas faixas de linho frouxas no pulso e na cintura, o pano do rosto dobrado numa mão e uma ponta solta na outra",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Lázaro (Jo 11:44)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Momento interpretativo depois da ordem de desatar (Jo 11:44), não a posição literal em que saiu ainda atado. Rosto, cabelo, mãos e pés livres e legíveis. Sem múmia, zumbi, horror, túmulo ou outra pessoa."
+    },
+    {
+      "id": "epico_nicodemos",
+      "name": "Traje de Nicodemos",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 3:1-2; 19:39",
+      "idea": "Fariseu maduro, de cabeça descoberta, com uma lâmpada antiga de azeite pela alça e um pequeno recipiente fechado de resinas na outra mão",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            3
+          ],
+          [
+            "JHN",
+            19
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Nicodemos (Jo 3:1-2; 19:39)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "adaptacao": "A lâmpada é símbolo artístico da visita noturna, não objeto citado em Jo 3:1-2; o recipiente evoca a mirra e o aloés de Jo 19:39, sem representar a grande quantidade narrada. Chama pequena só no pavio, sem halo, fumaça ou fundo noturno. Cabeça descoberta para mostrar os penteados exatos, inclusive o raspado do estilo 1.",
+      "figurino": "Túnica longa de linho azul-tinta lisa, sem ramagens douradas; manto retangular de lã natural cru ou creme, de quatro cantos, com duas faixas estreitas índigo tecidas e cordões ou franjas visíveis nos cantos (Nm 15:38-39; Dt 22:12); cinto de faixa têxtil simples e caimento sóbrio. Cabeça descoberta, sem filactério. Não é uniforme farisaico nem roupa documentada de Nicodemos (Mt 23:5 cita franjas e filactérios, mas não define farda): é interpretação plausível. Sem tallit moderno preto e branco, quipá moderno, estrela de Davi, roupa rabínica moderna ou peitoral sacerdotal."
+    },
+    {
+      "id": "epico_jose_de_arimateia",
+      "name": "Traje de José de Arimateia",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mt 27:57-60",
+      "idea": "Homem maduro em traje rico, com um lençol de linho limpo e dobrado sobre os dois antebraços",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MAT",
+            27
+          ]
+        ]
+      },
+      "howTo": "Ler a história de José de Arimateia (Mt 27:57-60)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Riqueza e linho vêm de Mt 27:57-60; o conselheiro, de Mc 15:43. Volume claramente de tecido dobrado, nunca corpo enrolado. Sem corpo de Jesus, sepulcro, pedra ou cenário."
+    },
+    {
+      "id": "epico_zaqueu",
+      "name": "Traje de Zaqueu",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 19:4-8",
+      "idea": "Adulto de proporções compactas, em pé depois de descer do sicômoro, com uma pequena ramagem de figueira numa mão, gesto de generosidade na outra e bolsa fechada no cinto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            19
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Zaqueu (Lc 19:4-8)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "adaptacao": "Nunca criança ou caricatura. A bolsa é símbolo artístico da riqueza e da restituição (Lc 19:3-8). O avatar mantém o quadro e as âncoras normais: a baixa estatura fica na nota, sem mudar o renderer nem simular altura real. Sem árvore, pedestal, miniatura ou outra figura."
+    },
+    {
+      "id": "epico_a_samaritana",
+      "name": "A samaritana",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Jo 4:28-29",
+      "idea": "Mulher adulta em pé, em gesto de testemunho, com um cântaro de barro pousado no chão ao lado do pé, em escala real",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "JHN",
+            4
+          ]
+        ]
+      },
+      "howTo": "Ler a história da samaritana (Jo 4:28-29)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "adaptacao": "Jo 4:28-29 diz que ela deixou o cântaro; o objeto ao lado é adaptação de composição, não segurado. Sem poço, cenário, Jesus ou outra pessoa. Cabelo exato visível."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_maria_de_betania",
+      "identidadeFacial": "Mulher adulta com rosto em coração largo nas maçãs, testa baixa suavemente arredondada, sobrancelhas arqueadas e separadas, olhos amendoados de cantos elevados, nariz curto de ponta arredondada, lábios cheios com arco central marcado e queixo pequeno arredondado; expressão serena. Identidade própria, diferente da mulher do perfume."
+    },
+    {
+      "id": "epico_lazaro",
+      "identidadeFacial": "Homem adulto de rosto comprido e estreito, maçãs altas discretas, sobrancelhas retas baixas, olhos fundos de pálpebras largas, nariz longo de ponte elevada e ponta fina, boca estreita, sulco central no queixo e barba curta densa de contorno triangular suave. Expressão aliviada e viva."
+    },
+    {
+      "id": "epico_nicodemos",
+      "identidadeFacial": "Homem maduro com rosto oval largo, testa alta, sobrancelhas arqueadas espessas, olhos próximos e fundos com cantos externos caídos, nariz comprido de ponte larga e ponta curva, boca de lábio superior fino e inferior cheio, barba curta arredondada. Expressão inquisitiva e reservada."
+    },
+    {
+      "id": "epico_jose_de_arimateia",
+      "identidadeFacial": "Homem maduro de rosto retangular de mandíbula larga, maçãs angulosas altas, sobrancelhas largas quase horizontais, olhos grandes com pálpebras pesadas, nariz largo de ponte reta, boca larga de cantos suaves e barba média dividida discretamente no centro. Postura digna e compassiva."
+    },
+    {
+      "id": "epico_zaqueu",
+      "identidadeFacial": "Homem adulto com rosto circular largo, mandíbula compacta, pescoço forte, testa curta, sobrancelhas baixas espessas, olhos vivos separados, nariz curto levemente convexo e boca larga com sorriso discreto. Barba muito curta aparada. Proporções compactas de adulto, sem caricatura infantil."
+    },
+    {
+      "id": "epico_a_samaritana",
+      "identidadeFacial": "Mulher adulta com rosto triangular alongado, maçãs proeminentes, testa média, sobrancelhas retas longas, olhos alongados bem separados, nariz de ponte longa e ponta pequena, boca larga de lábio superior fino e inferior arredondado, queixo estreito com covinha sutil. Expressão comunicativa."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "regraFigurino": "Pedido do usuário (25/11/2026): variar tecidos, cortes, cores e acabamentos conforme época, região e função; não basta trocar o pigmento do mesmo manto bordado. Antes das bases de cada lote, pesquisar época, região e função e registrar para cada skin: corte e silhueta, fibra e trama, forma de prender, paleta, acabamento e desgaste, e objeto próprio. Raridade não significa ouro obrigatório. Os 3 estilos de uma skin preservam a mesma identidade e o mesmo traje, com tons e cabelos exatos do catálogo; a variedade de figurino é sobretudo entre skins. Lendárias e Gloriosas continuam especiais, sem misturar épocas nem copiar o mesmo rosto ou manto. Cores e cortes são direção artística: as fontes apoiam famílias de material e estrutura, não cada figurino. Para a época romana na Judeia, linho de trama simples, lã e faixas tecidas (IAA, Nahal Arugot); não extrapolar peças coptas de séculos posteriores nem usar o mesmo traje para todas as eras bíblicas.",
+  "orientacaoUsuario": "Variar tecidos, cortes, cores, caimento e acabamentos segundo época, região e função; pesquisar antes das bases, mantendo o padrão2.5D e os estilos exatos."
+}

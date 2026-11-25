@@ -1,0 +1,50 @@
+{
+  "id": "epico_a_samaritana",
+  "nome": "A samaritana",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Jo 4:28-29",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Mulher adulta com rosto triangular alongado, maçãs proeminentes, testa média, sobrancelhas retas longas, olhos alongados bem separados, nariz de ponte longa e ponta pequena, boca larga de lábio superior fino e inferior arredondado, queixo estreito com covinha sutil. Expressão comunicativa.",
+  "adaptacao": "Jo 4:28-29 diz que ela deixou o cântaro; o objeto ao lado é adaptação de composição, não segurado. Sem poço, cenário, Jesus ou outra pessoa. Cabelo exato visível."
+}

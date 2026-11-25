@@ -1,0 +1,50 @@
+{
+  "id": "epico_jose_de_arimateia",
+  "nome": "Traje de José de Arimateia",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Mt 27:57-60",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem maduro de rosto retangular de mandíbula larga, maçãs angulosas altas, sobrancelhas largas quase horizontais, olhos grandes com pálpebras pesadas, nariz largo de ponte reta, boca larga de cantos suaves e barba média dividida discretamente no centro. Postura digna e compassiva.",
+  "adaptacao": "Riqueza e linho vêm de Mt 27:57-60; o conselheiro, de Mc 15:43. Volume claramente de tecido dobrado, nunca corpo enrolado. Sem corpo de Jesus, sepulcro, pedra ou cenário."
+}

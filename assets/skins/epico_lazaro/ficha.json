@@ -1,0 +1,50 @@
+{
+  "id": "epico_lazaro",
+  "nome": "Traje de Lázaro",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Jo 11:44",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de rosto comprido e estreito, maçãs altas discretas, sobrancelhas retas baixas, olhos fundos de pálpebras largas, nariz longo de ponte elevada e ponta fina, boca estreita, sulco central no queixo e barba curta densa de contorno triangular suave. Expressão aliviada e viva.",
+  "adaptacao": "Momento interpretativo depois da ordem de desatar (Jo 11:44), não a posição literal em que saiu ainda atado. Rosto, cabelo, mãos e pés livres e legíveis. Sem múmia, zumbi, horror, túmulo ou outra pessoa."
+}

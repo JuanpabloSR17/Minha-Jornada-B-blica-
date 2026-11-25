@@ -4004,6 +4004,342 @@
     }
    ],
    "preview": {}
+  },
+  {
+   "id": "epico_maria_de_betania",
+   "name": "Traje de Maria de Betânia",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 12:3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-long"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_lazaro",
+   "name": "Traje de Lázaro",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 11:44",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_nicodemos",
+   "name": "Traje de Nicodemos",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 3:1-2; 19:39",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_jose_de_arimateia",
+   "name": "Traje de José de Arimateia",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Mt 27:57-60",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-short"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_zaqueu",
+   "name": "Traje de Zaqueu",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 19:4-8",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-shaved"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_a_samaritana",
+   "name": "A samaritana",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Jo 4:28-29",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_a_mulher_do_perfume",
+   "name": "A mulher do perfume",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Mc 14:3",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-ponytail"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-long-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_o_bom_samaritano",
+   "name": "O bom samaritano (parábola)",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 10:33-35",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-6",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-side-part"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_o_filho_prodigo",
+   "name": "O filho pródigo (parábola)",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 15:22",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-short"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-curly"
+    },
+    {
+     "skinTone": "skin-3",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-afro"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_zacarias_o_sacerdote",
+   "name": "Traje de Zacarias, o sacerdote",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 1:8-9",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-2",
+     "hairColor": "haircolor-blond",
+     "hairStyle": "hair-locs"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-brown",
+     "hairStyle": "hair-wavy"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-curly"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_isabel",
+   "name": "Traje de Isabel",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 1:41-42",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "feminino",
+   "styles": [
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-auburn",
+     "hairStyle": "hair-braids"
+    },
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-bun"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-darkbrown",
+     "hairStyle": "hair-long-wavy"
+    }
+   ],
+   "preview": {}
+  },
+  {
+   "id": "epico_simeao",
+   "name": "Traje de Simeão",
+   "rarity": "epic",
+   "world": "evangelhos",
+   "scriptureRef": "Lc 2:28",
+   "origin": "leitura",
+   "inShop": false,
+   "character": "masculino",
+   "styles": [
+    {
+     "skinTone": "skin-1",
+     "hairColor": "haircolor-copper",
+     "hairStyle": "hair-long"
+    },
+    {
+     "skinTone": "skin-5",
+     "hairColor": "haircolor-black",
+     "hairStyle": "hair-afro"
+    },
+    {
+     "skinTone": "skin-4",
+     "hairColor": "haircolor-honey",
+     "hairStyle": "hair-side-part"
+    }
+   ],
+   "preview": {}
   }
  ]
 }

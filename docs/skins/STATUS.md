@@ -2,7 +2,7 @@
 
 Gerado por `node scripts/skin-status.mjs` em 2026-11-25. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 169 de 289 skins prontas no app.
+**Progresso:** 181 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -310,27 +310,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | Traje de Gemarias (`raro_gemarias`) | Rara | profetas | ✔ | — | lendo: Ler a história de Gemarias (Jr 36:10-12) |
 | ✅ | Traje de Marta (`epico_marta`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Marta (Lc 10:40; Jo 11:20-27) |
 
-## S15 · Personagens · Evangelhos (0/6)
+## S15 · Personagens · Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Maria de Betânia (`epico_maria_de_betania`) | Épica | evangelhos | — | — | Ler a história de Maria de Betânia (Jo 12:3) |
-| ⬜ | Traje de Lázaro (`epico_lazaro`) | Épica | evangelhos | — | — | Ler a história de Lázaro (Jo 11:44) |
-| ⬜ | Traje de Nicodemos (`epico_nicodemos`) | Épica | evangelhos | — | — | Ler a história de Nicodemos (Jo 3:1-2; 19:39) |
-| ⬜ | Traje de José de Arimateia (`epico_jose_de_arimateia`) | Épica | evangelhos | — | — | Ler a história de José de Arimateia (Mt 27:57-60) |
-| ⬜ | Traje de Zaqueu (`epico_zaqueu`) | Épica | evangelhos | — | — | Ler a história de Zaqueu (Lc 19:4-8) |
-| ⬜ | A samaritana (`epico_a_samaritana`) | Épica | evangelhos | — | — | Ler a história da samaritana (Jo 4:28-29) |
+| ✅ | Traje de Maria de Betânia (`epico_maria_de_betania`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Maria de Betânia (Jo 12:3) |
+| ✅ | Traje de Lázaro (`epico_lazaro`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Lázaro (Jo 11:44) |
+| ✅ | Traje de Nicodemos (`epico_nicodemos`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Nicodemos (Jo 3:1-2; 19:39) |
+| ✅ | Traje de José de Arimateia (`epico_jose_de_arimateia`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de José de Arimateia (Mt 27:57-60) |
+| ✅ | Traje de Zaqueu (`epico_zaqueu`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Zaqueu (Lc 19:4-8) |
+| ✅ | A samaritana (`epico_a_samaritana`) | Épica | evangelhos | ✔ | — | lendo: Ler a história da samaritana (Jo 4:28-29) |
 
-## S16 · Personagens · Evangelhos (0/6)
+## S16 · Personagens · Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | A mulher do perfume (`epico_a_mulher_do_perfume`) | Épica | evangelhos | — | — | Ler a história da mulher do perfume (Mc 14:3) |
-| ⬜ | O bom samaritano (parábola) (`epico_o_bom_samaritano`) | Épica | evangelhos | — | — | Ler a história do bom samaritano (Lc 10:33-35) |
-| ⬜ | O filho pródigo (parábola) (`epico_o_filho_prodigo`) | Épica | evangelhos | — | — | Ler a história do filho pródigo (Lc 15:22) |
-| ⬜ | Traje de Zacarias, o sacerdote (`epico_zacarias_o_sacerdote`) | Épica | evangelhos | — | — | Ler a história de Zacarias, o sacerdote (Lc 1:8-9) |
-| ⬜ | Traje de Isabel (`epico_isabel`) | Épica | evangelhos | — | — | Ler a história de Isabel (Lc 1:41-42) |
-| ⬜ | Traje de Simeão (`epico_simeao`) | Épica | evangelhos | — | — | Ler a história de Simeão (Lc 2:28) |
+| ✅ | A mulher do perfume (`epico_a_mulher_do_perfume`) | Épica | evangelhos | ✔ | — | lendo: Ler a história da mulher do perfume (Mc 14:3) |
+| ✅ | O bom samaritano (parábola) (`epico_o_bom_samaritano`) | Épica | evangelhos | ✔ | — | lendo: Ler a história do bom samaritano (Lc 10:33-35) |
+| ✅ | O filho pródigo (parábola) (`epico_o_filho_prodigo`) | Épica | evangelhos | ✔ | — | lendo: Ler a história do filho pródigo (Lc 15:22) |
+| ✅ | Traje de Zacarias, o sacerdote (`epico_zacarias_o_sacerdote`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Zacarias, o sacerdote (Lc 1:8-9) |
+| ✅ | Traje de Isabel (`epico_isabel`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Isabel (Lc 1:41-42) |
+| ✅ | Traje de Simeão (`epico_simeao`) | Épica | evangelhos | ✔ | — | lendo: Ler a história de Simeão (Lc 2:28) |
 
 ## S17 · Personagens · Evangelhos (0/6)
 

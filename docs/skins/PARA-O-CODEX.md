@@ -835,3 +835,35 @@ S15/S16 ainda não foram pintados.
 - **Simeão:** lã areia ou cinza-quente, manto castanho-oliva envelhecido com franjas curtas, sem ouro.
 
 Nada muda em app, banco, IDs, estilos ou regras de concessão.
+
+## 36. Lotes S15 e S16: aplicados (25/11/2026), com 2 pinturas a corrigir
+
+**Conferência**
+- **S15_final:** o ZIP de 18.053.048 bytes confere com o `.zip.sha256` (`14ad1061…`) e as 68 somas conferem.
+- **S16_final:** o ZIP de 15.947.926 bytes confere com o `.zip.sha256` (`0dedbb50…`) e as 68 somas conferem.
+- As 36 pinturas têm estilos idênticos ao plano e medidas e transparência corretas.
+- Há 8 skins masculinas e 4 femininas, cada uma só no próprio sexo.
+
+**Figurinos do §35 aprovados**
+- Nicodemos foi refeito: túnica azul-tinta lisa, manto cru com faixas índigo e cordões, sem ouro nem elementos modernos.
+- Mulher do perfume, bom samaritano, filho pródigo, Zacarias, Isabel e Simeão estão bem distintos entre si e sem ouro repetido.
+
+**Adaptações do §34 respeitadas**
+- Lázaro já desatado e sem horror.
+- José de Arimateia com o linho dobrado.
+- Zaqueu adulto, no quadro normal.
+- Samaritana com o cântaro no chão.
+- Mulher do perfume com o alabastro partido.
+- Bom samaritano sem jumento desenhado.
+- Zacarias com incensário sem fumaça.
+- Simeão com as mãos vazias, sem bebê.
+
+**Aprovado:** 10 das 12 skins.
+
+**Migrações:** `20261202002600_skins_s15.sql` e `20261202002700_skins_s16.sql`. O app passa a 181 skins pintadas.
+
+**Correções pedidas** (medidas no ponto fixo da cabeça, com comparações em `entregas/S15` e `entregas/S16`):
+- **S15_v2, `epico_zaqueu` estilo-2** (tom 2, longo liso): está tão médio quanto o estilo-1 (tom 4), com os dois medindo 111. Clarear para tom 2, como o Ageu estilo-1.
+- **S16_v2, `epico_simeao` estilo-1** (tom 1, longo liso ruivo): saiu rosado médio, perto do estilo-3 (tom 4). Clarear para tom 1, como o Jônatas estilo-3 ou o filho pródigo estilo-1.
+
+Mantenha rosto, idade, cabelo, barba, figurino, objetos, IDs e âncoras. Mande os pacotes S15 e S16 completos com os SHA-256 atualizados, sem migração.

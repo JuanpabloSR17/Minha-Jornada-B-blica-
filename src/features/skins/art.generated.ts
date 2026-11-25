@@ -60,6 +60,20 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_a_amada_de_canticos/estilo-3/corpo.webp'),
     ] },
   },
+  epico_a_mulher_do_perfume: {
+    padrao: { icon: require('../../../assets/skins/epico_a_mulher_do_perfume/icone.webp'), styles: [
+      require('../../../assets/skins/epico_a_mulher_do_perfume/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_a_mulher_do_perfume/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_a_mulher_do_perfume/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_a_samaritana: {
+    padrao: { icon: require('../../../assets/skins/epico_a_samaritana/icone.webp'), styles: [
+      require('../../../assets/skins/epico_a_samaritana/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_a_samaritana/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_a_samaritana/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_abel: {
     padrao: { icon: require('../../../assets/skins/epico_abel/icone.webp'), styles: [
       require('../../../assets/skins/epico_abel/estilo-1/corpo.webp'),
@@ -179,6 +193,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_habacuque/estilo-3/corpo.webp'),
     ] },
   },
+  epico_isabel: {
+    padrao: { icon: require('../../../assets/skins/epico_isabel/icone.webp'), styles: [
+      require('../../../assets/skins/epico_isabel/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_isabel/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_isabel/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_ismael: {
     padrao: { icon: require('../../../assets/skins/epico_ismael/icone.webp'), styles: [
       require('../../../assets/skins/epico_ismael/estilo-1/corpo.webp'),
@@ -207,6 +228,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_jonatas/estilo-3/corpo.webp'),
     ] },
   },
+  epico_jose_de_arimateia: {
+    padrao: { icon: require('../../../assets/skins/epico_jose_de_arimateia/icone.webp'), styles: [
+      require('../../../assets/skins/epico_jose_de_arimateia/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_jose_de_arimateia/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_jose_de_arimateia/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_josias: {
     padrao: { icon: require('../../../assets/skins/epico_josias/icone.webp'), styles: [
       require('../../../assets/skins/epico_josias/estilo-1/corpo.webp'),
@@ -221,6 +249,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_juda/estilo-3/corpo.webp'),
     ] },
   },
+  epico_lazaro: {
+    padrao: { icon: require('../../../assets/skins/epico_lazaro/icone.webp'), styles: [
+      require('../../../assets/skins/epico_lazaro/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_lazaro/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_lazaro/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_lia: {
     padrao: { icon: require('../../../assets/skins/epico_lia/icone.webp'), styles: [
       require('../../../assets/skins/epico_lia/estilo-1/corpo.webp'),
@@ -233,6 +268,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_mardoqueu/estilo-1/corpo.webp'),
       require('../../../assets/skins/epico_mardoqueu/estilo-2/corpo.webp'),
       require('../../../assets/skins/epico_mardoqueu/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_maria_de_betania: {
+    padrao: { icon: require('../../../assets/skins/epico_maria_de_betania/icone.webp'), styles: [
+      require('../../../assets/skins/epico_maria_de_betania/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_maria_de_betania/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_maria_de_betania/estilo-3/corpo.webp'),
     ] },
   },
   epico_marta: {
@@ -284,11 +326,32 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_nata/estilo-3/corpo.webp'),
     ] },
   },
+  epico_nicodemos: {
+    padrao: { icon: require('../../../assets/skins/epico_nicodemos/icone.webp'), styles: [
+      require('../../../assets/skins/epico_nicodemos/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_nicodemos/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_nicodemos/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_noemi: {
     padrao: { icon: require('../../../assets/skins/epico_noemi/icone.webp'), styles: [
       require('../../../assets/skins/epico_noemi/estilo-1/corpo.webp'),
       require('../../../assets/skins/epico_noemi/estilo-2/corpo.webp'),
       require('../../../assets/skins/epico_noemi/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_o_bom_samaritano: {
+    padrao: { icon: require('../../../assets/skins/epico_o_bom_samaritano/icone.webp'), styles: [
+      require('../../../assets/skins/epico_o_bom_samaritano/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_o_bom_samaritano/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_o_bom_samaritano/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_o_filho_prodigo: {
+    padrao: { icon: require('../../../assets/skins/epico_o_filho_prodigo/icone.webp'), styles: [
+      require('../../../assets/skins/epico_o_filho_prodigo/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_o_filho_prodigo/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_o_filho_prodigo/estilo-3/corpo.webp'),
     ] },
   },
   epico_o_pregador: {
@@ -333,6 +396,13 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_sadraque_mesaque_e_abede_nego/estilo-3/corpo.webp'),
     ] },
   },
+  epico_simeao: {
+    padrao: { icon: require('../../../assets/skins/epico_simeao/icone.webp'), styles: [
+      require('../../../assets/skins/epico_simeao/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_simeao/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_simeao/estilo-3/corpo.webp'),
+    ] },
+  },
   epico_sumo_sacerdote: {
     padrao: { icon: require('../../../assets/skins/epico_sumo_sacerdote/icone.webp'), styles: [
       require('../../../assets/skins/epico_sumo_sacerdote/estilo-1/corpo.webp'),
@@ -345,6 +415,20 @@ export const SKIN_ART: Record<string, Partial<Record<SkinVariant, SkinArt>>> = {
       require('../../../assets/skins/epico_zacarias/estilo-1/corpo.webp'),
       require('../../../assets/skins/epico_zacarias/estilo-2/corpo.webp'),
       require('../../../assets/skins/epico_zacarias/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_zacarias_o_sacerdote: {
+    padrao: { icon: require('../../../assets/skins/epico_zacarias_o_sacerdote/icone.webp'), styles: [
+      require('../../../assets/skins/epico_zacarias_o_sacerdote/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_zacarias_o_sacerdote/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_zacarias_o_sacerdote/estilo-3/corpo.webp'),
+    ] },
+  },
+  epico_zaqueu: {
+    padrao: { icon: require('../../../assets/skins/epico_zaqueu/icone.webp'), styles: [
+      require('../../../assets/skins/epico_zaqueu/estilo-1/corpo.webp'),
+      require('../../../assets/skins/epico_zaqueu/estilo-2/corpo.webp'),
+      require('../../../assets/skins/epico_zaqueu/estilo-3/corpo.webp'),
     ] },
   },
   epico_zipora: {

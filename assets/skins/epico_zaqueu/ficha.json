@@ -1,0 +1,50 @@
+{
+  "id": "epico_zaqueu",
+  "nome": "Traje de Zaqueu",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Lc 19:4-8",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto com rosto circular largo, mandíbula compacta, pescoço forte, testa curta, sobrancelhas baixas espessas, olhos vivos separados, nariz curto levemente convexo e boca larga com sorriso discreto. Barba muito curta aparada. Proporções compactas de adulto, sem caricatura infantil.",
+  "adaptacao": "Nunca criança ou caricatura. A bolsa é símbolo artístico da riqueza e da restituição (Lc 19:3-8). O avatar mantém o quadro e as âncoras normais: a baixa estatura fica na nota, sem mudar o renderer nem simular altura real. Sem árvore, pedestal, miniatura ou outra figura."
+}

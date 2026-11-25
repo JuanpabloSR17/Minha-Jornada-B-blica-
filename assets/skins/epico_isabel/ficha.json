@@ -1,0 +1,51 @@
+{
+  "id": "epico_isabel",
+  "nome": "Traje de Isabel",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Lc 1:41-42",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Senhora idosa de rosto largo e arredondado, maçãs salientes, testa alta ampla, sobrancelhas discretas arqueadas, olhos pequenos vivos de cantos sorridentes, nariz largo de ponta suave, boca fina larga e sulcos profundos de sorriso. Queixo curto e forte, expressão de louvor caloroso.",
+  "adaptacao": "Idade em Lc 1:7 e gravidez coerente com Lc 1:41-42. Envelhecimento no rosto, sem trocar cores e penteados por grisalho. Sem Maria, bebê visível, pomba, halo ou representação do Espírito.",
+  "figurino": "Vestido de linho rosa antigo dessaturado, de textura macia e pregas amplas sobre a gravidez discreta; xale leve de lã verde-musgo gasto, de caimento lateral; mangas estreitas, amarração simples no quadril e remendo ou cerzido sutil. Sem luxo, ouro ou franjas vistosas."
+}

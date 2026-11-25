@@ -1,0 +1,51 @@
+{
+  "id": "epico_nicodemos",
+  "nome": "Traje de Nicodemos",
+  "raridade": "epic",
+  "mundo": "evangelhos",
+  "referencia": "Jo 3:1-2; 19:39",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-side-part"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem maduro com rosto oval largo, testa alta, sobrancelhas arqueadas espessas, olhos próximos e fundos com cantos externos caídos, nariz comprido de ponte larga e ponta curva, boca de lábio superior fino e inferior cheio, barba curta arredondada. Expressão inquisitiva e reservada.",
+  "adaptacao": "A lâmpada é símbolo artístico da visita noturna, não objeto citado em Jo 3:1-2; o recipiente evoca a mirra e o aloés de Jo 19:39, sem representar a grande quantidade narrada. Chama pequena só no pavio, sem halo, fumaça ou fundo noturno. Cabeça descoberta para mostrar os penteados exatos, inclusive o raspado do estilo 1.",
+  "figurino": "Túnica longa de linho azul-tinta lisa, sem ramagens douradas; manto retangular de lã natural cru ou creme, de quatro cantos, com duas faixas estreitas índigo tecidas e cordões ou franjas visíveis nos cantos (Nm 15:38-39; Dt 22:12); cinto de faixa têxtil simples e caimento sóbrio. Cabeça descoberta, sem filactério. Não é uniforme farisaico nem roupa documentada de Nicodemos (Mt 23:5 cita franjas e filactérios, mas não define farda): é interpretação plausível. Sem tallit moderno preto e branco, quipá moderno, estrela de Davi, roupa rabínica moderna ou peitoral sacerdotal."
+}

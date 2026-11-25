@@ -1,0 +1,591 @@
+{
+  "lot": "S15",
+  "sourceCommit": "d376644",
+  "skins": 6,
+  "paintings": 18,
+  "bodyWebps": 36,
+  "alfaResidual": {
+    "limiarVisivel": 3,
+    "microAlfaMaximo": 2,
+    "escala": 255,
+    "observacao": "Microrresíduos de até 2/255 são quantificados separadamente; não são névoa de opacidade visível."
+  },
+  "reports": [
+    {
+      "id": "epico_maria_de_betania",
+      "style": "estilo-1",
+      "bytes": 145462,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          510,
+          307
+        ],
+        [
+          514,
+          389
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_maria_de_betania",
+      "style": "estilo-2",
+      "bytes": 149534,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          511,
+          309
+        ],
+        [
+          513,
+          389
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_maria_de_betania",
+      "style": "estilo-3",
+      "bytes": 149712,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          511,
+          309
+        ],
+        [
+          513,
+          389
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_lazaro",
+      "style": "estilo-1",
+      "bytes": 188006,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          510,
+          306
+        ],
+        [
+          514,
+          388
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_lazaro",
+      "style": "estilo-2",
+      "bytes": 181098,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          510,
+          308
+        ],
+        [
+          514,
+          391
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_lazaro",
+      "style": "estilo-3",
+      "bytes": 176720,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          510,
+          308
+        ],
+        [
+          514,
+          390
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_nicodemos",
+      "style": "estilo-1",
+      "bytes": 187264,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          295
+        ],
+        [
+          519,
+          385
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_nicodemos",
+      "style": "estilo-2",
+      "bytes": 184208,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          298
+        ],
+        [
+          519,
+          388
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_nicodemos",
+      "style": "estilo-3",
+      "bytes": 192318,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          298
+        ],
+        [
+          519,
+          389
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_jose_de_arimateia",
+      "style": "estilo-1",
+      "bytes": 166290,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          304
+        ],
+        [
+          519,
+          389
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_jose_de_arimateia",
+      "style": "estilo-2",
+      "bytes": 180390,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          304
+        ],
+        [
+          519,
+          390
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_jose_de_arimateia",
+      "style": "estilo-3",
+      "bytes": 162200,
+      "floor": 1449,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          303
+        ],
+        [
+          519,
+          388
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_zaqueu",
+      "style": "estilo-1",
+      "bytes": 232728,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          504,
+          301
+        ],
+        [
+          520,
+          383
+        ],
+        [
+          504,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_zaqueu",
+      "style": "estilo-2",
+      "bytes": 213894,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          505,
+          302
+        ],
+        [
+          519,
+          387
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_zaqueu",
+      "style": "estilo-3",
+      "bytes": 210266,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          504,
+          304
+        ],
+        [
+          520,
+          388
+        ],
+        [
+          504,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_a_samaritana",
+      "style": "estilo-1",
+      "bytes": 185344,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          507,
+          306
+        ],
+        [
+          517,
+          388
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_a_samaritana",
+      "style": "estilo-2",
+      "bytes": 204080,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          507,
+          306
+        ],
+        [
+          517,
+          388
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    },
+    {
+      "id": "epico_a_samaritana",
+      "style": "estilo-3",
+      "bytes": 201520,
+      "floor": 1450,
+      "farAlpha": 0,
+      "largestFarAlpha": 0,
+      "microAlpha": 0,
+      "largestMicroAlpha": 0,
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "anchors": [
+        [
+          507,
+          306
+        ],
+        [
+          517,
+          388
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "groundNote": "Borda opaca coincide com a linha de chão."
+    }
+  ]
+}

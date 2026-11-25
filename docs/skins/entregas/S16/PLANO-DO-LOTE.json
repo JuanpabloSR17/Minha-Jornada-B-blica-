@@ -1,0 +1,276 @@
+{
+  "commit": "d376644",
+  "id": "S16",
+  "titulo": "Personagens · Evangelhos",
+  "skins": [
+    {
+      "id": "epico_a_mulher_do_perfume",
+      "name": "A mulher do perfume",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 14:3",
+      "idea": "Mulher adulta com um vaso de alabastro de gargalo partido na palma esquerda e a mão direita segurando um pedaço do gargalo logo acima",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            14
+          ]
+        ]
+      },
+      "howTo": "Ler a história da mulher do perfume (Mc 14:3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-ponytail"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "adaptacao": "A quebra no gargalo é solução artística para o vaso quebrado de Mc 14:3, não detalhe do texto. Rosto próprio, diferente de Maria de Betânia; não fundir sua identidade com Maria de Betânia nem com a mulher de Lc 7. Sem cacos flutuantes, cortes ou derramamento sobre outra pessoa.",
+      "figurino": "Vestido de linho fino âmbar ou ocre, de pregas estreitas e mangas retas; xale leve ameixa envolto em diagonal; faixa de cintura estreita sem ouro. Sem ramagens douradas, franjas pesadas nem o mesmo manto em U de Maria de Betânia."
+    },
+    {
+      "id": "epico_o_bom_samaritano",
+      "name": "O bom samaritano (parábola)",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 10:33-35",
+      "idea": "Viajante em pé com dois pequenos frascos fechados de azeite e vinho no cinto, um rolo de faixas numa mão e gesto de ajuda na outra",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            10
+          ]
+        ]
+      },
+      "howTo": "Ler a história do bom samaritano (Lc 10:33-35)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        }
+      ],
+      "adaptacao": "Representante da parábola (Lc 10:33-35), identificado como tal. O jumento fica só na nota narrativa, evocado pela correia de viagem, sem animal inteiro, cortado ou em miniatura. Sem o homem ferido, violência ou outra pessoa.",
+      "figurino": "Túnica de linho cru até os joelhos, de mangas práticas curtas ou dobradas; manto de lã mais grossa ferrugem e areia, com xadrez simples discreto, preso em um ombro; correia de couro funcional e sandálias robustas. Marcas moderadas de uso e cerzido discreto, sem bordado dourado."
+    },
+    {
+      "id": "epico_o_filho_prodigo",
+      "name": "O filho pródigo (parábola)",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 15:22",
+      "idea": "Jovem adulto na melhor roupa, com sandálias novas, um anel liso num dedo e as mãos em gratidão, com a mão do anel legível",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            15
+          ]
+        ]
+      },
+      "howTo": "Ler a história do filho pródigo (Lc 15:22)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Personagem da parábola de Lc 15:22, identificado como tal, sem idade numérica. Sem pai, criado, banquete ou outra pessoa.",
+      "figurino": "Roupa nova e fina de festa: túnica clara com duas faixas verticais estreitas em púrpura discreta e manto de lã fina vinho ou ameixa, de grande caimento assimétrico; faixa de cintura trançada fina. O valor aparece na qualidade, limpeza, ajuste e caimento, sem armadura, joias ou ramagem dourada."
+    },
+    {
+      "id": "epico_zacarias_o_sacerdote",
+      "name": "Traje de Zacarias, o sacerdote",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 1:8-9",
+      "idea": "Sacerdote idoso em túnica de linho, faixa sacerdotal e turbante baixo de linho, com um incensário portátil de bronze pela alça, a outra mão junto ao peito e um estojo de incenso fechado no cinto",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Zacarias, o sacerdote (Lc 1:8-9)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "O incensário portátil, sem fumaça, adapta o altar fixo de Lc 1:8-9. O turbante baixo deixa à vista na frente, nas têmporas e na nuca os penteados exatos (locs louros, ondulado médio castanho, cacheado castanho-escuro). Sem peitoral de sumo sacerdote, altar ou templo em miniatura, anjo ou letras inventadas.",
+      "figurino": "Linho cerimonial marfim limpo, de trama fina e pregas verticais retas, com mangas de túnica; faixa sacerdotal azul, púrpura e carmesim; turbante baixo. Sem manto de ombros extra nem bordados de ouro que lembrem o sumo sacerdote."
+    },
+    {
+      "id": "epico_isabel",
+      "name": "Traje de Isabel",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 1:41-42",
+      "idea": "Senhora idosa em pé em louvor, uma mão ao peito e a outra aberta, em roupa ampla e modesta com gravidez discretamente indicada",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Isabel (Lc 1:41-42)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "adaptacao": "Idade em Lc 1:7 e gravidez coerente com Lc 1:41-42. Envelhecimento no rosto, sem trocar cores e penteados por grisalho. Sem Maria, bebê visível, pomba, halo ou representação do Espírito.",
+      "figurino": "Vestido de linho rosa antigo dessaturado, de textura macia e pregas amplas sobre a gravidez discreta; xale leve de lã verde-musgo gasto, de caimento lateral; mangas estreitas, amarração simples no quadril e remendo ou cerzido sutil. Sem luxo, ouro ou franjas vistosas."
+    },
+    {
+      "id": "epico_simeao",
+      "name": "Traje de Simeão",
+      "rarity": "epic",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 2:28",
+      "idea": "Ancião em pé em gratidão e admiração, com as duas mãos vazias junto ao peito ou abertas em louvor",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            2
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Simeão (Lc 2:28)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-side-part"
+        }
+      ],
+      "adaptacao": "Lc 2:28 fala de Jesus nos braços de Simeão; pela regra do produto, Jesus não é desenhado, nem como bebê, pacote, esfera ou outra figura, e a pose não sugere embalar alguém invisível. A nota distingue o evento bíblico da postura adaptada. Sem templo em miniatura, halo ou outra pessoa; cores e penteados exatos.",
+      "figurino": "Túnica de lã fina areia ou cinza-quente, de corte reto, com faixa azul dessaturada discreta; manto retangular de lã castanho-oliva envelhecido, de borda tecida lisa e poucas franjas curtas naturais, sem ouro. Silhueta longa e sóbria de ancião."
+    }
+  ],
+  "direcaoFacial": [
+    {
+      "id": "epico_a_mulher_do_perfume",
+      "identidadeFacial": "Mulher adulta de rosto oblongo, maçãs largas e mandíbula afilada, testa alta, sobrancelhas finas suavemente inclinadas, olhos arredondados de pálpebras bem marcadas, nariz comprido de ponte reta, boca pequena de lábios finos e queixo firme. Expressão concentrada e generosa, distinta de Maria de Betânia."
+    },
+    {
+      "id": "epico_o_bom_samaritano",
+      "identidadeFacial": "Homem adulto maduro com rosto largo de mandíbula robusta, testa curta, sobrancelhas baixas de pontas suaves, olhos estreitos acolhedores com marcas de sol, nariz largo e achatado de ponta redonda, boca grande e barba curta encaracolada compacta. Expressão compassiva e atenta."
+    },
+    {
+      "id": "epico_o_filho_prodigo",
+      "identidadeFacial": "Jovem adulto de rosto em losango, maçãs altas estreitas, testa média, sobrancelhas inclinadas cheias, olhos grandes profundos, nariz reto de ponta larga, boca de lábio inferior cheio e queixo anguloso limpo. Rosto sem barba, expressão grata e um pouco emocionada."
+    },
+    {
+      "id": "epico_zacarias_o_sacerdote",
+      "identidadeFacial": "Sacerdote idoso de rosto oval comprido, orelhas marcadas, testa alta sulcada, sobrancelhas finas arqueadas, olhos fundos de pálpebras caídas, nariz central comprido arredondado e boca fina. Barba comprida afilada sem tranças. Expressão reverente e concentrada."
+    },
+    {
+      "id": "epico_isabel",
+      "identidadeFacial": "Senhora idosa de rosto largo e arredondado, maçãs salientes, testa alta ampla, sobrancelhas discretas arqueadas, olhos pequenos vivos de cantos sorridentes, nariz largo de ponta suave, boca fina larga e sulcos profundos de sorriso. Queixo curto e forte, expressão de louvor caloroso."
+    },
+    {
+      "id": "epico_simeao",
+      "identidadeFacial": "Ancião de rosto retangular estreito e magro, têmporas fundas, testa baixa enrugada, sobrancelhas compridas finas, olhos de cantos externos altos e pálpebras pesadas, nariz muito longo estreito e queixo saliente. Barba média rala afilada e bigode fino. Expressão de admiração e gratidão."
+    }
+  ],
+  "pedidoUsuario": "Mesmo2.5D,3 estilos exatos, personagens só no próprio sexo, rosto próprio por skin; entregar e aguardar revisão/ciclo do Claude antes do próximo par.",
+  "regraFigurino": "Pedido do usuário (25/11/2026): variar tecidos, cortes, cores e acabamentos conforme época, região e função; não basta trocar o pigmento do mesmo manto bordado. Antes das bases de cada lote, pesquisar época, região e função e registrar para cada skin: corte e silhueta, fibra e trama, forma de prender, paleta, acabamento e desgaste, e objeto próprio. Raridade não significa ouro obrigatório. Os 3 estilos de uma skin preservam a mesma identidade e o mesmo traje, com tons e cabelos exatos do catálogo; a variedade de figurino é sobretudo entre skins. Lendárias e Gloriosas continuam especiais, sem misturar épocas nem copiar o mesmo rosto ou manto. Cores e cortes são direção artística: as fontes apoiam famílias de material e estrutura, não cada figurino. Para a época romana na Judeia, linho de trama simples, lã e faixas tecidas (IAA, Nahal Arugot); não extrapolar peças coptas de séculos posteriores nem usar o mesmo traje para todas as eras bíblicas.",
+  "orientacaoUsuario": "Variar tecidos, cortes, cores, caimento e acabamentos segundo época, região e função; pesquisar antes das bases, mantendo o padrão2.5D e os estilos exatos."
+}
