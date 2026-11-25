@@ -462,14 +462,14 @@
     {
       "id": "raro_malaquias",
       "style": "estilo-3",
-      "bytes": 187094,
+      "bytes": 186356,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2900,
+        "floor": 2901,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,
@@ -587,5 +587,24 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S13_v2",
+    "base": "15ff83859a56cd927fe836687d03c376a7cc8c8c",
+    "escopo": "Somente 2 WebPs (base e @2x dos estilos3 solicitados) mudaram; os outros46assets, inclusive todas as6fichas e6ícones, são byte a byte idênticos à primeira entrega.",
+    "correcao": "Malaquias estilo3: pele clara tom1, usando Jônatas estilo3 como referência de pigmento. Cabelo curto e barba ruivos, rosto idoso, manto, túnica, rolo e pose preservados.",
+    "assetsAlterados": [
+      {
+        "arquivo": "raro_malaquias/estilo-3/corpo.webp",
+        "antes": "72f2cd3d0e1c76faadc2ce27008f24bb1043fd5850843393603b66b2ccd47323",
+        "depois": "8493226188214424c09a276e564a12c74678ab7548c2012bde2560c578d15edb"
+      },
+      {
+        "arquivo": "raro_malaquias/estilo-3/corpo@2x.webp",
+        "antes": "1801c5f7743f72e93070715d461a8c893bf8aaaa2dcb73c48883a3cde5c8b132",
+        "depois": "5f71dec3f2e43c43cb2716328c527e8886de283bccd2a6da000b292b1ed1f13b"
+      }
+    ],
+    "assetsIdenticos": 46
+  }
 }

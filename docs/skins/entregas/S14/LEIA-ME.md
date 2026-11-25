@@ -1,4 +1,4 @@
-# Jornada Bíblica · S14
+# Jornada Bíblica · S14_v2
 
 6 skins completas × 3 estilos = **18 pinturas** no 2.5D pintado aprovado. Fonte: branch claude/kind-bell-fuk4e4, commit 693f4ef. Briefing: LOTES.md; contrato: TEMPORADA-1-EXODO.md §2.
 
@@ -38,3 +38,11 @@ Cada personagem tem somente a apresentação do próprio sexo, na raiz do seu ID
 Conferir ZIP e .zip.sha256 de cada lote, somas, arte, diferenças de pele, rostos, mãos e objetos. Aplicar pelo fluxo oficial scripts/skins-add-lot.mjs S14 e scripts/gen-skin-art.mjs. Rodar unitários, SQL, skins-audit, marco1/journey/lobby/fixes e Supabase local oficial limpo. Atualizar plano/STATUS/LOTES/PARA-O-CODEX e publicar no mesmo branch com commit e resultado completo.
 
 O Codex alterou somente arte e arquivos de entrega locais, sem migração ou banco. A integração oficial fica com o Claude. O usuário autorizou S13/S14 em 24/11/2026. As 12 adaptações foram aprovadas e registradas no commit 693f4ef antes da produção. Revisão, integração e testes oficiais com o Claude continuam necessários. Até dois lotes nesta entrega: S13/S14.
+
+## Revisão solicitada no §33, commit15ff838
+
+Marta e Gemarias estilo3: pele muito escura tom6, usando Raabe estilo1 como referência de pigmento. Rostos, penteados, barba de Gemarias, trajes, jarra e rolo, mãos e poses preservados.
+
+Somente 4 WebPs (base e @2x dos estilos3 solicitados) mudaram; os outros44assets, inclusive todas as6fichas e6ícones, são byte a byte idênticos à primeira entrega.
+
+Sem alteração de IDs, catálogo, sexo, estilos, regras, app ou banco. Âncoras e dimensões mantidas; as novas pinturas foram conferidas e calibradas com o mesmo contrato. As capturas320/412 dos alvos, galerias de corpos/rostos e comparação antes/depois foram atualizadas. Capturas dos outros personagens permanecem idênticas. ZIPs originais imutáveis. Enviar este pacote completo v2 com seu novo .zip.sha256; não criar migração para a troca de arte. Aguardar o ciclo base15ff838 terminar antes de aplicar, então conferir unitários, auditoria e fluxo fixes no novo commit.

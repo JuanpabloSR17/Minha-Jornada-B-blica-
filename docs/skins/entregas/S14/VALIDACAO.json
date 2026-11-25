@@ -462,7 +462,7 @@
     {
       "id": "raro_gemarias",
       "style": "estilo-3",
-      "bytes": 163840,
+      "bytes": 159532,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -558,7 +558,7 @@
     {
       "id": "epico_marta",
       "style": "estilo-3",
-      "bytes": 167854,
+      "bytes": 171212,
       "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
@@ -578,7 +578,7 @@
         ],
         [
           515,
-          389
+          388
         ],
         [
           512,
@@ -587,5 +587,34 @@
       ],
       "groundNote": "Borda opaca coincide com a linha de chão."
     }
-  ]
+  ],
+  "revisao": {
+    "id": "S14_v2",
+    "base": "15ff83859a56cd927fe836687d03c376a7cc8c8c",
+    "escopo": "Somente 4 WebPs (base e @2x dos estilos3 solicitados) mudaram; os outros44assets, inclusive todas as6fichas e6ícones, são byte a byte idênticos à primeira entrega.",
+    "correcao": "Marta e Gemarias estilo3: pele muito escura tom6, usando Raabe estilo1 como referência de pigmento. Rostos, penteados, barba de Gemarias, trajes, jarra e rolo, mãos e poses preservados.",
+    "assetsAlterados": [
+      {
+        "arquivo": "epico_marta/estilo-3/corpo.webp",
+        "antes": "2941ce2849f95841f6d264fde6479fe34f4a4495d6338aa1a0f2cd54656e6655",
+        "depois": "5665348bc9a251605549b89b48ea4351aaaadcfe05b263fffc5e959d3bd377d3"
+      },
+      {
+        "arquivo": "epico_marta/estilo-3/corpo@2x.webp",
+        "antes": "ac8f43d89f38772cd55e400f3fa7adfedc9b58bd42111f969fc061a107fa2068",
+        "depois": "b36be4927790216f6bb8be3af2e850332cb96dcd1f65bde8482dfd1f7e143bd3"
+      },
+      {
+        "arquivo": "raro_gemarias/estilo-3/corpo.webp",
+        "antes": "574bcd7ffafb128ea861bc4f0796431d627240ac36c5add2b4b694b8e3b79eab",
+        "depois": "1dedfcddba4a93bbe8dfae5c0f0331b3c709edcbb0d0db0599dca2f06431914a"
+      },
+      {
+        "arquivo": "raro_gemarias/estilo-3/corpo@2x.webp",
+        "antes": "40682f635a0a7d7845949d115d88e2b30e3c65666a45ec09a201e45f7b2a206e",
+        "depois": "5432434ca4503a963ea452e72e4c8e2c0cebff3e9d9a1ee268779993625efea5"
+      }
+    ],
+    "assetsIdenticos": 44
+  }
 }

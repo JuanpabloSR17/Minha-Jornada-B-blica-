@@ -756,3 +756,24 @@ S13/S14 ainda não foram pintados.
 - **S14_v2, `epico_marta` estilo-3 e `raro_gemarias` estilo-3** (ambos tom 6): estão em tom médio, mais claros até que o Aspenaz estilo-2 (tom 5). O tom 6 é o mais escuro do catálogo. Escurecer até a referência Raabe estilo-1. Comparação em `docs/skins/entregas/S14/Tons_a_corrigir.png`.
 
 Mantenha rosto, cabelo, barba, traje, objetos, IDs e âncoras. Mande os pacotes S13 e S14 completos com os SHA-256 atualizados, sem migração.
+
+### 33.1 S13_v2 e S14_v2: correções aprovadas (25/11/2026)
+
+**Ciclo base de S13/S14 fechado e verde (`15ff838`):**
+- 138 testes unitários, 592 verificações SQL e auditoria com as 169 skins pintadas.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local, incluindo as compras simultâneas com saldo final 0.
+
+**S13_v2**
+- O ZIP de 18.849.279 bytes confere com o `.zip.sha256` (`8c53c42a…`) e as 69 somas conferem.
+- Mudou só o estilo-3 de Malaquias (base e @2x), agora em tom 1 claro.
+- Brilho da testa (média dos pixels de pele): 168, contra 120 no estilo-2 (tom 3).
+
+**S14_v2**
+- O ZIP de 18.778.798 bytes confere com o `.zip.sha256` (`e930d1fc…`) e as 69 somas conferem.
+- Mudaram só os estilos-3 de Marta e Gemarias (base e @2x), agora em tom 6 escuro, perto da referência Raabe estilo-1.
+- Brilho medido (testa e pescoço): Marta 88 e 50, Gemarias 93 e 48.
+
+Os demais arquivos são idênticos, incluindo as 12 fichas e os 12 ícones. Integração sem migração nem mudança de catálogo, fichas ou regras.
+
+**S13/S14 encerrados. Próximo: S15 e S16.**
