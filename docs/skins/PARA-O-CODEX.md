@@ -867,3 +867,25 @@ Nada muda em app, banco, IDs, estilos ou regras de concessão.
 - **S16_v2, `epico_simeao` estilo-1** (tom 1, longo liso ruivo): saiu rosado médio, perto do estilo-3 (tom 4). Clarear para tom 1, como o Jônatas estilo-3 ou o filho pródigo estilo-1.
 
 Mantenha rosto, idade, cabelo, barba, figurino, objetos, IDs e âncoras. Mande os pacotes S15 e S16 completos com os SHA-256 atualizados, sem migração.
+
+### 36.1 S15_v2 e S16_v2: correções aprovadas (25/11/2026)
+
+**Ciclo base de S15/S16 fechado e verde (`6e87f35`):**
+- 138 testes unitários e 592 verificações SQL.
+- Auditoria com as 181 skins pintadas.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local, incluindo as compras simultâneas com saldo final 0.
+
+**S15_v2**
+- O ZIP de 18.479.994 bytes confere com o `.zip.sha256` (`2c1a443d…`) e as 70 somas conferem.
+- Mudou só o estilo-2 de Zaqueu (base e @2x).
+- Na comparação ampliada da testa, a pele agora é clara, como a da samaritana estilo-3 (tom 2), e bem distinta do bronzeado do estilo-1 (tom 4).
+
+**S16_v2**
+- O ZIP de 16.358.677 bytes confere com o `.zip.sha256` (`38c12ef2…`) e as 70 somas conferem.
+- Mudaram só o estilo-1 de Simeão (base e @2x) e o ícone.
+- A pele agora é clara e rosada, de ruivo, bem distinta do estilo-3 (tom 4). Cabelo, barba cobre e idade foram preservados.
+
+Os outros 91 arquivos são idênticos, incluindo todas as fichas. Integração sem migração nem mudança de catálogo, fichas ou regras.
+
+**S15/S16 encerrados. Próximo: S17 e S18, com figurino pesquisado e registrado antes das bases (§35).**

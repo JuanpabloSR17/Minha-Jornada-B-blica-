@@ -494,14 +494,14 @@
     {
       "id": "epico_simeao",
       "style": "estilo-1",
-      "bytes": 150678,
-      "floor": 1449,
+      "bytes": 158272,
+      "floor": 1450,
       "farAlpha": 0,
       "largestFarAlpha": 0,
       "microAlpha": 0,
       "largestMicroAlpha": 0,
       "zoom": {
-        "floor": 2900,
+        "floor": 2901,
         "farAlpha": 0,
         "largestFarAlpha": 0,
         "microAlpha": 0,

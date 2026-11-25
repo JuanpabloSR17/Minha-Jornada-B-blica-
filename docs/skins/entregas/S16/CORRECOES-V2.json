@@ -1,0 +1,257 @@
+{
+  "lot": "S16",
+  "version": 2,
+  "reviewCommit": "6e87f35",
+  "sourceCommit": "d376644",
+  "target": {
+    "id": "epico_simeao",
+    "style": 1
+  },
+  "correction": "Clareamento do pigmento de pele; preservadas identidade facial, idade, cabelo, barba, figurino, pose, objetos e âncoras.",
+  "method": "Ferramenta integrada ImageGen, edição do original isolado, com paleta oficial. @2x é ampliação da mesma pintura.",
+  "changedAssets": [
+    {
+      "file": "assets/skins/epico_simeao/icone.webp",
+      "before": "bf63fb57c9a71b28d49b87b82674f5d633a6bae5338fae51497f29acb27ed726",
+      "after": "78118ab2c0b51c493f4904699dbc7e5d9f94fdb65bb96a2cbaf35b998a16f651"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-1/corpo.webp",
+      "before": "238ec77163570ef658bc5a33117024fa1bc93fae8498a1dc90089afb6f855ddc",
+      "after": "f679ecd429af250e862da42387b3820afe5c7655e4332b7fdfd3044d28b1139d"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-1/corpo@2x.webp",
+      "before": "e3532e3bc3ceecd0f6e243bdf907438a392d2556b9cd19d4fdbc4c911d386c74",
+      "after": "636b542b7de6b40408f1fb0e502a87dc6564472c299877ec97aceaf575d5c247"
+    }
+  ],
+  "unchangedAssets": [
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/ficha.json",
+      "before": "c35db744b7a0fcdd894bcb347d4623bbbad97eef7414380e5ad4c01883ae4dd9",
+      "after": "c35db744b7a0fcdd894bcb347d4623bbbad97eef7414380e5ad4c01883ae4dd9"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/icone.webp",
+      "before": "8b733013ff0d3ab5ee78d918348488f326078e5e7d6facd24b664cd7fde107ee",
+      "after": "8b733013ff0d3ab5ee78d918348488f326078e5e7d6facd24b664cd7fde107ee"
+    },
+    {
+      "file": "assets/skins/epico_isabel/ficha.json",
+      "before": "be963d6413367447f64ab66f9c72c9d4d7e6b7897905d5f653c0360eaf8ed356",
+      "after": "be963d6413367447f64ab66f9c72c9d4d7e6b7897905d5f653c0360eaf8ed356"
+    },
+    {
+      "file": "assets/skins/epico_isabel/icone.webp",
+      "before": "166440567f8304e706bfe6554beb3d0a6f63fc69ceba29ebcc9e927e47e51712",
+      "after": "166440567f8304e706bfe6554beb3d0a6f63fc69ceba29ebcc9e927e47e51712"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/ficha.json",
+      "before": "36bc0086f28758d52c1605b7f0df19f57780e50a67f22505ce52cac79bf1c283",
+      "after": "36bc0086f28758d52c1605b7f0df19f57780e50a67f22505ce52cac79bf1c283"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/icone.webp",
+      "before": "113c2de824fa169721fb33dad0730acc7ad2360e1ac7427b482e13e8d99848e5",
+      "after": "113c2de824fa169721fb33dad0730acc7ad2360e1ac7427b482e13e8d99848e5"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/ficha.json",
+      "before": "fe3af2bf40f039bb4229f125bbe1a70061d5b7d98c107546ff88b90c13d7fc3f",
+      "after": "fe3af2bf40f039bb4229f125bbe1a70061d5b7d98c107546ff88b90c13d7fc3f"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/icone.webp",
+      "before": "b3c33815f73fd5f7127688ad96a67b2509045552e03dadd23789a192c8dbfb3b",
+      "after": "b3c33815f73fd5f7127688ad96a67b2509045552e03dadd23789a192c8dbfb3b"
+    },
+    {
+      "file": "assets/skins/epico_simeao/ficha.json",
+      "before": "5c6ea3b30582118db736c86583522da238f7e42740e27ac5a325182dc713edb4",
+      "after": "5c6ea3b30582118db736c86583522da238f7e42740e27ac5a325182dc713edb4"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/ficha.json",
+      "before": "a0a479183ad8f46f5fb25393a50e9aa2ba354adf5f891842dd51cf96119b6834",
+      "after": "a0a479183ad8f46f5fb25393a50e9aa2ba354adf5f891842dd51cf96119b6834"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/icone.webp",
+      "before": "1ed410954f9c07562f7d46ec1ebff3342c3c7032dddd834ea6937e15810bac59",
+      "after": "1ed410954f9c07562f7d46ec1ebff3342c3c7032dddd834ea6937e15810bac59"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-1/corpo.webp",
+      "before": "cf9aa26323368621720e2a655a6696f5aba2fceefbefc3d089cf31a34eb354d4",
+      "after": "cf9aa26323368621720e2a655a6696f5aba2fceefbefc3d089cf31a34eb354d4"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-1/corpo@2x.webp",
+      "before": "b0a23037d490c9b9abd7194b42a7cbc8afd9f26174bae178cd468894d6b33bd4",
+      "after": "b0a23037d490c9b9abd7194b42a7cbc8afd9f26174bae178cd468894d6b33bd4"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-2/corpo.webp",
+      "before": "f03580f6dc1e0f1a8e20f2534ca66bef41ecbca04400cab5dd2523c082c28714",
+      "after": "f03580f6dc1e0f1a8e20f2534ca66bef41ecbca04400cab5dd2523c082c28714"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-2/corpo@2x.webp",
+      "before": "c2a55e042554c2ea371a9142cff6b1ae45cae4b1f03196833e3f0b04bbae833c",
+      "after": "c2a55e042554c2ea371a9142cff6b1ae45cae4b1f03196833e3f0b04bbae833c"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-3/corpo.webp",
+      "before": "d690c2bb2e5d290895432d9984d738a1ec51e193efaa43425ad27d02222bacaa",
+      "after": "d690c2bb2e5d290895432d9984d738a1ec51e193efaa43425ad27d02222bacaa"
+    },
+    {
+      "file": "assets/skins/epico_a_mulher_do_perfume/estilo-3/corpo@2x.webp",
+      "before": "f1e98912503d75e3e0c999c12f6f8daf6c8e109ba7b110a9cba14d5b424f26c2",
+      "after": "f1e98912503d75e3e0c999c12f6f8daf6c8e109ba7b110a9cba14d5b424f26c2"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-1/corpo.webp",
+      "before": "26d975f3bd724ab67e429e921617afc605d7a59d3ad13748db79a55c8cf5bd78",
+      "after": "26d975f3bd724ab67e429e921617afc605d7a59d3ad13748db79a55c8cf5bd78"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-1/corpo@2x.webp",
+      "before": "1786f1eb602f6c07a315d36a02bb0214845c114aeac0af4033a26ecec597a708",
+      "after": "1786f1eb602f6c07a315d36a02bb0214845c114aeac0af4033a26ecec597a708"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-2/corpo.webp",
+      "before": "c62276c0843947b49fcc43f5610a0462f82ef22ce071b552f10489e2a42898d3",
+      "after": "c62276c0843947b49fcc43f5610a0462f82ef22ce071b552f10489e2a42898d3"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-2/corpo@2x.webp",
+      "before": "bf3aee71bcaadfd706506df2d36826f5b06aa91c76ed94b173d2fb23a41b3d8b",
+      "after": "bf3aee71bcaadfd706506df2d36826f5b06aa91c76ed94b173d2fb23a41b3d8b"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-3/corpo.webp",
+      "before": "dadaca106f9d7ce49cac2cf1cf25b89c2daf024fe0197b7b29372c6dc43a8ded",
+      "after": "dadaca106f9d7ce49cac2cf1cf25b89c2daf024fe0197b7b29372c6dc43a8ded"
+    },
+    {
+      "file": "assets/skins/epico_isabel/estilo-3/corpo@2x.webp",
+      "before": "96e8dab2b553ba4a34f4da0f1f1c33a29ccd9de83e1481b860f818300d7e45c4",
+      "after": "96e8dab2b553ba4a34f4da0f1f1c33a29ccd9de83e1481b860f818300d7e45c4"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-1/corpo.webp",
+      "before": "e06026c5cb8f044c82237c4094d1f3152bec203cee778fc295d34936dd7d72fa",
+      "after": "e06026c5cb8f044c82237c4094d1f3152bec203cee778fc295d34936dd7d72fa"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-1/corpo@2x.webp",
+      "before": "25728db71e61f3d1d79f552b6646e77885af649ee2e11167b9ab5899a2a96811",
+      "after": "25728db71e61f3d1d79f552b6646e77885af649ee2e11167b9ab5899a2a96811"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-2/corpo.webp",
+      "before": "da5b65622708b2e699a79a0da516ea0258cc492f377558eee70164a67defc990",
+      "after": "da5b65622708b2e699a79a0da516ea0258cc492f377558eee70164a67defc990"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-2/corpo@2x.webp",
+      "before": "e60b944ddf96694abc20964e73475c585630979709c06a4380c1b94afac51dcd",
+      "after": "e60b944ddf96694abc20964e73475c585630979709c06a4380c1b94afac51dcd"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-3/corpo.webp",
+      "before": "196a03c61774e00f365c40080ec54481447b8328cec7da3efac22ee6d34ea531",
+      "after": "196a03c61774e00f365c40080ec54481447b8328cec7da3efac22ee6d34ea531"
+    },
+    {
+      "file": "assets/skins/epico_o_bom_samaritano/estilo-3/corpo@2x.webp",
+      "before": "0aa5f2c883751b75dd88fcd872a439bdbb6d6d02f20bd96c0041e65d77ecb329",
+      "after": "0aa5f2c883751b75dd88fcd872a439bdbb6d6d02f20bd96c0041e65d77ecb329"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-1/corpo.webp",
+      "before": "903a801d8631e3b085069e8dad698d6372855c9d29c866b1a2458528316f817f",
+      "after": "903a801d8631e3b085069e8dad698d6372855c9d29c866b1a2458528316f817f"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-1/corpo@2x.webp",
+      "before": "e3f801cc11ebac409e5ecc935f06a85937fe5a96f1e6d5567a48f2cf4cfea824",
+      "after": "e3f801cc11ebac409e5ecc935f06a85937fe5a96f1e6d5567a48f2cf4cfea824"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-2/corpo.webp",
+      "before": "61045b02a5fd8cb4e91b8f02a155441256b5e63883aa069f67becb8a9551bbea",
+      "after": "61045b02a5fd8cb4e91b8f02a155441256b5e63883aa069f67becb8a9551bbea"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-2/corpo@2x.webp",
+      "before": "cfe4a623a0d9ef8393c29d1b49fe900bdd1799528cc049ad934884d2ef377d89",
+      "after": "cfe4a623a0d9ef8393c29d1b49fe900bdd1799528cc049ad934884d2ef377d89"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-3/corpo.webp",
+      "before": "2992c5c6cdfb7cbf99d990049ed6e31912e8713204f474a43d3aa293914e0901",
+      "after": "2992c5c6cdfb7cbf99d990049ed6e31912e8713204f474a43d3aa293914e0901"
+    },
+    {
+      "file": "assets/skins/epico_o_filho_prodigo/estilo-3/corpo@2x.webp",
+      "before": "f8b07a7dcd286c87159d8e138d63bcd4552d04665c27be7f44bbbd61fb80ae5b",
+      "after": "f8b07a7dcd286c87159d8e138d63bcd4552d04665c27be7f44bbbd61fb80ae5b"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-2/corpo.webp",
+      "before": "f6942613567c52ddc1dee8d64536d463b89607474f360d59475612716ecbb388",
+      "after": "f6942613567c52ddc1dee8d64536d463b89607474f360d59475612716ecbb388"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-2/corpo@2x.webp",
+      "before": "3ce9acde0600495c6523c383a57c3c61db8184399fbe737f056dee72dfc733d9",
+      "after": "3ce9acde0600495c6523c383a57c3c61db8184399fbe737f056dee72dfc733d9"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-3/corpo.webp",
+      "before": "3c6eb3fc5569912851ca8b0375b472092bdda7effa13ca776897ac4ff1c4e2cc",
+      "after": "3c6eb3fc5569912851ca8b0375b472092bdda7effa13ca776897ac4ff1c4e2cc"
+    },
+    {
+      "file": "assets/skins/epico_simeao/estilo-3/corpo@2x.webp",
+      "before": "34253383c4daf6b1fc8f7877ba46b0fa01c414d218c6cd8984615506c4067899",
+      "after": "34253383c4daf6b1fc8f7877ba46b0fa01c414d218c6cd8984615506c4067899"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-1/corpo.webp",
+      "before": "2e6362a9b162cf7095066abdf0ddbac80bca32a8488052d7506ddee4d380cf6c",
+      "after": "2e6362a9b162cf7095066abdf0ddbac80bca32a8488052d7506ddee4d380cf6c"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-1/corpo@2x.webp",
+      "before": "c97ad31ce0499fcad913af59b426b8f1131b9d4e6d1901aeb890a6a80ab1a21a",
+      "after": "c97ad31ce0499fcad913af59b426b8f1131b9d4e6d1901aeb890a6a80ab1a21a"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-2/corpo.webp",
+      "before": "41ae907ac405e4ed72cba7b8501e2865c2fb85be0a2fb035f63888802ef56b39",
+      "after": "41ae907ac405e4ed72cba7b8501e2865c2fb85be0a2fb035f63888802ef56b39"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-2/corpo@2x.webp",
+      "before": "d72f363f186793167f0260159e0ee7379e255a4922d84374f600987ca9acdd27",
+      "after": "d72f363f186793167f0260159e0ee7379e255a4922d84374f600987ca9acdd27"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-3/corpo.webp",
+      "before": "28bd1103265632d4ca93f5fb5156676671987e5635a53932f374d1f0fef6059e",
+      "after": "28bd1103265632d4ca93f5fb5156676671987e5635a53932f374d1f0fef6059e"
+    },
+    {
+      "file": "assets/skins/epico_zacarias_o_sacerdote/estilo-3/corpo@2x.webp",
+      "before": "48a06420ed551fc5fc7bc5f1ccf81be94fba60f3ece45c7f15287c8afa26596a",
+      "after": "48a06420ed551fc5fc7bc5f1ccf81be94fba60f3ece45c7f15287c8afa26596a"
+    }
+  ],
+  "validationNote": "Comparação visual e medidas locais auxiliam a revisão; aprovação final e testes oficiais são do Claude."
+}
