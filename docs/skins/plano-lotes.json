@@ -8262,7 +8262,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Jo 12:3",
-   "idea": "Frasco de nardo puro",
+   "idea": "Mulher adulta em roupa doméstica elegante, com um pequeno frasco de nardo intacto e fechado nas duas mãos, à altura da cintura",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -8291,7 +8291,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-long"
     }
-   ]
+   ],
+   "adaptacao": "Jo 12:3 nomeia o perfume e a ação, não o desenho do frasco: a forma é interpretação artística. Rosto e frasco próprios, distintos da mulher do perfume (S16). Sem Jesus, pés de outra pessoa ou cena de unção."
   },
   {
    "id": "epico_lazaro",
@@ -8300,7 +8301,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Jo 11:44",
-   "idea": "Faixas de linho se soltando",
+   "idea": "Homem em pé, de túnica completa e modesta, com poucas faixas de linho frouxas no pulso e na cintura, o pano do rosto dobrado numa mão e uma ponta solta na outra",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8329,7 +8330,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Momento interpretativo depois da ordem de desatar (Jo 11:44), não a posição literal em que saiu ainda atado. Rosto, cabelo, mãos e pés livres e legíveis. Sem múmia, zumbi, horror, túmulo ou outra pessoa."
   },
   {
    "id": "epico_nicodemos",
@@ -8338,7 +8340,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Jo 3:1-2; 19:39",
-   "idea": "Fariseu à noite com lâmpada; mirra e aloés",
+   "idea": "Fariseu maduro, de cabeça descoberta, com uma lâmpada antiga de azeite pela alça e um pequeno recipiente fechado de resinas na outra mão",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8371,7 +8373,8 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "adaptacao": "A lâmpada é símbolo artístico da visita noturna, não objeto citado em Jo 3:1-2; o recipiente evoca a mirra e o aloés de Jo 19:39, sem representar a grande quantidade narrada. Chama pequena só no pavio, sem halo, fumaça ou fundo noturno. Cabeça descoberta para mostrar os penteados exatos, inclusive o raspado do estilo 1."
   },
   {
    "id": "epico_jose_de_arimateia",
@@ -8380,7 +8383,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Mt 27:57-60",
-   "idea": "Rico conselheiro com lençol de linho",
+   "idea": "Homem maduro em traje rico, com um lençol de linho limpo e dobrado sobre os dois antebraços",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8409,7 +8412,8 @@
      "hairColor": "haircolor-blond",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "Riqueza e linho vêm de Mt 27:57-60; o conselheiro, de Mc 15:43. Volume claramente de tecido dobrado, nunca corpo enrolado. Sem corpo de Jesus, sepulcro, pedra ou cenário."
   },
   {
    "id": "epico_zaqueu",
@@ -8418,7 +8422,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 19:4-8",
-   "idea": "Publicano baixinho no sicômoro",
+   "idea": "Adulto de proporções compactas, em pé depois de descer do sicômoro, com uma pequena ramagem de figueira numa mão, gesto de generosidade na outra e bolsa fechada no cinto",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8447,7 +8451,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "adaptacao": "Nunca criança ou caricatura. A bolsa é símbolo artístico da riqueza e da restituição (Lc 19:3-8). O avatar mantém o quadro e as âncoras normais: a baixa estatura fica na nota, sem mudar o renderer nem simular altura real. Sem árvore, pedestal, miniatura ou outra figura."
   },
   {
    "id": "epico_a_samaritana",
@@ -8456,7 +8461,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Jo 4:28-29",
-   "idea": "Cântaro deixado no poço",
+   "idea": "Mulher adulta em pé, em gesto de testemunho, com um cântaro de barro pousado no chão ao lado do pé, em escala real",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -8485,7 +8490,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Jo 4:28-29 diz que ela deixou o cântaro; o objeto ao lado é adaptação de composição, não segurado. Sem poço, cenário, Jesus ou outra pessoa. Cabelo exato visível."
   },
   {
    "id": "epico_a_mulher_do_perfume",
@@ -8494,7 +8500,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Mc 14:3",
-   "idea": "Vaso de alabastro quebrado",
+   "idea": "Mulher adulta com um vaso de alabastro de gargalo partido na palma esquerda e a mão direita segurando um pedaço do gargalo logo acima",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -8523,7 +8529,8 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "adaptacao": "A quebra no gargalo é solução artística para o vaso quebrado de Mc 14:3, não detalhe do texto. Rosto próprio, diferente de Maria de Betânia; não fundir sua identidade com Maria de Betânia nem com a mulher de Lc 7. Sem cacos flutuantes, cortes ou derramamento sobre outra pessoa."
   },
   {
    "id": "epico_o_bom_samaritano",
@@ -8532,7 +8539,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 10:33-35",
-   "idea": "Viajante com azeite, vinho e jumento",
+   "idea": "Viajante em pé com dois pequenos frascos fechados de azeite e vinho no cinto, um rolo de faixas numa mão e gesto de ajuda na outra",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8561,7 +8568,8 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Representante da parábola (Lc 10:33-35), identificado como tal. O jumento fica só na nota narrativa, evocado pela correia de viagem, sem animal inteiro, cortado ou em miniatura. Sem o homem ferido, violência ou outra pessoa."
   },
   {
    "id": "epico_o_filho_prodigo",
@@ -8570,7 +8578,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 15:22",
-   "idea": "Melhor roupa, anel e sandálias novas",
+   "idea": "Jovem adulto na melhor roupa, com sandálias novas, um anel liso num dedo e as mãos em gratidão, com a mão do anel legível",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8599,7 +8607,8 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Personagem da parábola de Lc 15:22, identificado como tal, sem idade numérica. Sem pai, criado, banquete ou outra pessoa."
   },
   {
    "id": "epico_zacarias_o_sacerdote",
@@ -8608,7 +8617,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 1:8-9",
-   "idea": "Sacerdote no altar do incenso",
+   "idea": "Sacerdote idoso em túnica de linho, faixa sacerdotal e turbante baixo de linho, com um incensário portátil de bronze pela alça, a outra mão junto ao peito e um estojo de incenso fechado no cinto",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8637,7 +8646,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "O incensário portátil, sem fumaça, adapta o altar fixo de Lc 1:8-9. O turbante baixo deixa à vista na frente, nas têmporas e na nuca os penteados exatos (locs louros, ondulado médio castanho, cacheado castanho-escuro). Sem peitoral de sumo sacerdote, altar ou templo em miniatura, anjo ou letras inventadas."
   },
   {
    "id": "epico_isabel",
@@ -8646,7 +8656,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 1:41-42",
-   "idea": "Senhora idosa em louvor",
+   "idea": "Senhora idosa em pé em louvor, uma mão ao peito e a outra aberta, em roupa ampla e modesta com gravidez discretamente indicada",
    "presentation": "feminina",
    "character": "feminino",
    "rule": {
@@ -8675,7 +8685,8 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Idade em Lc 1:7 e gravidez coerente com Lc 1:41-42. Envelhecimento no rosto, sem trocar cores e penteados por grisalho. Sem Maria, bebê visível, pomba, halo ou representação do Espírito."
   },
   {
    "id": "epico_simeao",
@@ -8684,7 +8695,7 @@
    "world": "evangelhos",
    "group": "evangelhos",
    "scriptureRef": "Lc 2:28",
-   "idea": "Ancião no templo com o olhar de quem viu a promessa",
+   "idea": "Ancião em pé em gratidão e admiração, com as duas mãos vazias junto ao peito ou abertas em louvor",
    "presentation": "masculina",
    "character": "masculino",
    "rule": {
@@ -8713,7 +8724,8 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-side-part"
     }
-   ]
+   ],
+   "adaptacao": "Lc 2:28 fala de Jesus nos braços de Simeão; pela regra do produto, Jesus não é desenhado, nem como bebê, pacote, esfera ou outra figura, e a pose não sugere embalar alguém invisível. A nota distingue o evento bíblico da postura adaptada. Sem templo em miniatura, halo ou outra pessoa; cores e penteados exatos."
   },
   {
    "id": "epico_ana_a_profetisa",

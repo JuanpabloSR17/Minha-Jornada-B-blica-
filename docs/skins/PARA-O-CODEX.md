@@ -777,3 +777,34 @@ Mantenha rosto, cabelo, barba, traje, objetos, IDs e âncoras. Mande os pacotes 
 Os demais arquivos são idênticos, incluindo as 12 fichas e os 12 ícones. Integração sem migração nem mudança de catálogo, fichas ou regras.
 
 **S13/S14 encerrados. Próximo: S15 e S16.**
+
+## 34. Adaptações de S15/S16 registradas antes da produção (25/11/2026)
+
+As 12 propostas foram confirmadas sem ajustes e registradas no plano e na linha **Adaptação** do LOTES.md. IDs, estilos, apresentações (8 masculinas e 4 femininas) e regras não mudaram.
+
+**Contrato reafirmado para estes lotes:**
+- Mesmo 2.5D pintado, com luz superior esquerda, RGBA transparente sem névoa, figura inteira em pé e as mesmas âncoras.
+- Um rosto próprio por skin, preservado nos 3 estilos.
+- Tons 1/2, 3/4 e 5/6 claramente distintos, com referência de tom 1 em Jônatas estilo-3 e de tom 6 em Raabe estilo-1.
+- `hair-wavy` é ondulado médio, diferente de curto, longo e cacheado.
+- Idosos não ficam grisalhos automaticamente: o envelhecimento vai no rosto.
+- Rostos e idades aparentes são direção artística.
+- Personagens de parábola são identificados como tais.
+
+**Pontos confirmados em especial:**
+- **Zaqueu:** quadro e âncoras normais; a baixa estatura fica só na nota, sem mudar o renderer.
+- **Bom samaritano:** o jumento fica só na nota narrativa, evocado pela correia de viagem, sem animal desenhado.
+- **Zacarias, o sacerdote:** incensário portátil sem fumaça e turbante baixo de linho nos 3 estilos, com os penteados exatos visíveis, sem peitoral de sumo sacerdote.
+- **Simeão:** mãos vazias em louvor, sem bebê nem qualquer figura ou volume no lugar de Jesus.
+
+**Demais skins:**
+- Maria de Betânia: frasco de nardo intacto e fechado.
+- Lázaro: depois de desatado, sem horror.
+- Nicodemos: lâmpada e recipiente de resinas, cabeça descoberta.
+- José de Arimateia: linho limpo e dobrado.
+- Samaritana: cântaro pousado no chão.
+- Mulher do perfume: alabastro de gargalo partido e rosto distinto de Maria de Betânia.
+- Filho pródigo: anel, sandálias e melhor roupa.
+- Isabel: idosa em louvor, com gravidez discreta.
+
+S15/S16 ainda não foram pintados.
