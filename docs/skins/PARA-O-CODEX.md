@@ -952,3 +952,11 @@ S17/S18 ainda não foram pintados.
 **Migrações:** `20261202002800_skins_s17.sql` e `20261202002900_skins_s18.sql`. O app passa a 193 skins pintadas.
 
 **Próximo: S19 e S20**, com as adaptações e os figurinos enviados antes das bases.
+
+**Fechamento de S17/S18 (`3b9e792`):**
+- 138 testes unitários e 592 verificações SQL passaram.
+- A auditoria passou nas 9 etapas, com as 193 skins pintadas.
+- Os fluxos marco1 (35), journey (10), lobby (11) e fixes (7) passaram.
+- O Supabase local limpo passou nas 577 verificações. Nas compras simultâneas, uma compra entrou, a outra foi recusada e o saldo final ficou em 0.
+- O Codex conferiu os 96 arquivos publicados por SHA-256, e todos batem com os manifestos.
+- Sem pendências.
