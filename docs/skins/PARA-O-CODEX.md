@@ -1005,3 +1005,10 @@ Mande as adaptações e os figurinos antes das bases. Pontos que pedem adaptaç�
 - **Filipe, o evangelista, e o eunuco etíope:** a carruagem e a corrida não cabem no avatar em pé.
 - **Silas:** a prisão à meia-noite fica sem cela nem correntes.
 - **Febe e Onésimo:** a carta aparece sem escrita inventada.
+
+**Ciclo base de S19/S20 verde (`8e4e927`):**
+- 138 testes unitários e 592 verificações SQL.
+- Auditoria com as 205 skins pintadas, incluindo as apresentações da criança.
+- Fluxos marco1, journey, lobby e fixes.
+- 577 verificações no Supabase local, incluindo as compras simultâneas com saldo final 0.
+- Pendente só o S20_v2 do Barnabé estilo-1.
