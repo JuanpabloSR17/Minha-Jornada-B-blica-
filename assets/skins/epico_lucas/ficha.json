@@ -1,0 +1,52 @@
+{
+  "id": "epico_lucas",
+  "nome": "Traje de Lucas",
+  "raridade": "epic",
+  "mundo": "igreja",
+  "referencia": "Cl 4:14; Lc 1:3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-3",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "masculino",
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de cerca de35 anos, rosto oval largo de testa arredondada alta, sobrancelhas de espessura desigual, olhos espaçados e atentos, nariz reto curto, boca larga de sorriso assimétrico sutil e queixo pontudo pequeno. Sem barba nem bigode; orelhas expostas com formato próprio.",
+  "adaptacao": "Viajante em pé com um rolo fechado de documentação e pequena bolsa utilitária na cintura; sem texto legível, paciente, procedimento médico ou instrumento moderno.",
+  "figurino": "Mediterrâneo oriental do séculoI, contexto de um viajante letrado. Túnica de linho claro de trama fina até a canela, duas faixas azul-ardósia estreitas, manto retangular de lã azul-acinzentada dobrado em um ombro, pequeno cinto de couro. Rolo de papiro fechado com cordão e bolsa simples; nenhuma peça copta tardia ou jaleco."
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "id": "raro_jairo",
+    "key": "raro_jairo",
+    "estilo": "estilo-1",
+    "scale": 0.8166191362104559,
+    "skewX": 0.029081878070172932,
+    "offsetX": 74.91914828238856,
+    "offsetY": 204.65581727905465,
+    "measured": [
+      [
+        513,
+        303
+      ],
+      [
+        511,
+        392
+      ],
+      [
+        513,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 214
+  },
+  {
+    "id": "raro_jairo",
+    "key": "raro_jairo",
+    "estilo": "estilo-2",
+    "scale": 0.8171592674352057,
+    "skewX": 0.029101113512649778,
+    "offsetX": 74.63005266206238,
+    "offsetY": 203.83211716131132,
+    "measured": [
+      [
+        513,
+        303
+      ],
+      [
+        511,
+        391
+      ],
+      [
+        513,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 216
+  },
+  {
+    "id": "raro_jairo",
+    "key": "raro_jairo",
+    "estilo": "estilo-3",
+    "scale": 0.8219794876591647,
+    "skewX": 0.029293638191702238,
+    "offsetX": 72.04646434475399,
+    "offsetY": 197.30326080743293,
+    "measured": [
+      [
+        513,
+        297
+      ],
+      [
+        511,
+        386
+      ],
+      [
+        513,
+        1450
+      ]
+    ],
+    "sourceFootY": 1524,
+    "sourceOpaqueFloor": 1524,
+    "crown": 229
+  },
+  {
+    "id": "raro_a_mulher_que_tocou_o_manto",
+    "key": "raro_a_mulher_que_tocou_o_manto",
+    "estilo": "estilo-1",
+    "scale": 0.8114686763069064,
+    "skewX": 0.02774251884809937,
+    "offsetX": 76.46326097397605,
+    "offsetY": 212.51026863196762,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        386
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 227
+  },
+  {
+    "id": "raro_a_mulher_que_tocou_o_manto",
+    "key": "raro_a_mulher_que_tocou_o_manto",
+    "estilo": "estilo-2",
+    "scale": 0.8112535612535613,
+    "skewX": 0.027735164487301244,
+    "offsetX": 76.57871892273602,
+    "offsetY": 212.83831908831894,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        386
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 226
+  },
+  {
+    "id": "raro_a_mulher_que_tocou_o_manto",
+    "key": "raro_a_mulher_que_tocou_o_manto",
+    "estilo": "estilo-3",
+    "scale": 0.8118797604394082,
+    "skewX": 0.02777635673634469,
+    "offsetX": 76.23930745333644,
+    "offsetY": 212.6952450903418,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        386
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1524,
+    "sourceOpaqueFloor": 1524,
+    "crown": 226
+  },
+  {
+    "id": "raro_o_semeador",
+    "key": "raro_o_semeador",
+    "estilo": "estilo-1",
+    "scale": 0.8200143988480921,
+    "skewX": 0.021253072972304762,
+    "offsetX": 85.7820191663285,
+    "offsetY": 199.47804175665942,
+    "measured": [
+      [
+        510,
+        311
+      ],
+      [
+        514,
+        390
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 209
+  },
+  {
+    "id": "raro_o_semeador",
+    "key": "raro_o_semeador",
+    "estilo": "estilo-2",
+    "scale": 0.8200143988480921,
+    "skewX": 0.021253072972304762,
+    "offsetX": 85.7820191663285,
+    "offsetY": 199.47804175665942,
+    "measured": [
+      [
+        510,
+        311
+      ],
+      [
+        514,
+        390
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 213
+  },
+  {
+    "id": "raro_o_semeador",
+    "key": "raro_o_semeador",
+    "estilo": "estilo-3",
+    "scale": 0.8237572802808245,
+    "skewX": 0.021350080698423098,
+    "offsetX": 83.83658580686551,
+    "offsetY": 193.77014757174265,
+    "measured": [
+      [
+        510,
+        306
+      ],
+      [
+        514,
+        385
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 230
+  },
+  {
+    "id": "raro_simao_de_cirene",
+    "key": "raro_simao_de_cirene",
+    "estilo": "estilo-1",
+    "scale": 0.8127550264172002,
+    "skewX": 0.02138829016887369,
+    "offsetX": 93.09964289752429,
+    "offsetY": 211.36133974018685,
+    "measured": [
+      [
+        511,
+        307
+      ],
+      [
+        513,
+        388
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1524,
+    "sourceOpaqueFloor": 1524,
+    "crown": 224
+  },
+  {
+    "id": "raro_simao_de_cirene",
+    "key": "raro_simao_de_cirene",
+    "estilo": "estilo-2",
+    "scale": 0.8116754751221106,
+    "skewX": 0.021359880924266068,
+    "offsetX": 93.65605215778692,
+    "offsetY": 213.0065759139036,
+    "measured": [
+      [
+        511,
+        309
+      ],
+      [
+        513,
+        389
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1524,
+    "sourceOpaqueFloor": 1524,
+    "crown": 220
+  },
+  {
+    "id": "raro_simao_de_cirene",
+    "key": "raro_simao_de_cirene",
+    "estilo": "estilo-3",
+    "scale": 0.81162140147266,
+    "skewX": 0.021343277792813378,
+    "offsetX": 93.68646481717451,
+    "offsetY": 212.27736275419352,
+    "measured": [
+      [
+        511,
+        308
+      ],
+      [
+        513,
+        388
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1525,
+    "sourceOpaqueFloor": 1525,
+    "crown": 222
+  },
+  {
+    "id": "raro_joana_e_susana",
+    "key": "raro_joana_e_susana",
+    "estilo": "estilo-1",
+    "scale": 0.8277616279069767,
+    "skewX": 0.04030525368442402,
+    "offsetX": 58.108702127839365,
+    "offsetY": 184.35247093023258,
+    "measured": [
+      [
+        507,
+        311
+      ],
+      [
+        517,
+        392
+      ],
+      [
+        507,
+        1450
+      ]
+    ],
+    "sourceFootY": 1529,
+    "sourceOpaqueFloor": 1529,
+    "crown": 197
+  },
+  {
+    "id": "raro_joana_e_susana",
+    "key": "raro_joana_e_susana",
+    "estilo": "estilo-2",
+    "scale": 0.8271604938271605,
+    "skewX": 0.04024673426755247,
+    "offsetX": 58.44423375202837,
+    "offsetY": 184.44444444444434,
+    "measured": [
+      [
+        507,
+        311
+      ],
+      [
+        517,
+        392
+      ],
+      [
+        507,
+        1450
+      ]
+    ],
+    "sourceFootY": 1530,
+    "sourceOpaqueFloor": 1530,
+    "crown": 197
+  },
+  {
+    "id": "raro_joana_e_susana",
+    "key": "raro_joana_e_susana",
+    "estilo": "estilo-3",
+    "scale": 0.8283636363636364,
+    "skewX": 0.04036390082644629,
+    "offsetX": 57.77267385123969,
+    "offsetY": 184.26036363636354,
+    "measured": [
+      [
+        507,
+        311
+      ],
+      [
+        517,
+        392
+      ],
+      [
+        507,
+        1450
+      ]
+    ],
+    "sourceFootY": 1528,
+    "sourceOpaqueFloor": 1528,
+    "crown": 210
+  },
+  {
+    "id": "raro_salome",
+    "key": "raro_salome",
+    "estilo": "estilo-1",
+    "scale": 0.8189062390349188,
+    "skewX": 0.02821787471189957,
+    "offsetX": 62.26880369325306,
+    "offsetY": 202.80579794981873,
+    "measured": [
+      [
+        508,
+        309
+      ],
+      [
+        516,
+        390
+      ],
+      [
+        508,
+        1450
+      ]
+    ],
+    "sourceFootY": 1523,
+    "sourceOpaqueFloor": 1523,
+    "crown": 218
+  },
+  {
+    "id": "raro_salome",
+    "key": "raro_salome",
+    "estilo": "estilo-2",
+    "scale": 0.8170731707317073,
+    "skewX": 0.028134513769814882,
+    "offsetX": 63.27912307100121,
+    "offsetY": 204.78048780487802,
+    "measured": [
+      [
+        508,
+        311
+      ],
+      [
+        516,
+        392
+      ],
+      [
+        508,
+        1450
+      ]
+    ],
+    "sourceFootY": 1524,
+    "sourceOpaqueFloor": 1524,
+    "crown": 212
+  },
+  {
+    "id": "raro_salome",
+    "key": "raro_salome",
+    "estilo": "estilo-3",
+    "scale": 0.8185435168253115,
+    "skewX": 0.028205376028438586,
+    "offsetX": 62.468005366751186,
+    "offsetY": 203.35822387505073,
+    "measured": [
+      [
+        508,
+        310
+      ],
+      [
+        516,
+        391
+      ],
+      [
+        508,
+        1450
+      ]
+    ],
+    "sourceFootY": 1523,
+    "sourceOpaqueFloor": 1523,
+    "crown": 216
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "id": "raro_a_crianca_no_colo_de_jesus",
+  "nome": "A criança no colo de Jesus",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mc 9:36",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "masculino",
+  "identidadeFacial": "Menino de cerca de7 anos como direção artística, rosto redondo curto, testa larga, olhos grandes afastados, nariz pequeno arredondado, boca pequena com sorriso tímido e queixo suave. Proporções infantis naturais e sem barba; rosto próprio preservado nos três estilos.",
+  "adaptacao": "Criança genérica sozinha e em pé, em gesto acolhedor de mãos relaxadas, sem Jesus, colo, braços de terceiro ou plataforma. Usa o contrato infantil já aprovado: escala uniforme, topo120–170, três âncoras±12. Produzir também a apresentação feminina, com os mesmos três estilos do catálogo e rosto próprio.",
+  "figurino": "Galileia do séculoI, túnica infantil de linho cru em trama simples, mangas curtas, barra pouco acima dos tornozelos, pequeno cinto de tecido sálvia. Sem manto de adulto, armadura, joias ou objeto narrativo adicional; sandálias simples inteiras. O tamanho aparente é uma escolha artística compatível com o recorte infantil.",
+  "encaixeInfantil": {
+    "contratoReferencia": "PARA-O-CODEX.md §27 / opção C, já aprovado para a linha infantil",
+    "briefingDaRodada": "BRIEFING-PARA-REGISTRO.md, S19/S20",
+    "metodo": "Escala uniforme e translação; sem cisalhamento nem deformação da anatomia infantil.",
+    "topoPermitido": [
+      120,
+      170
+    ],
+    "toleranciaDosTresPontos": 12,
+    "medidasReais": [
+      {
+        "estilo": "estilo-1",
+        "topo": 155,
+        "cabecaCentro": [
+          514,
+          292
+        ],
+        "queixo": [
+          514,
+          399
+        ],
+        "pes": [
+          510,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-2",
+        "topo": 122,
+        "cabecaCentro": [
+          514,
+          299
+        ],
+        "queixo": [
+          514,
+          401
+        ],
+        "pes": [
+          510,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-3",
+        "topo": 124,
+        "cabecaCentro": [
+          514,
+          293
+        ],
+        "queixo": [
+          514,
+          400
+        ],
+        "pes": [
+          510,
+          1450
+        ]
+      }
+    ]
+  }
+}

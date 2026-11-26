@@ -1,0 +1,52 @@
+{
+  "id": "raro_o_semeador",
+  "nome": "O semeador (parábola)",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mt 13:3",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-wavy"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-side-part"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-shaved"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "masculino",
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de cerca de32 anos, rosto pentagonal de maçãs largas e mandíbula compacta, testa curta, sobrancelhas angulares separadas, olhos pequenos ligeiramente afastados, nariz curto largo e lábio superior fino. Barba muito curta de trabalho e bigode ralo na cor do cabelo; expressão atenta e tranquila.",
+  "adaptacao": "O gesto de semear é sugerido pela mão com grãos e pela bolsa aberta. O campo arado fica como contexto do texto, sem chão, paisagem, plantas ou grãos flutuantes no sprite.",
+  "figurino": "Trabalhador rural da Galileia no séculoI. Túnica de lã rústica azul-acinzentada até a metade da canela, cingida por faixa estreita de linho cru; mangas arregaçadas. Bolsa de tecido grosso amarrada à cintura, trama larga visível, remendos e barra empoeirada. Sem rolo, medalha, bordado vegetal ou manto ornamental da skin de apoiador."
+}

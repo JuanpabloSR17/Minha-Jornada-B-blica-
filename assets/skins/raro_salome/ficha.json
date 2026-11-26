@@ -1,0 +1,52 @@
+{
+  "id": "raro_salome",
+  "nome": "Traje de Salomé",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mc 16:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-bun"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-black",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long-wavy"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "feminino",
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Mulher madura de aproximadamente58 anos, rosto oval curto de bochechas suaves, testa larga com linhas leves, sobrancelhas curtas arqueadas, olhos pequenos expressivos com marcas naturais, nariz convexo definido e boca estreita. Queixo cheio e expressão afetuosa serena, sem cabelos automaticamente grisalhos.",
+  "adaptacao": "Mulher em pé com um recipiente fechado para especiarias, sustentado pelas mãos. A passagem do amanhecer não vira iluminação laranja, cenário de túmulo nem imagem de Jesus.",
+  "figurino": "Judeia do séculoI. Vestido longo de linho cinza-pérola, amplo xale de lã umber ferrugem preso sob um braço e uma faixa estreita oliva. Recipiente pequeno de cerâmica de corpo bojudo e colo estreito, fechado com tecido e cordão. A família da forma é arqueológica; a cor do traje e o formato final são direção artística."
+}

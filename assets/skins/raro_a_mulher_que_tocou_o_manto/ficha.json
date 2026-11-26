@@ -1,0 +1,52 @@
+{
+  "id": "raro_a_mulher_que_tocou_o_manto",
+  "nome": "A mulher que tocou o manto",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mc 5:27-29",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-braids"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-long-wavy"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-blond",
+      "penteado": "hair-bun"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "feminino",
+  "sexoDoPersonagem": "feminino",
+  "identidadeFacial": "Mulher adulta de aproximadamente46 anos, rosto retangular estreito, maçãs discretas, olheiras suaves, testa baixa, sobrancelhas finas inclinadas, olhos grandes profundos, nariz estreito reto e boca pequena de lábios finos. Queixo arredondado; esperança contida, sem expressão de dor.",
+  "adaptacao": "Viajante feminina em pé com uma mão estendida na direção de um espaço vazio e a outra segurando o próprio xale. Não há Jesus, mão de terceiro, orla alheia, pessoa invisível ou cena de cura.",
+  "figurino": "Galileia do séculoI. Vestido comprido de linho cru amendoado, decote pequeno, manga até o antebraço; xale de lã malva desbotada com remendo discreto e barra irregular. Cordão simples na cintura, sem adornos; tecidos com desgaste moderado. Cabelo descoberto para os estilos ficarem legíveis."
+}

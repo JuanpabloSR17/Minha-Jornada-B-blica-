@@ -1,0 +1,793 @@
+{
+  "lot": "S20",
+  "sourceCommit": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+  "skins": 6,
+  "presentations": 7,
+  "paintings": 21,
+  "assets": 56,
+  "notes": [
+    "Pintura base1024×1536; @2x é ampliação.",
+    "Capturas são prévias técnicas, não teste do app integrado.",
+    "Anatomia, identidade e coerência de objetos conferidas visualmente.",
+    "Três âncoras±12; crianças sem cisalhamento e topo120–170."
+  ],
+  "reports": [
+    {
+      "key": "raro_cleopas",
+      "id": "raro_cleopas",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 160060,
+      "anchors": [
+        [
+          511,
+          307
+        ],
+        [
+          513,
+          390
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 218,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_cleopas",
+      "id": "raro_cleopas",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 137516,
+      "anchors": [
+        [
+          511,
+          309
+        ],
+        [
+          513,
+          392
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 214,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_cleopas",
+      "id": "raro_cleopas",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 139138,
+      "anchors": [
+        [
+          511,
+          303
+        ],
+        [
+          513,
+          385
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 229,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "padrao",
+      "style": 1,
+      "child": true,
+      "bytes": 133394,
+      "anchors": [
+        [
+          514,
+          292
+        ],
+        [
+          514,
+          399
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 155,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "padrao",
+      "style": 2,
+      "child": true,
+      "bytes": 143238,
+      "anchors": [
+        [
+          514,
+          299
+        ],
+        [
+          514,
+          401
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 122,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "padrao",
+      "style": 3,
+      "child": true,
+      "bytes": 134568,
+      "anchors": [
+        [
+          514,
+          293
+        ],
+        [
+          514,
+          400
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 124,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_barnabe",
+      "id": "epico_barnabe",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 168292,
+      "anchors": [
+        [
+          511,
+          299
+        ],
+        [
+          513,
+          392
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 214,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_barnabe",
+      "id": "epico_barnabe",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 142178,
+      "anchors": [
+        [
+          511,
+          300
+        ],
+        [
+          513,
+          391
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 216,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_barnabe",
+      "id": "epico_barnabe",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 153704,
+      "anchors": [
+        [
+          511,
+          299
+        ],
+        [
+          513,
+          393
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 211,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_estevao",
+      "id": "epico_estevao",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 131374,
+      "anchors": [
+        [
+          513,
+          311
+        ],
+        [
+          511,
+          387
+        ],
+        [
+          513,
+          1450
+        ]
+      ],
+      "crown": 224,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_estevao",
+      "id": "epico_estevao",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 122738,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 224,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_estevao",
+      "id": "epico_estevao",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 125722,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 216,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_tiago_irmao_do_senhor",
+      "id": "epico_tiago_irmao_do_senhor",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 121420,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 220,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_tiago_irmao_do_senhor",
+      "id": "epico_tiago_irmao_do_senhor",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 120686,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          389
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 214,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_tiago_irmao_do_senhor",
+      "id": "epico_tiago_irmao_do_senhor",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 109310,
+      "anchors": [
+        [
+          512,
+          309
+        ],
+        [
+          512,
+          387
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 225,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_lucas",
+      "id": "epico_lucas",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 136206,
+      "anchors": [
+        [
+          510,
+          311
+        ],
+        [
+          514,
+          383
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 220,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_lucas",
+      "id": "epico_lucas",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 126220,
+      "anchors": [
+        [
+          510,
+          311
+        ],
+        [
+          514,
+          383
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 217,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "epico_lucas",
+      "id": "epico_lucas",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 130180,
+      "anchors": [
+        [
+          510,
+          311
+        ],
+        [
+          514,
+          382
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 204,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "feminino",
+      "style": 1,
+      "child": true,
+      "bytes": 130384,
+      "anchors": [
+        [
+          518,
+          292
+        ],
+        [
+          518,
+          399
+        ],
+        [
+          506,
+          1450
+        ]
+      ],
+      "crown": 156,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "feminino",
+      "style": 2,
+      "child": true,
+      "bytes": 136904,
+      "anchors": [
+        [
+          518,
+          293
+        ],
+        [
+          518,
+          398
+        ],
+        [
+          506,
+          1450
+        ]
+      ],
+      "crown": 133,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "feminino",
+      "style": 3,
+      "child": true,
+      "bytes": 135780,
+      "anchors": [
+        [
+          519,
+          293
+        ],
+        [
+          519,
+          399
+        ],
+        [
+          505,
+          1450
+        ]
+      ],
+      "crown": 126,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    }
+  ]
+}

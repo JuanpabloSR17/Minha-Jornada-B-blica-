@@ -1,0 +1,324 @@
+{
+  "sourceCommit": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+  "sourcePlanSha256": "6efaebc0636bb6e5c84f3efb39822cb7bee6ae9a0363c46400e9afa2c4b46f51",
+  "lot": "S20",
+  "skins": [
+    {
+      "id": "raro_cleopas",
+      "name": "Traje de Cleopas",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 24:18",
+      "idea": "Caminhante de Emaús, pão partido",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            24
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Cleopas (Lc 24:18)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Caminhante em pé com dois pedaços do mesmo pão nas mãos, como referência ao relato de Emaús. Não há Jesus, mesa ou segundo discípulo na pintura.",
+      "figurino": "Viajante em Emaús no séculoI. Túnica de linho bege-flax com gola simples em V, longo manto de lã oliva sem bordados e capuz recolhido atrás do pescoço, cinto estreito de couro e pequena bolsa fechada. Barra empoeirada e remendos discretos. Dois pedaços de pão já partido, um em cada mão à altura da cintura.",
+      "identidadeFacial": "Homem adulto de cerca de45 anos, rosto em pera de têmporas estreitas e mandíbula larga, testa baixa, sobrancelhas retilíneas, olhos fundos, nariz curto retilíneo e queixo com pequena fenda. Bigode estreito e barba curta contornando o maxilar na cor do cabelo; expressão reflexiva acolhedora."
+    },
+    {
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "name": "A criança no colo de Jesus",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 9:36",
+      "idea": "Criança de túnica simples (skin infantil)",
+      "presentation": "masculina",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            9
+          ]
+        ]
+      },
+      "howTo": "Ler Mc 9:36",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-shaved"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-curly"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Criança genérica sozinha e em pé, em gesto acolhedor de mãos relaxadas, sem Jesus, colo, braços de terceiro ou plataforma. Usa o contrato infantil já aprovado: escala uniforme, topo120–170, três âncoras±12. Produzir também a apresentação feminina, com os mesmos três estilos do catálogo e rosto próprio.",
+      "figurino": "Galileia do séculoI, túnica infantil de linho cru em trama simples, mangas curtas, barra pouco acima dos tornozelos, pequeno cinto de tecido sálvia. Sem manto de adulto, armadura, joias ou objeto narrativo adicional; sandálias simples inteiras. O tamanho aparente é uma escolha artística compatível com o recorte infantil.",
+      "identidadeFacial": "Menino de cerca de7 anos como direção artística, rosto redondo curto, testa larga, olhos grandes afastados, nariz pequeno arredondado, boca pequena com sorriso tímido e queixo suave. Proporções infantis naturais e sem barba; rosto próprio preservado nos três estilos."
+    },
+    {
+      "id": "epico_barnabe",
+      "name": "Traje de Barnabé",
+      "rarity": "epic",
+      "world": "igreja",
+      "group": "igreja",
+      "scriptureRef": "At 4:36-37; 11:24",
+      "idea": "\"Filho da consolação\", bolsa do campo vendido",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ACT",
+            4
+          ],
+          [
+            "ACT",
+            11
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Barnabé (At 4:36-37; 11:24)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Figura única em pé com bolsa fechada como símbolo da oferta; sem campo, escritura imobiliária legível, moedas flutuantes ou segundo personagem.",
+      "figurino": "Contexto de Chipre e da comunidade de Jerusalém no séculoI. Túnica longa de linho aveia, fino de boa caída, com bandas verticais ocre; capa curta trapezoidal de lã ferrugem presa por dobra e cinto de tecido escuro. Acabamento bem cuidado e bolsa pequena de couro fechada na mão; não é traje levítico do Êxodo.",
+      "identidadeFacial": "Homem adulto de cerca de42 anos, rosto retangular comprido de testa larga, olhos pequenos calmos, sobrancelhas grossas curvas, nariz longo largo na ponta, sulcos nasolabiais marcados e maxilar arredondado. Barba curta aparada com queixo mais cheio e bigode fino na cor do cabelo; expressão generosa firme."
+    },
+    {
+      "id": "epico_estevao",
+      "name": "Traje de Estêvão",
+      "rarity": "epic",
+      "world": "igreja",
+      "group": "igreja",
+      "scriptureRef": "At 6:5-8",
+      "idea": "Diácono servindo as mesas",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ACT",
+            6
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Estêvão (At 6:5-8)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Servidor em pé segurando uma travessa com pão, sem mesa, igreja, pedras, martírio, ferimentos ou auréola. Serviço cotidiano da passagem, sem vestimenta diaconal medieval.",
+      "figurino": "Jerusalém do séculoI. Túnica de linho marfim até a canela, mangas curtas práticas, finas bandas vermelhas tecidas e pequeno avental de linho natural preso à cintura. Sem grande capa nem ouro; tecido limpo com vincos de uso. Travessa rasa de madeira para pão, sustentada pelas duas mãos à altura da cintura.",
+      "identidadeFacial": "Homem jovem de aproximadamente26 anos, rosto oval quase redondo de maçãs altas suaves, testa larga lisa, olhos grandes de cantos levemente baixos, nariz pequeno reto, lábios cheios e queixo curto. Sem barba ou bigode em todos os estilos; expressão serena atenta, rosto próprio."
+    },
+    {
+      "id": "epico_tiago_irmao_do_senhor",
+      "name": "Traje de Tiago, irmão do Senhor",
+      "rarity": "epic",
+      "world": "igreja",
+      "group": "igreja",
+      "scriptureRef": "At 15:13; Tg 1:1",
+      "idea": "Líder de Jerusalém, joelhos de quem ora",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "ACT",
+            15
+          ],
+          [
+            "JAS",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Tiago, irmão do Senhor (At 15:13; Tg 1:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-short"
+        }
+      ],
+      "adaptacao": "Líder em pé com mãos reunidas para oração; o desgaste discreto no tecido junto aos joelhos é escolha simbólica. Sem ajoelhar, calos expostos, feridas, rosário ou alegação de idade/aparência comprovada.",
+      "figurino": "Comunidade judaica de Jerusalém no séculoI. Longa túnica de linho cinza-areia de gola estreita, manto fino retangular castanho-taupe cruzando o tórax por dobra; cordão de tecido simples e franja pequena. Poucos remendos no tecido perto dos joelhos e sandálias gastas; cabeça descoberta, sem indumentária monástica.",
+      "identidadeFacial": "Homem adulto de cerca de38 anos, rosto comprido triangular de têmporas estreitas, testa alta, sobrancelhas finas retilíneas, olhos fundos de cantos baixos, nariz longo levemente adunco e boca pequena firme. Barba curta densa de base afilada e bigode conectado na cor do cabelo; expressão recolhida."
+    },
+    {
+      "id": "epico_lucas",
+      "name": "Traje de Lucas",
+      "rarity": "epic",
+      "world": "igreja",
+      "group": "igreja",
+      "scriptureRef": "Cl 4:14; Lc 1:3",
+      "idea": "Médico e historiador com rolo",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "COL",
+            4
+          ],
+          [
+            "LUK",
+            1
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Lucas (Cl 4:14; Lc 1:3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-honey",
+          "hairStyle": "hair-short"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-afro"
+        }
+      ],
+      "adaptacao": "Viajante em pé com um rolo fechado de documentação e pequena bolsa utilitária na cintura; sem texto legível, paciente, procedimento médico ou instrumento moderno.",
+      "figurino": "Mediterrâneo oriental do séculoI, contexto de um viajante letrado. Túnica de linho claro de trama fina até a canela, duas faixas azul-ardósia estreitas, manto retangular de lã azul-acinzentada dobrado em um ombro, pequeno cinto de couro. Rolo de papiro fechado com cordão e bolsa simples; nenhuma peça copta tardia ou jaleco.",
+      "identidadeFacial": "Homem adulto de cerca de35 anos, rosto oval largo de testa arredondada alta, sobrancelhas de espessura desigual, olhos espaçados e atentos, nariz reto curto, boca larga de sorriso assimétrico sutil e queixo pontudo pequeno. Sem barba nem bigode; orelhas expostas com formato próprio."
+    }
+  ],
+  "presentations": [
+    {
+      "id": "raro_cleopas",
+      "name": "Traje de Cleopas",
+      "faceProfile": "Homem adulto de cerca de45 anos, rosto em pera de têmporas estreitas e mandíbula larga, testa baixa, sobrancelhas retilíneas, olhos fundos, nariz curto retilíneo e queixo com pequena fenda. Bigode estreito e barba curta contornando o maxilar na cor do cabelo; expressão reflexiva acolhedora.",
+      "adaptacao": "Caminhante em pé com dois pedaços do mesmo pão nas mãos, como referência ao relato de Emaús. Não há Jesus, mesa ou segundo discípulo na pintura.",
+      "figurino": "Viajante em Emaús no séculoI. Túnica de linho bege-flax com gola simples em V, longo manto de lã oliva sem bordados e capuz recolhido atrás do pescoço, cinto estreito de couro e pequena bolsa fechada. Barra empoeirada e remendos discretos. Dois pedaços de pão já partido, um em cada mão à altura da cintura.",
+      "child": false
+    },
+    {
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "name": "A criança no colo de Jesus",
+      "faceProfile": "Menino de cerca de7 anos como direção artística, rosto redondo curto, testa larga, olhos grandes afastados, nariz pequeno arredondado, boca pequena com sorriso tímido e queixo suave. Proporções infantis naturais e sem barba; rosto próprio preservado nos três estilos.",
+      "adaptacao": "Criança genérica sozinha e em pé, em gesto acolhedor de mãos relaxadas, sem Jesus, colo, braços de terceiro ou plataforma. Usa o contrato infantil já aprovado: escala uniforme, topo120–170, três âncoras±12. Produzir também a apresentação feminina, com os mesmos três estilos do catálogo e rosto próprio.",
+      "figurino": "Galileia do séculoI, túnica infantil de linho cru em trama simples, mangas curtas, barra pouco acima dos tornozelos, pequeno cinto de tecido sálvia. Sem manto de adulto, armadura, joias ou objeto narrativo adicional; sandálias simples inteiras. O tamanho aparente é uma escolha artística compatível com o recorte infantil.",
+      "child": true
+    },
+    {
+      "id": "epico_barnabe",
+      "name": "Traje de Barnabé",
+      "faceProfile": "Homem adulto de cerca de42 anos, rosto retangular comprido de testa larga, olhos pequenos calmos, sobrancelhas grossas curvas, nariz longo largo na ponta, sulcos nasolabiais marcados e maxilar arredondado. Barba curta aparada com queixo mais cheio e bigode fino na cor do cabelo; expressão generosa firme.",
+      "adaptacao": "Figura única em pé com bolsa fechada como símbolo da oferta; sem campo, escritura imobiliária legível, moedas flutuantes ou segundo personagem.",
+      "figurino": "Contexto de Chipre e da comunidade de Jerusalém no séculoI. Túnica longa de linho aveia, fino de boa caída, com bandas verticais ocre; capa curta trapezoidal de lã ferrugem presa por dobra e cinto de tecido escuro. Acabamento bem cuidado e bolsa pequena de couro fechada na mão; não é traje levítico do Êxodo.",
+      "child": false
+    },
+    {
+      "id": "epico_estevao",
+      "name": "Traje de Estêvão",
+      "faceProfile": "Homem jovem de aproximadamente26 anos, rosto oval quase redondo de maçãs altas suaves, testa larga lisa, olhos grandes de cantos levemente baixos, nariz pequeno reto, lábios cheios e queixo curto. Sem barba ou bigode em todos os estilos; expressão serena atenta, rosto próprio.",
+      "adaptacao": "Servidor em pé segurando uma travessa com pão, sem mesa, igreja, pedras, martírio, ferimentos ou auréola. Serviço cotidiano da passagem, sem vestimenta diaconal medieval.",
+      "figurino": "Jerusalém do séculoI. Túnica de linho marfim até a canela, mangas curtas práticas, finas bandas vermelhas tecidas e pequeno avental de linho natural preso à cintura. Sem grande capa nem ouro; tecido limpo com vincos de uso. Travessa rasa de madeira para pão, sustentada pelas duas mãos à altura da cintura.",
+      "child": false
+    },
+    {
+      "id": "epico_tiago_irmao_do_senhor",
+      "name": "Traje de Tiago, irmão do Senhor",
+      "faceProfile": "Homem adulto de cerca de38 anos, rosto comprido triangular de têmporas estreitas, testa alta, sobrancelhas finas retilíneas, olhos fundos de cantos baixos, nariz longo levemente adunco e boca pequena firme. Barba curta densa de base afilada e bigode conectado na cor do cabelo; expressão recolhida.",
+      "adaptacao": "Líder em pé com mãos reunidas para oração; o desgaste discreto no tecido junto aos joelhos é escolha simbólica. Sem ajoelhar, calos expostos, feridas, rosário ou alegação de idade/aparência comprovada.",
+      "figurino": "Comunidade judaica de Jerusalém no séculoI. Longa túnica de linho cinza-areia de gola estreita, manto fino retangular castanho-taupe cruzando o tórax por dobra; cordão de tecido simples e franja pequena. Poucos remendos no tecido perto dos joelhos e sandálias gastas; cabeça descoberta, sem indumentária monástica.",
+      "child": false
+    },
+    {
+      "id": "epico_lucas",
+      "name": "Traje de Lucas",
+      "faceProfile": "Homem adulto de cerca de35 anos, rosto oval largo de testa arredondada alta, sobrancelhas de espessura desigual, olhos espaçados e atentos, nariz reto curto, boca larga de sorriso assimétrico sutil e queixo pontudo pequeno. Sem barba nem bigode; orelhas expostas com formato próprio.",
+      "adaptacao": "Viajante em pé com um rolo fechado de documentação e pequena bolsa utilitária na cintura; sem texto legível, paciente, procedimento médico ou instrumento moderno.",
+      "figurino": "Mediterrâneo oriental do séculoI, contexto de um viajante letrado. Túnica de linho claro de trama fina até a canela, duas faixas azul-ardósia estreitas, manto retangular de lã azul-acinzentada dobrado em um ombro, pequeno cinto de couro. Rolo de papiro fechado com cordão e bolsa simples; nenhuma peça copta tardia ou jaleco.",
+      "child": false
+    },
+    {
+      "id": "raro_a_crianca_no_colo_de_jesus",
+      "variant": "feminino",
+      "name": "A criança no colo de Jesus",
+      "faceProfile": "Menina de cerca de7 anos como direção artística, rosto oval curto de bochechas cheias, testa alta suave, olhos grandes amendoados, nariz pequeno de ponta arrebitada, lábios pequenos e queixo arredondado. Rosto próprio distinto do menino, expressão curiosa tranquila e anatomia infantil natural.",
+      "adaptacao": "Mesma figura genérica infantil em apresentação feminina; os penteados e tons seguem os três estilos do ID. Menina em pé sozinha, sem Jesus, colo ou braços externos, com rosto próprio e o mesmo contrato infantil.",
+      "figurino": "Túnica infantil de linho cru com mangas curtas e barra acima dos tornozelos, cinto sálvia simples, sandálias inteiras. Mesma família de traje do menino, ajustada à anatomia infantil da menina, sem corpo ou maquiagem de adulta.",
+      "child": true
+    }
+  ],
+  "note": "IDs, estilos, sexo dos personagens e regras são os do plano oficial. Adaptações/figurinos/perfis desta rodada preparados localmente antes das bases; ver NOTAS-BIBLICAS.md. Catálogo e banco não foram alterados neste chat."
+}

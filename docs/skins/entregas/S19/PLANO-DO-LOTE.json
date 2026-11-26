@@ -1,0 +1,304 @@
+{
+  "sourceCommit": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+  "sourcePlanSha256": "6efaebc0636bb6e5c84f3efb39822cb7bee6ae9a0363c46400e9afa2c4b46f51",
+  "lot": "S19",
+  "skins": [
+    {
+      "id": "raro_jairo",
+      "name": "Traje de Jairo",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 5:22-23",
+      "idea": "Chefe da sinagoga",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Jairo (Mc 5:22-23)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-locs"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "Figura única em pé, de mãos reunidas num gesto de súplica, sem filha, Jesus ou encenação da cura. O traje identifica o chefe da sinagoga; não é vestimenta do sumo sacerdote.",
+      "figurino": "Galileia, contexto judaico do séculoI. Túnica longa de linho marfim com estreitas faixas bordô tecidas; amplo manto retangular de lã azul-tinta, dobrado sobre o ombro e preso pela própria dobra. Cinto tecido bordô, costuras cuidadas, poucas marcas de uso; sandálias simples. Sem mitra, peitoral, estrela moderna, quipá moderno ou insígnia sacerdotal.",
+      "identidadeFacial": "Homem maduro, cerca de55 anos como direção artística, rosto triangular invertido de têmporas largas, testa alta, sobrancelhas cheias quase horizontais, olhos estreitos atentos, nariz convexo longo e queixo afilado. Barba curta em cunha na cor do cabelo; expressão preocupada e digna."
+    },
+    {
+      "id": "raro_a_mulher_que_tocou_o_manto",
+      "name": "A mulher que tocou o manto",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 5:27-29",
+      "idea": "Mão estendida para a orla do manto",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            5
+          ]
+        ]
+      },
+      "howTo": "Ler a história da mulher que tocou o manto (Mc 5:27-29)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "adaptacao": "Viajante feminina em pé com uma mão estendida na direção de um espaço vazio e a outra segurando o próprio xale. Não há Jesus, mão de terceiro, orla alheia, pessoa invisível ou cena de cura.",
+      "figurino": "Galileia do séculoI. Vestido comprido de linho cru amendoado, decote pequeno, manga até o antebraço; xale de lã malva desbotada com remendo discreto e barra irregular. Cordão simples na cintura, sem adornos; tecidos com desgaste moderado. Cabelo descoberto para os estilos ficarem legíveis.",
+      "identidadeFacial": "Mulher adulta de aproximadamente46 anos, rosto retangular estreito, maçãs discretas, olheiras suaves, testa baixa, sobrancelhas finas inclinadas, olhos grandes profundos, nariz estreito reto e boca pequena de lábios finos. Queixo arredondado; esperança contida, sem expressão de dor."
+    },
+    {
+      "id": "raro_o_semeador",
+      "name": "O semeador (parábola)",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mt 13:3",
+      "idea": "Bolsa de sementes, campo arado",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MAT",
+            13
+          ]
+        ]
+      },
+      "howTo": "Ler a história do semeador (Mt 13:3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-wavy"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-side-part"
+        },
+        {
+          "skinTone": "skin-1",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-shaved"
+        }
+      ],
+      "adaptacao": "O gesto de semear é sugerido pela mão com grãos e pela bolsa aberta. O campo arado fica como contexto do texto, sem chão, paisagem, plantas ou grãos flutuantes no sprite.",
+      "figurino": "Trabalhador rural da Galileia no séculoI. Túnica de lã rústica azul-acinzentada até a metade da canela, cingida por faixa estreita de linho cru; mangas arregaçadas. Bolsa de tecido grosso amarrada à cintura, trama larga visível, remendos e barra empoeirada. Sem rolo, medalha, bordado vegetal ou manto ornamental da skin de apoiador.",
+      "identidadeFacial": "Homem adulto de cerca de32 anos, rosto pentagonal de maçãs largas e mandíbula compacta, testa curta, sobrancelhas angulares separadas, olhos pequenos ligeiramente afastados, nariz curto largo e lábio superior fino. Barba muito curta de trabalho e bigode ralo na cor do cabelo; expressão atenta e tranquila."
+    },
+    {
+      "id": "raro_simao_de_cirene",
+      "name": "Traje de Simão de Cirene",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 15:21",
+      "idea": "Viajante do campo com a madeira da cruz",
+      "presentation": "masculina",
+      "character": "masculino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            15
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Simão de Cirene (Mc 15:21)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-brown",
+          "hairStyle": "hair-long"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-blond",
+          "hairStyle": "hair-afro"
+        },
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-curly"
+        }
+      ],
+      "adaptacao": "Uma única trave de madeira bruta apoiada sobre os ombros, sustentada pelas duas mãos. Não há cruz monumental, corpo, sangue, ferimentos, pregos, Jesus ou outras figuras.",
+      "figurino": "Viajante vindo do campo no contexto romano da Judeia; a origem cireneia não autentica um traje étnico individual. Túnica de linho rústico terracota até a canela e faixa larga de lã castanho-acinzentada na cintura. Pequeno pano de viagem dobrado sob o apoio da trave, costuras e desgaste utilitários; cabeça descoberta.",
+      "identidadeFacial": "Homem adulto de cerca de40 anos, rosto oblongado de maçãs proeminentes, testa inclinada, olhos fundos amendoados, nariz largo de ponte alta, boca larga com lábios cheios e queixo arredondado. Barba curta espessa recortada e bigode na cor exata do cabelo; expressão concentrada e compassiva."
+    },
+    {
+      "id": "raro_joana_e_susana",
+      "name": "Traje de Joana e Susana",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Lc 8:3",
+      "idea": "Mulheres que serviam com seus bens",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "LUK",
+            8
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Joana e Susana (Lc 8:3)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-3",
+          "hairColor": "haircolor-auburn",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-long-wavy"
+        },
+        {
+          "skinTone": "skin-6",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-bun"
+        }
+      ],
+      "adaptacao": "Uma viajante representa o serviço das mulheres com seus bens. O ID e o nome coletivos são mantidos; não se fundem duas pessoas num corpo nem se afirma que a pintura seja o retrato de ambas.",
+      "figurino": "Contexto das seguidoras na Galileia do séculoI. Veste de linho fino azul-neblina, manto curto retangular de lã creme e faixa rosa-argila na cintura; pregas largas e acabamento discreto bem cuidado. Pequeno embrulho de linho dobrado e atado, sustentado com as duas mãos à altura da cintura, sem joias de corte.",
+      "identidadeFacial": "Viajante adulta de cerca de40 anos, rosto retangular curto de maxilar largo, testa baixa, sobrancelhas curtas quase retas, olhos pequenos arredondados e afastados, nariz curto largo de ponta arredondada, boca estreita de lábio inferior cheio e queixo largo com leve fenda. Expressão serena e enérgica; rosto próprio distinto das outras viajantes."
+    },
+    {
+      "id": "raro_salome",
+      "name": "Traje de Salomé",
+      "rarity": "rare",
+      "world": "evangelhos",
+      "group": "evangelhos",
+      "scriptureRef": "Mc 16:1",
+      "idea": "Mulher com especiarias ao amanhecer",
+      "presentation": "feminina",
+      "character": "feminino",
+      "rule": {
+        "chapters": [
+          [
+            "MRK",
+            16
+          ]
+        ]
+      },
+      "howTo": "Ler a história de Salomé (Mc 16:1)",
+      "inShop": false,
+      "styles": [
+        {
+          "skinTone": "skin-2",
+          "hairColor": "haircolor-copper",
+          "hairStyle": "hair-bun"
+        },
+        {
+          "skinTone": "skin-5",
+          "hairColor": "haircolor-black",
+          "hairStyle": "hair-braids"
+        },
+        {
+          "skinTone": "skin-4",
+          "hairColor": "haircolor-darkbrown",
+          "hairStyle": "hair-long-wavy"
+        }
+      ],
+      "adaptacao": "Mulher em pé com um recipiente fechado para especiarias, sustentado pelas mãos. A passagem do amanhecer não vira iluminação laranja, cenário de túmulo nem imagem de Jesus.",
+      "figurino": "Judeia do séculoI. Vestido longo de linho cinza-pérola, amplo xale de lã umber ferrugem preso sob um braço e uma faixa estreita oliva. Recipiente pequeno de cerâmica de corpo bojudo e colo estreito, fechado com tecido e cordão. A família da forma é arqueológica; a cor do traje e o formato final são direção artística.",
+      "identidadeFacial": "Mulher madura de aproximadamente58 anos, rosto oval curto de bochechas suaves, testa larga com linhas leves, sobrancelhas curtas arqueadas, olhos pequenos expressivos com marcas naturais, nariz convexo definido e boca estreita. Queixo cheio e expressão afetuosa serena, sem cabelos automaticamente grisalhos."
+    }
+  ],
+  "presentations": [
+    {
+      "id": "raro_jairo",
+      "name": "Traje de Jairo",
+      "faceProfile": "Homem maduro, cerca de55 anos como direção artística, rosto triangular invertido de têmporas largas, testa alta, sobrancelhas cheias quase horizontais, olhos estreitos atentos, nariz convexo longo e queixo afilado. Barba curta em cunha na cor do cabelo; expressão preocupada e digna.",
+      "adaptacao": "Figura única em pé, de mãos reunidas num gesto de súplica, sem filha, Jesus ou encenação da cura. O traje identifica o chefe da sinagoga; não é vestimenta do sumo sacerdote.",
+      "figurino": "Galileia, contexto judaico do séculoI. Túnica longa de linho marfim com estreitas faixas bordô tecidas; amplo manto retangular de lã azul-tinta, dobrado sobre o ombro e preso pela própria dobra. Cinto tecido bordô, costuras cuidadas, poucas marcas de uso; sandálias simples. Sem mitra, peitoral, estrela moderna, quipá moderno ou insígnia sacerdotal.",
+      "child": false
+    },
+    {
+      "id": "raro_a_mulher_que_tocou_o_manto",
+      "name": "A mulher que tocou o manto",
+      "faceProfile": "Mulher adulta de aproximadamente46 anos, rosto retangular estreito, maçãs discretas, olheiras suaves, testa baixa, sobrancelhas finas inclinadas, olhos grandes profundos, nariz estreito reto e boca pequena de lábios finos. Queixo arredondado; esperança contida, sem expressão de dor.",
+      "adaptacao": "Viajante feminina em pé com uma mão estendida na direção de um espaço vazio e a outra segurando o próprio xale. Não há Jesus, mão de terceiro, orla alheia, pessoa invisível ou cena de cura.",
+      "figurino": "Galileia do séculoI. Vestido comprido de linho cru amendoado, decote pequeno, manga até o antebraço; xale de lã malva desbotada com remendo discreto e barra irregular. Cordão simples na cintura, sem adornos; tecidos com desgaste moderado. Cabelo descoberto para os estilos ficarem legíveis.",
+      "child": false
+    },
+    {
+      "id": "raro_o_semeador",
+      "name": "O semeador (parábola)",
+      "faceProfile": "Homem adulto de cerca de32 anos, rosto pentagonal de maçãs largas e mandíbula compacta, testa curta, sobrancelhas angulares separadas, olhos pequenos ligeiramente afastados, nariz curto largo e lábio superior fino. Barba muito curta de trabalho e bigode ralo na cor do cabelo; expressão atenta e tranquila.",
+      "adaptacao": "O gesto de semear é sugerido pela mão com grãos e pela bolsa aberta. O campo arado fica como contexto do texto, sem chão, paisagem, plantas ou grãos flutuantes no sprite.",
+      "figurino": "Trabalhador rural da Galileia no séculoI. Túnica de lã rústica azul-acinzentada até a metade da canela, cingida por faixa estreita de linho cru; mangas arregaçadas. Bolsa de tecido grosso amarrada à cintura, trama larga visível, remendos e barra empoeirada. Sem rolo, medalha, bordado vegetal ou manto ornamental da skin de apoiador.",
+      "child": false
+    },
+    {
+      "id": "raro_simao_de_cirene",
+      "name": "Traje de Simão de Cirene",
+      "faceProfile": "Homem adulto de cerca de40 anos, rosto oblongado de maçãs proeminentes, testa inclinada, olhos fundos amendoados, nariz largo de ponte alta, boca larga com lábios cheios e queixo arredondado. Barba curta espessa recortada e bigode na cor exata do cabelo; expressão concentrada e compassiva.",
+      "adaptacao": "Uma única trave de madeira bruta apoiada sobre os ombros, sustentada pelas duas mãos. Não há cruz monumental, corpo, sangue, ferimentos, pregos, Jesus ou outras figuras.",
+      "figurino": "Viajante vindo do campo no contexto romano da Judeia; a origem cireneia não autentica um traje étnico individual. Túnica de linho rústico terracota até a canela e faixa larga de lã castanho-acinzentada na cintura. Pequeno pano de viagem dobrado sob o apoio da trave, costuras e desgaste utilitários; cabeça descoberta.",
+      "child": false
+    },
+    {
+      "id": "raro_joana_e_susana",
+      "name": "Traje de Joana e Susana",
+      "faceProfile": "Viajante adulta de cerca de40 anos, rosto retangular curto de maxilar largo, testa baixa, sobrancelhas curtas quase retas, olhos pequenos arredondados e afastados, nariz curto largo de ponta arredondada, boca estreita de lábio inferior cheio e queixo largo com leve fenda. Expressão serena e enérgica; rosto próprio distinto das outras viajantes.",
+      "adaptacao": "Uma viajante representa o serviço das mulheres com seus bens. O ID e o nome coletivos são mantidos; não se fundem duas pessoas num corpo nem se afirma que a pintura seja o retrato de ambas.",
+      "figurino": "Contexto das seguidoras na Galileia do séculoI. Veste de linho fino azul-neblina, manto curto retangular de lã creme e faixa rosa-argila na cintura; pregas largas e acabamento discreto bem cuidado. Pequeno embrulho de linho dobrado e atado, sustentado com as duas mãos à altura da cintura, sem joias de corte.",
+      "child": false
+    },
+    {
+      "id": "raro_salome",
+      "name": "Traje de Salomé",
+      "faceProfile": "Mulher madura de aproximadamente58 anos, rosto oval curto de bochechas suaves, testa larga com linhas leves, sobrancelhas curtas arqueadas, olhos pequenos expressivos com marcas naturais, nariz convexo definido e boca estreita. Queixo cheio e expressão afetuosa serena, sem cabelos automaticamente grisalhos.",
+      "adaptacao": "Mulher em pé com um recipiente fechado para especiarias, sustentado pelas mãos. A passagem do amanhecer não vira iluminação laranja, cenário de túmulo nem imagem de Jesus.",
+      "figurino": "Judeia do séculoI. Vestido longo de linho cinza-pérola, amplo xale de lã umber ferrugem preso sob um braço e uma faixa estreita oliva. Recipiente pequeno de cerâmica de corpo bojudo e colo estreito, fechado com tecido e cordão. A família da forma é arqueológica; a cor do traje e o formato final são direção artística.",
+      "child": false
+    }
+  ],
+  "note": "IDs, estilos, sexo dos personagens e regras são os do plano oficial. Adaptações/figurinos/perfis desta rodada preparados localmente antes das bases; ver NOTAS-BIBLICAS.md. Catálogo e banco não foram alterados neste chat."
+}

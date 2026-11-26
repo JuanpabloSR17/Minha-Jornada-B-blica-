@@ -1,8 +1,8 @@
 # Status da produção de skins
 
-Gerado por `node scripts/skin-status.mjs` em 2026-11-25. Fonte do plano: `docs/skins/plano-lotes.json`.
+Gerado por `node scripts/skin-status.mjs` em 2026-11-26. Fonte do plano: `docs/skins/plano-lotes.json`.
 
-**Progresso:** 193 de 289 skins prontas no app.
+**Progresso:** 205 de 289 skins prontas no app.
 
 Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pintada, falta entrar no app · 🟡 no app sem pintura (traje provisório) · ⬜ a produzir.
 
@@ -354,27 +354,27 @@ Legenda: ✅ pronta no app (catálogo, pintura e forma de conquista) · 🎨 pin
 | ✅ | A viúva pobre (`raro_a_viuva_pobre`) | Rara | evangelhos | ✔ | — | lendo: Ler a história da viúva pobre (Mc 12:42-44) |
 | ✅ | O centurião de Cafarnaum (`raro_o_centuriao_de_cafarnaum`) | Rara | evangelhos | ✔ | — | lendo: Ler a história do centurião de Cafarnaum (Mt 8:5-10) |
 
-## S19 · Personagens · Evangelhos (0/6)
+## S19 · Personagens · Evangelhos (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Jairo (`raro_jairo`) | Rara | evangelhos | — | — | Ler a história de Jairo (Mc 5:22-23) |
-| ⬜ | A mulher que tocou o manto (`raro_a_mulher_que_tocou_o_manto`) | Rara | evangelhos | — | — | Ler a história da mulher que tocou o manto (Mc 5:27-29) |
-| ⬜ | O semeador (parábola) (`raro_o_semeador`) | Rara | evangelhos | — | — | Ler a história do semeador (Mt 13:3) |
-| ⬜ | Traje de Simão de Cirene (`raro_simao_de_cirene`) | Rara | evangelhos | — | — | Ler a história de Simão de Cirene (Mc 15:21) |
-| ⬜ | Traje de Joana e Susana (`raro_joana_e_susana`) | Rara | evangelhos | — | — | Ler a história de Joana e Susana (Lc 8:3) |
-| ⬜ | Traje de Salomé (`raro_salome`) | Rara | evangelhos | — | — | Ler a história de Salomé (Mc 16:1) |
+| ✅ | Traje de Jairo (`raro_jairo`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Jairo (Mc 5:22-23) |
+| ✅ | A mulher que tocou o manto (`raro_a_mulher_que_tocou_o_manto`) | Rara | evangelhos | ✔ | — | lendo: Ler a história da mulher que tocou o manto (Mc 5:27-29) |
+| ✅ | O semeador (parábola) (`raro_o_semeador`) | Rara | evangelhos | ✔ | — | lendo: Ler a história do semeador (Mt 13:3) |
+| ✅ | Traje de Simão de Cirene (`raro_simao_de_cirene`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Simão de Cirene (Mc 15:21) |
+| ✅ | Traje de Joana e Susana (`raro_joana_e_susana`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Joana e Susana (Lc 8:3) |
+| ✅ | Traje de Salomé (`raro_salome`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Salomé (Mc 16:1) |
 
-## S20 · Personagens · Evangelhos e Igreja (0/6)
+## S20 · Personagens · Evangelhos e Igreja (6/6)
 
 | | Skin | Raridade | Mundo | Pintura | Feminina | Como se conquista |
 |---|---|---|---|---|---|---|
-| ⬜ | Traje de Cleopas (`raro_cleopas`) | Rara | evangelhos | — | — | Ler a história de Cleopas (Lc 24:18) |
-| ⬜ | A criança no colo de Jesus (`raro_a_crianca_no_colo_de_jesus`) | Rara | evangelhos | — | — | Ler Mc 9:36 |
-| ⬜ | Traje de Barnabé (`epico_barnabe`) | Épica | igreja | — | — | Ler a história de Barnabé (At 4:36-37; 11:24) |
-| ⬜ | Traje de Estêvão (`epico_estevao`) | Épica | igreja | — | — | Ler a história de Estêvão (At 6:5-8) |
-| ⬜ | Traje de Tiago, irmão do Senhor (`epico_tiago_irmao_do_senhor`) | Épica | igreja | — | — | Ler a história de Tiago, irmão do Senhor (At 15:13; Tg 1:1) |
-| ⬜ | Traje de Lucas (`epico_lucas`) | Épica | igreja | — | — | Ler a história de Lucas (Cl 4:14; Lc 1:3) |
+| ✅ | Traje de Cleopas (`raro_cleopas`) | Rara | evangelhos | ✔ | — | lendo: Ler a história de Cleopas (Lc 24:18) |
+| ✅ | A criança no colo de Jesus (`raro_a_crianca_no_colo_de_jesus`) | Rara | evangelhos | ✔ | ✔ | lendo: Ler Mc 9:36 |
+| ✅ | Traje de Barnabé (`epico_barnabe`) | Épica | igreja | ✔ | — | lendo: Ler a história de Barnabé (At 4:36-37; 11:24) |
+| ✅ | Traje de Estêvão (`epico_estevao`) | Épica | igreja | ✔ | — | lendo: Ler a história de Estêvão (At 6:5-8) |
+| ✅ | Traje de Tiago, irmão do Senhor (`epico_tiago_irmao_do_senhor`) | Épica | igreja | ✔ | — | lendo: Ler a história de Tiago, irmão do Senhor (At 15:13; Tg 1:1) |
+| ✅ | Traje de Lucas (`epico_lucas`) | Épica | igreja | ✔ | — | lendo: Ler a história de Lucas (Cl 4:14; Lc 1:3) |
 
 ## S21 · Personagens · Igreja (0/6)
 

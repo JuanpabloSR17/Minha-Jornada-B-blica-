@@ -960,3 +960,48 @@ S17/S18 ainda não foram pintados.
 - O Supabase local limpo passou nas 577 verificações. Nas compras simultâneas, uma compra entrou, a outra foi recusada e o saldo final ficou em 0.
 - O Codex conferiu os 96 arquivos publicados por SHA-256, e todos batem com os manifestos.
 - Sem pendências.
+
+## 39. Lotes S19 e S20: aplicados (26/11/2026), com 1 pintura a corrigir
+
+**Conferência**
+- **S19_final:** o ZIP de 15.258.096 bytes confere com o `.zip.sha256` (`6ebd5032…`) e as 70 somas conferem.
+- **S20_final:** o ZIP de 17.736.763 bytes confere com o `.zip.sha256` (`2ab7ceb5…`) e as 86 somas conferem.
+- As 39 pinturas têm estilos idênticos ao plano e medidas e transparência corretas.
+- Personagens de sexo definido aparecem só no próprio sexo. A criança genérica tem apresentação padrão e feminina, que o fluxo oficial cadastrou como `{padrao,feminino}`.
+- Contrato infantil: os topos ficaram entre 121 e 155, dentro da faixa.
+
+**Briefing conciliado:** o Codex mandou `BRIEFING_S19_S20.md` junto com a entrega.
+- As adaptações e os figurinos das 12 skins, mais a apresentação feminina da criança, foram registrados nos campos `adaptacao` e `figurino` do plano e nas linhas do LOTES.md.
+- Uma cópia está em `entregas/S19/`.
+- Todas as propostas foram aceitas. A partir de S21, volte a mandar o briefing **antes** das bases, para eu registrar e confirmar primeiro.
+
+**Aprovado:** 11 das 12 skins.
+- Jairo sem a filha nem Jesus.
+- Mulher com a mão estendida para o vazio.
+- Semeador com os grãos na mão, sem campo.
+- Simão de Cirene com a trave nos ombros, sem sangue.
+- Joana e Susana representadas por uma viajante.
+- Salomé com o recipiente de especiarias.
+- Cleopas com o pão partido.
+- A criança, menino e menina, com anatomia infantil.
+- Estêvão servindo, sem martírio.
+- Tiago, irmão do Senhor, em oração.
+- Lucas com o rolo, sem medicina moderna.
+- Cleopas tom 2 e tom 3: os tons são vizinhos e foram aceitos.
+
+**Migrações:** `20261202003000_skins_s19.sql` e `20261202003100_skins_s20.sql`. O app passa a 205 skins pintadas.
+
+**Correção pedida (S20_v2): `epico_barnabe` estilo-1** (tom 2, longo liso). Está tão médio quanto o estilo-3 (tom 4), e os dois rostos ficaram quase iguais.
+- Clarear para tom 2, como o Ageu estilo-1.
+- A comparação está em `docs/skins/entregas/S20/Tons_a_corrigir.png`.
+- Mantenha rosto, cabelo, barba, figurino, bolsa, IDs e âncoras. Mande o pacote S20 completo, sem migração.
+
+**Próximo par, S21 e S22:**
+- S21: Timóteo, Silas, Priscila e Áquila, Lídia, Filipe o evangelista e o eunuco etíope.
+- S22: Cornélio, Tito, Tabita, Apolo, Febe e Onésimo.
+
+Mande as adaptações e os figurinos antes das bases. Pontos que pedem adaptação explícita:
+- **Priscila e Áquila:** é um casal em uma skin. O plano já prevê a apresentação padrão masculina (Áquila) e a feminina (Priscila), com o nome de cada um em `nomeExibicao`.
+- **Filipe, o evangelista, e o eunuco etíope:** a carruagem e a corrida não cabem no avatar em pé.
+- **Silas:** a prisão à meia-noite fica sem cela nem correntes.
+- **Febe e Onésimo:** a carta aparece sem escrita inventada.

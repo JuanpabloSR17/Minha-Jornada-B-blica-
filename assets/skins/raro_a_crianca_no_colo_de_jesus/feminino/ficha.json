@@ -1,0 +1,113 @@
+{
+  "id": "raro_a_crianca_no_colo_de_jesus",
+  "nome": "A criança no colo de Jesus",
+  "raridade": "rare",
+  "mundo": "evangelhos",
+  "referencia": "Mc 9:36",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-shaved"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-brown",
+      "penteado": "hair-curly"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-afro"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "feminino",
+  "identidadeFacial": "Menina de cerca de7 anos como direção artística, rosto oval curto de bochechas cheias, testa alta suave, olhos grandes amendoados, nariz pequeno de ponta arrebitada, lábios pequenos e queixo arredondado. Rosto próprio distinto do menino, expressão curiosa tranquila e anatomia infantil natural.",
+  "adaptacao": "Mesma figura genérica infantil em apresentação feminina; os penteados e tons seguem os três estilos do ID. Menina em pé sozinha, sem Jesus, colo ou braços externos, com rosto próprio e o mesmo contrato infantil.",
+  "figurino": "Túnica infantil de linho cru com mangas curtas e barra acima dos tornozelos, cinto sálvia simples, sandálias inteiras. Mesma família de traje do menino, ajustada à anatomia infantil da menina, sem corpo ou maquiagem de adulta.",
+  "encaixeInfantil": {
+    "contratoReferencia": "PARA-O-CODEX.md §27 / opção C, já aprovado para a linha infantil",
+    "briefingDaRodada": "BRIEFING-PARA-REGISTRO.md, S19/S20",
+    "metodo": "Escala uniforme e translação; sem cisalhamento nem deformação da anatomia infantil.",
+    "topoPermitido": [
+      120,
+      170
+    ],
+    "toleranciaDosTresPontos": 12,
+    "medidasReais": [
+      {
+        "estilo": "estilo-1",
+        "topo": 156,
+        "cabecaCentro": [
+          518,
+          292
+        ],
+        "queixo": [
+          518,
+          399
+        ],
+        "pes": [
+          506,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-2",
+        "topo": 133,
+        "cabecaCentro": [
+          518,
+          293
+        ],
+        "queixo": [
+          518,
+          398
+        ],
+        "pes": [
+          506,
+          1450
+        ]
+      },
+      {
+        "estilo": "estilo-3",
+        "topo": 126,
+        "cabecaCentro": [
+          519,
+          293
+        ],
+        "queixo": [
+          519,
+          399
+        ],
+        "pes": [
+          505,
+          1450
+        ]
+      }
+    ]
+  },
+  "varianteVisual": "feminino",
+  "nomeExibicao": "A criança no colo de Jesus"
+}

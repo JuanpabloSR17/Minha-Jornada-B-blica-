@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-26",
+  "commit": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+  "branch": "claude/kind-bell-fuk4e4",
+  "files": [
+    {
+      "file": "docs/skins/LOTES.md",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "e1a3c721e2d280be51abc193e2824c900ea64feba1404e3bcd4a1ff4ff82c053"
+    },
+    {
+      "file": "docs/skins/PRODUCAO-POR-LOTES.md",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "1dcae814371b36463ea2b954e0b2f4c39925a3eecad64f2390a3efa72040e948"
+    },
+    {
+      "file": "docs/skins/PARA-O-CODEX.md",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "297f57c568a754bb08f812125c80bc0b3a0fd3f32188a19b10e994678501b4ad"
+    },
+    {
+      "file": "docs/skins/TEMPORADA-1-EXODO.md",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "6ff45a28ed4b7bcfb2f705f72675b68997e6545dc2b69af757e9cc009d90f69c"
+    },
+    {
+      "file": "docs/skins/plano-lotes.json",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "6efaebc0636bb6e5c84f3efb39822cb7bee6ae9a0363c46400e9afa2c4b46f51"
+    },
+    {
+      "file": "docs/skins/PESQUISA-HISTORICA-APOSTOLOS.md",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "fb08422583d2341887d30b4fa60992b4f2742304e6d0a51ea0b5fff8c893d5f2"
+    },
+    {
+      "file": "src/features/skins/season1.json",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "0ebac916b74ee4665c6eac60a68df43612cc8443a9308ef7900dcaab3c4b7305"
+    },
+    {
+      "file": "src/features/skins/catalog.ts",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "9e7d96aef5fe5ed2c2e0cd17524090be8ddc22d50035851258053497ff0696ce"
+    },
+    {
+      "file": "src/features/avatar/catalog/catalog.json",
+      "source": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+      "sha256": "1ab69a925e5b67e975e5aba60967996cff8a42de2bbc4b7ca1150dca8b6a79c7"
+    },
+    {
+      "file": "src/features/avatar/art/geometry.ts",
+      "source": "snapshot do checkout local jornada-app-dev; apenas leitura",
+      "sha256": "5ce65ecfb3074467a91fdece5f52d2860daad9f1faff87b711e2b5e2a8c0f39b"
+    }
+  ]
+}

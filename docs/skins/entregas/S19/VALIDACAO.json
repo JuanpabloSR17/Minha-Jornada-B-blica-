@@ -1,0 +1,682 @@
+{
+  "lot": "S19",
+  "sourceCommit": "2c5185cfbbfb440f9080b46a36b8e782de6f1e61",
+  "skins": 6,
+  "presentations": 6,
+  "paintings": 18,
+  "assets": 48,
+  "notes": [
+    "Pintura base1024×1536; @2x é ampliação.",
+    "Capturas são prévias técnicas, não teste do app integrado.",
+    "Anatomia, identidade e coerência de objetos conferidas visualmente.",
+    "Três âncoras±12; crianças sem cisalhamento e topo120–170."
+  ],
+  "reports": [
+    {
+      "key": "raro_jairo",
+      "id": "raro_jairo",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 130518,
+      "anchors": [
+        [
+          513,
+          303
+        ],
+        [
+          511,
+          392
+        ],
+        [
+          513,
+          1450
+        ]
+      ],
+      "crown": 214,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_jairo",
+      "id": "raro_jairo",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 120924,
+      "anchors": [
+        [
+          513,
+          303
+        ],
+        [
+          511,
+          391
+        ],
+        [
+          513,
+          1450
+        ]
+      ],
+      "crown": 216,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_jairo",
+      "id": "raro_jairo",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 114962,
+      "anchors": [
+        [
+          513,
+          297
+        ],
+        [
+          511,
+          386
+        ],
+        [
+          513,
+          1450
+        ]
+      ],
+      "crown": 229,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_mulher_que_tocou_o_manto",
+      "id": "raro_a_mulher_que_tocou_o_manto",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 152944,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 227,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_mulher_que_tocou_o_manto",
+      "id": "raro_a_mulher_que_tocou_o_manto",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 135662,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 226,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_a_mulher_que_tocou_o_manto",
+      "id": "raro_a_mulher_que_tocou_o_manto",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 127756,
+      "anchors": [
+        [
+          512,
+          311
+        ],
+        [
+          512,
+          386
+        ],
+        [
+          512,
+          1450
+        ]
+      ],
+      "crown": 226,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_o_semeador",
+      "id": "raro_o_semeador",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 153360,
+      "anchors": [
+        [
+          510,
+          311
+        ],
+        [
+          514,
+          390
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 209,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_o_semeador",
+      "id": "raro_o_semeador",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 127772,
+      "anchors": [
+        [
+          510,
+          311
+        ],
+        [
+          514,
+          390
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 213,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_o_semeador",
+      "id": "raro_o_semeador",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 148626,
+      "anchors": [
+        [
+          510,
+          306
+        ],
+        [
+          514,
+          385
+        ],
+        [
+          510,
+          1450
+        ]
+      ],
+      "crown": 230,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_simao_de_cirene",
+      "id": "raro_simao_de_cirene",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 176926,
+      "anchors": [
+        [
+          511,
+          307
+        ],
+        [
+          513,
+          388
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 224,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_simao_de_cirene",
+      "id": "raro_simao_de_cirene",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 154372,
+      "anchors": [
+        [
+          511,
+          309
+        ],
+        [
+          513,
+          389
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 220,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_simao_de_cirene",
+      "id": "raro_simao_de_cirene",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 177148,
+      "anchors": [
+        [
+          511,
+          308
+        ],
+        [
+          513,
+          388
+        ],
+        [
+          511,
+          1450
+        ]
+      ],
+      "crown": 222,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_joana_e_susana",
+      "id": "raro_joana_e_susana",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 137130,
+      "anchors": [
+        [
+          507,
+          311
+        ],
+        [
+          517,
+          392
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "crown": 197,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_joana_e_susana",
+      "id": "raro_joana_e_susana",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 133192,
+      "anchors": [
+        [
+          507,
+          311
+        ],
+        [
+          517,
+          392
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "crown": 197,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2901,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_joana_e_susana",
+      "id": "raro_joana_e_susana",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 125506,
+      "anchors": [
+        [
+          507,
+          311
+        ],
+        [
+          517,
+          392
+        ],
+        [
+          507,
+          1450
+        ]
+      ],
+      "crown": 210,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_salome",
+      "id": "raro_salome",
+      "variant": "padrao",
+      "style": 1,
+      "child": false,
+      "bytes": 149754,
+      "anchors": [
+        [
+          508,
+          309
+        ],
+        [
+          516,
+          390
+        ],
+        [
+          508,
+          1450
+        ]
+      ],
+      "crown": 218,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_salome",
+      "id": "raro_salome",
+      "variant": "padrao",
+      "style": 2,
+      "child": false,
+      "bytes": 148540,
+      "anchors": [
+        [
+          508,
+          311
+        ],
+        [
+          516,
+          392
+        ],
+        [
+          508,
+          1450
+        ]
+      ],
+      "crown": 212,
+      "base": {
+        "floor": 1450,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    },
+    {
+      "key": "raro_salome",
+      "id": "raro_salome",
+      "variant": "padrao",
+      "style": 3,
+      "child": false,
+      "bytes": 137958,
+      "anchors": [
+        [
+          508,
+          310
+        ],
+        [
+          516,
+          391
+        ],
+        [
+          508,
+          1450
+        ]
+      ],
+      "crown": 216,
+      "base": {
+        "floor": 1449,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      },
+      "zoom": {
+        "floor": 2900,
+        "farAlpha": 0,
+        "largestFarAlpha": 0,
+        "microAlpha": 0,
+        "largestMicroAlpha": 0
+      }
+    }
+  ]
+}

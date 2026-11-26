@@ -9255,7 +9255,9 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Figura única em pé, de mãos reunidas num gesto de súplica, sem filha, Jesus ou encenação da cura. O traje identifica o chefe da sinagoga; não é vestimenta do sumo sacerdote.",
+   "figurino": "Galileia, contexto judaico do séculoI. Túnica longa de linho marfim com estreitas faixas bordô tecidas; amplo manto retangular de lã azul-tinta, dobrado sobre o ombro e preso pela própria dobra. Cinto tecido bordô, costuras cuidadas, poucas marcas de uso; sandálias simples. Sem mitra, peitoral, estrela moderna, quipá moderno ou insígnia sacerdotal."
   },
   {
    "id": "raro_a_mulher_que_tocou_o_manto",
@@ -9293,7 +9295,9 @@
      "hairColor": "haircolor-blond",
      "hairStyle": "hair-bun"
     }
-   ]
+   ],
+   "adaptacao": "Viajante feminina em pé com uma mão estendida na direção de um espaço vazio e a outra segurando o próprio xale. Não há Jesus, mão de terceiro, orla alheia, pessoa invisível ou cena de cura.",
+   "figurino": "Galileia do séculoI. Vestido comprido de linho cru amendoado, decote pequeno, manga até o antebraço; xale de lã malva desbotada com remendo discreto e barra irregular. Cordão simples na cintura, sem adornos; tecidos com desgaste moderado. Cabelo descoberto para os estilos ficarem legíveis."
   },
   {
    "id": "raro_o_semeador",
@@ -9331,7 +9335,9 @@
      "hairColor": "haircolor-black",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "O gesto de semear é sugerido pela mão com grãos e pela bolsa aberta. O campo arado fica como contexto do texto, sem chão, paisagem, plantas ou grãos flutuantes no sprite.",
+   "figurino": "Trabalhador rural da Galileia no séculoI. Túnica de lã rústica azul-acinzentada até a metade da canela, cingida por faixa estreita de linho cru; mangas arregaçadas. Bolsa de tecido grosso amarrada à cintura, trama larga visível, remendos e barra empoeirada. Sem rolo, medalha, bordado vegetal ou manto ornamental da skin de apoiador."
   },
   {
    "id": "raro_simao_de_cirene",
@@ -9369,7 +9375,9 @@
      "hairColor": "haircolor-copper",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Uma única trave de madeira bruta apoiada sobre os ombros, sustentada pelas duas mãos. Não há cruz monumental, corpo, sangue, ferimentos, pregos, Jesus ou outras figuras.",
+   "figurino": "Viajante vindo do campo no contexto romano da Judeia; a origem cireneia não autentica um traje étnico individual. Túnica de linho rústico terracota até a canela e faixa larga de lã castanho-acinzentada na cintura. Pequeno pano de viagem dobrado sob o apoio da trave, costuras e desgaste utilitários; cabeça descoberta."
   },
   {
    "id": "raro_joana_e_susana",
@@ -9407,7 +9415,9 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-bun"
     }
-   ]
+   ],
+   "adaptacao": "Uma viajante representa o serviço das mulheres com seus bens. O ID e o nome coletivos são mantidos; não se fundem duas pessoas num corpo nem se afirma que a pintura seja o retrato de ambas.",
+   "figurino": "Contexto das seguidoras na Galileia do séculoI. Veste de linho fino azul-neblina, manto curto retangular de lã creme e faixa rosa-argila na cintura; pregas largas e acabamento discreto bem cuidado. Pequeno embrulho de linho dobrado e atado, sustentado com as duas mãos à altura da cintura, sem joias de corte."
   },
   {
    "id": "raro_salome",
@@ -9445,7 +9455,9 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-long-wavy"
     }
-   ]
+   ],
+   "adaptacao": "Mulher em pé com um recipiente fechado para especiarias, sustentado pelas mãos. A passagem do amanhecer não vira iluminação laranja, cenário de túmulo nem imagem de Jesus.",
+   "figurino": "Judeia do séculoI. Vestido longo de linho cinza-pérola, amplo xale de lã umber ferrugem preso sob um braço e uma faixa estreita oliva. Recipiente pequeno de cerâmica de corpo bojudo e colo estreito, fechado com tecido e cordão. A família da forma é arqueológica; a cor do traje e o formato final são direção artística."
   },
   {
    "id": "raro_cleopas",
@@ -9483,7 +9495,9 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-shaved"
     }
-   ]
+   ],
+   "adaptacao": "Caminhante em pé com dois pedaços do mesmo pão nas mãos, como referência ao relato de Emaús. Não há Jesus, mesa ou segundo discípulo na pintura.",
+   "figurino": "Viajante em Emaús no séculoI. Túnica de linho bege-flax com gola simples em V, longo manto de lã oliva sem bordados e capuz recolhido atrás do pescoço, cinto estreito de couro e pequena bolsa fechada. Barra empoeirada e remendos discretos. Dois pedaços de pão já partido, um em cada mão à altura da cintura."
   },
   {
    "id": "raro_a_crianca_no_colo_de_jesus",
@@ -9520,7 +9534,9 @@
      "hairColor": "haircolor-auburn",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Criança genérica sozinha e em pé, em gesto acolhedor de mãos relaxadas, sem Jesus, colo, braços de terceiro ou plataforma. Usa o contrato infantil já aprovado: escala uniforme, topo120–170, três âncoras±12. Produzir também a apresentação feminina, com os mesmos três estilos do catálogo e rosto próprio. Apresentação feminina (pasta feminino/): Mesma figura genérica infantil em apresentação feminina; os penteados e tons seguem os três estilos do ID. Menina em pé sozinha, sem Jesus, colo ou braços externos, com rosto próprio e o mesmo contrato infantil. Figurino: Túnica infantil de linho cru com mangas curtas e barra acima dos tornozelos, cinto sálvia simples, sandálias inteiras. Mesma família de traje do menino, ajustada à anatomia infantil da menina, sem corpo ou maquiagem de adulta.",
+   "figurino": "Galileia do séculoI, túnica infantil de linho cru em trama simples, mangas curtas, barra pouco acima dos tornozelos, pequeno cinto de tecido sálvia. Sem manto de adulto, armadura, joias ou objeto narrativo adicional; sandálias simples inteiras. O tamanho aparente é uma escolha artística compatível com o recorte infantil."
   },
   {
    "id": "epico_barnabe",
@@ -9562,7 +9578,9 @@
      "hairColor": "haircolor-honey",
      "hairStyle": "hair-curly"
     }
-   ]
+   ],
+   "adaptacao": "Figura única em pé com bolsa fechada como símbolo da oferta; sem campo, escritura imobiliária legível, moedas flutuantes ou segundo personagem.",
+   "figurino": "Contexto de Chipre e da comunidade de Jerusalém no séculoI. Túnica longa de linho aveia, fino de boa caída, com bandas verticais ocre; capa curta trapezoidal de lã ferrugem presa por dobra e cinto de tecido escuro. Acabamento bem cuidado e bolsa pequena de couro fechada na mão; não é traje levítico do Êxodo."
   },
   {
    "id": "epico_estevao",
@@ -9600,7 +9618,9 @@
      "hairColor": "haircolor-brown",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Servidor em pé segurando uma travessa com pão, sem mesa, igreja, pedras, martírio, ferimentos ou auréola. Serviço cotidiano da passagem, sem vestimenta diaconal medieval.",
+   "figurino": "Jerusalém do séculoI. Túnica de linho marfim até a canela, mangas curtas práticas, finas bandas vermelhas tecidas e pequeno avental de linho natural preso à cintura. Sem grande capa nem ouro; tecido limpo com vincos de uso. Travessa rasa de madeira para pão, sustentada pelas duas mãos à altura da cintura."
   },
   {
    "id": "epico_tiago_irmao_do_senhor",
@@ -9642,7 +9662,9 @@
      "hairColor": "haircolor-darkbrown",
      "hairStyle": "hair-short"
     }
-   ]
+   ],
+   "adaptacao": "Líder em pé com mãos reunidas para oração; o desgaste discreto no tecido junto aos joelhos é escolha simbólica. Sem ajoelhar, calos expostos, feridas, rosário ou alegação de idade/aparência comprovada.",
+   "figurino": "Comunidade judaica de Jerusalém no séculoI. Longa túnica de linho cinza-areia de gola estreita, manto fino retangular castanho-taupe cruzando o tórax por dobra; cordão de tecido simples e franja pequena. Poucos remendos no tecido perto dos joelhos e sandálias gastas; cabeça descoberta, sem indumentária monástica."
   },
   {
    "id": "epico_lucas",
@@ -9684,7 +9706,9 @@
      "hairColor": "haircolor-blond",
      "hairStyle": "hair-afro"
     }
-   ]
+   ],
+   "adaptacao": "Viajante em pé com um rolo fechado de documentação e pequena bolsa utilitária na cintura; sem texto legível, paciente, procedimento médico ou instrumento moderno.",
+   "figurino": "Mediterrâneo oriental do séculoI, contexto de um viajante letrado. Túnica de linho claro de trama fina até a canela, duas faixas azul-ardósia estreitas, manto retangular de lã azul-acinzentada dobrado em um ombro, pequeno cinto de couro. Rolo de papiro fechado com cordão e bolsa simples; nenhuma peça copta tardia ou jaleco."
   },
   {
    "id": "epico_timoteo",

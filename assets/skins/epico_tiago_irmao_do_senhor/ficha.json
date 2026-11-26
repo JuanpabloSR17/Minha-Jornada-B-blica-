@@ -1,0 +1,52 @@
+{
+  "id": "epico_tiago_irmao_do_senhor",
+  "nome": "Traje de Tiago, irmão do Senhor",
+  "raridade": "epic",
+  "mundo": "igreja",
+  "referencia": "At 15:13; Tg 1:1",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-6",
+      "cabelo": "haircolor-auburn",
+      "penteado": "hair-locs"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-1",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-afro"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-short"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "masculino",
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de cerca de38 anos, rosto comprido triangular de têmporas estreitas, testa alta, sobrancelhas finas retilíneas, olhos fundos de cantos baixos, nariz longo levemente adunco e boca pequena firme. Barba curta densa de base afilada e bigode conectado na cor do cabelo; expressão recolhida.",
+  "adaptacao": "Líder em pé com mãos reunidas para oração; o desgaste discreto no tecido junto aos joelhos é escolha simbólica. Sem ajoelhar, calos expostos, feridas, rosário ou alegação de idade/aparência comprovada.",
+  "figurino": "Comunidade judaica de Jerusalém no séculoI. Longa túnica de linho cinza-areia de gola estreita, manto fino retangular castanho-taupe cruzando o tórax por dobra; cordão de tecido simples e franja pequena. Poucos remendos no tecido perto dos joelhos e sandálias gastas; cabeça descoberta, sem indumentária monástica."
+}

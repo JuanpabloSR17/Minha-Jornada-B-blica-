@@ -6,36 +6,6 @@ Gerado por `node scripts/skin-status.mjs`. Cada skin: 3 estilos (tom de pele, co
 
 **Figurino:** Pedido do usuário (25/11/2026): variar tecidos, cortes, cores e acabamentos conforme época, região e função; não basta trocar o pigmento do mesmo manto bordado. Antes das bases de cada lote, pesquisar época, região e função e registrar para cada skin: corte e silhueta, fibra e trama, forma de prender, paleta, acabamento e desgaste, e objeto próprio. Raridade não significa ouro obrigatório. Os 3 estilos de uma skin preservam a mesma identidade e o mesmo traje, com tons e cabelos exatos do catálogo; a variedade de figurino é sobretudo entre skins. Lendárias e Gloriosas continuam especiais, sem misturar épocas nem copiar o mesmo rosto ou manto. Cores e cortes são direção artística: as fontes apoiam famílias de material e estrutura, não cada figurino. Para a época romana na Judeia, linho de trama simples, lã e faixas tecidas (IAA, Nahal Arugot); não extrapolar peças coptas de séculos posteriores nem usar o mesmo traje para todas as eras bíblicas.
 
-## S19 · Personagens · Evangelhos
-
-- **Traje de Jairo** (`raro_jairo`), Rara, Mc 5:22-23. Traje: Chefe da sinagoga. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-black, hair-locs · estilo-2: skin-6, haircolor-darkbrown, hair-afro · estilo-3: skin-1, haircolor-brown, hair-shaved
-- **A mulher que tocou o manto** (`raro_a_mulher_que_tocou_o_manto`), Rara, Mc 5:27-29. Traje: Mão estendida para a orla do manto. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-4, haircolor-darkbrown, hair-braids · estilo-2: skin-6, haircolor-auburn, hair-long-wavy · estilo-3: skin-1, haircolor-blond, hair-bun
-- **O semeador (parábola)** (`raro_o_semeador`), Rara, Mt 13:3. Traje: Bolsa de sementes, campo arado. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-darkbrown, hair-wavy · estilo-2: skin-4, haircolor-auburn, hair-side-part · estilo-3: skin-1, haircolor-black, hair-shaved
-- **Traje de Simão de Cirene** (`raro_simao_de_cirene`), Rara, Mc 15:21. Traje: Viajante do campo com a madeira da cruz. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-5, haircolor-brown, hair-long · estilo-2: skin-2, haircolor-blond, hair-afro · estilo-3: skin-3, haircolor-copper, hair-curly
-- **Traje de Joana e Susana** (`raro_joana_e_susana`), Rara, Lc 8:3. Traje: Mulheres que serviam com seus bens. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-auburn, hair-braids · estilo-2: skin-2, haircolor-copper, hair-long-wavy · estilo-3: skin-6, haircolor-darkbrown, hair-bun
-- **Traje de Salomé** (`raro_salome`), Rara, Mc 16:1. Traje: Mulher com especiarias ao amanhecer. Apresentação feminina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-copper, hair-bun · estilo-2: skin-5, haircolor-black, hair-braids · estilo-3: skin-4, haircolor-darkbrown, hair-long-wavy
-
-## S20 · Personagens · Evangelhos e Igreja
-
-- **Traje de Cleopas** (`raro_cleopas`), Rara, Lc 24:18. Traje: Caminhante de Emaús, pão partido. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-auburn, hair-wavy · estilo-2: skin-6, haircolor-brown, hair-curly · estilo-3: skin-3, haircolor-darkbrown, hair-shaved
-- **A criança no colo de Jesus** (`raro_a_crianca_no_colo_de_jesus`), Rara, Mc 9:36. Traje: Criança de túnica simples (skin infantil). Apresentação masculina (figura genérica: feminina adicional quando o traje permitir).
-  estilo-1: skin-2, haircolor-darkbrown, hair-shaved · estilo-2: skin-4, haircolor-brown, hair-curly · estilo-3: skin-5, haircolor-auburn, hair-afro
-- **Traje de Barnabé** (`epico_barnabe`), Épica, At 4:36-37; 11:24. Traje: "Filho da consolação", bolsa do campo vendido. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-2, haircolor-darkbrown, hair-long · estilo-2: skin-5, haircolor-copper, hair-short · estilo-3: skin-4, haircolor-honey, hair-curly
-- **Traje de Estêvão** (`epico_estevao`), Épica, At 6:5-8. Traje: Diácono servindo as mesas. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-1, haircolor-honey, hair-long · estilo-2: skin-4, haircolor-copper, hair-side-part · estilo-3: skin-6, haircolor-brown, hair-afro
-- **Traje de Tiago, irmão do Senhor** (`epico_tiago_irmao_do_senhor`), Épica, At 15:13; Tg 1:1. Traje: Líder de Jerusalém, joelhos de quem ora. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-6, haircolor-auburn, hair-locs · estilo-2: skin-1, haircolor-copper, hair-afro · estilo-3: skin-4, haircolor-darkbrown, hair-short
-- **Traje de Lucas** (`epico_lucas`), Épica, Cl 4:14; Lc 1:3. Traje: Médico e historiador com rolo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).
-  estilo-1: skin-3, haircolor-honey, hair-short · estilo-2: skin-6, haircolor-black, hair-wavy · estilo-3: skin-1, haircolor-blond, hair-afro
-
 ## S21 · Personagens · Igreja
 
 - **Traje de Timóteo** (`epico_timoteo`), Épica, 1 Tm 4:12; 2 Tm 1:5. Traje: Jovem pastor com cartas de Paulo. Apresentação masculina (personagem bíblico: só esta apresentação, sem a do outro sexo).

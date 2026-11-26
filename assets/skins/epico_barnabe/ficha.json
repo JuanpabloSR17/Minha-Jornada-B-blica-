@@ -1,0 +1,52 @@
+{
+  "id": "epico_barnabe",
+  "nome": "Traje de Barnabé",
+  "raridade": "epic",
+  "mundo": "igreja",
+  "referencia": "At 4:36-37; 11:24",
+  "representacao": "inspired",
+  "origem": "leitura",
+  "temporada": "enciclopedia",
+  "estilos": [
+    {
+      "id": "estilo-1",
+      "rotulo": "Estilo 1",
+      "tomDePele": "skin-2",
+      "cabelo": "haircolor-darkbrown",
+      "penteado": "hair-long"
+    },
+    {
+      "id": "estilo-2",
+      "rotulo": "Estilo 2",
+      "tomDePele": "skin-5",
+      "cabelo": "haircolor-copper",
+      "penteado": "hair-short"
+    },
+    {
+      "id": "estilo-3",
+      "rotulo": "Estilo 3",
+      "tomDePele": "skin-4",
+      "cabelo": "haircolor-honey",
+      "penteado": "hair-curly"
+    }
+  ],
+  "ancoras": {
+    "cabecaCentro": [
+      512,
+      300
+    ],
+    "queixo": [
+      512,
+      391
+    ],
+    "pes": [
+      512,
+      1450
+    ]
+  },
+  "sexoDaApresentacao": "masculino",
+  "sexoDoPersonagem": "masculino",
+  "identidadeFacial": "Homem adulto de cerca de42 anos, rosto retangular comprido de testa larga, olhos pequenos calmos, sobrancelhas grossas curvas, nariz longo largo na ponta, sulcos nasolabiais marcados e maxilar arredondado. Barba curta aparada com queixo mais cheio e bigode fino na cor do cabelo; expressão generosa firme.",
+  "adaptacao": "Figura única em pé com bolsa fechada como símbolo da oferta; sem campo, escritura imobiliária legível, moedas flutuantes ou segundo personagem.",
+  "figurino": "Contexto de Chipre e da comunidade de Jerusalém no séculoI. Túnica longa de linho aveia, fino de boa caída, com bandas verticais ocre; capa curta trapezoidal de lã ferrugem presa por dobra e cinto de tecido escuro. Acabamento bem cuidado e bolsa pequena de couro fechada na mão; não é traje levítico do Êxodo."
+}

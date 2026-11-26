@@ -1,0 +1,548 @@
+[
+  {
+    "id": "raro_cleopas",
+    "key": "raro_cleopas",
+    "estilo": "estilo-1",
+    "scale": 0.8159011771663378,
+    "skewX": 0.01980059958861919,
+    "offsetX": 92.07674592734202,
+    "offsetY": 208.1984083528339,
+    "measured": [
+      [
+        511,
+        307
+      ],
+      [
+        513,
+        390
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1522,
+    "sourceOpaqueFloor": 1522,
+    "crown": 218
+  },
+  {
+    "id": "raro_cleopas",
+    "key": "raro_cleopas",
+    "estilo": "estilo-2",
+    "scale": 0.8152417696937172,
+    "skewX": 0.019812880750240448,
+    "offsetX": 91.95410799559352,
+    "offsetY": 208.38678475646861,
+    "measured": [
+      [
+        511,
+        309
+      ],
+      [
+        513,
+        392
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1523,
+    "sourceOpaqueFloor": 1523,
+    "crown": 214
+  },
+  {
+    "id": "raro_cleopas",
+    "key": "raro_cleopas",
+    "estilo": "estilo-3",
+    "scale": 0.8209526683497188,
+    "skewX": 0.02056789076037234,
+    "offsetX": 88.91437348098896,
+    "offsetY": 201.3309914400777,
+    "measured": [
+      [
+        511,
+        303
+      ],
+      [
+        513,
+        385
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1521,
+    "sourceOpaqueFloor": 1521,
+    "crown": 229
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus",
+    "estilo": "estilo-1",
+    "scale": 0.8880711666813601,
+    "skewX": 0,
+    "offsetX": 58.63966940916566,
+    "offsetY": 105.46025364442085,
+    "measured": [
+      [
+        514,
+        292
+      ],
+      [
+        514,
+        399
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1514,
+    "sourceOpaqueFloor": 1514,
+    "crown": 155
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus",
+    "estilo": "estilo-2",
+    "scale": 0.8880844701078107,
+    "skewX": 0,
+    "offsetX": 58.18883577490874,
+    "offsetY": 105.44011225677468,
+    "measured": [
+      [
+        514,
+        299
+      ],
+      [
+        514,
+        401
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1514,
+    "sourceOpaqueFloor": 1514,
+    "crown": 122
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus",
+    "estilo": "estilo-3",
+    "scale": 0.8899527926288249,
+    "skewX": 0,
+    "offsetX": 57.67909936298486,
+    "offsetY": 101.72151916733037,
+    "measured": [
+      [
+        514,
+        293
+      ],
+      [
+        514,
+        400
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1515,
+    "sourceOpaqueFloor": 1515,
+    "crown": 124
+  },
+  {
+    "id": "epico_barnabe",
+    "key": "epico_barnabe",
+    "estilo": "estilo-1",
+    "scale": 0.817039794964448,
+    "skewX": 0.02145526785925094,
+    "offsetX": 83.40609001097744,
+    "offsetY": 203.19727288425224,
+    "measured": [
+      [
+        511,
+        299
+      ],
+      [
+        513,
+        392
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1526,
+    "sourceOpaqueFloor": 1526,
+    "crown": 214
+  },
+  {
+    "id": "epico_barnabe",
+    "key": "epico_barnabe",
+    "estilo": "estilo-2",
+    "scale": 0.8169789853829122,
+    "skewX": 0.022049148753232006,
+    "offsetX": 83.33437571782326,
+    "offsetY": 203.29006830567596,
+    "measured": [
+      [
+        511,
+        300
+      ],
+      [
+        513,
+        391
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1526,
+    "sourceOpaqueFloor": 1526,
+    "crown": 216
+  },
+  {
+    "id": "epico_barnabe",
+    "key": "epico_barnabe",
+    "estilo": "estilo-3",
+    "scale": 0.8167442520742932,
+    "skewX": 0.022027169324927712,
+    "offsetX": 83.44924787416767,
+    "offsetY": 203.6482713346286,
+    "measured": [
+      [
+        511,
+        299
+      ],
+      [
+        513,
+        393
+      ],
+      [
+        511,
+        1450
+      ]
+    ],
+    "sourceFootY": 1526,
+    "sourceOpaqueFloor": 1526,
+    "crown": 211
+  },
+  {
+    "id": "epico_estevao",
+    "key": "epico_estevao",
+    "estilo": "estilo-1",
+    "scale": 0.8211968276856525,
+    "skewX": 0.014801673173858191,
+    "offsetX": 87.29973609097556,
+    "offsetY": 204.24441240086526,
+    "measured": [
+      [
+        513,
+        311
+      ],
+      [
+        511,
+        387
+      ],
+      [
+        513,
+        1450
+      ]
+    ],
+    "sourceFootY": 1517,
+    "sourceOpaqueFloor": 1517,
+    "crown": 224
+  },
+  {
+    "id": "epico_estevao",
+    "key": "epico_estevao",
+    "estilo": "estilo-2",
+    "scale": 0.8206051873198847,
+    "skewX": 0.014780352797548357,
+    "offsetX": 86.76481590869446,
+    "offsetY": 202.6801152737753,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        386
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1520,
+    "sourceOpaqueFloor": 1520,
+    "crown": 224
+  },
+  {
+    "id": "epico_estevao",
+    "key": "epico_estevao",
+    "estilo": "estilo-3",
+    "scale": 0.8211968276856525,
+    "skewX": 0.01539374010081252,
+    "offsetX": 86.35124487399469,
+    "offsetY": 202.60201874549375,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        386
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1519,
+    "sourceOpaqueFloor": 1519,
+    "crown": 216
+  },
+  {
+    "id": "epico_tiago_irmao_do_senhor",
+    "key": "epico_tiago_irmao_do_senhor",
+    "estilo": "estilo-1",
+    "scale": 0.8176597272074659,
+    "skewX": 0.012913506100907574,
+    "offsetX": 92.71430529738223,
+    "offsetY": 205.52189519023682,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        389
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1522,
+    "sourceOpaqueFloor": 1522,
+    "crown": 220
+  },
+  {
+    "id": "epico_tiago_irmao_do_senhor",
+    "key": "epico_tiago_irmao_do_senhor",
+    "estilo": "estilo-2",
+    "scale": 0.8170731707317073,
+    "skewX": 0.012894985477831822,
+    "offsetX": 92.60818140462618,
+    "offsetY": 205.5975609756099,
+    "measured": [
+      [
+        512,
+        311
+      ],
+      [
+        512,
+        389
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1523,
+    "sourceOpaqueFloor": 1523,
+    "crown": 214
+  },
+  {
+    "id": "epico_tiago_irmao_do_senhor",
+    "key": "epico_tiago_irmao_do_senhor",
+    "estilo": "estilo-3",
+    "scale": 0.8188691501253814,
+    "skewX": 0.012932606821793532,
+    "offsetX": 91.68469375694622,
+    "offsetY": 203.68115350916946,
+    "measured": [
+      [
+        512,
+        309
+      ],
+      [
+        512,
+        387
+      ],
+      [
+        512,
+        1450
+      ]
+    ],
+    "sourceFootY": 1522,
+    "sourceOpaqueFloor": 1522,
+    "crown": 225
+  },
+  {
+    "id": "epico_lucas",
+    "key": "epico_lucas",
+    "estilo": "estilo-1",
+    "scale": 0.8211968276856525,
+    "skewX": 0.028419212493807727,
+    "offsetX": 85.48416285947019,
+    "offsetY": 207.52919971160782,
+    "measured": [
+      [
+        510,
+        311
+      ],
+      [
+        514,
+        383
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1513,
+    "sourceOpaqueFloor": 1513,
+    "crown": 220
+  },
+  {
+    "id": "epico_lucas",
+    "key": "epico_lucas",
+    "estilo": "estilo-2",
+    "scale": 0.8206051873198847,
+    "skewX": 0.028378277371292848,
+    "offsetX": 85.70979432600552,
+    "offsetY": 205.1419308357349,
+    "measured": [
+      [
+        510,
+        311
+      ],
+      [
+        514,
+        383
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1517,
+    "sourceOpaqueFloor": 1517,
+    "crown": 217
+  },
+  {
+    "id": "epico_lucas",
+    "key": "epico_lucas",
+    "estilo": "estilo-3",
+    "scale": 0.8283636363636364,
+    "skewX": 0.029519867768595047,
+    "offsetX": 81.3512163966941,
+    "offsetY": 198.34254545454542,
+    "measured": [
+      [
+        510,
+        311
+      ],
+      [
+        514,
+        382
+      ],
+      [
+        510,
+        1450
+      ]
+    ],
+    "sourceFootY": 1511,
+    "sourceOpaqueFloor": 1511,
+    "crown": 204
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+    "estilo": "estilo-1",
+    "scale": 0.8934555303602922,
+    "skewX": 0,
+    "offsetX": 59.91150163769214,
+    "offsetY": 96.41487150415719,
+    "measured": [
+      [
+        518,
+        292
+      ],
+      [
+        518,
+        399
+      ],
+      [
+        506,
+        1450
+      ]
+    ],
+    "sourceFootY": 1515,
+    "sourceOpaqueFloor": 1515,
+    "crown": 156
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+    "estilo": "estilo-2",
+    "scale": 0.8919771796728013,
+    "skewX": 0,
+    "offsetX": 60.65954708556262,
+    "offsetY": 96.87061843636047,
+    "measured": [
+      [
+        518,
+        293
+      ],
+      [
+        518,
+        398
+      ],
+      [
+        506,
+        1450
+      ]
+    ],
+    "sourceFootY": 1517,
+    "sourceOpaqueFloor": 1517,
+    "crown": 133
+  },
+  {
+    "id": "raro_a_crianca_no_colo_de_jesus",
+    "key": "raro_a_crianca_no_colo_de_jesus_feminino",
+    "estilo": "estilo-3",
+    "scale": 0.8930773204527098,
+    "skewX": 0,
+    "offsetX": 60.99595317138147,
+    "offsetY": 96.0947821936918,
+    "measured": [
+      [
+        519,
+        293
+      ],
+      [
+        519,
+        399
+      ],
+      [
+        505,
+        1450
+      ]
+    ],
+    "sourceFootY": 1516,
+    "sourceOpaqueFloor": 1516,
+    "crown": 126
+  }
+]
